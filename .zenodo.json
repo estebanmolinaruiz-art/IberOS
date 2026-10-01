@@ -1,0 +1,26 @@
+{
+  "title": "IberOS Open Research Kit v1.0",
+  "upload_type": "software",
+  "description": "Interoperability, benchmark, provenance and validation kit for the independent IberOS project.",
+  "creators": [
+    {
+      "name": "Molina Ruiz, Esteban"
+    }
+  ],
+  "keywords": [
+    "Iberian",
+    "epigraphy",
+    "Palaeohispanic",
+    "digital humanities",
+    "reproducibility"
+  ],
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22939179",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-report"
+    }
+  ]
+}
