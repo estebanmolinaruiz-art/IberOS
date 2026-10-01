@@ -1,1 +1,13 @@
-
+name: request-software-heritage-archive
+on:
+  release:
+    types: [published]
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request archival
+        env:
+          REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: |
+          curl -f -X POST "https://archive.softwareheritage.org/api/1/origin/save/git/url/${REPOSITORY_URL}/"
