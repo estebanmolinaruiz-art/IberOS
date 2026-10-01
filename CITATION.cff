@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use IberOS, please cite the project and the relevant release."
+title: "IberOS Open Research Kit"
+type: software
+authors:
+  - family-names: "Molina Ruiz"
+    given-names: "Esteban"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22939179"
+    description: "Primary IberOS project publication"
+url: "https://zenodo.org/records/22939179"
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-09-30"
+keywords:
+  - Iberian
+  - epigraphy
+  - palaeohispanic
+  - digital humanities
+  - computational linguistics
+  - reproducibility

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iberos"
+version = "1.0.0"
+description = "Open interoperability, benchmark and provenance kit for the IberOS project"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Esteban Molina Ruiz" }]
+dependencies = ["jsonschema>=4.18"]
+
+[project.scripts]
+iberos = "iberos.cli:main"
+
+[project.urls]
+Homepage = "https://zenodo.org/records/22939179"
+Repository = "https://github.com/estebanmolinaruiz-art/IberOS"
+Documentation = "https://estebanmolinaruiz-art.github.io/IberOS/"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+iberos = ["schema/*.json", "data/*.csv"]
