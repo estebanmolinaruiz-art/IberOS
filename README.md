@@ -1,4 +1,4 @@
-# IberOS Open Research Kit v1.0
+# IberOS Open Research Kit v1.00
 
 **IberOS — created by Esteban Molina Ruiz**
 
