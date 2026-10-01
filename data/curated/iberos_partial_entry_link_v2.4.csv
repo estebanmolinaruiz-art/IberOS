@@ -1,0 +1,14 @@
+﻿OBJECT_ID,Objeto,Referencia_IberOS,UPSTREAM_IDS,Upstream_Labels,Verified_ID_Count,Link_Status,Confidence,Source_URL,Note
+IBR-PLM-0001,Plomo de Ullastret,C.2.3 / GI.15.04,I01126;I01127,c.2.3 a;c.2.3 b,2,FULL_GROUP_VERIFIED,HIGH,https://cathalaunia.org/Iberika/I01127,Both faces explicitly grouped on Cathalaunia.
+IBR-PLM-0002,Plomo de Tivissa,T.07.03,I02572,T.07.03,1,VERIFIED,HIGH,https://cathalaunia.org/Iberika/I02572,Cathalaunia page explicitly reports Web: T.07.03.
+IBR-PLM-0005,Villares V,F.17.1 / V.07.01,I02105;I02106,f.17.1 a;f.17.1 b,2,FULL_GROUP_VERIFIED,HIGH,https://cathalaunia.org/Iberika/I02105,Both sides listed under F.17.1.
+IBR-PLM-0006,Punta d'Orleyl F.9.8,F.9.8,I01940;I01941,f.9.8 a;f.9.8 b,2,FULL_GROUP_VERIFIED,HIGH,https://cathalaunia.org/Iberika/I01940,Both faces identified in live index.
+IBR-PLM-0008,Signarios del Tos Pelat,V.21.01-02,I03049;I03050,"P11,9 Tos Pelat A2b1;A2b2",2,PARTIAL_GROUP,HIGH,https://cathalaunia.org/Iberika/I03049,These two are explicitly V.21.01; V.21.02 still requires link confirmation.
+IBR-LAP-0001,Árula ibérica de Tarragona,C.18.7,I01247,c.18.7 a,1,PARTIAL_GROUP,HIGH,https://cathalaunia.org/Iberika/I01247,c.18.7 b exists in master index but its I-code was not independently verified in this pass.
+IBR-LAP-0002,Estela-monumento de La Vispesa,D.12.1-2 / HU.01.01-02,I01320,d.12.1 a,1,PARTIAL_GROUP,HIGH,https://cathalaunia.org/Iberika/I01320,Cathalaunia groups d.12.1 a with d.12.1 b; second I-code pending.
+IBR-LAP-0003,Estela funeraria de Sinarcas,F.14.1 / V.01.01,I02102,f.14.1,1,VERIFIED,HIGH,https://cathalaunia.org/Iberika/I02102,Direct entry page.
+IBR-LAP-0005,Arquitrabe bilingüe de Sagunto,F.11.8 / ELRH C56,I01951,f.11.8,1,VERIFIED,HIGH,https://cathalaunia.org/Iberika/I01951,Live glyph index identifies I01951 as f.11.8.
+IBR-CER-0004,Inscripción de La Joncosa,"B.11.01 / Veleia 23,129",I02560;I02561;I02562,base;segment 1;segment 2,3,PARTIAL_GROUP,HIGH,https://cathalaunia.org/Iberika/I02560,Cathalaunia group lists four related records; three I-codes independently verified in this pass.
+IBR-PLM-0011,Plomo de la Moleta del Remei,"P8,203 / Moleta del Remei",I02622,"P8,203 MoletaRemeiAlcanar 1",1,VERIFIED,HIGH,https://cathalaunia.org/Iberika/I02622,Live glyph index identifies the lead fragment.
+IBR-PLM-0013,Pequeño plomo del Pico de los Ajos (2018),Vel38-91-a/b,I03622;I03623,cara a;cara b,2,FULL_GROUP_VERIFIED,HIGH,https://cathalaunia.org/Iberika/I03622,Entry page groups I03622 and I03623 as the two faces.
+IBR-CER-0002,Vaso de los Letreros de Llíria,F.13.3 / V.06.008,I01994,f.13.3 1 (anchor),1,MULTI_ENTRY_REVIEW,MEDIUM,https://cathalaunia.org/Iberika/I01994,F.13.3 is split into many live entries; only anchor verified here. Requires object-level grouping review.

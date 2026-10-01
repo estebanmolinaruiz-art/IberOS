@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iberos.example/schema/iberos-result-v1.schema.json",
+  "title": "IberOS Result Record v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator",
+    "object",
+    "evidence",
+    "limits"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "generator": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "creator"
+      ],
+      "properties": {
+        "name": {
+          "const": "IberOS"
+        },
+        "version": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "object": {
+      "type": "object",
+      "required": [
+        "object_id"
+      ],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "pattern": "^IBR-[A-Z]{3}-[0-9]{4}$"
+        },
+        "upstream_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^I[0-9]{5}$"
+          }
+        },
+        "reference": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "reading": {
+      "type": "object"
+    },
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "level",
+          "claim"
+        ],
+        "properties": {
+          "level": {
+            "enum": [
+              "E1",
+              "E2",
+              "E3",
+              "E4",
+              "E5"
+            ]
+          },
+          "claim": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

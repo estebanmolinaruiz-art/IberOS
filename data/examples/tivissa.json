@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "generator": {
+    "name": "IberOS",
+    "version": "public-kit-1.0",
+    "creator": "Esteban Molina Ruiz"
+  },
+  "object": {
+    "object_id": "IBR-PLM-0002",
+    "upstream_ids": [
+      "I02572"
+    ],
+    "reference": "T.07.03",
+    "name": "Plomo de Tivissa"
+  },
+  "reading": {
+    "normalized": "śalaiaŕkis-t(e)-ŕokan · śalir · o III",
+    "status": "curated-example"
+  },
+  "families": [
+    "SALIR",
+    "ROK",
+    "METROLOGY"
+  ],
+  "evidence": [
+    {
+      "level": "E2",
+      "claim": "ROK and SALIR occur in a quantified context."
+    },
+    {
+      "level": "E3",
+      "claim": "The construction supports a structural relation between ROK/SALIR and quantity."
+    }
+  ],
+  "hypotheses": [
+    {
+      "level": "E5",
+      "claim": "A specific lexical gloss for ROK remains frozen.",
+      "status": "FROZEN"
+    }
+  ],
+  "limits": [
+    "This record is an illustrative curated example, not a new corpus-wide rerun."
+  ],
+  "provenance": [
+    {
+      "source": "Cathalaunia/Iberika",
+      "upstream_id": "I02572"
+    }
+  ]
+}

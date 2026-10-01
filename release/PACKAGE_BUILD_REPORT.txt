@@ -1,0 +1,47 @@
+Processing /mnt/data/IberOS_Open_Research_Kit_v1.0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+  [1;31merror[0m: [1msubprocess-exited-with-error[0m
+  
+  [31m×[0m [32mpip subprocess to install build dependencies[0m did not run successfully.
+  [31m│[0m exit code: [1;36m1[0m
+  [31m╰─>[0m [31m[18 lines of output][0m
+  [31m   [0m Spreadsheet runtime warmup failed during python startup
+  [31m   [0m Traceback (most recent call last):
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 720, in _warm_feature_flows
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 704, in _warm_collaboration_flows
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/generated/interface/models.py", line 32317, in hydrate_crdt_from_proto
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/remote.py", line 749, in __call__
+  [31m   [0m   File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/client.py", line 150, in call
+  [31m   [0m artifact_tool.rpc.client.RemoteError: hydrateCrdtFromProto requires an empty collaborative document.
+  [31m   [0m [33mWARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f94acc96920>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/[0m[33m
+  [31m   [0m [0m[33mWARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f94acc2f220>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/[0m[33m
+  [31m   [0m [0m[33mWARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f94acc2fae0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/[0m[33m
+  [31m   [0m [0m[33mWARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f94acc30120>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/[0m[33m
+  [31m   [0m [0m[33mWARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x7f94acc30620>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution')': /simple/setuptools/[0m[33m
+  [31m   [0m [0m[31mERROR: Could not find a version that satisfies the requirement setuptools>=68 (from versions: none)[0m[31m
+  [31m   [0m [0m[31mERROR: No matching distribution found for setuptools>=68[0m[31m
+  [31m   [0m [0m
+  [31m   [0m [31m[end of output][0m
+  
+  [1;35mnote[0m: This error originates from a subprocess, and is likely not a problem with pip.
+[1;31merror[0m: [1msubprocess-exited-with-error[0m
+
+[31m×[0m [32mpip subprocess to install build dependencies[0m did not run successfully.
+[31m│[0m exit code: [1;36m1[0m
+[31m╰─>[0m See above for output.
+
+[1;35mnote[0m: This error originates from a subprocess, and is likely not a problem with pip.

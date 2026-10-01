@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "generator": {
+    "name": "IberOS",
+    "version": "public-kit-1.0",
+    "creator": "Esteban Molina Ruiz"
+  },
+  "object": {
+    "object_id": "IBR-LAP-0005",
+    "upstream_ids": [
+      "I01951"
+    ],
+    "reference": "F.11.8 / ELRH C56",
+    "name": "Arquitrabe bilingüe de Sagunto"
+  },
+  "families": [
+    "EBAN_FAMILY",
+    "BILINGUAL"
+  ],
+  "evidence": [
+    {
+      "level": "E1",
+      "claim": "The object provides an Iberian/Latin bilingual control."
+    },
+    {
+      "level": "E3",
+      "claim": "tebanen is structurally compatible with a monumental/action expression."
+    }
+  ],
+  "hypotheses": [
+    {
+      "level": "E5",
+      "claim": "Exact equivalence tebanen = coeravit is not demonstrated.",
+      "status": "NOT_DEMONSTRATED"
+    }
+  ],
+  "limits": [
+    "Bilingual adjacency is not treated as automatic word-for-word equivalence."
+  ],
+  "provenance": [
+    {
+      "source": "Cathalaunia/Iberika",
+      "upstream_id": "I01951"
+    }
+  ]
+}

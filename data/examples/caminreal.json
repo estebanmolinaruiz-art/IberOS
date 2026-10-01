@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "generator": {
+    "name": "IberOS",
+    "version": "public-kit-1.0",
+    "creator": "Esteban Molina Ruiz"
+  },
+  "object": {
+    "object_id": "IBR-MUS-0001",
+    "reference": "MLH E.7.1 = K.5.3",
+    "name": "Mosaico de Caminreal"
+  },
+  "reading": {
+    "normalized": "likinete · ekiar · usekeŕteku",
+    "status": "curated-example"
+  },
+  "families": [
+    "EGIAR_EKIAR",
+    "MOSAIC"
+  ],
+  "evidence": [
+    {
+      "level": "E3",
+      "claim": "EKIAR occupies a recurrent structural position associated with production/execution contexts."
+    }
+  ],
+  "hypotheses": [
+    {
+      "level": "E5",
+      "claim": "A literal gloss EKIAR = 'hacer' is not asserted.",
+      "status": "CAUTIOUS"
+    }
+  ],
+  "limits": [
+    "Structural function is separated from lexical translation."
+  ],
+  "provenance": []
+}
