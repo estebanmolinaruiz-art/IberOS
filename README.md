@@ -1,5 +1,12 @@
 # IberOS Open Research Kit v1.0
 
+[![PyPI version](https://img.shields.io/pypi/v/iberos.svg)](https://pypi.org/project/iberos/)
+[![GitHub release](https://img.shields.io/github/v/release/estebanmolinaruiz-art/IberOS)](https://github.com/estebanmolinaruiz-art/IberOS/releases)
+[![Tests](https://github.com/estebanmolinaruiz-art/IberOS/actions/workflows/tests.yml/badge.svg)](https://github.com/estebanmolinaruiz-art/IberOS/actions/workflows/tests.yml)
+[![License](https://img.shields.io/github/license/estebanmolinaruiz-art/IberOS)](https://github.com/estebanmolinaruiz-art/IberOS/blob/main/LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22939179.svg)](https://doi.org/10.5281/zenodo.22939179)
+[![Software Heritage](https://archive.softwareheritage.org/badge/origin/https://github.com/estebanmolinaruiz-art/IberOS/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/estebanmolinaruiz-art/IberOS)
+
 **IberOS — created by Esteban Molina Ruiz**
 
 IberOS is an independent, amateur research project focused on reproducible internal analysis of Iberian inscriptions.
@@ -7,6 +14,14 @@ IberOS is an independent, amateur research project focused on reproducible inter
 This public kit is designed so that researchers, developers and comparable software can **inspect, validate, query and exchange IberOS results in machine-readable form**.
 
 Primary project DOI: **10.5281/zenodo.22939179**
+
+## Distribution
+
+- **PyPI:** `pip install iberos`
+- **GitHub Releases:** versioned source releases
+- **GitHub Pages:** project documentation
+- **Software Heritage:** archival request enabled on releases
+- **Zenodo:** GitHub integration enabled for DOI-backed software archiving
 
 ## What this release contains
 
@@ -31,7 +46,7 @@ The historical Beta Final V2 metrics refer to the legacy snapshot of **3,406 ENT
 ## Quick start
 
 ```bash
-python -m pip install .
+pip install iberos
 iberos version
 iberos list-objects
 iberos show-object IBR-PLM-0002
