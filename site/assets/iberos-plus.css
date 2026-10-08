@@ -74,3 +74,10 @@ footer{background:#061d2c;color:#d9e5ea;border-top:4px solid var(--gold);padding
 .compare-table th{position:sticky;top:0;background:var(--navy);color:#fff;text-align:left;padding:9px 10px;font-family:Georgia,serif}
 .compare-table td{padding:9px 10px;border-bottom:1px solid #eadfc9;vertical-align:top;color:#4d5a63}
 .compare-table tr:last-child td{border-bottom:0}.compare-table tbody tr:hover{background:#f5e8cf}.compare-table a{text-decoration:none;color:var(--navy)}
+
+/* Accessibility and keyboard navigation · 2026-10-08 */
+.skip-link{position:fixed;left:12px;top:-90px;z-index:2000;background:#fff9ee;color:#071f31;padding:12px 18px;border:2px solid #e0b35f;border-radius:8px;font-weight:800}.skip-link:focus{top:12px}
+:where(a,button,input,textarea,select):focus-visible{outline:3px solid #6ec6d2;outline-offset:3px}
+.hero-search:focus-within{outline:3px solid #6ec6d2;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:520px){.hero-search{flex-wrap:wrap}.hero-search input{min-width:100%;width:100%}.hero-search button{width:100%}.editorial-head{display:block}.editorial-head h2{font-size:2rem}.portal-grid{padding:12px}.stats-bar{grid-template-columns:1fr 1fr}.stat-item{padding:12px}}
