@@ -217,3 +217,43 @@ def rok_semantic_guard(literal: str | None = None) -> dict[str, Any]:
 
 def validate_epistemic_layer(layer: str) -> bool:
     return layer.upper() in EPISTEMIC_LAYERS
+
+
+VALIDATION_EVENT_CLASSES = (
+    "STRICT_PROSPECTIVE_PASS",
+    "EXTERNAL_CONVERGENCE",
+    "RETROSPECTIVE_REPLICATION",
+    "FAIL",
+    "INDETERMINATE",
+)
+
+
+def classify_validation_event(
+    *,
+    gate_passed: bool | None,
+    prospective: bool = False,
+    preregistered: bool = False,
+    independent: bool = False,
+    contamination_free: bool = False,
+    external_source: bool = False,
+) -> dict[str, Any]:
+    """Classify a validation event without automatically promoting scientific CORE."""
+    if gate_passed is False:
+        label = "FAIL"
+    elif gate_passed is None:
+        label = "INDETERMINATE"
+    elif prospective and preregistered and independent and contamination_free:
+        label = "STRICT_PROSPECTIVE_PASS"
+    elif external_source:
+        label = "EXTERNAL_CONVERGENCE"
+    elif independent and contamination_free:
+        label = "RETROSPECTIVE_REPLICATION"
+    else:
+        label = "INDETERMINATE"
+
+    return {
+        "classification": label,
+        "automatic_core_promotion": False,
+        "requires_explicit_release_decision": True,
+        "authority": dict(AUTHORITY),
+    }
