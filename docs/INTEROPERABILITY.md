@@ -1,26 +1,24 @@
 # IberOS Interoperability
 
-## Stable identifiers
+## Identificadores estables
 
-- `UPSTREAM_ID`: identifier from a source corpus, e.g. `I02572`
-- `ENTRY_ID`: internal textual/analytical unit
-- `OBJECT_ID`: physical-object unit used for independence
-- `LEAK_GROUP`: dependency group preventing duplicated evidence
+- `UPSTREAM_ID`
+- `ENTRY_ID`
+- `OBJECT_ID`
+- `LEAK_GROUP`
 
-## Evidence levels
+## Niveles de evidencia
 
-- E1 — primary/material fact
-- E2 — recurrence
-- E3 — supported structural relation
-- E4 — functional interpretation
-- E5 — specific semantic hypothesis
+- E1 — hecho primario / material
+- E2 — recurrencia
+- E3 — relación estructural
+- E4 — interpretación funcional
+- E5 — hipótesis semántica específica
 
-## Rule
+No deben colapsarse en un único campo de “traducción” sin cualificación.
 
-A downstream program should never collapse E1–E5 into a single unqualified “translation” field.
+Cadena:
+`UPSTREAM_ID → ENTRY_ID → OBJECT_ID → LEAK_GROUP → READING → PALEO → SIMPLIFIED → MORPH → CLAIMS`
 
-## Exchange
-
-Programs may consume an IberOS result without using the IberOS engine itself. This is intentional.
-
-Validate a result against `iberos-result-v1.schema.json`.
+Validar resultados contra:
+`src/iberos/schema/iberos-result-v1.schema.json`
