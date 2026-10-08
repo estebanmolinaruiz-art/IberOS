@@ -14,6 +14,7 @@ from .core import (
     rok_semantic_guard,
     validate_result,
     validate_rhotic_usage,
+    registry_independence_audit,
 )
 
 
@@ -44,6 +45,8 @@ def main():
     p_rguard = sub.add_parser("guard-rhotic")
     p_rguard.add_argument("purpose")
     p_rguard.add_argument("--neutralized", action="store_true")
+
+    sub.add_parser("audit-independence")
 
     p_rok = sub.add_parser("guard-rok")
     p_rok.add_argument("--literal")
@@ -87,6 +90,8 @@ def main():
             purpose=args.purpose,
             neutralized=args.neutralized,
         ), ensure_ascii=False, indent=2))
+    elif args.command == "audit-independence":
+        print(json.dumps(registry_independence_audit(), ensure_ascii=False, indent=2))
     elif args.command == "guard-rok":
         print(json.dumps(rok_semantic_guard(args.literal), ensure_ascii=False, indent=2))
 

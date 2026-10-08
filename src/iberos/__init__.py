@@ -15,6 +15,12 @@ from .core import (
     classify_validation_event,
     validate_result,
     validate_rhotic_usage,
+    independence_key,
+    collapse_independent,
+    independence_audit,
+    resolve_split,
+    split_integrity_audit,
+    registry_independence_audit,
 )
 
 __all__ = [
@@ -34,6 +40,12 @@ __all__ = [
     "classify_validation_event",
     "validate_result",
     "validate_rhotic_usage",
+    "independence_key",
+    "collapse_independent",
+    "independence_audit",
+    "resolve_split",
+    "split_integrity_audit",
+    "registry_independence_audit",
 ]
 
 __version__ = "1.0.1"

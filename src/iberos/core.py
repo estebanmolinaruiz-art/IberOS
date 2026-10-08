@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.1"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.2"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -257,3 +257,148 @@ def classify_validation_event(
         "requires_explicit_release_decision": True,
         "authority": dict(AUTHORITY),
     }
+
+
+GENERIC_DEPENDENCY_LABELS = {
+    "",
+    "INDEPENDENT_OR_UNRESOLVED",
+    "DEPENDENT_COPY",
+    "NONE",
+    "N/A",
+    "NA",
+    "UNKNOWN",
+    "UNRESOLVED",
+}
+
+SPLIT_PRECEDENCE = {
+    "TRAIN": 1,
+    "VAL": 2,
+    "HOLD": 3,
+}
+
+
+def _first_nonempty(record: dict[str, Any], *keys: str) -> str | None:
+    for key in keys:
+        value = record.get(key)
+        if value is not None and str(value).strip():
+            return str(value).strip()
+    return None
+
+
+def independence_key(record: dict[str, Any]) -> str:
+    """Return the strongest available documentary-independence key.
+
+    Priority:
+    PHYS_ID > LEAK_GROUP > specific Dependency_Group > OBJECT_ID.
+
+    Generic status labels such as INDEPENDENT_OR_UNRESOLVED or DEPENDENT_COPY
+    are not treated as shared identities.
+    """
+    phys_id = _first_nonempty(record, "PHYS_ID", "phys_id")
+    if phys_id:
+        return f"PHYS:{phys_id}"
+
+    leak_group = _first_nonempty(record, "LEAK_GROUP", "leak_group")
+    if leak_group:
+        return f"LEAK:{leak_group}"
+
+    dep_group = _first_nonempty(record, "Dependency_Group", "dependency_group")
+    if dep_group and dep_group.upper() not in GENERIC_DEPENDENCY_LABELS:
+        return f"DEP:{dep_group}"
+
+    object_id = _first_nonempty(record, "OBJECT_ID", "object_id")
+    if object_id:
+        return f"OBJ:{object_id}"
+
+    raise ValueError(
+        "Cannot determine documentary independence: record lacks PHYS_ID, "
+        "LEAK_GROUP, a specific Dependency_Group and OBJECT_ID."
+    )
+
+
+def collapse_independent(records: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Group records into documentary independence units without discarding evidence."""
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for record in records:
+        key = independence_key(record)
+        groups.setdefault(key, []).append(record)
+    return groups
+
+
+def independence_audit(records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Audit how many raw records collapse to independent documentary units."""
+    groups = collapse_independent(records)
+    collapsed = {
+        key: [
+            _first_nonempty(r, "ENTRY_ID", "entry_id", "OBJECT_ID", "object_id") or "<anonymous>"
+            for r in members
+        ]
+        for key, members in groups.items()
+        if len(members) > 1
+    }
+    return {
+        "protocol": "PHYS-LEAK-SAFE-01",
+        "input_records": len(records),
+        "independent_units": len(groups),
+        "collapsed_record_count": len(records) - len(groups),
+        "multi_record_units": collapsed,
+        "automatic_independence_inference": False,
+        "note": (
+            "A shared PHYS_ID/LEAK_GROUP/specific dependency group prevents "
+            "counting records as independent confirmations."
+        ),
+    }
+
+
+def resolve_split(labels: list[str]) -> dict[str, Any]:
+    """Resolve mixed TRAIN/VAL/HOLD labels using HOLD > VAL > TRAIN."""
+    normalized = [str(x).strip().upper() for x in labels if str(x).strip()]
+    unknown = sorted({x for x in normalized if x not in SPLIT_PRECEDENCE})
+    known = [x for x in normalized if x in SPLIT_PRECEDENCE]
+    if not known:
+        return {
+            "resolved_split": None,
+            "conflict": bool(unknown),
+            "unknown_labels": unknown,
+        }
+    resolved = max(known, key=lambda x: SPLIT_PRECEDENCE[x])
+    return {
+        "resolved_split": resolved,
+        "conflict": len(set(known)) > 1 or bool(unknown),
+        "unknown_labels": unknown,
+    }
+
+
+def split_integrity_audit(
+    records: list[dict[str, Any]],
+    *,
+    split_field: str = "split",
+) -> dict[str, Any]:
+    """Detect split leakage inside one documentary-independence unit."""
+    groups = collapse_independent(records)
+    conflicts = []
+    for key, members in groups.items():
+        labels = [
+            str(r.get(split_field, "")).strip().upper()
+            for r in members
+            if str(r.get(split_field, "")).strip()
+        ]
+        resolution = resolve_split(labels)
+        if resolution["conflict"]:
+            conflicts.append({
+                "independence_key": key,
+                "labels": sorted(set(labels)),
+                **resolution,
+            })
+    return {
+        "protocol": "PHYS-LEAK-SAFE-01",
+        "split_field": split_field,
+        "conflict_count": len(conflicts),
+        "conflicts": conflicts,
+        "policy": "HOLD > VAL > TRAIN",
+    }
+
+
+def registry_independence_audit() -> dict[str, Any]:
+    """Run the independence audit on the packaged curated object registry."""
+    return independence_audit(load_registry())

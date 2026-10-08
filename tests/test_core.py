@@ -11,6 +11,11 @@ from iberos import (
     validate_result,
     validate_rhotic_usage,
     classify_validation_event,
+    independence_key,
+    independence_audit,
+    resolve_split,
+    split_integrity_audit,
+    registry_independence_audit,
 )
 
 
@@ -101,3 +106,53 @@ def test_validation_event_gate_never_auto_promotes_core():
 
     u = classify_validation_event(gate_passed=None)
     assert u["classification"] == "INDETERMINATE"
+
+
+
+def test_phys_id_dominates_documentary_independence():
+    records = [
+        {"ENTRY_ID": "casino-A", "OBJECT_ID": "OBJ-A", "PHYS_ID": "CASINOS-LEAD", "split": "TRAIN"},
+        {"ENTRY_ID": "casino-B", "OBJECT_ID": "OBJ-B", "PHYS_ID": "CASINOS-LEAD", "split": "HOLD"},
+    ]
+    assert independence_key(records[0]) == "PHYS:CASINOS-LEAD"
+    audit = independence_audit(records)
+    assert audit["input_records"] == 2
+    assert audit["independent_units"] == 1
+    assert audit["collapsed_record_count"] == 1
+
+    split = split_integrity_audit(records)
+    assert split["conflict_count"] == 1
+    assert split["conflicts"][0]["resolved_split"] == "HOLD"
+
+
+def test_leak_group_collapses_editions_but_generic_dependency_label_does_not():
+    same_object = [
+        {"ENTRY_ID": "edition-1", "OBJECT_ID": "OBJ-1", "LEAK_GROUP": "LG-X"},
+        {"ENTRY_ID": "edition-2", "OBJECT_ID": "OBJ-2", "LEAK_GROUP": "LG-X"},
+    ]
+    assert independence_audit(same_object)["independent_units"] == 1
+
+    generic = [
+        {"OBJECT_ID": "CTL-1", "Dependency_Group": "DEPENDENT_COPY"},
+        {"OBJECT_ID": "CTL-2", "Dependency_Group": "DEPENDENT_COPY"},
+    ]
+    assert independence_audit(generic)["independent_units"] == 2
+
+
+def test_specific_dependency_group_can_define_shared_unit():
+    records = [
+        {"OBJECT_ID": "A", "Dependency_Group": "SAME_OBJECT_SET"},
+        {"OBJECT_ID": "B", "Dependency_Group": "SAME_OBJECT_SET"},
+    ]
+    assert independence_audit(records)["independent_units"] == 1
+
+
+def test_split_precedence_is_hold_over_val_over_train():
+    assert resolve_split(["TRAIN", "VAL"])["resolved_split"] == "VAL"
+    assert resolve_split(["TRAIN", "HOLD", "VAL"])["resolved_split"] == "HOLD"
+
+
+def test_curated_registry_has_no_accidental_mass_collapse():
+    audit = registry_independence_audit()
+    assert audit["input_records"] == 38
+    assert audit["independent_units"] >= 35
