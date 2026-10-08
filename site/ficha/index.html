@@ -4,18 +4,23 @@ import{header,text,csv,esc}from"../assets/portal-data.js";
 document.getElementById("head").innerHTML=header("../");
 const rows=csv(await text("../data/objects.csv"));
 const rels=csv(await text("../data/families.csv"));
-const enrichmentUrls=[1,2,3,4,5].map(i=>"../data/ficha-enrichment-"+i+".json");
-const enrichmentSets=await Promise.all(enrichmentUrls.map(async u=>{try{const rr=await fetch(u);return rr.ok?await rr.json():[]}catch{return[]}}));
-const enrichments=enrichmentSets.flat();
 const id=new URLSearchParams(location.search).get("id");
 const r=rows.find(x=>x.OBJECT_ID===id);
 const body=document.getElementById("body");
+function shardFor(id){
+ if(/^IBR-CER-/.test(id)||/^IBR-COI-/.test(id)||id==="IBR-CTL-0001")return 1;
+ if(/^IBR-LAP-/.test(id)||/^IBR-MON-/.test(id)||id==="IBR-CTL-0002"||id==="IBR-CTL-0003")return 2;
+ if(/^IBR-MUS-/.test(id)||/^IBR-OBJ-/.test(id)||/^IBR-PLM-000[1-4]$/.test(id))return 3;
+ if(/^IBR-PLM-00(0[5-9]|1[0-2])$/.test(id))return 4;
+ if(id==="IBR-PLM-0013"||/^IBR-RUP-/.test(id))return 5;
+ return null;
+}
 if(!r){
  body.innerHTML='<div class="notice">Objeto no encontrado.</div>';
 }else{
  document.title="IberOS+ · "+r.Nombre_objeto;
  const fam=rels.filter(x=>x.OBJECT_ID===r.OBJECT_ID).map(x=>x.Familia);
- const en=enrichments.find(x=>x.OBJECT_ID===r.OBJECT_ID);
+ let en=null;
  const covers={"IBR-PLM-0002":"../assets/ficha-covers/tivissa.webp"};
  const cover=covers[r.OBJECT_ID]||"";
  const fields=[["Tipo",r.Tipo_objeto],["Yacimiento",r.Yacimiento],["Localidad",r.Localidad],["Soporte",r.Soporte],["Escritura",r.Escritura],["Cronología",r.Cronología],["Inclusión IberOS",r.IberOS_Inclusion],["Estado PALEO",r.PALEO_Status],["Módulos activos",r.Modulos_Activos],["Dependencia",r.Dependency_Group],["Estado de ficha",r.Estado_ficha],["PDF declarado",r.Archivo_ficha]];
@@ -45,6 +50,16 @@ if(!r){
    if(!related.length)return "";
    return '<div class="section-kicker" style="margin-top:30px">Objetos relacionados</div><h2 class="section-title">Paralelos por familia</h2><div class="corpus-grid">'+related.map(x=>'<article class="result-card"><div class="media"></div><div class="copy"><div class="meta">'+esc(x)+'</div><h3>'+esc(by[x]?.Nombre_objeto||x)+'</h3><a class="btn alt" href="?id='+encodeURIComponent(x)+'">Abrir ficha →</a></div></article>').join("")+'</div>';
  }
- body.innerHTML='<section class="artifact-stage">'+summaryHtml()+'</section>'+metadataHtml()+enrichmentHtml()+relatedHtml();
+ body.innerHTML='<section class="artifact-stage">'+summaryHtml()+'</section>'+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>'+relatedHtml();
+ const slot=document.getElementById("documentary-slot");
+ const shard=shardFor(r.OBJECT_ID);
+ if(!shard){
+   slot.innerHTML=enrichmentHtml();
+ }else{
+   fetch("../data/ficha-enrichment-"+shard+".json")
+    .then(rr=>{if(!rr.ok)throw new Error("HTTP "+rr.status);return rr.json()})
+    .then(items=>{en=items.find(x=>x.OBJECT_ID===r.OBJECT_ID)||null;slot.innerHTML=enrichmentHtml()})
+    .catch(err=>{console.warn("Enriquecimiento no disponible",err);slot.innerHTML='<div class="notice" style="margin-top:26px"><strong>La ficha base está disponible.</strong> La lectura documental no pudo cargarse en este momento.</div>'});
+ }
 }
 </script></body></html>
