@@ -1,0 +1,30 @@
+[
+  {
+    "id": "IBR-PLM-0005",
+    "name": "Villares V",
+    "site": "Los Villares / Kelin",
+    "model_type": "symbolic",
+    "note": "Modelo geométrico simbólico. No es fotogrametría ni escaneado del original."
+  },
+  {
+    "id": "EX-SAGUNTO",
+    "name": "Sagunto / Arse",
+    "site": "Sagunt / Arse",
+    "model_type": "symbolic",
+    "note": "Modelo de demostración. No reproduce una pieza concreta."
+  },
+  {
+    "id": "EX-TIVISSA",
+    "name": "Tivissa",
+    "site": "Castellet de Banyoles",
+    "model_type": "symbolic",
+    "note": "Volumen genérico para validar el visor 3D; no es reconstrucción arqueológica."
+  },
+  {
+    "id": "EX-CAMINREAL",
+    "name": "Caminreal",
+    "site": "La Caridad",
+    "model_type": "symbolic",
+    "note": "Modelo geométrico de demostración; no reproduce el objeto original."
+  }
+]
