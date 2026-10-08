@@ -150,3 +150,46 @@ body:has(.portal-grid-approved) .portal-card:nth-child(5) .media{background-posi
 body:has(.portal-grid-approved) .portal-card:nth-child(6) .media{background-position:72% 30%;filter:sepia(.7) saturate(.65)}
 body:has(.portal-grid-approved) .portal-card:nth-child(7) .media{background-position:60% 55%}
 body:has(.portal-grid-approved) .portal-card:nth-child(8) .media{background-position:46% 30%;filter:sepia(.2)}
+
+/* ------------------------------------------------------------------
+   IBEROS+ · SISTEMA VISUAL DEL FLYER OFICIAL · PÁGINAS INTERIORES
+   Capa no destructiva: preserva buscadores, mapas, editores y visores.
+   ------------------------------------------------------------------ */
+:root{--flyer-paper:#fff6e7;--flyer-navy:#061c2c;--flyer-gold:#e6bd73;--flyer-stroke:#d8bc88}
+body:not(:has(.portal-grid-approved)){background:linear-gradient(180deg,rgba(6,25,39,.08),rgba(244,234,215,.94) 680px),radial-gradient(circle at 50% 0%,#e9ce9f,#f4ead7 65%);color:var(--ink)}
+body:not(:has(.portal-grid-approved)) .site-header{background:rgba(4,22,36,.97)}
+body:not(:has(.portal-grid-approved)) .hero{min-height:300px;border-bottom:5px solid var(--flyer-gold)}
+body:not(:has(.portal-grid-approved)) .hero:before{background-image:linear-gradient(90deg,rgba(3,21,34,.97) 0%,rgba(6,29,45,.87) 39%,rgba(4,27,42,.19) 83%),url("./iberosplus-hero.webp");background-position:center 52%}
+body:not(:has(.portal-grid-approved)) .hero-inner{padding:47px 24px 42px}
+body:not(:has(.portal-grid-approved)) .hero h1{font:700 clamp(2.9rem,5.7vw,5.4rem)/.95 Georgia,serif;max-width:1050px;letter-spacing:-.04em;text-shadow:0 2px 16px rgba(0,0,0,.4)}
+body:not(:has(.portal-grid-approved)) .hero h1 em{color:#f5d69b}
+body:not(:has(.portal-grid-approved)) .hero p{color:#f8ecdc;font:1.11rem/1.42 Georgia,serif;max-width:780px}
+body:not(:has(.portal-grid-approved)) main{background:linear-gradient(140deg,rgba(255,249,238,.96),rgba(247,234,210,.97));border:1px solid #e1c9a1;border-top:0;box-shadow:0 16px 42px rgba(15,32,42,.15);border-radius:0 0 20px 20px;margin:0 auto 35px;padding:29px clamp(15px,2.2vw,35px) 55px}
+body:not(:has(.portal-grid-approved)) .section-title{font-size:clamp(2rem,3.3vw,3.1rem);letter-spacing:-.035em}
+body:not(:has(.portal-grid-approved)) :is(.card,.lab-panel,.resource-card,.viewer-card,.filters,.atlas-panel,.result-card,.case-card,.site-card,.repro-step,.module-status article,.evidence-node,.research-dock){border:1px solid var(--flyer-stroke);box-shadow:0 8px 22px rgba(47,35,16,.10);background-color:var(--flyer-paper)}
+body:not(:has(.portal-grid-approved)) :is(.card,.lab-panel,.resource-card,.filters,.atlas-panel,.result-card,.case-card,.site-card){border-radius:12px}
+body:not(:has(.portal-grid-approved)) :is(.card,.lab-panel,.resource-card,.result-card,.case-card,.filters,.atlas-panel) h2,
+body:not(:has(.portal-grid-approved)) :is(.card,.lab-panel,.resource-card,.result-card,.case-card,.filters,.atlas-panel) h3{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+body:not(:has(.portal-grid-approved)) .btn.gold,
+body:not(:has(.portal-grid-approved)) .hero-search button{background:linear-gradient(180deg,#f9dfa9,#e4b66a);border:1px solid #d6a252;color:#152c38;font-family:Georgia,serif;box-shadow:0 3px 11px rgba(106,69,17,.15)}
+body:not(:has(.portal-grid-approved)) :is(.case-card .media,.site-card .media,.result-card .media,.resource-card .thumb){background-color:#0c3149;border-bottom:2px solid #c49b59}
+body:not(:has(.portal-grid-approved)) .notice{background:#fff3d9;border-left:4px solid #cf9e4f}
+body:not(:has(.portal-grid-approved)) .pill{border:1px solid rgba(33,72,87,.13)}
+body:not(:has(.portal-grid-approved)) :is(.toolbar input,.toolbar select,.form-group input,.form-group textarea,.form-group select){background:#fffdf8}
+body:not(:has(.portal-grid-approved)) .viewer-card{background:#08273b;color:#fff}
+body:not(:has(.portal-grid-approved)) .viewer-copy h3{color:var(--gold2)}
+body:not(:has(.portal-grid-approved)) .stats-bar{background:#071e30}
+body:not(:has(.portal-grid-approved)) .atlas-shell #map{border:3px solid #d4ae70!important}
+body:not(:has(.portal-grid-approved)) .artifact-stage{border:2px solid var(--flyer-gold)}
+body:not(:has(.portal-grid-approved)) .casefile{border:1px solid rgba(226,180,97,.6)}
+.site-header .brand-mark{font-family:Georgia,serif;background:linear-gradient(155deg,rgba(228,180,91,.16),transparent);box-shadow:inset 0 0 0 3px rgba(7,31,49,.8)}
+.site-header .nav-cta{background:linear-gradient(180deg,#f9dea6,#dca75a);box-shadow:0 3px 12px rgba(0,0,0,.15)}
+.site-header .main-nav a:focus-visible,.site-header .nav-cta:focus-visible{outline:3px solid #6ec6d2;outline-offset:3px}
+@media(max-width:850px){
+ body:not(:has(.portal-grid-approved)) .hero{min-height:245px}
+ body:not(:has(.portal-grid-approved)) .hero-inner{padding:35px 20px 32px}
+ body:not(:has(.portal-grid-approved)) main{margin-bottom:16px;padding:20px 14px 35px}
+ body:not(:has(.portal-grid-approved)) .atlas-shell{display:grid;grid-template-columns:1fr}
+ body:not(:has(.portal-grid-approved)) :is(.case-grid,.resource-shelf,.viewer-shell){grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.result-card,.case-card,.portal-card{transition:none!important}}
