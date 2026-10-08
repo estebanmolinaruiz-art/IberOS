@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.2"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.3"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1416,6 +1416,8 @@ DEDI_ORTHOGONAL_CANDIDATES = {
         "matched_de_di_pair": False,
         "external_variable_fixed": True,
         "same_or_comparable_root": True,
+        "root_relation": "SAME_ROOT_SINGLE_BRANCH",
+        "observed": True,
         "di_branch_present": False,
         "classification": "ORTHOGONAL_FUNCTIONAL_CONSTRAINT",
         "supports": [
@@ -1434,6 +1436,8 @@ DEDI_ORTHOGONAL_CANDIDATES = {
         "matched_de_di_pair": True,
         "external_variable_fixed": False,
         "same_or_comparable_root": True,
+        "root_relation": "SAME_FAMILY_NOT_VERIFIED_IDENTICAL",
+        "observed": True,
         "di_branch_present": True,
         "classification": "FORMAL_MATCHED_PAIR",
         "supports": [
@@ -1453,8 +1457,10 @@ DEDI_ORTHOGONAL_CANDIDATES = {
         "matched_de_di_pair": True,
         "external_variable_fixed": False,
         "same_or_comparable_root": True,
+        "root_relation": "STRUCTURAL_PARALLEL_ONLY",
+        "observed": True,
         "di_branch_present": True,
-        "classification": "FORMAL_MATCHED_PAIR_OUTSIDE_ROK",
+        "classification": "FORMAL_PARALLEL_UNVERIFIED_ROOT",
         "supports": [
             "DE/DI contrast replicates outside the ROK family",
             "simple vowel harmony is not sufficient",
@@ -1469,8 +1475,10 @@ DEDI_ORTHOGONAL_CANDIDATES = {
     "NP-DI-EGIAR": {
         "matched_de_di_pair": False,
         "external_variable_fixed": False,
-        "same_or_comparable_root": True,
-        "di_branch_present": True,
+        "same_or_comparable_root": False,
+        "root_relation": "NOT_OBSERVED",
+        "observed": False,
+        "di_branch_present": False,
         "classification": "MISSING_CONTROL",
         "supports": [],
         "does_not_support": ["any exact grammatical mapping"],
@@ -1490,24 +1498,29 @@ DEDI_REJECTED_SHORTCUTS = {
 
 
 def evaluate_dedi_candidate(reference: str) -> dict[str, Any]:
+    """Historical formal evidence never establishes an exact E/I feature."""
     if reference not in DEDI_ORTHOGONAL_CANDIDATES:
         raise KeyError(f"Unknown D(E/I) candidate: {reference}")
     c = DEDI_ORTHOGONAL_CANDIDATES[reference]
     criteria = {
-        "matched_de_di_pair": bool(c["matched_de_di_pair"]),
-        "external_variable_fixed": bool(c["external_variable_fixed"]),
-        "same_or_comparable_root": bool(c["same_or_comparable_root"]),
-        "di_branch_present": bool(c["di_branch_present"]),
+        "observed": c["observed"] is True,
+        "matched_de_di_pair": c["matched_de_di_pair"] is True,
+        "external_variable_fixed": c["external_variable_fixed"] is True,
+        "same_or_comparable_root": c["same_or_comparable_root"] is True,
+        "identical_root_verified": c["root_relation"] == "IDENTICAL_VERIFIED",
+        "di_branch_present": c["di_branch_present"] is True,
+        "independent_prediction_test": False,
     }
-    exact_pass = all(criteria.values())
     return {
-        "protocol": "DEDI-ORTHO-01",
+        "protocol": "DEDI-ORTHO-02",
         "reference": reference,
         "criteria": criteria,
+        "root_relation": c["root_relation"],
+        "missing_requirements": [k for k, v in criteria.items() if not v],
         "classification": c["classification"],
         "supports": list(c["supports"]),
         "does_not_support": list(c["does_not_support"]),
-        "state": "STRICT_ORTHOGONAL_PASS" if exact_pass else "OPEN",
+        "state": "OPEN",
         "note": c["note"],
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),
@@ -1518,7 +1531,7 @@ def dedi_orthogonal_matrix() -> dict[str, Any]:
     rows = [evaluate_dedi_candidate(ref) for ref in DEDI_ORTHOGONAL_CANDIDATES]
     passing = [r["reference"] for r in rows if r["state"] == "STRICT_ORTHOGONAL_PASS"]
     return {
-        "protocol": "DEDI-ORTHO-01",
+        "protocol": "DEDI-ORTHO-02",
         "formal_state": "CORE_MORPHOLOGICAL_COMPLEX",
         "official_score": 50,
         "exact_feature_state": "OPEN",
