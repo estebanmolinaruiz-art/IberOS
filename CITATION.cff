@@ -5,11 +5,16 @@ type: software
 authors:
   - family-names: "Molina Ruiz"
     given-names: "Esteban"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.22939179"
-    description: "Primary IberOS project publication"
-url: "https://zenodo.org/records/22939179"
+url: "https://github.com/estebanmolinaruiz-art/IberOS"
+repository-code: "https://github.com/estebanmolinaruiz-art/IberOS"
+references:
+  - type: report
+    title: "IberOS: marco experimental para el análisis interno y la validación reproducible de inscripciones ibéricas"
+    authors:
+      - family-names: "Molina Ruiz"
+        given-names: "Esteban"
+    doi: "10.5281/zenodo.22939179"
+    url: "https://zenodo.org/records/22939179"
 license: Apache-2.0
 version: "1.0.1"
 date-released: "2026-10-01"
