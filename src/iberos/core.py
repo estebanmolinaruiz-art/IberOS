@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.8"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.9"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1153,6 +1153,80 @@ def salir_prospective_candidate_matrix() -> dict[str, Any]:
         ),
         "fail_or_degrade_trigger": (
             "A secure replicated SALIR occurrence in a clearly non-economic/non-value referent."
+        ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+KUTUR_PROSPECTIVE_CANDIDATES = {
+    "EL-VILAR-KUTAN-2022": {
+        "post_lock_or_genuinely_unused": False,
+        "kutu_family_secure": True,
+        "writing_formulary_context_fixed_independently": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "RETROSPECTIVE_SEMANTIC_CONVERGENCE",
+        "note": "KUTAN is related to KUTUN/KUTUR in a likely votive/cultic vessel context; publication predates C474 and context does not independently fix a writing/formulary meaning.",
+    },
+    "CERDANYA-KUTUN-KUTUR": {
+        "post_lock_or_genuinely_unused": False,
+        "kutu_family_secure": True,
+        "writing_formulary_context_fixed_independently": True,
+        "source_independent_of_hypothesis": True,
+        "classification": "STRONG_RETROSPECTIVE_CONVERGENCE",
+        "note": "Rupestrian KUTUN/KUTUR forms are explicitly connected in the literature with alphabet/signary practice, but they are pre-lock evidence.",
+    },
+    "PICO-AJOS-KUTUR": {
+        "post_lock_or_genuinely_unused": False,
+        "kutu_family_secure": True,
+        "writing_formulary_context_fixed_independently": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "RETROSPECTIVE_REPLICATION",
+        "note": "Secure KUTUR-family occurrence on lead; contextual semantics remain mixed and publication predates C474.",
+    },
+}
+
+
+def evaluate_kutur_prospective_candidate(reference: str) -> dict[str, Any]:
+    if reference not in KUTUR_PROSPECTIVE_CANDIDATES:
+        raise KeyError(f"Unknown KUTUR prospective candidate: {reference}")
+    c = KUTUR_PROSPECTIVE_CANDIDATES[reference]
+    criteria = {
+        "post_lock_or_genuinely_unused": bool(c["post_lock_or_genuinely_unused"]),
+        "kutu_family_secure": bool(c["kutu_family_secure"]),
+        "writing_formulary_context_fixed_independently": bool(c["writing_formulary_context_fixed_independently"]),
+        "source_independent_of_hypothesis": bool(c["source_independent_of_hypothesis"]),
+    }
+    missing = [k for k, v in criteria.items() if not v]
+    passed = all(criteria.values())
+    return {
+        "protocol": "KUTUR-PROSPECTIVE-01",
+        "reference": reference,
+        "criteria": criteria,
+        "missing_requirements": missing,
+        "state": "STRICT_PROSPECTIVE_PASS" if passed else "OPEN",
+        "classification": c["classification"],
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def kutur_prospective_candidate_matrix() -> dict[str, Any]:
+    rows = [evaluate_kutur_prospective_candidate(ref) for ref in KUTUR_PROSPECTIVE_CANDIDATES]
+    passing = [r["reference"] for r in rows if r["state"] == "STRICT_PROSPECTIVE_PASS"]
+    return {
+        "protocol": "KUTUR-PROSPECTIVE-01",
+        "rows": rows,
+        "passing_candidates": passing,
+        "gate_state": "PASS" if passing else "OPEN",
+        "next_required_evidence": (
+            "A post-C474 or genuinely unused object with secure KUTU-/KUTUR-family "
+            "segmentation and an independently fixed writing/inscription/formulary context."
+        ),
+        "fail_or_degrade_trigger": (
+            "Repeated secure KUTU-/KUTUR occurrences in a semantic class clearly unrelated "
+            "to writing/inscription/formulary practice."
         ),
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),

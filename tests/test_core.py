@@ -30,6 +30,8 @@ from iberos import (
     ka_direction_candidate_matrix,
     evaluate_salir_prospective_candidate,
     salir_prospective_candidate_matrix,
+    evaluate_kutur_prospective_candidate,
+    kutur_prospective_candidate_matrix,
 )
 
 
@@ -384,3 +386,25 @@ def test_murcia_has_context_but_no_salir():
     assert m["criteria"]["economic_context_fixed_independently"] is True
     assert m["criteria"]["salir_secure"] is False
     assert m["state"] == "OPEN"
+
+
+
+def test_kutur_matrix_keeps_gate_open():
+    matrix = kutur_prospective_candidate_matrix()
+    assert matrix["gate_state"] == "OPEN"
+    assert matrix["passing_candidates"] == []
+    assert matrix["automatic_core_promotion"] is False
+
+
+def test_cerdanya_kutur_is_semantically_strong_but_prelock():
+    c = evaluate_kutur_prospective_candidate("CERDANYA-KUTUN-KUTUR")
+    assert c["criteria"]["kutu_family_secure"] is True
+    assert c["criteria"]["writing_formulary_context_fixed_independently"] is True
+    assert c["criteria"]["post_lock_or_genuinely_unused"] is False
+    assert c["state"] == "OPEN"
+
+
+def test_el_vilar_kutan_does_not_force_ritual_literal():
+    e = evaluate_kutur_prospective_candidate("EL-VILAR-KUTAN-2022")
+    assert e["criteria"]["kutu_family_secure"] is True
+    assert e["criteria"]["writing_formulary_context_fixed_independently"] is False
