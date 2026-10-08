@@ -34,6 +34,9 @@ from .core import (
     ROK_RECIPIENT_CANDIDATES,
     evaluate_rok_recipient_candidate,
     rok_recipient_candidate_matrix,
+    KA_DIRECTION_CANDIDATES,
+    evaluate_ka_direction_candidate,
+    ka_direction_candidate_matrix,
 )
 
 __all__ = [
@@ -72,6 +75,9 @@ __all__ = [
     "ROK_RECIPIENT_CANDIDATES",
     "evaluate_rok_recipient_candidate",
     "rok_recipient_candidate_matrix",
+    "KA_DIRECTION_CANDIDATES",
+    "evaluate_ka_direction_candidate",
+    "ka_direction_candidate_matrix",
 ]
 
 __version__ = "1.0.1"

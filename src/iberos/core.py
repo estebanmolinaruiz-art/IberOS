@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.6"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.7"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -983,6 +983,103 @@ def rok_recipient_candidate_matrix() -> dict[str, Any]:
             "A second independent physical object with secure NP-E/ER, "
             "same ROK lexeme, and recipient/beneficiary role fixed by "
             "bilingual, archaeological or procedural evidence."
+        ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+KA_DIRECTION_CANDIDATES = {
+    "BASTIDA-I": {
+        "new_independent_transaction": False,
+        "flow_fixed_before_linguistic_analysis": False,
+        "ka_ku_opportunity": True,
+        "prediction_preregistered": False,
+        "source_independent_of_hypothesis": False,
+        "classification": "STRONG_RETROSPECTIVE_CONVERGENCE",
+        "note": "Source-generating case for the outflow/inflow interpretation; cannot validate itself prospectively.",
+    },
+    "ORLEYL-CS.21.08": {
+        "new_independent_transaction": True,
+        "flow_fixed_before_linguistic_analysis": False,
+        "ka_ku_opportunity": True,
+        "prediction_preregistered": False,
+        "source_independent_of_hypothesis": False,
+        "classification": "STRONG_RETROSPECTIVE_CROSS_OBJECT_CONVERGENCE",
+        "note": "Independent physical object replicating KA vs (I)KU structure, but direction is interpreted within the same research framework.",
+    },
+    "PECH-MAHO-2025": {
+        "new_independent_transaction": True,
+        "flow_fixed_before_linguistic_analysis": False,
+        "ka_ku_opportunity": False,
+        "prediction_preregistered": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "EXTERNAL_CONVERGENCE",
+        "note": "Commercial/accounting context compatible, but no independently fixed directional KA/KU contrast.",
+    },
+    "EL-VILAR-2024": {
+        "new_independent_transaction": True,
+        "flow_fixed_before_linguistic_analysis": False,
+        "ka_ku_opportunity": False,
+        "prediction_preregistered": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "RETROSPECTIVE_REPLICATION",
+        "note": "Commercial lead with relevant vocabulary; transaction direction is not externally fixed.",
+    },
+    "MURCIA-2026-FRAGMENT": {
+        "new_independent_transaction": True,
+        "flow_fixed_before_linguistic_analysis": True,
+        "ka_ku_opportunity": False,
+        "prediction_preregistered": True,
+        "source_independent_of_hypothesis": True,
+        "classification": "INDETERMINATE",
+        "note": "Independent economic/administrative context, but only 11 signs and no secure KA/KU morphology.",
+    },
+}
+
+
+def evaluate_ka_direction_candidate(reference: str) -> dict[str, Any]:
+    if reference not in KA_DIRECTION_CANDIDATES:
+        raise KeyError(f"Unknown KA/KU direction candidate: {reference}")
+    c = KA_DIRECTION_CANDIDATES[reference]
+    criteria = {
+        "new_independent_transaction": bool(c["new_independent_transaction"]),
+        "flow_fixed_before_linguistic_analysis": bool(c["flow_fixed_before_linguistic_analysis"]),
+        "ka_ku_opportunity": bool(c["ka_ku_opportunity"]),
+        "prediction_preregistered": bool(c["prediction_preregistered"]),
+        "source_independent_of_hypothesis": bool(c["source_independent_of_hypothesis"]),
+    }
+    missing = [k for k, v in criteria.items() if not v]
+    passed = all(criteria.values())
+    return {
+        "protocol": "KA-DIRECTION-PROSPECTIVE-01",
+        "reference": reference,
+        "criteria": criteria,
+        "missing_requirements": missing,
+        "state": "STRICT_PROSPECTIVE_PASS" if passed else "OPEN",
+        "classification": c["classification"],
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def ka_direction_candidate_matrix() -> dict[str, Any]:
+    rows = [evaluate_ka_direction_candidate(ref) for ref in KA_DIRECTION_CANDIDATES]
+    passing = [r["reference"] for r in rows if r["state"] == "STRICT_PROSPECTIVE_PASS"]
+    return {
+        "protocol": "KA-DIRECTION-PROSPECTIVE-01",
+        "rows": rows,
+        "passing_candidates": passing,
+        "gate_state": "PASS" if passing else "OPEN",
+        "frozen_prediction": {
+            "KA": "target/destination/allocation-like; compatible with document-perspective outflow",
+            "KU": "source/origin/provenance-like; compatible with document-perspective inflow",
+        },
+        "next_required_evidence": (
+            "A genuinely independent transaction/offering/ledger where direction is fixed "
+            "before linguistic analysis and KA/KE versus KU can be tested against a "
+            "preregistered target/source prediction."
         ),
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),

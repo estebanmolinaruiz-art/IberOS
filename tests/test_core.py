@@ -26,6 +26,8 @@ from iberos import (
     family_bottlenecks,
     evaluate_rok_recipient_candidate,
     rok_recipient_candidate_matrix,
+    evaluate_ka_direction_candidate,
+    ka_direction_candidate_matrix,
 )
 
 
@@ -333,3 +335,28 @@ def test_rok_recipient_matrix_keeps_semantic_gate_open():
     c = evaluate_rok_recipient_candidate("C.21.10")
     assert "recipient_role_fixed_externally" in c["missing_requirements"]
     assert c["automatic_core_promotion"] is False
+
+
+
+def test_ka_direction_matrix_rejects_source_generated_validation():
+    b = evaluate_ka_direction_candidate("BASTIDA-I")
+    assert b["state"] == "OPEN"
+    assert b["criteria"]["source_independent_of_hypothesis"] is False
+
+    o = evaluate_ka_direction_candidate("ORLEYL-CS.21.08")
+    assert o["criteria"]["new_independent_transaction"] is True
+    assert o["criteria"]["flow_fixed_before_linguistic_analysis"] is False
+
+
+def test_murcia_fragment_is_contextually_independent_but_linguistically_powerless():
+    m = evaluate_ka_direction_candidate("MURCIA-2026-FRAGMENT")
+    assert m["criteria"]["flow_fixed_before_linguistic_analysis"] is True
+    assert m["criteria"]["ka_ku_opportunity"] is False
+    assert m["state"] == "OPEN"
+
+
+def test_ka_direction_gate_remains_open():
+    matrix = ka_direction_candidate_matrix()
+    assert matrix["gate_state"] == "OPEN"
+    assert matrix["passing_candidates"] == []
+    assert matrix["automatic_core_promotion"] is False
