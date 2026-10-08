@@ -10,6 +10,7 @@ from iberos import (
     rok_semantic_guard,
     validate_result,
     validate_rhotic_usage,
+    classify_validation_event,
 )
 
 
@@ -66,3 +67,37 @@ def test_rok_literal_direction_remains_open():
     assert rok_semantic_guard("give")["status"] == "PROBABLE_OPEN"
     assert rok_semantic_guard("receive")["status"] == "PROBABLE_OPEN"
     assert rok_semantic_guard("pay")["status"] == "UNSUPPORTED_LITERAL"
+
+
+
+def test_validation_event_gate_never_auto_promotes_core():
+    p = classify_validation_event(
+        gate_passed=True,
+        prospective=True,
+        preregistered=True,
+        independent=True,
+        contamination_free=True,
+    )
+    assert p["classification"] == "STRICT_PROSPECTIVE_PASS"
+    assert p["automatic_core_promotion"] is False
+
+    e = classify_validation_event(
+        gate_passed=True,
+        external_source=True,
+        independent=True,
+        contamination_free=True,
+    )
+    assert e["classification"] == "EXTERNAL_CONVERGENCE"
+
+    r = classify_validation_event(
+        gate_passed=True,
+        independent=True,
+        contamination_free=True,
+    )
+    assert r["classification"] == "RETROSPECTIVE_REPLICATION"
+
+    f = classify_validation_event(gate_passed=False)
+    assert f["classification"] == "FAIL"
+
+    u = classify_validation_event(gate_passed=None)
+    assert u["classification"] == "INDETERMINATE"
