@@ -25,3 +25,13 @@ Decision:
 D(E/I) formal morphology remains CORE at official score 50.
 The exact E↔I grammatical feature remains OPEN.
 No automatic promotion.
+
+## DEDI-ASSUMPTIONS-01 correction (2026-10-08)
+
+- NP-DI-EGIAR: NOT_OBSERVED; no secure DI branch is asserted.
+- Pech-Maho: SAME_FAMILY_NOT_VERIFIED_IDENTICAL.
+- Castellet: STRUCTURAL_PARALLEL_ONLY; identical-root segmentation not presumed.
+- Historical candidates always remain OPEN for exact semantics.
+- DEDI-PREDICTIVE-01 requires distinct PHYS_ID, independently sourced and pre-reading fixed external grammatical variable, verified root and segmentation, a preregistered mapping for E and I, and actual held-out correct predictions for both branches.
+- Positive synthetic software tests are not epigraphic validation; self-reported provenance flags require independent scientific audit.
+- C594, C474, C539, C541 and ICS D(E/I)=50 unchanged.
