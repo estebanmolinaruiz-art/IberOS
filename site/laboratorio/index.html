@@ -1,0 +1,52 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS+ · Mesa de Investigación</title><link rel="stylesheet" href="../assets/iberos-plus.css"></head><body><div id="head"></div>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Cuaderno de campo digital</div><h1>Mesa de Investigación</h1><p>Crea un proyecto reproducible a partir del corpus IberOS. Elige un objeto, formula una pregunta, decide qué herramientas utilizarás y fija de antemano tus controles y límites.</p><div class="hero-actions"><span class="research-badge">Privado en tu navegador</span><span class="research-badge">Exportable JSON + Markdown</span><span class="research-badge">Sin inventar evidencia</span></div></div></section>
+<main>
+<div class="field-strip"><div class="field-step"><b>1 · Selecciona</b><span>Parte de un objeto real del registro.</span></div><div class="field-step"><b>2 · Pregunta</b><span>Formula una cuestión que pueda contrastarse.</span></div><div class="field-step"><b>3 · Diseña</b><span>Elige módulos, controles y criterios.</span></div><div class="field-step"><b>4 · Exporta</b><span>Guarda un protocolo reproducible.</span></div></div>
+<div class="lab-shell"><section class="lab-panel">
+<div class="section-kicker">Proyecto</div><h2 class="section-title">Configura tu investigación</h2>
+<div class="form-grid">
+<div class="form-group"><label>Nombre del proyecto</label><input id="name" placeholder="Ej. Recurrencias de SALIR en contextos cuantificados"></div>
+<div class="form-group"><label>Investigador/a o equipo</label><input id="author" placeholder="Nombre o equipo"></div>
+<div class="form-group full"><label>Objeto de partida</label><select id="object"><option value="">Selecciona una pieza del corpus…</option></select></div>
+<div class="form-group full"><label>Pregunta de investigación</label><textarea id="question" placeholder="¿Qué relación estructural puede contrastarse sin asumir una traducción léxica?"></textarea></div>
+<div class="form-group full"><label>Hipótesis inicial — opcional</label><textarea id="hypothesis" placeholder="Escribe una hipótesis que pueda ser refutada. No hace falta tener una al comenzar."></textarea></div>
+<div class="form-group"><label>Unidad de comparación</label><select id="unit"><option>Objeto</option><option>Familia</option><option>Yacimiento</option><option>Soporte</option><option>Escritura</option><option>Contexto cuantificado</option></select></div>
+<div class="form-group"><label>Estado del proyecto</label><select id="status"><option>EXPLORATORY</option><option>PREREGISTERED</option><option>REPLICATION</option><option>CONTROL_STUDY</option></select></div>
+</div>
+
+<h3 style="margin-top:26px;color:var(--navy)">Herramientas a utilizar</h3>
+<div class="module-picker">
+<label class="module-check"><input type="checkbox" name="module" value="Core" checked><span><strong>Core</strong><small>Registro, familias y búsqueda.</small></span></label>
+<label class="module-check"><input type="checkbox" name="module" value="Write"><span><strong>Write</strong><small>Reconstrucción parcial controlada.</small></span></label>
+<label class="module-check"><input type="checkbox" name="module" value="Talk"><span><strong>Talk</strong><small>Reconocimiento léxico experimental.</small></span></label>
+<label class="module-check"><input type="checkbox" name="module" value="Atlas" checked><span><strong>Atlas</strong><small>Contexto territorial verificado.</small></span></label>
+</div>
+
+<h3 style="margin-top:26px;color:var(--navy)">Compromisos metodológicos</h3>
+<div class="module-picker">
+<label class="module-check"><input type="checkbox" name="guard" value="Separar evidencia, inferencia e hipótesis" checked><span><strong>Capas epistemológicas</strong><small>No mezclar dato e interpretación.</small></span></label>
+<label class="module-check"><input type="checkbox" name="guard" value="No rescate post-hoc de hipótesis" checked><span><strong>Sin rescate post-hoc</strong><small>No cambiar reglas solo para salvar el resultado.</small></span></label>
+<label class="module-check"><input type="checkbox" name="guard" value="Controlar dependencia y copias" checked><span><strong>Independencia</strong><small>Separar copias y controles dependientes.</small></span></label>
+<label class="module-check"><input type="checkbox" name="guard" value="Registrar resultados negativos" checked><span><strong>Resultados negativos</strong><small>La ausencia de apoyo también se conserva.</small></span></label>
+</div>
+<p style="margin-top:20px"><button class="btn gold" id="save">Actualizar cuaderno</button> <button class="btn" id="json">Exportar JSON</button> <button class="btn" id="md">Exportar Markdown</button></p>
+</section>
+
+<aside class="lab-panel sticky"><div class="section-kicker">Vista previa</div><h2 class="section-title">Cuaderno de investigación</h2><div id="objectcard" class="notice">Selecciona un objeto para comenzar.</div><pre id="preview" class="casefile"></pre><div id="actions"></div></aside></div>
+</main>
+<footer><div class="wrap">Los proyectos se guardan localmente en este navegador. IberOS no recibe ni almacena este formulario.</div></footer>
+<script type="module">
+import{header,text,csv,esc}from"../assets/portal-data.js";document.getElementById("head").innerHTML=header("../");
+const rows=csv(await text("../data/objects.csv"));const by=Object.fromEntries(rows.map(r=>[r.OBJECT_ID,r]));const sel=document.getElementById("object");
+rows.slice().sort((a,b)=>a.Nombre_objeto.localeCompare(b.Nombre_objeto)).forEach(r=>sel.insertAdjacentHTML("beforeend",'<option value="'+esc(r.OBJECT_ID)+'">'+esc(r.OBJECT_ID+" · "+r.Nombre_objeto)+'</option>'));
+const queryId=new URLSearchParams(location.search).get("id");const saved=JSON.parse(localStorage.getItem("iberos-research-project")||"null");
+if(saved){for(const k of["name","author","question","hypothesis","unit","status","object"])if(document.getElementById(k)&&saved[k]!=null)document.getElementById(k).value=saved[k];document.querySelectorAll('[name="module"]').forEach(x=>x.checked=(saved.modules||[]).includes(x.value));document.querySelectorAll('[name="guard"]').forEach(x=>x.checked=(saved.guards||[]).includes(x.value))}
+if(queryId&&by[queryId])sel.value=queryId;
+function project(){const id=sel.value,r=by[id]||null;return{schema:"IberOS-Research-Project/1.0",created:new Date().toISOString(),name:document.getElementById("name").value.trim(),author:document.getElementById("author").value.trim(),object:id,object_name:r?.Nombre_objeto||"",site:r?.Yacimiento||"",locality:r?.Localidad||"",support:r?.Soporte||"",script:r?.Escritura||"",chronology:r?.Cronología||"",inclusion:r?.IberOS_Inclusion||"",dependency_group:r?.Dependency_Group||"",paleo_status:r?.PALEO_Status||"",families:(r?.Familias_Tags||"").split(";").filter(Boolean),source:r?.Fuente||"",question:document.getElementById("question").value.trim(),hypothesis:document.getElementById("hypothesis").value.trim(),unit:document.getElementById("unit").value,status:document.getElementById("status").value,modules:[...document.querySelectorAll('[name="module"]:checked')].map(x=>x.value),guards:[...document.querySelectorAll('[name="guard"]:checked')].map(x=>x.value),workflow:["Contextualizar objeto y procedencia","Reunir paralelos y familias sin asignar significado automáticamente","Ejecutar herramientas seleccionadas y conservar resultados negativos","Separar evidencia / inferencia / hipótesis","Documentar límites y fuentes antes de formular traducción estimada"]}}
+function markdown(p){return '# '+(p.name||'Proyecto IberOS')+'\n\n**Estado:** '+p.status+'  \n**Investigador/a:** '+(p.author||'—')+'\n\n## Objeto de partida\n- OBJECT_ID: '+(p.object||'—')+'\n- Objeto: '+(p.object_name||'—')+'\n- Yacimiento: '+(p.site||'—')+'\n- Soporte: '+(p.support||'—')+'\n- Escritura: '+(p.script||'—')+'\n- Cronología: '+(p.chronology||'—')+'\n- Inclusión: '+(p.inclusion||'—')+'\n- Dependencia: '+(p.dependency_group||'—')+'\n- Familias: '+(p.families.join(', ')||'—')+'\n\n## Pregunta\n'+(p.question||'Pendiente')+'\n\n## Hipótesis inicial\n'+(p.hypothesis||'No fijada')+'\n\n## Módulos\n'+p.modules.map(x=>'- '+x).join('\n')+'\n\n## Compromisos metodológicos\n'+p.guards.map(x=>'- '+x).join('\n')+'\n\n## Flujo de trabajo\n'+p.workflow.map((x,i)=>(i+1)+'. '+x).join('\n')+'\n\n## Fuente declarada del objeto\n'+(p.source||'Pendiente en el registro')+'\n';
+}
+function update(){const p=project();localStorage.setItem("iberos-research-project",JSON.stringify(p));const r=by[p.object];document.getElementById("objectcard").innerHTML=r?'<strong>'+esc(r.Nombre_objeto)+'</strong><br>'+esc(r.OBJECT_ID)+' · '+esc(r.Yacimiento||"")+'<br><span class="meta">'+esc(r.Soporte||"")+' · '+esc(r.Escritura||"")+'</span>':'Selecciona un objeto para comenzar.';document.getElementById("preview").textContent=markdown(p);document.getElementById("actions").innerHTML=r?'<p><a class="btn" href="../ficha/?id='+encodeURIComponent(r.OBJECT_ID)+'">Abrir ficha</a> <a class="btn" href="../webengine/">Abrir Core</a> <a class="btn" href="../atlas/">Abrir Atlas</a></p>':''}
+function download(name,content,type){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+document.getElementById("save").onclick=update;document.getElementById("json").onclick=()=>{const p=project();download((p.name||"iberos-project").replace(/[^a-z0-9_-]+/gi,"_")+".json",JSON.stringify(p,null,2),"application/json")};document.getElementById("md").onclick=()=>{const p=project();download((p.name||"iberos-project").replace(/[^a-z0-9_-]+/gi,"_")+".md",markdown(p),"text/markdown")};
+document.querySelectorAll("input,textarea,select").forEach(x=>x.addEventListener("change",update));sel.addEventListener("change",update);update();
+</script></body></html>
