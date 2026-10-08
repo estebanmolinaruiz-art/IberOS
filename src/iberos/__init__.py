@@ -27,6 +27,10 @@ from .core import (
     family_gate_policy,
     evaluate_family_gate,
     family_gate_matrix,
+    FAMILY_SCIENTIFIC_SNAPSHOT,
+    family_scientific_snapshot,
+    family_dashboard,
+    family_bottlenecks,
 )
 
 __all__ = [
@@ -58,6 +62,10 @@ __all__ = [
     "family_gate_policy",
     "evaluate_family_gate",
     "family_gate_matrix",
+    "FAMILY_SCIENTIFIC_SNAPSHOT",
+    "family_scientific_snapshot",
+    "family_dashboard",
+    "family_bottlenecks",
 ]
 
 __version__ = "1.0.1"

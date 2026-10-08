@@ -21,6 +21,9 @@ from iberos import (
     family_gate_policy,
     evaluate_family_gate,
     family_gate_matrix,
+    family_scientific_snapshot,
+    family_dashboard,
+    family_bottlenecks,
 )
 
 
@@ -285,3 +288,33 @@ def test_family_matrix_does_not_auto_promote():
     assert matrix["automatic_core_promotion"] is False
     assert matrix["families"]["SALIR"]["state"] == "REVIEW_ELIGIBLE"
     assert matrix["families"]["KUTUR"]["state"] == "REVIEW_ELIGIBLE"
+
+
+
+def test_dashboard_matches_frozen_release_metrics():
+    d = family_dashboard()
+    rows = {r["family"]: r for r in d["rows"]}
+    assert rows["SALIR"]["state"] == "CORE"
+    assert rows["SALIR"]["official_score"] == 75
+    assert rows["ROK"]["official_score"] == 75
+    assert rows["KA_KE_KU"]["physical_counts"]["KA_Q"] == "7/154"
+    assert rows["KUTUR"]["physical_counts"]["objects"] == 9
+    assert rows["BAIDES_BATIR"]["physical_counts"]["BAITES_objects"] == 9
+    assert rows["NUM_METRO"]["state"] == "INFER"
+    assert d["official_metrics"]["ICS_global"] == 70.8
+    assert d["automatic_core_promotion"] is False
+
+
+def test_snapshot_keeps_narrow_claims_blocked():
+    rok = family_scientific_snapshot("ROK")
+    assert "direction" in rok["blocked_statement"]
+    salir = family_scientific_snapshot("SALIR")
+    assert "money" in salir["blocked_statement"]
+    num = family_scientific_snapshot("NUM_METRO")
+    assert "TOR=9" in num["blocked_statement"]
+
+
+def test_bottlenecks_start_with_release_priority():
+    b = family_bottlenecks()
+    assert [x["family"] for x in b[:4]] == ["ROK", "KA_KE_KU", "SALIR", "KUTUR"]
+    assert b[0]["next_gate"] == "ROK-RECIPIENT-02"

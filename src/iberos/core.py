@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.4"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.5"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -731,3 +731,163 @@ def family_gate_matrix(
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),
     }
+
+
+FAMILY_SCIENTIFIC_SNAPSHOT = {
+    "SALIR": {
+        "official_score": 75,
+        "release_status": "CORE_FUNCTIONAL_DOMAIN",
+        "physical_counts": {
+            "objects": 21,
+            "compatible": 21,
+            "incompatible": 0,
+        },
+        "validated_statement": "quantifiable economic/value domain",
+        "blocked_statement": "money/silver/payment/price as universal literal meaning",
+        "next_gate": "SALIR-PROSPECTIVE-01",
+        "next_gate_requirement": "post-lock independent SALIR occurrence with externally fixed economic/value context",
+    },
+    "ROK": {
+        "official_score": 75,
+        "release_status": "CORE_STRUCTURAL_DOMAIN",
+        "physical_counts": {
+            "provisional_ROK_objects": 15,
+            "SALIR_KUTUR_union": 29,
+            "SALIR_KUTUR_with_ROK": 6,
+        },
+        "validated_statement": "transfer-related structural/functional domain",
+        "blocked_statement": "exact give/receive direction and universal recipient/giver mapping",
+        "next_gate": "ROK-RECIPIENT-02",
+        "next_gate_requirement": "second independent NP-E/ER + ROK construction with recipient role fixed externally",
+    },
+    "KA_KE_KU": {
+        "official_score": 75,
+        "release_status": "CORE_RELATIONAL_SYSTEM",
+        "physical_counts": {
+            "KA_Q": "7/154",
+            "KE_Q": "0/115",
+            "KU_Q": "0/72",
+            "OOS_KA_Q": "5/67",
+            "OOS_KE_KU_Q": "0/69",
+            "fisher_global": 0.0035498356773919974,
+            "fisher_OOS": 0.02683178534571723,
+        },
+        "validated_statement": "KA is enriched in strict quantitative contexts; KA/KE/KU are functionally selective; KU has provenance/origin/affiliation support",
+        "blocked_statement": "universal source/target/provider/receiver direction",
+        "next_gate": "KA-DIRECTION-PROSPECTIVE-01",
+        "next_gate_requirement": "independent transaction with flow fixed externally before linguistic interpretation",
+    },
+    "KUTUR": {
+        "official_score": 75,
+        "release_status": "CORE_FUNCTIONAL_DOMAIN",
+        "physical_counts": {
+            "objects": 9,
+            "with_ROK": 2,
+        },
+        "validated_statement": "writing/inscription/formulary-compatible domain",
+        "blocked_statement": "ritual-only or commodity/money/gift/unit universal literalization",
+        "next_gate": "KUTUR-PROSPECTIVE-01",
+        "next_gate_requirement": "new independent post-lock KUTU-/KUTUR occurrence in externally writing/formulary-compatible context",
+    },
+    "BAIDES_BATIR": {
+        "official_score": 75,
+        "release_status": "CORE_ROLE_OPPOSITION",
+        "physical_counts": {
+            "BAITES_objects": 9,
+            "BATIR_objects": 5,
+        },
+        "validated_statement": "distinct human/documentary role labels with contextual functional hierarchy/opposition",
+        "blocked_statement": "BAIDES=universal witness or BATIR=universal magistrate/beneficiary",
+        "next_gate": "BAIT-BAT-ROLE-ORTHO-01",
+        "next_gate_requirement": "independent procedural/bilingual evidence fixing an institutional role without circular lexical inference",
+    },
+    "NUM_METRO": {
+        "official_score": None,
+        "release_status": "CROSS_MODULE_WORKING_SYSTEM",
+        "physical_counts": {
+            "BAN": "1 strong",
+            "BI_BIN": "2 contextual strong",
+            "LAUR": "4 contextual",
+            "BORSTE": "5 contextual",
+            "SEI": "6 contextual strong",
+            "SISBI": "7 strong contextual / not physically closed",
+            "SORSE": "8 external-system candidate / C.1.8 physical gate failed",
+            "TOR": "9 best current value / not closed",
+            "ABAR": "10 strong",
+            "ORGEI": "20 strong",
+        },
+        "validated_statement": "compositional numeral/metrological system with several physically or contextually anchored values",
+        "blocked_statement": "automatic promotion of every reconstructed numeral or TOR=9 as closed",
+        "next_gate": "NUM-789-NEXT",
+        "next_gate_requirement": "independent quantitative PHYS_ID for SISBI/SORSE/TOR or exact compositional/physical discriminator",
+    },
+}
+
+
+def family_scientific_snapshot(family: str) -> dict[str, Any]:
+    key = _normalize_family_name(family)
+    if key not in FAMILY_SCIENTIFIC_SNAPSHOT:
+        raise KeyError(f"No scientific snapshot registered for: {family}")
+    return {
+        "family": key,
+        **json.loads(json.dumps(FAMILY_SCIENTIFIC_SNAPSHOT[key])),
+        "authority": dict(AUTHORITY),
+    }
+
+
+def _dashboard_state(snapshot: dict[str, Any]) -> str:
+    status = snapshot["release_status"]
+    if status.startswith("CORE_"):
+        return "CORE"
+    if status == "CROSS_MODULE_WORKING_SYSTEM":
+        return "INFER"
+    return "OPEN"
+
+
+def family_dashboard(families: list[str] | None = None) -> dict[str, Any]:
+    """Return the release-grounded scientific dashboard for active families."""
+    requested = families or list(FAMILY_SCIENTIFIC_SNAPSHOT)
+    rows = []
+    for family in requested:
+        snap = family_scientific_snapshot(family)
+        rows.append({
+            "family": snap["family"],
+            "state": _dashboard_state(snap),
+            "official_score": snap["official_score"],
+            "release_status": snap["release_status"],
+            "validated_statement": snap["validated_statement"],
+            "blocked_statement": snap["blocked_statement"],
+            "next_gate": snap["next_gate"],
+            "next_gate_requirement": snap["next_gate_requirement"],
+            "physical_counts": snap["physical_counts"],
+        })
+    return {
+        "protocol": "FAMILY-DASHBOARD-01",
+        "authority": dict(AUTHORITY),
+        "official_metrics": dict(OFFICIAL_METRICS),
+        "rows": rows,
+        "automatic_core_promotion": False,
+        "note": "Dashboard state reflects the frozen release plus explicitly marked working modules; it does not create new promotions.",
+    }
+
+
+def family_bottlenecks() -> list[dict[str, Any]]:
+    """Rank current next gates by the frozen scientific priority."""
+    priority = [
+        "ROK",
+        "KA_KE_KU",
+        "SALIR",
+        "KUTUR",
+        "BAIDES_BATIR",
+        "NUM_METRO",
+    ]
+    return [
+        {
+            "rank": i + 1,
+            "family": family,
+            "next_gate": FAMILY_SCIENTIFIC_SNAPSHOT[family]["next_gate"],
+            "requirement": FAMILY_SCIENTIFIC_SNAPSHOT[family]["next_gate_requirement"],
+            "current_state": _dashboard_state(FAMILY_SCIENTIFIC_SNAPSHOT[family]),
+        }
+        for i, family in enumerate(priority)
+    ]

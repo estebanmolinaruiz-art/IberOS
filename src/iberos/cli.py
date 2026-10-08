@@ -16,6 +16,8 @@ from .core import (
     validate_rhotic_usage,
     registry_independence_audit,
     family_gate_policy,
+    family_dashboard,
+    family_bottlenecks,
 )
 
 
@@ -48,6 +50,9 @@ def main():
     p_rguard.add_argument("--neutralized", action="store_true")
 
     sub.add_parser("audit-independence")
+
+    sub.add_parser("dashboard")
+    sub.add_parser("bottlenecks")
 
     p_policy = sub.add_parser("family-policy")
     p_policy.add_argument("family")
@@ -94,6 +99,10 @@ def main():
             purpose=args.purpose,
             neutralized=args.neutralized,
         ), ensure_ascii=False, indent=2))
+    elif args.command == "dashboard":
+        print(json.dumps(family_dashboard(), ensure_ascii=False, indent=2))
+    elif args.command == "bottlenecks":
+        print(json.dumps(family_bottlenecks(), ensure_ascii=False, indent=2))
     elif args.command == "family-policy":
         print(json.dumps(family_gate_policy(args.family), ensure_ascii=False, indent=2))
     elif args.command == "audit-independence":
