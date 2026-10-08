@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Cuadernos ibéricos en 3D",
+    "object": "Colección de seis piezas: Dama de Galera, Bicha de Balazote, Dama del Cerro, Vaso de los Guerreros, Urna de Galera y Exvoto de Collado de los Jardines",
+    "author": "Trinidad Tortosa; Ángel M. Felicísimo; María Eugenia Polo; Alicia Rodero Riaza",
+    "institution": "Museo Arqueológico Nacional / Instituto de Arqueología de Mérida-CSIC / Centro Universitario de Mérida",
+    "url": "https://www.man.es/man/estudio/proyectos-investigacion/protohistoria/iconografia-iberica.html",
+    "license": "Proyecto oficial; consultar condiciones del MAN/CSIC antes de copiar o redistribuir modelos",
+    "reuse": "external_only",
+    "model_type": "scan/photogrammetry"
+  },
+  {
+    "title": "Dama de Elche — Javier Luengo / ArqueoBytes",
+    "object": "Dama de Elche",
+    "author": "Javier Luengo / ArqueoBytes",
+    "institution": "Modelo independiente; pieza original en Museo Arqueológico Nacional",
+    "url": "https://sketchfab.com/3d-models/dama-de-elche-06ec29c753ef428fb68271d4e36b5fc5",
+    "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
+    "reuse": "cc_by",
+    "model_type": "photogrammetry"
+  },
+  {
+    "title": "Guerrero de Moixent — Jorge Del Reguero",
+    "object": "Guerrero de Moixent",
+    "author": "JorgeDelReguero",
+    "institution": "Modelo independiente; pieza original en Museu de Prehistòria de València",
+    "url": "https://sketchfab.com/3d-models/guerrero-de-moixent-ecc48c0db3da4279b1932537da658f09",
+    "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
+    "reuse": "cc_by",
+    "model_type": "reconstruction/reproduction"
+  },
+  {
+    "title": "Plato cerámico ibérico — Cerro de las Cabezas",
+    "object": "Plato cerámico ibérico, Cerro de las Cabezas",
+    "author": "Global Digital Heritage",
+    "institution": "Global Digital Heritage / Museo de Valdepeñas / Junta de Comunidades de Castilla-La Mancha",
+    "url": "https://sketchfab.com/3d-models/iberian-ceramic-plate-cerro-de-las-cabezas-c64581d4d89749e7bba0f83675d53c46",
+    "license": "CC BY-NC según la ficha del recurso incluida en el paquete IberOS",
+    "reuse": "cc_by_nc",
+    "model_type": "photogrammetry"
+  },
+  {
+    "title": "Estatuas ibéricas del Cerro de los Santos",
+    "object": "Conjunto escultórico del Cerro de los Santos",
+    "author": "yugengen",
+    "institution": "Modelo independiente; piezas del Museo Arqueológico Nacional",
+    "url": "https://sketchfab.com/3d-models/iberian-statues-from-cerro-de-los-santos-18cd19846f2f4c0985a9a62185d853fa",
+    "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
+    "reuse": "cc_by",
+    "model_type": "3d_model"
+  },
+  {
+    "title": "Exvoto mujer con pajarito — MAN",
+    "object": "Exvoto femenino oferente, Collado de los Jardines",
+    "author": "Museo Arqueológico Nacional",
+    "institution": "Museo Arqueológico Nacional",
+    "url": "https://sketchfab.com/3d-models/exvoto-mujer-con-pajarito-468b013f7ea94d03bf7a87c4a94a2b67",
+    "license": "Licencia de reutilización no verificada en el paquete; enlazar sin copiar",
+    "reuse": "external_only",
+    "model_type": "3d_model"
+  }
+]
