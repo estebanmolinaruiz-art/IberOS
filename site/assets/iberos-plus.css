@@ -276,3 +276,39 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 footer{background:#061a29;color:#f5e5c9}
 @media(max-width:670px){.hero h1{font-size:clamp(2.45rem,10vw,4.5rem)}.hero::before{background-position:63% center}.hero-inner{position:relative}.editorial-panel{border-radius:13px}body::before{background-position:65% center}}
 @media(prefers-reduced-motion:reduce){.portal-card{transition:none}.portal-card:hover{transform:none}}
+
+/* IberOS+ / Sistema visual aprobado para todas las páginas interiores.
+   La portada validada permanece intacta. */
+body.iberos-inner{background:#e9d5b5;color:#10263a}
+body.iberos-inner::before{position:fixed;inset:0;z-index:-1;opacity:.24;content:"";pointer-events:none;background:linear-gradient(0deg,#160e0a66,#001c2c44),url("../flyer-final-aprobado.jpg") center center/cover no-repeat}
+body.iberos-inner .site-header{background:linear-gradient(90deg,#031927f7,#07253ae8);border-bottom:1px solid #f4c57e80;box-shadow:0 4px 20px #00152270}
+body.iberos-inner .site-header .header-inner{max-width:1484px;min-height:69px}
+body.iberos-inner .site-header .brand-text strong{font-size:clamp(1.45rem,2.3vw,2.55rem);line-height:1;color:#fffdf7}
+body.iberos-inner .site-header .brand-text strong span{color:#81cada}
+body.iberos-inner .site-header .brand-text small{color:#e9e6d8;letter-spacing:.10em;text-transform:uppercase;font:600 .55rem/1.6 system-ui,sans-serif}
+body.iberos-inner .site-header .brand-mark{color:#f1c475;font:700 2.2rem/1 Georgia,serif}
+body.iberos-inner .site-header .main-nav a{font:600 clamp(.8rem,.98vw,1rem)/1.4 Georgia,serif;color:#f7eddd}
+body.iberos-inner .site-header .main-nav a.active{color:#ffda9a;text-decoration:underline;text-decoration-color:#f5cd8b;text-underline-offset:10px}
+body.iberos-inner .nav-cta{background:linear-gradient(#ffe9bd,#e9b46f);color:#082033;border-radius:9px}
+body.iberos-inner .hero{height:auto;min-height:290px;isolation:isolate;overflow:hidden;background:#071e30;border:0}
+body.iberos-inner .hero::before{background-image:linear-gradient(90deg,#041c2ffb 0%,#051d2df1 23%,#06283bcc 44%,#09273945 73%,#071f2d18 100%),url("../flyer-final-aprobado.jpg");background-size:cover,145% auto;background-position:center,right 14%;filter:none;transform:none}
+body.iberos-inner .hero::after{background:linear-gradient(0deg,#062334b3 0%,transparent 35%)}
+body.iberos-inner .hero-inner{max-width:1484px;margin:auto;padding:35px 48px 46px;position:relative;z-index:2}
+body.iberos-inner .hero .eyebrow{font:700 .76rem Georgia,serif;letter-spacing:.28em;color:#f5d392;text-transform:uppercase}
+body.iberos-inner .hero h1{font:700 clamp(3.4rem,5.8vw,6rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.05em;max-width:950px;margin:14px 0;color:#fff9ed;text-shadow:0 3px 16px #0015228c}
+body.iberos-inner .hero h1 em{font-style:normal;color:#f4c985}
+body.iberos-inner .hero p{font:clamp(1.1rem,1.55vw,1.55rem)/1.35 Georgia,serif;max-width:780px;margin:12px 0 18px;color:#fff5df}
+body.iberos-inner .hero-search{max-width:760px;background:#fffaf0;border-radius:9px;box-shadow:0 8px 25px #00142166}
+body.iberos-inner .hero-search input{color:#17334a;font-family:Georgia,serif}
+body.iberos-inner .hero-search button{background:linear-gradient(#ffe4b4,#e8b269);color:#061e30;font-family:Georgia,serif}
+body.iberos-inner .hero-chip{background:#082c43e6;border:1px solid #72b4cacc;color:#fdf2dc;font-family:Georgia,serif}
+body.iberos-inner main{max-width:1500px;margin:-5px auto 0;position:relative;z-index:1}
+body.iberos-inner main>section,body.iberos-inner main>.wrap,body.iberos-inner main>.panel{border-color:#d8b786}
+body.iberos-inner .editorial-panel,body.iberos-inner .panel,body.iberos-inner .filters,body.iberos-inner .portal-card,body.iberos-inner .filter-panel,body.iberos-inner .record-card{background:linear-gradient(155deg,#fffaf0,#f5e8d1);border-color:#dac49e;box-shadow:0 7px 22px #28180818}
+body.iberos-inner h2,body.iberos-inner h3,body.iberos-inner .section-title{font-family:Georgia,"Times New Roman",serif;color:#10263d}
+body.iberos-inner .btn.gold{background:linear-gradient(#ffe4b1,#e4ad63);color:#10243a;border:1px solid #dfb777}
+body.iberos-inner .stats-bar{background:linear-gradient(#092c42,#041c2e);color:#f9ebd8}
+body.iberos-inner footer{background:#061b2d;color:#e4d6bc}
+body.iberos-inner a:focus-visible,body.iberos-inner button:focus-visible,body.iberos-inner input:focus-visible{outline:3px solid #23b7d7;outline-offset:2px}
+@media(max-width:850px){body.iberos-inner .hero{min-height:260px}body.iberos-inner .hero::before{background-size:cover,215% auto;background-position:center,70% 12%}body.iberos-inner .hero-inner{padding:35px 22px 42px}body.iberos-inner .hero h1{font-size:clamp(2.8rem,9vw,4.8rem);max-width:97%}body.iberos-inner .hero p{font-size:1.07rem}body.iberos-inner .site-header .main-nav a{font-size:.92rem}}
+@media(max-width:500px){body.iberos-inner .hero::before{background-size:cover,270% auto;background-position:center,75% 11%}body.iberos-inner .hero .eyebrow{font-size:.62rem;letter-spacing:.17em}body.iberos-inner .hero h1{font-size:clamp(2.6rem,11vw,4rem)}body.iberos-inner .hero-search{display:flex;max-width:100%}body.iberos-inner .hero-search input{min-width:0}body.iberos-inner .hero-search button{white-space:nowrap}}
