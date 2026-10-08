@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.5"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.6"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -891,3 +891,99 @@ def family_bottlenecks() -> list[dict[str, Any]]:
         }
         for i, family in enumerate(priority)
     ]
+
+
+ROK_RECIPIENT_CANDIDATES = {
+    "D.0.1": {
+        "independent_from_primary": False,
+        "np_e_er_secure": True,
+        "recipient_role_fixed_externally": True,
+        "same_rok_lexeme": True,
+        "note": "Primary anchor: BASTUBAR-ER + TEŔOKAN + UTUR.",
+    },
+    "F.9.5": {
+        "independent_from_primary": True,
+        "np_e_er_secure": False,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "Orleyl intra-object E/KUTUR/ROK network; E segmentation/role not externally fixed.",
+    },
+    "F.9.7": {
+        "independent_from_primary": True,
+        "np_e_er_secure": False,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "Published aŕeŕ-e ... KUTU ... BAS-BITEŔOK; not adequate for automatic recipient count.",
+    },
+    "H.0.1": {
+        "independent_from_primary": True,
+        "np_e_er_secure": True,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "HOLD physical replication of formal E/ER+ROK frame; recipient identity not externally fixed.",
+    },
+    "B.7.38": {
+        "independent_from_primary": True,
+        "np_e_er_secure": False,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "VAL formal compatibility; nearby -e role is not independently fixed.",
+    },
+    "C.17.1": {
+        "independent_from_primary": True,
+        "np_e_er_secure": False,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "Published eŕok-paradigm occurrence; no independently fixed recipient participant.",
+    },
+    "C.21.10": {
+        "independent_from_primary": True,
+        "np_e_er_secure": False,
+        "recipient_role_fixed_externally": False,
+        "same_rok_lexeme": True,
+        "note": "ŚALAIÁRKIS is a secure personal name in śalaiárkisteŕokan, but -te segmentation and recipient role remain open.",
+    },
+}
+
+
+def evaluate_rok_recipient_candidate(reference: str) -> dict[str, Any]:
+    """Evaluate one object against the frozen ROK-RECIPIENT-02 discriminator."""
+    if reference not in ROK_RECIPIENT_CANDIDATES:
+        raise KeyError(f"Unknown ROK recipient candidate: {reference}")
+    c = ROK_RECIPIENT_CANDIDATES[reference]
+    criteria = {
+        "independent_from_primary": bool(c["independent_from_primary"]),
+        "np_e_er_secure": bool(c["np_e_er_secure"]),
+        "recipient_role_fixed_externally": bool(c["recipient_role_fixed_externally"]),
+        "same_rok_lexeme": bool(c["same_rok_lexeme"]),
+    }
+    missing = [k for k, v in criteria.items() if not v]
+    passed = all(criteria.values())
+    return {
+        "protocol": "ROK-RECIPIENT-02",
+        "reference": reference,
+        "criteria": criteria,
+        "missing_requirements": missing,
+        "state": "STRICT_PROSPECTIVE_PASS" if passed else "OPEN",
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def rok_recipient_candidate_matrix() -> dict[str, Any]:
+    rows = [evaluate_rok_recipient_candidate(ref) for ref in ROK_RECIPIENT_CANDIDATES]
+    passing = [r["reference"] for r in rows if r["state"] == "STRICT_PROSPECTIVE_PASS"]
+    return {
+        "protocol": "ROK-RECIPIENT-02",
+        "rows": rows,
+        "passing_candidates": passing,
+        "gate_state": "PASS" if passing else "OPEN",
+        "next_required_evidence": (
+            "A second independent physical object with secure NP-E/ER, "
+            "same ROK lexeme, and recipient/beneficiary role fixed by "
+            "bilingual, archaeological or procedural evidence."
+        ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }

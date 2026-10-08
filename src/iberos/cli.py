@@ -18,6 +18,7 @@ from .core import (
     family_gate_policy,
     family_dashboard,
     family_bottlenecks,
+    rok_recipient_candidate_matrix,
 )
 
 
@@ -53,6 +54,7 @@ def main():
 
     sub.add_parser("dashboard")
     sub.add_parser("bottlenecks")
+    sub.add_parser("rok-recipient-matrix")
 
     p_policy = sub.add_parser("family-policy")
     p_policy.add_argument("family")
@@ -101,6 +103,8 @@ def main():
         ), ensure_ascii=False, indent=2))
     elif args.command == "dashboard":
         print(json.dumps(family_dashboard(), ensure_ascii=False, indent=2))
+    elif args.command == "rok-recipient-matrix":
+        print(json.dumps(rok_recipient_candidate_matrix(), ensure_ascii=False, indent=2))
     elif args.command == "bottlenecks":
         print(json.dumps(family_bottlenecks(), ensure_ascii=False, indent=2))
     elif args.command == "family-policy":

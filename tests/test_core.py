@@ -24,6 +24,8 @@ from iberos import (
     family_scientific_snapshot,
     family_dashboard,
     family_bottlenecks,
+    evaluate_rok_recipient_candidate,
+    rok_recipient_candidate_matrix,
 )
 
 
@@ -318,3 +320,16 @@ def test_bottlenecks_start_with_release_priority():
     b = family_bottlenecks()
     assert [x["family"] for x in b[:4]] == ["ROK", "KA_KE_KU", "SALIR", "KUTUR"]
     assert b[0]["next_gate"] == "ROK-RECIPIENT-02"
+
+
+
+def test_rok_recipient_matrix_keeps_semantic_gate_open():
+    m = rok_recipient_candidate_matrix()
+    assert m["gate_state"] == "OPEN"
+    assert m["passing_candidates"] == []
+    h = evaluate_rok_recipient_candidate("H.0.1")
+    assert h["criteria"]["np_e_er_secure"] is True
+    assert h["criteria"]["recipient_role_fixed_externally"] is False
+    c = evaluate_rok_recipient_candidate("C.21.10")
+    assert "recipient_role_fixed_externally" in c["missing_requirements"]
+    assert c["automatic_core_promotion"] is False

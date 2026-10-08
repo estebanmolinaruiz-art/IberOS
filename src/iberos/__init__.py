@@ -31,6 +31,9 @@ from .core import (
     family_scientific_snapshot,
     family_dashboard,
     family_bottlenecks,
+    ROK_RECIPIENT_CANDIDATES,
+    evaluate_rok_recipient_candidate,
+    rok_recipient_candidate_matrix,
 )
 
 __all__ = [
@@ -66,6 +69,9 @@ __all__ = [
     "family_scientific_snapshot",
     "family_dashboard",
     "family_bottlenecks",
+    "ROK_RECIPIENT_CANDIDATES",
+    "evaluate_rok_recipient_candidate",
+    "rok_recipient_candidate_matrix",
 ]
 
 __version__ = "1.0.1"
