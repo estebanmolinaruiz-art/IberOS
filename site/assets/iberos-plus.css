@@ -381,3 +381,38 @@ body.iberos-inner .hero::after{background:linear-gradient(0deg,#09283a77,transpa
  body.iberos-inner .research-dock .meta{font-size:.78rem!important}
  body.iberos-inner .research-dock .btn{padding:9px 11px!important;font-size:.82rem!important}
 }
+
+/* IberOS+ responsive architecture: desktop >= 901px / tablet 601-900px / phone <= 600px.
+   Interior pages only. No changes to approved cover. */
+@media (min-width:901px){
+ body.iberos-inner .site-header .main-nav{display:flex}
+ body.iberos-inner .site-header .menu-toggle{display:none}
+ body.iberos-inner .hero-inner{padding:42px 48px 48px!important}
+ body.iberos-inner .hero h1{font-size:clamp(3.4rem,5.8vw,6rem)!important}
+ body.iberos-inner .hero .hero-search{display:flex!important;max-width:760px!important}
+ body.iberos-inner .hero .hero-search button{width:auto!important;padding:14px 24px!important}
+}
+@media (max-width:600px){
+ body.iberos-inner .site-header .main-nav:not(.open){display:none!important}
+ body.iberos-inner .site-header .main-nav.open{display:flex!important;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#061d30;padding:14px;box-shadow:0 9px 20px #00172780;z-index:30}
+ body.iberos-inner .site-header .menu-toggle{display:block!important;order:2}
+ body.iberos-inner .site-header .nav-actions{order:1}
+ body.iberos-inner .site-header .nav-search{display:none}
+ body.iberos-inner .site-header .brand-text small{display:none}
+ body.iberos-inner .site-header .nav-cta{max-width:110px;text-align:center}
+ body.iberos-inner .hero .hero-inner{padding:26px 16px 27px!important}
+ body.iberos-inner .hero h1{font-size:clamp(2rem,8.5vw,2.9rem)!important;max-width:100%!important}
+ body.iberos-inner .hero p{font-size:.95rem!important}
+ body.iberos-inner .hero .hero-search{display:grid!important;grid-template-columns:minmax(0,1fr) 78px!important}
+ body.iberos-inner .hero .hero-search button{min-width:0!important;width:78px!important;padding:9px 5px!important;font-size:.76rem!important}
+ body.iberos-inner .hero .hero-search input{font-size:.8rem!important;min-width:0!important}
+ body.iberos-inner .corpus-shell,body.iberos-inner .atlas-shell,body.iberos-inner .lab-shell,body.iberos-inner .detail,body.iberos-inner .artifact-stage{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+ body.iberos-inner .filters{position:static!important;max-width:100%!important;min-width:0!important}
+ body.iberos-inner .corpus-grid,body.iberos-inner .portal-grid,body.iberos-inner .resource-shelf,body.iberos-inner .viewer-shell{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+ body.iberos-inner .research-dock{display:flex!important;flex-wrap:wrap!important}
+ body.iberos-inner main{min-width:0!important;max-width:100%!important;overflow-wrap:anywhere}
+}
+@media (min-width:601px) and (max-width:900px){
+ body.iberos-inner .hero h1{font-size:clamp(2.8rem,6vw,4.2rem)!important}
+ body.iberos-inner .portal-grid,body.iberos-inner .corpus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
