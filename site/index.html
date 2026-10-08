@@ -3,41 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IberOS Open Research Kit</title>
+<meta name="description" content="IberOS — beta pública: herramientas reproducibles para análisis interno de inscripciones ibéricas.">
+<title>IberOS · Beta pública</title>
 <style>
-body{font-family:system-ui,Arial,sans-serif;max-width:980px;margin:40px auto;padding:0 20px;line-height:1.55;color:#1e293b}
-h1,h2{color:#1f4e78}.card{border:1px solid #d8dee9;border-radius:12px;padding:18px;margin:14px 0}
-code{background:#eef2f7;padding:2px 5px;border-radius:4px}.tag{display:inline-block;background:#e2f0d9;padding:4px 9px;border-radius:999px;margin:3px}
-a.button{display:inline-block;padding:8px 12px;border:1px solid #1f4e78;border-radius:8px;text-decoration:none;margin:4px 8px 4px 0}
+:root{--navy:#0b2340;--navy2:#123b67;--gold:#c89b3c;--cream:#f6f0e4;--ink:#172033;--muted:#5f6876;--line:#dfd5c3;--ok:#1f6f54}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(135deg,var(--navy),#0d3157 70%,#184875);color:white;padding:18px 22px;border-bottom:4px solid var(--gold);position:sticky;top:0;z-index:20}
+nav{max-width:1180px;margin:auto;display:flex;gap:15px;align-items:center;flex-wrap:wrap}nav strong{font-size:1.2rem;letter-spacing:.04em;margin-right:auto}nav a{color:#fff;text-decoration:none;font-size:.92rem;opacity:.92}nav a:hover{color:#f4d78c}
+.hero{background:radial-gradient(circle at 75% 25%,rgba(200,155,60,.24),transparent 30%),linear-gradient(135deg,#102e50,#071b31);color:#fff;padding:78px 22px 64px}
+.wrap{max-width:1180px;margin:auto}.eyebrow{color:#f0c96b;text-transform:uppercase;letter-spacing:.16em;font-weight:700;font-size:.76rem}.hero h1{font-size:clamp(2.4rem,6vw,5.3rem);line-height:.94;margin:.18em 0}.hero p{max-width:760px;font-size:1.12rem;color:#d9e5ef}.btn{display:inline-block;padding:11px 15px;border-radius:8px;text-decoration:none;font-weight:700;margin:7px 7px 0 0}.primary{background:var(--gold);color:#10233d}.secondary{border:1px solid rgba(255,255,255,.45);color:#fff}
+main{padding:38px 22px 70px}.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:-62px;position:relative}.stat{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);padding:18px;border-radius:10px;box-shadow:0 10px 28px rgba(11,35,64,.08)}.stat b{display:block;font-size:1.65rem;color:var(--navy)}
+h2{font-size:2rem;color:var(--navy);margin:48px 0 10px}.lead{max-width:850px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);padding:20px;border-radius:12px}.card h3{color:var(--navy);margin-top:0}.pill{display:inline-block;font-size:.74rem;font-weight:800;padding:4px 8px;border-radius:99px;background:#eaf4ef;color:var(--ok);margin-bottom:8px}.pill.warn{background:#fff2d7;color:#835c0a}.card a{color:#174f83;font-weight:700}.method{border-left:5px solid var(--gold);background:#fff;padding:20px 22px;margin:20px 0;border-radius:0 10px 10px 0}.method code{display:block;background:#f3f5f7;padding:12px;border-radius:6px;overflow:auto}
+footer{background:#071b31;color:#cbd8e5;padding:28px 22px}footer a{color:#f0c96b}
+small{color:var(--muted)}
 </style>
 </head>
 <body>
-<h1>IberOS Open Research Kit</h1>
-<p><strong>IberOS — creado por Esteban Molina Ruiz</strong></p>
-<p>Herramientas reproducibles y resultados legibles por máquina para el análisis interno de inscripciones ibéricas.</p>
-
-<div class="card">
-<h2>Motor web sincronizado</h2>
-<p><strong>IberOS Web Engine 1.0.1-web.2</strong> · autoridad C594 / C474 / C539 / C541.</p>
-<a class="button" href="webengine/">Abrir IberOS Web Engine</a>
-<a class="button" href="webengine/status.json">Estado JSON</a>
+<header><nav><strong>IberOS</strong><a href="./">Inicio</a><a href="webengine/">Core</a><a href="write/">Write</a><a href="talk/">Talk beta</a><a href="atlas/">Atlas beta</a><a href="https://github.com/estebanmolinaruiz-art/IberOS">GitHub</a></nav></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">Beta pública · 8 octubre 2026</div><h1>IberOS</h1><p>Entorno experimental y reproducible para explorar el análisis interno de inscripciones ibéricas. Esta publicación permite probar módulos web reales y consultar su estado sin presentar hipótesis como desciframientos establecidos.</p><a class="btn primary" href="webengine/">Probar Core WebEngine</a><a class="btn secondary" href="write/">Probar IberOS-Write</a><a class="btn secondary" href="atlas/">Abrir Atlas</a></div></section>
+<main><div class="wrap">
+<div class="status"><div class="stat"><b>38</b>objetos en el registro público</div><div class="stat"><b>Core</b>WebEngine público</div><div class="stat"><b>Write</b>motor web experimental</div><div class="stat"><b>6</b>nodos cartográficos beta</div></div>
+<h2>Probar IberOS</h2><p class="lead">La beta pública separa herramientas utilizables de los componentes aún en preparación. Los resultados deben leerse como capas de evidencia, inferencia e hipótesis.</p>
+<div class="grid">
+<article class="card"><span class="pill">Disponible</span><h3>Core · WebEngine</h3><p>Consulta del registro público, familias, validación e interoperabilidad del Open Research Kit.</p><p><a href="webengine/">Abrir WebEngine →</a></p><small>El kit público no reimplementa todos los módulos históricos privados.</small></article>
+<article class="card"><span class="pill">Disponible</span><h3>IberOS-Write</h3><p>WRITE-GRAMMAR web con reconstrucción parcial, abstención controlada y guardrails contra invención.</p><p><a href="write/">Abrir Write →</a></p><small>No es un traductor general español → ibérico.</small></article>
+<article class="card"><span class="pill warn">Beta</span><h3>IberOS-Talk</h3><p>Prueba de reconocimiento léxico de formas documentadas. La pronunciación histórica no se considera validada.</p><p><a href="talk/">Abrir Talk beta →</a></p></article>
+<article class="card"><span class="pill warn">Beta</span><h3>Atlas</h3><p>Seis nodos geográficos verificados para explorar el despliegue territorial inicial del proyecto.</p><p><a href="atlas/">Abrir Atlas beta →</a></p></article>
 </div>
-
-<div class="card">
-<h2>IberOS-Write</h2>
-<p><strong>WRITE-GRAMMAR v0.3-web.2</strong> con BI-DISAMBIG-01, PALEO-RHOTIC-LOCK-01 y ŔOK limitado al dominio funcional de transferencia.</p>
-<a class="button" href="write/">Abrir IberOS-Write</a>
-<a class="button" href="write/status.json">Estado JSON</a>
-</div>
-
-<div class="card">
-<h2>Disciplina científica</h2>
-<p><code>EVIDENCIA → INFERENCIA → HIPÓTESIS → TRADUCCIÓN ESTIMADA</code></p>
-<span class="tag">ICS 70,8 %</span><span class="tag">ŔOK 75</span><span class="tag">KA/KE 75</span><span class="tag">SALIR 75</span><span class="tag">KUTUR 75</span><span class="tag">BAIDES/BATIR 75</span><span class="tag">D(E/I) 50</span>
-<p>Son indicadores de validación, no porcentaje de lengua ibérica descifrada.</p>
-</div>
-
-<p>DOI principal: <a href="https://doi.org/10.5281/zenodo.22939179">10.5281/zenodo.22939179</a></p>
-<p><a href="https://github.com/estebanmolinaruiz-art/IberOS">Repositorio GitHub</a></p>
-</body>
-</html>
+<h2>Disciplina científica</h2><div class="method"><code>EVIDENCIA → INFERENCIA → HIPÓTESIS → TRADUCCIÓN ESTIMADA</code><p>Los indicadores de validación publicados por IberOS no representan un “porcentaje de lengua ibérica descifrada”. Cada afirmación debe conservar su nivel epistemológico y procedencia.</p></div>
+<h2>Qué se publica hoy</h2><div class="grid"><div class="card"><h3>Abierto y reproducible</h3><p>Repositorio GitHub, WebEngine, Write, esquemas, registro curado y documentación técnica.</p></div><div class="card"><h3>En incorporación</h3><p>Portal completo v34, las 38 fichas PDF, audio Talk y modelos 3D simbólicos. Se añadirán a esta misma web tras validar el despliegue ligero.</p></div><div class="card"><h3>DOI</h3><p>Informe técnico principal: <a href="https://doi.org/10.5281/zenodo.22939179">10.5281/zenodo.22939179</a>.</p></div></div>
+</div></main>
+<footer><div class="wrap"><strong>IberOS — creado por Esteban Molina Ruiz</strong><br>Proyecto independiente de investigación reproducible. <a href="https://github.com/estebanmolinaruiz-art/IberOS">Repositorio</a> · <a href="https://doi.org/10.5281/zenodo.22939179">Zenodo</a></div></footer>
+</body></html>
