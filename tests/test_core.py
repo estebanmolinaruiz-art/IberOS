@@ -28,6 +28,8 @@ from iberos import (
     rok_recipient_candidate_matrix,
     evaluate_ka_direction_candidate,
     ka_direction_candidate_matrix,
+    evaluate_salir_prospective_candidate,
+    salir_prospective_candidate_matrix,
 )
 
 
@@ -360,3 +362,25 @@ def test_ka_direction_gate_remains_open():
     assert matrix["gate_state"] == "OPEN"
     assert matrix["passing_candidates"] == []
     assert matrix["automatic_core_promotion"] is False
+
+
+
+def test_salir_matrix_keeps_gate_open():
+    matrix = salir_prospective_candidate_matrix()
+    assert matrix["gate_state"] == "OPEN"
+    assert matrix["passing_candidates"] == []
+    assert matrix["automatic_core_promotion"] is False
+
+
+def test_pech_maho_salir_is_convergent_not_prospective():
+    p = evaluate_salir_prospective_candidate("PECH-MAHO-2025")
+    assert p["criteria"]["salir_secure"] is True
+    assert p["criteria"]["post_lock_or_genuinely_unused"] is False
+    assert p["criteria"]["economic_context_fixed_independently"] is False
+
+
+def test_murcia_has_context_but_no_salir():
+    m = evaluate_salir_prospective_candidate("MURCIA-2026-FRAGMENT")
+    assert m["criteria"]["economic_context_fixed_independently"] is True
+    assert m["criteria"]["salir_secure"] is False
+    assert m["state"] == "OPEN"

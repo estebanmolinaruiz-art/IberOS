@@ -20,6 +20,7 @@ from .core import (
     family_bottlenecks,
     rok_recipient_candidate_matrix,
     ka_direction_candidate_matrix,
+    salir_prospective_candidate_matrix,
 )
 
 
@@ -57,6 +58,7 @@ def main():
     sub.add_parser("bottlenecks")
     sub.add_parser("rok-recipient-matrix")
     sub.add_parser("ka-direction-matrix")
+    sub.add_parser("salir-prospective-matrix")
 
     p_policy = sub.add_parser("family-policy")
     p_policy.add_argument("family")
@@ -105,6 +107,8 @@ def main():
         ), ensure_ascii=False, indent=2))
     elif args.command == "dashboard":
         print(json.dumps(family_dashboard(), ensure_ascii=False, indent=2))
+    elif args.command == "salir-prospective-matrix":
+        print(json.dumps(salir_prospective_candidate_matrix(), ensure_ascii=False, indent=2))
     elif args.command == "ka-direction-matrix":
         print(json.dumps(ka_direction_candidate_matrix(), ensure_ascii=False, indent=2))
     elif args.command == "rok-recipient-matrix":

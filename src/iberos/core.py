@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.7"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.8"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1080,6 +1080,79 @@ def ka_direction_candidate_matrix() -> dict[str, Any]:
             "A genuinely independent transaction/offering/ledger where direction is fixed "
             "before linguistic analysis and KA/KE versus KU can be tested against a "
             "preregistered target/source prediction."
+        ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+SALIR_PROSPECTIVE_CANDIDATES = {
+    "PECH-MAHO-2025": {
+        "post_lock_or_genuinely_unused": False,
+        "salir_secure": True,
+        "economic_context_fixed_independently": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "STRONG_EXTERNAL_CONVERGENCE",
+        "note": "Commercial/accounting interpretation is plausible, but publication predates C474 and depends partly on recognizing śalir.",
+    },
+    "EL-VILAR-2024": {
+        "post_lock_or_genuinely_unused": False,
+        "salir_secure": True,
+        "economic_context_fixed_independently": False,
+        "source_independent_of_hypothesis": True,
+        "classification": "STRONG_RETROSPECTIVE_DOMAIN_REPLICATION",
+        "note": "Long commercial lead with śalir; publication predates C474 and operation type is not independently fixed enough.",
+    },
+    "MURCIA-2026-FRAGMENT": {
+        "post_lock_or_genuinely_unused": True,
+        "salir_secure": False,
+        "economic_context_fixed_independently": True,
+        "source_independent_of_hypothesis": True,
+        "classification": "INDEPENDENT_ECONOMIC_CONTEXT_LINGUISTICALLY_INDETERMINATE",
+        "note": "Administrative/economic context from cancellation treatment, but only 11 signs and no secure SALIR.",
+    },
+}
+
+
+def evaluate_salir_prospective_candidate(reference: str) -> dict[str, Any]:
+    if reference not in SALIR_PROSPECTIVE_CANDIDATES:
+        raise KeyError(f"Unknown SALIR prospective candidate: {reference}")
+    c = SALIR_PROSPECTIVE_CANDIDATES[reference]
+    criteria = {
+        "post_lock_or_genuinely_unused": bool(c["post_lock_or_genuinely_unused"]),
+        "salir_secure": bool(c["salir_secure"]),
+        "economic_context_fixed_independently": bool(c["economic_context_fixed_independently"]),
+        "source_independent_of_hypothesis": bool(c["source_independent_of_hypothesis"]),
+    }
+    missing = [k for k, v in criteria.items() if not v]
+    passed = all(criteria.values())
+    return {
+        "protocol": "SALIR-PROSPECTIVE-01",
+        "reference": reference,
+        "criteria": criteria,
+        "missing_requirements": missing,
+        "state": "STRICT_PROSPECTIVE_PASS" if passed else "OPEN",
+        "classification": c["classification"],
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def salir_prospective_candidate_matrix() -> dict[str, Any]:
+    rows = [evaluate_salir_prospective_candidate(ref) for ref in SALIR_PROSPECTIVE_CANDIDATES]
+    passing = [r["reference"] for r in rows if r["state"] == "STRICT_PROSPECTIVE_PASS"]
+    return {
+        "protocol": "SALIR-PROSPECTIVE-01",
+        "rows": rows,
+        "passing_candidates": passing,
+        "gate_state": "PASS" if passing else "OPEN",
+        "next_required_evidence": (
+            "A post-C474 or genuinely unused object with secure SALIR and an "
+            "economic/value context fixed independently of SALIR recognition."
+        ),
+        "fail_or_degrade_trigger": (
+            "A secure replicated SALIR occurrence in a clearly non-economic/non-value referent."
         ),
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),

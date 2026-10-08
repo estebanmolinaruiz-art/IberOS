@@ -37,6 +37,9 @@ from .core import (
     KA_DIRECTION_CANDIDATES,
     evaluate_ka_direction_candidate,
     ka_direction_candidate_matrix,
+    SALIR_PROSPECTIVE_CANDIDATES,
+    evaluate_salir_prospective_candidate,
+    salir_prospective_candidate_matrix,
 )
 
 __all__ = [
@@ -78,6 +81,9 @@ __all__ = [
     "KA_DIRECTION_CANDIDATES",
     "evaluate_ka_direction_candidate",
     "ka_direction_candidate_matrix",
+    "SALIR_PROSPECTIVE_CANDIDATES",
+    "evaluate_salir_prospective_candidate",
+    "salir_prospective_candidate_matrix",
 ]
 
 __version__ = "1.0.1"
