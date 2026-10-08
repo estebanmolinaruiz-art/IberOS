@@ -12,6 +12,7 @@ from .core import (
     rhotic_search_key,
     rok_semantic_guard,
     validate_epistemic_layer,
+    classify_validation_event,
     validate_result,
     validate_rhotic_usage,
 )
@@ -30,6 +31,7 @@ __all__ = [
     "rhotic_search_key",
     "rok_semantic_guard",
     "validate_epistemic_layer",
+    "classify_validation_event",
     "validate_result",
     "validate_rhotic_usage",
 ]
