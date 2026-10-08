@@ -352,3 +352,32 @@ body.iberos-inner .hero h1{overflow-wrap:normal}
  body.iberos-inner .site-header .menu-toggle{padding:6px}
  body.iberos-inner .hero h1{font-size:clamp(2.25rem,9.2vw,3.1rem)}
 }
+
+/* Hotfix from actual iPhone screenshot: compact native inner-page layout, NO flyer below headings. */
+body.iberos-inner::before{background-image:none!important;background:#ead9be!important;opacity:1!important}
+body.iberos-inner .hero{background:linear-gradient(112deg,#061b2d 0%,#0b3448 76%,#173c4a 100%)!important}
+body.iberos-inner .hero::before{background-image:radial-gradient(ellipse at 90% 2%,rgba(248,195,109,.24),transparent 39%),linear-gradient(112deg,#061b2d 0%,#0c3145 79%)!important;background-size:cover!important;background-position:center!important}
+body.iberos-inner .hero::after{background:linear-gradient(0deg,#09283a77,transparent 42%)!important}
+@media(max-width:850px){
+ body.iberos-inner .site-header .header-inner{min-height:58px!important;padding:8px 12px!important;gap:7px!important}
+ body.iberos-inner .site-header .brand-text strong{font-size:1.23rem!important}
+ body.iberos-inner .site-header .brand-mark{font-size:1.35rem!important;width:23px!important;height:29px!important}
+ body.iberos-inner .site-header .nav-actions{margin-left:auto!important}
+ body.iberos-inner .site-header .nav-cta{font:600 .66rem/1.2 Georgia,serif!important;padding:7px 8px!important}
+ body.iberos-inner .site-header .nav-lang{font-size:.76rem!important;padding:0 6px!important}
+ body.iberos-inner .hero{min-height:0!important}
+ body.iberos-inner .hero-inner{padding:26px 17px 28px!important}
+ body.iberos-inner .hero .eyebrow{font-size:.57rem!important;letter-spacing:.12em!important;line-height:1.3!important}
+ body.iberos-inner .hero h1{font-size:clamp(2.05rem,8.4vw,3.1rem)!important;line-height:1.05!important;letter-spacing:-.03em!important;margin:10px 0 9px!important}
+ body.iberos-inner .hero p{font-size:.96rem!important;line-height:1.36!important;margin:0 0 13px!important}
+ body.iberos-inner .hero .hero-search{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;max-width:100%!important;margin:12px 0 0!important;border-radius:7px!important;overflow:hidden!important}
+ body.iberos-inner .hero .hero-search input{box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:none!important;font-size:.83rem!important;line-height:1.25!important;padding:12px 9px!important}
+ body.iberos-inner .hero .hero-search button,body.iberos-inner .hero .hero-search a{box-sizing:border-box!important;width:auto!important;min-width:82px!important;max-width:none!important;padding:11px 9px!important;white-space:nowrap!important;font-size:.78rem!important;display:flex!important;align-items:center!important;justify-content:center!important}
+ body.iberos-inner .hero .hero-chips{margin-top:10px!important;gap:5px!important}
+ body.iberos-inner .hero .hero-chip{font-size:.72rem!important;padding:5px 8px!important}
+ body.iberos-inner .research-dock{margin:10px!important;padding:12px!important}
+ body.iberos-inner .research-dock .section-kicker{font-size:.56rem!important;letter-spacing:.12em!important}
+ body.iberos-inner .research-dock strong{font-size:1.02rem!important;line-height:1.25!important}
+ body.iberos-inner .research-dock .meta{font-size:.78rem!important}
+ body.iberos-inner .research-dock .btn{padding:9px 11px!important;font-size:.82rem!important}
+}
