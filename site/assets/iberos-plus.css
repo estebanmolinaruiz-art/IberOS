@@ -102,3 +102,33 @@ footer{background:#061d2c;color:#d9e5ea;border-top:4px solid var(--gold);padding
 .expedition-foot p{margin:0;max-width:640px;color:#d8e3e7;font-size:.9rem}.expedition-foot strong{color:#fff5dc}
 @media(max-width:900px){.expedition-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.expedition-stop,.expedition-stop:first-child,.expedition-stop:last-child{border:1px solid rgba(224,179,95,.35);border-radius:12px}.expedition-stop::after{display:none}.expedition-foot{flex-wrap:wrap}}
 @media(max-width:560px){.expedition-route{grid-template-columns:1fr}.expedition-stop{min-height:205px}.expedition-head{padding-top:25px}.expedition-head h2{font-size:2.5rem}}
+
+/* IberOS+ official visual reference restoration — 2026-10-08
+   Screenshot is visual guidance, not a claim that mockup statistics are factual. */
+body:has(.portal-grid-approved){background:#0a2333 url("./iberosplus-hero.webp") center top / cover fixed no-repeat}
+body:has(.portal-grid-approved) .site-header{background:rgba(4,20,32,.91)}
+body:has(.portal-grid-approved) .hero{min-height:350px;border-bottom:0;background:transparent}
+body:has(.portal-grid-approved) .hero::before{background-image:linear-gradient(90deg,rgba(4,21,33,.89),rgba(6,24,39,.57) 43%,rgba(4,24,39,.07) 85%),url("./iberosplus-hero.webp");background-position:center 50%}
+body:has(.portal-grid-approved) .hero-inner{padding-top:34px;padding-bottom:35px}
+body:has(.portal-grid-approved) .hero h1{max-width:760px;font-size:clamp(2.9rem,5.1vw,5.2rem);line-height:.93}
+body:has(.portal-grid-approved) .hero h1 em{color:#fff6e9}
+body:has(.portal-grid-approved) .hero-search{max-width:690px}
+body:has(.portal-grid-approved) main{max-width:1500px;padding:0 20px 24px}
+body:has(.portal-grid-approved) .editorial-panel{border-radius:20px 20px 8px 8px;border:1px solid #ead6b5;background:linear-gradient(130deg,rgba(255,250,237,.98),rgba(248,238,219,.97));box-shadow:0 15px 50px rgba(0,0,0,.35)}
+body:has(.portal-grid-approved) .editorial-head{padding:19px 30px 9px;align-items:center}
+body:has(.portal-grid-approved) .editorial-head h2{font-size:clamp(2.3rem,3.6vw,3.5rem);letter-spacing:-.055em;line-height:1.08}
+.brand-iber{font-family:Georgia,serif;letter-spacing:-.06em;color:#051b2a}.brand-iber span{color:#164e67}.brand-iber i{font-style:normal;color:#c99a48}
+body:has(.portal-grid-approved) .editorial-head .lead{max-width:570px;color:#36424b;font-family:Georgia,serif;font-size:1rem}
+body:has(.portal-grid-approved) .portal-grid{gap:12px;padding:12px 20px 19px}
+body:has(.portal-grid-approved) .portal-card{min-height:0;background:#fffaf0;border-radius:9px;border-color:#e4d2b0;box-shadow:0 3px 13px rgba(48,28,8,.14)}
+body:has(.portal-grid-approved) .portal-card .media{height:155px;background-size:cover;filter:saturate(1.09)}
+body:has(.portal-grid-approved) .portal-card .icon-disc{background:#092338;color:#f1c979;border:2px solid #bd8f42;border-radius:12px;width:46px;height:46px;margin-top:-30px;margin-left:14px;font:700 1.55rem Georgia,serif}
+body:has(.portal-grid-approved) .portal-card .copy{padding:7px 14px 13px}
+body:has(.portal-grid-approved) .portal-card h3{font-size:1.55rem;letter-spacing:-.03em;line-height:1.05}
+body:has(.portal-grid-approved) .portal-card p{font-family:Georgia,serif;line-height:1.23;font-size:.87rem;margin:5px 0 10px}
+body:has(.portal-grid-approved) .portal-card .btn{font-family:Georgia,serif;border-radius:7px;padding:7px 14px;font-size:.82rem;box-shadow:0 4px 12px rgba(119,77,13,.12)}
+body:has(.portal-grid-approved) .field-expedition{margin:18px 0 16px}
+body:has(.portal-grid-approved) .stats-bar{margin-top:0;border:1px solid rgba(234,196,124,.7);border-radius:0 0 12px 12px;background:rgba(3,22,36,.96)}
+.try-label{color:#f9ead7;font-size:.8rem;font-weight:700;align-self:center}
+@media(max-width:900px){body:has(.portal-grid-approved) .editorial-head{display:block}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){body:has(.portal-grid-approved){background-attachment:scroll}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:1fr;padding:10px}body:has(.portal-grid-approved) .editorial-head{padding:18px 18px 8px}body:has(.portal-grid-approved) .portal-card .media{height:175px}}
