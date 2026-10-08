@@ -38,6 +38,7 @@ from iberos import (
     numeral_789_dashboard,
     evaluate_dedi_candidate,
     dedi_orthogonal_matrix,
+    evaluate_dedi_predictive_gate,
 )
 
 
@@ -491,3 +492,76 @@ def test_rejected_shortcuts_are_encoded():
     m = dedi_orthogonal_matrix()
     assert "DE=AGENT_DI=OBJECT" in m["rejected_shortcuts"]
     assert "E_I_BY_AN" in m["rejected_shortcuts"]
+
+
+
+def test_dedi_missing_control_is_not_observed():
+    c = evaluate_dedi_candidate("NP-DI-EGIAR")
+    assert c["criteria"]["observed"] is False
+    assert c["criteria"]["di_branch_present"] is False
+    assert c["root_relation"] == "NOT_OBSERVED"
+
+
+def test_dedi_castellet_is_structural_not_identical_root():
+    c = evaluate_dedi_candidate("CASTELLET-F.13.75")
+    assert c["root_relation"] == "STRUCTURAL_PARALLEL_ONLY"
+    assert c["criteria"]["identical_root_verified"] is False
+    assert c["state"] == "OPEN"
+
+
+def test_dedi_prediction_blocks_unsupported_formal_pair():
+    rows = [
+        {"PHYS_ID": "A", "external_variable": "actor", "observed_branch": "E"},
+        {"PHYS_ID": "B", "external_variable": "patient", "observed_branch": "I"},
+    ]
+    g = evaluate_dedi_predictive_gate(
+        rows, preregistered_rule={"actor": "E", "patient": "I"}
+    )
+    assert g["state"] == "BLOCKED"
+    assert "external_source_documented" in g["rows"][0]["missing_requirements"]
+
+
+def test_dedi_prediction_rejects_duplicate_phys_id():
+    common = {
+        "external_source_id": "test-only", "external_fixed_before_reading": True,
+        "source_independent_of_hypothesis": True,
+        "held_out_before_prediction": True,
+        "root_identity_verified": True, "segmentation_verified": True,
+    }
+    rows = [
+        {**common, "PHYS_ID": "A", "external_variable": "actor", "observed_branch": "E"},
+        {**common, "PHYS_ID": "A", "external_variable": "patient", "observed_branch": "I"},
+    ]
+    g = evaluate_dedi_predictive_gate(
+        rows, preregistered_rule={"actor": "E", "patient": "I"}
+    )
+    assert g["state"] == "BLOCKED"
+    assert "independent_physical_unit" in g["rows"][1]["missing_requirements"]
+
+
+def test_dedi_prediction_synthetic_positive_is_review_only():
+    common = {
+        "external_source_id": "synthetic-test-only",
+        "external_fixed_before_reading": True,
+        "source_independent_of_hypothesis": True,
+        "held_out_before_prediction": True,
+        "root_identity_verified": True, "segmentation_verified": True,
+    }
+    rows = [
+        {**common, "PHYS_ID": "SYN-1", "external_variable": "actor", "observed_branch": "E"},
+        {**common, "PHYS_ID": "SYN-2", "external_variable": "patient", "observed_branch": "I"},
+    ]
+    g = evaluate_dedi_predictive_gate(
+        rows, preregistered_rule={"actor": "E", "patient": "I"}
+    )
+    assert g["state"] == "REVIEW_ELIGIBLE"
+    assert g["automatic_core_promotion"] is False
+
+
+def test_dedi_prediction_requires_both_branches_and_valid_rule():
+    g = evaluate_dedi_predictive_gate(
+        [{"PHYS_ID": "A", "observed_branch": "E", "external_variable": "actor"}],
+        preregistered_rule={"actor": "E"},
+    )
+    assert g["state"] == "BLOCKED"
+    assert g["preregistered_rule_valid"] is False
