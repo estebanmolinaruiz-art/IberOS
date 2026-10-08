@@ -1,0 +1,13 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS · Atlas beta</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>body{margin:0;font-family:system-ui,Arial;background:#f6f0e4;color:#172033}header{background:#0b2340;color:white;padding:18px 22px;border-bottom:4px solid #c89b3c}header a{color:#f0c96b}main{max-width:1180px;margin:auto;padding:24px}#map{height:68vh;min-height:500px;border:1px solid #cfc2ac;border-radius:12px}.note{background:white;border-left:5px solid #c89b3c;padding:15px;margin:16px 0}.legend{display:flex;gap:12px;flex-wrap:wrap}.tag{background:#fff;border:1px solid #ddd0bc;padding:6px 9px;border-radius:99px;font-size:.85rem}</style></head><body><header><strong>IberOS · Atlas beta</strong> · <a href="../">volver al portal</a></header><main><h1>Atlas del corpus</h1><p>Primera cobertura cartográfica pública. Los puntos representan yacimientos o referencias territoriales; no fronteras lingüísticas demostradas.</p><div class="legend"><span class="tag">6 nodos georreferenciados</span><span class="tag">agrupaciones exploratorias</span><span class="tag">sin “fronteras dialectales” inferidas</span></div><div class="note"><strong>Precisión:</strong> algunos puntos corresponden al yacimiento documentado y otros a una localidad aproximada. La ficha de cada nodo conserva esa diferencia.</div><div id="map"></div></main><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+const places=[
+["Los Villares / Kelin",39.55354,-1.28322,"Caudete de las Fuentes · sitio documentado"],
+["Arse / Saguntum",39.6799,-0.2786,"Sagunt · referencia territorial"],
+["Castellet de Banyoles",41.0624,0.6655,"Tivissa · sitio documentado"],
+["La Caridad",40.8435,-1.3385,"Caminreal · sitio documentado"],
+["Pico de los Ajos",39.38,-0.81,"Yátova · localidad aproximada"],
+["Tossal de Sant Miquel / Edeta",39.62,-0.60,"Llíria · localidad aproximada"]
+];
+const map=L.map("map").setView([40.2,-0.45],7);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"© OpenStreetMap contributors"}).addTo(map);
+places.forEach(p=>L.marker([p[1],p[2]]).addTo(map).bindPopup("<b>"+p[0]+"</b><br>"+p[3]));
+</script></body></html>
