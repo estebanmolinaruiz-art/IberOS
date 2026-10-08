@@ -35,3 +35,10 @@ No automatic promotion.
 - DEDI-PREDICTIVE-01 requires distinct PHYS_ID, independently sourced and pre-reading fixed external grammatical variable, verified root and segmentation, a preregistered mapping for E and I, and actual held-out correct predictions for both branches.
 - Positive synthetic software tests are not epigraphic validation; self-reported provenance flags require independent scientific audit.
 - C594, C474, C539, C541 and ICS D(E/I)=50 unchanged.
+
+
+## DEDI-PROVENANCE-AUDIT-01 — additional anti-leak safeguard (2026-10-09)
+
+Documentary preflight now checks distinct PHYS_ID and LEAK_GROUP, dated external contextual sources, source snapshot hashes, preregistration identifier/hash, frozen prediction record identifiers, independent reviewer IDs, and exclusion of synthetic fixtures. Incomplete or repeated LEAK_GROUP records cannot proceed to independent review.
+
+A complete form returns READY_FOR_INDEPENDENT_AUDIT, **never** a scientific PASS. Source independence, preregistration chronology, reviewer identity and grammatical discrimination must be inspected outside the self-reported record. The separate predictive gate remains a software eligibility check only. C594/C474/C539/C541 and D(E/I) 50 remain frozen.
