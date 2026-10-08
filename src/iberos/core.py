@@ -1550,3 +1550,69 @@ def dedi_orthogonal_matrix() -> dict[str, Any]:
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),
     }
+
+
+def evaluate_dedi_predictive_gate(
+    observations: list[dict[str, Any]],
+    *,
+    preregistered_rule: dict[str, str] | None = None,
+    minimum_independent_units: int = 2,
+) -> dict[str, Any]:
+    """Require preregistered, independently sourced E/I predictions on HOLD units.
+
+    Provenance flags must be audited externally before a real scientific promotion.
+    """
+    if minimum_independent_units < 2:
+        raise ValueError("At least two independent units are required")
+    rule = preregistered_rule or {}
+    rule_valid = bool(rule) and all(
+        isinstance(k, str) and bool(k.strip()) and v in {"E", "I"}
+        for k, v in rule.items()
+    ) and {"E", "I"}.issubset(set(rule.values()))
+    seen = set()
+    rows = []
+    for obs in observations:
+        phys = str(obs.get("PHYS_ID") or "").strip()
+        variable = str(obs.get("external_variable") or "").strip()
+        source = str(obs.get("external_source_id") or "").strip()
+        actual = str(obs.get("observed_branch") or "").strip().upper()
+        predicted = rule.get(variable) if rule_valid else None
+        checks = {
+            "physical_identity_known": bool(phys),
+            "independent_physical_unit": bool(phys) and phys not in seen,
+            "external_source_documented": bool(source and variable),
+            "external_fixed_before_reading": obs.get("external_fixed_before_reading") is True,
+            "source_independent_of_hypothesis": obs.get("source_independent_of_hypothesis") is True,
+            "held_out_before_prediction": obs.get("held_out_before_prediction") is True,
+            "identical_root_verified": obs.get("root_identity_verified") is True,
+            "segmentation_verified": obs.get("segmentation_verified") is True,
+            "rule_preregistered": rule_valid and variable in rule,
+            "prediction_correct": actual in {"E", "I"} and predicted == actual,
+        }
+        if phys:
+            seen.add(phys)
+        rows.append({
+            "PHYS_ID": phys or None,
+            "observed_branch": actual or None,
+            "predicted_branch": predicted,
+            "checks": checks,
+            "missing_requirements": [k for k, ok in checks.items() if not ok],
+            "qualifies": all(checks.values()),
+        })
+    passing = [r for r in rows if r["qualifies"]]
+    both = {r["observed_branch"] for r in passing} == {"E", "I"}
+    eligible = (
+        rule_valid and len(passing) >= minimum_independent_units
+        and both and len(passing) == len(rows)
+    )
+    return {
+        "protocol": "DEDI-PREDICTIVE-01",
+        "state": "REVIEW_ELIGIBLE" if eligible else "BLOCKED",
+        "preregistered_rule_valid": rule_valid,
+        "qualifying_independent_units": len(passing),
+        "both_branches_replicated": both,
+        "rows": rows,
+        "automatic_core_promotion": False,
+        "requires_explicit_release_decision": True,
+        "authority": dict(AUTHORITY),
+    }
