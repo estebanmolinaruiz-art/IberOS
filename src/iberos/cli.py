@@ -23,6 +23,7 @@ from .core import (
     salir_prospective_candidate_matrix,
     kutur_prospective_candidate_matrix,
     baides_batir_role_matrix,
+    numeral_789_dashboard,
 )
 
 
@@ -63,6 +64,7 @@ def main():
     sub.add_parser("salir-prospective-matrix")
     sub.add_parser("kutur-prospective-matrix")
     sub.add_parser("baides-batir-matrix")
+    sub.add_parser("numeral-789-dashboard")
 
     p_policy = sub.add_parser("family-policy")
     p_policy.add_argument("family")
@@ -111,6 +113,8 @@ def main():
         ), ensure_ascii=False, indent=2))
     elif args.command == "dashboard":
         print(json.dumps(family_dashboard(), ensure_ascii=False, indent=2))
+    elif args.command == "numeral-789-dashboard":
+        print(json.dumps(numeral_789_dashboard(), ensure_ascii=False, indent=2))
     elif args.command == "baides-batir-matrix":
         print(json.dumps(baides_batir_role_matrix(), ensure_ascii=False, indent=2))
     elif args.command == "kutur-prospective-matrix":

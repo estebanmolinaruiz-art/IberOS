@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.0"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.1"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1330,6 +1330,82 @@ def baides_batir_role_matrix() -> dict[str, Any]:
             "roles to an externally named institutional function without relying on "
             "Iberian lexical interpretation."
         ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+NUMERAL_EXACT_VALUE_GATES = {
+    "SISBI": {
+        "candidate_value": 7,
+        "state": "STRONG_CONTEXTUAL_NOT_CLOSED",
+        "contextual_support": [
+            "Casinos: metrological/accounting context",
+            "Ensérune: accounting-like context",
+            "sisbibeiabin compatible with a numerical/partitive construction around 2/7",
+        ],
+        "physical_anchor_count": 0,
+        "known_blocker": "No second independent PHYS_ID externally fixes the value 7.",
+        "next_gate": "SISBI-PHYS-02",
+        "pass_rule": "Second independent PHYS_ID with independently fixed count/value compatible with 7.",
+        "fail_rule": "Independent quantitative context securely incompatible with value 7.",
+    },
+    "SORSE": {
+        "candidate_value": 8,
+        "state": "EXTERNAL_SYSTEM_CANDIDATE",
+        "contextual_support": [
+            "Appears inside the reconstructed numeral paradigm",
+            "Occurs in F.13.2 among numeral/metrological material",
+        ],
+        "physical_anchor_count": 0,
+        "known_blocker": "C.1.8 cannot be used as a ponderal anchor; support function is not independently quantitative.",
+        "next_gate": "SORSE-PHYS-02",
+        "pass_rule": "Independent quantitative PHYS_ID or resolvable compound that fixes value 8.",
+        "fail_rule": "Independent evidence assigning SORSE to a different stable numerical value or non-numeral lexical class.",
+    },
+    "TOR": {
+        "candidate_value": 9,
+        "state": "BEST_CURRENT_VALUE_NOT_CLOSED",
+        "contextual_support": [
+            "Bastida I repeatedly places TOR in a numeral/metrological environment",
+            "TOR occupies the remaining numeral-system slot in the current reconstruction",
+            "ERDI/KITER and LAUR-related expressions provide compatible but ambiguous compositional evidence",
+        ],
+        "physical_anchor_count": 0,
+        "known_blocker": "The 9 assignment is explicitly tentative and TOR could be an alternate form of another known numeral.",
+        "next_gate": "TOR-COMP-PHYS-01",
+        "pass_rule": "Independent arithmetic compound or physical count/value that resolves TOR specifically as 9.",
+        "fail_rule": "Repeated quantitative evidence demonstrating TOR equals a different known numeral.",
+    },
+}
+
+
+def numeral_exact_value_gate(lexeme: str) -> dict[str, Any]:
+    key = lexeme.strip().upper()
+    if key not in NUMERAL_EXACT_VALUE_GATES:
+        raise KeyError(f"No exact-value gate registered for numeral: {lexeme}")
+    g = NUMERAL_EXACT_VALUE_GATES[key]
+    return {
+        "protocol": "NUM-VALUE-GATE-01",
+        "lexeme": key,
+        **json.loads(json.dumps(g)),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def numeral_789_dashboard() -> dict[str, Any]:
+    rows = [numeral_exact_value_gate(x) for x in ("SISBI", "SORSE", "TOR")]
+    ranking = [
+        {"rank": 1, "lexeme": "SISBI", "reason": "strongest contextual replication"},
+        {"rank": 2, "lexeme": "TOR", "reason": "strong numeral-slot evidence; exact value tentative"},
+        {"rank": 3, "lexeme": "SORSE", "reason": "external-system candidate with no surviving physical anchor"},
+    ]
+    return {
+        "protocol": "NUM-789-DASHBOARD-01",
+        "rows": rows,
+        "priority_ranking": ranking,
+        "closed_values": [],
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),
     }

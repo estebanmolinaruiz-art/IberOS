@@ -34,6 +34,8 @@ from iberos import (
     kutur_prospective_candidate_matrix,
     evaluate_baides_batir_role_candidate,
     baides_batir_role_matrix,
+    numeral_exact_value_gate,
+    numeral_789_dashboard,
 )
 
 
@@ -433,3 +435,27 @@ def test_palamos_is_adversarial_against_unique_beneficiary():
     p = evaluate_baides_batir_role_candidate("PALAMOS-C.4.1")
     assert p["classification"] == "ADVERSARIAL_CONSTRAINT"
     assert p["exact_institutional_label_fixed"] is False
+
+
+
+def test_numeral_789_exact_values_remain_unclosed():
+    d = numeral_789_dashboard()
+    assert d["closed_values"] == []
+    rows = {r["lexeme"]: r for r in d["rows"]}
+    assert rows["SISBI"]["candidate_value"] == 7
+    assert rows["SORSE"]["candidate_value"] == 8
+    assert rows["TOR"]["candidate_value"] == 9
+    assert rows["SORSE"]["physical_anchor_count"] == 0
+    assert rows["TOR"]["state"] == "BEST_CURRENT_VALUE_NOT_CLOSED"
+
+
+def test_sorse_c18_failure_is_preserved():
+    s = numeral_exact_value_gate("SORSE")
+    assert "C.1.8" in s["known_blocker"]
+    assert s["automatic_core_promotion"] is False
+
+
+def test_tor_requires_specific_value_discriminator():
+    t = numeral_exact_value_gate("TOR")
+    assert t["next_gate"] == "TOR-COMP-PHYS-01"
+    assert "9" in t["pass_rule"]

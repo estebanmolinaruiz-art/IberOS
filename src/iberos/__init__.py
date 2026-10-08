@@ -46,6 +46,9 @@ from .core import (
     BAIDES_BATIR_ROLE_CANDIDATES,
     evaluate_baides_batir_role_candidate,
     baides_batir_role_matrix,
+    NUMERAL_EXACT_VALUE_GATES,
+    numeral_exact_value_gate,
+    numeral_789_dashboard,
 )
 
 __all__ = [
@@ -96,6 +99,9 @@ __all__ = [
     "BAIDES_BATIR_ROLE_CANDIDATES",
     "evaluate_baides_batir_role_candidate",
     "baides_batir_role_matrix",
+    "NUMERAL_EXACT_VALUE_GATES",
+    "numeral_exact_value_gate",
+    "numeral_789_dashboard",
 ]
 
 __version__ = "1.0.1"
