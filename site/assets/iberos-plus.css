@@ -132,3 +132,21 @@ body:has(.portal-grid-approved) .stats-bar{margin-top:0;border:1px solid rgba(23
 .try-label{color:#f9ead7;font-size:.8rem;font-weight:700;align-self:center}
 @media(max-width:900px){body:has(.portal-grid-approved) .editorial-head{display:block}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){body:has(.portal-grid-approved){background-attachment:scroll}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:1fr;padding:10px}body:has(.portal-grid-approved) .editorial-head{padding:18px 18px 8px}body:has(.portal-grid-approved) .portal-card .media{height:175px}}
+
+/* Flyer-approved first fold: hero / parchment / 8 photos / navy evidence strip */
+body:has(.portal-grid-approved) .hero{min-height:344px}
+body:has(.portal-grid-approved) .portal-card .media{height:155px}
+body:has(.portal-grid-approved) .editorial-panel{margin-top:-1px}
+body:has(.portal-grid-approved) .stats-bar{margin-top:0}
+body:has(.portal-grid-approved) .field-expedition{margin-top:30px}
+body:has(.portal-grid-approved) .hero .eyebrow{letter-spacing:.30em}
+body:has(.portal-grid-approved) .hero h1{max-width:750px}
+body:has(.portal-grid-approved) .hero p{max-width:705px}
+body:has(.portal-grid-approved) .portal-card:nth-child(1) .media{background-position:93% 48%}
+body:has(.portal-grid-approved) .portal-card:nth-child(2) .media{background-position:55% 48%;filter:hue-rotate(8deg) saturate(1.2)}
+body:has(.portal-grid-approved) .portal-card:nth-child(3) .media{background-position:89% 48%;filter:sepia(.24) saturate(.9)}
+body:has(.portal-grid-approved) .portal-card:nth-child(4) .media{background-position:98% 43%;filter:hue-rotate(165deg) saturate(.65)}
+body:has(.portal-grid-approved) .portal-card:nth-child(5) .media{background-position:88% 67%;filter:grayscale(.55) contrast(1.2)}
+body:has(.portal-grid-approved) .portal-card:nth-child(6) .media{background-position:72% 30%;filter:sepia(.7) saturate(.65)}
+body:has(.portal-grid-approved) .portal-card:nth-child(7) .media{background-position:60% 55%}
+body:has(.portal-grid-approved) .portal-card:nth-child(8) .media{background-position:46% 30%;filter:sepia(.2)}
