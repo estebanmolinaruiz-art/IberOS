@@ -1,41 +1,48 @@
-# IberOS v1.0 publication checklist
+# IberOS — estado de publicación y lista de verificación
 
-## Automatic once accounts/connectors are available
+Actualizado: 2026-10-08
+
+## Ya demostrado
 
 ### GitHub
-1. Create public repository `IberOS`.
-2. Upload this repository tree.
-3. Keep `main` as default branch.
-4. Enable GitHub Pages using GitHub Actions.
-5. Create release `v1.0.0`.
-
-### Zenodo
-1. Connect Zenodo to the same GitHub account.
-2. Enable the `IberOS` repository.
-3. Publish GitHub release `v1.0.0`.
-4. Verify imported metadata, creator and license.
-5. Record the version DOI in the repository.
+- [x] Repositorio público `estebanmolinaruiz-art/IberOS`
+- [x] Rama principal `main`
+- [x] Tests automatizados
+- [x] GitHub Pages
+- [x] Releases `v1.0.0` y `v1.0.1`
 
 ### PyPI
-1. Create/claim the `iberos` project through Trusted Publishing.
-2. Configure GitHub repository, workflow `publish-pypi`, environment `pypi`.
-3. Publish GitHub release.
-4. Verify `pip install iberos`.
+- [x] Trusted Publishing configurado
+- [x] Paquete público `iberos`
+- [x] `pip install iberos`
+- [x] `skip-existing: true` en el workflow
 
-### Hugging Face
-1. Create a public dataset repository named `iberos-curated-benchmark`.
-2. Upload the contents of `/data`.
-3. Keep `/data/README.md` as the Dataset Card.
-4. Verify the dataset viewer and license metadata.
+### Zenodo
+- [x] DOI principal `10.5281/zenodo.22939179`
+- [x] Integración GitHub activada
+- [x] `.zenodo.json`
+- [ ] Verificar DOI específico de software de la release actual
 
 ### Software Heritage
-1. After GitHub is public, request Save Code Now, or let the included release workflow request archival.
-2. Record the resulting SWHID in `CITATION.cff` / README once available.
+- [x] Solicitud de archivado ejecutada
+- [ ] Recuperar y registrar el SWHID
 
-## Manual decisions still required
+### Hugging Face
+- [x] Repositorio de dataset creado
+- [ ] Verificar carga de archivos
+- [ ] Verificar licencia CC BY 4.0
+- [ ] Verificar Dataset Card
+- [ ] Verificar Dataset Viewer
 
-- GitHub username/organization and final repository URL.
-- Whether `iberos` is available as a PyPI project name.
-- Final GitHub Pages URL.
-- Whether to publish the benchmark under a personal Hugging Face account or an organization.
-- Zenodo version DOI after release ingestion.
+### Web
+- [x] GitHub Pages pública
+- [x] Corpus y módulos web integrados
+- [x] ZIP de fichas PDF preparado
+- [ ] Subir fichas PDF y comprobar enlaces
+
+## Consistencia de versión
+
+Antes de cada release:
+`tag GitHub = pyproject.toml = CITATION.cff = .zenodo.json`
+
+Versión pública actual: `1.0.1`.
