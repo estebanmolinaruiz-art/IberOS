@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.9"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.0"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1227,6 +1227,108 @@ def kutur_prospective_candidate_matrix() -> dict[str, Any]:
         "fail_or_degrade_trigger": (
             "Repeated secure KUTU-/KUTUR occurrences in a semantic class clearly unrelated "
             "to writing/inscription/formulary practice."
+        ),
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+BAIDES_BATIR_ROLE_CANDIDATES = {
+    "PECH-MAHO-BAITES": {
+        "independent_document": True,
+        "role_contrast_internal": False,
+        "external_procedural_anchor": True,
+        "exact_institutional_label_fixed": False,
+        "supports_baides_validator": True,
+        "supports_batir_principal": False,
+        "classification": "ORTHOGONAL_FUNCTIONAL_ANALOGUE",
+        "note": "BAITES introduces participant lists comparable to Greek martyr witness lists in a transaction; exact lexical identity is not universal.",
+    },
+    "CASTELLRUF-2025": {
+        "independent_document": True,
+        "role_contrast_internal": True,
+        "external_procedural_anchor": False,
+        "exact_institutional_label_fixed": False,
+        "supports_baides_validator": True,
+        "supports_batir_principal": True,
+        "classification": "STRONG_DOCUMENT_INTERNAL_ROLE_CONTRAST",
+        "note": "One BATIR occupies a principal position and two BAIDESBI occupy validating/witness-like positions in a structured formular layout.",
+    },
+    "PALAMOS-C.4.1": {
+        "independent_document": True,
+        "role_contrast_internal": False,
+        "external_procedural_anchor": False,
+        "exact_institutional_label_fixed": False,
+        "supports_baides_validator": False,
+        "supports_batir_principal": True,
+        "classification": "ADVERSARIAL_CONSTRAINT",
+        "note": "Repeated BATIR after many anthroponyms falsifies BATIR=unique beneficiary while preserving a recurring participant/title class.",
+    },
+    "ULLASTRET-C.2.3": {
+        "independent_document": True,
+        "role_contrast_internal": True,
+        "external_procedural_anchor": False,
+        "exact_institutional_label_fixed": False,
+        "supports_baides_validator": True,
+        "supports_batir_principal": True,
+        "classification": "ROLE_OPPOSITION_REPLICATION",
+        "note": "BAIDES and BATIR remain distinct documentary participant classes; exact institutional labels are not fixed.",
+    },
+}
+
+
+def evaluate_baides_batir_role_candidate(reference: str) -> dict[str, Any]:
+    if reference not in BAIDES_BATIR_ROLE_CANDIDATES:
+        raise KeyError(f"Unknown BAIDES/BATIR candidate: {reference}")
+    c = BAIDES_BATIR_ROLE_CANDIDATES[reference]
+    return {
+        "protocol": "BAIT-BAT-ROLE-ORTHO-01",
+        "reference": reference,
+        "classification": c["classification"],
+        "functional_support": {
+            "independent_document": bool(c["independent_document"]),
+            "role_contrast_internal": bool(c["role_contrast_internal"]),
+            "external_procedural_anchor": bool(c["external_procedural_anchor"]),
+            "supports_baides_validator": bool(c["supports_baides_validator"]),
+            "supports_batir_principal": bool(c["supports_batir_principal"]),
+        },
+        "exact_institutional_label_fixed": bool(c["exact_institutional_label_fixed"]),
+        "state": (
+            "EXACT_ROLE_FIXED"
+            if c["exact_institutional_label_fixed"]
+            else "FUNCTIONAL_SUPPORT_ONLY"
+        ),
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def baides_batir_role_matrix() -> dict[str, Any]:
+    rows = [evaluate_baides_batir_role_candidate(ref) for ref in BAIDES_BATIR_ROLE_CANDIDATES]
+    exact = [r["reference"] for r in rows if r["exact_institutional_label_fixed"]]
+    baides_support = sum(1 for r in rows if r["functional_support"]["supports_baides_validator"])
+    batir_support = sum(1 for r in rows if r["functional_support"]["supports_batir_principal"])
+    return {
+        "protocol": "BAIT-BAT-ROLE-ORTHO-01",
+        "functional_opposition_state": "CORE_PRESERVED",
+        "baides_validator_supporting_documents": baides_support,
+        "batir_principal_supporting_documents": batir_support,
+        "exact_role_fixed_candidates": exact,
+        "exact_role_gate_state": "PASS" if exact else "OPEN",
+        "validated_statement": (
+            "BAIDES/BAITES = validating/attesting-like documentary class; "
+            "BATIR = distinct principal/higher participant/title class."
+        ),
+        "blocked_literalizations": [
+            "BAIDES = universal witness",
+            "BATIR = universal beneficiary",
+            "BATIR = universal magistrate",
+        ],
+        "next_required_evidence": (
+            "A new independent procedural or bilingual document that maps one of the "
+            "roles to an externally named institutional function without relying on "
+            "Iberian lexical interpretation."
         ),
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),

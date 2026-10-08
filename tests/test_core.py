@@ -32,6 +32,8 @@ from iberos import (
     salir_prospective_candidate_matrix,
     evaluate_kutur_prospective_candidate,
     kutur_prospective_candidate_matrix,
+    evaluate_baides_batir_role_candidate,
+    baides_batir_role_matrix,
 )
 
 
@@ -408,3 +410,26 @@ def test_el_vilar_kutan_does_not_force_ritual_literal():
     e = evaluate_kutur_prospective_candidate("EL-VILAR-KUTAN-2022")
     assert e["criteria"]["kutu_family_secure"] is True
     assert e["criteria"]["writing_formulary_context_fixed_independently"] is False
+
+
+
+def test_baides_batir_functional_opposition_core_exact_labels_open():
+    m = baides_batir_role_matrix()
+    assert m["functional_opposition_state"] == "CORE_PRESERVED"
+    assert m["exact_role_gate_state"] == "OPEN"
+    assert m["exact_role_fixed_candidates"] == []
+    assert m["automatic_core_promotion"] is False
+
+
+def test_castellruf_supports_internal_role_contrast_without_fixing_title():
+    c = evaluate_baides_batir_role_candidate("CASTELLRUF-2025")
+    assert c["functional_support"]["role_contrast_internal"] is True
+    assert c["functional_support"]["supports_baides_validator"] is True
+    assert c["functional_support"]["supports_batir_principal"] is True
+    assert c["exact_institutional_label_fixed"] is False
+
+
+def test_palamos_is_adversarial_against_unique_beneficiary():
+    p = evaluate_baides_batir_role_candidate("PALAMOS-C.4.1")
+    assert p["classification"] == "ADVERSARIAL_CONSTRAINT"
+    assert p["exact_institutional_label_fixed"] is False

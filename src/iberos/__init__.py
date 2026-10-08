@@ -43,6 +43,9 @@ from .core import (
     KUTUR_PROSPECTIVE_CANDIDATES,
     evaluate_kutur_prospective_candidate,
     kutur_prospective_candidate_matrix,
+    BAIDES_BATIR_ROLE_CANDIDATES,
+    evaluate_baides_batir_role_candidate,
+    baides_batir_role_matrix,
 )
 
 __all__ = [
@@ -90,6 +93,9 @@ __all__ = [
     "KUTUR_PROSPECTIVE_CANDIDATES",
     "evaluate_kutur_prospective_candidate",
     "kutur_prospective_candidate_matrix",
+    "BAIDES_BATIR_ROLE_CANDIDATES",
+    "evaluate_baides_batir_role_candidate",
+    "baides_batir_role_matrix",
 ]
 
 __version__ = "1.0.1"
