@@ -49,6 +49,10 @@ from .core import (
     NUMERAL_EXACT_VALUE_GATES,
     numeral_exact_value_gate,
     numeral_789_dashboard,
+    DEDI_ORTHOGONAL_CANDIDATES,
+    DEDI_REJECTED_SHORTCUTS,
+    evaluate_dedi_candidate,
+    dedi_orthogonal_matrix,
 )
 
 __all__ = [
@@ -102,6 +106,10 @@ __all__ = [
     "NUMERAL_EXACT_VALUE_GATES",
     "numeral_exact_value_gate",
     "numeral_789_dashboard",
+    "DEDI_ORTHOGONAL_CANDIDATES",
+    "DEDI_REJECTED_SHORTCUTS",
+    "evaluate_dedi_candidate",
+    "dedi_orthogonal_matrix",
 ]
 
 __version__ = "1.0.1"

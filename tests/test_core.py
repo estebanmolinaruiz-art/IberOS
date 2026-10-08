@@ -36,6 +36,8 @@ from iberos import (
     baides_batir_role_matrix,
     numeral_exact_value_gate,
     numeral_789_dashboard,
+    evaluate_dedi_candidate,
+    dedi_orthogonal_matrix,
 )
 
 
@@ -459,3 +461,33 @@ def test_tor_requires_specific_value_discriminator():
     t = numeral_exact_value_gate("TOR")
     assert t["next_gate"] == "TOR-COMP-PHYS-01"
     assert "9" in t["pass_rule"]
+
+
+
+def test_dedi_matrix_preserves_formal_core_but_exact_feature_open():
+    m = dedi_orthogonal_matrix()
+    assert m["formal_state"] == "CORE_MORPHOLOGICAL_COMPLEX"
+    assert m["official_score"] == 50
+    assert m["exact_feature_state"] == "OPEN"
+    assert m["passing_candidates"] == []
+    assert m["automatic_core_promotion"] is False
+
+
+def test_np_de_egiar_is_constraint_not_exact_solution():
+    d = evaluate_dedi_candidate("NP-DE-EGIAR")
+    assert d["criteria"]["external_variable_fixed"] is True
+    assert d["criteria"]["di_branch_present"] is False
+    assert d["state"] == "OPEN"
+
+
+def test_pech_maho_is_formal_pair_without_external_discriminator():
+    p = evaluate_dedi_candidate("PECH-MAHO-B.7.38")
+    assert p["criteria"]["matched_de_di_pair"] is True
+    assert p["criteria"]["external_variable_fixed"] is False
+    assert p["state"] == "OPEN"
+
+
+def test_rejected_shortcuts_are_encoded():
+    m = dedi_orthogonal_matrix()
+    assert "DE=AGENT_DI=OBJECT" in m["rejected_shortcuts"]
+    assert "E_I_BY_AN" in m["rejected_shortcuts"]

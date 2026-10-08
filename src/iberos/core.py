@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.1"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-1.2"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -1406,6 +1406,134 @@ def numeral_789_dashboard() -> dict[str, Any]:
         "rows": rows,
         "priority_ranking": ranking,
         "closed_values": [],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+DEDI_ORTHOGONAL_CANDIDATES = {
+    "NP-DE-EGIAR": {
+        "matched_de_di_pair": False,
+        "external_variable_fixed": True,
+        "same_or_comparable_root": True,
+        "di_branch_present": False,
+        "classification": "ORTHOGONAL_FUNCTIONAL_CONSTRAINT",
+        "supports": [
+            "DE participates in participant-integration in production/authorship contexts",
+            "pure tense/aspect-only interpretations are weakened",
+        ],
+        "does_not_support": [
+            "DE=agent universally",
+            "DE=active",
+            "DI=patient",
+            "exact E/I feature",
+        ],
+        "note": "Repeated production formulas externally constrain the participant role, but do not bridge securely to verbal D(E/I).",
+    },
+    "PECH-MAHO-B.7.38": {
+        "matched_de_di_pair": True,
+        "external_variable_fixed": False,
+        "same_or_comparable_root": True,
+        "di_branch_present": True,
+        "classification": "FORMAL_MATCHED_PAIR",
+        "supports": [
+            "DE and DI can occur with the same ROK verbal family",
+            "E/I is not a fixed lexical-root property",
+        ],
+        "does_not_support": [
+            "person",
+            "voice",
+            "valency",
+            "modality",
+            "argument structure",
+        ],
+        "note": "Excellent formal pair, but no independent grammatical variable predicts the alternation.",
+    },
+    "CASTELLET-F.13.75": {
+        "matched_de_di_pair": True,
+        "external_variable_fixed": False,
+        "same_or_comparable_root": True,
+        "di_branch_present": True,
+        "classification": "FORMAL_MATCHED_PAIR_OUTSIDE_ROK",
+        "supports": [
+            "DE/DI contrast replicates outside the ROK family",
+            "simple vowel harmony is not sufficient",
+        ],
+        "does_not_support": [
+            "specific tense/aspect opposition",
+            "agent/object split",
+            "voice opposition",
+        ],
+        "note": "bidedean/bidiboan gives cross-family formal replication without orthogonal semantics.",
+    },
+    "NP-DI-EGIAR": {
+        "matched_de_di_pair": False,
+        "external_variable_fixed": False,
+        "same_or_comparable_root": True,
+        "di_branch_present": True,
+        "classification": "MISSING_CONTROL",
+        "supports": [],
+        "does_not_support": ["any exact grammatical mapping"],
+        "note": "No comparably secure externally fixed NP+DI+EGIAR production/authorship series is currently known.",
+    },
+}
+
+
+DEDI_REJECTED_SHORTCUTS = {
+    "DE=TIME_A_DI=TIME_B": "No independent temporal variable predicts the contrast.",
+    "DE=ASPECT_A_DI=ASPECT_B": "No independent aspectual variable predicts the contrast.",
+    "DE=AGENT_DI=OBJECT": "NP-DE production contexts constrain DE, but DI lacks a matched externally fixed object-role series.",
+    "BI=PRONOMINAL_AGENT": "NP + BI constructions falsify simple universal substitution.",
+    "E_I_BY_ROOT_VOWEL": "Previously falsified by matched-root evidence.",
+    "E_I_BY_AN": "Both branches can occur with AN; AN does not predict E/I.",
+}
+
+
+def evaluate_dedi_candidate(reference: str) -> dict[str, Any]:
+    if reference not in DEDI_ORTHOGONAL_CANDIDATES:
+        raise KeyError(f"Unknown D(E/I) candidate: {reference}")
+    c = DEDI_ORTHOGONAL_CANDIDATES[reference]
+    criteria = {
+        "matched_de_di_pair": bool(c["matched_de_di_pair"]),
+        "external_variable_fixed": bool(c["external_variable_fixed"]),
+        "same_or_comparable_root": bool(c["same_or_comparable_root"]),
+        "di_branch_present": bool(c["di_branch_present"]),
+    }
+    exact_pass = all(criteria.values())
+    return {
+        "protocol": "DEDI-ORTHO-01",
+        "reference": reference,
+        "criteria": criteria,
+        "classification": c["classification"],
+        "supports": list(c["supports"]),
+        "does_not_support": list(c["does_not_support"]),
+        "state": "STRICT_ORTHOGONAL_PASS" if exact_pass else "OPEN",
+        "note": c["note"],
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def dedi_orthogonal_matrix() -> dict[str, Any]:
+    rows = [evaluate_dedi_candidate(ref) for ref in DEDI_ORTHOGONAL_CANDIDATES]
+    passing = [r["reference"] for r in rows if r["state"] == "STRICT_ORTHOGONAL_PASS"]
+    return {
+        "protocol": "DEDI-ORTHO-01",
+        "formal_state": "CORE_MORPHOLOGICAL_COMPLEX",
+        "official_score": 50,
+        "exact_feature_state": "OPEN",
+        "passing_candidates": passing,
+        "rows": rows,
+        "rejected_shortcuts": dict(DEDI_REJECTED_SHORTCUTS),
+        "best_current_constraint": (
+            "DE is compatible with participant-link / valency / voice / clause-integration "
+            "in externally constrained production contexts; DI lacks a matched external anchor."
+        ),
+        "next_required_evidence": (
+            "A paired or tightly comparable DE/DI verbal construction where an independently "
+            "known variable—person, voice, valency, modality, argument structure or clause type—"
+            "predicts the E/I alternation reproducibly."
+        ),
         "automatic_core_promotion": False,
         "authority": dict(AUTHORITY),
     }
