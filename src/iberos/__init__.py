@@ -53,6 +53,7 @@ from .core import (
     DEDI_REJECTED_SHORTCUTS,
     evaluate_dedi_candidate,
     dedi_orthogonal_matrix,
+    evaluate_dedi_predictive_gate,
 )
 
 __all__ = [
@@ -110,6 +111,7 @@ __all__ = [
     "DEDI_REJECTED_SHORTCUTS",
     "evaluate_dedi_candidate",
     "dedi_orthogonal_matrix",
+    "evaluate_dedi_predictive_gate",
 ]
 
 __version__ = "1.0.1"
