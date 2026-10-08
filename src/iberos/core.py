@@ -1616,3 +1616,64 @@ def evaluate_dedi_predictive_gate(
         "requires_explicit_release_decision": True,
         "authority": dict(AUTHORITY),
     }
+
+
+def audit_dedi_prospective_provenance(
+    observations: list[dict[str, Any]],
+    *,
+    preregistration_id: str | None = None,
+    preregistration_hash: str | None = None,
+) -> dict[str, Any]:
+    """Check traceability without certifying the underlying scientific claims.
+
+    This is a documentary audit only. It never issues an epigraphic PASS.
+    Every object must have an independent LEAK_GROUP, a dated external
+    contextual source, a preregistered prediction record and a reviewer ID.
+    """
+    registry_ok = bool(preregistration_id and str(preregistration_id).strip()
+                       and preregistration_hash and str(preregistration_hash).strip())
+    seen_phys: set[str] = set()
+    seen_leak: set[str] = set()
+    rows = []
+    for obs in observations:
+        phys = str(obs.get("PHYS_ID") or "").strip()
+        leak = str(obs.get("LEAK_GROUP") or "").strip()
+        external = str(obs.get("external_source_id") or "").strip()
+        external_date = str(obs.get("external_source_date") or "").strip()
+        prediction_id = str(obs.get("prediction_record_id") or "").strip()
+        reviewer = str(obs.get("independent_reviewer_id") or "").strip()
+        source_hash = str(obs.get("source_snapshot_hash") or "").strip()
+        checks = {
+            "preregistration_identified": registry_ok,
+            "phys_id_present": bool(phys),
+            "phys_id_unique": bool(phys) and phys not in seen_phys,
+            "leak_group_present": bool(leak),
+            "leak_group_unique": bool(leak) and leak not in seen_leak,
+            "external_source_identified": bool(external and external_date),
+            "external_snapshot_hashed": bool(source_hash),
+            "prediction_record_identified": bool(prediction_id),
+            "independent_reviewer_identified": bool(reviewer),
+            "not_synthetic": obs.get("synthetic") is False,
+        }
+        if phys:
+            seen_phys.add(phys)
+        if leak:
+            seen_leak.add(leak)
+        rows.append({
+            "PHYS_ID": phys or None,
+            "LEAK_GROUP": leak or None,
+            "checks": checks,
+            "missing_requirements": [k for k, ok in checks.items() if not ok],
+            "documentary_complete": all(checks.values()),
+        })
+    complete = bool(rows) and all(row["documentary_complete"] for row in rows)
+    return {
+        "protocol": "DEDI-PROVENANCE-AUDIT-01",
+        "documentary_state": "READY_FOR_INDEPENDENT_AUDIT" if complete else "INCOMPLETE",
+        "scientific_state": "UNVERIFIED",
+        "rows": rows,
+        "independent_review_required": True,
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+        "warning": "Completeness and self-declared reviewer IDs are not proof of independence or grammatical meaning.",
+    }
