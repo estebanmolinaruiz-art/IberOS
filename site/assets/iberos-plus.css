@@ -28,3 +28,7 @@ footer{background:#061d2c;color:#d9e5ea;border-top:4px solid var(--gold);padding
 @media(max-width:850px){.menu-toggle{display:grid;place-items:center}.main-nav{display:none;position:absolute;left:12px;right:12px;top:64px;background:#071f31;border:1px solid rgba(224,179,95,.35);border-radius:12px;padding:10px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.main-nav.open{display:flex}.main-nav a{padding:11px 12px}.nav-actions{margin-left:0}.nav-search{display:none}.brand-text small{display:none}.archive-head{align-items:flex-start;flex-direction:column}.case-grid,.metric-grid,.module-status{grid-template-columns:1fr}.repro-flow{grid-template-columns:1fr}}
 /* v37.2 enriched ficha */
 .case-grid .card{min-height:220px}.card ul{padding-left:18px}.card li{margin:7px 0;color:var(--muted)}
+
+.artifact-visual.doc-cover{background-color:#e8dcc7!important;background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important}
+.artifact-visual.doc-cover::after{display:none!important}
+.artifact-doc-label{position:absolute;left:14px;bottom:14px;background:rgba(5,27,42,.90);color:#f4ead7;border:1px solid rgba(224,179,95,.55);padding:7px 10px;border-radius:7px;font-size:.72rem;font-weight:800}
