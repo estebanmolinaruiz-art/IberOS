@@ -416,3 +416,20 @@ body.iberos-inner .hero::after{background:linear-gradient(0deg,#09283a77,transpa
  body.iberos-inner .hero h1{font-size:clamp(2.8rem,6vw,4.2rem)!important}
  body.iberos-inner .portal-grid,body.iberos-inner .corpus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* Corpus: panel de filtros plegable exclusivamente en teléfonos */
+.mobile-filter-toggle{display:none}
+@media(max-width:600px){
+ body.iberos-corpus .mobile-filter-toggle{display:block;grid-column:1/-1;width:100%;padding:12px 16px;background:linear-gradient(#ffebc5,#e2b373);color:#082237;border:1px solid #c89451;border-radius:9px;font:700 1rem Georgia,serif;text-align:left;cursor:pointer}
+ body.iberos-corpus .corpus-shell>.filters{display:none!important}
+ body.iberos-corpus .corpus-shell>.filters.is-open{display:block!important}
+ body.iberos-corpus .corpus-shell{gap:12px!important;padding:8px 12px!important}
+ body.iberos-corpus .hero::before{background-image:linear-gradient(90deg,rgba(3,20,34,.92),rgba(3,22,34,.72)),url("./iberosplus-hero.webp")!important;background-size:cover!important;background-position:68% center!important}
+ body.iberos-corpus .site-header .header-inner{padding:7px 10px!important;gap:6px!important;min-height:55px!important}
+ body.iberos-corpus .site-header .brand-mark{display:none!important}
+ body.iberos-corpus .site-header .brand-text strong{font-size:1.35rem!important}
+ body.iberos-corpus .site-header .nav-cta{font-size:.6rem!important;max-width:99px!important}
+ body.iberos-corpus .site-header .menu-toggle{font-size:1rem!important;flex:0 0 auto!important}
+ body.iberos-corpus .results-head{padding:12px!important}
+ body.iberos-corpus .results-head h2{font-size:1.4rem!important}
+}
