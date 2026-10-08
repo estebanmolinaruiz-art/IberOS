@@ -21,7 +21,7 @@ if(!r){
  document.title="IberOS+ · "+r.Nombre_objeto;
  const fam=rels.filter(x=>x.OBJECT_ID===r.OBJECT_ID).map(x=>x.Familia);
  let en=null;
- const covers={"IBR-PLM-0002":"../assets/ficha-covers/tivissa.webp"};
+ const covers={"IBR-PLM-0002":"../assets/ficha-covers/tivissa.webp","IBR-PLM-0003":"../assets/ficha-covers/pech-maho.webp","IBR-PLM-0004":"../assets/ficha-covers/coimbra.webp"};
  const cover=covers[r.OBJECT_ID]||"";
  const fields=[["Tipo",r.Tipo_objeto],["Yacimiento",r.Yacimiento],["Localidad",r.Localidad],["Soporte",r.Soporte],["Escritura",r.Escritura],["Cronología",r.Cronología],["Inclusión IberOS",r.IberOS_Inclusion],["Estado PALEO",r.PALEO_Status],["Módulos activos",r.Modulos_Activos],["Dependencia",r.Dependency_Group],["Estado de ficha",r.Estado_ficha],["PDF declarado",r.Archivo_ficha]];
  const by=Object.fromEntries(rows.map(x=>[x.OBJECT_ID,x]));
