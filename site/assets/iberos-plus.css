@@ -231,3 +231,16 @@ body:has(.portal-grid-approved) .portal-grid .portal-card:nth-child(5) .media{ba
 body:has(.portal-grid-approved) .portal-grid .portal-card:nth-child(6) .media{background-image:linear-gradient(180deg,rgba(3,22,35,.02),rgba(4,25,38,.07)),url("./flyer-recursos.svg");background-size:cover;background-position:center;filter:none}
 body:has(.portal-grid-approved) .portal-grid .portal-card:nth-child(7) .media{background-image:linear-gradient(180deg,rgba(3,22,35,.02),rgba(4,25,38,.07)),url("./flyer-casos.svg");background-size:cover;background-position:center;filter:none}
 body:has(.portal-grid-approved) .portal-grid .portal-card:nth-child(8) .media{background-image:linear-gradient(180deg,rgba(3,22,35,.02),rgba(4,25,38,.07)),url("./flyer-comunidad.svg");background-size:cover;background-position:center;filter:none}
+
+/* Exact flyer navigation hierarchy: six central links, search, language, access label. */
+.site-header .header-inner{gap:20px}
+.site-header .main-nav{gap:clamp(6px,1.3vw,23px)}
+.site-header .main-nav a{font-family:Georgia,serif;font-weight:600}
+.site-header .brand-mark{border:0;box-shadow:none;background:none;color:#f4c971;font-size:2.5rem;width:44px}
+.site-header .nav-actions{margin-left:auto;gap:0;border:1px solid rgba(226,184,111,.38);border-radius:11px;padding:5px;background:rgba(2,19,31,.8)}
+.site-header .nav-search{border:0;border-right:1px solid rgba(226,184,111,.35);border-radius:0;font-size:1.8rem}
+.site-header .nav-lang{font-family:Georgia,serif;color:#fff5dd;font-size:.91rem;font-weight:700;padding:0 14px;white-space:nowrap}
+.site-header .nav-cta{font-family:Georgia,serif;border-radius:8px;padding:11px 17px}
+@media(max-width:1180px){.site-header .header-inner{gap:11px}.site-header .brand-text small{font-size:.46rem}.site-header .main-nav a{font-size:.81rem;padding:9px 5px}.site-header .nav-cta{display:inline-flex;font-size:.76rem;padding:9px}}
+@media(max-width:850px){.site-header .nav-lang{padding:0 9px}.site-header .nav-cta{font-size:.7rem}.site-header .nav-actions{margin-left:auto}}
+@media(max-width:440px){.site-header .brand-text strong{font-size:1.12rem}.site-header .nav-search{display:none}.site-header .nav-cta{padding:7px 8px}.site-header .nav-lang{font-size:.8rem;padding:0 5px}}
