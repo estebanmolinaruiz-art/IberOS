@@ -1,15 +1,13 @@
-# Curated Benchmark v1.0
+# IberOS Curated Benchmark v1.0.1
 
-The public v1.0 benchmark contains the 38-object curated IberOS layer.
+El benchmark público contiene la capa curada de **38 objetos** de IberOS.
 
-It is intentionally smaller than the live Cathalaunia/Iberika corpus.
+Está diseñado para interoperabilidad, control de fuga, recuperación de familias, procedencia y comparación con otros sistemas.
 
-The benchmark is designed for:
+## Alcance
 
-- interoperability tests;
-- object-level leakage controls;
-- family retrieval;
-- provenance experiments;
-- comparison with other analytical systems.
+No es una republicación completa del corpus epigráfico ibérico.
 
-It is **not** presented as a complete republication of the underlying epigraphic corpus.
+La capa histórica de 3.406 ENTRY permanece como **LEGACY / FROZEN** y sus métricas no deben extrapolarse automáticamente al corpus vivo de Cathalaunia / Iberika.
+
+La integración con el corpus vivo es parcial y no debe describirse como ingestión total.
