@@ -1,13 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS Web Engine</title>
-<style>body{font-family:system-ui;max-width:900px;margin:40px auto;padding:0 20px}input,button{font:inherit;padding:8px}pre{white-space:pre-wrap;background:#f3f5f7;padding:15px;border-radius:10px}</style></head><body>
-<h1>IberOS Web Engine 1.0.1-web.2</h1><p>Consulta el registro público directamente desde GitHub.</p>
-<input id="q" value="SALIR"><button id="go">Buscar</button><pre id="out">Inicializando…</pre>
-<script type="module">
-import {createIberOS,IBEROS_WEB_ENGINE_VERSION} from "./iberos-web.mjs";
-const out=document.querySelector('#out'), q=document.querySelector('#q');
-try{
- const engine=await createIberOS();
- const run=()=>{const rows=engine.search(q.value);out.textContent=JSON.stringify({engine_version:IBEROS_WEB_ENGINE_VERSION,count:rows.length,results:rows.slice(0,10)},null,2)};
- document.querySelector('#go').onclick=run; run();
-}catch(e){out.textContent='Error: '+e.message;}
-</script></body></html>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS+ · Core WebEngine</title><link rel="stylesheet" href="../assets/iberos-plus.css"><style>.tool input{width:min(100%,560px);padding:12px;border:1px solid #cdbd9f;border-radius:10px;font:inherit}.tool button{cursor:pointer}.result{white-space:pre-wrap;background:#082b41;color:#eaf3f6;padding:18px;border-radius:14px;overflow:auto}</style></head><body><div id="head"></div>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Módulo Core · WebEngine 1.0.1-web.2</div><h1>Buscar en IberOS</h1><p>Consulta el registro público y sus familias desde el navegador. Este motor cubre interoperabilidad, búsqueda, validación y procedencia dentro del alcance del Open Research Kit.</p></div></section>
+<main><div class="detail"><section class="card tool"><h2>Consulta</h2><p class="meta">Prueba con SALIR, Tivissa, Llíria, KUTUR o un OBJECT_ID.</p><input id="q" value="SALIR"><button class="btn" id="go">Buscar</button><h3>Resultado</h3><pre class="result" id="out">Inicializando…</pre></section><aside><div class="card"><span class="pill ok">Motor público real</span><h3>Qué hace</h3><p>Busca en el registro curado y devuelve objetos coincidentes de forma reproducible.</p><h3>Qué no hace</h3><p>No reimplementa todos los módulos analíticos históricos o privados de IberOS.</p><a class="btn" href="../corpus/">Explorar Corpus</a></div></aside></div></main>
+<script type="module">import{header}from"../assets/portal-data.js";import{createIberOS,IBEROS_WEB_ENGINE_VERSION}from"./iberos-web.mjs";document.getElementById("head").innerHTML=header("../");const out=document.querySelector("#out"),q=document.querySelector("#q");try{const engine=await createIberOS();const run=()=>{const rows=engine.search(q.value);out.textContent=JSON.stringify({engine_version:IBEROS_WEB_ENGINE_VERSION,count:rows.length,results:rows.slice(0,10)},null,2)};document.querySelector("#go").onclick=run;q.onkeydown=e=>{if(e.key==="Enter")run()};run()}catch(e){out.textContent="Error: "+e.message}</script></body></html>
