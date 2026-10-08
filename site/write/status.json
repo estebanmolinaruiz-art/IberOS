@@ -1,0 +1,27 @@
+{
+  "project": "IberOS-Write",
+  "engine_version": "WRITE-GRAMMAR v0.3-web.2",
+  "generated": "2026-10-08",
+  "mode": "conservative_web_adapter",
+  "blind_reconstruction_test": "ACTIVE",
+  "no_invention": true,
+  "semantic_coverage_visible": true,
+  "fallback_rate_visible": true,
+  "known_limitations": [
+    "Not a general Spanish-to-Iberian translator.",
+    "DE/DI exact grammatical contrast remains unresolved.",
+    "Unsupported semantic frames return controlled abstention.",
+    "ŔOK is validated only as a transfer-related functional domain; literal direction remains open."
+  ],
+  "authority": {
+    "semantic_release": "C594",
+    "prospective_lock": "C474",
+    "technical_floor": "C539",
+    "rok_network": "C541"
+  },
+  "active_protocols": [
+    "BLIND Reconstruction Test",
+    "BI-DISAMBIG-01",
+    "PALEO-RHOTIC-LOCK-01"
+  ]
+}

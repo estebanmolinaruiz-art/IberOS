@@ -1,0 +1,26 @@
+{
+  "project": "IberOS",
+  "web_engine_version": "1.0.1-web.2",
+  "generated": "2026-10-08",
+  "doi": "10.5281/zenodo.22939179",
+  "official_metrics": {
+    "ICS_global": 70.8,
+    "ROK": 75,
+    "KA_KE": 75,
+    "SALIR": 75,
+    "KUTUR": 75,
+    "D_E_I": 50,
+    "BAIDES_BATIR": 75
+  },
+  "active_protocols": [
+    "BI-DISAMBIG-01",
+    "PALEO-RHOTIC-LOCK-01"
+  ],
+  "note": "Metrics are validation indicators, not a percentage of the Iberian language deciphered.",
+  "authority": {
+    "semantic_release": "C594",
+    "prospective_lock": "C474",
+    "technical_floor": "C539",
+    "rok_network": "C541"
+  }
+}

@@ -1,0 +1,12 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS-Write</title>
+<style>body{font-family:system-ui;max-width:900px;margin:40px auto;padding:0 20px}textarea,button{font:inherit;padding:10px;width:100%;box-sizing:border-box}button{margin-top:8px;width:auto}.seg{padding:3px 7px;border-radius:6px;margin:2px;display:inline-block}.probable{color:#111}.infer{color:#6b4f8a}.fallback{color:#b42318}.gap{color:#68737d}pre{background:#f4f6f8;padding:15px;border-radius:10px;white-space:pre-wrap}</style></head><body>
+<h1>IberOS-Write — WRITE-GRAMMAR v0.3-web.2</h1>
+<textarea id="q" rows="3">A Bastubar se transfiere un documento.</textarea><br><button id="go">Reconstruir</button>
+<h2>Salida</h2><div id="segments"></div><pre id="out"></pre>
+<script type="module">
+import {createIberOSWrite} from "./iberos-write.mjs";
+const w=await createIberOSWrite({baseUrl:"./"});
+const q=document.querySelector("#q"), out=document.querySelector("#out"), seg=document.querySelector("#segments");
+function run(){const r=w.reconstruct(q.value);seg.innerHTML=(r.segments||[]).map(s=>`<span class="seg ${s.status}">${s.form}</span>`).join(" ");out.textContent=JSON.stringify(r,null,2)}
+document.querySelector("#go").onclick=run;run();
+</script></body></html>

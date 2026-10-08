@@ -1,0 +1,36 @@
+{
+  "engine": "IberOS-Write",
+  "version": "WRITE-GRAMMAR v0.3-web.2",
+  "generated": "2026-10-08",
+  "principles": [
+    "No inventar léxico ni funciones.",
+    "Separar ibérico validado, probable, INFER experimental y fallback moderno.",
+    "Usar paráfrasis funcional o abstención cuando falte cobertura.",
+    "Mostrar SEMANTIC_COVERAGE y FALLBACK_RATE.",
+    "Mantener BLIND Reconstruction Test como protocolo separado.",
+    "Aplicar BI-DISAMBIG-01: BI/BIN=2 solo con anclaje cuantitativo independiente.",
+    "Aplicar PALEO-RHOTIC-LOCK-01: no neutralizar R/R1 para segmentación, independencia o promoción."
+  ],
+  "known_lexemes": {
+    "BASTUBAR": {"class":"proper_name_attested","status":"VALIDATED"},
+    "ER": {"class":"relator","status":"PROBABLE","function":"recipient/benefactive/affected participant contextual"},
+    "KA_KE": {"class":"relator","status":"PROBABLE","function":"goal/target/allocation contextual"},
+    "KU": {"class":"relator","status":"PROBABLE","function":"origin/provenance/affiliation contextual"},
+    "ROK": {
+      "class":"predicate_family",
+      "status":"VALIDATED_FUNCTIONAL_DOMAIN",
+      "function":"transfer operation / transfer-related predicate domain",
+      "literal_realizations":{"give":"PROBABLE_OPEN","deliver":"PROBABLE_OPEN","receive":"PROBABLE_OPEN","assign":"PROBABLE_OPEN"},
+      "guard":"Exact direction and giver/receiver mapping remain open."
+    },
+    "UTUR_KUTUR": {"class":"theme_family","status":"PROBABLE","function":"writing / inscription / formular-written domain"},
+    "SALIR": {"class":"economic_family","status":"PROBABLE","function":"quantifiable economic/value entity domain"},
+    "BI_D_EI_V_AN": {"class":"verbal_complex","status":"STRUCTURAL","function":"(B)I + D(E/I) + V + (AN); exact E/I contrast open"}
+  },
+  "authority": {
+    "semantic_release":"C594",
+    "prospective_lock":"C474",
+    "technical_floor":"C539",
+    "rok_network":"C541"
+  }
+}

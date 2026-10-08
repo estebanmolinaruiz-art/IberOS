@@ -1,0 +1,7 @@
+{
+  "name": "IberOS Web Engine",
+  "version": "1.0.1-web.2",
+  "source_repository": "https://github.com/estebanmolinaruiz-art/IberOS",
+  "generated": "2026-10-08",
+  "entry_point": "iberos-web.mjs"
+}

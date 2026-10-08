@@ -1,4 +1,4 @@
-# IberOS Open Research Kit v1.0
+# IberOS Open Research Kit v1.0.1
 
 [![PyPI version](https://img.shields.io/pypi/v/iberos.svg)](https://pypi.org/project/iberos/)
 [![GitHub release](https://img.shields.io/github/v/release/estebanmolinaruiz-art/IberOS)](https://github.com/estebanmolinaruiz-art/IberOS/releases)
@@ -9,39 +9,54 @@
 
 **IberOS — created by Esteban Molina Ruiz**
 
-IberOS is an independent, amateur research project focused on reproducible internal analysis of Iberian inscriptions.
-
-This public kit is designed so that researchers, developers and comparable software can **inspect, validate, query and exchange IberOS results in machine-readable form**.
+IberOS is an independent research project for reproducible internal analysis of Iberian inscriptions. The public kit exposes interoperable data structures, validation rules, curated objects, examples and lightweight web adapters.
 
 Primary project DOI: **10.5281/zenodo.22939179**
 
-## Distribution
+## Scientific method
 
-- **PyPI:** `pip install iberos`
-- **GitHub Releases:** versioned source releases
-- **GitHub Pages:** project documentation
-- **Software Heritage:** archival request enabled on releases
-- **Zenodo:** GitHub integration enabled for DOI-backed software archiving
+IberOS keeps four epistemic layers separate:
 
-## What this release contains
+`EVIDENCE → INFERENCE → HYPOTHESIS → ESTIMATED TRANSLATION`
 
-- a Python package and command-line interface (`iberos`);
-- an open JSON exchange schema for IberOS result records;
-- a curated registry of 38 IberOS objects;
-- family/object links used by the project;
-- a verified partial mapping to live Cathalaunia/Iberika `Ixxxxx` identifiers;
-- representative machine-readable case examples;
-- provenance and reproducibility rules;
-- a static documentation site;
-- GitHub Actions templates for testing, GitHub Pages, PyPI trusted publishing and Software Heritage archival.
+A narrower interpretation is never promoted merely because it fits the corpus. Promotion requires independent support, adversarial controls and explicit falsifiers.
 
-## Important scientific scope
+The project also uses physical/documentary identity controls:
 
-This kit exposes the **interoperability, benchmark, provenance and validation layer** of IberOS.
+`ENTRY → PHYS_ID / OBJECT_ID → LEAK_GROUP → TRAIN / VAL / HOLD`
 
-It does **not** claim that all historical/private IberOS analysis modules are fully reimplemented in this public v1.0 package. Results imported from prior IberOS releases are versioned and explicitly labelled.
+This prevents multiple editions, faces or readings of the same physical object from being counted as independent confirmations.
 
-The historical Beta Final V2 metrics refer to the legacy snapshot of **3,406 ENTRY**. They are not automatically metrics of the current live Cathalaunia/Iberika corpus.
+## Validation discipline
+
+- E1–E5 evidence grading.
+- PHYS_ID / OBJECT_ID documentary hygiene.
+- Leakage-aware TRAIN / VAL / HOLD splits.
+- Negative controls and non-regression tests.
+- Prospective and blind tests where possible.
+- Paleography preserved separately from simplified linguistic forms.
+- External corpora and sister systems enter as **candidate evidence**, never as automatic CORE updates.
+
+The current public web adapters consume the frozen scientific authority chain:
+
+- semantic release: **C594**
+- prospective lock: **C474**
+- technical floor: **C539**
+- ŔOK network: **C541**
+
+Official validation indicators in that snapshot include ICS global **70.8%**. These are validation indicators, **not a percentage of the Iberian language deciphered**.
+
+## Public components
+
+- Python package and CLI (`iberos`).
+- JSON exchange schema.
+- Curated registry of 38 object-level records.
+- Family/object links and provenance.
+- Partial mapping to Cathalaunia/Corpus Ibèrika identifiers.
+- GitHub Pages documentation.
+- **IberOS Web Engine 1.0.1-web.2**.
+- **IberOS-Write WRITE-GRAMMAR v0.3-web.2**.
+- Automated tests and publication workflows.
 
 ## Quick start
 
@@ -54,47 +69,34 @@ iberos family SALIR
 iberos validate data/examples/tivissa.json
 ```
 
-## Python API
-
-```python
-from iberos import load_registry, validate_result
-
-objects = load_registry()
-print(objects[0]["OBJECT_ID"])
-
-ok, errors = validate_result("data/examples/tivissa.json")
-print(ok, errors)
-```
-
 ## Interoperability
 
-The canonical result format is defined in:
+Canonical result schema:
 
 `src/iberos/schema/iberos-result-v1.schema.json`
 
-The intended exchange chain is:
+Exchange chain:
 
 `UPSTREAM_ID → ENTRY_ID → OBJECT_ID → LEAK_GROUP → READING → PALEO → SIMPLIFIED → MORPH → CLAIMS`
 
-## Authorship and name
+## Web tools
 
-The official project name is **IberOS**.
+GitHub Pages exposes:
+
+- `/webengine/` — query the public IberOS registry in-browser.
+- `/write/` — conservative IberOS-Write adapter with controlled abstention.
+
+IberOS-Write does not invent missing Iberian vocabulary. Unsupported semantic frames return controlled abstention, and reconstructed/probable/fallback layers remain distinct.
+
+## Authorship and licensing
 
 Creator and primary maintainer: **Esteban Molina Ruiz**
 
-Forks and derivatives should preserve attribution and clearly identify themselves as modified or unofficial.
-
-See `NAME_AND_ATTRIBUTION_POLICY.md`.
-
-## Licensing
-
 - Original IberOS code: **Apache-2.0**
 - Original IberOS documentation and original metadata: **CC BY 4.0**
-- Third-party data, transcriptions, images and editions: retain their original terms and attribution.
+- Third-party data, transcriptions, images and editions retain their original terms and attribution.
 
-The Apache license does not relicense external corpora.
-
-See `LICENSE_POLICY.md` and `LICENSES/`.
+See `LICENSE_POLICY.md`, `LICENSES/` and `NAME_AND_ATTRIBUTION_POLICY.md`.
 
 ## Cite
 

@@ -11,8 +11,8 @@ identifiers:
     description: "Primary IberOS project publication"
 url: "https://zenodo.org/records/22939179"
 license: Apache-2.0
-version: "1.0.0"
-date-released: "2026-09-30"
+version: "1.0.1"
+date-released: "2026-10-01"
 keywords:
   - Iberian
   - epigraphy

@@ -1,25 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>IberOS Open Research Kit</title>
 <style>
 body{font-family:system-ui,Arial,sans-serif;max-width:980px;margin:40px auto;padding:0 20px;line-height:1.55;color:#1e293b}
-h1,h2{color:#1f4e78} .card{border:1px solid #d8dee9;border-radius:12px;padding:18px;margin:14px 0}
-code{background:#eef2f7;padding:2px 5px;border-radius:4px} .tag{display:inline-block;background:#e2f0d9;padding:4px 9px;border-radius:999px;margin:3px}
+h1,h2{color:#1f4e78}.card{border:1px solid #d8dee9;border-radius:12px;padding:18px;margin:14px 0}
+code{background:#eef2f7;padding:2px 5px;border-radius:4px}.tag{display:inline-block;background:#e2f0d9;padding:4px 9px;border-radius:999px;margin:3px}
+a.button{display:inline-block;padding:8px 12px;border:1px solid #1f4e78;border-radius:8px;text-decoration:none;margin:4px 8px 4px 0}
 </style>
 </head>
 <body>
 <h1>IberOS Open Research Kit</h1>
-<p><strong>IberOS — created by Esteban Molina Ruiz</strong></p>
-<p>Independent, reproducible tooling and machine-readable research outputs for internal analysis of Iberian inscriptions.</p>
-<div class="card"><h2>Use it</h2><p><code>pip install iberos</code> (after PyPI publication)</p><p><code>iberos show-object IBR-PLM-0002</code></p></div>
-<div class="card"><h2>Interoperate</h2><p>Consume IberOS JSON records through the public JSON Schema. Other programs do not need to use the IberOS engine to read IberOS outputs.</p></div>
-<div class="card"><h2>Curated benchmark</h2><p>38 object-level curated records, family links, provenance and leakage-aware identifiers.</p></div>
-<div class="card"><h2>Scientific discipline</h2>
-<span class="tag">Evidence E1–E5</span><span class="tag">OBJECT_ID</span><span class="tag">LEAK_GROUP</span><span class="tag">Controls</span><span class="tag">Provenance</span>
+<p><strong>IberOS — creado por Esteban Molina Ruiz</strong></p>
+<p>Herramientas reproducibles y resultados legibles por máquina para el análisis interno de inscripciones ibéricas.</p>
+
+<div class="card">
+<h2>Motor web sincronizado</h2>
+<p><strong>IberOS Web Engine 1.0.1-web.2</strong> · autoridad C594 / C474 / C539 / C541.</p>
+<a class="button" href="webengine/">Abrir IberOS Web Engine</a>
+<a class="button" href="webengine/status.json">Estado JSON</a>
 </div>
-<p>Primary project DOI: <a href="https://doi.org/10.5281/zenodo.22939179">10.5281/zenodo.22939179</a></p>
+
+<div class="card">
+<h2>IberOS-Write</h2>
+<p><strong>WRITE-GRAMMAR v0.3-web.2</strong> con BI-DISAMBIG-01, PALEO-RHOTIC-LOCK-01 y ŔOK limitado al dominio funcional de transferencia.</p>
+<a class="button" href="write/">Abrir IberOS-Write</a>
+<a class="button" href="write/status.json">Estado JSON</a>
+</div>
+
+<div class="card">
+<h2>Disciplina científica</h2>
+<p><code>EVIDENCIA → INFERENCIA → HIPÓTESIS → TRADUCCIÓN ESTIMADA</code></p>
+<span class="tag">ICS 70,8 %</span><span class="tag">ŔOK 75</span><span class="tag">KA/KE 75</span><span class="tag">SALIR 75</span><span class="tag">KUTUR 75</span><span class="tag">BAIDES/BATIR 75</span><span class="tag">D(E/I) 50</span>
+<p>Son indicadores de validación, no porcentaje de lengua ibérica descifrada.</p>
+</div>
+
+<p>DOI principal: <a href="https://doi.org/10.5281/zenodo.22939179">10.5281/zenodo.22939179</a></p>
+<p><a href="https://github.com/estebanmolinaruiz-art/IberOS">Repositorio GitHub</a></p>
 </body>
 </html>
