@@ -193,3 +193,31 @@ body:not(:has(.portal-grid-approved)) .casefile{border:1px solid rgba(226,180,97
  body:not(:has(.portal-grid-approved)) :is(.case-grid,.resource-shelf,.viewer-shell){grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){.result-card,.case-card,.portal-card{transition:none!important}}
+
+/* Flyer restoration preview: precise hierarchy with preserved actual metrics. */
+body:has(.portal-grid-approved){--max:1500px}
+body:has(.portal-grid-approved) .hero{min-height:376px}
+body:has(.portal-grid-approved) .hero-inner{padding:27px 40px 28px}
+body:has(.portal-grid-approved) .hero h1{font-size:clamp(3rem,5vw,5.15rem);max-width:640px}
+body:has(.portal-grid-approved) .hero p{font-size:1.2rem;max-width:720px}
+body:has(.portal-grid-approved) .hero-search{max-width:680px}
+body:has(.portal-grid-approved) main{padding:0 18px 32px}
+body:has(.portal-grid-approved) .editorial-panel{border-radius:16px 16px 0 0}
+body:has(.portal-grid-approved) .editorial-head{display:grid;grid-template-columns:minmax(330px,.9fr) minmax(290px,1.25fr) minmax(160px,.55fr);gap:24px;align-items:center;padding:20px 26px 7px}
+body:has(.portal-grid-approved) .editorial-head .section-kicker{display:none}
+body:has(.portal-grid-approved) .editorial-head h2{font-size:clamp(2.4rem,3.6vw,3.75rem);white-space:nowrap}
+body:has(.portal-grid-approved) .portal-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:8px 19px 14px}
+body:has(.portal-grid-approved) .portal-card .media{height:147px}
+body:has(.portal-grid-approved) .portal-card{border-radius:9px}
+body:has(.portal-grid-approved) .portal-card .copy{padding:8px 14px 11px}
+body:has(.portal-grid-approved) .portal-card h3{font-size:1.55rem}
+body:has(.portal-grid-approved) .portal-card p{font-size:.87rem}
+body:has(.portal-grid-approved) .flyer-statistics{border-radius:0 0 12px 12px;margin:0 0 24px;grid-template-columns:repeat(5,1fr);box-shadow:0 13px 35px rgba(2,17,29,.23)}
+body:has(.portal-grid-approved) .flyer-statistics .stat-item{display:flex;flex-direction:column;justify-content:center;padding:17px 24px;min-height:82px}
+body:has(.portal-grid-approved) .flyer-statistics .stat-item strong{font-size:1.85rem}
+.flyer-motto{font:700 .63rem/1.8 Georgia,serif;color:#132b3b;letter-spacing:.19em;text-align:center;white-space:nowrap}.flyer-motto span{font-size:.58rem}
+.flyer-decoration{position:absolute;inset:0;pointer-events:none}
+.flyer-map{position:absolute;left:45%;top:9%;color:#e9c37b;font:5rem Georgia,serif;opacity:.4}
+.flyer-handwriting{position:absolute;right:1%;top:46%;font:italic clamp(.9rem,1.5vw,1.5rem)/1.15 Georgia,serif;color:#fff3d4;transform:rotate(-10deg);text-align:center;text-shadow:0 2px 7px #061d2e}
+@media(max-width:1100px){body:has(.portal-grid-approved) .editorial-head{grid-template-columns:1fr 1fr}.flyer-motto{display:none}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.flyer-handwriting{display:none}}
+@media(max-width:670px){body:has(.portal-grid-approved) .hero-inner{padding:30px 20px}body:has(.portal-grid-approved) .editorial-head{display:block;padding:20px 15px 10px}body:has(.portal-grid-approved) .editorial-head h2{white-space:normal}body:has(.portal-grid-approved) .portal-grid{grid-template-columns:1fr;padding:10px}body:has(.portal-grid-approved) .flyer-statistics{grid-template-columns:repeat(2,1fr)}.flyer-map{display:none}}
