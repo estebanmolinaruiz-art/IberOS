@@ -23,6 +23,10 @@ from .core import (
     registry_independence_audit,
     independent_evidence_summary,
     evidence_promotion_review,
+    FAMILY_GATE_POLICIES,
+    family_gate_policy,
+    evaluate_family_gate,
+    family_gate_matrix,
 )
 
 __all__ = [
@@ -50,6 +54,10 @@ __all__ = [
     "registry_independence_audit",
     "independent_evidence_summary",
     "evidence_promotion_review",
+    "FAMILY_GATE_POLICIES",
+    "family_gate_policy",
+    "evaluate_family_gate",
+    "family_gate_matrix",
 ]
 
 __version__ = "1.0.1"

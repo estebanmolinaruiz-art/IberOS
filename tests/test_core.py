@@ -18,6 +18,9 @@ from iberos import (
     registry_independence_audit,
     independent_evidence_summary,
     evidence_promotion_review,
+    family_gate_policy,
+    evaluate_family_gate,
+    family_gate_matrix,
 )
 
 
@@ -211,3 +214,74 @@ def test_promotion_review_can_require_orthogonal_evidence_classes():
     )
     assert blocked["review_eligible"] is False
     assert blocked["missing_evidence_classes"] == ["BILINGUAL"]
+
+
+
+def test_family_policy_aliases_and_authority():
+    assert family_gate_policy("ŔOK")["family"] == "ROK"
+    assert family_gate_policy("KA")["family"] == "KA_KE_KU"
+    assert family_gate_policy("BAIDES")["family"] == "BAIDES_BATIR"
+    assert family_gate_policy("METROLOGY")["family"] == "NUM_METRO"
+    assert family_gate_policy("SALIR")["authority"]["semantic_release"] == "C594"
+
+
+def test_salir_functional_gate_requires_orthogonal_classes_across_independent_units():
+    records = [
+        {"OBJECT_ID": "S1", "level": "E4", "evidence_class": "QUANTITATIVE"},
+        {"OBJECT_ID": "S2", "level": "E4", "evidence_class": "ECONOMIC"},
+    ]
+    gate = evaluate_family_gate("SALIR", records, scope="functional")
+    assert gate["state"] == "REVIEW_ELIGIBLE"
+    assert gate["automatic_core_promotion"] is False
+
+
+def test_rok_exact_gate_stays_blocked_without_prospective_pass():
+    records = [
+        {"OBJECT_ID": "R1", "level": "E5", "evidence_class": "STRUCTURAL"},
+        {"OBJECT_ID": "R2", "level": "E5", "evidence_class": "ROLE_FIXED"},
+        {"OBJECT_ID": "R3", "level": "E5", "evidence_class": "ORTHOGONAL"},
+    ]
+    blocked = evaluate_family_gate("ROK", records, scope="exact")
+    assert blocked["state"] == "BLOCKED"
+    assert blocked["prospective_gate"] == "ROK-RECIPIENT-02"
+
+    passed = evaluate_family_gate(
+        "ROK",
+        records,
+        scope="exact",
+        strict_prospective_pass=True,
+    )
+    assert passed["state"] == "REVIEW_ELIGIBLE"
+    assert passed["automatic_core_promotion"] is False
+
+
+def test_num_metro_exact_values_need_independent_quantitative_and_orthogonal_support():
+    one_object = [
+        {"ENTRY_ID": "A", "PHYS_ID": "P1", "level": "E5", "evidence_class": "QUANTITATIVE"},
+        {"ENTRY_ID": "B", "PHYS_ID": "P1", "level": "E5", "evidence_class": "ORTHOGONAL"},
+    ]
+    gate = evaluate_family_gate(
+        "NUM_METRO",
+        one_object,
+        scope="exact",
+        strict_prospective_pass=True,
+    )
+    assert gate["state"] == "OPEN"
+    assert gate["review"]["qualifying_independent_units"] == 1
+
+
+def test_family_matrix_does_not_auto_promote():
+    evidence = {
+        "SALIR": [
+            {"OBJECT_ID": "S1", "level": "E4", "evidence_class": "QUANTITATIVE"},
+            {"OBJECT_ID": "S2", "level": "E4", "evidence_class": "ECONOMIC"},
+        ],
+        "KUTUR": [
+            {"OBJECT_ID": "K1", "level": "E4", "evidence_class": "FORMULARY"},
+            {"OBJECT_ID": "K2", "level": "E4", "evidence_class": "STRUCTURAL"},
+        ],
+    }
+    matrix = family_gate_matrix(evidence)
+    assert matrix["automatic_core_promotion"] is False
+    assert matrix["families"]["SALIR"]["state"] == "REVIEW_ELIGIBLE"
+    assert matrix["families"]["KUTUR"]["state"] == "REVIEW_ELIGIBLE"

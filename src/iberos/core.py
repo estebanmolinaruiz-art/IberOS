@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.3"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.4"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -514,4 +514,220 @@ def evidence_promotion_review(
         "automatic_core_promotion": False,
         "requires_explicit_release_decision": True,
         "summary": summary,
+    }
+
+
+FAMILY_GATE_POLICIES = {
+    "SALIR": {
+        "official_scope": "quantifiable economic/value domain",
+        "official_state": "STRONG_FUNCTIONAL_DOMAIN",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["QUANTITATIVE", "ECONOMIC"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["QUANTITATIVE", "ECONOMIC", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": ["money", "silver", "payment", "price"],
+        "prospective_gate": "SALIR-PROSPECTIVE-01",
+    },
+    "ROK": {
+        "official_scope": "transfer-related structural/functional domain",
+        "official_state": "STRONG_STRUCTURAL_DOMAIN",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["STRUCTURAL", "TRANSFER_CONTEXT"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["STRUCTURAL", "ROLE_FIXED", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": ["give", "deliver", "receive", "assign", "recipient", "giver"],
+        "prospective_gate": "ROK-RECIPIENT-02",
+    },
+    "KA_KE_KU": {
+        "official_scope": "relational opposition; KA enriched in quantified contexts; KU provenance/origin/affiliation contextual",
+        "official_state": "STRONG_RELATIONAL_SYSTEM",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["RELATIONAL", "QUANTITATIVE"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["RELATIONAL", "FLOW_FIXED", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": ["receiver", "provider", "input", "output", "source", "target"],
+        "prospective_gate": "KA-DIRECTION-PROSPECTIVE-01",
+    },
+    "KUTUR": {
+        "official_scope": "writing/inscription/formulary-compatible domain",
+        "official_state": "STRONG_FUNCTIONAL_DOMAIN",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["FORMULARY", "STRUCTURAL"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["FORMULARY", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": ["ritual", "money", "commodity", "gift", "unit"],
+        "prospective_gate": "KUTUR-PROSPECTIVE-01",
+    },
+    "BAIDES_BATIR": {
+        "official_scope": "human role/appellative families; BAIDES/BAITES distinct from BATIR",
+        "official_state": "STRONG_ROLE_FAMILY",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["HUMAN_ROLE", "MORPHOLOGY"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["HUMAN_ROLE", "EXTERNAL_ROLE_FIXED", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": ["witness", "beneficiary", "magistrate", "validator", "attester"],
+        "prospective_gate": None,
+    },
+    "NUM_METRO": {
+        "official_scope": "numeral/metrological compositional system",
+        "official_state": "STRONG_STRUCTURAL_SYSTEM",
+        "functional_gate": {
+            "target_level": "E4",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["COMBINATORIAL", "METROLOGY"],
+        },
+        "exact_gate": {
+            "target_level": "E5",
+            "minimum_independent_units": 2,
+            "required_evidence_classes": ["QUANTITATIVE", "ORTHOGONAL"],
+        },
+        "blocked_literalizations": [],
+        "prospective_gate": "NUM-VALUE-PER-LEXEME",
+    },
+}
+
+
+def _normalize_family_name(family: str) -> str:
+    key = family.strip().upper().replace("/", "_")
+    aliases = {
+        "KA_KE_KU": "KA_KE_KU",
+        "KA_KE": "KA_KE_KU",
+        "KA": "KA_KE_KU",
+        "KE": "KA_KE_KU",
+        "KU": "KA_KE_KU",
+        "BAIDES": "BAIDES_BATIR",
+        "BAITES": "BAIDES_BATIR",
+        "BATIR": "BAIDES_BATIR",
+        "NUMERAL": "NUM_METRO",
+        "METROLOGY": "NUM_METRO",
+        "NUM-METRO": "NUM_METRO",
+        "ROK": "ROK",
+        "ŔOK": "ROK",
+        "SALIR": "SALIR",
+        "KUTUR": "KUTUR",
+        "KUTU": "KUTUR",
+    }
+    return aliases.get(key, key)
+
+
+def family_gate_policy(family: str) -> dict[str, Any]:
+    """Return the frozen gate policy for a scientific family."""
+    key = _normalize_family_name(family)
+    if key not in FAMILY_GATE_POLICIES:
+        raise KeyError(f"No family gate policy registered for: {family}")
+    return {
+        "family": key,
+        **json.loads(json.dumps(FAMILY_GATE_POLICIES[key])),
+        "authority": dict(AUTHORITY),
+    }
+
+
+def evaluate_family_gate(
+    family: str,
+    records: list[dict[str, Any]],
+    *,
+    scope: str = "functional",
+    strict_prospective_pass: bool = False,
+) -> dict[str, Any]:
+    """Evaluate a family-specific evidence gate after PHYS/LEAK de-duplication.
+
+    scope='functional' checks the broad functional domain.
+    scope='exact' checks a narrower literal/directional claim.
+    No result can automatically update scientific CORE.
+    """
+    policy = family_gate_policy(family)
+    scope_norm = scope.strip().lower()
+    if scope_norm not in {"functional", "exact"}:
+        raise ValueError("scope must be 'functional' or 'exact'")
+
+    gate_cfg = policy[f"{scope_norm}_gate"]
+    review = evidence_promotion_review(
+        records,
+        target_level=gate_cfg["target_level"],
+        minimum_independent_units=gate_cfg["minimum_independent_units"],
+        required_evidence_classes=gate_cfg["required_evidence_classes"],
+    )
+
+    prospective_gate = policy.get("prospective_gate")
+    prospective_required = scope_norm == "exact" and prospective_gate is not None
+    prospective_block = prospective_required and not strict_prospective_pass
+
+    if prospective_block:
+        state = "BLOCKED"
+        reason = f"Exact claim requires prospective gate {prospective_gate}."
+    elif review["review_eligible"]:
+        state = "REVIEW_ELIGIBLE"
+        reason = "Family-specific independent-evidence requirements are satisfied."
+    else:
+        state = "OPEN"
+        reason = "Family-specific evidence requirements are not yet satisfied."
+
+    return {
+        "protocol": "FAMILY-GATE-01",
+        "family": policy["family"],
+        "scope": scope_norm.upper(),
+        "official_scope": policy["official_scope"],
+        "official_state": policy["official_state"],
+        "state": state,
+        "reason": reason,
+        "prospective_gate": prospective_gate,
+        "strict_prospective_pass": strict_prospective_pass,
+        "blocked_literalizations": list(policy["blocked_literalizations"]),
+        "review": review,
+        "automatic_core_promotion": False,
+        "requires_explicit_release_decision": True,
+        "authority": dict(AUTHORITY),
+    }
+
+
+def family_gate_matrix(
+    evidence_by_family: dict[str, list[dict[str, Any]]],
+    *,
+    scope: str = "functional",
+) -> dict[str, Any]:
+    """Evaluate all registered family gates supplied in an evidence mapping."""
+    results = {}
+    for family, records in evidence_by_family.items():
+        normalized = _normalize_family_name(family)
+        results[normalized] = evaluate_family_gate(
+            normalized,
+            records,
+            scope=scope,
+        )
+    return {
+        "protocol": "FAMILY-GATE-01",
+        "scope": scope.upper(),
+        "families": results,
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
     }

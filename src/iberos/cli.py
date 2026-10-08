@@ -15,6 +15,7 @@ from .core import (
     validate_result,
     validate_rhotic_usage,
     registry_independence_audit,
+    family_gate_policy,
 )
 
 
@@ -47,6 +48,9 @@ def main():
     p_rguard.add_argument("--neutralized", action="store_true")
 
     sub.add_parser("audit-independence")
+
+    p_policy = sub.add_parser("family-policy")
+    p_policy.add_argument("family")
 
     p_rok = sub.add_parser("guard-rok")
     p_rok.add_argument("--literal")
@@ -90,6 +94,8 @@ def main():
             purpose=args.purpose,
             neutralized=args.neutralized,
         ), ensure_ascii=False, indent=2))
+    elif args.command == "family-policy":
+        print(json.dumps(family_gate_policy(args.family), ensure_ascii=False, indent=2))
     elif args.command == "audit-independence":
         print(json.dumps(registry_independence_audit(), ensure_ascii=False, indent=2))
     elif args.command == "guard-rok":
