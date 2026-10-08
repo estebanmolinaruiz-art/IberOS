@@ -6,10 +6,10 @@ export function header(prefix="../"){
  const p=location.pathname;
  const active=k=>p.includes(k)?" active":"";
  const home=(p.endsWith("/IberOS/")||p.endsWith("/IberOS/index.html"))?"active":"";
- queueMicrotask(()=>{const b=document.querySelector(".menu-toggle"),n=document.querySelector(".main-nav");if(b&&n&&!b.dataset.bound){b.dataset.bound="1";b.addEventListener("click",()=>n.classList.toggle("open"));}});
- return '<header class="site-header"><div class="header-inner">'+
+ queueMicrotask(()=>{const b=document.querySelector(".menu-toggle"),n=document.querySelector(".main-nav");if(b&&n&&!b.dataset.bound){b.dataset.bound="1";b.addEventListener("click",()=>{const open=n.classList.toggle("open");b.setAttribute("aria-expanded",String(open));b.setAttribute("aria-label",open?"Cerrar menú":"Abrir menú")});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&n.classList.contains("open")){n.classList.remove("open");b.setAttribute("aria-expanded","false");b.focus()}});}});
+ return '<a class="skip-link" href="#main-content">Saltar al contenido</a><header class="site-header"><div class="header-inner">'+
  '<a class="brand" href="'+prefix+'"><span class="brand-mark">IB</span><span class="brand-text"><strong>Iber<span>OS+</span></strong><small>Datos · inteligencia artificial · epigrafía ibérica</small></span></a>'+
- '<button class="menu-toggle" aria-label="Abrir menú">☰</button>'+
- '<nav class="main-nav"><a class="'+home+'" href="'+prefix+'">Inicio</a><a class="'+active("/corpus/")+'" href="'+prefix+'corpus/">Corpus</a><a class="'+active("/herramientas/")+'" href="'+prefix+'herramientas/">Herramientas</a><a class="'+active("/comunidad/")+'" href="'+prefix+'comunidad/">Comunidad</a><a class="'+active("/recursos/")+'" href="'+prefix+'recursos/">Recursos</a><a class="'+active("/acerca/")+'" href="'+prefix+'acerca/">Acerca de</a></nav>'+
+ '<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="iberos-main-nav">☰</button>'+
+ '<nav class="main-nav" id="iberos-main-nav" aria-label="Navegación principal"><a class="'+home+'" href="'+prefix+'">Inicio</a><a class="'+active("/corpus/")+'" href="'+prefix+'corpus/">Corpus</a><a class="'+active("/atlas/")+'" href="'+prefix+'atlas/">Atlas</a><a class="'+active("/herramientas/")+'" href="'+prefix+'herramientas/">Herramientas</a><a class="'+active("/comunidad/")+'" href="'+prefix+'comunidad/">Comunidad</a><a class="'+active("/recursos/")+'" href="'+prefix+'recursos/">Recursos</a><a class="'+active("/acerca/")+'" href="'+prefix+'acerca/">Acerca de</a></nav>'+
  '<div class="nav-actions"><a class="nav-search" href="'+prefix+'corpus/" aria-label="Buscar en el corpus">⌕</a><a class="nav-cta" href="'+prefix+'laboratorio/">Iniciar proyecto</a></div></div></header>';
 }
