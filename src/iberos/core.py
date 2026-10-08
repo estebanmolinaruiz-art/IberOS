@@ -14,7 +14,7 @@ except ImportError:
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent.parent.parent
 
-ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.2"
+ENGINE_PROTOCOL_VERSION = "CORE-GUARDS-0.3"
 
 AUTHORITY = {
     "semantic_release": "C594",
@@ -402,3 +402,116 @@ def split_integrity_audit(
 def registry_independence_audit() -> dict[str, Any]:
     """Run the independence audit on the packaged curated object registry."""
     return independence_audit(load_registry())
+
+
+EVIDENCE_LEVEL_RANK = {
+    "E1": 1,
+    "E2": 2,
+    "E3": 3,
+    "E4": 4,
+    "E5": 5,
+}
+
+
+def independent_evidence_summary(
+    records: list[dict[str, Any]],
+    *,
+    level_field: str = "level",
+    evidence_class_field: str = "evidence_class",
+) -> dict[str, Any]:
+    """Summarize evidence after documentary de-duplication.
+
+    Each PHYS/LEAK unit contributes at most one independent unit. If several
+    records in one unit carry different evidence levels, only the strongest
+    level is used for the unit-level summary.
+    """
+    groups = collapse_independent(records)
+    units = []
+    level_counts = {level: 0 for level in EVIDENCE_LEVEL_RANK}
+    evidence_classes: set[str] = set()
+
+    for key, members in groups.items():
+        valid_levels = [
+            str(r.get(level_field, "")).strip().upper()
+            for r in members
+            if str(r.get(level_field, "")).strip().upper() in EVIDENCE_LEVEL_RANK
+        ]
+        strongest = (
+            max(valid_levels, key=lambda x: EVIDENCE_LEVEL_RANK[x])
+            if valid_levels else None
+        )
+        if strongest:
+            level_counts[strongest] += 1
+
+        classes = sorted({
+            str(r.get(evidence_class_field, "")).strip().upper()
+            for r in members
+            if str(r.get(evidence_class_field, "")).strip()
+        })
+        evidence_classes.update(classes)
+        units.append({
+            "independence_key": key,
+            "raw_records": len(members),
+            "strongest_level": strongest,
+            "evidence_classes": classes,
+        })
+
+    strongest_overall = None
+    levels_present = [u["strongest_level"] for u in units if u["strongest_level"]]
+    if levels_present:
+        strongest_overall = max(levels_present, key=lambda x: EVIDENCE_LEVEL_RANK[x])
+
+    return {
+        "protocol": "EVIDENCE-INDEPENDENCE-01",
+        "raw_records": len(records),
+        "independent_units": len(groups),
+        "strongest_level": strongest_overall,
+        "independent_level_counts": level_counts,
+        "evidence_classes": sorted(evidence_classes),
+        "units": units,
+    }
+
+
+def evidence_promotion_review(
+    records: list[dict[str, Any]],
+    *,
+    target_level: str,
+    minimum_independent_units: int = 2,
+    required_evidence_classes: list[str] | None = None,
+    level_field: str = "level",
+    evidence_class_field: str = "evidence_class",
+) -> dict[str, Any]:
+    """Check structural eligibility for human/release review, never auto-promote CORE."""
+    target = target_level.strip().upper()
+    if target not in EVIDENCE_LEVEL_RANK:
+        raise ValueError(f"Unknown evidence level: {target_level}")
+
+    summary = independent_evidence_summary(
+        records,
+        level_field=level_field,
+        evidence_class_field=evidence_class_field,
+    )
+    target_rank = EVIDENCE_LEVEL_RANK[target]
+    qualifying_units = [
+        u for u in summary["units"]
+        if u["strongest_level"]
+        and EVIDENCE_LEVEL_RANK[u["strongest_level"]] >= target_rank
+    ]
+
+    required = {x.strip().upper() for x in (required_evidence_classes or []) if x.strip()}
+    observed = set(summary["evidence_classes"])
+    missing = sorted(required - observed)
+
+    eligible = len(qualifying_units) >= minimum_independent_units and not missing
+    return {
+        "protocol": "EVIDENCE-INDEPENDENCE-01",
+        "target_level": target,
+        "qualifying_independent_units": len(qualifying_units),
+        "minimum_independent_units": minimum_independent_units,
+        "required_evidence_classes": sorted(required),
+        "missing_evidence_classes": missing,
+        "review_eligible": eligible,
+        "automatic_core_promotion": False,
+        "requires_explicit_release_decision": True,
+        "summary": summary,
+    }

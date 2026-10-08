@@ -21,6 +21,8 @@ from .core import (
     resolve_split,
     split_integrity_audit,
     registry_independence_audit,
+    independent_evidence_summary,
+    evidence_promotion_review,
 )
 
 __all__ = [
@@ -46,6 +48,8 @@ __all__ = [
     "resolve_split",
     "split_integrity_audit",
     "registry_independence_audit",
+    "independent_evidence_summary",
+    "evidence_promotion_review",
 ]
 
 __version__ = "1.0.1"

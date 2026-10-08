@@ -16,6 +16,8 @@ from iberos import (
     resolve_split,
     split_integrity_audit,
     registry_independence_audit,
+    independent_evidence_summary,
+    evidence_promotion_review,
 )
 
 
@@ -156,3 +158,56 @@ def test_curated_registry_has_no_accidental_mass_collapse():
     audit = registry_independence_audit()
     assert audit["input_records"] == 38
     assert audit["independent_units"] >= 35
+
+
+
+def test_evidence_counts_by_independent_unit_not_rows():
+    records = [
+        {"ENTRY_ID": "A1", "PHYS_ID": "P1", "level": "E4", "evidence_class": "CONTEXT"},
+        {"ENTRY_ID": "A2", "PHYS_ID": "P1", "level": "E5", "evidence_class": "CONTEXT"},
+        {"ENTRY_ID": "B1", "PHYS_ID": "P2", "level": "E4", "evidence_class": "METROLOGY"},
+    ]
+    s = independent_evidence_summary(records)
+    assert s["raw_records"] == 3
+    assert s["independent_units"] == 2
+    assert s["independent_level_counts"]["E5"] == 1
+    assert s["independent_level_counts"]["E4"] == 1
+
+
+def test_promotion_review_is_blocked_by_duplicate_object():
+    duplicated = [
+        {"ENTRY_ID": "A1", "PHYS_ID": "P1", "level": "E5", "evidence_class": "METROLOGY"},
+        {"ENTRY_ID": "A2", "PHYS_ID": "P1", "level": "E5", "evidence_class": "METROLOGY"},
+    ]
+    gate = evidence_promotion_review(
+        duplicated,
+        target_level="E5",
+        minimum_independent_units=2,
+    )
+    assert gate["qualifying_independent_units"] == 1
+    assert gate["review_eligible"] is False
+    assert gate["automatic_core_promotion"] is False
+
+
+def test_promotion_review_can_require_orthogonal_evidence_classes():
+    records = [
+        {"OBJECT_ID": "O1", "level": "E5", "evidence_class": "METROLOGY"},
+        {"OBJECT_ID": "O2", "level": "E5", "evidence_class": "NUMISMATIC"},
+    ]
+    gate = evidence_promotion_review(
+        records,
+        target_level="E5",
+        minimum_independent_units=2,
+        required_evidence_classes=["METROLOGY", "NUMISMATIC"],
+    )
+    assert gate["review_eligible"] is True
+    assert gate["automatic_core_promotion"] is False
+
+    blocked = evidence_promotion_review(
+        records,
+        target_level="E5",
+        minimum_independent_units=2,
+        required_evidence_classes=["METROLOGY", "BILINGUAL"],
+    )
+    assert blocked["review_eligible"] is False
+    assert blocked["missing_evidence_classes"] == ["BILINGUAL"]
