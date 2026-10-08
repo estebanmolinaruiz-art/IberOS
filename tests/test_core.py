@@ -39,6 +39,7 @@ from iberos import (
     evaluate_dedi_candidate,
     dedi_orthogonal_matrix,
     evaluate_dedi_predictive_gate,
+    audit_dedi_prospective_provenance,
 )
 
 
@@ -565,3 +566,54 @@ def test_dedi_prediction_requires_both_branches_and_valid_rule():
     )
     assert g["state"] == "BLOCKED"
     assert g["preregistered_rule_valid"] is False
+
+
+
+def test_dedi_provenance_blocks_missing_or_shared_leak_group():
+    common = {
+        "external_source_id": "external-1",
+        "external_source_date": "2026-10-01",
+        "prediction_record_id": "frozen-prediction",
+        "independent_reviewer_id": "reviewer",
+        "source_snapshot_hash": "sha256:test",
+        "synthetic": False,
+    }
+    rows = [
+        {**common, "PHYS_ID": "A", "LEAK_GROUP": "SAME"},
+        {**common, "PHYS_ID": "B", "LEAK_GROUP": "SAME"},
+    ]
+    a = audit_dedi_prospective_provenance(
+        rows, preregistration_id="lock", preregistration_hash="sha256:lock"
+    )
+    assert a["documentary_state"] == "INCOMPLETE"
+    assert "leak_group_unique" in a["rows"][1]["missing_requirements"]
+    assert a["scientific_state"] == "UNVERIFIED"
+
+
+def test_dedi_provenance_complete_still_not_scientific_pass():
+    common = {
+        "external_source_id": "external-1",
+        "external_source_date": "2026-10-01",
+        "prediction_record_id": "frozen-prediction",
+        "independent_reviewer_id": "reviewer",
+        "source_snapshot_hash": "sha256:test",
+        "synthetic": False,
+    }
+    rows = [
+        {**common, "PHYS_ID": "A", "LEAK_GROUP": "LA"},
+        {**common, "PHYS_ID": "B", "LEAK_GROUP": "LB"},
+    ]
+    a = audit_dedi_prospective_provenance(
+        rows, preregistration_id="lock", preregistration_hash="sha256:lock"
+    )
+    assert a["documentary_state"] == "READY_FOR_INDEPENDENT_AUDIT"
+    assert a["scientific_state"] == "UNVERIFIED"
+    assert a["automatic_core_promotion"] is False
+
+
+def test_dedi_provenance_rejects_synthetic_or_undocumented():
+    a = audit_dedi_prospective_provenance(
+        [{"PHYS_ID": "SYN-1", "LEAK_GROUP": "X", "synthetic": True}]
+    )
+    assert a["documentary_state"] == "INCOMPLETE"
+    assert "not_synthetic" in a["rows"][0]["missing_requirements"]
