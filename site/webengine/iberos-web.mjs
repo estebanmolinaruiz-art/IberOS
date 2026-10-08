@@ -57,12 +57,12 @@ export class IberOSWeb {
   _assert(){ if(!this.ready) throw new Error('Call await engine.init() before using IberOSWeb.'); }
   loadRegistry(){ this._assert(); return structuredClone(this.objects); }
   getObject(objectId){ this._assert(); const x=this.objects.find(r=>r.OBJECT_ID===objectId); return x?structuredClone(x):null; }
-  familyObjects(family){ this._assert(); const key=String(family).toUpperCase(); return this.objects.filter(r=>splitFamilies(r.Familias_Tags).some(x=>x.toUpperCase()===key)).map(structuredClone); }
+  familyObjects(family){ this._assert(); const key=String(family).toUpperCase(); return this.objects.filter(r=>splitFamilies(r.Familias_Tags).some(x=>x.toUpperCase()===key)).map(x=>structuredClone(x)); }
   listFamilies(){ this._assert(); const s=new Set(); this.objects.forEach(r=>splitFamilies(r.Familias_Tags).forEach(f=>s.add(f))); return [...s].sort(); }
   search(query){
     this._assert(); const q=String(query??'').trim().toLowerCase(); if(!q) return [];
     const fields=['OBJECT_ID','Referencia_epigráfica','Nombre_objeto','Yacimiento','Localidad','Soporte','Escritura','Familias_Tags','Observaciones'];
-    return this.objects.filter(r=>fields.some(k=>String(r[k]??'').toLowerCase().includes(q))).map(structuredClone);
+    return this.objects.filter(r=>fields.some(k=>String(r[k]??'').toLowerCase().includes(q))).map(x=>structuredClone(x));
   }
 }
 export async function createIberOS(options={}) { return new IberOSWeb(options).init(); }
