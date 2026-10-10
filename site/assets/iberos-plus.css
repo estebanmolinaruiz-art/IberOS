@@ -433,3 +433,32 @@ body.iberos-inner .hero::after{background:linear-gradient(0deg,#09283a77,transpa
  body.iberos-corpus .results-head{padding:12px!important}
  body.iberos-corpus .results-head h2{font-size:1.4rem!important}
 }
+
+/* v2026-10-10: mobile Corpus puts evidence before administrative tools. */
+@media(max-width:600px){
+body.iberos-corpus .site-header .brand-text strong{font-size:1.17rem!important}
+body.iberos-corpus .site-header .nav-lang{display:none!important}
+body.iberos-corpus .site-header .nav-cta{font-size:.58rem!important;max-width:88px!important;padding:6px!important}
+body.iberos-corpus .hero{min-height:0!important}
+body.iberos-corpus .hero::before{background-image:linear-gradient(90deg,#051b2be8,#061e2cd0),url("./iberosplus-hero.webp")!important;background-position:center,66% center!important}
+body.iberos-corpus .hero .hero-inner{padding:18px 14px 18px!important}
+body.iberos-corpus .hero .eyebrow{font-size:.55rem!important}
+body.iberos-corpus .hero h1{font-size:clamp(2rem,8vw,2.5rem)!important;margin:6px 0 8px!important}
+body.iberos-corpus .hero p{display:none!important}
+body.iberos-corpus .hero .hero-search{margin:9px 0 0!important}
+body.iberos-corpus .hero .hero-chips{display:none!important}
+body.iberos-corpus .research-dock{margin:0 10px 8px!important;padding:8px 10px!important;border-radius:0 0 9px 9px!important;gap:6px!important}
+body.iberos-corpus .research-dock .section-kicker,body.iberos-corpus .research-dock .meta{display:none!important}
+body.iberos-corpus .research-dock strong{font-size:.88rem!important}
+body.iberos-corpus .research-dock-actions .btn{padding:6px 8px!important;font-size:.75rem!important}
+body.iberos-corpus .corpus-shell{padding:3px 9px 15px!important;gap:7px!important}
+body.iberos-corpus .mobile-filter-toggle{font-size:.84rem!important;padding:9px 12px!important}
+body.iberos-corpus .results-head{padding:9px 8px!important;gap:7px!important}
+body.iberos-corpus .results-head .section-kicker{display:none!important}
+body.iberos-corpus .results-head h2{font-size:1.15rem!important;margin:0!important}
+body.iberos-corpus .explorer-controls{gap:6px!important}
+body.iberos-corpus .explorer-controls input{padding:7px!important;font-size:.81rem!important}
+body.iberos-corpus .explorer-controls select{padding:7px!important;font-size:.81rem!important}
+body.iberos-corpus #grid{margin-top:5px!important}
+body.iberos-corpus .corpus-grid{gap:10px!important}
+}
