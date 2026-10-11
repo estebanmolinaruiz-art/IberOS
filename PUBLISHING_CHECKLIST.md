@@ -56,11 +56,11 @@ Actualizado: 2026-10-11
 - [x] Software v1.0.1 con DOI propio
 - [x] 38 objetos curados declarados y almacenados
 - [x] Separación EVIDENCE / INFERENCE / HYPOTHESIS / ESTIMATED TRANSLATION
-- [ ] Publicar protocolo de benchmark reproducible
-- [ ] Publicar métricas/resultados y casos negativos
+- [x] Protocolo de benchmark reproducible publicado en `docs/BENCHMARK.md`
+- [x] Snapshot machine-readable, métricas, gates abiertos y casos negativos publicados; GitHub Actions run `38158963423` verificado con éxito
 
 ## Consistencia de versión
 
 `GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. Permanecen el benchmark reproducible y el SWHID.
+El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. El benchmark reproducible queda cerrado. Permanece como mejora de archivo duradero recuperar el SWHID verificable.
