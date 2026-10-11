@@ -6,24 +6,26 @@ IberOS es un proyecto independiente de investigación orientado al análisis int
 
 ## Referencias persistentes
 
-- Informe técnico publicado en Zenodo: **10.5281/zenodo.22939179**
+- Informe técnico Zenodo, versión v1: **10.5281/zenodo.22939179**
 - DOI conceptual del informe: **10.5281/zenodo.22939178**
+- IberOS Case Studies I, versión v1: **10.5281/zenodo.22957236**
+- DOI conceptual de Case Studies I: **10.5281/zenodo.22957235**
 - Repositorio canónico: **estebanmolinaruiz-art/IberOS**
 - Release de software actual en GitHub: **v1.0.1**
 - Distribución pública actual en PyPI: **iberos 1.0.1**
 
-Los DOI anteriores corresponden al **informe técnico**. No deben presentarse como DOI de una release del software. El DOI específico del software se considerará demostrado únicamente cuando exista y pueda verificarse públicamente.
+Los DOI 22939179/22939178 corresponden al **informe técnico**. Los DOI 22957236/22957235 corresponden a **IberOS Case Studies I**. Ninguno de ellos debe presentarse como DOI de una release del software. A fecha 2026-10-11 no se ha verificado públicamente un DOI específico para IberOS Open Research Kit v1.0.1.
 
 ## Estado público verificado — 2026-10-11
 
 - GitHub: repositorio público, licencia Apache-2.0 y releases `v1.0.0` y `v1.0.1`.
-- PyPI: `iberos 1.0.1` publicado y visible en la API pública de PyPI. La publicación se realizó mediante GitHub Actions con Trusted Publishing.
-- GitHub Pages: la infraestructura de Pages está habilitada y el repositorio contiene documentación y herramientas web. La estabilidad pública del sitio debe comprobarse antes de presentarla como requisito EpiHub cumplido.
-- Zenodo: informe técnico publicado con DOI de versión **10.5281/zenodo.22939179** y DOI conceptual **10.5281/zenodo.22939178**.
+- PyPI: `iberos 1.0.1` publicado y visible en la API pública de PyPI mediante GitHub Actions / Trusted Publishing.
+- Zenodo: informe técnico v1 publicado como **Report** en DOI 10.5281/zenodo.22939179.
+- Zenodo: **IberOS Case Studies I** publicado como **Data paper** en DOI 10.5281/zenodo.22957236, relacionado con el informe técnico.
+- Zenodo software: no se ha localizado todavía un registro público específico de **IberOS Open Research Kit v1.0.1**.
+- GitHub Pages: infraestructura habilitada; la estabilidad pública del sitio debe comprobarse antes de presentarla como requisito EpiHub cumplido.
 - Software Heritage: existe workflow de solicitud de archivado; queda pendiente registrar el SWHID verificable.
 - Benchmark: 38 objetos curados en el repositorio público; falta presentar sus resultados como benchmark reproducible cerrado.
-- Hugging Face: repositorio de dataset creado; su carga, licencia, Dataset Card y Viewer deben verificarse antes de citarlo como distribución final.
-- Fichas PDF: paquete preparado; la publicación y comprobación de enlaces siguen pendientes.
 
 ## Instalación
 
@@ -32,7 +34,7 @@ python -m pip install iberos==1.0.1
 iberos --help
 ```
 
-La existencia de los artefactos `iberos-1.0.1-py3-none-any.whl` y `iberos-1.0.1.tar.gz` está verificada en PyPI. La prueba de instalación en un entorno externo independiente sigue siendo un control adicional recomendable antes de la reevaluación EpiHub.
+PyPI publica los artefactos `iberos-1.0.1-py3-none-any.whl` y `iberos-1.0.1.tar.gz`. La prueba de instalación en un entorno externo independiente sigue siendo un control adicional recomendable antes de la reevaluación EpiHub.
 
 ## Método científico
 
@@ -54,7 +56,6 @@ También controla la identidad documental y física:
 - GitHub Pages e IberOS Web Engine.
 - IberOS-Write.
 - Workflows de tests y publicación.
-- Fichas PDF preparadas para integración web.
 
 ## Fuentes y trazabilidad documental
 
@@ -62,12 +63,18 @@ Registro comprobado el 08-10-2026: [publicaciones y fuentes de la tesis](docs/IN
 
 Incluye Corpus Ibèrika, el dataset paleohispánico de 2026 y la revisión de Villares V de Ferrer i Jané (2024). Las fuentes externas requieren concordancias y controles de independencia antes de incorporarse a una validación.
 
-La sincronización documental mantiene C594/C474/C539/C541; no cambia resultados científicos ni métricas. El programa se distribuye bajo Apache-2.0 y el informe de Zenodo bajo CC BY 4.0.
+La sincronización documental mantiene C594/C474/C539/C541; no cambia resultados científicos ni métricas. El programa se distribuye bajo Apache-2.0; el informe y los Case Studies en Zenodo se publican bajo CC BY 4.0.
 
 ## Preparación para EpiHub
 
 El estado verificable y los bloqueos de reevaluación se mantienen en [EPIHUB_READINESS.md](EPIHUB_READINESS.md). No se marcará un requisito como cumplido sin evidencia pública comprobable.
 
-## Cita del informe técnico
+## Citas
+
+Informe técnico:
 
 Molina Ruiz, Esteban. *IberOS: marco experimental para el análisis interno y la validación reproducible de inscripciones ibéricas*. DOI: 10.5281/zenodo.22939179
+
+Casos de estudio:
+
+Molina Ruiz, Esteban. *IberOS Case Studies I: cuatro fichas analíticas de validación en epigrafía ibérica*. DOI: 10.5281/zenodo.22957236
