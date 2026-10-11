@@ -703,3 +703,25 @@ body.iberos-modelos3d .inscribed-viewer .inscribed-real-model{display:block;opac
 body.iberos-modelos3d .inscribed-viewer.gltf-loaded .inscribed-real-model{opacity:1;pointer-events:auto}
 body.iberos-modelos3d .inscribed-viewer.gltf-loaded .inscribed-fallback{visibility:hidden}
 body.iberos-modelos3d .inscribed-viewer .inscribed-fallback{width:100%;height:100%;display:block;object-fit:contain}
+
+/* IberOS+ museo arqueológico 2026 — identidad para interiores; portada aprobada intacta */
+body.iberos-inner:not(.iberos-modelos3d) .hero,body.iberos-modelos3d .hero{
+ position:relative;isolation:isolate;background-color:#171814!important;
+ background-image:linear-gradient(90deg,rgba(6,12,17,.95) 0%,rgba(10,15,17,.79) 51%,rgba(31,25,19,.55) 100%),url("../assets/iberosplus-hero.webp")!important;
+ background-position:center,center!important;background-size:cover!important;
+ border-bottom:2px solid #a57c45;
+}
+body.iberos-inner .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 80% 45%,rgba(202,145,69,.19),transparent 49%),linear-gradient(0deg,rgba(8,11,13,.3),transparent 40%)}
+body.iberos-inner .hero .eyebrow{color:#e3b975!important;letter-spacing:.13em;text-transform:uppercase}
+body.iberos-inner .hero h1{color:#fff2d7!important;text-shadow:0 2px 14px #0a1014a8}
+body.iberos-inner .hero h1 em{color:#eec283!important}
+body.iberos-inner .hero p{color:#f2e6d3!important;text-shadow:0 1px 9px #050708a1}
+body.iberos-inner .viewer-card,body.iberos-inner .resource-card,body.iberos-inner .case-card,body.iberos-inner .portal-card{
+ box-shadow:0 15px 35px #30201519;border-color:#c9a97888;transition:box-shadow .2s ease,transform .2s ease;
+}
+@media(hover:hover){body.iberos-inner .viewer-card:hover,body.iberos-inner .resource-card:hover,body.iberos-inner .portal-card:hover{box-shadow:0 17px 34px #2c191936;transform:translateY(-2px)}}
+body.iberos-modelos3d .viewer-card .viewer-copy{background:linear-gradient(155deg,#fff5dd,#e9dcc2)!important;color:#32291b}
+body.iberos-modelos3d .viewer-card .model-type{color:#815c2b}
+body.iberos-modelos3d .viewer-shell{gap:22px}
+body.iberos-modelos3d .inscribed-viewer{background:#171b1b!important;border-bottom:3px solid #b78a51}
+@media(prefers-reduced-motion:reduce){body.iberos-inner .viewer-card,body.iberos-inner .resource-card,body.iberos-inner .case-card,body.iberos-inner .portal-card{transition:none!important;transform:none!important}}
