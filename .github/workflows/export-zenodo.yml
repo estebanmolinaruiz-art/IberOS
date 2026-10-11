@@ -1,0 +1,23 @@
+name: export-zenodo-zip
+on:
+  push:
+    paths:
+      - "EXPORT_ZENODO_ZIP"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v1.0.1
+      - name: Upload Zenodo ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: IberOS_Open_Research_Kit_v1.0.1_Zenodo
+          path: IberOS_GitHub_Repository_v1.0.1_READY.zip
+          if-no-files-found: error
