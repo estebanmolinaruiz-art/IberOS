@@ -42,3 +42,12 @@ No automatic promotion.
 Documentary preflight now checks distinct PHYS_ID and LEAK_GROUP, dated external contextual sources, source snapshot hashes, preregistration identifier/hash, frozen prediction record identifiers, independent reviewer IDs, and exclusion of synthetic fixtures. Incomplete or repeated LEAK_GROUP records cannot proceed to independent review.
 
 A complete form returns READY_FOR_INDEPENDENT_AUDIT, **never** a scientific PASS. Source independence, preregistration chronology, reviewer identity and grammatical discrimination must be inspected outside the self-reported record. The separate predictive gate remains a software eligibility check only. C594/C474/C539/C541 and D(E/I) 50 remain frozen.
+
+## Combined gate (2026-10-11)
+
+`DEDI-COMBINED-GATE-01` now requires the same objects to pass both the
+predictive test and the documentary provenance audit. A predicted contrast
+without a unique LEAK_GROUP, frozen preregistration, source snapshot and
+reviewer remains BLOCKED. Even a documentary-complete prediction yields
+AWAITING_INDEPENDENT_REVIEW / UNVERIFIED, never a scientific PASS or CORE
+promotion. The test fixtures are synthetic and are not historical evidence.
