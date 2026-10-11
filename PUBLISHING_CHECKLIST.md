@@ -46,9 +46,9 @@ Actualizado: 2026-10-11
 ## Web
 - [x] GitHub Pages habilitada
 - [x] Corpus y módulos web integrados en el repositorio
-- [ ] Comprobar desde una sesión externa que la portada pública carga correctamente
-- [ ] Comprobar navegación a metodología, software, documentación, research y contacto
-- [ ] Sólo entonces marcar “sitio web dedicado estable” como cumplido para EpiHub
+- [x] Portada pública comprobada desde una sesión externa
+- [x] Navegación pública comprobada: corpus, atlas, fichas, laboratorio, 3D, recursos, casos, comunidad, contactar y acerca
+- [x] Sitio web público estable marcado como cumplido para EpiHub
 
 ## Benchmark y marco académico
 - [x] Informe técnico citable en Zenodo
@@ -63,4 +63,4 @@ Actualizado: 2026-10-11
 
 `GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. Permanecen el benchmark reproducible, la validación final del sitio público y el SWHID.
+El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. Permanecen el benchmark reproducible y el SWHID.
