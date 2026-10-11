@@ -70,8 +70,11 @@ controlan la entrada castellana y no fijan la dirección semántica de ŔOK.
 Este texto es un complemento metodológico separado del anexo de registros de
 8 de octubre. No sustituye la tesis ni reescribe sus resultados congelados.
 La incorporación a una tesis definitiva requiere identificar el archivo
-autoritativo y comparar versiones. Talk y Mobile mantienen pendiente su
-comprobación material; esta revisión no certifica sus ejecutables.
+autoritativo y comparar versiones. La auditoría posterior de Talk verifica
+SQLite, hashes de las 12 demos y el control de producción con cero palabras
+aprobadas. Se conserva la distinción entre demostración del navegador y
+assets de producción. Mobile permanece pendiente de comprobación material.
+El alcance completo figura en TALK_MOBILE_MATERIAL_AUDIT_2026-10-11.md.
 
 ## Fuentes materiales
 
