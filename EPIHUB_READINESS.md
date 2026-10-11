@@ -15,7 +15,7 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 | Marco académico | Documento metodológico citable, fuentes y posición epistemológica | 🟢 | Informe técnico, Case Studies I, software con DOI diferenciado y benchmark reproducible público | Ninguno crítico |
 | Benchmark | Corpus curado + protocolo + resultados reproducibles + negativos | 🟢 | 38 objetos; 37 unidades independientes; snapshot v1.0.1; controles negativos; workflow `38158963423` reproducido con éxito | Ninguno crítico |
 | Trazabilidad | Versiones, autores, licencias, checksums y procedencia | 🟢 | CITATION.cff, AUTHORS.md, LICENSE, MANIFEST_SHA256, políticas | Mantener sincronización |
-| Archivo duradero | Zenodo + Software Heritage | 🟢/🟠 | Publicaciones y software en Zenodo; workflow SWH | Recuperar SWHID |
+| Archivo duradero | Zenodo + Software Heritage | 🟢/🟠 | Publicaciones y software en Zenodo; origen SWH `swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc` verificado | Confirmar visita/snapshot archivado completo |
 
 ## Evidencia Zenodo
 
@@ -43,4 +43,4 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 
 IberOS reúne ya los entregables mínimos que se habían identificado para solicitar una nueva reevaluación de EpiHub: sitio web público estable, estructura de software verificable, distribución PyPI probada externamente, DOI específico del software, marco académico citable y benchmark reproducible con resultados, negativos y límites.
 
-El SWHID sigue pendiente como mejora de archivo duradero, pero no se presenta como requisito ya exigido por EpiHub. La documentación técnica dispone además de un mapa canónico en `docs/ARCHITECTURE.md`. La formulación prudente pasa de **“preparación avanzada para reevaluación”** a **“lista para solicitar reevaluación, sujeta a valoración externa de EpiHub”**.
+El SWHID de origen de Software Heritage ya está verificado (`swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`). Sigue pendiente confirmar una visita/snapshot archivado completo; no se presenta como requisito ya exigido por EpiHub. La documentación técnica dispone además de un mapa canónico en `docs/ARCHITECTURE.md`. La formulación prudente pasa de **“preparación avanzada para reevaluación”** a **“lista para solicitar reevaluación, sujeta a valoración externa de EpiHub”**.
