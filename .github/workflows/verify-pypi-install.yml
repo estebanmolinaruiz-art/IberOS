@@ -1,8 +1,5 @@
 name: verify-pypi-install
 on:
-  push:
-    paths:
-      - "VERIFY_PYPI_INSTALL"
   workflow_dispatch:
 
 permissions:
