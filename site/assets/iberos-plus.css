@@ -793,3 +793,20 @@ body.iberos-fichas .result-card .media.fiche-illustration::after{display:none!im
 body.iberos-fichas .result-card .media.fiche-illustration{display:block!important;background:#182630!important;isolation:isolate}
 body.iberos-fichas .result-card .media.fiche-illustration>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important;filter:none!important;z-index:1!important}
 body.iberos-fichas .result-card .picture-note{padding:5px 0 8px;color:#62543e;font-size:12px;line-height:1.35}
+
+/* Registros sin fotografía: una cartela propia por pieza, nunca la misma falsa foto */
+body.iberos-fichas .result-card .media.fiche-identity,body.iberos-ficha .artifact-visual.fiche-identity{
+ position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ background:linear-gradient(145deg,#1d3341,#314853 60%,#5d4933)!important;
+ background-image:linear-gradient(145deg,#1d3341,#314853 60%,#5d4933)!important;
+ padding:20px!important;height:auto;min-height:200px;overflow:hidden
+}
+.fiche-identity-inner{width:100%;max-width:480px;border:1px solid #d4b8809e;border-radius:9px;padding:15px 17px;background:#071b2ba8;display:flex;flex-direction:column;gap:10px;color:#fff4dd}
+.fiche-identity-inner span{font:700 .66rem system-ui,sans-serif;color:#e0bd81;letter-spacing:.16em}
+.fiche-identity-inner strong{font:700 clamp(1.05rem,2.2vw,1.5rem)/1.2 Georgia,serif;color:#fff2d5;overflow-wrap:anywhere}
+.fiche-identity-inner small{font:.83rem/1.45 system-ui,sans-serif;color:#efe1ca}
+.fiche-identity-inner em{font:.72rem system-ui,sans-serif;color:#ecd1a1}
+body.iberos-fichas .result-card .media.fiche-identity::after,body.iberos-fichas .result-card .media.fiche-identity::before{display:none!important}
+body.iberos-fichas .media.fiche-identity .fiche-identity-inner{position:relative;z-index:2}
+.fiche-illustration.without-image{background:#2d3e45!important}
+.fiche-illustration.without-image::before{content:"Portada documental no disponible";display:block;padding:30px;color:#fff2db;font:700 1rem Georgia,serif}
