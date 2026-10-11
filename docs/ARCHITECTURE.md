@@ -220,7 +220,7 @@ The suite covers:
 
 ### Software Heritage
 
-A Software Heritage archiving workflow exists. The final public SWHID remains to be recorded when verified.
+Software Heritage recognizes the IberOS origin with SWHID `swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`. A complete archived visit/snapshot is still pending verification.
 
 ## Release workflow
 
