@@ -6,6 +6,7 @@ IberOS es un proyecto independiente de investigación orientado al análisis int
 
 ## Referencias persistentes
 
+- Software Zenodo, versión v1.0.1: **10.5281/zenodo.22997623**
 - Informe técnico Zenodo, versión v1: **10.5281/zenodo.22939179**
 - DOI conceptual del informe: **10.5281/zenodo.22939178**
 - IberOS Case Studies I, versión v1: **10.5281/zenodo.22957236**
@@ -14,15 +15,15 @@ IberOS es un proyecto independiente de investigación orientado al análisis int
 - Release de software actual en GitHub: **v1.0.1**
 - Distribución pública actual en PyPI: **iberos 1.0.1**
 
-Los DOI 22939179/22939178 corresponden al **informe técnico**. Los DOI 22957236/22957235 corresponden a **IberOS Case Studies I**. Ninguno de ellos debe presentarse como DOI de una release del software. A fecha 2026-10-11 no se ha verificado públicamente un DOI específico para IberOS Open Research Kit v1.0.1.
+El DOI 10.5281/zenodo.22997623 corresponde a la release de **software** IberOS Open Research Kit v1.0.1. Los DOI 22939179/22939178 corresponden al **informe técnico** y los DOI 22957236/22957235 a **IberOS Case Studies I**. El DOI conceptual del software se incorporará cuando pueda verificarse públicamente en Zenodo.
 
-## Estado público verificado — 2026-10-11
+## Estado público — 2026-10-11
 
 - GitHub: repositorio público, licencia Apache-2.0 y releases `v1.0.0` y `v1.0.1`.
-- PyPI: `iberos 1.0.1` publicado y visible en la API pública de PyPI mediante GitHub Actions / Trusted Publishing.
+- PyPI: `iberos 1.0.1` publicado mediante GitHub Actions / Trusted Publishing.
+- Zenodo software: release v1.0.1 publicada con DOI **10.5281/zenodo.22997623**.
 - Zenodo: informe técnico v1 publicado como **Report** en DOI 10.5281/zenodo.22939179.
-- Zenodo: **IberOS Case Studies I** publicado como **Data paper** en DOI 10.5281/zenodo.22957236, relacionado con el informe técnico.
-- Zenodo software: no se ha localizado todavía un registro público específico de **IberOS Open Research Kit v1.0.1**.
+- Zenodo: **IberOS Case Studies I** publicado como **Data paper** en DOI 10.5281/zenodo.22957236.
 - GitHub Pages: infraestructura habilitada; la estabilidad pública del sitio debe comprobarse antes de presentarla como requisito EpiHub cumplido.
 - Software Heritage: existe workflow de solicitud de archivado; queda pendiente registrar el SWHID verificable.
 - Benchmark: 38 objetos curados en el repositorio público; falta presentar sus resultados como benchmark reproducible cerrado.
@@ -70,6 +71,10 @@ La sincronización documental mantiene C594/C474/C539/C541; no cambia resultados
 El estado verificable y los bloqueos de reevaluación se mantienen en [EPIHUB_READINESS.md](EPIHUB_READINESS.md). No se marcará un requisito como cumplido sin evidencia pública comprobable.
 
 ## Citas
+
+Software:
+
+Molina Ruiz, Esteban. *IberOS Open Research Kit v1.0.1*. DOI: 10.5281/zenodo.22997623
 
 Informe técnico:
 
