@@ -45,3 +45,42 @@ test('Empty input abstains without fabricated coverage',()=>{
   assert.equal(r.metrics.total_segments,0);
   assert.equal(r.metrics.semantic_coverage,0);
 });
+
+for(const input of [
+  'No se entrega un documento a Bastubar.',
+  'Nunca se transfiere un documento a Bastubar.',
+  'Bastubar entrega un documento a Esteban.',
+  'Bastubar entrega un documento.',
+  '¿Se entrega un documento a Bastubar?',
+  'Se entrega un documento a Bastubar?',
+  'Si se entrega un documento a Bastubar.',
+  'A Bastubar se entrega un documento ayer.',
+  'A Bastubar se entrega un documento y se paga.',
+  'A Bastubar; se entrega un documento.',
+  'A nadie se entrega un documento.',
+  'A quién se entrega un documento.',
+  'Se entrega un documento a ella.',
+]) test(`Unsupported roles or scope abstain: ${input}`,()=>{
+  const r=write.reconstruct(input);
+  assert.equal(r.status,'CONTROLLED_ABSTENTION');
+  assert.equal(r.metrics.semantic_coverage,0);
+  assert.equal(r.reconstruction,'◇SEMANTIC_FRAME');
+});
+
+test('Recipient must occur in explicit passive recipient position',()=>{
+  const r=write.reconstruct('Se entrega un texto a Bastubar.');
+  assert.equal(r.status,'PARTIAL_RECONSTRUCTION');
+  assert.equal(r.segments[0].form,'BASTUBAR-ER');
+});
+
+test('Missing recipient remains a gap',()=>{
+  const r=write.reconstruct('Se entrega un documento.');
+  assert.equal(r.segments[0].form,'◇RECIPIENT');
+  assert.equal(r.metrics.gap_rate,25);
+});
+
+test('Accented recipient remains a marked modern fallback',()=>{
+  const r=write.reconstruct('A María se transfiere una inscripción.');
+  assert.equal(r.segments[0].form,'MARIA-ER');
+  assert.equal(r.segments[0].status,'fallback');
+});

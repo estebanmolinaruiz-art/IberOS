@@ -55,6 +55,16 @@ El ejemplo actual no contiene segmentos semánticos plenamente validados y
 su semantic_coverage es cero. Esto corrige la medición; no implica pérdida de
 resultados científicos.
 
+La revisión adversarial de WRITE-GRAMMAR v0.3-web.4 corrige además la
+detección de roles y del alcance de la frase española. La versión anterior
+podía reconstruir «No se entrega un documento a Bastubar» como afirmación
+y tratar Bastubar como destinatario en «Bastubar entrega un documento a
+Esteban». La generación se restringe ahora a marcos afirmativos pasivos
+completos con participante explícito en posición de destinatario; negaciones,
+preguntas, pronombres no resueltos y marcos con agente explícito producen
+abstención. La falta de destinatario conserva un hueco. Estas restricciones
+controlan la entrada castellana y no fijan la dirección semántica de ŔOK.
+
 ## Incorporación y límites
 
 Este texto es un complemento metodológico separado del anexo de registros de

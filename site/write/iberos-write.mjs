@@ -10,18 +10,25 @@ export class IberOSWrite {
     this.#ready();
     const text = String(input ?? "").trim();
     if(!text) return this.#abstain(text, ["EMPTY_INPUT"]);
-    const normalized = text.toLocaleLowerCase("es-ES").replace(/[¿?¡!.,;:]/g," ").replace(/\s+/g," ").trim();
+    const normalized = text.toLocaleLowerCase("es-ES").replace(/\.$/,"").replace(/\s+/g," ").trim();
     const transfer = this.#detectTransferDocument(normalized);
     if(transfer) return this.#renderTransfer(text, transfer);
     return this.#genericAbstention(text);
   }
   #detectTransferDocument(s){
-    const hasTransfer = /\b(transfiere|transferir|entrega|entregar)\b/.test(s);
-    const hasDocument = /\b(documento|texto|inscripci[oó]n|mensaje)\b/.test(s);
-    if(!hasTransfer || !hasDocument) return null;
+    // Full affirmative passive frames only. Keyword co-occurrence cannot fix roles.
+    const name = "([\\p{L}][\\p{L}\\p{M}-]*)";
+    const action = "se (?:transfiere|entrega) (?:un (?:documento|texto|mensaje)|una inscripci[oó]n)";
+    const front = s.match(new RegExp(`^a ${name} ${action}$`,"u"));
+    const end = s.match(new RegExp(`^${action} a ${name}$`,"u"));
+    const unnamed = new RegExp(`^${action}$`,"u").test(s);
+    if(!front && !end && !unnamed) return null;
+    const surface = front?.[1] || end?.[1];
+    const unresolvedParticipants = new Set(["nadie","ninguno","ninguna","todos","todas","alguien","quién","quien","qué","que","cuál","cual","él","el","ella","ellos","ellas","mí","mi","ti","nosotros","nosotras","vosotros","vosotras","usted","ustedes","no"]);
+    if(surface && unresolvedParticipants.has(surface)) return null;
     let recipient = null;
-    if(/\bbastubar\b/i.test(s)) recipient = {surface:"Bastubar", iberian:"BASTUBAR", attested:true};
-    else { const m=s.match(/\ba\s+([a-záéíóúüñ][a-záéíóúüñ-]*)\b/i); if(m) recipient={surface:m[1],iberian:null,attested:false}; }
+    if(surface === "bastubar") recipient = {surface:"Bastubar", iberian:"BASTUBAR", attested:true};
+    else if(surface) recipient = {surface,iberian:null,attested:false};
     return {recipient,hasDocument:true};
   }
   #renderTransfer(original,parse){
