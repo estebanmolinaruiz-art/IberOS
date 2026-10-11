@@ -50,6 +50,10 @@ Actualizado: 2026-10-11
 - [x] Navegación pública comprobada: corpus, atlas, fichas, laboratorio, 3D, recursos, casos, comunidad, contactar y acerca
 - [x] Sitio web público estable marcado como cumplido para EpiHub
 
+## Documentación técnica
+- [x] Mapa canónico de arquitectura publicado en `docs/ARCHITECTURE.md`
+- [x] Arquitectura, datos, CLI, benchmark, workflows, publicación y límites enlazados desde una entrada única
+
 ## Benchmark y marco académico
 - [x] Informe técnico citable en Zenodo
 - [x] Case Studies I citable en Zenodo
