@@ -1,11 +1,12 @@
 cff-version: 1.2.0
-message: "If you use IberOS, please cite the project and the relevant release."
+message: "If you use IberOS, please cite this software release and the relevant research outputs."
 title: "IberOS Open Research Kit"
 type: software
 authors:
   - family-names: "Molina Ruiz"
     given-names: "Esteban"
-url: "https://github.com/estebanmolinaruiz-art/IberOS"
+doi: "10.5281/zenodo.22997623"
+url: "https://zenodo.org/records/22997623"
 repository-code: "https://github.com/estebanmolinaruiz-art/IberOS"
 references:
   - type: report
@@ -15,6 +16,13 @@ references:
         given-names: "Esteban"
     doi: "10.5281/zenodo.22939179"
     url: "https://zenodo.org/records/22939179"
+  - type: article
+    title: "IberOS Case Studies I: cuatro fichas analíticas de validación en epigrafía ibérica"
+    authors:
+      - family-names: "Molina Ruiz"
+        given-names: "Esteban"
+    doi: "10.5281/zenodo.22957236"
+    url: "https://zenodo.org/records/22957236"
 license: Apache-2.0
 version: "1.0.1"
 date-released: "2026-10-01"
