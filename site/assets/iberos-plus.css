@@ -653,3 +653,11 @@ body.iberos-comunidad .contact-notice{margin:22px 0}
  body.iberos-inner .site-header .brand-mark{display:none!important}
  body.iberos-inner .site-header .nav-cta{font-size:.61rem!important;padding:7px 6px!important}
 }
+
+/* Research journey follows selected OBJECT_ID across tools without pretending automatic analysis */
+body .research-context{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 18px;padding:12px 14px;background:linear-gradient(135deg,#092a40,#124056);border:1px solid #d4a560;border-radius:11px;color:#fff4d6}
+body .research-context strong{margin-right:7px;overflow-wrap:anywhere;font:700 .95rem Georgia,serif}
+body .research-context a{display:inline-flex;align-items:center;min-height:34px;padding:6px 10px;border:1px solid #ddba7b;border-radius:6px;color:#f9e1b3;text-decoration:none;font-size:.84rem}
+body .research-context a[aria-current="page"]{background:#ebc88d;color:#092339}
+body .research-context small{flex-basis:100%;color:#d6e4e9;font-size:.76rem}
+@media(max-width:600px){body .research-context{padding:10px;gap:6px}body .research-context strong{flex-basis:100%}body .research-context a{min-height:38px;font-size:.77rem;padding:6px 9px}}
