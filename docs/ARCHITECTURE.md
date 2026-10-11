@@ -211,7 +211,7 @@ The suite covers:
 
 - GitHub release: `v1.0.1`
 - PyPI: `iberos 1.0.1`
-- Zenodo software DOI: `10.5281/zenodo.22997623`
+- Zenodo software DOI: pendiente de publicación/verificación pública (identificador reservado observado: `10.5281/zenodo.22997623`)
 
 ### Research outputs
 
