@@ -25,6 +25,7 @@ from .core import (
     baides_batir_role_matrix,
     numeral_789_dashboard,
     dedi_orthogonal_matrix,
+    dedi_combined_gate,
 )
 
 
@@ -67,6 +68,8 @@ def main():
     sub.add_parser("baides-batir-matrix")
     sub.add_parser("numeral-789-dashboard")
     sub.add_parser("dedi-orthogonal-matrix")
+    p_dedi = sub.add_parser("dedi-benchmark")
+    p_dedi.add_argument("json_file", help="Preregistered rule and evidence records; no automatic promotion")
 
     p_policy = sub.add_parser("family-policy")
     p_policy.add_argument("family")
@@ -117,6 +120,29 @@ def main():
         print(json.dumps(family_dashboard(), ensure_ascii=False, indent=2))
     elif args.command == "dedi-orthogonal-matrix":
         print(json.dumps(dedi_orthogonal_matrix(), ensure_ascii=False, indent=2))
+    elif args.command == "dedi-benchmark":
+        with open(args.json_file, encoding="utf-8") as evidence_file:
+            evidence = json.load(evidence_file)
+        if not isinstance(evidence, dict) or not isinstance(evidence.get("observations"), list):
+            parser.error("Expected an object with an observations array")
+        if not all(isinstance(row, dict) for row in evidence["observations"]):
+            parser.error("Each observation must be an object")
+        rule = evidence.get("preregistered_rule")
+        if rule is not None and not isinstance(rule, dict):
+            parser.error("preregistered_rule must be an object")
+        if rule is not None and not all(isinstance(k, str) and isinstance(v, str) for k, v in rule.items()):
+            parser.error("preregistered_rule must map strings to strings")
+        report = {
+            "formal_matrix": dedi_orthogonal_matrix(),
+            "semantic_gate": dedi_combined_gate(
+                evidence["observations"],
+                preregistered_rule=rule,
+                preregistration_id=evidence.get("preregistration_id"),
+                preregistration_hash=evidence.get("preregistration_hash"),
+            ),
+            "official_metrics_changed": False,
+        }
+        print(json.dumps(report, ensure_ascii=False, indent=2))
     elif args.command == "numeral-789-dashboard":
         print(json.dumps(numeral_789_dashboard(), ensure_ascii=False, indent=2))
     elif args.command == "baides-batir-matrix":
