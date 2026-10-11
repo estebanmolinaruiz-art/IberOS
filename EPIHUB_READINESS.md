@@ -11,7 +11,7 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 | Distribución reproducible | PyPI alineado con la release y artefactos publicados | 🟢 | PyPI publica iberos 1.0.1, wheel y sdist; Trusted Publishing verificado; instalación limpia y CLI verificadas en GitHub Actions run 38158352028 | Ninguno crítico |
 | Persistencia académica | Publicaciones citables con DOI y relación clara | 🟢 | Informe 10.5281/zenodo.22939179 + Case Studies I 10.5281/zenodo.22957236 | Ninguno crítico |
 | Persistencia del software | DOI específico de la release de software | 🟢 | IberOS Open Research Kit v1.0.1: 10.5281/zenodo.22997623 | Verificar DOI conceptual cuando sea públicamente resoluble |
-| Documentación técnica | README, instalación, arquitectura, API/CLI, ejemplos y límites | 🟠 | README, docs/, workflows y componentes | Consolidar entrada única y arquitectura |
+| Documentación técnica | README, instalación, arquitectura, API/CLI, ejemplos y límites | 🟢 | README + `docs/ARCHITECTURE.md` como mapa canónico; CLI, benchmark, interoperabilidad, workflows, ejemplos y límites enlazados | Ninguno crítico |
 | Marco académico | Documento metodológico citable, fuentes y posición epistemológica | 🟢 | Informe técnico, Case Studies I, software con DOI diferenciado y benchmark reproducible público | Ninguno crítico |
 | Benchmark | Corpus curado + protocolo + resultados reproducibles + negativos | 🟢 | 38 objetos; 37 unidades independientes; snapshot v1.0.1; controles negativos; workflow `38158963423` reproducido con éxito | Ninguno crítico |
 | Trazabilidad | Versiones, autores, licencias, checksums y procedencia | 🟢 | CITATION.cff, AUTHORS.md, LICENSE, MANIFEST_SHA256, políticas | Mantener sincronización |
@@ -43,4 +43,4 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 
 IberOS reúne ya los entregables mínimos que se habían identificado para solicitar una nueva reevaluación de EpiHub: sitio web público estable, estructura de software verificable, distribución PyPI probada externamente, DOI específico del software, marco académico citable y benchmark reproducible con resultados, negativos y límites.
 
-El SWHID sigue pendiente como mejora de archivo duradero, pero no se presenta como requisito ya exigido por EpiHub. La formulación prudente pasa de **“preparación avanzada para reevaluación”** a **“lista para solicitar reevaluación, sujeta a valoración externa de EpiHub”**.
+El SWHID sigue pendiente como mejora de archivo duradero, pero no se presenta como requisito ya exigido por EpiHub. La documentación técnica dispone además de un mapa canónico en `docs/ARCHITECTURE.md`. La formulación prudente pasa de **“preparación avanzada para reevaluación”** a **“lista para solicitar reevaluación, sujeta a valoración externa de EpiHub”**.
