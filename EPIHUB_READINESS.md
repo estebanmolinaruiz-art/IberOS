@@ -10,7 +10,7 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 | Estructura clara de software | Repositorio público, estructura, licencia, versión, instalación y tests | 🟢 | GitHub público; src/, tests/, docs/, data/, Apache-2.0, releases v1.0.0/v1.0.1 | Ninguno crítico |
 | Distribución reproducible | PyPI alineado con la release y artefactos publicados | 🟢 | PyPI publica iberos 1.0.1, wheel y sdist; Trusted Publishing verificado; instalación limpia y CLI verificadas en GitHub Actions run 38158352028 | Ninguno crítico |
 | Persistencia académica | Publicaciones citables con DOI y relación clara | 🟢 | Informe 10.5281/zenodo.22939179 + Case Studies I 10.5281/zenodo.22957236 | Ninguno crítico |
-| Persistencia del software | DOI específico de la release de software | 🟢 | IberOS Open Research Kit v1.0.1: 10.5281/zenodo.22997623 | Verificar DOI conceptual cuando sea públicamente resoluble |
+| Persistencia del software | DOI específico de la release de software | 🟠 | Depósito de software preparado; `10.5281/zenodo.22997623` no resuelve actualmente en Zenodo/DataCite | Publicar el depósito y verificar el DOI públicamente |
 | Documentación técnica | README, instalación, arquitectura, API/CLI, ejemplos y límites | 🟢 | README + `docs/ARCHITECTURE.md` como mapa canónico; CLI, benchmark, interoperabilidad, workflows, ejemplos y límites enlazados | Ninguno crítico |
 | Marco académico | Documento metodológico citable, fuentes y posición epistemológica | 🟢 | Informe técnico, Case Studies I, software con DOI diferenciado y benchmark reproducible público | Ninguno crítico |
 | Benchmark | Corpus curado + protocolo + resultados reproducibles + negativos | 🟢 | 38 objetos; 37 unidades independientes; snapshot v1.0.1; controles negativos; workflow `38158963423` reproducido con éxito | Ninguno crítico |
@@ -35,12 +35,12 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 
 ### Software
 - Título: **IberOS Open Research Kit v1.0.1**
-- DOI de versión: **10.5281/zenodo.22997623**
+- DOI de versión: **pendiente de publicación/verificación pública** (identificador reservado observado: `10.5281/zenodo.22997623`)
 - Tipo: **Software**
 - DOI conceptual: pendiente de verificación pública.
 
 ## Condición de reenvío a EpiHub
 
-IberOS reúne ya los entregables mínimos que se habían identificado para solicitar una nueva reevaluación de EpiHub: sitio web público estable, estructura de software verificable, distribución PyPI probada externamente, DOI específico del software, marco académico citable y benchmark reproducible con resultados, negativos y límites.
+IberOS reúne casi todos los entregables mínimos identificados para una nueva reevaluación de EpiHub: sitio web público estable, estructura de software verificable, distribución PyPI probada externamente, marco académico citable y benchmark reproducible. El DOI específico del software debe volver a verificarse tras publicar el depósito Zenodo.
 
-El SWHID de origen de Software Heritage ya está verificado (`swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`). Sigue pendiente confirmar una visita/snapshot archivado completo; no se presenta como requisito ya exigido por EpiHub. La documentación técnica dispone además de un mapa canónico en `docs/ARCHITECTURE.md`. La formulación prudente pasa de **“preparación avanzada para reevaluación”** a **“lista para solicitar reevaluación, sujeta a valoración externa de EpiHub”**.
+El SWHID de origen de Software Heritage ya está verificado (`swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`). Sigue pendiente confirmar una visita/snapshot archivado completo; no se presenta como requisito ya exigido por EpiHub. La documentación técnica dispone además de un mapa canónico en `docs/ARCHITECTURE.md`. La formulación prudente vuelve temporalmente a **“preparación avanzada para reevaluación”** hasta que el DOI específico del software sea públicamente resoluble.
