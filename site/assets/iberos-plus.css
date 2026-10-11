@@ -817,3 +817,8 @@ body.iberos-fichas .photo-credit a{color:#28536b;text-decoration:underline}
 body.iberos-ficha figure.artifact-visual{margin:0}
 body.iberos-ficha figure.artifact-visual .artifact-doc-label{position:absolute;bottom:7px;left:8px;right:8px;max-width:calc(100% - 16px);font:600 .68rem/1.35 system-ui,sans-serif;padding:6px 8px;overflow-wrap:anywhere;background:#0e2834e6;color:#fff7e9}
 body.iberos-ficha figure.artifact-visual .artifact-doc-label a{color:#ffe4a8;text-decoration:underline}
+
+/* Enlaces de rescate cuando Wikimedia no entrega la fotografía */
+body.iberos-fichas .fiche-illustration.without-image,body.iberos-ficha .fiche-illustration.without-image{position:relative;display:flex!important;align-items:center;justify-content:center;min-height:190px;background:linear-gradient(145deg,#1c3344,#394950)!important}
+body.iberos-fichas .fiche-illustration.without-image::before,body.iberos-ficha .fiche-illustration.without-image::before{display:none!important;content:none!important}
+body.iberos-fichas .fiche-illustration.without-image .photo-direct,body.iberos-ficha .fiche-illustration.without-image .photo-direct{display:block!important;position:relative;z-index:6;padding:12px 15px;border:1px solid #cfb477;border-radius:8px;background:#102838;color:#fff2da;font:700 .88rem/1.5 system-ui,sans-serif;text-align:center;text-decoration:underline;max-width:85%}
