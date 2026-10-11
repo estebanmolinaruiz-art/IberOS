@@ -1,0 +1,18 @@
+{
+  "project": "IberOS-Talk",
+  "version": "TALK-WEB v0.2-guarded",
+  "mode": "BROWSER_SYNTHESIS_DEMO_ONLY",
+  "recognized_demo_forms": 12,
+  "approved_production_whole_words": 0,
+  "historical_pronunciations_validated": 0,
+  "bank_connected_to_public_page": false,
+  "unknown_forms": "FALLBACK_WITHOUT_AUTOMATIC_AUDIO",
+  "write_markers": "BLOCKED_WITHOUT_TOKEN_SPLITTING",
+  "authority": {
+    "semantic_release": "C594",
+    "prospective_lock": "C474",
+    "technical_floor": "C539",
+    "rok_network": "C541"
+  },
+  "official_metrics_changed": false
+}
