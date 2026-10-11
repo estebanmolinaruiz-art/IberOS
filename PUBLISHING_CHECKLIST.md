@@ -34,9 +34,9 @@ Actualizado: 2026-10-11
 - [x] Relacionado con el informe técnico
 
 ## Zenodo — software
-- [x] Registro de software IberOS Open Research Kit v1.0.1 publicado
-- [x] DOI de versión registrado: `10.5281/zenodo.22997623`
-- [x] Recurso separado del informe técnico y de Case Studies I
+- [ ] Publicar y verificar públicamente el registro de software IberOS Open Research Kit v1.0.1
+- [ ] Identificador reservado observado: `10.5281/zenodo.22997623`; actualmente no resuelve en Zenodo/DataCite
+- [x] Depósito de software preparado como recurso separado del informe técnico y de Case Studies I
 - [ ] Verificar y registrar el DOI conceptual del software cuando Zenodo lo exponga públicamente
 
 ## Software Heritage
@@ -68,4 +68,4 @@ Actualizado: 2026-10-11
 
 `GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. El benchmark reproducible queda cerrado. Permanece como mejora de archivo duradero recuperar el SWHID verificable.
+La prueba externa de instalación/CLI queda cerrada. El DOI específico de software vuelve a estado pendiente hasta que el depósito Zenodo sea públicamente resoluble. El benchmark reproducible queda cerrado. Permanece como mejora de archivo duradero recuperar el SWHID verificable.
