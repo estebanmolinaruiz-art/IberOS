@@ -41,14 +41,19 @@ Actualizado: 2026-10-11
 
 ## Software Heritage
 - [x] Workflow de solicitud de archivado
-- [ ] Recuperar y registrar SWHID verificable
+- [x] SWHID de origen verificado: `swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`
+- [ ] Confirmar visita/snapshot archivado completo y registrar su SWHID correspondiente
 
 ## Web
 - [x] GitHub Pages habilitada
 - [x] Corpus y módulos web integrados en el repositorio
-- [ ] Comprobar desde una sesión externa que la portada pública carga correctamente
-- [ ] Comprobar navegación a metodología, software, documentación, research y contacto
-- [ ] Sólo entonces marcar “sitio web dedicado estable” como cumplido para EpiHub
+- [x] Portada pública comprobada desde una sesión externa
+- [x] Navegación pública comprobada: corpus, atlas, fichas, laboratorio, 3D, recursos, casos, comunidad, contactar y acerca
+- [x] Sitio web público estable marcado como cumplido para EpiHub
+
+## Documentación técnica
+- [x] Mapa canónico de arquitectura publicado en `docs/ARCHITECTURE.md`
+- [x] Arquitectura, datos, CLI, benchmark, workflows, publicación y límites enlazados desde una entrada única
 
 ## Benchmark y marco académico
 - [x] Informe técnico citable en Zenodo
@@ -56,11 +61,11 @@ Actualizado: 2026-10-11
 - [x] Software v1.0.1 con DOI propio
 - [x] 38 objetos curados declarados y almacenados
 - [x] Separación EVIDENCE / INFERENCE / HYPOTHESIS / ESTIMATED TRANSLATION
-- [ ] Publicar protocolo de benchmark reproducible
-- [ ] Publicar métricas/resultados y casos negativos
+- [x] Protocolo de benchmark reproducible publicado en `docs/BENCHMARK.md`
+- [x] Snapshot machine-readable, métricas, gates abiertos y casos negativos publicados; GitHub Actions run `38158963423` verificado con éxito
 
 ## Consistencia de versión
 
 `GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. Permanecen el benchmark reproducible, la validación final del sitio público y el SWHID.
+El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. El benchmark reproducible queda cerrado. Permanece como mejora de archivo duradero recuperar el SWHID verificable.

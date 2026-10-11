@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IberOS+ · Estado de funcionamiento</title>
+<link rel="stylesheet" href="../assets/iberos-plus.css">
+<style>
+.audit{max-width:980px;margin:36px auto;padding:0 20px 70px;color:#193049}
+.audit h1{font-size:clamp(2rem,5vw,3.2rem)}
+.audit p{line-height:1.65}
+.audit table{width:100%;border-collapse:collapse;background:#fffaf0;border:1px solid #bea47c;border-radius:12px;overflow:hidden}
+.audit th,.audit td{padding:13px 12px;border-bottom:1px solid #dccba9;text-align:left;color:#27394b;vertical-align:top}
+.audit a{color:#12465b;text-decoration:underline}
+.audit .ok{color:#17613e;font-weight:700}.audit .bad{color:#a22d24;font-weight:700}.audit .wait{color:#6f552b}
+.audit button{padding:12px 16px;border:0;border-radius:8px;background:#143f50;color:#fff;font-weight:700;cursor:pointer}
+.audit small{display:block;color:#665847;margin-top:4px}
+@media(max-width:600px){.audit table{font-size:.84rem}.audit th,.audit td{padding:10px 6px}}
+</style></head><body class="iberos-inner"><div id="head"></div>
+<main class="audit"><div class="section-kicker">Control de calidad público</div>
+<h1>Estado de funcionamiento de IberOS+</h1>
+<p>Comprobaciones reales realizadas desde este navegador. La presencia de un archivo no garantiza que todas sus funciones internas trabajen correctamente. Para probar búsquedas, exportación y rotación 3D, utiliza los accesos de cada módulo.</p>
+<p><button id="check" type="button">Repetir comprobaciones</button> <strong id="count" aria-live="polite"></strong></p>
+<table><thead><tr><th>Elemento</th><th>Estado</th><th>Comprobación</th></tr></thead><tbody id="tests"></tbody></table>
+<p><strong>Interpretación científica:</strong> los modelos simbólicos y las ilustraciones digitales no son fotografías ni escaneados arqueológicos de piezas reales. Las funciones de lectura y análisis son herramientas experimentales, no traducciones confirmadas.</p>
+<p><a href="../">Volver a la portada de IberOS+</a></p></main>
+<script type="module">
+import {header} from "../assets/portal-data.js";
+document.getElementById("head").innerHTML=header("../");
+const items=[
+["Portada","../index.html","html"],
+["Corpus","../corpus/index.html","html"],
+["Atlas","../atlas/index.html","html"],
+["Fichas","../fichas/index.html","html"],
+["Laboratorio","../laboratorio/index.html","html"],
+["Modelos 3D","../modelos3d/index.html","html"],
+["Recursos","../recursos/index.html","html"],
+["Casos","../casos/index.html","html"],
+["Comunidad","../comunidad/index.html","html"],
+["IberOS Core","../webengine/index.html","html"],
+["IberOS Write","../write/index.html","html"],
+["IberOS Talk","../talk/index.html","html"],
+["Modelo de placa","../models/inscribed-placa.gltf","gltf"],
+["Modelo de estela","../models/inscribed-estela.gltf","gltf"],
+["Recursos externos 3D","../data/real_3d_resources.json","json"],
+["Imagen Corpus","../assets/corpus.webp","image"],
+["Imagen Atlas","../assets/atlas.webp","image"],
+["Imagen Fichas","../assets/fichas.webp","image"],
+["Imagen Laboratorio","../assets/laboratorio.webp","image"],
+["Imagen Modelos 3D","../assets/modelos3d.webp","image"],
+["Imagen Recursos","../assets/recursos.webp","image"],
+["Imagen Casos","../assets/casos.webp","image"],
+["Imagen Comunidad","../assets/comunidad.webp","image"]
+];
+const root=document.getElementById("tests"),count=document.getElementById("count");
+function row(item,state,reason){return '<tr><td><a href="'+item[1]+'">'+item[0]+'</a></td><td class="'+state+'">'+({ok:"Disponible",bad:"Error",wait:"Comprobando"}[state])+'</td><td>'+reason+'</td></tr>'}
+async function run(){document.getElementById("check").disabled=true;root.innerHTML=items.map(i=>row(i,"wait","Pendiente")).join("");let passed=0;
+await Promise.all(items.map(async(item,index)=>{let status="bad",note="No accesible";try{const r=await fetch(item[1],{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
+if(item[2]==="gltf"||item[2]==="json"){const j=await r.json();if(item[2]==="gltf"&&(!j.asset||!j.meshes||!j.buffers))throw Error("Modelo glTF incompleto");if(item[2]==="json"&&!Array.isArray(j))throw Error("JSON no es una lista")}
+if(item[2]==="html"){const t=await r.text();if(!t.includes("<html")&&!t.includes("<!doctype"))throw Error("HTML inválido")}
+if(item[2]==="image"){let b=await r.blob();if(!b.type.startsWith("image/")||b.size<1000)throw Error("Imagen inválida")}
+status="ok";note="Archivo cargado y estructura básica válida";passed++}catch(e){note=String(e.message||e).slice(0,100)}
+root.children[index].outerHTML=row(item,status,note)}));count.textContent=passed+" de "+items.length+" comprobaciones superadas";document.getElementById("check").disabled=false}
+document.getElementById("check").addEventListener("click",run);run();
+</script></body></html>

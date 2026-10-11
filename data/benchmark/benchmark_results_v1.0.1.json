@@ -1,0 +1,74 @@
+{
+  "benchmark_version": "1.0.1",
+  "software_version": "1.0.1",
+  "date": "2026-10-11",
+  "scope": "curated_public_layer",
+  "corpus": {
+    "raw_objects": 38,
+    "independent_units": 37,
+    "collapsed_records": 1,
+    "inclusion_counts": {
+      "INCLUDE": 20,
+      "CONTROL_ONLY": 9,
+      "EXCLUDED_CONTROL": 4,
+      "CONDITIONAL": 5
+    }
+  },
+  "authority": {
+    "semantic_release": "C594",
+    "prospective_lock": "C474",
+    "technical_floor": "C539",
+    "rok_network": "C541"
+  },
+  "official_metrics": {
+    "ICS_global": 70.8,
+    "ROK": 75,
+    "KA_KE": 75,
+    "SALIR": 75,
+    "KUTUR": 75,
+    "BAIDES_BATIR": 75,
+    "D_E_I": 50,
+    "CORE": "27/45 = 60.0%",
+    "CORE_plus_INFER": "28/45 = 62.2%",
+    "INFER_progress": 98
+  },
+  "open_gates": {
+    "ROK": {
+      "state": "OPEN",
+      "passing_candidates": []
+    },
+    "KA_KE_KU": {
+      "state": "OPEN",
+      "passing_candidates": []
+    },
+    "SALIR": {
+      "state": "OPEN",
+      "passing_candidates": []
+    },
+    "KUTUR": {
+      "state": "OPEN",
+      "passing_candidates": []
+    },
+    "BAIDES_BATIR_EXACT_ROLE": {
+      "state": "OPEN",
+      "exact_role_fixed_candidates": []
+    },
+    "NUM_789": {
+      "closed_values": []
+    },
+    "D_E_I_EXACT_FEATURE": {
+      "state": "OPEN",
+      "passing_candidates": []
+    }
+  },
+  "negative_and_adversarial_evidence": {
+    "excluded_controls": 4,
+    "sorse_c1_8_physical_anchor": "FAIL",
+    "automatic_core_promotion": false
+  },
+  "interpretation": {
+    "not_a_decipherment_percentage": true,
+    "official_metrics_are_release_indicators": true,
+    "open_gates_are_preserved_as_open": true
+  }
+}
