@@ -13,19 +13,20 @@ Actualizado: 2026-10-11
 
 ## PyPI
 - [x] Paquete público `iberos`
-- [x] Workflow con Trusted Publishing
-- [x] Workflow admite publicación por release y ejecución manual
-- [x] `skip-existing: true`
-- [ ] Verificar publicación de `iberos==1.0.1`
-- [ ] Ejecutar prueba limpia: `python -m pip install iberos==1.0.1`
-- [ ] Verificar CLI instalada: `iberos --help`
+- [x] Trusted Publishing mediante GitHub Actions
+- [x] `iberos==1.0.1` publicado y verificado en la API pública de PyPI
+- [x] Wheel `iberos-1.0.1-py3-none-any.whl` publicado
+- [x] Sdist `iberos-1.0.1.tar.gz` publicado
+- [x] Workflow de publicación completado correctamente (run #6)
+- [ ] Ejecutar una prueba de instalación desde PyPI en un entorno externo independiente
+- [ ] Verificar CLI en ese entorno: `iberos --help`
 
 ## Zenodo
 - [x] Informe técnico: DOI de versión `10.5281/zenodo.22939179`
 - [x] Informe técnico: DOI conceptual `10.5281/zenodo.22939178`
 - [x] `.zenodo.json` preparado para software v1.0.1
 - [ ] Verificar DOI específico de la release de software v1.0.1
-- [ ] No presentar el DOI del informe como DOI del software
+- [x] Mantener explícita la separación entre DOI del informe y DOI del software
 
 ## Software Heritage
 - [x] Workflow de solicitud de archivado
@@ -56,10 +57,6 @@ Actualizado: 2026-10-11
 
 ## Consistencia de versión
 
-Antes de cada release:
+`GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = .zenodo.json 1.0.1 = PyPI 1.0.1`
 
-`tag GitHub = pyproject.toml = CITATION.cff = .zenodo.json = versión PyPI verificada`
-
-Versión objetivo actual: **1.0.1**.
-
-La versión no se considerará plenamente alineada hasta que PyPI 1.0.1 y el DOI de software correspondiente estén verificados públicamente.
+La cadena de versión técnica está alineada. Queda pendiente el DOI específico de software y la prueba externa independiente de instalación.
