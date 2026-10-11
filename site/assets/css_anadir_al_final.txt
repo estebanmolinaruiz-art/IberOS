@@ -1,0 +1,11 @@
+
+/* ILUSTRACIONES IBEROS+ — imágenes conceptuales, NO fotografías documentales */
+body.iberos-corpus .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/corpus.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-atlas .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/atlas.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-fichas .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/fichas.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-laboratorio .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/laboratorio.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-modelos3d .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/modelos3d.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-recursos .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/recursos.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-casos .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/casos.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-comunidad .hero{background-image:linear-gradient(90deg,rgba(7,14,17,.95),rgba(10,16,19,.78) 47%,rgba(12,18,21,.34)),url("../assets/ilustraciones/comunidad.webp")!important;background-size:cover!important;background-position:center!important}
+body.iberos-inner .ai-illustration-note{font-size:.75rem;line-height:1.35;padding:8px 18px;color:#8a663b;text-align:right;background:#fff3df}
