@@ -6,7 +6,7 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 
 | Criterio | Evidencia mínima | Estado | Evidencia actual | Bloqueo |
 |---|---|---|---|---|
-| Sitio web dedicado estable | URL pública estable, navegación y páginas de proyecto/documentación/research/contacto | 🟠 | GitHub Pages habilitada y contenido web en el repositorio | Verificación externa completa y enlaces finales |
+| Sitio web dedicado estable | URL pública estable, navegación y páginas de proyecto/documentación/research/contacto | 🟢 | GitHub Pages verificada externamente; portada y rutas principales responden; Recursos publica el DOI de software y la portada refleja 3 DOI | Ninguno crítico |
 | Estructura clara de software | Repositorio público, estructura, licencia, versión, instalación y tests | 🟢 | GitHub público; src/, tests/, docs/, data/, Apache-2.0, releases v1.0.0/v1.0.1 | Ninguno crítico |
 | Distribución reproducible | PyPI alineado con la release y artefactos publicados | 🟢 | PyPI publica iberos 1.0.1, wheel y sdist; Trusted Publishing verificado; instalación limpia y CLI verificadas en GitHub Actions run 38158352028 | Ninguno crítico |
 | Persistencia académica | Publicaciones citables con DOI y relación clara | 🟢 | Informe 10.5281/zenodo.22939179 + Case Studies I 10.5281/zenodo.22957236 | Ninguno crítico |
@@ -43,8 +43,7 @@ Este documento traduce los criterios comunicados por EpiHub en entregables verif
 
 IberOS estará listo para solicitar reevaluación cuando puedan verificarse conjuntamente:
 
-1. sitio web público estable;
-2. GitHub/PyPI/Zenodo v1.0.1 como cadena técnica canónica;
-3. benchmark reproducible con resultados y límites.
+1. GitHub/PyPI/Zenodo v1.0.1 como cadena técnica canónica;
+2. benchmark reproducible con resultados y límites.
 
-El requisito de **DOI específico del software** queda cubierto por el depósito v1.0.1. La formulación actual sigue siendo **“preparación avanzada para reevaluación”** porque permanecen la verificación web y el benchmark reproducible.
+El requisito de **DOI específico del software** queda cubierto por el depósito v1.0.1. La formulación actual sigue siendo **“preparación avanzada para reevaluación”** porque el benchmark reproducible con resultados y límites sigue pendiente.
