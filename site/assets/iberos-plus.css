@@ -584,3 +584,38 @@ body.iberos-laboratorio :is(input,select,textarea):focus-visible{outline:2px sol
  body.iberos-laboratorio .hero-actions{display:flex;gap:7px;flex-wrap:wrap}
  body.iberos-laboratorio .hero-actions .btn{font-size:.72rem;padding:6px 8px}
 }
+
+/* IberOS+ acabado arqueológico: Patrimonio 3D, Recursos, Casos. */
+body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) :is(.viewer-card,.resource-card,.case-card){background:linear-gradient(145deg,#fffcf4,#f2e3c8);border:1px solid #d2b183;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px #061e3020;color:#132b40}
+body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) :is(.viewer-card,.resource-card,.case-card) :is(h3,h2){font-family:Georgia,serif;color:#102c40}
+body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) :is(.viewer-card,.resource-card,.case-card) a:focus-visible{outline:3px solid #36a6c2;outline-offset:2px}
+body.iberos-modelos3d .viewer-card model-viewer{display:block;width:100%;min-height:260px;background:radial-gradient(circle at 50% 40%,#d8c7a2,#4a5b5b);--poster-color:#e4d7bd}
+body.iberos-modelos3d .viewer-copy{padding:16px}
+body.iberos-recursos .resource-shelf{gap:15px}
+body.iberos-recursos .resource-card{min-width:0}
+body.iberos-recursos .resource-card .thumb{background:linear-gradient(145deg,#0a3148,#30535b 65%,#bd9460);border-bottom:3px solid #c39b61;min-height:95px}
+body.iberos-casos .case-grid{gap:15px}
+body.iberos-casos .case-card .copy{padding:18px}
+body.iberos-casos .case-card .media{min-height:145px;background:radial-gradient(circle at 65% 55%,#a78c67,#394a48 58%,#112f41);border-bottom:3px solid #cca56a}
+body.iberos-casos .case-card .case-footer{display:flex;flex-wrap:wrap;gap:7px}
+@media(min-width:901px){
+ body.iberos-modelos3d .viewer-shell{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+ body.iberos-recursos .resource-shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+ body.iberos-casos .case-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(min-width:601px) and (max-width:900px){
+ body.iberos-modelos3d .viewer-shell,body.iberos-recursos .resource-shelf,body.iberos-casos .case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+}
+@media(max-width:600px){
+ body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) .hero .hero-inner{padding:22px 16px 23px!important}
+ body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) .hero h1{font-size:clamp(2.1rem,8.5vw,2.7rem)!important;margin:8px 0!important}
+ body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) .hero p{font-size:.92rem!important;line-height:1.43!important}
+ body:is(.iberos-modelos3d,.iberos-recursos,.iberos-casos) :is(.viewer-shell,.resource-shelf,.case-grid){display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:11px!important}
+ body.iberos-modelos3d .viewer-card model-viewer{height:300px;min-height:300px}
+ body.iberos-modelos3d .viewer-copy{padding:13px}
+ body.iberos-recursos .resource-card{padding:14px!important}
+ body.iberos-recursos .resource-card .thumb{min-height:78px}
+ body.iberos-casos .case-card .media{min-height:105px}
+ body.iberos-casos .case-card .copy{padding:13px}
+ body.iberos-casos .case-footer .btn{font-size:.78rem;padding:8px 10px}
+}
