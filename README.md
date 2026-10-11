@@ -6,7 +6,6 @@ IberOS es un proyecto independiente de investigación orientado al análisis int
 
 ## Referencias persistentes
 
-- Software Zenodo, versión v1.0.1: **10.5281/zenodo.22997623**
 - Informe técnico Zenodo, versión v1: **10.5281/zenodo.22939179**
 - DOI conceptual del informe: **10.5281/zenodo.22939178**
 - IberOS Case Studies I, versión v1: **10.5281/zenodo.22957236**
@@ -15,13 +14,13 @@ IberOS es un proyecto independiente de investigación orientado al análisis int
 - Release de software actual en GitHub: **v1.0.1**
 - Distribución pública actual en PyPI: **iberos 1.0.1**
 
-El DOI 10.5281/zenodo.22997623 corresponde a la release de **software** IberOS Open Research Kit v1.0.1. Los DOI 22939179/22939178 corresponden al **informe técnico** y los DOI 22957236/22957235 a **IberOS Case Studies I**. El DOI conceptual del software se incorporará cuando pueda verificarse públicamente en Zenodo.
+Los DOI 22939179/22939178 corresponden al **informe técnico** y los DOI 22957236/22957235 a **IberOS Case Studies I**. El DOI conceptual del software se incorporará cuando pueda verificarse públicamente en Zenodo.
 
 ## Estado público — 2026-10-11
 
 - GitHub: repositorio público, licencia Apache-2.0 y releases `v1.0.0` y `v1.0.1`.
 - PyPI: `iberos 1.0.1` publicado mediante GitHub Actions / Trusted Publishing.
-- Zenodo software: release v1.0.1 publicada con DOI **10.5281/zenodo.22997623**.
+- Zenodo software: depósito preparado; el identificador `10.5281/zenodo.22997623` no resuelve públicamente y se trata como reservado / pendiente de publicación hasta nueva verificación.
 - Zenodo: informe técnico v1 publicado como **Report** en DOI 10.5281/zenodo.22939179.
 - Zenodo: **IberOS Case Studies I** publicado como **Data paper** en DOI 10.5281/zenodo.22957236.
 - GitHub Pages: sitio público verificado externamente el 2026-10-11; portada y rutas principales accesibles, con 3 DOI públicos reflejados y el software v1.0.1 incluido en Recursos.
@@ -78,7 +77,7 @@ El estado verificable y los bloqueos de reevaluación se mantienen en [EPIHUB_RE
 
 Software:
 
-Molina Ruiz, Esteban. *IberOS Open Research Kit v1.0.1*. DOI: 10.5281/zenodo.22997623
+Molina Ruiz, Esteban. *IberOS Open Research Kit v1.0.1*. Software release; Zenodo DOI pendiente de publicación/verificación pública.
 
 Informe técnico:
 
