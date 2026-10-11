@@ -5,8 +5,7 @@ type: software
 authors:
   - family-names: "Molina Ruiz"
     given-names: "Esteban"
-doi: "10.5281/zenodo.22997623"
-url: "https://zenodo.org/records/22997623"
+url: "https://github.com/estebanmolinaruiz-art/IberOS/tree/v1.0.1"
 repository-code: "https://github.com/estebanmolinaruiz-art/IberOS"
 references:
   - type: report
