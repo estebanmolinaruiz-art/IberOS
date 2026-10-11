@@ -40,6 +40,7 @@ from iberos import (
     dedi_orthogonal_matrix,
     evaluate_dedi_predictive_gate,
     audit_dedi_prospective_provenance,
+    dedi_combined_gate,
 )
 
 
@@ -617,3 +618,52 @@ def test_dedi_provenance_rejects_synthetic_or_undocumented():
     )
     assert a["documentary_state"] == "INCOMPLETE"
     assert "not_synthetic" in a["rows"][0]["missing_requirements"]
+
+
+
+def test_dedi_combined_gate_blocks_predictive_without_provenance():
+    common = {
+        "external_source_id": "test-source",
+        "external_fixed_before_reading": True,
+        "source_independent_of_hypothesis": True,
+        "held_out_before_prediction": True,
+        "root_identity_verified": True,
+        "segmentation_verified": True,
+    }
+    rows = [
+        {**common, "PHYS_ID": "A", "external_variable": "a", "observed_branch": "E"},
+        {**common, "PHYS_ID": "B", "external_variable": "b", "observed_branch": "I"},
+    ]
+    result = dedi_combined_gate(
+        rows, preregistered_rule={"a": "E", "b": "I"}
+    )
+    assert result["predictive_state"] == "REVIEW_ELIGIBLE"
+    assert result["documentary_state"] == "INCOMPLETE"
+    assert result["state"] == "BLOCKED"
+
+
+def test_dedi_combined_gate_complete_synthetic_fixture_is_not_scientific_pass():
+    common = {
+        "external_source_id": "test-source",
+        "external_source_date": "2026-10-01",
+        "source_snapshot_hash": "sha256:test-only",
+        "prediction_record_id": "test-prediction",
+        "independent_reviewer_id": "test-reviewer",
+        "external_fixed_before_reading": True,
+        "source_independent_of_hypothesis": True,
+        "held_out_before_prediction": True,
+        "root_identity_verified": True,
+        "segmentation_verified": True,
+        "synthetic": False,
+    }
+    rows = [
+        {**common, "PHYS_ID": "A", "LEAK_GROUP": "LA", "external_variable": "a", "observed_branch": "E"},
+        {**common, "PHYS_ID": "B", "LEAK_GROUP": "LB", "external_variable": "b", "observed_branch": "I"},
+    ]
+    result = dedi_combined_gate(
+        rows, preregistered_rule={"a": "E", "b": "I"},
+        preregistration_id="test-lock", preregistration_hash="sha256:test-lock",
+    )
+    assert result["state"] == "AWAITING_INDEPENDENT_REVIEW"
+    assert result["scientific_state"] == "UNVERIFIED"
+    assert result["automatic_core_promotion"] is False
