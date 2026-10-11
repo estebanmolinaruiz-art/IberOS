@@ -1,6 +1,6 @@
 {
   "project": "IberOS-Write",
-  "engine_version": "WRITE-GRAMMAR v0.3-web.3",
+  "engine_version": "WRITE-GRAMMAR v0.3-web.4",
   "generated": "2026-10-11",
   "mode": "conservative_web_adapter",
   "blind_reconstruction_test": "ACTIVE",
@@ -11,7 +11,8 @@
     "Not a general Spanish-to-Iberian translator.",
     "DE/DI exact grammatical contrast remains unresolved.",
     "Unsupported semantic frames return controlled abstention.",
-    "ŔOK is validated only as a transfer-related functional domain; literal direction remains open."
+    "ŔOK is validated only as a transfer-related functional domain; literal direction remains open.",
+    "Only complete affirmative passive transfer frames are supported; negation, questions, unresolved pronouns and explicit-agent frames abstain."
   ],
   "authority": {
     "semantic_release": "C594",

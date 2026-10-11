@@ -1,6 +1,6 @@
 {
   "engine": "IberOS-Write",
-  "version": "WRITE-GRAMMAR v0.3-web.3",
+  "version": "WRITE-GRAMMAR v0.3-web.4",
   "generated": "2026-10-11",
   "principles": [
     "No inventar léxico ni funciones.",
@@ -9,7 +9,8 @@
     "Mostrar SEMANTIC_COVERAGE y FALLBACK_RATE.",
     "Mantener BLIND Reconstruction Test como protocolo separado.",
     "Aplicar BI-DISAMBIG-01: BI/BIN=2 solo con anclaje cuantitativo independiente.",
-    "Aplicar PALEO-RHOTIC-LOCK-01: no neutralizar R/R1 para segmentación, independencia o promoción."
+    "Aplicar PALEO-RHOTIC-LOCK-01: no neutralizar R/R1 para segmentación, independencia o promoción.",
+    "No inferir destinatario por mera presencia de un nombre; negación, preguntas y roles no cubiertos requieren abstención."
   ],
   "known_lexemes": {
     "BASTUBAR": {"class":"proper_name_attested","status":"VALIDATED"},
