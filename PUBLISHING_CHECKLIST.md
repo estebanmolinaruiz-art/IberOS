@@ -41,7 +41,8 @@ Actualizado: 2026-10-11
 
 ## Software Heritage
 - [x] Workflow de solicitud de archivado
-- [ ] Recuperar y registrar SWHID verificable
+- [x] SWHID de origen verificado: `swh:1:ori:f6fe971ad750db06a1531a232d2f9213677138cc`
+- [ ] Confirmar visita/snapshot archivado completo y registrar su SWHID correspondiente
 
 ## Web
 - [x] GitHub Pages habilitada
