@@ -539,3 +539,48 @@ body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(button,a):focus-visible
  body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.corpus-grid,.archive-grid,.detail){grid-template-columns:minmax(0,1fr)!important}
  body.iberos-ficha main{padding:10px!important}
 }
+
+/* IberOS+ · Atlas y Mesa de investigación: acabado responsive aprobado */
+body:is(.iberos-atlas,.iberos-laboratorio) :is(.atlas-panel,.lab-panel,.field-step,.atlas-feature){background:linear-gradient(155deg,#fffaf0,#f3e5ce);border:1px solid #d5b889;border-radius:12px;box-shadow:0 6px 18px #17253712;color:#132b40;min-width:0}
+body:is(.iberos-atlas,.iberos-laboratorio) :is(.atlas-panel,.lab-panel,.field-step) h3{font-family:Georgia,serif;color:#102b3f}
+body.iberos-atlas #map{min-height:370px;border:2px solid #caa875;border-radius:12px;overflow:hidden;box-shadow:0 8px 25px #061c3030;z-index:0}
+body.iberos-atlas .atlas-shell{align-items:start;gap:15px}
+body.iberos-laboratorio .lab-shell{align-items:start;gap:16px}
+body.iberos-laboratorio .field-strip{gap:9px;margin-bottom:17px}
+body.iberos-laboratorio .field-step b{font-family:Georgia,serif;color:#0b2b41}
+body.iberos-laboratorio :is(input,select,textarea){background:#fffdf7;border:1px solid #cfb586;border-radius:8px;max-width:100%}
+body.iberos-laboratorio :is(input,select,textarea):focus-visible{outline:2px solid #2c95b5;outline-offset:1px}
+@media(min-width:901px){
+ body.iberos-atlas .atlas-shell{display:grid;grid-template-columns:minmax(190px,250px) minmax(340px,1fr) minmax(200px,260px)}
+ body.iberos-atlas #map{height:min(63vw,590px)}
+ body.iberos-laboratorio .field-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(min-width:601px) and (max-width:900px){
+ body.iberos-atlas .atlas-shell{display:grid;grid-template-columns:minmax(0,1fr)}
+ body.iberos-atlas #map{height:480px}
+ body.iberos-laboratorio .field-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ body.iberos-atlas .hero .hero-inner,body.iberos-laboratorio .hero .hero-inner{padding:20px 16px 23px!important}
+ body.iberos-atlas .hero h1,body.iberos-laboratorio .hero h1{font-size:clamp(2.2rem,9vw,2.85rem)!important;margin:8px 0!important}
+ body.iberos-atlas .hero p,body.iberos-laboratorio .hero p{font-size:.94rem!important;line-height:1.4!important}
+ body.iberos-atlas .hero-search{display:grid!important;grid-template-columns:minmax(0,1fr) 78px!important}
+ body.iberos-atlas .hero-search input{width:100%!important;min-width:0!important;font-size:.8rem!important;padding:9px!important}
+ body.iberos-atlas .hero-search button{width:78px!important;min-width:0!important;padding:8px!important;font-size:.78rem!important}
+ body.iberos-atlas .atlas-shell{display:flex!important;flex-direction:column!important;gap:10px!important}
+ body.iberos-atlas .atlas-shell>section{order:0;width:100%;min-width:0}
+ body.iberos-atlas .atlas-shell>.atlas-panel:first-child{order:1;width:100%;min-width:0}
+ body.iberos-atlas .atlas-shell>.atlas-feature{order:2;width:100%;min-width:0}
+ body.iberos-atlas #map{height:360px!important;min-height:360px!important;width:100%!important}
+ body.iberos-atlas .atlas-panel{width:100%;padding:13px!important}
+ body.iberos-laboratorio .field-strip{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}
+ body.iberos-laboratorio .field-step{padding:10px!important}
+ body.iberos-laboratorio .field-step b{font-size:.86rem}
+ body.iberos-laboratorio .field-step span{font-size:.76rem}
+ body.iberos-laboratorio .lab-shell{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:11px!important}
+ body.iberos-laboratorio .lab-panel{min-width:0;padding:14px!important}
+ body.iberos-laboratorio .lab-panel .section-title{font-size:1.65rem!important}
+ body.iberos-laboratorio .form-grid{grid-template-columns:minmax(0,1fr)!important}
+ body.iberos-laboratorio .hero-actions{display:flex;gap:7px;flex-wrap:wrap}
+ body.iberos-laboratorio .hero-actions .btn{font-size:.72rem;padding:6px 8px}
+}
