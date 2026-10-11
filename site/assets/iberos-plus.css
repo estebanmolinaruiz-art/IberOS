@@ -661,3 +661,9 @@ body .research-context a{display:inline-flex;align-items:center;min-height:34px;
 body .research-context a[aria-current="page"]{background:#ebc88d;color:#092339}
 body .research-context small{flex-basis:100%;color:#d6e4e9;font-size:.76rem}
 @media(max-width:600px){body .research-context{padding:10px;gap:6px}body .research-context strong{flex-basis:100%}body .research-context a{min-height:38px;font-size:.77rem;padding:6px 9px}}
+
+/* Visores epigráficos 3D simbólicos. Rotación por arrastre. */
+body.iberos-modelos3d .inscribed-viewer{width:100%;height:340px;min-height:310px;display:block;position:relative;background:#203543;touch-action:pan-y;overflow:hidden;cursor:grab}
+body.iberos-modelos3d .inscribed-viewer:active{cursor:grabbing}
+body.iberos-modelos3d .inscribed-viewer canvas{width:100%!important;height:100%!important;display:block}
+@media(max-width:600px){body.iberos-modelos3d .inscribed-viewer{height:310px;min-height:310px}}
