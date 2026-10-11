@@ -17,8 +17,8 @@ Actualizado: 2026-10-11
 - [x] `iberos==1.0.1` publicado
 - [x] Wheel y sdist de 1.0.1 publicados
 - [x] Workflow de publicación completado correctamente
-- [ ] Ejecutar una prueba de instalación desde PyPI en un entorno externo independiente
-- [ ] Verificar CLI en ese entorno: `iberos --help`
+- [x] Instalación limpia desde PyPI verificada en GitHub Actions run `38158352028`
+- [x] CLI `iberos --help` verificada correctamente en ese entorno
 
 ## Zenodo — informe técnico
 - [x] DOI de versión: `10.5281/zenodo.22939179`
@@ -63,4 +63,4 @@ Actualizado: 2026-10-11
 
 `GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-El bloqueo Zenodo de DOI específico de software queda cerrado. Permanecen la prueba externa de instalación/CLI, el benchmark reproducible, la validación final del sitio público y el SWHID.
+El bloqueo Zenodo de DOI específico de software y la prueba externa de instalación/CLI quedan cerrados. Permanecen el benchmark reproducible, la validación final del sitio público y el SWHID.
