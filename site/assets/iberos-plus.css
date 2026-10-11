@@ -822,3 +822,13 @@ body.iberos-ficha figure.artifact-visual .artifact-doc-label a{color:#ffe4a8;tex
 body.iberos-fichas .fiche-illustration.without-image,body.iberos-ficha .fiche-illustration.without-image{position:relative;display:flex!important;align-items:center;justify-content:center;min-height:190px;background:linear-gradient(145deg,#1c3344,#394950)!important}
 body.iberos-fichas .fiche-illustration.without-image::before,body.iberos-ficha .fiche-illustration.without-image::before{display:none!important;content:none!important}
 body.iberos-fichas .fiche-illustration.without-image .photo-direct,body.iberos-ficha .fiche-illustration.without-image .photo-direct{display:block!important;position:relative;z-index:6;padding:12px 15px;border:1px solid #cfb477;border-radius:8px;background:#102838;color:#fff2da;font:700 .88rem/1.5 system-ui,sans-serif;text-align:center;text-decoration:underline;max-width:85%}
+
+/* Los errores de red deben poder ocultar las imágenes, incluso con CSS histórico !important */
+body.iberos-fichas .fiche-illustration img[hidden],
+body.iberos-ficha .fiche-illustration img[hidden],
+body.iberos-fichas .fiche-illustration .photo-direct[hidden],
+body.iberos-ficha .fiche-illustration .photo-direct[hidden]{display:none!important}
+body.iberos-fichas .fiche-illustration .local-cover:not([hidden]),
+body.iberos-ficha .fiche-illustration .local-cover:not([hidden]){display:block!important;position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;opacity:1!important;z-index:1}
+body.iberos-fichas .fiche-illustration.without-image .photo-direct:not([hidden]),
+body.iberos-ficha .fiche-illustration.without-image .photo-direct:not([hidden]){display:block!important}
