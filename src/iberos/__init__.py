@@ -55,6 +55,7 @@ from .core import (
     dedi_orthogonal_matrix,
     evaluate_dedi_predictive_gate,
     audit_dedi_prospective_provenance,
+    dedi_combined_gate,
 )
 
 __all__ = [
@@ -114,6 +115,7 @@ __all__ = [
     "dedi_orthogonal_matrix",
     "evaluate_dedi_predictive_gate",
     "audit_dedi_prospective_provenance",
+    "dedi_combined_gate",
 ]
 
 __version__ = "1.0.1"
