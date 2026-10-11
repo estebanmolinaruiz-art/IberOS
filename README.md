@@ -35,7 +35,7 @@ python -m pip install iberos==1.0.1
 iberos --help
 ```
 
-PyPI publica los artefactos `iberos-1.0.1-py3-none-any.whl` y `iberos-1.0.1.tar.gz`. La prueba de instalación en un entorno externo independiente sigue siendo un control adicional recomendable antes de la reevaluación EpiHub.
+PyPI publica los artefactos `iberos-1.0.1-py3-none-any.whl` y `iberos-1.0.1.tar.gz`. La instalación limpia desde PyPI y la ejecución de `iberos --help` se verificaron correctamente en un runner independiente de GitHub Actions (run 38158352028, 2026-10-11).
 
 ## Método científico
 
