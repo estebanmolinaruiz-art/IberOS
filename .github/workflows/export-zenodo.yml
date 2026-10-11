@@ -1,8 +1,5 @@
 name: export-zenodo-zip
 on:
-  push:
-    paths:
-      - "EXPORT_ZENODO_ZIP"
   workflow_dispatch:
 
 permissions:
