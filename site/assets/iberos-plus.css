@@ -725,3 +725,18 @@ body.iberos-modelos3d .viewer-card .model-type{color:#815c2b}
 body.iberos-modelos3d .viewer-shell{gap:22px}
 body.iberos-modelos3d .inscribed-viewer{background:#171b1b!important;border-bottom:3px solid #b78a51}
 @media(prefers-reduced-motion:reduce){body.iberos-inner .viewer-card,body.iberos-inner .resource-card,body.iberos-inner .case-card,body.iberos-inner .portal-card{transition:none!important;transform:none!important}}
+
+
+/* IberOS+ ilustraciones originales de los ocho módulos: imágenes conceptuales, no hallazgos documentados. */
+body.iberos-corpus .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("corpus.webp")!important}
+body.iberos-atlas .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("atlas.webp")!important}
+body.iberos-fichas .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("fichas.webp")!important}
+body.iberos-laboratorio .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("laboratorio.webp")!important}
+body.iberos-modelos3d .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("modelos3d.webp")!important}
+body.iberos-recursos .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("recursos.webp")!important}
+body.iberos-casos .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("casos.webp")!important}
+body.iberos-comunidad .hero{background-image:linear-gradient(90deg,rgba(7,12,15,.95) 0%,rgba(7,12,15,.80) 43%,rgba(7,12,15,.12) 100%),url("comunidad.webp")!important}
+body.iberos-inner .hero{background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;min-height:310px}
+body.iberos-inner .hero .hero-inner{position:relative;z-index:1}
+body.iberos-inner .hero .hero-inner::after{content:"Imagen conceptual generada digitalmente · No es documentación de una pieza arqueológica real";display:block;max-width:570px;margin-top:1.3rem;color:#f0dfc2;font:normal .72rem/1.5 system-ui,sans-serif;letter-spacing:.02em;opacity:.86}
+@media(max-width:700px){body.iberos-inner .hero{background-position:63% center!important}body.iberos-inner .hero .hero-inner{background:rgba(7,12,15,.17);border-radius:12px}body.iberos-inner .hero .hero-inner::after{font-size:.66rem}}
