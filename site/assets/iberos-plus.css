@@ -784,3 +784,12 @@ body.iberos-fichas .result-card .media.fiche-illustration>.media-badge{
  border:1px solid rgba(230,198,145,.35)!important;border-radius:6px!important;
  box-shadow:none!important;z-index:2!important;
 }
+
+/* Reparación definitiva: fotografía sin capas superpuestas */
+body.iberos-fichas .result-card .media.fiche-illustration > .media-badge,
+body.iberos-fichas .result-card .media.fiche-illustration > span,
+body.iberos-fichas .result-card .media.fiche-illustration::before,
+body.iberos-fichas .result-card .media.fiche-illustration::after{display:none!important;content:none!important}
+body.iberos-fichas .result-card .media.fiche-illustration{display:block!important;background:#182630!important;isolation:isolate}
+body.iberos-fichas .result-card .media.fiche-illustration>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:1!important;filter:none!important;z-index:1!important}
+body.iberos-fichas .result-card .picture-note{padding:5px 0 8px;color:#62543e;font-size:12px;line-height:1.35}
