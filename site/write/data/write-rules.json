@@ -1,7 +1,7 @@
 {
   "engine": "IberOS-Write",
-  "version": "WRITE-GRAMMAR v0.3-web.2",
-  "generated": "2026-10-08",
+  "version": "WRITE-GRAMMAR v0.3-web.3",
+  "generated": "2026-10-11",
   "principles": [
     "No inventar léxico ni funciones.",
     "Separar ibérico validado, probable, INFER experimental y fallback moderno.",

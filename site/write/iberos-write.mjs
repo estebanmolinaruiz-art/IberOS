@@ -25,17 +25,32 @@ export class IberOSWrite {
     return {recipient,hasDocument:true};
   }
   #renderTransfer(original,parse){
-    const segs=[]; let supported=0,fallback=0,total=4;
-    if(parse.recipient?.attested){ segs.push(this.#seg("BASTUBAR-ER","probable","Participante contextual","Antropónimo documentado; -ER contextual.")); supported++; }
-    else if(parse.recipient){ const loan=this.#loan(parse.recipient.surface); segs.push(this.#seg(`${loan}-ER`,"fallback","Nombre moderno + relator contextual","Forma moderna marcada como fallback.")); fallback++; supported++; }
+    const segs=[];
+    if(parse.recipient?.attested){ segs.push(this.#seg("BASTUBAR-ER","probable","Participante contextual","Antropónimo documentado; -ER contextual.")); }
+    else if(parse.recipient){ const loan=this.#loan(parse.recipient.surface); segs.push(this.#seg(`${loan}-ER`,"fallback","Nombre moderno + relator contextual","Forma moderna marcada como fallback.")); }
     else segs.push(this.#seg("◇RECIPIENT","gap","Participante","No identificado."));
-    segs.push(this.#seg("(TE?)","infer","Integración opcional","No se fuerza su presencia.")); supported++;
-    segs.push(this.#seg("BI-D(E/I)-ŔOK-(AN)","probable","Complejo verbal de transferencia","No se resuelve DE/DI ni dirección literal de ŔOK.")); supported++;
-    segs.push(this.#seg("UTUR","probable","Tema documental/escrito","No se afirma glosa literal exacta.")); supported++;
-    return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,intent:"transfer_document_to_person",status:"PARTIAL_RECONSTRUCTION",reconstruction:segs.map(x=>x.form).join(" · "),segments:segs,metrics:{semantic_coverage:pct(supported,total),fallback_rate:pct(fallback,total)},guards:["No word-for-word translation claimed.","DE/DI unresolved.","ŔOK exact direction remains open.","Modern names are fallback unless historically attested."]};
+    segs.push(this.#seg("(TE?)","infer","Integración opcional","No se fuerza su presencia."));
+    segs.push(this.#seg("BI-D(E/I)-ŔOK-(AN)","structural","Complejo verbal de transferencia","No se resuelve DE/DI ni dirección literal de ŔOK."));
+    segs.push(this.#seg("UTUR","probable","Tema documental/escrito","No se afirma glosa literal exacta."));
+    return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,intent:"transfer_document_to_person",status:"PARTIAL_RECONSTRUCTION",reconstruction:segs.map(x=>x.form).join(" · "),segments:segs,metrics:this.#metrics(segs),guards:["No word-for-word translation claimed.","DE/DI unresolved.","ŔOK exact direction remains open.","Modern names are fallback unless historically attested."]};
   }
-  #genericAbstention(original){ return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇SEMANTIC_FRAME",segments:[this.#seg("◇SEMANTIC_FRAME","gap","Marco semántico no cubierto","No hay reglas suficientes sin inventar léxico o morfología.")],metrics:{semantic_coverage:0,fallback_rate:0},guards:["No invented Iberian output."]}; }
-  #abstain(original,reasons){ return {engine:"IberOS-Write",engine_version:this.rules?.version||"unknown",input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇",segments:[],reasons,metrics:{semantic_coverage:0,fallback_rate:0}}; }
+  #genericAbstention(original){ return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇SEMANTIC_FRAME",segments:[this.#seg("◇SEMANTIC_FRAME","gap","Marco semántico no cubierto","No hay reglas suficientes sin inventar léxico o morfología.")],metrics:this.#metrics([{status:"gap"}]),guards:["No invented Iberian output."]}; }
+  #abstain(original,reasons){ return {engine:"IberOS-Write",engine_version:this.rules?.version||"unknown",input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇",segments:[],reasons,metrics:this.#metrics([])}; }
+  #metrics(segments){
+    const count=status=>segments.filter(s=>s.status===status).length;
+    const total=segments.length;
+    return {
+      semantic_coverage:pct(count("validated"),total),
+      probable_rate:pct(count("probable"),total),
+      structural_rate:pct(count("structural"),total),
+      infer_rate:pct(count("infer"),total),
+      fallback_rate:pct(count("fallback"),total),
+      gap_rate:pct(count("gap"),total),
+      total_segments:total,
+      coverage_basis:"validated_semantic_segments_only",
+      official_metrics_changed:false,
+    };
+  }
   #seg(form,status,role,notes){ return {form,status,role,notes}; }
   #loan(x){ return String(x).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toUpperCase().replace(/[^A-ZÑ-]/g,""); }
   #ready(){ if(!this.ready) throw new Error("Call await write.init() first."); }
