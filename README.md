@@ -58,6 +58,10 @@ También controla la identidad documental y física:
 - IberOS-Write.
 - Workflows de tests y publicación.
 
+## Arquitectura y documentación
+
+La arquitectura completa del sistema, los módulos, los datos, los workflows, la publicación y la reproducibilidad se describen en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Fuentes y trazabilidad documental
 
 Registro comprobado el 08-10-2026: [publicaciones y fuentes de la tesis](docs/INTERNET_REGISTRY_2026-10-08.md).
