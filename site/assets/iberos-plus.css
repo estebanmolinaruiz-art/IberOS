@@ -462,3 +462,50 @@ body.iberos-corpus .explorer-controls select{padding:7px!important;font-size:.81
 body.iberos-corpus #grid{margin-top:5px!important}
 body.iberos-corpus .corpus-grid{gap:10px!important}
 }
+/* IberOS+ / Cierre de identidad arqueológica 2026-10-11.
+   Solo páginas interiores, sin introducir imágenes con texto o tarjetas del flyer.
+   Maquetación escritorio / tableta / móvil; respeta el JS científico. */
+body.iberos-inner{--visual-paper:#fff9ec;--visual-ink:#0b2539;--visual-gold:#e0ae64;--visual-line:#dac59e;color:var(--visual-ink);background:#e8d8bb}
+body.iberos-inner main{background:linear-gradient(150deg,#fff9ed,#f5e8d2);border-radius:14px 14px 0 0;box-shadow:0 10px 38px rgba(5,24,40,.13);padding-bottom:20px}
+body.iberos-inner .hero::before{background-image:linear-gradient(90deg,rgba(3,19,33,.96),rgba(3,23,38,.78) 56%,rgba(6,29,43,.45)),url("./iberosplus-hero.webp")!important;background-size:cover!important;background-position:60% 45%!important}
+body.iberos-inner .hero::after{background:linear-gradient(0deg,rgba(2,20,34,.48),transparent 55%)}
+body.iberos-inner .hero h1{max-width:950px}
+body.iberos-inner .site-header .brand-mark{font-family:Georgia,serif}
+body.iberos-inner .site-header .nav-cta{white-space:nowrap}
+body.iberos-inner :is(.results-head,.explorer-head,.research-dock,.filters,.lab-panel,.artifact-stage,.detail,.record-card,.resource-card,.portal-card){border-color:var(--visual-line)}
+body.iberos-inner :is(.results-head,.explorer-head,.research-dock,.filters,.lab-panel,.record-card,.resource-card){background:#fff9eb;color:var(--visual-ink)}
+body.iberos-inner :is(input,select,textarea){max-width:100%}
+body.iberos-inner .portal-card .copy h3{color:#0d293f}
+body.iberos-inner :is(.portal-card,.record-card,.resource-card){overflow:hidden}
+body.iberos-inner :is(.portal-card,.record-card,.resource-card) img{max-width:100%;object-fit:cover}
+body.iberos-inner :is(.btn.gold,.hero-search button){border-radius:7px;background:linear-gradient(180deg,#ffe4b1,#dfab62);color:#102438}
+@media(min-width:901px){
+ body.iberos-inner .hero-inner{max-width:1484px;padding:35px 46px 42px!important}
+ body.iberos-inner .hero h1{font-size:clamp(3.4rem,5.5vw,5.6rem)!important}
+ body.iberos-inner .hero p{display:block!important}
+ body.iberos-inner .hero-chips{display:flex!important}
+ body.iberos-inner main{margin:-6px auto 0;padding:20px 22px 34px;max-width:1484px}
+ body.iberos-inner .corpus-shell{grid-template-columns:minmax(235px,290px) minmax(0,1fr)}
+}
+@media(min-width:601px) and (max-width:900px){
+ body.iberos-inner main{margin:-4px 10px 0;padding:12px}
+ body.iberos-inner .hero-inner{padding:30px 24px 34px!important}
+}
+@media(max-width:600px){
+ body.iberos-inner{background:#f2e4c9}
+ body.iberos-inner main{margin:0!important;padding:8px 8px 24px!important;border-radius:0;box-shadow:none}
+ body.iberos-inner .site-header .brand{flex:0 1 auto;min-width:0}
+ body.iberos-inner .site-header .nav-cta{white-space:normal}
+ body.iberos-inner .hero{min-height:0!important}
+ body.iberos-inner .hero::before{background-position:60% center!important}
+ body.iberos-inner .hero-inner{padding:24px 16px 25px!important}
+ body.iberos-inner .hero h1{line-height:1.07!important}
+ body.iberos-inner .hero-search{width:100%;min-width:0}
+ body.iberos-inner .hero-search :is(input,button){min-height:42px}
+ body.iberos-inner :is(.corpus-shell,.atlas-shell,.lab-shell,.artifact-stage,.detail,.viewer-shell,.portal-grid,.resource-shelf){min-width:0;max-width:100%}
+ body.iberos-inner :is(.results-head,.explorer-head,.research-dock,.filters,.lab-panel,.record-card,.resource-card){border-radius:9px}
+ body.iberos-inner :is(.results-head,.explorer-head) h2{overflow-wrap:break-word}
+ body.iberos-inner .portal-card .media{min-height:115px}
+ body.iberos-inner :is(.results-head,.explorer-head) .explorer-controls{width:100%;min-width:0;flex-wrap:wrap}
+ body.iberos-inner :is(.results-head,.explorer-head) .explorer-controls input{flex:1 1 145px;min-width:0}
+}
