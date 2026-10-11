@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estebanmolinaruiz-art.github.io/IberOS/sitemap.xml
