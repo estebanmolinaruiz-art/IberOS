@@ -1,1 +1,1 @@
-Request Software Heritage archival for current IberOS repository state.
+Retry Software Heritage archival request after transient API failure (curl 52).
