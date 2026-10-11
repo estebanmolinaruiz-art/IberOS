@@ -633,3 +633,5 @@ body.iberos-comunidad .contact-notice{margin:22px 0}
 @media(min-width:901px){body.iberos-inner .main-nav{gap:2px}body.iberos-inner .main-nav a{padding:10px 7px;font-size:.87rem}}
 @media(max-width:900px){body.iberos-contactar .contact-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){body.iberos-contactar .contact-card{padding:17px}body.iberos-contactar .contact-card h3{font-size:1.35rem}body:is(.iberos-comunidad,.iberos-acerca,.iberos-herramientas,.iberos-contactar) .hero-inner{padding:20px 16px 24px!important}body:is(.iberos-comunidad,.iberos-acerca,.iberos-herramientas,.iberos-contactar) .hero h1{font-size:clamp(2rem,8vw,2.7rem)!important}}
+
+@media(min-width:901px){body.iberos-contactar .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}body.iberos-contactar .contact-card strong{overflow-wrap:anywhere;color:#15384c}
