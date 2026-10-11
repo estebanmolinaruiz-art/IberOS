@@ -810,3 +810,10 @@ body.iberos-fichas .result-card .media.fiche-identity::after,body.iberos-fichas 
 body.iberos-fichas .media.fiche-identity .fiche-identity-inner{position:relative;z-index:2}
 .fiche-illustration.without-image{background:#2d3e45!important}
 .fiche-illustration.without-image::before{content:"Portada documental no disponible";display:block;padding:30px;color:#fff2db;font:700 1rem Georgia,serif}
+
+/* Fotografías documentales: pie de autoría siempre visible y legible. */
+body.iberos-fichas .photo-credit{padding:2px 0 10px;font:600 .75rem/1.4 system-ui,sans-serif}
+body.iberos-fichas .photo-credit a{color:#28536b;text-decoration:underline}
+body.iberos-ficha figure.artifact-visual{margin:0}
+body.iberos-ficha figure.artifact-visual .artifact-doc-label{position:absolute;bottom:7px;left:8px;right:8px;max-width:calc(100% - 16px);font:600 .68rem/1.35 system-ui,sans-serif;padding:6px 8px;overflow-wrap:anywhere;background:#0e2834e6;color:#fff7e9}
+body.iberos-ficha figure.artifact-visual .artifact-doc-label a{color:#ffe4a8;text-decoration:underline}
