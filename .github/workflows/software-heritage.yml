@@ -2,6 +2,11 @@ name: request-software-heritage-archive
 on:
   release:
     types: [published]
+  workflow_dispatch:
+  push:
+    paths:
+      - "REQUEST_SWH_ARCHIVE"
+
 jobs:
   archive:
     runs-on: ubuntu-latest
