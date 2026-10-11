@@ -509,3 +509,33 @@ body.iberos-inner :is(.btn.gold,.hero-search button){border-radius:7px;backgroun
  body.iberos-inner :is(.results-head,.explorer-head) .explorer-controls{width:100%;min-width:0;flex-wrap:wrap}
  body.iberos-inner :is(.results-head,.explorer-head) .explorer-controls input{flex:1 1 145px;min-width:0}
 }
+
+/* Acabado específico Corpus, Archivo y Ficha individual: 2026-10-11 */
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.corpus-shell,.archive-grid,.detail,.results-head,.filters,.research-dock){min-width:0}
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.filters,.research-dock,.results-head,.record-card,.archive-card,.detail-panel){border:1px solid #d6b989;background:linear-gradient(155deg,#fffaf1,#f4e7d0);box-shadow:0 5px 16px rgba(20,35,44,.09)}
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.record-card,.archive-card,.corpus-card){overflow:hidden;border-radius:11px}
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.record-card,.archive-card,.corpus-card) img{max-width:100%;height:auto;object-fit:cover}
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(button,input,select){font-family:inherit}
+body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(button,a):focus-visible{outline:3px solid #2ca4c0;outline-offset:2px}
+@media(min-width:901px){
+ body.iberos-corpus .corpus-shell{display:grid;grid-template-columns:minmax(230px,290px) minmax(0,1fr);gap:18px}
+ body.iberos-corpus .filters{align-self:start}
+ body.iberos-corpus .mobile-filter-toggle{display:none}
+ body:is(.iberos-fichas,.iberos-ficha) main{padding:25px 24px 36px}
+}
+@media(max-width:600px){
+ body:is(.iberos-corpus,.iberos-fichas) .hero .hero-inner{padding:20px 16px 23px!important}
+ body:is(.iberos-corpus,.iberos-fichas) .hero h1{font-size:clamp(2rem,8vw,2.7rem)!important;margin:7px 0 9px!important}
+ body.iberos-fichas .hero p{font-size:.92rem!important;line-height:1.4!important;margin:5px 0 12px!important}
+ body.iberos-fichas .hero-actions{display:flex;flex-wrap:wrap;gap:7px}
+ body.iberos-fichas .hero-actions .btn{font-size:.77rem;padding:7px 9px}
+ body:is(.iberos-corpus,.iberos-fichas) .hero-search{display:grid!important;grid-template-columns:minmax(0,1fr) 80px!important;max-width:100%!important}
+ body:is(.iberos-corpus,.iberos-fichas) .hero-search input{min-width:0!important;width:100%!important;font-size:.8rem!important;padding:10px 8px!important}
+ body:is(.iberos-corpus,.iberos-fichas) .hero-search button{width:80px!important;min-width:0!important;padding:9px 5px!important;font-size:.77rem!important;white-space:nowrap!important}
+ body.iberos-corpus .corpus-shell{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
+ body.iberos-corpus .mobile-filter-toggle{display:block}
+ body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.results-head,.explorer-head,.research-dock){padding:10px!important}
+ body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.results-head,.explorer-head) h2{font-size:1.25rem!important}
+ body:is(.iberos-corpus,.iberos-fichas,.iberos-ficha) :is(.corpus-grid,.archive-grid,.detail){grid-template-columns:minmax(0,1fr)!important}
+ body.iberos-ficha main{padding:10px!important}
+}
