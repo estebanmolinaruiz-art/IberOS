@@ -687,3 +687,12 @@ body.iberos-modelos3d .stone-3d-controls{position:absolute;bottom:7px;left:0;rig
 body.iberos-modelos3d .stone-3d-controls button{border:1px solid #d6b37c;border-radius:7px;background:#0a2c40;color:#fce5bc;min-width:50px;min-height:37px;padding:7px 12px;cursor:pointer}
 body.iberos-modelos3d .stone-3d-controls button:focus-visible{outline:3px solid #64cfda;outline-offset:2px}
 @media(max-width:600px){body.iberos-modelos3d .inscribed-viewer.stone-3d-ready{height:340px}body.iberos-modelos3d .stone-3d-body{width:min(73%,275px)}}
+
+/* Actual volumetric stone geometry is drawn in Canvas; not a rotating picture frame */
+body.iberos-modelos3d .inscribed-viewer.stone-mesh-ready{position:relative;height:370px;overflow:hidden;background:#203543}
+body.iberos-modelos3d .stone-mesh-canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+body.iberos-modelos3d .stone-mesh-canvas:active{cursor:grabbing}
+body.iberos-modelos3d .stone-mesh-controls{position:absolute;bottom:7px;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:9px}
+body.iberos-modelos3d .stone-mesh-controls button{border:1px solid #d6b37c;border-radius:7px;background:#0a2c40;color:#fce5bc;min-width:50px;min-height:38px;padding:7px 12px;cursor:pointer}
+body.iberos-modelos3d .stone-mesh-controls button:focus-visible{outline:3px solid #64cfda;outline-offset:2px}
+@media(max-width:600px){body.iberos-modelos3d .inscribed-viewer.stone-mesh-ready{height:340px}}
