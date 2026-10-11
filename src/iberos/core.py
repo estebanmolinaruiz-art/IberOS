@@ -1677,3 +1677,39 @@ def audit_dedi_prospective_provenance(
         "authority": dict(AUTHORITY),
         "warning": "Completeness and self-declared reviewer IDs are not proof of independence or grammatical meaning.",
     }
+
+
+def dedi_combined_gate(
+    observations: list[dict[str, Any]],
+    *,
+    preregistered_rule: dict[str, str] | None = None,
+    preregistration_id: str | None = None,
+    preregistration_hash: str | None = None,
+) -> dict[str, Any]:
+    """Join formal prediction and provenance on the same evidence records.
+
+    Documentary completeness and predictive correctness are necessary, not
+    sufficient, for scientific acceptance. No semantic promotion is issued.
+    """
+    prediction = evaluate_dedi_predictive_gate(
+        observations, preregistered_rule=preregistered_rule
+    )
+    provenance = audit_dedi_prospective_provenance(
+        observations,
+        preregistration_id=preregistration_id,
+        preregistration_hash=preregistration_hash,
+    )
+    documented = provenance["documentary_state"] == "READY_FOR_INDEPENDENT_AUDIT"
+    predicted = prediction["state"] == "REVIEW_ELIGIBLE"
+    ready = documented and predicted
+    return {
+        "protocol": "DEDI-COMBINED-GATE-01",
+        "state": "AWAITING_INDEPENDENT_REVIEW" if ready else "BLOCKED",
+        "predictive_state": prediction["state"],
+        "documentary_state": provenance["documentary_state"],
+        "scientific_state": "UNVERIFIED",
+        "prediction": prediction,
+        "provenance": provenance,
+        "automatic_core_promotion": False,
+        "authority": dict(AUTHORITY),
+    }
