@@ -832,3 +832,11 @@ body.iberos-fichas .fiche-illustration .local-cover:not([hidden]),
 body.iberos-ficha .fiche-illustration .local-cover:not([hidden]){display:block!important;position:absolute!important;inset:0;width:100%!important;height:100%!important;object-fit:cover;opacity:1!important;z-index:1}
 body.iberos-fichas .fiche-illustration.without-image .photo-direct:not([hidden]),
 body.iberos-ficha .fiche-illustration.without-image .photo-direct:not([hidden]){display:block!important}
+
+/* iPhone: priorizar imagen local y ofrecer enlace de fotografía real sin recuadros ocultos */
+body.iberos-fichas .result-card .media.fiche-illustration{display:block!important;position:relative!important;background:#21333d!important}
+body.iberos-fichas .result-card .media.fiche-illustration>img:not([hidden]){display:block!important;object-fit:cover!important}
+body.iberos-fichas .result-card .media.fiche-illustration>.photo-direct{display:inline-block!important;position:absolute!important;z-index:4!important;inset:auto 10px 10px 10px!important;width:auto!important;max-width:calc(100% - 20px);padding:7px 9px!important;border-radius:6px;background:rgba(12,31,41,.88)!important;color:#fff4de!important;font:700 .74rem/1.35 system-ui,sans-serif;text-decoration:underline}
+body.iberos-fichas .fiche-identity .photo-direct,body.iberos-ficha .fiche-identity a{display:inline-block!important;color:#ffe2a7!important;text-decoration:underline;font:700 .85rem/1.5 system-ui,sans-serif}
+body.iberos-ficha .photo-credit{font:700 .9rem/1.5 system-ui,sans-serif;padding:9px 0;color:#224d62}
+body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underline}
