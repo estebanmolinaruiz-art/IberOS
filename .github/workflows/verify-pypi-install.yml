@@ -1,0 +1,29 @@
+name: verify-pypi-install
+on:
+  push:
+    paths:
+      - "VERIFY_PYPI_INSTALL"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install IberOS from PyPI
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install iberos==1.0.1
+      - name: Verify installed version
+        run: |
+          python - <<'PY'
+          from importlib.metadata import version
+          print("iberos", version("iberos"))
+          PY
+      - name: Verify CLI
+        run: iberos --help
