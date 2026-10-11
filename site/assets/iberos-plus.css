@@ -740,3 +740,12 @@ body.iberos-inner .hero{background-size:cover!important;background-position:cent
 body.iberos-inner .hero .hero-inner{position:relative;z-index:1}
 body.iberos-inner .hero .hero-inner::after{content:"Imagen conceptual generada digitalmente · No es documentación de una pieza arqueológica real";display:block;max-width:570px;margin-top:1.3rem;color:#f0dfc2;font:normal .72rem/1.5 system-ui,sans-serif;letter-spacing:.02em;opacity:.86}
 @media(max-width:700px){body.iberos-inner .hero{background-position:63% center!important}body.iberos-inner .hero .hero-inner{background:rgba(7,12,15,.17);border-radius:12px}body.iberos-inner .hero .hero-inner::after{font-size:.66rem}}
+
+/* Accesibilidad de las tarjetas 3D en fondos crema */
+body.iberos-modelos3d .viewer-card .viewer-copy,
+body.iberos-modelos3d .viewer-card .viewer-copy p,
+body.iberos-modelos3d .viewer-card .viewer-copy h3{color:#302519!important;text-shadow:none!important;opacity:1!important}
+body.iberos-modelos3d .viewer-card .viewer-copy h3{font-weight:700!important}
+body.iberos-modelos3d .viewer-card .viewer-copy .model-type{color:#765329!important;font-weight:800!important}
+body.iberos-modelos3d .viewer-card .viewer-copy a.btn{background:#153b4b!important;color:#fff6e6!important;border-color:#153b4b!important;text-shadow:none!important}
+body.iberos-modelos3d .inscribed-viewer .inscribed-real-model{background:radial-gradient(ellipse at 55% 36%,#3f4850 0%,#121b21 80%)!important}
