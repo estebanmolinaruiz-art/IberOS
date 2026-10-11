@@ -24,7 +24,7 @@ El DOI 10.5281/zenodo.22997623 corresponde a la release de **software** IberOS O
 - Zenodo software: release v1.0.1 publicada con DOI **10.5281/zenodo.22997623**.
 - Zenodo: informe técnico v1 publicado como **Report** en DOI 10.5281/zenodo.22939179.
 - Zenodo: **IberOS Case Studies I** publicado como **Data paper** en DOI 10.5281/zenodo.22957236.
-- GitHub Pages: infraestructura habilitada; la estabilidad pública del sitio debe comprobarse antes de presentarla como requisito EpiHub cumplido.
+- GitHub Pages: sitio público verificado externamente el 2026-10-11; portada y rutas principales accesibles, con 3 DOI públicos reflejados y el software v1.0.1 incluido en Recursos.
 - Software Heritage: existe workflow de solicitud de archivado; queda pendiente registrar el SWHID verificable.
 - Benchmark: 38 objetos curados en el repositorio público; falta presentar sus resultados como benchmark reproducible cerrado.
 
