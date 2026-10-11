@@ -758,3 +758,29 @@ body.iberos-fichas .result-card .media.fiche-illustration .media-badge{position:
 body.iberos-ficha .artifact-visual.fiche-illustration{position:relative;background:#1c2528;overflow:hidden;min-height:220px}
 body.iberos-ficha .artifact-visual.fiche-illustration img{height:100%;width:100%;object-fit:cover}
 body.iberos-ficha .artifact-visual.fiche-illustration .artifact-doc-label{z-index:2;max-width:95%}
+
+/* Fichas: imagen como fondo visible; distintivo pequeño y sin panel superpuesto */
+body.iberos-fichas .result-card .media.fiche-illustration{
+ position:relative!important;display:block!important;overflow:hidden!important;
+ height:clamp(195px,31vw,265px)!important;min-height:195px!important;
+ background:#1b2730!important;
+}
+body.iberos-fichas .result-card .media.fiche-illustration>img{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;object-position:center 45%!important;
+ filter:none!important;opacity:1!important;display:block!important;z-index:0!important;
+}
+body.iberos-fichas .result-card .media.fiche-illustration::before,
+body.iberos-fichas .result-card .media.fiche-illustration::after{
+ content:none!important;display:none!important;
+}
+body.iberos-fichas .result-card .media.fiche-illustration>.media-badge{
+ position:absolute!important;inset:auto auto 10px 10px!important;top:auto!important;right:auto!important;
+ bottom:10px!important;left:10px!important;width:max-content!important;height:auto!important;
+ max-width:calc(100% - 20px)!important;min-height:0!important;min-width:0!important;
+ margin:0!important;padding:5px 9px!important;display:inline-block!important;flex:none!important;
+ transform:none!important;line-height:1.25!important;font:700 12px/1.25 system-ui,sans-serif!important;
+ background:rgba(12,29,37,.85)!important;color:#fff8e9!important;
+ border:1px solid rgba(230,198,145,.35)!important;border-radius:6px!important;
+ box-shadow:none!important;z-index:2!important;
+}
