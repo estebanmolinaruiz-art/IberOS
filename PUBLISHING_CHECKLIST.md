@@ -9,12 +9,12 @@ Actualizado: 2026-10-11
 - [x] GitHub Pages habilitada
 - [x] Releases `v1.0.0` y `v1.0.1`
 - [x] Licencia Apache-2.0
-- [x] CITATION.cff y .zenodo.json coherentes con v1.0.1
+- [x] CITATION.cff coherente con v1.0.1 y DOI de software
 
 ## PyPI
 - [x] Paquete público `iberos`
 - [x] Trusted Publishing mediante GitHub Actions
-- [x] `iberos==1.0.1` publicado y verificado en la API pública de PyPI
+- [x] `iberos==1.0.1` publicado
 - [x] Wheel y sdist de 1.0.1 publicados
 - [x] Workflow de publicación completado correctamente
 - [ ] Ejecutar una prueba de instalación desde PyPI en un entorno externo independiente
@@ -31,14 +31,13 @@ Actualizado: 2026-10-11
 - [x] DOI conceptual: `10.5281/zenodo.22957235`
 - [x] Tipo verificado: Data paper
 - [x] Publicado: 2026-09-25
-- [x] Relacionado explícitamente con el informe técnico
+- [x] Relacionado con el informe técnico
 
 ## Zenodo — software
-- [x] `.zenodo.json` preparado para IberOS Open Research Kit v1.0.1
-- [ ] No se ha verificado un registro Zenodo público específico para el software v1.0.1
-- [ ] Obtener y registrar DOI de versión del software
-- [ ] Obtener y registrar DOI conceptual del software
-- [x] No confundir DOI del informe o Case Studies con DOI del software
+- [x] Registro de software IberOS Open Research Kit v1.0.1 publicado
+- [x] DOI de versión registrado: `10.5281/zenodo.22997623`
+- [x] Recurso separado del informe técnico y de Case Studies I
+- [ ] Verificar y registrar el DOI conceptual del software cuando Zenodo lo exponga públicamente
 
 ## Software Heritage
 - [x] Workflow de solicitud de archivado
@@ -54,6 +53,7 @@ Actualizado: 2026-10-11
 ## Benchmark y marco académico
 - [x] Informe técnico citable en Zenodo
 - [x] Case Studies I citable en Zenodo
+- [x] Software v1.0.1 con DOI propio
 - [x] 38 objetos curados declarados y almacenados
 - [x] Separación EVIDENCE / INFERENCE / HYPOTHESIS / ESTIMATED TRANSLATION
 - [ ] Publicar protocolo de benchmark reproducible
@@ -61,6 +61,6 @@ Actualizado: 2026-10-11
 
 ## Consistencia de versión
 
-`GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = .zenodo.json 1.0.1 = PyPI 1.0.1`
+`GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
 
-La cadena técnica está alineada. El bloqueo Zenodo restante es crear/verificar el registro específico de **software**.
+El bloqueo Zenodo de DOI específico de software queda cerrado. Permanecen la prueba externa de instalación/CLI, el benchmark reproducible, la validación final del sitio público y el SWHID.
