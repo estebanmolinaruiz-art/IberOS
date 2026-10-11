@@ -749,3 +749,12 @@ body.iberos-modelos3d .viewer-card .viewer-copy h3{font-weight:700!important}
 body.iberos-modelos3d .viewer-card .viewer-copy .model-type{color:#765329!important;font-weight:800!important}
 body.iberos-modelos3d .viewer-card .viewer-copy a.btn{background:#153b4b!important;color:#fff6e6!important;border-color:#153b4b!important;text-shadow:none!important}
 body.iberos-modelos3d .inscribed-viewer .inscribed-real-model{background:radial-gradient(ellipse at 55% 36%,#3f4850 0%,#121b21 80%)!important}
+
+/* Fichas: no dejar cuadros vacíos si aún no hay foto documental */
+body.iberos-fichas .result-card .media.fiche-illustration{min-height:150px;background:#1c2528}
+body.iberos-fichas .result-card .media.fiche-illustration img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+body.iberos-fichas .result-card .media.fiche-illustration::after{display:none}
+body.iberos-fichas .result-card .media.fiche-illustration .media-badge{position:absolute;bottom:9px;left:10px;z-index:2;background:#172c36ed;color:#fff2db;padding:5px 8px;border-radius:5px;font:700 .7rem system-ui,sans-serif}
+body.iberos-ficha .artifact-visual.fiche-illustration{position:relative;background:#1c2528;overflow:hidden;min-height:220px}
+body.iberos-ficha .artifact-visual.fiche-illustration img{height:100%;width:100%;object-fit:cover}
+body.iberos-ficha .artifact-visual.fiche-illustration .artifact-doc-label{z-index:2;max-width:95%}
