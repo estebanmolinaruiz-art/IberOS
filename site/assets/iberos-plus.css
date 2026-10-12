@@ -840,3 +840,18 @@ body.iberos-fichas .result-card .media.fiche-illustration>.photo-direct{display:
 body.iberos-fichas .fiche-identity .photo-direct,body.iberos-ficha .fiche-identity a{display:inline-block!important;color:#ffe2a7!important;text-decoration:underline;font:700 .85rem/1.5 system-ui,sans-serif}
 body.iberos-ficha .photo-credit{font:700 .9rem/1.5 system-ui,sans-serif;padding:9px 0;color:#224d62}
 body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underline}
+
+/* Core: resultados de investigación legibles en iPhone; JSON opcional */
+.core-result-card{background:#fffaf0;color:#203141;border:1px solid #d7bc8e;border-radius:11px;padding:17px;margin:12px 0;box-shadow:0 5px 15px #172b3414;overflow-wrap:anywhere}
+.core-result-card h4{font:700 clamp(1.25rem,4vw,1.7rem)/1.25 Georgia,serif;color:#18384d;margin:6px 0 14px}
+.core-result-card p{color:#273e50;line-height:1.55;margin:7px 0}
+.core-result-card p strong{color:#173449}
+.core-eyebrow{font:700 .72rem system-ui,sans-serif!important;letter-spacing:.08em;text-transform:uppercase;color:#816136!important}
+.core-observation{border-top:1px solid #d9c6a5;padding-top:12px;margin-top:12px!important}
+.core-actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
+.core-actions a{display:inline-flex;align-items:center;padding:10px 12px;border-radius:7px;background:#16445b;color:#fff9e9!important;text-decoration:none;font-weight:700;font-size:.85rem;min-height:40px}
+.core-count{font-weight:700;color:#163c52}
+.core-json-details{margin-top:22px;border:1px solid #c7aa79;border-radius:9px;padding:10px;background:#fff8e9}
+.core-json-details summary{font-weight:700;color:#1c3a4b;cursor:pointer;padding:7px}
+.core-json-details pre{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:auto;font-size:.75rem}
+@media(max-width:650px){.core-result-card{padding:14px}.core-actions a{width:100%;justify-content:center}}
