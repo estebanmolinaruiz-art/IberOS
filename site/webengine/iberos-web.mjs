@@ -1,4 +1,4 @@
-const DEFAULT_REMOTE = 'https://raw.githubusercontent.com/estebanmolinaruiz-art/IberOS/main/';
+const DEFAULT_REMOTE = new URL('../data/', import.meta.url).href;
 
 function csvParse(text) {
   const rows = [];
@@ -44,11 +44,12 @@ export class IberOSWeb {
   async _load(path, type='text') { return type === 'json' ? fetchJSON(this._remote(path)) : fetchText(this._remote(path)); }
   async init() {
     const [registryCSV, familyCSV, schema] = await Promise.all([
-      this._load('src/iberos/data/iberos_objects_registry_v2.0.csv'),
-      this._load('src/iberos/data/iberos_family_links_v2.0.csv'),
-      this._load('src/iberos/schema/iberos-result-v1.schema.json','json')
+      this._load('objects.csv'),
+      this._load('families.csv'),
+      Promise.resolve({title:'IberOS public browser registry',version:'1.0'})
     ]);
     this.objects = csvParse(registryCSV);
+    if (!this.objects.length) throw new Error('El corpus local no contiene registros');
     this.familyLinks = csvParse(familyCSV);
     this.schema = schema;
     this.ready = true;
