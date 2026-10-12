@@ -19,7 +19,7 @@
 <p>Comprobaciones reales realizadas desde este navegador. La presencia de un archivo no garantiza que todas sus funciones internas trabajen correctamente. Para probar búsquedas, exportación y rotación 3D, utiliza los accesos de cada módulo.</p>
 <p><button id="check" type="button">Repetir comprobaciones</button> <strong id="count" aria-live="polite"></strong></p>
 <table><thead><tr><th>Elemento</th><th>Estado</th><th>Comprobación</th></tr></thead><tbody id="tests"></tbody></table>
-<p><strong>Interpretación científica:</strong> los modelos simbólicos y las ilustraciones digitales no son fotografías ni escaneados arqueológicos de piezas reales. Las funciones de lectura y análisis son herramientas experimentales, no traducciones confirmadas.</p>
+<h2>Pruebas funcionales de datos y búsquedas</h2><p>Estas pruebas ejecutan código real del sitio, no solo comprueban si existe un archivo.</p><div id="functional-results" role="status" aria-live="polite">Preparando comprobaciones funcionales…</div><p><strong>Interpretación científica:</strong> los modelos simbólicos y las ilustraciones digitales no son fotografías ni escaneados arqueológicos de piezas reales. Las funciones de lectura y análisis son herramientas experimentales, no traducciones confirmadas.</p>
 <p><a href="../">Volver a la portada de IberOS+</a></p></main>
 <script type="module">
 import {header} from "../assets/portal-data.js";
@@ -58,5 +58,28 @@ if(item[2]==="html"){const t=await r.text();if(!t.includes("<html")&&!t.includes
 if(item[2]==="image"){let b=await r.blob();if(!b.type.startsWith("image/")||b.size<1000)throw Error("Imagen inválida")}
 status="ok";note="Archivo cargado y estructura básica válida";passed++}catch(e){note=String(e.message||e).slice(0,100)}
 root.children[index].outerHTML=row(item,status,note)}));count.textContent=passed+" de "+items.length+" comprobaciones superadas";document.getElementById("check").disabled=false}
-document.getElementById("check").addEventListener("click",run);run();
+document.getElementById("check").addEventListener("click",()=>{run();runFunctional()});run();
+async function runFunctional(){
+ const target=document.getElementById("functional-results");
+ target.textContent="Comprobando búsqueda de Core y registros de Fichas…";
+ const result=[];
+ function add(label,ok,message){result.push({label,ok,message})}
+ try {
+   const {createIberOS}=await import("../webengine/iberos-web.mjs");
+   const core=await createIberOS();
+   const record=core.search("IBR-CER-0002");
+   add("Core: búsqueda por identificador",record.some(x=>x.OBJECT_ID==="IBR-CER-0002"),"Búsqueda real en el motor");
+   add("Core: consulta sin coincidencias",core.search("IBEROS_SIN_COINCIDENCIAS_PRUEBA_2026").length===0,"No debe inventar resultados");
+ }catch(e){add("Core: inicio y búsqueda",false,String(e.message||e))}
+ try{
+   const {text,csv}=await import("../assets/portal-data.js");
+   const rows=csv(await text("../data/objects.csv"));
+   const unique=new Set(rows.map(x=>x.OBJECT_ID));
+   add("Fichas: catálogo con registros únicos",rows.length===38&&unique.size===38,rows.length+" registros, "+unique.size+" identificadores únicos");
+   const targetRecord=rows.find(x=>x.OBJECT_ID==="IBR-CER-0002");
+   add("Fichas: título y procedencia",Boolean(targetRecord?.Nombre_objeto?.includes("Llíria")&&targetRecord?.Yacimiento),"Datos reales del registro");
+ }catch(e){add("Fichas: lectura CSV",false,String(e.message||e))}
+ target.innerHTML=result.map(x=>'<p class="'+(x.ok?"ok":"bad")+'">'+(x.ok?"✓ ":"✕ ")+x.label+' · '+x.message+'</p>').join("");
+}
+runFunctional();
 </script></body></html>
