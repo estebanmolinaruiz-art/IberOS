@@ -6,15 +6,18 @@ showResearchContext();
 document.getElementById("head").innerHTML=header("../");
 const input=document.getElementById("txt"), out=document.getElementById("out");
 function speak(text){
-  const plan=prepareSyntheticPlayback(text);
+  let plan;
+  try{plan=prepareSyntheticPlayback(text)}catch(e){out.textContent="Error de preparación de voz: "+String(e.message||e);return}
+
   if(!plan.allowed){alert("La secuencia contiene formas no reconocidas o marcadores de reconstrucción. No se reproducirá automáticamente.");return;}
   if(!("speechSynthesis" in window)){alert("Este navegador no ofrece síntesis de voz.");return;}
-  window.speechSynthesis.cancel();
+  try{window.speechSynthesis.cancel();
   const u=new SpeechSynthesisUtterance(plan.text);u.lang="es-ES";u.rate=.78;
-  window.speechSynthesis.speak(u);
+  window.speechSynthesis.speak(u)}catch(e){out.textContent="La voz no está disponible en este navegador: "+String(e.message||e)}
+
 }
 function run(){
-  const analysis=analyzeTalk(input.value);
+  let analysis;try{analysis=analyzeTalk(input.value)}catch(e){out.textContent="No se pudo analizar esta secuencia: "+String(e.message||e);return}
   out.innerHTML=analysis.tokens.map((t,i)=>'<div class="talk-row"><span class="term">'+esc(t.form)+'</span><span class="meta">'+(t.demo_eligible?'forma documentada sin revisión fonética · '+esc(t.family):t.state==='UNRECOGNIZED_FORM'?'no reconocida · fallback sin audio':'marcador o entrada bloqueada · sin audio')+'</span>'+(t.demo_eligible?'<button class="btn alt" data-i="'+i+'">▶ demo sintética</button>':'')+'</div>').join("");
   document.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>speak(analysis.tokens[Number(b.dataset.i)].raw));
 }
