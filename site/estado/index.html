@@ -79,6 +79,8 @@ async function runFunctional(){
    const targetRecord=rows.find(x=>x.OBJECT_ID==="IBR-CER-0002");
    add("Fichas: título y procedencia",Boolean(targetRecord?.Nombre_objeto?.includes("Llíria")&&targetRecord?.Yacimiento),"Datos reales del registro");
  }catch(e){add("Fichas: lectura CSV",false,String(e.message||e))}
+ try{const key="iberos-status-storage-test";const val={schema:"IberOS/Test",nonce:"prueba-local-2026"};localStorage.setItem(key,JSON.stringify(val));const back=JSON.parse(localStorage.getItem(key)||"null");localStorage.removeItem(key);add("Safari: escritura y lectura de almacenamiento",back?.nonce===val.nonce,"Prueba no destructiva con clave temporal")}catch(e){add("Safari: almacenamiento local",false,String(e.message||e))}
+ try{const payload={schema:"IberOS-Research-Project/1.0",name:"Prueba técnica",object:"IBR-CER-0002",modules:["Core"]};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const restored=JSON.parse(await blob.text());add("Exportación: integridad JSON",restored.name===payload.name&&restored.object===payload.object,"Serialización local comprobada (no descarga física)") }catch(e){add("Exportación: integridad JSON",false,String(e.message||e))}
  target.innerHTML=result.map(x=>'<p class="'+(x.ok?"ok":"bad")+'">'+(x.ok?"✓ ":"✕ ")+x.label+' · '+x.message+'</p>').join("");
 }
 runFunctional();
