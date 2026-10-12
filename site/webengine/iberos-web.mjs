@@ -46,7 +46,7 @@ export class IberOSWeb {
     const [registryCSV, familyCSV, schema] = await Promise.all([
       this._load('objects.csv'),
       this._load('families.csv'),
-      Promise.resolve({title:'IberOS public browser registry',version:'1.0'})
+      this._load('iberos-result-v1.schema.json','json')
     ]);
     this.objects = csvParse(registryCSV);
     if (!this.objects.length) throw new Error('El corpus local no contiene registros');
