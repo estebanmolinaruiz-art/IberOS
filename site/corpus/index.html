@@ -16,7 +16,7 @@
 <script>document.addEventListener("DOMContentLoaded",()=>{const b=document.getElementById("mobileFilterToggle"),p=document.getElementById("corpusFilters");if(b&&p)b.addEventListener("click",()=>{const open=p.classList.toggle("is-open");b.setAttribute("aria-expanded",String(open));b.textContent=open?"✕ Ocultar filtros":"☷ Mostrar filtros"})});</script>
 <script type="module">
 import{header,text,csv,esc,tags}from"../assets/portal-data.js";document.getElementById("head").innerHTML=header("../");
-const rows=csv(await text("../data/objects.csv"));
+let rows=[];try{rows=csv(await text("../data/objects.csv"));if(!rows.length)throw new Error("Registro vacío")}catch(error){document.querySelector("main")?.insertAdjacentHTML("afterbegin",'<div class="notice" role="alert"><strong>No se han podido cargar los registros.</strong> <a href="../estado/">Comprobar el estado</a> o recargar.</div>');console.error(error)}
 const q=document.getElementById("q"),hq=document.getElementById("heroQ"),grid=document.getElementById("grid"),count=document.getElementById("count");
 const covers={"IBR-PLM-0001":"../assets/ficha-covers/ullastret.webp","IBR-PLM-0002":"../assets/ficha-covers/tivissa.webp","IBR-PLM-0003":"../assets/ficha-covers/pech-maho.webp","IBR-PLM-0004":"../assets/ficha-covers/coimbra.webp","IBR-MUS-0001":"../assets/ficha-covers/caminreal.webp","IBR-LAP-0005":"../assets/ficha-covers/sagunto.webp"};
 function media(r,label){const src=covers[r.OBJECT_ID];return src?'<div class="media media-document"><img src="'+esc(src)+'" alt="Portada documental IberOS de '+esc(r.Nombre_objeto)+'" loading="lazy"><span class="media-badge">Portada documental</span></div>':'<div class="media"><span class="media-badge">'+esc(label)+'</span></div>'}
@@ -49,5 +49,5 @@ document.getElementById("clear").onclick=()=>{document.querySelectorAll('[data-g
 document.getElementById("clearSelection").onclick=()=>saveSelection([]);
 document.getElementById("gridView").onclick=()=>{grid.classList.remove("list-view");document.getElementById("gridView").classList.add("active");document.getElementById("listView").classList.remove("active")};
 document.getElementById("listView").onclick=()=>{grid.classList.add("list-view");document.getElementById("listView").classList.add("active");document.getElementById("gridView").classList.remove("active")};
-render();
+if(rows.length)render();else{grid.innerHTML='<div class="notice">El Corpus no está disponible temporalmente. <a href="../estado/">Ver estado</a>.</div>';count.textContent="0";}
 </script></body></html>
