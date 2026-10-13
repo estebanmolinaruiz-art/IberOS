@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Scientific-Review-Queue/1.0",
-  "note": "Administrative review queue only. No semantic validation or publication authorization.",
+  "note": "Review queue: bibliographic locations are not segment approval. Scientific conclusions untouched.",
   "records": [
     {
       "object_id": "IBR-PLM-0002",
@@ -15,6 +15,14 @@
         "Verificar límites sobre ROK, śalir y -te-",
         "Registrar fuentes, identidades físicas y dependencias",
         "Auditar segmentos mediante el Core y revisión académica"
+      ],
+      "references_checked": [
+        {
+          "citation": "Asensio, Miró, Sanmartí y Velaza (2003), Palaeohispanica 3, pp. 195–204",
+          "url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
+          "status": "PUBLICATION_LOCATED_TEXT_NOT_YET_ALIGNED",
+          "note": "Comprobar en edición y fotografía que la secuencia atribuida a T.07.03 pertenece exactamente al testimonio citado; no aprobar lectura por coincidencia de yacimiento."
+        }
       ]
     },
     {
@@ -30,6 +38,16 @@
         "Mantener degradada la hipótesis económica específica",
         "Registrar fuentes, identidades físicas y dependencias",
         "Auditar segmentos mediante el Core y revisión académica"
+      ],
+      "references_checked": [
+        {
+          "citation": "Javier Velaza, Chronica Epigraphica Iberica XII, Palaeohispanica 15, p. 253, sección 1.7; transcribe edición de Untermann (2014), pp. 62–69",
+          "url": "https://diposit.ub.edu/bitstreams/6970ecc1-1770-4e7d-9566-76ea7a5d1ddd/download",
+          "locator": "Página impresa 253, A I, línea 8",
+          "reading": "]itiatu:ban:kutur:biteŕokan",
+          "status": "SECONDARY_EDITION_LOCATED_UNVERIFIED_AGAINST_OBJECT",
+          "note": "La lectura reproducida requiere cotejo con edición original y con las lecturas de Hesperia; no valida semántica ni independencia."
+        }
       ]
     }
   ]
