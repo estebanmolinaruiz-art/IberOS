@@ -1,9 +1,9 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS+ · Ficha</title><link rel="stylesheet" href="../assets/iberos-plus.css"></head><body class="iberos-inner iberos-ficha"><div id="head"></div><main><div id="body"></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IberOS+ · Ficha</title><link rel="stylesheet" href="../assets/iberos-plus.css"></head><body class="iberos-inner iberos-ficha"><div id="head"></div><main><div id="body"><div class="notice" role="status">Cargando ficha arqueológica… Si permanece este mensaje, consulta el <a href="../corpus/">Corpus</a>.</div></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
 document.getElementById("head").innerHTML=header("../");
-const rows=csv(await text("../data/objects.csv"));
-const rels=csv(await text("../data/families.csv"));
+let rows=[],rels=[];try{rows=csv(await text("../data/objects.csv"));if(!rows.length)throw Error("El catálogo está vacío");}catch(e){document.getElementById("body").innerHTML='<div class="notice" role="alert"><h2>La ficha no está disponible temporalmente</h2><p>No hemos podido cargar los registros. Prueba de nuevo o consulta el <a href="../corpus/">Corpus</a>.</p></div>';console.error("Error de fichas",e)}
+try{rels=csv(await text("../data/families.csv"))}catch(e){console.warn("Relaciones no disponibles",e)}
 const id=new URLSearchParams(location.search).get("id");
 const r=rows.find(x=>x.OBJECT_ID===id);
 const body=document.getElementById("body");
