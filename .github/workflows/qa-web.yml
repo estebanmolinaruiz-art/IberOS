@@ -15,4 +15,6 @@ jobs:
         with:
           node-version: '22'
       - name: Comprobar integridad de web, datos y scripts
-        run: node scripts/check-site.mjs\n      - name: Pruebas funcionales reales de Core\n        run: node scripts/test-core.mjs
+        run: node scripts/check-site.mjs
+      - name: Pruebas funcionales reales de Core
+        run: node scripts/test-core.mjs
