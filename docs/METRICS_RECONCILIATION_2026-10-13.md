@@ -71,3 +71,15 @@ Las cuatro contienen CORE 27/45, CORE+INFER 28/45, ICS_global 70.8 e INFER_progr
 - **Demostrado:** estabilidad numérica dentro del historial examinado de GitHub.
 - **Pendiente:** equivalencia de los indicadores con el sistema histórico de investigación, anterior al repositorio.
 - **Prohibido inferir:** 98 % de desciframiento, 60 % de completitud total de software, regresión científica sin rúbrica homóloga.
+
+## Corrección operativa implementada (2026-10-13)
+- Fuente de verdad numérica inalterada: `src/iberos/core.py::OFFICIAL_METRICS`.
+- Registro formal de interpretaciones: `src/iberos/metrics.py::metric_registry`.
+- Control `compare_metric_values`: impide tratar CORE, CORE+INFER, ICS, INFER y familias como el mismo porcentaje.
+- Tests de estabilidad: `tests/test_metrics.py`, incorporados a la batería general de `pytest`.
+- El sistema declara explícitamente `historical_pre_github_baseline=NOT_VERIFIED` y `single_global_completion_percentage=null`.
+- **No se ha inventado un avance global** ni recodificado el significado de métricas históricas sin soporte documental.
+- **Verificación pendiente:** ejecución real de toda la batería de tests y revisión del expediente original previo a GitHub.
+
+### Lectura pública recomendada
+El indicador CORE 27/45 (60.0 %) es la puntuación de una rúbrica científica congelada; el CORE+INFER 28/45 (62.2 %) pertenece a otra rúbrica. ICS=70.8 e INFER=98 no deben etiquetarse como porcentaje de CORE completado ni tasa de desciframiento.
