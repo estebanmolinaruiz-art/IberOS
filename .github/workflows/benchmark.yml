@@ -39,6 +39,32 @@ jobs:
         run: python scripts/benchmark_snapshot.py --output /tmp/benchmark_results_v1.0.1.json
       - name: Verify frozen snapshot
         run: diff -u data/benchmark/benchmark_results_v1.0.1.json /tmp/benchmark_results_v1.0.1.json
+      - name: Write audit summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## IberOS frozen benchmark audit"
+            echo "- Commit: \`$GITHUB_SHA\`"
+            echo "- Frozen authority: C594 / C474 / C539 / C541"
+            if [ -f /tmp/benchmark_results_v1.0.1.json ]; then
+              if cmp -s data/benchmark/benchmark_results_v1.0.1.json /tmp/benchmark_results_v1.0.1.json; then
+                echo "- Snapshot: BYTE_IDENTICAL"
+              else
+                echo "- Snapshot: DIFFERENT — inspection required"
+              fi
+            else
+              echo "- Snapshot: NOT_GENERATED — tests or build blocked"
+            fi
+            echo "- Workflow conclusion: see individual step statuses; do not infer scientific promotion"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload benchmark diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: IberOS-benchmark-diagnostics
+          path: /tmp/benchmark_results_v1.0.1.json
+          if-no-files-found: ignore
       - name: Upload verified benchmark
         uses: actions/upload-artifact@v4
         with:
