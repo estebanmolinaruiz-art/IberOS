@@ -87,3 +87,41 @@ def test_source_audit_requires_precise_locator():
     )
     assert result["status"] == "BLOCKED"
     assert any("locator" in error for error in result["errors"])
+
+
+def test_same_physical_object_editions_are_not_double_counted():
+    from iberos.reconstruction import audit_reconstruction_independence
+    seg = [{"text": "SALIR", "layer": "EVIDENCE", "source": "a"},
+           {"text": "ROK", "layer": "EVIDENCE", "source": "b"}]
+    catalog = {
+        "a": {"reference": "Edition A", "locator": "p. 1", "PHYS_ID": "object-one"},
+        "b": {"reference": "Edition B", "locator": "p. 2", "PHYS_ID": "object-one"},
+    }
+    audit = audit_reconstruction_independence(seg, catalog)
+    assert audit["source_count"] == 2
+    assert audit["identity_unit_count"] == 1
+    assert audit["independence_confirmed"] is False
+    assert audit["automatic_core_promotion"] is False
+
+
+def test_sources_without_physical_identifiers_are_blocked():
+    from iberos.reconstruction import audit_reconstruction_independence
+    audit = audit_reconstruction_independence(
+        [{"text": "SALIR", "layer": "EVIDENCE", "source": "a"}],
+        {"a": {"reference": "Edition", "locator": "p. 1"}},
+    )
+    assert audit["status"] == "BLOCKED"
+    assert audit["unresolved_sources"] == ["a"]
+
+
+def test_shared_leak_group_collapses_entries():
+    from iberos.reconstruction import audit_reconstruction_independence
+    seg = [{"text": "SALIR", "layer": "EVIDENCE", "source": "a"},
+           {"text": "ROK", "layer": "EVIDENCE", "source": "b"}]
+    catalog = {
+        "a": {"reference": "Edition A", "locator": "p. 1", "LEAK_GROUP": "duplicate"},
+        "b": {"reference": "Edition B", "locator": "p. 2", "LEAK_GROUP": "duplicate"},
+    }
+    audit = audit_reconstruction_independence(seg, catalog)
+    assert audit["identity_unit_count"] == 1
+    assert audit["status"] == "IDENTITY_GROUPED_REVIEW_REQUIRED"
