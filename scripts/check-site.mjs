@@ -11,3 +11,16 @@ for(const [i,m] of scripts.entries()){if(!m[2].trim())continue;try{const code=m[
 for(const p of ['data/objects.csv','data/families.csv'])if(existsSync(base+p)){const text=readFileSync(base+p,'utf8');assert(text.includes('OBJECT_ID')&&text.trim().split(/\r?\n/).length>35,'CSV no vacío '+p)}
 for(const p of ['data/iberos-result-v1.schema.json','data/real_3d_resources.json','models/inscribed-placa.gltf','models/inscribed-estela.gltf'])if(existsSync(base+p)){try{JSON.parse(readFileSync(base+p,'utf8'));assert(true,'JSON legible '+p)}catch(e){assert(false,'JSON inválido '+p)}}
 console.log('\n'+(checks-errors)+'/'+checks+' controles correctos');if(errors)process.exitCode=1;
+
+import {readdirSync,statSync} from 'node:fs';
+import {join,relative,dirname,resolve} from 'node:path';
+function walk(dir){return readdirSync(dir).flatMap(name=>{const p=join(dir,name);return statSync(p).isDirectory()?walk(p):[p]})}
+const all=walk(base);
+for(const file of all.filter(p=>/\.(mjs|js)$/.test(p))){try{execFileSync(process.execPath,['--check',file],{stdio:'pipe'});assert(true,'Módulo JS '+relative(base,file))}catch(e){assert(false,'Módulo JS '+relative(base,file)+' '+String(e.stderr||e.message).slice(0,150))}}
+for(const file of all.filter(p=>/\.html$/.test(p))){
+ const source=readFileSync(file,'utf8');
+ for(const m of source.matchAll(/(?:src|href)\s*=\s*["'](\.\.?\/[^"'?#]+)[^"']*["']/g)){
+  const asset=resolve(dirname(file),decodeURIComponent(m[1]));
+  assert(existsSync(asset),'Ruta local '+relative(base,file)+' → '+m[1]);
+ }
+}
