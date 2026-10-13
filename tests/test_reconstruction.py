@@ -40,3 +40,16 @@ def test_valid_mixed_reconstruction_never_promotes_core():
 def test_rejects_malformed_or_empty(bad):
     ok, _ = validate_reconstruction(bad)
     assert not ok
+
+
+@pytest.mark.parametrize("claim", ["yes", 1, [], {"supported": True}])
+def test_rejects_nonboolean_semantic_claims(claim):
+    ok, errors = validate_reconstruction([
+        {"text": "SALIR", "layer": "EVIDENCE", "source": "edition 1", "meaning_claim": claim}
+    ])
+    assert not ok and any("meaning_claim must be boolean" in e for e in errors)
+
+
+def test_rejects_invalid_object_identifier():
+    with pytest.raises(ValueError):
+        build_reconstruction("not-a-valid-object", [{"text": "[…]", "layer": "UNRESOLVED"}])
