@@ -53,3 +53,37 @@ def test_rejects_nonboolean_semantic_claims(claim):
 def test_rejects_invalid_object_identifier():
     with pytest.raises(ValueError):
         build_reconstruction("not-a-valid-object", [{"text": "[…]", "layer": "UNRESOLVED"}])
+
+
+def test_registered_sources_are_not_semantic_validation():
+    from iberos.reconstruction import audit_reconstruction_sources
+    result = audit_reconstruction_sources(
+        [{"text": "SALIR", "layer": "EVIDENCE", "source": "edition-A"}],
+        {"edition-A": {"reference": "Bibliographic edition", "locator": "p. 12, line 3"}},
+    )
+    assert result["status"] == "REGISTERED_SOURCES_ONLY"
+    assert result["scientific_state"] == "UNVERIFIED"
+    assert result["independence_audited"] is False
+    assert result["semantic_validation"] is False
+    assert result["automatic_core_promotion"] is False
+
+
+def test_source_audit_blocks_unknown_and_excluded_sources():
+    from iberos.reconstruction import audit_reconstruction_sources
+    segment = [{"text": "SALIR", "layer": "EVIDENCE", "source": "edition-A"}]
+    missing = audit_reconstruction_sources(segment, {})
+    assert missing["status"] == "BLOCKED"
+    excluded = audit_reconstruction_sources(segment, {
+        "edition-A": {"reference": "Edition", "locator": "p. 2", "excluded_control": True}
+    })
+    assert excluded["status"] == "BLOCKED"
+
+
+def test_source_audit_requires_precise_locator():
+    from iberos.reconstruction import audit_reconstruction_sources
+    result = audit_reconstruction_sources(
+        [{"text": "SALIR", "layer": "EVIDENCE", "source": "edition-A"}],
+        {"edition-A": {"reference": "Edition"}},
+    )
+    assert result["status"] == "BLOCKED"
+    assert any("locator" in error for error in result["errors"])
