@@ -2,7 +2,7 @@
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
 document.getElementById("head").innerHTML=header("../");
-let rows=[],rels=[];try{rows=csv(await text("../data/objects.csv"));if(!rows.length)throw Error("El catálogo está vacío");}catch(e){document.getElementById("body").innerHTML='<div class="notice" role="alert"><h2>La ficha no está disponible temporalmente</h2><p>No hemos podido cargar los registros. Prueba de nuevo o consulta el <a href="../corpus/">Corpus</a>.</p></div>';console.error("Error de fichas",e)}
+let rows=[],rels=[],dataLoadFailed=false;try{rows=csv(await text("../data/objects.csv"));if(!rows.length)throw Error("El catálogo está vacío");}catch(e){dataLoadFailed=true;document.getElementById("body").innerHTML='<div class="notice" role="alert"><h2>La ficha no está disponible temporalmente</h2><p>No hemos podido cargar los registros. Prueba de nuevo o consulta el <a href="../corpus/">Corpus</a>.</p></div>';console.error("Error de fichas",e)}
 try{rels=csv(await text("../data/families.csv"))}catch(e){console.warn("Relaciones no disponibles",e)}
 const id=new URLSearchParams(location.search).get("id");
 const r=rows.find(x=>x.OBJECT_ID===id);
@@ -15,7 +15,9 @@ function shardFor(id){
  if(id==="IBR-PLM-0013"||/^IBR-RUP-/.test(id))return 5;
  return null;
 }
-if(!r){
+if(dataLoadFailed){
+ // El aviso de red ya se ha mostrado; no confundir con identificador inexistente.
+}else if(!r){
  body.innerHTML='<div class="notice">Objeto no encontrado.</div>';
 }else{
  document.title="IberOS+ · "+r.Nombre_objeto;
