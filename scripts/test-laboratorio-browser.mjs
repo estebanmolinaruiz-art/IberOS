@@ -26,5 +26,17 @@ try{
  await page.locator('#restorePrevious').click();
  // La restauración requiere confirmación: probar con un clic adicional si se rechaza.
  check(await page.locator('#object').inputValue()==='IBR-CER-0002','Recuperación de cuaderno anterior');
- console.log('Laboratorio: pruebas de navegador satisfactorias');
+
+ await page.goto(base+'/webengine/?q=IBR-MUS-0001');
+ await page.locator('#core-cards .core-result-card').first().waitFor();
+ check((await page.locator('#core-cards .core-result-card').count())>=1,'Core muestra tarjetas visuales');
+ check((await page.locator('#core-cards .interpretation-main').first().innerText()).length>10,'Core muestra interpretación o límite explícito');
+ await page.locator('#q').fill('IBEROS_SIN_COINCIDENCIAS_PRUEBA_2026');
+ await page.locator('#go').click();
+ check((await page.locator('#core-cards').innerText()).includes('No se encontraron coincidencias'),'Core informa de consultas sin resultados');
+ await page.locator('#q').fill('IBR-MUS-0001');
+ await page.locator('#go').click();
+ const fiche=page.locator('#core-cards a[href*="../ficha/"]').first();
+ check((await fiche.getAttribute('href')).includes('IBR-MUS-0001'),'Core enlaza a ficha correcta');
+ console.log('Laboratorio y Core: pruebas de navegador satisfactorias');
 }finally{await browser.close()}
