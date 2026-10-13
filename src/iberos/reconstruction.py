@@ -6,6 +6,7 @@ promote hypotheses to scientific facts.
 from __future__ import annotations
 
 from typing import Any
+import re
 
 LAYERS = frozenset({"EVIDENCE", "INFERENCE", "HYPOTHESIS", "AMBIGUOUS", "UNRESOLVED"})
 SEMANTIC_LAYERS = frozenset({"INFERENCE", "HYPOTHESIS", "AMBIGUOUS"})
@@ -24,17 +25,17 @@ def validate_reconstruction(segments: Any) -> tuple[bool, list[str]]:
             continue
         layer = segment.get("layer")
         label = segment.get("text")
-        if layer not in LAYERS:
+        if not isinstance(layer, str) or layer not in LAYERS:
             errors.append(f"{prefix}: invalid epistemic layer")
         if not isinstance(label, str) or not label.strip() or len(label) > 2000:
             errors.append(f"{prefix}: text must contain 1-2000 meaningful characters")
         if layer == "EVIDENCE" and segment.get("meaning_claim"):
             errors.append(f"{prefix}: EVIDENCE cannot certify a semantic translation")
-        if layer in (LAYERS - {"UNRESOLVED"}):
+        if isinstance(layer, str) and layer in (LAYERS - {"UNRESOLVED"}):
             source = segment.get("source")
             if not isinstance(source, str) or not source.strip():
                 errors.append(f"{prefix}: documented source required")
-        if layer in SEMANTIC_LAYERS:
+        if isinstance(layer, str) and layer in SEMANTIC_LAYERS:
             rationale = segment.get("rationale")
             if not isinstance(rationale, str) or not rationale.strip():
                 errors.append(f"{prefix}: rationale required for interpretation")
@@ -45,7 +46,7 @@ def validate_reconstruction(segments: Any) -> tuple[bool, list[str]]:
 
 def build_reconstruction(object_id: str, segments: list[dict[str, Any]]) -> dict[str, Any]:
     """Return a display-ready proposal only after validating its provenance."""
-    if not isinstance(object_id, str) or not object_id.startswith("IBR-"):
+    if not isinstance(object_id, str) or not re.fullmatch(r"IBR-[A-Z]{3}-[0-9]{4}", object_id):
         raise ValueError("A valid IberOS object identifier is required")
     valid, errors = validate_reconstruction(segments)
     if not valid:
