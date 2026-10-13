@@ -29,6 +29,8 @@ def validate_reconstruction(segments: Any) -> tuple[bool, list[str]]:
             errors.append(f"{prefix}: invalid epistemic layer")
         if not isinstance(label, str) or not label.strip() or len(label) > 2000:
             errors.append(f"{prefix}: text must contain 1-2000 meaningful characters")
+        if "meaning_claim" in segment and not isinstance(segment["meaning_claim"], bool):
+            errors.append(f"{prefix}: meaning_claim must be boolean")
         if layer == "EVIDENCE" and segment.get("meaning_claim"):
             errors.append(f"{prefix}: EVIDENCE cannot certify a semantic translation")
         if isinstance(layer, str) and layer in (LAYERS - {"UNRESOLVED"}):
