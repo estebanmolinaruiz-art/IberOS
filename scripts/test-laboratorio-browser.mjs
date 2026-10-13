@@ -17,6 +17,7 @@ try{
  await page.locator('#name').fill('Cambios temporales');
  page.once('dialog',dialog=>{void dialog.accept().catch(()=>{});});
  await page.locator('#importProject').setInputFiles({name:'proyecto.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(json))});
+ await page.waitForFunction(expected=>document.querySelector('#name')?.value===expected,json.name);
  check(await page.locator('#name').inputValue()===json.name,'Importación restaura el nombre');
  check(await page.locator('#question').inputValue()===json.question,'Importación restaura la pregunta');
  await page.goto(base+'/laboratorio/?id=IBR-MUS-0001');
