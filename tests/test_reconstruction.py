@@ -125,3 +125,39 @@ def test_shared_leak_group_collapses_entries():
     audit = audit_reconstruction_independence(seg, catalog)
     assert audit["identity_unit_count"] == 1
     assert audit["status"] == "IDENTITY_GROUPED_REVIEW_REQUIRED"
+
+
+def test_cross_identifier_bridge_is_one_documentary_unit():
+    from iberos.reconstruction import audit_reconstruction_independence
+    segments = [
+        {"text": "A", "layer": "EVIDENCE", "source": "a"},
+        {"text": "B", "layer": "EVIDENCE", "source": "b"},
+        {"text": "C", "layer": "EVIDENCE", "source": "c"},
+    ]
+    catalog = {
+        "a": {"reference": "Ed A", "locator": "p1", "PHYS_ID": "P1"},
+        "b": {"reference": "Ed B", "locator": "p2", "PHYS_ID": "P1", "LEAK_GROUP": "L1"},
+        "c": {"reference": "Ed C", "locator": "p3", "LEAK_GROUP": "L1"},
+    }
+    result = audit_reconstruction_independence(segments, catalog)
+    assert result["identity_unit_count"] == 1
+    assert sorted(next(iter(result["identity_units"].values()))) == ["a", "b", "c"]
+    assert result["automatic_core_promotion"] is False
+
+
+def test_specific_dependency_bridge_collapses_but_generic_does_not():
+    from iberos.reconstruction import audit_reconstruction_independence
+    segs = [
+        {"text": x, "layer": "EVIDENCE", "source": x}
+        for x in ("a", "b", "c")
+    ]
+    catalog = {
+        "a": {"reference": "A", "locator": "p1", "PHYS_ID": "P1",
+              "Dependency_Group": "KNOWN_COPY"},
+        "b": {"reference": "B", "locator": "p2", "Dependency_Group": "KNOWN_COPY"},
+        "c": {"reference": "C", "locator": "p3", "PHYS_ID": "P2",
+              "Dependency_Group": "INDEPENDENT_OR_UNRESOLVED"},
+    }
+    result = audit_reconstruction_independence(segs, catalog)
+    assert result["identity_unit_count"] == 2
+    assert result["independence_confirmed"] is False
