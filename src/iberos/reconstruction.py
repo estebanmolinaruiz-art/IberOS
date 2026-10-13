@@ -103,3 +103,55 @@ def audit_reconstruction_sources(
         "semantic_validation": False,
         "automatic_core_promotion": False,
     }
+
+
+def audit_reconstruction_independence(
+    segments: Any, source_catalog: Any
+) -> dict[str, Any]:
+    """Audit corroboration units, conservatively withholding independence.
+
+    A document or edition without a traceable physical or leak identity is
+    UNRESOLVED, never independent by default. Shared physical IDs collapse
+    editions. This is a preliminary documentary audit, not validation.
+    """
+    source_audit = audit_reconstruction_sources(segments, source_catalog)
+    errors = list(source_audit["errors"])
+    units: dict[str, list[str]] = {}
+    unresolved: list[str] = []
+    if not isinstance(source_catalog, dict):
+        source_catalog = {}
+    source_ids = sorted({
+        segment["source"] for segment in (segments if isinstance(segments, list) else [])
+        if isinstance(segment, dict) and segment.get("layer") != "UNRESOLVED"
+        and isinstance(segment.get("source"), str) and segment["source"].strip()
+    })
+    for source_id in source_ids:
+        record = source_catalog.get(source_id)
+        if not isinstance(record, dict):
+            continue
+        phys = record.get("PHYS_ID") or record.get("phys_id")
+        leak = record.get("LEAK_GROUP") or record.get("leak_group")
+        if isinstance(phys, str) and phys.strip():
+            key = "PHYS:" + phys.strip()
+        elif isinstance(leak, str) and leak.strip():
+            key = "LEAK:" + leak.strip()
+        else:
+            unresolved.append(source_id)
+            continue
+        units.setdefault(key, []).append(source_id)
+    if unresolved:
+        errors.append("Unresolved physical/leak identity: " + ", ".join(unresolved))
+    return {
+        "protocol": "RECONSTRUCTION-PHYS-LEAK-01",
+        "status": "BLOCKED" if errors else "IDENTITY_GROUPED_REVIEW_REQUIRED",
+        "errors": errors,
+        "source_count": len(source_ids),
+        "identity_unit_count": len(units),
+        "identity_units": {k: sorted(v) for k, v in sorted(units.items())},
+        "unresolved_sources": unresolved,
+        "independence_audited": False,
+        "independence_confirmed": False,
+        "scientific_state": "UNVERIFIED",
+        "semantic_validation": False,
+        "automatic_core_promotion": False,
+    }
