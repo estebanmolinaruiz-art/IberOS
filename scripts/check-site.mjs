@@ -1,7 +1,7 @@
 import {readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 const base='site/';
-const paths=['index.html','corpus/index.html','fichas/index.html','ficha/index.html','atlas/index.html','laboratorio/index.html','webengine/index.html','write/index.html','talk/index.html','modelos3d/index.html','estado/index.html','data/objects.csv','data/families.csv','data/iberos-result-v1.schema.json','models/inscribed-placa.gltf','models/inscribed-estela.gltf'];
+const paths=['index.html','corpus/index.html','fichas/index.html','ficha/index.html','atlas/index.html','laboratorio/index.html','webengine/index.html','write/index.html','talk/index.html','modelos3d/index.html','estado/index.html','mapa-web/index.html','data/objects.csv','data/families.csv','data/iberos-result-v1.schema.json','models/inscribed-placa.gltf','models/inscribed-estela.gltf'];
 let errors=0, checks=0;
 const assert=(ok,msg)=>{checks++;console.log((ok?'✓ ':'✕ ')+msg);if(!ok)errors++};
 for(const p of paths)assert(existsSync(base+p),'Recurso '+p);
