@@ -65,3 +65,41 @@ def build_reconstruction(object_id: str, segments: list[dict[str, Any]]) -> dict
         "automatic_core_promotion": False,
         "notice": "Evidence of a reading is not evidence of a translation.",
     }
+
+
+def audit_reconstruction_sources(
+    segments: Any, source_catalog: Any
+) -> dict[str, Any]:
+    """Cross-check declared segment sources against a curated source inventory.
+
+    Source presence verifies an identifier's registration, NOT its philological
+    correctness, independence or semantic meaning.
+    """
+    valid, errors = validate_reconstruction(segments)
+    if not isinstance(source_catalog, dict):
+        errors.append("source_catalog must map source IDs to documented records")
+        source_catalog = {}
+    for i, segment in enumerate(segments if isinstance(segments, list) else []):
+        if not isinstance(segment, dict) or segment.get("layer") == "UNRESOLVED":
+            continue
+        source_id = segment.get("source")
+        if not isinstance(source_id, str) or not source_id.strip():
+            continue
+        record = source_catalog.get(source_id)
+        if not isinstance(record, dict):
+            errors.append(f"segments[{i}]: source not found in catalog")
+            continue
+        if not isinstance(record.get("reference"), str) or not record["reference"].strip():
+            errors.append(f"segments[{i}]: source has no bibliographic reference")
+        if not isinstance(record.get("locator"), str) or not record["locator"].strip():
+            errors.append(f"segments[{i}]: source lacks exact passage/page locator")
+        if record.get("excluded_control") is True:
+            errors.append(f"segments[{i}]: excluded control cannot anchor reconstruction")
+    return {
+        "status": "BLOCKED" if errors else "REGISTERED_SOURCES_ONLY",
+        "errors": errors,
+        "scientific_state": "UNVERIFIED",
+        "independence_audited": False,
+        "semantic_validation": False,
+        "automatic_core_promotion": False,
+    }
