@@ -32,3 +32,26 @@ No cambiar `OFFICIAL_METRICS`, C594/C474/C539/C541 ni gates semánticos a partir
 - `docs/BENCHMARK.md` → métricas congeladas y restricciones
 - `docs/ARCHITECTURE.md` → alcance y separación entre core y web
 - `docs/PROJECT_SYNC_2026-10-13.md` → estado entre hilos, con límites de acceso.
+
+## Comprobación histórica adicional del código (2026-10-13)
+
+Se han leído `src/iberos/core.py` en cuatro revisiones anteriores de GitHub:
+
+- `1d8d416a238f8650c4c6ef6da3f87eadcc12418d`
+- `03cb8378f404ab68d8802687df526d62e262d4cf`
+- `b046cb7cc8c5b0ea5fa015e833d019bac56d5c01`
+- `a11aa9f09a8fd8445625fcaa5a95ecb2470a8b7e`
+
+Las cuatro contienen los mismos valores de `OFFICIAL_METRICS`: `CORE=27/45=60.0%`, `CORE_plus_INFER=28/45=62.2%`, `ICS_global=70.8`, `INFER_progress=98`, familias ROK/KA_KE/SALIR/KUTUR/BAIDES_BATIR=75 y D_E_I=50.
+
+**Resultado:** la discrepancia no parece haberse producido por las últimas modificaciones del módulo de reconstrucción. **Límite:** esto no verifica las métricas originales anteriores a dichas revisiones ni identifica la rúbrica detallada de ICS/INFER. No se ha demostrado regresión científica.
+
+### Serie verificable (sin inventar fechas ni porcentajes)
+
+| Fuente de versión | CORE | CORE+INFER | ICS | INFER | Naturaleza |
+|---|---|---|---|---|---|
+| 4 revisiones históricas señaladas arriba | 27/45 | 28/45 | 70.8 | 98 | Código GitHub, igualdad comprobada |
+| CORE público main, 2026-10-13 | 27/45 | 28/45 | 70.8 | 98 | Código actual |
+| IberOS anterior a los archivos rastreados | Sin verificar | Sin verificar | Sin verificar | Sin verificar | Requiere expediente histórico fuente |
+
+Próxima evidencia necesaria: actas, exportaciones o documentación originales que incluyan las métricas históricas, sus denominadores y fechas. No cambiar la autoridad congelada sin esa comparación.
