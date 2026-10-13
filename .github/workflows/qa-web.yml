@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install --no-save playwright
           npx playwright install --with-deps chromium
-      - name: Laboratorio: navegación, autoguardado, exportación y recuperación
+      - name: "Laboratorio: navegación, autoguardado, exportación y recuperación"
         run: |
           python3 -m http.server 8765 --directory site >/tmp/iberos-http.log 2>&1 &
           node scripts/test-laboratorio-browser.mjs
