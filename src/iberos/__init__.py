@@ -1,4 +1,5 @@
 from .reconstruction import build_reconstruction, validate_reconstruction, audit_reconstruction_sources, audit_reconstruction_independence
+from .metrics import metric_registry, compare_metric_values
 from .core import (
     ACTIVE_PROTOCOLS,
     AUTHORITY,
@@ -60,6 +61,8 @@ from .core import (
 )
 
 __all__ = [
+    "metric_registry",
+    "compare_metric_values",
     "audit_reconstruction_sources",
     "audit_reconstruction_independence",
     "build_reconstruction",
