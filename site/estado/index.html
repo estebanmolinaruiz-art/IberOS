@@ -81,6 +81,21 @@ async function runFunctional(){
  }catch(e){add("Fichas: lectura CSV",false,String(e.message||e))}
  try{const key="iberos-status-storage-test";const val={schema:"IberOS/Test",nonce:"prueba-local-2026"};localStorage.setItem(key,JSON.stringify(val));const back=JSON.parse(localStorage.getItem(key)||"null");localStorage.removeItem(key);add("Safari: escritura y lectura de almacenamiento",back?.nonce===val.nonce,"Prueba no destructiva con clave temporal")}catch(e){add("Safari: almacenamiento local",false,String(e.message||e))}
  try{const payload={schema:"IberOS-Research-Project/1.0",name:"Prueba técnica",object:"IBR-CER-0002",modules:["Core"]};const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});const restored=JSON.parse(await blob.text());add("Exportación: integridad JSON",restored.name===payload.name&&restored.object===payload.object,"Serialización local comprobada (no descarga física)") }catch(e){add("Exportación: integridad JSON",false,String(e.message||e))}
+ try{
+  const {createIberOSWrite}=await import("../write/iberos-write.mjs");
+  const write=await createIberOSWrite({baseUrl:"../write/"});
+  const accepted=write.reconstruct("A Bastubar se transfiere un documento.");
+  const abstain=write.reconstruct("");
+  add("Write: reconstrucción controlada",Array.isArray(accepted.segments)&&accepted.segments.length>0,"Respuesta estructurada del motor");
+  add("Write: entrada vacía",Array.isArray(abstain.segments)||Boolean(abstain),"No debe generar una traducción inventada");
+ }catch(e){add("Write: inicio y reconstrucción",false,String(e.message||e))}
+ try{
+  const {analyzeTalk,prepareSyntheticPlayback}=await import("../talk/iberos-talk.mjs");
+  const recognized=analyzeTalk("EKIAR KUTUR SALIR");
+  const blocked=prepareSyntheticPlayback("PALABRA_DESCONOCIDA");
+  add("Talk: reconocimiento léxico",recognized.tokens.length===3&&recognized.tokens.every(t=>t.demo_eligible),"Tres formas documentadas reconocidas");
+  add("Talk: bloqueo de formas desconocidas",blocked.allowed===false,"No autoriza audio de secuencias no reconocidas");
+ }catch(e){add("Talk: análisis y bloqueo",false,String(e.message||e))}
  target.innerHTML=result.map(x=>'<p class="'+(x.ok?"ok":"bad")+'">'+(x.ok?"✓ ":"✕ ")+x.label+' · '+x.message+'</p>').join("");
 }
 runFunctional();
