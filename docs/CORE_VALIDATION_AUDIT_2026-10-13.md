@@ -31,3 +31,15 @@ node --test tests/test_write.mjs tests/test_talk.mjs
 - Auditoría de reconstrucción comprueba registros de fuentes, **no su verdad paleográfica ni lectura**.
 - Los tests sintéticos no constituyen evidencia independiente real.
 - No modificar métricas `C594/C474/C539/C541` por estado técnico.
+
+## Certificación verificable posterior — 2026-10-13
+**Se conserva la auditoría anterior como registro de la incertidumbre inicial.** Se ha podido recuperar finalmente el estado de GitHub Actions mediante el endpoint público de ejecuciones y contrastar la misma ejecución con la API de trabajos conectada.
+
+- Workflow: `benchmark`, ejecución **#28**, run ID **38465601249**.
+- Commit evaluado: `e8b670c69f7cb0e71c6b2531b76a30cbd43d1ecc`.
+- Estado de ejecución: `completed`; conclusión: **`success`**.
+- Trabajo `benchmark` (ID **115531481927**): `completed`, **`success`**.
+- URL: https://github.com/estebanmolinaruiz-art/IberOS/actions/runs/38465601249
+- El workflow versionado requiere `pytest -q`, regeneración de snapshot y `diff -u`; conclusión satisfactoria demuestra que la secuencia configurada pasó para el SHA señalado.
+- **Alcance:** certificación técnica de CI del SHA evaluado, no revisión independiente del significado de las inscripciones ni de versiones posteriores. El último commit en main puede ser diferente.
+- `CORE=27/45`, `CORE+INFER=28/45` y gates permanecen congelados.
