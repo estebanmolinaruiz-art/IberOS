@@ -83,3 +83,7 @@ Las cuatro contienen CORE 27/45, CORE+INFER 28/45, ICS_global 70.8 e INFER_progr
 
 ### Lectura pública recomendada
 El indicador CORE 27/45 (60.0 %) es la puntuación de una rúbrica científica congelada; el CORE+INFER 28/45 (62.2 %) pertenece a otra rúbrica. ICS=70.8 e INFER=98 no deben etiquetarse como porcentaje de CORE completado ni tasa de desciframiento.
+
+## Búsqueda de evidencias fuera del código, 2026-10-13
+Se han consultado el historial de GitHub y búsquedas públicas por combinaciones exactas de `IberOS`, `ICS_global`, `INFER_progress`, `C594`, `C474` y sus cifras. No se ha localizado una fuente pública independiente que documente **la fórmula original** de ICS ni el denominador histórico de INFER. Las búsquedas generales por «IBEROS» devuelven frecuentemente el proyecto homónimo de bioingeniería de Vigo, **que no pertenece a este proyecto de epigrafía**, y debe excluirse como evidencia.
+**Resultado del rastreo:** sin baseline original contrastable. El registro de métricas evita ahora comparaciones improcedentes, pero la reconciliación histórica NO está cerrada. Documentación original y exportaciones de las primeras sesiones serán necesarias para una equiparación científica real.
