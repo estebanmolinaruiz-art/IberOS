@@ -55,3 +55,19 @@ Las cuatro contienen los mismos valores de `OFFICIAL_METRICS`: `CORE=27/45=60.0%
 | IberOS anterior a los archivos rastreados | Sin verificar | Sin verificar | Sin verificar | Sin verificar | Requiere expediente histórico fuente |
 
 Próxima evidencia necesaria: actas, exportaciones o documentación originales que incluyan las métricas históricas, sus denominadores y fechas. No cambiar la autoridad congelada sin esa comparación.
+
+## Búsqueda ampliada hasta el historial inicial accesible
+
+La lectura directa de `src/iberos/core.py` en las revisiones siguientes vuelve a mostrar exactamente los mismos indicadores:
+
+- `626b46baab53fb17599d9b04e964dffdf71c1fbd` (la revisión más antigua obtenida en esta búsqueda)
+- `c7a43320f4c49888ef315eea788d8fc490106590`
+- `dc6403998f1e41c96ce2a87d12308e13079e2899`
+- `450327229d1b1eb593943153da4ee438c8ced5fa`
+
+Las cuatro contienen CORE 27/45, CORE+INFER 28/45, ICS_global 70.8 e INFER_progress 98, así como valores familiares congelados iguales a main. Por tanto, no se detecta caída entre estas revisiones públicas y la versión actual. La investigación del sistema previo a GitHub aún requiere fuentes primarias; no se infiere qué cifras se usaron en las primeras conversaciones ni su denominador.
+
+### Distinción de fiabilidad
+- **Demostrado:** estabilidad numérica dentro del historial examinado de GitHub.
+- **Pendiente:** equivalencia de los indicadores con el sistema histórico de investigación, anterior al repositorio.
+- **Prohibido inferir:** 98 % de desciframiento, 60 % de completitud total de software, regresión científica sin rúbrica homóloga.
