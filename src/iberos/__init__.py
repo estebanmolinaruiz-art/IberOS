@@ -1,4 +1,4 @@
-from .reconstruction import build_reconstruction, validate_reconstruction, audit_reconstruction_sources
+from .reconstruction import build_reconstruction, validate_reconstruction, audit_reconstruction_sources, audit_reconstruction_independence
 from .core import (
     ACTIVE_PROTOCOLS,
     AUTHORITY,
@@ -61,6 +61,7 @@ from .core import (
 
 __all__ = [
     "audit_reconstruction_sources",
+    "audit_reconstruction_independence",
     "build_reconstruction",
     "validate_reconstruction",
     "ACTIVE_PROTOCOLS",
