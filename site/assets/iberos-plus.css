@@ -875,3 +875,8 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .interpretation-feature .interpretation-main{font:700 clamp(1.6rem,4vw,2.75rem)/1.13 Georgia,serif;color:#fff2d2!important;margin:12px 0!important;letter-spacing:-.02em}
 .interpretation-feature .interpretation-caveat{font:400 .9rem/1.6 system-ui,sans-serif;color:#e4e8e5!important;margin:0!important;max-width:66ch}
 @media(max-width:650px){.interpretation-feature{margin:15px 0;padding:16px}.interpretation-feature .interpretation-main{font-size:clamp(1.5rem,6vw,2rem)}}
+
+/* Vista condensada de hipótesis en archivo documental */
+.fiche-preview{padding:13px 15px;margin:13px 0 16px;box-shadow:none}
+.fiche-preview .interpretation-main{font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.28}
+.fiche-preview .interpretation-eyebrow{font-size:.64rem}
