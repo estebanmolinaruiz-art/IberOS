@@ -22,8 +22,8 @@ try{
  await page.goto(base+'/laboratorio/?id=IBR-MUS-0001');
  check(await page.locator('#object').inputValue()==='IBR-MUS-0001','Al cambiar de pieza se abre la nueva');
  check(await page.locator('#question').inputValue()==='','No se mezclan preguntas de dos proyectos');
- await page.locator('#restorePrevious').click();
  page.once('dialog',dialog=>dialog.accept());
+ await page.locator('#restorePrevious').click();
  // La restauración requiere confirmación: probar con un clic adicional si se rechaza.
  check(await page.locator('#object').inputValue()==='IBR-CER-0002','Recuperación de cuaderno anterior');
  console.log('Laboratorio: pruebas de navegador satisfactorias');
