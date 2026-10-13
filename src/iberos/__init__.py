@@ -1,3 +1,4 @@
+from .reconstruction import build_reconstruction, validate_reconstruction
 from .core import (
     ACTIVE_PROTOCOLS,
     AUTHORITY,
@@ -59,6 +60,8 @@ from .core import (
 )
 
 __all__ = [
+    "build_reconstruction",
+    "validate_reconstruction",
     "ACTIVE_PROTOCOLS",
     "AUTHORITY",
     "ENGINE_PROTOCOL_VERSION",
