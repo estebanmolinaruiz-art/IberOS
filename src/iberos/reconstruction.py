@@ -108,16 +108,16 @@ def audit_reconstruction_sources(
 def audit_reconstruction_independence(
     segments: Any, source_catalog: Any
 ) -> dict[str, Any]:
-    """Audit corroboration units, conservatively withholding independence.
+    """Conservatively join editions by *any* shared specific identity.
 
-    A document or edition without a traceable physical or leak identity is
-    UNRESOLVED, never independent by default. Shared physical IDs collapse
-    editions. This is a preliminary documentary audit, not validation.
+    This graph audit is not a claim of physical or linguistic independence.
+    Transitive PHYS_ID, LEAK_GROUP and specific Dependency_Group bridges are
+    collapsed rather than mistakenly counted as independent confirmations.
     """
+    from .core import GENERIC_DEPENDENCY_LABELS
+
     source_audit = audit_reconstruction_sources(segments, source_catalog)
     errors = list(source_audit["errors"])
-    units: dict[str, list[str]] = {}
-    unresolved: list[str] = []
     if not isinstance(source_catalog, dict):
         source_catalog = {}
     source_ids = sorted({
@@ -125,30 +125,59 @@ def audit_reconstruction_independence(
         if isinstance(segment, dict) and segment.get("layer") != "UNRESOLVED"
         and isinstance(segment.get("source"), str) and segment["source"].strip()
     })
+    parent = {source_id: source_id for source_id in source_ids}
+
+    def find(source_id: str) -> str:
+        while parent[source_id] != source_id:
+            parent[source_id] = parent[parent[source_id]]
+            source_id = parent[source_id]
+        return source_id
+
+    def union(a: str, b: str) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    seen: dict[str, str] = {}
+    unresolved: list[str] = []
     for source_id in source_ids:
         record = source_catalog.get(source_id)
         if not isinstance(record, dict):
-            continue
-        phys = record.get("PHYS_ID") or record.get("phys_id")
-        leak = record.get("LEAK_GROUP") or record.get("leak_group")
-        if isinstance(phys, str) and phys.strip():
-            key = "PHYS:" + phys.strip()
-        elif isinstance(leak, str) and leak.strip():
-            key = "LEAK:" + leak.strip()
-        else:
             unresolved.append(source_id)
             continue
-        units.setdefault(key, []).append(source_id)
+        keys = []
+        for label, names in (
+            ("PHYS", ("PHYS_ID", "phys_id")),
+            ("LEAK", ("LEAK_GROUP", "leak_group")),
+            ("DEP", ("Dependency_Group", "dependency_group")),
+        ):
+            value = next((record[n].strip() for n in names
+                          if isinstance(record.get(n), str) and record[n].strip()), "")
+            if label == "DEP" and value.upper() in GENERIC_DEPENDENCY_LABELS:
+                continue
+            if value:
+                keys.append(label + ":" + value)
+        if not keys:
+            unresolved.append(source_id)
+        for key in keys:
+            if key in seen:
+                union(source_id, seen[key])
+            else:
+                seen[key] = source_id
+    units: dict[str, list[str]] = {}
+    for source_id in source_ids:
+        if source_id not in unresolved:
+            units.setdefault(find(source_id), []).append(source_id)
     if unresolved:
-        errors.append("Unresolved physical/leak identity: " + ", ".join(unresolved))
+        errors.append("Unresolved physical/leak/dependency identity: " + ", ".join(unresolved))
     return {
-        "protocol": "RECONSTRUCTION-PHYS-LEAK-01",
+        "protocol": "RECONSTRUCTION-PHYS-LEAK-02",
         "status": "BLOCKED" if errors else "IDENTITY_GROUPED_REVIEW_REQUIRED",
         "errors": errors,
         "source_count": len(source_ids),
         "identity_unit_count": len(units),
-        "identity_units": {k: sorted(v) for k, v in sorted(units.items())},
-        "unresolved_sources": unresolved,
+        "identity_units": {key: sorted(members) for key, members in sorted(units.items())},
+        "unresolved_sources": sorted(unresolved),
         "independence_audited": False,
         "independence_confirmed": False,
         "scientific_state": "UNVERIFIED",
