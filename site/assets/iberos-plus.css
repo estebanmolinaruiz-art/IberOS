@@ -868,3 +868,10 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .core-artifact-placeholder small{font-size:.83rem;color:#e4e1d8}
 .core-artifact-placeholder em{font-size:.68rem;color:#e0d1b7;font-style:normal}
 @media(max-width:650px){.core-visual-card{grid-template-columns:1fr}.core-artifact-photo,.core-artifact-placeholder{min-height:210px}.core-artifact-photo img{max-height:280px}.core-visual-copy{padding:15px}}
+
+/* Lectura principal de una ficha arqueológica: estado de traducción visible */
+.interpretation-feature{margin:19px 0 22px;padding:21px 22px;background:linear-gradient(145deg,#152e3d,#264753);border-left:5px solid #d6ad6c;border-radius:9px;color:#ffefda;box-shadow:0 8px 20px #0e1e2933}
+.interpretation-eyebrow{display:block;color:#e7c184;letter-spacing:.11em;font:700 .76rem/1.45 system-ui,sans-serif}
+.interpretation-feature .interpretation-main{font:700 clamp(1.6rem,4vw,2.75rem)/1.13 Georgia,serif;color:#fff2d2!important;margin:12px 0!important;letter-spacing:-.02em}
+.interpretation-feature .interpretation-caveat{font:400 .9rem/1.6 system-ui,sans-serif;color:#e4e8e5!important;margin:0!important;max-width:66ch}
+@media(max-width:650px){.interpretation-feature{margin:15px 0;padding:16px}.interpretation-feature .interpretation-main{font-size:clamp(1.5rem,6vw,2rem)}}
