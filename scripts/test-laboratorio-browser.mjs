@@ -104,6 +104,18 @@ try{
  check((await page.locator('#mapStatus').innerText()).includes('Pech-Maho'),'Atlas conserva el nombre de la procedencia solicitada');
  await page.goto(base+'/atlas/?q=Castellet%20de%20Banyoles');
  check((await page.locator('#siteQ').inputValue()).includes('Castellet de Banyoles'),'Atlas recibe búsqueda geográfica desde Tivissa');
+ // Todas las fichas deben utilizar la plantilla científica canónica.
+ const csvResponse=await page.request.get(base+'/data/objects.csv');
+ check(csvResponse.ok(),'Catálogo accesible para verificar todas las fichas');
+ const allIds=(await csvResponse.text()).replace(/^\\uFEFF/,'').split(/\\r?\\n/).slice(1).map(line=>line.split(',')[0].trim()).filter(Boolean);
+ check(allIds.length===38,'Cobertura esperada de 38 objetos y controles');
+ for(const objectId of allIds){
+   await page.goto(base+'/ficha/?id='+encodeURIComponent(objectId));
+   await page.locator('.ib-canonical-banner').waitFor({timeout:15000});
+   check(await page.locator('.ib-primary-grid').count()===1&&await page.locator('.ib-reconstruction').count()===1,'Plantilla canónica cargada '+objectId);
+   await page.locator('#sign-reading-slot .ib-sign-reading').waitFor({timeout:15000});
+   check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
+ }
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
  check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
