@@ -19,3 +19,10 @@ print(execute_rules({
 ```
 
 El motor mantiene C594 / C474 / C539 / C541, `scientific_state=UNVERIFIED` y `automatic_core_promotion=false`. Pruebas: `tests/test_rule_execution.py`. Próximo paso: ejecución de KA/KU con anclaje documental independiente, controles de róticas y trazabilidad de cada premisa.
+
+## Segunda tanda — controles ejecutables KA y PALEO (2026-10-14)
+El ejecutor admite ahora **4 reglas**. Se suman:
+- `PALEO-RHOTIC-LOCK-01`: recibe `rhotic_purpose` y `rhotic_neutralized`; bloquea explícitamente la neutralización R/R1 para identidad documental, independencia, morfología y splits; admite búsqueda neutralizada con fin de recuperación. Sin entradas tipadas devuelve `BLOCKED`.
+- `KA-DIRECTION-PROSPECTIVE-01`: recibe `ka_candidate_reference` correspondiente a una entrada **ya registrada** en `KA_DIRECTION_CANDIDATES`. Reutiliza su evaluación histórica y enumera las condiciones que faltan para fijar dirección. Un candidato no registrado o sin clave se bloquea; no se crean nuevas predicciones por pasar texto libre.
+
+Este paso **no reconoce automáticamente KA ni las róticas sobre imágenes**, y no verifica fuentes, lectura o situación arqueológica del caso. Los metadatos de entrada no son resultados de autopsia. Todas las salidas mantienen `scientific_state=UNVERIFIED` y `automatic_core_promotion=false`. No se cierra KA ni ROK ni se modifican métricas. Pruebas nuevas en `tests/test_rule_execution.py`.
