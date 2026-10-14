@@ -9,6 +9,14 @@
 .ib-reconstruction .ib-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--swatch)}
 .ib-reconstruction .ib-explanation{font: .76rem/1.5 system-ui,sans-serif;color:#62605c;margin-top:12px}
 @media(max-width:650px){.ib-reconstruction{padding:22px 14px}.ib-reconstruction .ib-display{font-size:clamp(1.35rem,5.2vw,2rem);line-height:1.32}}
+
+.ib-expert-nav{max-width:1280px;margin:10px auto 16px;padding:10px 14px;background:#142f40;color:#f8ead1;border:1px solid #b99a65;border-radius:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ib-expert-nav strong{font:700 .83rem system-ui,sans-serif;letter-spacing:.05em}
+.ib-expert-nav a,.ib-expert-nav button{color:#fff7df;background:transparent;border:1px solid #a98a5b;border-radius:6px;padding:7px 10px;font:600 .82rem system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.ib-expert-nav a:hover,.ib-expert-nav a:focus-visible,.ib-expert-nav button:hover{background:#365269}
+.ib-expert-nav a:focus-visible,.ib-expert-nav button:focus-visible{outline:2px solid #ffd17c;outline-offset:2px}
+#interpretationMain,#documentary-slot,#variant-review-slot{scroll-margin-top:18px}
+@media(max-width:650px){.ib-expert-nav{margin:9px 10px;padding:9px;gap:6px}.ib-expert-nav a,.ib-expert-nav button{font-size:.75rem;padding:6px 8px}}
 </style></head><body class="iberos-inner iberos-ficha"><div id="head"></div><aside class="ib-discovery-help" aria-label="Cómo leer esta ficha"><details><summary>✦ Frente a la pieza · aprende a leer las pistas</summary><div class="ib-help-content"><p><strong>Primero:</strong> identifica el objeto y lee la gran propuesta central. <strong>Después:</strong> compara evidencia, inferencia, variantes y bibliografía.</p><p><strong>Qué esperar:</strong> una hipótesis no es una traducción probada. Si aparece «No establecida», la lectura sigue abierta: es información científica, no un fallo.</p><div class="ib-help-route"><a href="#documentary-slot">Acceso experto · evidencia y bibliografía ↘</a><a href="#variant-review-slot">Variantes ↘</a><a href="../corpus/">Elegir otra pieza →</a><a href="../laboratorio/">Abrir cuaderno de investigación →</a></div></div></details></aside><main><div id="body"><div class="notice" role="status">Cargando ficha arqueológica… Si permanece este mensaje, consulta el <a href="../corpus/">Corpus</a>.</div></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
@@ -80,8 +88,13 @@ function updateInterpretation(){const main=document.getElementById("interpretati
    if(!related.length)return "";
    return '<div class="section-kicker" style="margin-top:30px">Objetos relacionados</div><h2 class="section-title">Paralelos por familia</h2><div class="corpus-grid">'+related.map(x=>'<article class="result-card"><div class="media"></div><div class="copy"><div class="meta">'+esc(x)+'</div><h3>'+esc(by[x]?.Nombre_objeto||x)+'</h3><a class="btn alt" href="?id='+encodeURIComponent(x)+'">Abrir ficha →</a></div></article>').join("")+'</div>';
  }
- body.innerHTML='<section class="artifact-stage">'+summaryHtml()+'</section>'+reconstructionHtml()+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>'+'<div id="variant-review-slot"></div>'+relatedHtml();
+ body.innerHTML='<nav class="ib-expert-nav" aria-label="Acceso experto a la ficha"><strong>Acceso experto</strong><a href="#interpretationMain">Interpretación</a><a href="#documentary-slot">Evidencia y fuentes</a><a href="#variant-review-slot">Variantes</a><a href="../webengine/?q='+encodeURIComponent(r.OBJECT_ID)+'">Core</a><button type="button" id="expertExport" aria-label="Exportar datos documentales de esta ficha">Exportar datos JSON</button></nav><section class="artifact-stage">'+summaryHtml()+'</section>'+reconstructionHtml()+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>'+'<div id="variant-review-slot"></div>'+relatedHtml();
  loadVariantReview();
+ document.getElementById("expertExport")?.addEventListener("click",()=>{
+   const bundle={schema:"IberOS-ficha-export/1.0",object_id:r.OBJECT_ID,object:r,documentary_enrichment:en||null,notice:"Exportación documental. Las hipótesis no equivalen a traducciones validadas."};
+   const blob=new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"});
+   const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="IberOS-"+r.OBJECT_ID+"-ficha.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);
+ });
  const slot=document.getElementById("documentary-slot");
  const shard=shardFor(r.OBJECT_ID);
  if(!shard){
