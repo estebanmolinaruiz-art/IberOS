@@ -57,6 +57,13 @@ try{
    check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
    check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   const readingContrast=await page.locator('.ib-sign-reading').evaluate(el=>{
+     const rgb=x=>{const m=getComputedStyle(x).color.match(/\d+/g);return m?m.slice(0,3).map(Number):[]};
+     const [r,g,b]=rgb(el);return r<90&&g<100&&b<120;
+   });
+   check(readingContrast,'Lectura ibérica con tinta oscura '+id);
+   check(await page.locator('.ib-expert-nav a').first().isVisible(),'Navegación experta visible '+id);
+
    await page.locator('#core-rule-evidence').waitFor({timeout:15000});
    await page.waitForFunction(()=>{const x=document.querySelector('#core-rule-evidence');return x&&!x.textContent.includes('Consultando catálogo')},{timeout:15000});
    check((await page.locator('#core-rule-evidence').innerText()).length>35,'Ficha enlaza reglas y estado científico '+id);
