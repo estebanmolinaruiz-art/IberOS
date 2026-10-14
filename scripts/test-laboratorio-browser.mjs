@@ -76,8 +76,11 @@ try{
  const coreLink=page.locator('.ib-expert-nav a[href*="../webengine/?q="]');
  await coreLink.click();
  check(new URL(page.url()).searchParams.get('q')==='IBR-PLM-0002','Acceso experto envía la misma pieza al Core');
- await page.locator('#core-cards').waitFor();
- await page.goto(base+'/laboratorio/?id=IBR-PLM-0002');
+ await page.locator('#core-cards .core-result-card').first().waitFor({timeout:15000});
+ const labLink=page.locator('#core-cards a[href="../laboratorio/?id=IBR-PLM-0002"]').first();
+ await labLink.waitFor({timeout:15000});
+ await labLink.click();
+ check(new URL(page.url()).pathname.endsWith('/laboratorio/')&&new URL(page.url()).searchParams.get('id')==='IBR-PLM-0002','Core abre Laboratorio conservando la pieza');
  check(await page.locator('#object').inputValue()==='IBR-PLM-0002','Laboratorio conserva la pieza de origen');
  await page.locator('#name').fill('Recorrido completo IberOS');
  await page.locator('#question').fill('¿Qué evidencia sostiene esta interpretación?');
