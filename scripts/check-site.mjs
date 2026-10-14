@@ -24,3 +24,25 @@ for(const file of all.filter(p=>/\.html$/.test(p))){
   assert(existsSync(asset),'Ruta local '+relative(base,file)+' → '+m[1]);
  }
 }
+
+
+const scientificPaths=['data/scientific-review-queue-v1.json','data/ficha-enrichment-3.json','diagnostico/index.html'];
+for(const p of scientificPaths)assert(existsSync(base+p),'Recurso científico/diagnóstico '+p);
+if(scientificPaths.slice(0,2).every(p=>existsSync(base+p))){
+ try{
+  const queue=JSON.parse(readFileSync(base+scientificPaths[0],'utf8'));
+  const enrich=JSON.parse(readFileSync(base+scientificPaths[1],'utf8'));
+  for(const id of ['IBR-PLM-0002','IBR-PLM-0003']){
+   const record=queue.records?.find(r=>r.object_id===id);
+   const fiche=enrich.find(r=>r.OBJECT_ID===id);
+   assert(!!record&&!!fiche&&!!fiche.hypothesis&&!!fiche.limits,'Expediente y análisis existentes '+id);
+   assert(record?.publication_approved===false&&Array.isArray(record?.reconstruction_segments)&&record.reconstruction_segments.length===0,'Sin promoción científica automática '+id);
+   assert(record?.variant_review?.variants?.length>0,'Variantes documentadas '+id);
+  }
+ }catch(error){assert(false,'Lectura científica '+error.message)}
+}
+if(existsSync(base+'ficha/index.html')){
+ const source=readFileSync(base+'ficha/index.html','utf8');
+ assert(source.includes('loadVariantReview()')&&source.includes('scientific-review-queue-v1.json'),'Ficha conectada a variantes');
+ assert(source.includes('publication_approved===true'),'Ficha exige autorización científica');
+}
