@@ -1,0 +1,17 @@
+pair_id,source,edition_year,witness,phys_key,side,line,editorial_sequence,sequence_role,token_index,editorial_token,editorial_status,graphic_photo_verified,primary_page_pdf,primary_image_pdf,notes
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,1,BI,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,2,TE,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,3,R,EDITORIAL_ONLY,false,67,65,Preserve original rhotic convention
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,4,O,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,5,KE,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,6,TE,EDITORIAL_ONLY,false,67,65,Internal difference in editorial alignment
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,7,TI,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl V,ORLEYL_V,only,3,BITEROKETETINE,comparandum,8,NE,EDITORIAL_ONLY,false,67,65,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BASBITEROKETINE,line_full,0,BAS,EDITORIAL_ONLY,false,110,111,Initial segment in line transcript excluded from Fletcher comparative shorthand
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,1,BI,EDITORIAL_ONLY,false,110,111,Editor comparative shorthand p118
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,2,TE,EDITORIAL_ONLY,false,110,111,Editor comparative shorthand p118
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,3,R,EDITORIAL_ONLY,false,110,111,Preserve original rhotic convention
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,4,O,EDITORIAL_ONLY,false,110,111,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,5,KE,EDITORIAL_ONLY,false,110,111,No independent sign verification
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,7,TI,EDITORIAL_ONLY,false,110,111,Alignment position 6 absent
+ORLEYL_V_VIIB,FL Fletcher Materiales Orleyl,1981,Orleyl VII,ORLEYL_VII,B,2,BITEROKETINE,comparandum,8,NE,EDITORIAL_ONLY,false,110,111,No independent sign verification
