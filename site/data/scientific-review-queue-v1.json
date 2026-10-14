@@ -94,6 +94,18 @@
         "text_locator": "Lectura diplomática en p. 200 y continuación en p. 201; la lectura se presenta en tres líneas editoriales",
         "figure_identification_verified": true,
         "reuse_permission_verified": false
+      },
+      "edition_lineation": {
+        "source": "Asensio, Miró, Sanmartí y Velaza 2003, p.200, tres líneas",
+        "source_url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
+        "status": "PROVISIONAL_DIGITAL_TEXT_REQUIRES_FIGURE_COLLATION",
+        "editorial_lines": [
+          "uśtalar : ortinbeŕeteŕeikiaŕ",
+          "śalaiaŕkisteŕokan : śalir o ||| :",
+          "neitiunstir : aiunikuŕskate :"
+        ],
+        "caution": "Transliteración reconstruida a partir del texto digital de la edición; contrastar signos, separadores y diacríticos con figuras 3 y 4 antes de aprobar.",
+        "source_page": 200
       }
     },
     {
