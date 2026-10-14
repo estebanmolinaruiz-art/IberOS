@@ -1,3 +1,4 @@
+from .geo import atlas_nodes, geo_context
 from .rule_catalog import rule_catalog
 from .rok_prospective import assess_rok_prospective
 from .reconstruction import build_reconstruction, validate_reconstruction, audit_reconstruction_sources, audit_reconstruction_independence
@@ -63,6 +64,8 @@ from .core import (
 )
 
 __all__ = [
+    "atlas_nodes",
+    "geo_context",
     "rule_catalog",
     "assess_rok_prospective",
     "metric_registry",
