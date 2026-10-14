@@ -1,3 +1,4 @@
+from .discovery_store import append_discoveries, classify_discovery
 from .multimodule import research_pipeline
 from .discovery import review_discoveries
 from .geo import atlas_nodes, geo_context
@@ -66,6 +67,8 @@ from .core import (
 )
 
 __all__ = [
+    "append_discoveries",
+    "classify_discovery",
     "research_pipeline",
     "review_discoveries",
     "atlas_nodes",
