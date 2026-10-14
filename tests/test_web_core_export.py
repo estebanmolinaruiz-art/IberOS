@@ -1,4 +1,11 @@
-from scripts.export_web_core import build
+import importlib.util
+from pathlib import Path
+
+script = Path(__file__).resolve().parents[1] / "scripts" / "export_web_core.py"
+spec = importlib.util.spec_from_file_location("iberos_web_core_export", script)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+build = module.build
 
 def test_web_core_export_has_every_curated_object():
     report=build()
