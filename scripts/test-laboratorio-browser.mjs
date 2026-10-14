@@ -117,6 +117,9 @@ try{
    check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
    check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
    check(await page.locator('#sign-correspondence').count()===1,'Panel de signos en ficha '+objectId);
+   await page.locator('#graphic-viewer-slot .ib-graphic-viewer').waitFor({timeout:15000});
+   check(await page.locator('#graphic-viewer-slot .ib-graphic-viewer').count()===1,'Visor gráfico documental '+objectId);
+   if(objectId==='IBR-PLM-0002'||objectId==='IBR-PLM-0003')check(await page.locator('#graphic-viewer-slot .ib-graphic-source').count()===0,'Sin reproducción gráfica no autorizada '+objectId);
    check(await page.locator('.ib-piece-original .doc-cover').count()===0,'Sin portada decorativa en panel de pieza original '+objectId);
    check(await page.locator('.ib-piece-original .ib-authentic-object, .ib-piece-original .ib-object-awaiting').count()===1,'Imagen acreditada o ausencia explícita '+objectId);
    if(objectId==='IBR-PLM-0002'){
