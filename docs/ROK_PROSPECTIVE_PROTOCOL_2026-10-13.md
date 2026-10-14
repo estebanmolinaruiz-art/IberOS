@@ -22,3 +22,8 @@ La salida `READY_FOR_INDEPENDENT_REVIEW` significa exclusivamente que los campos
 3. Exigir a dos revisores independientes anclajes no lingüísticos de papel antes de contrastar H1/H2/H3.
 4. Vincular la identidad física con LEAK_GROUP y Dependency_Group mediante el auditor de reconstrucciones.
 5. Mantener ROK exacto OPEN hasta cumplir el gate oficial y una revisión humana de nueva evidencia.
+
+## Refuerzo de controles de independencia — 2026-10-14
+El módulo prospectivo añade comprobaciones de grupos `LEAK_GROUP` y `Dependency_Group` específicos compartidos por testigos que alegan distintas identidades físicas. La detección produce BLOCKED, no REVIEW. Las etiquetas genéricas `INDEPENDENT_OR_UNRESOLVED` y `DEPENDENT_COPY` no se usan como identidades compartidas. Tests adversariales incorporados.
+
+**Limitación:** se trata de detección directa entre parejas con un mismo identificador; no reemplaza una auditoría completa de componentes conexas ni una comprobación arqueológica de la procedencia. La entrada aún es declarativa. Los nuevos commits necesitan confirmación CI específica. El gate oficial ROK continúa OPEN y no hay modificación de porcentajes.
