@@ -35,4 +35,7 @@ const graphics=json('data/epigraphic-visual-registry-v1.json');
 assert(graphics.records.some(x=>x.object_id==='IBR-PLM-0002'),'Registro visual de Tivissa presente');
 assert(graphics.records.every(x=>ids.has(x.object_id)&&(!x.rights_verified||x.exact_object_match_verified)),'Evidencia gráfica refiere a piezas del Core');
 assert(ficha.includes('epigraphic-visual-registry-v1.json'),'Fichas consumen registro de evidencias gráficas');
+assert(graphics.policy.watermark_and_attribution?.publish_requires.length===3,'Política de autoría y marcas de agua registrada');
+assert(graphics.records.every(x=>x.image_reuse_permission_verified===false&&x.image_author_credit_verified===false&&x.watermark_preserved_verified===false),'Material sin permisos no se habilita para reproducción');
+assert(ficha.includes('item.watermark_preserved_verified===true')&&ficha.includes('item.image_reuse_permission_verified===true'),'Visor impide reproducir imágenes sin permiso y conservación de marca de agua');
 console.log('Integración IberOS: Core científico → motor web → fichas → GEO → laboratorio comprobada a nivel de datos y rutas.');
