@@ -1,3 +1,5 @@
+from .multimodule import research_pipeline
+from .discovery import review_discoveries
 from .geo import atlas_nodes, geo_context
 from .rule_catalog import rule_catalog
 from .rok_prospective import assess_rok_prospective
@@ -64,6 +66,8 @@ from .core import (
 )
 
 __all__ = [
+    "research_pipeline",
+    "review_discoveries",
     "atlas_nodes",
     "geo_context",
     "rule_catalog",
