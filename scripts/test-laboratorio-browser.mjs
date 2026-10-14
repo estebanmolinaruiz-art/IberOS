@@ -57,6 +57,9 @@ try{
    check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
    check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   await page.locator('#core-rule-evidence').waitFor({timeout:15000});
+   await page.waitForFunction(()=>{const x=document.querySelector('#core-rule-evidence');return x&&!x.textContent.includes('Consultando catálogo')},{timeout:15000});
+   check((await page.locator('#core-rule-evidence').innerText()).length>35,'Ficha enlaza reglas y estado científico '+id);
    const nav=page.locator('.ib-expert-nav');
    check(await nav.isVisible(),'Acceso experto visible '+id);
    check((await nav.locator('a').count())===6,'Seis accesos expertos '+id);
