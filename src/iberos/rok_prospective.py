@@ -102,7 +102,7 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
         components.setdefault(root(i), []).append(i)
     duplicates = [members for members in components.values() if len(members) > 1]
     for members in duplicates:
-        errors.append("transitive documentary dependency: observations " +
+        errors.append("cross-edition dependency (transitive documentary dependency): observations " +
                       ", ".join(str(i) for i in members))
     has_target = any(x["control_type"] == "TARGET" for x in summaries)
     has_control = any(x["control_type"] != "TARGET" for x in summaries)
