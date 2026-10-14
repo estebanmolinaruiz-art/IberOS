@@ -22,3 +22,28 @@ def test_rok_literal_stays_open():
 def test_unsupported_rule_fails():
     with pytest.raises(ValueError):
         execute_rules({"source_reference":"Example","rules":["UNREGISTERED"]})
+
+def test_paleo_rhotic_blocks_scientific_neutralization():
+    data={"source_reference":"Editorial sign record","rules":["PALEO-RHOTIC-LOCK-01"],
+          "rhotic_purpose":"INDEPENDENCE","rhotic_neutralized":True}
+    report=execute_rules(data)["results"][0]
+    assert report["status"]=="REJECTED_BY_GUARD"
+    assert report["rule_result"]["allowed"] is False
+
+def test_paleo_rhotic_allows_search_only():
+    data={"source_reference":"Editorial sign record","rules":["PALEO-RHOTIC-LOCK-01"],
+          "rhotic_purpose":"SEARCH","rhotic_neutralized":True}
+    assert execute_rules(data)["results"][0]["rule_result"]["allowed"] is True
+
+def test_ka_known_candidate_remains_open():
+    data={"source_reference":"Published candidate matrix","rules":["KA-DIRECTION-PROSPECTIVE-01"],
+          "ka_candidate_reference":"BASTIDA-I"}
+    report=execute_rules(data)
+    assert report["results"][0]["status"]=="OPEN_PENDING_INDEPENDENT_DIRECTION"
+    assert report["results"][0]["rule_result"]["state"]=="OPEN"
+    assert report["automatic_core_promotion"] is False
+
+def test_ka_unregistered_candidate_is_blocked():
+    data={"source_reference":"Unknown example","rules":["KA-DIRECTION-PROSPECTIVE-01"],
+          "ka_candidate_reference":"INVALID"}
+    assert execute_rules(data)["results"][0]["status"]=="BLOCKED"
