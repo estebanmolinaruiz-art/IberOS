@@ -26,3 +26,10 @@ jobs:
         run: |
           python3 -m http.server 8765 --directory site >/tmp/iberos-http.log 2>&1 &
           node scripts/test-laboratorio-browser.mjs
+      - name: Guardar captura si falla la prueba de navegador
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-captura-error
+          path: /tmp/iberos-browser-fallo.png
+          if-no-files-found: ignore
