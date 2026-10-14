@@ -60,6 +60,9 @@ try{
    await page.locator('#core-rule-evidence').waitFor({timeout:15000});
    await page.waitForFunction(()=>{const x=document.querySelector('#core-rule-evidence');return x&&!x.textContent.includes('Consultando catálogo')},{timeout:15000});
    check((await page.locator('#core-rule-evidence').innerText()).length>35,'Ficha enlaza reglas y estado científico '+id);
+   check((await page.locator('#core-rule-evidence').innerText()).includes('Cadena de evidencia y límites'),'Cadena documental cargada '+id);
+   await page.locator('#core-rule-evidence details summary').click();
+   check(await page.locator('#core-rule-evidence details p').count()>=2,'Fuentes y obstáculos visibles '+id);
    const nav=page.locator('.ib-expert-nav');
    check(await nav.isVisible(),'Acceso experto visible '+id);
    check((await nav.locator('a').count())===6,'Seis accesos expertos '+id);
