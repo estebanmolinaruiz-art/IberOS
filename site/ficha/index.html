@@ -90,10 +90,19 @@ function updateInterpretation(){const main=document.getElementById("interpretati
  }
  body.innerHTML='<nav class="ib-expert-nav" aria-label="Acceso experto a la ficha"><strong>Acceso experto</strong><a href="#interpretationMain">Interpretación</a><a href="#documentary-slot">Evidencia y fuentes</a><a href="#variant-review-slot">Variantes</a><a href="../webengine/?q='+encodeURIComponent(r.OBJECT_ID)+'">Core</a><button type="button" id="expertExport" aria-label="Exportar datos documentales de esta ficha">Exportar datos JSON</button></nav><section class="artifact-stage">'+summaryHtml()+'</section>'+reconstructionHtml()+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>'+'<div id="variant-review-slot"></div>'+relatedHtml();
  loadVariantReview();
- document.getElementById("expertExport")?.addEventListener("click",()=>{
-   const bundle={schema:"IberOS-ficha-export/1.0",object_id:r.OBJECT_ID,object:r,documentary_enrichment:en||null,notice:"Exportación documental. Las hipótesis no equivalen a traducciones validadas."};
-   const blob=new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"});
-   const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="IberOS-"+r.OBJECT_ID+"-ficha.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);
+ document.getElementById("expertExport")?.addEventListener("click",async()=>{
+   const button=document.getElementById("expertExport");button.disabled=true;
+   try{
+     let enrichment=en||null;
+     if(!enrichment){const shard=shardFor(r.OBJECT_ID);if(shard){const resp=await fetch("../data/ficha-enrichment-"+shard+".json");if(!resp.ok)throw Error("Documento HTTP "+resp.status);enrichment=(await resp.json()).find(x=>x.OBJECT_ID===r.OBJECT_ID)||null}}
+     const reviewResponse=await fetch("../data/scientific-review-queue-v1.json");
+     if(!reviewResponse.ok)throw Error("Variantes HTTP "+reviewResponse.status);
+     const review=(await reviewResponse.json()).records?.find(x=>x.object_id===r.OBJECT_ID)||null;
+     const bundle={schema:"IberOS-ficha-export/1.0",object_id:r.OBJECT_ID,object:r,documentary_enrichment:enrichment,scientific_review:review,notice:"Exportación documental. Las hipótesis no equivalen a traducciones validadas."};
+     const blob=new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"});
+     const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="IberOS-"+r.OBJECT_ID+"-ficha.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);
+   }catch(error){console.warn("Error de exportación",error);alert("No se puede exportar la documentación completa en este momento. Reintenta cuando se carguen los datos.")}
+   finally{button.disabled=false}
  });
  const slot=document.getElementById("documentary-slot");
  const shard=shardFor(r.OBJECT_ID);
