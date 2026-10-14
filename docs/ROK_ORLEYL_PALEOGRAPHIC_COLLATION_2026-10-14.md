@@ -66,3 +66,15 @@ Fuentes: https://cathalaunia.org/Iberika/I01936 y https://cathalaunia.org/Iberik
 **Próximo cotejo necesario:** conseguir escaneo de *MLH* III pp. 386 y 392 y las láminas de *Materiales...* pp. 64 y 98; alinear por cara y línea con una fotografía o facsímil y consignar variantes, signo incierto y separación de palabras. Prohibido transformar codificación propia del repositorio de glifos en valores fonéticos sin leyenda validada.
 
 **ROK-RECIPIENT-02 sigue OPEN; no se registra nuevo HOLD ni cambio de métricas.**
+
+## Hallazgo: PDF íntegro de la edición original (14/10/2026)
+Se ha localizado el **PDF institucional de la publicación arqueológica de 1981**, *Materiales de la necrópolis ibérica de Orleyl (Vall d'Uxó, Castellón)*, Serie de Trabajos Varios 70, del Museu de Prehistòria de València.
+
+- Catálogo con edición digital textual: https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va
+- PDF institucional: https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf
+- Los índices del texto digital reflejan capítulos específicos de los plomos y un bloque de **láminas a partir de la página digital ~137**, incluidas fotografías de las láminas XVI y macrofotografías de signos en XVIII/XIX, así como otras láminas hasta XXII. **No está confirmada todavía** la correspondencia precisa de cada lámina con F.9.5/F.9.7 y sus caras.
+- La edición incluye un apartado de lectura del plomo en las páginas impresas cercanas a **64 y 98**; las referencias exactas deben cotejarse en el PDF maquetado. Los marcadores `[page-n-...]` del texto digital no equivalen necesariamente a números impresos.
+
+**Resultado de acceso:** el buscador ha confirmado la URL y texto de la publicación, pero los intentos de abrir el PDF en el visor web y descargarlo desde el entorno de ejecución terminaron sin acceso (timeout/DNS). **No se ha inspeccionado ni fotografiado ninguna página original**, y no hay nueva lectura paleográfica validada. Evitar describir el hallazgo como cotejo óptico exitoso.
+
+**Próxima acción verificable:** descargar el PDF en un entorno con acceso, cotejar cara A/B y página impresa/lámina, anotar variantes de róticas y separadores, documentar fotografía y calco, comparar las transcripciones editoriales. El protocolo ROK y las métricas siguen congelados.
