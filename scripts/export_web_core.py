@@ -6,8 +6,10 @@ from pathlib import Path
 from iberos.core import load_registry, AUTHORITY
 from iberos.object_rule_audit import audit_object_rules
 from iberos.rule_catalog import rule_catalog
+from iberos.reviewed_observations import evaluate_reviewed_observations
 
-def build():
+def build(observations=None):
+    evaluations = evaluate_reviewed_observations(observations if observations is not None else [])
     objects = {}
     for item in load_registry():
         oid = item["OBJECT_ID"]
@@ -17,12 +19,14 @@ def build():
             "families_tagged": report["families_tagged"],
             "modules": report["modules"],
             "rules": report["rules"],
+            "evaluated_rules": evaluations.get(oid, []),
             "scientific_state": "UNVERIFIED",
             "automatic_core_promotion": False,
         }
     return {"schema":"IberOS-Web-Core-Audit/1.0",
             "authority":dict(AUTHORITY),
             "source":"src/iberos/object_rule_audit.py",
+            "evaluation_policy":"REVIEWED_SOURCED_OBSERVATIONS_ONLY",
             "object_count":len(objects),"objects":objects,
             "notice":"Reglas candidatas y controles; no hay traducciones verificadas automáticamente."}
 
