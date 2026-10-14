@@ -36,3 +36,6 @@ No atribuir automáticamente sentido léxico a un patrón cuya segmentación est
 Derivado de `docs/ROK_WITNESS_INDEPENDENCE_AUDIT_2026-10-14.md`, `docs/ROK_RECIPIENT_MATRIX_2026-10-08.md`, `docs/ROK_EXTERNAL_EVIDENCE_AUDIT_2026-10-13.md` y `data/curated/iberos_objects_registry_v2.0.csv`. Solo se presentan lecturas literales cuando estaban registradas en esas fuentes internas. **No es una nueva edición paleográfica**. No confundir la falsificación Marsal C07-003 con Marsal H.0.1.
 
 **Cierre:** 0 nuevas validaciones semánticas. `ROK-RECIPIENT-02=OPEN`, `automatic_core_promotion=false`; métricas y autoridad congeladas.
+
+## Anexo de avance bibliográfico (14 de octubre de 2026)
+Se ha localizado una tabla publicada de Ferrer i Jané (2014) sobre `kutu` que consigna, de acuerdo con el extracto disponible, Orleyl F.9.5 `kutur · biteŕoketetine` y F.9.7 `kutu+ike · basbiteŕoketine`. **Su asociación exacta con fila/cara y caracteres debe cotejarse sobre el PDF/facsímil**, pues la extracción textual de tablas puede mezclar columnas. Los campos de transcripción diplomática, posición epigráfica y papel extralingüístico siguen pendientes; las antiguas etiquetas `transcripción pendiente` de esta matriz se refieren a ese cotejo primario, no a la inexistencia de una transcripción bibliográfica. Véase `docs/ROK_ORLEYL_PALEOGRAPHIC_COLLATION_2026-10-14.md`.
