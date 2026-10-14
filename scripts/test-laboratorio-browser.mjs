@@ -138,6 +138,7 @@ try{
  await labLink.waitFor({timeout:15000});
  await labLink.click();
  check(new URL(page.url()).pathname.endsWith('/laboratorio/')&&new URL(page.url()).searchParams.get('id')==='IBR-PLM-0002','Core abre Laboratorio conservando la pieza');
+ await page.waitForFunction(()=>document.querySelector('#object')?.value==='IBR-PLM-0002',null,{timeout:15000});
  check(await page.locator('#object').inputValue()==='IBR-PLM-0002','Laboratorio conserva la pieza de origen');
  await page.locator('#name').fill('Recorrido completo IberOS');
  await page.locator('#question').fill('¿Qué evidencia sostiene esta interpretación?');
