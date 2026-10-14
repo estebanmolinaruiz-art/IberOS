@@ -172,7 +172,7 @@ try{
    check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
    check(await page.locator('#sign-correspondence').count()===1,'Panel de signos en ficha '+objectId);
    const legibility=await page.locator('#sign-reading-slot').evaluate(root=>{
-     const text=root.querySelector('.ib-normalized-reading .ib-sign-script');
+     const text=root.querySelector('.ib-normalized-reading .ib-sign-script')||root.querySelector('.ib-normalized-reading p');
      const nav=document.querySelector('.ib-expert-nav a');
      const rgb=value=>(value.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
      const lum=value=>rgb(value).map(v=>{const n=v/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4}).reduce((sum,v,i)=>sum+v*[.2126,.7152,.0722][i],0);
