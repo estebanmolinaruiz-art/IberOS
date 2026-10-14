@@ -1,0 +1,52 @@
+{
+  "schema": "IberOS-Epigraphic-Visual-Registry/1.0",
+  "description": "Documentary graphic sources and individual sign mapping gate; no photographic or glyph assertion without reviewed identification and rights.",
+  "policy": {
+    "embed_only_when": [
+      "exact_object_match_verified",
+      "asset_url_or_local_asset_verified",
+      "reuse_rights_verified",
+      "source_attribution_recorded"
+    ],
+    "glyph_publish_only_when": [
+      "sign_form_traced_to_reviewed_source",
+      "source_figure_and_position_recorded",
+      "editorial_equivalence_reviewed"
+    ],
+    "status_values": [
+      "SOURCE_LOCATED",
+      "FIGURE_IDENTIFIED",
+      "RIGHTS_PENDING",
+      "READY_FOR_DISPLAY",
+      "SIGN_MAPPING_PENDING"
+    ]
+  },
+  "records": [
+    {
+      "object_id": "IBR-PLM-0002",
+      "epigraphic_reference": "T.07.03",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
+      "source_citation": "Asensio, Miró, Sanmartí y Velaza (2003), Palaeohispanica 3, 195–204",
+      "figure_locator": "figs. 3–4, p. 200",
+      "status": "RIGHTS_PENDING",
+      "image_url": null,
+      "rights_verified": false,
+      "exact_object_match_verified": true,
+      "glyphs": [],
+      "sign_mapping_status": "SIGN_MAPPING_PENDING"
+    },
+    {
+      "object_id": "IBR-PLM-0003",
+      "epigraphic_reference": "B.7.38",
+      "source_url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324",
+      "source_citation": "Solier y Barbouteau (1988), Revue archéologique de Narbonnaise 21, 61–94",
+      "figure_locator": null,
+      "status": "SOURCE_LOCATED",
+      "image_url": null,
+      "rights_verified": false,
+      "exact_object_match_verified": false,
+      "glyphs": [],
+      "sign_mapping_status": "SIGN_MAPPING_PENDING"
+    }
+  ]
+}
