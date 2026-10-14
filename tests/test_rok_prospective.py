@@ -100,3 +100,24 @@ def test_separate_documentary_witnesses_remain_separate():
     assert result["status"] == "READY_FOR_INDEPENDENT_REVIEW"
     assert result["documentary_unit_count"] == 3
     assert result["official_rok_recipient_gate"] == "OPEN"
+
+
+def test_same_tomb_does_not_merge_distinct_physical_witnesses():
+    a = sample("Orleyl F.9.5", "orleyl-95", "TARGET")
+    b = sample("Orleyl F.9.7", "orleyl-97", "NON_ROK")
+    a["archaeological_context"] = b["archaeological_context"] = "Orleyl tomb II"
+    result = assess_rok_prospective([a, b])
+    assert result["documentary_unit_count"] == 2
+    assert result["context_independence_review_required"] is True
+    assert result["shared_archaeological_contexts"] == {"Orleyl tomb II": [0, 1]}
+    assert result["automatic_core_promotion"] is False
+
+
+def test_text_copy_blocks_even_when_physical_objects_differ():
+    a = sample("Orleyl F.9.7", "orleyl-97", "TARGET")
+    b = sample("Marsal copy", "marsal-copy", "NEGATIVE")
+    a["TEXT_DEPENDENCY_GROUP"] = b["TEXT_DEPENDENCY_GROUP"] = "copied-sequence"
+    result = assess_rok_prospective([a, b])
+    assert result["status"] == "BLOCKED"
+    assert result["documentary_unit_count"] == 1
+    assert any("cross-edition dependency" in e for e in result["errors"])
