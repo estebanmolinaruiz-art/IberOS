@@ -87,6 +87,14 @@ try{
  const [journeyFile]=await Promise.all([page.waitForEvent('download'),page.locator('#json').click()]);
  const journey=JSON.parse((await (await import('node:fs/promises')).readFile(await journeyFile.path())).toString('utf8'));
  check(journey.object==='IBR-PLM-0002'&&journey.name==='Recorrido completo IberOS','Proyecto exportado conserva la pieza y el nombre');
+ await page.locator('#name').fill('Proyecto temporal sin guardar');
+ page.once('dialog',dialog=>{void dialog.accept().catch(()=>{});});
+ await page.locator('#importProject').setInputFiles({name:'recorrido-iberos.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(journey))});
+ await page.waitForFunction(()=>document.querySelector('#name')?.value==='Recorrido completo IberOS');
+ check(await page.locator('#name').inputValue()===journey.name,'La importación recupera el nombre exportado');
+ check(await page.locator('#object').inputValue()===journey.object,'La importación conserva la pieza');
+ check(await page.locator('#question').inputValue()===journey.question,'La importación recupera la pregunta científica');
+
  await page.goto(base+'/atlas/?q=Pech-Maho');
  await page.locator('#mapStatus').waitFor({timeout:15000});
  check(await page.locator('#mapStatus').isVisible(),'Atlas informa de procedencia sin nodo cartográfico');
