@@ -15,12 +15,24 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m pip install -e .
+      - name: Restore previous inbox from GitHub Actions cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .discovery-state/openalex-candidates.jsonl
+          key: iberos-discoveries-${{ github.run_id }}
+          restore-keys: |
+            iberos-discoveries-
       - name: Ingest public OpenAlex metadata into isolated artifact
-        run: python scripts/sync_discoveries.py --out /tmp/iberos-openalex-candidates.jsonl --limit 20
+        run: python scripts/sync_discoveries.py --out .discovery-state/openalex-candidates.jsonl --limit 20
+      - name: Cache accumulated unverified inbox
+        uses: actions/cache/save@v4
+        with:
+          path: .discovery-state/openalex-candidates.jsonl
+          key: iberos-discoveries-${{ github.run_id }}
       - name: Upload unverified inbox for human review
         uses: actions/upload-artifact@v4
         with:
           name: openalex-unverified-candidates
-          path: /tmp/iberos-openalex-candidates.jsonl
+          path: .discovery-state/openalex-candidates.jsonl
           if-no-files-found: error
           retention-days: 30
