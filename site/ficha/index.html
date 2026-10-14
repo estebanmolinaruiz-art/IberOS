@@ -349,7 +349,6 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
       }
       evaluationHost.append(list);
     }
-    slot.append(evaluationHost);
     const enrichedRules=Promise.all([
       fetch("../data/core_rule_catalog_v1.json").then(resp=>{if(!resp.ok)throw Error("Catalog HTTP "+resp.status);return resp.json()}),
       fetch("../data/scientific-review-queue-v1.json").then(resp=>{if(!resp.ok)throw Error("Review HTTP "+resp.status);return resp.json()})
@@ -402,6 +401,7 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
       (candidates.length?'<ul>'+candidates.map(v=>'<li>'+esc(v.id)+' · Sin ejecución epigráfica validada</li>').join("")+'</ul>':'<p>No hay reglas de familia identificadas por metadatos.</p>')+
       '<p>Controles generales disponibles: '+controls.length+'. La coincidencia de una regla no demuestra su aplicación.</p>'+
       '<p class="notice"><strong>Interpretación científica:</strong> ninguna traducción nueva validada automáticamente.</p><div id="core-rule-evidence" aria-live="polite">Consultando catálogo científico…</div>';
+    slot.prepend(evaluationHost);
   })
   .catch(error=>{console.warn("No se pudo cargar CORE",error);const slot=document.getElementById("core-audit-slot");if(slot)slot.innerHTML='<h2>Análisis CORE</h2><p>Informe CORE temporalmente no disponible; consulta la documentación de la ficha.</p>'});
  document.getElementById("expertExport")?.addEventListener("click",async()=>{
