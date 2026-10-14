@@ -46,7 +46,10 @@
       "exact_object_match_verified": true,
       "glyphs": [],
       "sign_mapping_status": "SIGN_MAPPING_PENDING",
-      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols."
+      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols.",
+      "figure_pdf_page": 6,
+      "source_figure_url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf#page=6",
+      "figure_access_note": "El enlace abre la página del PDF que contiene las figuras 3 y 4 de la edición (p. 200 impresa). No implica licencia para incrustar las figuras."
     },
     {
       "object_id": "IBR-PLM-0003",
