@@ -1,3 +1,4 @@
+from .rule_execution import execute_rules
 from .object_rule_audit import audit_object_rules
 from .prediction_compare import compare_prediction
 from .discovery_link import proposed_object_links
@@ -70,6 +71,7 @@ from .core import (
 )
 
 __all__ = [
+    "execute_rules",
     "audit_object_rules",
     "compare_prediction",
     "proposed_object_links",
