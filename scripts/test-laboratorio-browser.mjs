@@ -107,7 +107,7 @@ try{
  // Todas las fichas deben utilizar la plantilla científica canónica.
  const csvResponse=await page.request.get(base+'/data/objects.csv');
  check(csvResponse.ok(),'Catálogo accesible para verificar todas las fichas');
- const allIds=(await csvResponse.text()).replace(/^\\uFEFF/,'').split(/\\r?\\n/).slice(1).map(line=>line.split(',')[0].trim()).filter(Boolean);
+ const allIds=(await csvResponse.text()).replace(/^\uFEFF/,'').split(/\r?\n/).slice(1).map(line=>line.split(',')[0].trim()).filter(Boolean);
  check(allIds.length===38,'Cobertura esperada de 38 objetos y controles');
  for(const objectId of allIds){
    await page.goto(base+'/ficha/?id='+encodeURIComponent(objectId));
