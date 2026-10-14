@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: node --test tests/test_write.mjs tests/test_talk.mjs
+      - run: node --test tests/test_write.mjs tests/test_talk.mjs tests/test_mobile_core_sync.mjs
