@@ -55,4 +55,8 @@ try{
  await page.locator('#results h2').waitFor({timeout:15000});
  check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
  console.log('Laboratorio y Core: pruebas de navegador satisfactorias');
+}catch(error){
+ console.error('FALLO DE PRUEBA EN '+page.url()+':',error);
+ try{await page.screenshot({path:'/tmp/iberos-browser-fallo.png',fullPage:true});console.error('Captura guardada en /tmp/iberos-browser-fallo.png')}catch(captureError){console.error('No se pudo guardar captura:',captureError.message)}
+ throw error;
 }finally{await browser.close()}
