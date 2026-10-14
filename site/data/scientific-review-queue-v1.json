@@ -87,9 +87,13 @@
         "url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
         "locator": "Artículo completo, pp. 195–204; identificar y cotejar las figuras de la pieza antes de incorporarlas",
         "object_identification": "Plomo del Castellet de Banyoles (Tivissa), testimonio atribuido a T.07.03; cotejo de correspondencia física pendiente",
-        "image_status": "SOURCE_PDF_LOCATED_FIGURE_MATCH_AND_REUSE_PERMISSION_PENDING",
+        "image_status": "FIGURES_3_4_IDENTIFIED_IN_SOURCE_REPRODUCTION_LICENSE_NOT_CLEARED",
         "source_link_verified": true,
-        "autopsy": false
+        "autopsy": false,
+        "figure_locator": "Figuras 3 y 4, p. 200 (página 6 del PDF, contando portada como página 1); la edición las identifica expresamente como imágenes de la inscripción",
+        "text_locator": "Lectura diplomática en p. 200 y continuación en p. 201; la lectura se presenta en tres líneas editoriales",
+        "figure_identification_verified": true,
+        "reuse_permission_verified": false
       }
     },
     {
@@ -183,7 +187,10 @@
         "physical_description": "Cinco fragmentos unidos; ancho 93 mm; alto conservado 65 mm; soporte plegado; varias líneas con trazos desgastados o superpuestos",
         "image_status": "GRAPHIC_SOURCE_PAGE_LOCATED_REUSE_PERMISSION_AND_FIGURE_MATCH_PENDING",
         "source_link_verified": true,
-        "autopsy": false
+        "autopsy": false,
+        "text_locator": "Solier y Barbouteau 1988, p. 62, sección I, Le plomb 6 de Pech Maho",
+        "figure_identification_verified": false,
+        "reuse_permission_verified": false
       }
     }
   ]
