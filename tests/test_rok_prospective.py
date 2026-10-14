@@ -77,3 +77,26 @@ def test_generic_dependency_labels_do_not_claim_shared_identity():
     result = assess_rok_prospective([a, b])
     assert result["status"] == "READY_FOR_INDEPENDENT_REVIEW"
     assert result["automatic_core_promotion"] is False
+
+
+def test_transitive_identity_bridge_blocks_all_three_witnesses():
+    a = sample("a", "P1", "TARGET")
+    b = sample("b", "P2", "NON_ROK")
+    c = sample("c", "P3", "NEGATIVE")
+    a["LEAK_GROUP"] = b["LEAK_GROUP"] = "L1"
+    b["Dependency_Group"] = c["Dependency_Group"] = "SPECIFIC-COPY"
+    result = assess_rok_prospective([a, b, c])
+    assert result["status"] == "BLOCKED"
+    assert result["documentary_unit_count"] == 1
+    assert result["documentary_components"] == [[0, 1, 2]]
+    assert any("transitive documentary dependency" in e for e in result["errors"])
+
+
+def test_separate_documentary_witnesses_remain_separate():
+    a = sample("a", "P1", "TARGET")
+    b = sample("b", "P2", "NON_ROK")
+    c = sample("c", "P3", "NEGATIVE")
+    result = assess_rok_prospective([a, b, c])
+    assert result["status"] == "READY_FOR_INDEPENDENT_REVIEW"
+    assert result["documentary_unit_count"] == 3
+    assert result["official_rok_recipient_gate"] == "OPEN"
