@@ -115,6 +115,8 @@ try{
    check(await page.locator('.ib-primary-grid').count()===1&&await page.locator('.ib-reconstruction').count()===1,'Plantilla canónica cargada '+objectId);
    await page.locator('#sign-reading-slot .ib-sign-reading').waitFor({timeout:15000});
    check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
+   check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
+   check((await page.locator('#sign-reading-slot').innerText()).includes('01 · LECTURA EDITORIAL'),'Lectura editorial visible '+objectId);
  }
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
