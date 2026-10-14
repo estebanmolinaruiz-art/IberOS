@@ -67,6 +67,23 @@ try{
      return nums.length>=3&&nums[0]<80&&nums[1]<95&&nums[2]<110;
    });
    check(normalizedInk,'Transliteración normalizada con tinta de alto contraste '+id);
+   const ratios=await page.evaluate(()=>{
+     const rgb=value=>(value.match(/[\\d.]+/g)||[]).slice(0,3).map(Number);
+     const lum=parts=>parts.slice(0,3).map(v=>{v=v/255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((acc,v,i)=>acc+v*[.2126,.7152,.0722][i],0);
+     const contrast=(fg,bg)=>{const a=lum(rgb(fg)),b=lum(rgb(bg));return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
+     return [
+       ['lectura', '.ib-normalized-reading .ib-sign-script','.ib-normalized-reading'],
+       ['navegación', '.ib-expert-nav a','.ib-expert-nav a'],
+       ['cabecera matriz', '.ib-hypothesis-matrix th','.ib-hypothesis-matrix th'],
+       ['celda matriz', '.ib-hypothesis-matrix td','.ib-hypothesis-matrix td']
+     ].map(([label,textSel,bgSel])=>{
+       const el=document.querySelector(textSel),bg=document.querySelector(bgSel);
+       if(!el||!bg)return {label,ratio:0};
+       return {label,ratio:contrast(getComputedStyle(el).color,getComputedStyle(bg).backgroundColor)};
+     });
+   });
+   check(ratios.every(x=>x.ratio>=4.5),'Contraste mínimo WCAG AA en lectura, navegación y matriz '+id+': '+JSON.stringify(ratios));
+
 
    check(await page.locator('.ib-expert-nav a').first().isVisible(),'Navegación experta visible '+id);
 
