@@ -1,0 +1,68 @@
+[
+  {
+    "id": "KELIN",
+    "name": "Los Villares / Kelin",
+    "query": "Los Villares",
+    "lat": 39.55354,
+    "lon": -1.28322,
+    "precision": "SITE_REFERENCE",
+    "zone": "LEV",
+    "description": "Caudete de las Fuentes · sitio documentado",
+    "zone_label": "Levante interior"
+  },
+  {
+    "id": "SAGUNTO",
+    "name": "Arse / Saguntum",
+    "query": "Sagunto",
+    "lat": 39.6799,
+    "lon": -0.2786,
+    "precision": "TERRITORIAL_REFERENCE",
+    "zone": "LEV",
+    "description": "Sagunt · referencia territorial",
+    "zone_label": "Levante central"
+  },
+  {
+    "id": "TIVISSA",
+    "name": "Castellet de Banyoles",
+    "query": "Tivissa",
+    "lat": 41.0624,
+    "lon": 0.6655,
+    "precision": "SITE_REFERENCE",
+    "zone": "NE",
+    "description": "Tivissa · sitio documentado",
+    "zone_label": "Nordeste / Ebro"
+  },
+  {
+    "id": "CAMINREAL",
+    "name": "La Caridad",
+    "query": "Caminreal",
+    "lat": 40.8435,
+    "lon": -1.3385,
+    "precision": "SITE_REFERENCE",
+    "zone": "CONTACT",
+    "description": "Caminreal · sitio documentado",
+    "zone_label": "Interior / contacto"
+  },
+  {
+    "id": "PICO_AJOS",
+    "name": "Pico de los Ajos",
+    "query": "Pico de los Ajos",
+    "lat": 39.38,
+    "lon": -0.81,
+    "precision": "APPROXIMATE_LOCALITY",
+    "zone": "LEV",
+    "description": "Yátova · localidad aproximada",
+    "zone_label": "Levante interior"
+  },
+  {
+    "id": "LLIRIA",
+    "name": "Tossal de Sant Miquel / Edeta",
+    "query": "Llíria",
+    "lat": 39.62,
+    "lon": -0.6,
+    "precision": "APPROXIMATE_LOCALITY",
+    "zone": "LEV",
+    "description": "Llíria · localidad aproximada",
+    "zone_label": "Levante central"
+  }
+]
