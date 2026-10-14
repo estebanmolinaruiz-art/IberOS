@@ -23,3 +23,13 @@ Las bandas incluyen márgenes y en ocasiones trazos de renglones vecinos para pr
 Recortar y localizar cada token con un especialista paleográfico, marcando carácter, lectura editorial, dibujo, fotografía, alternativa y grado de certeza. Revisar expresamente transparencia de cara A en VII-B y manchas de la fotografía. No contar recortes como testimonios adicionales.
 
 **ROK-RECIPIENT-02: OPEN.** Sin promoción automática, sin cambios de autoridad ni de métricas.
+
+## Control de calidad de regiones — 2026-10-14
+
+Al volver a inspeccionar el archivo `orleyl_rok_band_comparison_2026-10-14.png` junto con el PDF original, se observa que **la ventana previamente etiquetada como línea 3 de Orleyl V incluye dos hileras de trazos**. En VII-B la ventana de la figura 25 también incluye material visible de un renglón vecino y hay interferencias descritas por Fletcher entre ambas caras.
+
+**Corrección obligatoria:** las coordenadas de la tabla anterior son *regiones candidatas*, no delimitaciones exclusivas o validadas del renglón numerado. Cambiar en la interpretación operativa `LINE_REGION_LOCATED` por `CANDIDATE_REGION_MULTIROW` (V) y `CANDIDATE_REGION_WITH_NEIGHBOR` (VII-B). No asignar posición de glifos, `VISIBLE`, ni una prueba del `TE` adicional sobre estos recortes.
+
+Se generó localmente la imagen de control `orleyl_control_reglones_2026-10-14.png` con advertencias visuales, sin nuevas lecturas. La imagen no se ha subido a este repositorio.
+
+**Siguiente comprobación:** localizar fronteras de cada renglón sobre la figura completa, distinguir línea de signo visible por transparencia y cotejar sector en lámina fotográfica. Se conserva la transcripción de Fletcher como `EDITORIAL_ONLY`; `ROK-RECIPIENT-02` sigue OPEN.
