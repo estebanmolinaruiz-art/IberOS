@@ -61,7 +61,15 @@
       "figure_access_note": "El enlace abre la página del PDF que contiene las figuras 3 y 4 de la edición (p. 200 impresa). No implica licencia para incrustar las figuras.",
       "watermark_preserved_verified": false,
       "image_author_credit_verified": false,
-      "image_reuse_permission_verified": false
+      "image_reuse_permission_verified": false,
+      "rights_review": {
+        "status": "PERMISSION_NOT_DOCUMENTED",
+        "author_watermark_policy": "PRESERVE_IF_PRESENT",
+        "image_copy_allowed": false,
+        "reason": "Fuente científica localizada, pero no hay autorización o licencia específica de la figura verificada para publicación en IberOS.",
+        "next_action": "Solicitar permiso al titular de derechos de fotografía/figura, conservar créditos y cualquier marca de agua original.",
+        "publication_record_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/339"
+      }
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -78,7 +86,15 @@
       "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols.",
       "watermark_preserved_verified": false,
       "image_author_credit_verified": false,
-      "image_reuse_permission_verified": false
+      "image_reuse_permission_verified": false,
+      "rights_review": {
+        "status": "PERMISSION_NOT_DOCUMENTED",
+        "author_watermark_policy": "PRESERVE_IF_PRESENT",
+        "image_copy_allowed": false,
+        "reason": "Fuente científica localizada, pero no hay autorización o licencia específica de la figura verificada para publicación en IberOS.",
+        "next_action": "Solicitar permiso al titular de derechos de fotografía/figura, conservar créditos y cualquier marca de agua original.",
+        "publication_record_url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324"
+      }
     }
   ]
 }
