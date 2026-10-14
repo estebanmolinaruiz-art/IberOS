@@ -165,6 +165,16 @@
           "Check ban:kutur:biteŕokan graphemic boundaries in original edition",
           "Do not treat same inscribed support in different publications as independent evidence"
         ]
+      },
+      "original_edition": {
+        "citation": "Yves Solier y Henri Barbouteau (1988), Découverte de nouveaux plombs, inscrits en ibère, dans la région de Narbonne, Revue archéologique de Narbonnaise 21, pp. 61–94",
+        "url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324",
+        "locator": "Sección I, Le plomb 6 de Pech Maho, pp. 62 y siguientes",
+        "object_identification": "Pech Maho, plomb 6 (correspondencia editorial con B.7.38 requiere cotejo de inventario)",
+        "physical_description": "Cinco fragmentos unidos; ancho 93 mm; alto conservado 65 mm; soporte plegado; varias líneas con trazos desgastados o superpuestos",
+        "image_status": "GRAPHIC_SOURCE_PAGE_LOCATED_REUSE_PERMISSION_AND_FIGURE_MATCH_PENDING",
+        "source_link_verified": true,
+        "autopsy": false
       }
     }
   ]
