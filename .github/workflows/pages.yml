@@ -38,7 +38,7 @@ jobs:
         run: |
           python - <<'PY'
           import json, os, pathlib
-          pathlib.Path("site/deployment-version.json").write_text(json.dumps({"schema":"IberOS-deployment-v1","commit":os.environ["EXPECTED_SHA"]})+"\\n",encoding="utf-8")
+          pathlib.Path("site/deployment-version.json").write_text(json.dumps({"schema":"IberOS-deployment-v1","commit":os.environ["EXPECTED_SHA"]})+"\n",encoding="utf-8")
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
