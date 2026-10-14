@@ -120,7 +120,30 @@
         ],
         "lexical_caution": "La edición sugiere estructura epistolar/comercial y posibles antropónimos, pero declara que el contenido concreto sigue sin poder determinarse.",
         "sign_by_sign_verified": false,
-        "source_edition_paleography_consulted": true
+        "source_edition_paleography_consulted": true,
+        "individual_sign_inventory_status": "NOT_VERIFIED_FROM_FIGURE",
+        "editorial_palaeographic_sign_classes": [
+          "a1/2",
+          "be2",
+          "e4",
+          "i1",
+          "ka2",
+          "ki1",
+          "ku2",
+          "l2",
+          "n1",
+          "o1/3",
+          "r1",
+          "ŕ7",
+          "s1",
+          "ś1",
+          "ta1",
+          "te8",
+          "ti1",
+          "u1/3"
+        ],
+        "sign_class_source_locator": "Asensio et al. 2003, p. 201; transcribe classes only, glyph correspondence and diacritics need direct figure verification",
+        "visual_verification_limit": "PDF text and figure captions located; figure image itself not successfully retrieved for sign-by-sign audit"
       }
     },
     {
@@ -218,6 +241,20 @@
         "text_locator": "Solier y Barbouteau 1988, p. 62, sección I, Le plomb 6 de Pech Maho",
         "figure_identification_verified": false,
         "reuse_permission_verified": false
+      },
+      "graphic_collation": {
+        "status": "TEXTUAL_EDITION_VERIFIED_FIGURE_NOT_ISOLATED",
+        "source": "Solier y Barbouteau 1988, pp. 61–94",
+        "source_url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324",
+        "observations": [
+          "El plomo 6 está formado por cinco fragmentos unidos; dimensiones conservadas: 93 × 65 mm.",
+          "La edición describe dos textos superpuestos y parcialmente borrados (palimpsesto).",
+          "Los autores señalan que no existe puntuación original que delimite palabras.",
+          "Desgaste, incisiones débiles y sobretrazos dificultan la lectura y la separación entre textos."
+        ],
+        "sign_by_sign_verified": false,
+        "figure_locator_verified": false,
+        "warning": "No representar los dos puntos de la transliteración editorial como interpunciones originales de esta pieza; las divisiones son editoriales."
       }
     }
   ]
