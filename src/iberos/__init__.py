@@ -1,3 +1,4 @@
+from .object_rule_audit import audit_object_rules
 from .prediction_compare import compare_prediction
 from .discovery_link import proposed_object_links
 from .discovery_store import append_discoveries, classify_discovery
@@ -69,6 +70,7 @@ from .core import (
 )
 
 __all__ = [
+    "audit_object_rules",
     "compare_prediction",
     "proposed_object_links",
     "append_discoveries",
