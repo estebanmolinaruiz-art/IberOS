@@ -21,6 +21,8 @@ def execute_rules(observation: dict) -> dict:
             if type(quant) is not bool or type(verbal) is not bool:
                 results.append({"rule":name,"status":"BLOCKED","missing":["independently_quantitative","verbal_complex"],
                                 "rule_result":None})
+            elif quant and verbal:
+                results.append({"rule":name,"status":"BLOCKED","missing":["resolve_conflicting_context_flags"],"rule_result":None})
             elif quant and not observation.get("quantitative_source_reference"):
                 results.append({"rule":name,"status":"BLOCKED","missing":["quantitative_source_reference"],
                                 "rule_result":None})
