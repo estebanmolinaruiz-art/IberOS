@@ -41,3 +41,15 @@ GitHub `estebanmolinaruiz-art/IberOS`, rama `main`, es la **fuente técnica comp
 - Estado del paquete en `pyproject.toml` revisado: `1.0.1`, sin incremento de release.
 
 **Esta sincronización es documental y técnica dentro de GitHub; no es una modificación automática de los mensajes pasados de otros hilos.**
+
+## Integración transversal CORE → ficha WEB (tanda 2026-10-14)
+
+- `scripts/export_web_core.py`: exporta de forma determinista auditorías científicas para los **38 objetos curados** utilizando `audit_object_rules` y `research_pipeline`. El producto es `site/data/core_object_audit_v1.json` **generado durante el despliegue**; no se ha editado a mano en el repositorio.
+- `.github/workflows/pages.yml`: instala el paquete desde main, genera el JSON y exige 38 objetos antes de publicar GitHub Pages. Así cada despliegue utiliza el CORE del mismo commit, evitando duplicar las reglas como lógica web independiente.
+- `site/ficha/index.html`: incorpora el panel «Análisis CORE · Reglas y módulos». Muestra estados de seis módulos, guardas generales y reglas candidatas derivadas de etiquetas, **no traducciones automáticamente probadas**. Si el JSON no carga, la ficha permanece accesible y muestra una advertencia.
+- Se corrigió asimismo una concatenación defectuosa en el template de HTML que podía impedir la creación de los paneles científicos.
+- `tests/test_web_core_export.py`: vigila el conteo, inclusión de Tivissa y la prohibición de promoción científica.
+
+**Alcance del cierre:** WEB + CORE sincronizados a nivel de **auditoría de metadatos y reglas**, NO ejecución epigráfica automática por pieza. La APP móvil todavía no consume el exportador y requiere una tarea propia. Paquete distribuido `iberos 1.0.1` permanece sin nueva release. El estado del deploy debe verificarse en GitHub Actions antes de calificarlo como publicado.
+
+**Próximo contrato necesario:** intercambio versionado de lectura documental verificada, referencias físicas y resultados de `execute_rules` para mostrar en la ficha estados `BLOCKED`/`OPEN`/`REVIEW`, sin confundir indicadores científicos con decisiones editoriales.
