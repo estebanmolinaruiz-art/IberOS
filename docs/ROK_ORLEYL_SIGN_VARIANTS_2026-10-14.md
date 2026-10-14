@@ -33,3 +33,16 @@ Fecha: 2026-10-14. Procedencia: PDF aportado por el investigador, *Materiales de
 
 ## Próxima prueba paleográfica
 Trabajar con recortes de la figura 22, figura 25 y láminas XVII/XXII; marcar uno a uno grafema, posición, estado (visible / dudoso / reconstruido) y la transliteración de cada edición. No sustituir la lectura original por la equivalencia moderna hasta comparar signos y alógrafos.
+
+## Revisión directa de figura 25 y lámina XXII (14-10-2026)
+Archivo primario adjuntado por el investigador `mupreva194_mupreva153_101.pdf`, 159 páginas según `pdfinfo`. Se renderizaron y examinaron:
+- PDF p. 111: figura 25, dibujo editorial de **Orleyl VII, cara B**.
+- PDF p. 158: lámina XXII, fotografía publicada de la cara B.
+- PDF p. 110: Fletcher explica que la cara B tiene aproximadamente cuatro centímetros de banda izquierda sin escritura propia y que allí se transparentan signos de la cara A; también señala pérdida en el margen derecho. Da para la **línea 2** `CU-DU-BO-I-KE : BA-S-BI-TE-R-O-KE-TI-N-E : I-R-I-C-A` (transcripción según convenios de 1981; la posición del comienzo de línea incluye caracteres cuya extracción PDF es insegura).
+- PDF p. 118: «Notas finales» compara `GUDUR BITEROKETETINE` (V-18/19) con `GUDUBOIKE BITEROKETINE` (VII-B-6/7). **Precisión:** esta es la selección comparativa del editor; en la transcripción de la línea de VII-B consta el segmento inicial `BAS-`.
+- La foto de la lámina XXII presenta desgaste, contrastes irregulares y superposición/transparencia de trazos; no certificamos equivalencias grafema por grafema mediante la foto de imprenta.
+
+### Conclusión del cotejo visual
+Confirmado **que existe correspondencia de figura, cara y fotografía** y que Fletcher advierte del problema de trazos visibles pertenecientes al reverso. Confirmada documentalmente la localización de la variante en VII-B línea 2. **NO confirmado** por autopsia que cada valor de la transliteración sea seguro. El cotejo fino debe trabajar con sector delimitado del dibujo, imagen ampliada, variantes de signo y marcas de incertidumbre sin trasladar automáticamente el valor fonético editorial.
+
+**ROK-RECIPIENT-02 OPEN; ninguna modificación de métricas ni promoción semántica.**
