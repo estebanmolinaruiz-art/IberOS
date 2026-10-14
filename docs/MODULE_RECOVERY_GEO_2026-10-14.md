@@ -27,3 +27,12 @@ print(geo_context("IBR-PLM-0002"))
 
 ## Pruebas y próxima fase
 `tests/test_geo.py` protege copia de datos, puente Tivissa sin coordenadas del objeto y rechazo de identificadores inexistentes. Ejecución CI pendiente. A continuación: sincronización web↔CORE desde una fuente única, inventario de clases históricas PALEO/MORPH/LEXSEM y pruebas de integración intermodular. Sin cambios en benchmark congelado ni en gates lingüísticos.
+
+## Segunda tanda — catálogo GEO compartido entre Atlas y Python
+
+- `site/data/geo_atlas_nodes.json`: **fuente versionada de seis nodos**, con `id`, referencia de lugar, coordenadas topográficas, precisión declarada, zona y descripción.
+- `site/atlas/index.html`: carga los seis nodos desde JSON; deja de codificar por separado las coordenadas en JavaScript. En caso de error de lectura no inventa coordenadas; muestra advertencia al visitante.
+- `src/iberos/geo.py`: en entorno del repositorio carga el JSON versionado; fuera de él usa una instantánea local de compatibilidad de los mismos seis nodos. **Esto conserva la funcionalidad de instalaciones standalone antiguas, pero significa que la unificación completa del empaquetado y generación automática de la copia sigue pendiente.**
+- `tests/test_geo.py`: añade prueba de concordancia entre fuente web y copia Python, además de controles de contexto sin promoción semántica.
+
+**Limitaciones y criterio de cierre:** aún no hay conexión automática del Atlas a inferencias lingüísticas y no debe haberla sin validación. Tampoco se ha comprobado todavía la ejecución de CI de estos últimos commits. En versiones posteriores, empaquetar el JSON científico común dentro de la distribución Python y sincronizar la copia web en build, eliminando la lista estática de compatibilidad. La información GEO es contextual, no determinante del significado de una inscripción.
