@@ -50,7 +50,8 @@ try{
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
    const nav=page.locator('.ib-expert-nav');
    check(await nav.isVisible(),'Acceso experto visible '+id);
-   check((await nav.locator('a').count())===4,'Cuatro accesos expertos '+id);
+   check((await nav.locator('a').count())===5,'Cinco accesos expertos '+id);
+   check((await nav.locator('a[href="#geography-slot"]').count())===1,'Enlace geográfico '+id);
    check((await nav.locator('a[href="#documentary-slot"]').count())===1,'Enlace de evidencia '+id);
    check((await nav.locator('a[href="#variant-review-slot"]').count())===1,'Enlace de variantes '+id);
    check((await nav.locator('a[href*="../webengine/?q="]').first().getAttribute('href')).includes(id),'Core apunta a la pieza '+id);
