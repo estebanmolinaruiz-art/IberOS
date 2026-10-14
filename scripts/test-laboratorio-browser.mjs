@@ -53,6 +53,6 @@ try{
  }
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
- check((await page.locator('#results h2').innerText()).includes('6 de 6'),'Diagnóstico gratuito supera sus seis verificaciones');
+ check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
  console.log('Laboratorio y Core: pruebas de navegador satisfactorias');
 }finally{await browser.close()}
