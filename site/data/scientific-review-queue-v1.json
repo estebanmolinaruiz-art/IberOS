@@ -106,6 +106,21 @@
         ],
         "caution": "Transliteración reconstruida a partir del texto digital de la edición; contrastar signos, separadores y diacríticos con figuras 3 y 4 antes de aprobar.",
         "source_page": 200
+      },
+      "graphic_collation": {
+        "status": "SOURCE_TEXT_AND_FIGURES_IDENTIFIED_VISUAL_SIGN_BY_SIGN_PENDING",
+        "source": "Asensio, Miró, Sanmartí y Velaza (2003), Palaeohispanica 3",
+        "source_url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
+        "figure_locator": "Figuras 3 y 4, p. 200",
+        "observations": [
+          "La edición afirma que el texto puede considerarse completo pese a erosiones.",
+          "Parte superior de los signos 2–5 de la primera secuencia de línea 1 afectada.",
+          "El último signo de la línea 1 muestra efectos del desplegado y restauración.",
+          "Las interpunciones triples están registradas, pero los autores cuestionan que siempre coincidan con límites de palabra."
+        ],
+        "lexical_caution": "La edición sugiere estructura epistolar/comercial y posibles antropónimos, pero declara que el contenido concreto sigue sin poder determinarse.",
+        "sign_by_sign_verified": false,
+        "source_edition_paleography_consulted": true
       }
     },
     {
