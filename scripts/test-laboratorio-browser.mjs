@@ -116,6 +116,14 @@ try{
    await page.locator('#sign-reading-slot .ib-sign-reading').waitFor({timeout:15000});
    check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
    check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
+   check(await page.locator('#sign-correspondence').count()===1,'Panel de signos en ficha '+objectId);
+   if(objectId==='IBR-PLM-0002'){
+     const first=page.locator('#sign-correspondence .ib-sign-choice').first();
+     check(await first.count()>0,'Inventario editorial interactivo de Tivissa');
+     await first.click();
+     check(await first.getAttribute('aria-pressed')==='true','Selección accesible de signo');
+     check((await page.locator('#ib-sign-detail').innerText()).includes('Pendiente de verificación individual'),'Límites del signo visibles');
+   }
    check((await page.locator('#sign-reading-slot').innerText()).includes('01 · LECTURA EDITORIAL'),'Lectura editorial visible '+objectId);
  }
  await page.goto(base+'/diagnostico/');
