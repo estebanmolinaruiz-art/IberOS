@@ -63,6 +63,8 @@ try{
    check((await page.locator('#core-rule-evidence').innerText()).includes('Cadena de evidencia y límites'),'Cadena documental cargada '+id);
    await page.locator('#core-rule-evidence details summary').click();
    check(await page.locator('#core-rule-evidence details p').count()>=2,'Fuentes y obstáculos visibles '+id);
+   check(await page.locator('#core-rule-evidence .ib-hypothesis-matrix th').count()===4,'Matriz científica con cuatro columnas '+id);
+   check(await page.locator('#core-rule-evidence .ib-hypothesis-matrix tbody tr').count()>=1,'Hipótesis y pruebas pendientes visibles '+id);
    const nav=page.locator('.ib-expert-nav');
    check(await nav.isVisible(),'Acceso experto visible '+id);
    check((await nav.locator('a').count())===6,'Seis accesos expertos '+id);
