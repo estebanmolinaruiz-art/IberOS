@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Scientific-Review-Queue/1.0",
-  "note": "Editorial passages located. No direct artefact collation, independent physical attestation or semantic certification. No segments approved.",
+  "note": "Specific editorial reading variants catalogued; no direct autopsy, adjudicated reading, segment approval or semantic validation.",
   "records": [
     {
       "object_id": "IBR-PLM-0002",
@@ -62,7 +62,18 @@
       "variant_review": {
         "status": "OPEN",
         "method": "Compare edition readings against primary epigraphic witness; preserve graphemic variants and word boundaries",
-        "variants": [],
+        "variants": [
+          {
+            "locus": "Tivissa, secuencia asociada a śalaiaŕkis",
+            "reading_a": "śalaiaŕkisteŕokan (scriptio continua en la referencia)",
+            "source_a": "Moncunill, Els noms personals ibèrics, p. 108, C.21.10,2",
+            "reading_b": "śalaiaŕkis-te-ŕokan (segmentación analítica)",
+            "source_b": "Interpretación morfológica discutida en Asensio et al. (2003) y bibliografía posterior",
+            "difference": "Delimitación editorial/analítica, no necesariamente divergencia de signos",
+            "assessment": "BOUNDARY_HYPOTHESIS_NOT_ADJUDICATED",
+            "notes": "Conservar unidad inscrita y no promocionar -te- a función gramatical probada."
+          }
+        ],
         "source_dependence": "Different editions of the same inscribed object must not count as independent attestations",
         "segment_publication": "BLOCKED_UNTIL_VERIFIED",
         "issues": [
@@ -135,7 +146,18 @@
       "variant_review": {
         "status": "OPEN",
         "method": "Compare edition readings against primary epigraphic witness; preserve graphemic variants and word boundaries",
-        "variants": [],
+        "variants": [
+          {
+            "locus": "B.7.38, A I, línea 8",
+            "reading_a": "]itiatu:ban:kutur:biteŕokan",
+            "source_a": "Velaza (2015), p. 253, reproduciendo Untermann (2014)",
+            "reading_b": "...ban kutur bideŕokan",
+            "source_b": "Ferrer i Jané (2014), Veleia 31, p. 251, tabla comparativa",
+            "difference": "biteŕokan / bideŕokan, además de formato de delimitadores y extensión inicial",
+            "assessment": "VARIANT_RECORDED_NOT_ADJUDICATED",
+            "notes": "No decidir entre te/de sin cotejo gráfico; no constituye segunda inscripción independiente."
+          }
+        ],
         "source_dependence": "Different editions of the same inscribed object must not count as independent attestations",
         "segment_publication": "BLOCKED_UNTIL_VERIFIED",
         "issues": [
