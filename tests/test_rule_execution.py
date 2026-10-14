@@ -47,3 +47,12 @@ def test_ka_unregistered_candidate_is_blocked():
     data={"source_reference":"Unknown example","rules":["KA-DIRECTION-PROSPECTIVE-01"],
           "ka_candidate_reference":"INVALID"}
     assert execute_rules(data)["results"][0]["status"]=="BLOCKED"
+
+def test_bi_conflicting_context_flags_are_blocked():
+    report=execute_rules({"source_reference":"Editorial test case",
+        "rules":["BI-DISAMBIG-01"],"independently_quantitative":True,
+        "verbal_complex":True,"quantitative_source_reference":"Independent reference"})
+    result=report["results"][0]
+    assert result["status"]=="BLOCKED"
+    assert result["missing"]==["resolve_conflicting_context_flags"]
+    assert result["rule_result"] is None
