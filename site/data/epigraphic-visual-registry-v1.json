@@ -66,8 +66,8 @@
         "status": "PERMISSION_NOT_DOCUMENTED",
         "author_watermark_policy": "PRESERVE_IF_PRESENT",
         "image_copy_allowed": false,
-        "reason": "Fuente científica localizada, pero no hay autorización o licencia específica de la figura verificada para publicación en IberOS.",
-        "next_action": "Solicitar permiso al titular de derechos de fotografía/figura, conservar créditos y cualquier marca de agua original.",
+        "reason": "La candidata externa dispone de licencia declarada en su propia ficha; no está acreditada su correspondencia con este objeto epigráfico concreto. La figura de la edición científica es un recurso distinto.",
+        "next_action": "Cotejar la identificación epigráfica exacta; preservar marca original y atribución; no sustituir la figura científica por una copia diferente.",
         "publication_record_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/339"
       },
       "external_image_candidates": [
@@ -81,7 +81,16 @@
           "exact_object_match_verified": false,
           "additional_rights_note": "DRAC solicita contactar drac.cultura@gencat.cat para usos comerciales.",
           "status": "CANDIDATE_OBJECT_MATCH_PENDING",
-          "publish_to_fiche": false
+          "publish_to_fiche": false,
+          "license_source_verified": true,
+          "license_source_checked": "2026-10-14",
+          "watermark_presence_checked": false,
+          "match_requirements": [
+            "Correspondencia material con número epigráfico exacto",
+            "Comparación de figura/lectura y características físicas",
+            "Créditos completos y marca de agua sin alteración"
+          ],
+          "evidence_note": "DRAC metadata confirms a photograph of an inscribed lead from Castellet de Banyoles, but does not explicitly identify T.07.03."
         }
       ]
     },
@@ -105,8 +114,8 @@
         "status": "PERMISSION_NOT_DOCUMENTED",
         "author_watermark_policy": "PRESERVE_IF_PRESENT",
         "image_copy_allowed": false,
-        "reason": "Fuente científica localizada, pero no hay autorización o licencia específica de la figura verificada para publicación en IberOS.",
-        "next_action": "Solicitar permiso al titular de derechos de fotografía/figura, conservar créditos y cualquier marca de agua original.",
+        "reason": "La candidata externa dispone de licencia declarada en su propia ficha; no está acreditada su correspondencia con este objeto epigráfico concreto. La figura de la edición científica es un recurso distinto.",
+        "next_action": "Cotejar la identificación epigráfica exacta; preservar marca original y atribución; no sustituir la figura científica por una copia diferente.",
         "publication_record_url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324"
       },
       "external_image_candidates": [
@@ -119,7 +128,16 @@
           "source_object_identification": "Copia de texto ibérico de un plomo de Pech Maho, sin cotejo con B.7.38",
           "exact_object_match_verified": false,
           "status": "CANDIDATE_OBJECT_MATCH_PENDING",
-          "publish_to_fiche": false
+          "publish_to_fiche": false,
+          "license_source_verified": true,
+          "license_source_checked": "2026-10-14",
+          "watermark_presence_checked": false,
+          "match_requirements": [
+            "Correspondencia material con número epigráfico exacto",
+            "Comparación de figura/lectura y características físicas",
+            "Créditos completos y marca de agua sin alteración"
+          ],
+          "evidence_note": "Commons metadata confirms a photographed copy of a Pech-Maho lead inscription, but not equivalence to B.7.38."
         }
       ]
     }
