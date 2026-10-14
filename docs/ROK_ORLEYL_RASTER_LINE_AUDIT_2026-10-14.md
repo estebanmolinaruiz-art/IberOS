@@ -33,3 +33,10 @@ Al volver a inspeccionar el archivo `orleyl_rok_band_comparison_2026-10-14.png` 
 Se generó localmente la imagen de control `orleyl_control_reglones_2026-10-14.png` con advertencias visuales, sin nuevas lecturas. La imagen no se ha subido a este repositorio.
 
 **Siguiente comprobación:** localizar fronteras de cada renglón sobre la figura completa, distinguir línea de signo visible por transparencia y cotejar sector en lámina fotográfica. Se conserva la transcripción de Fletcher como `EDITORIAL_ONLY`; `ROK-RECIPIENT-02` sigue OPEN.
+
+## Tanda de trabajo: orientación y guías completas — 2026-10-14
+Se han vuelto a renderizar las **figuras completas** 22 (PDF p.65) y 25 (PDF p.111) a escala 2×, rotándolas 90° en sentido horario (raster 1525×1152 píxeles cada una). Una lámina de trabajo `orleyl_renglones_guias_2026-10-14.png` muestra todas las bandas **aproximadas**, numeradas y sin cortar el texto. Las guías resaltadas corresponden a V línea 3 y VII-B línea 2 según Fletcher. Son orientativas: debido a líneas inclinadas y márgenes irregulares, **no constituyen segmentación exacta ni coordenadas de glifos**.
+
+La fuente primaria confirma seis líneas en V y cinco en VII-B por los dibujos. Una vista completa evita la confusión de las ventanas anteriores, que contenían material de dos renglones. Se mantiene `EDITORIAL_ONLY` para las cadenas ROK, `graphic_photo_verified=false`. Antes de clasificar signos como visibles debe identificarse la posición exacta dentro de cada banda y cotejarla con la fotografía de su misma cara.
+
+**ROK-RECIPIENT-02 permanece OPEN.** Esta tanda no genera nuevas evidencias semánticas ni modifica las métricas.
