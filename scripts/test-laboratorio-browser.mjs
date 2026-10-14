@@ -64,6 +64,15 @@ try{
    await page.locator('#core-rule-evidence details summary').click();
    check(await page.locator('#core-rule-evidence details p').count()>=2,'Fuentes y obstáculos visibles '+id);
    check(await page.locator('#core-rule-evidence .ib-hypothesis-matrix th').count()===4,'Matriz científica con cuatro columnas '+id);
+   const matrixContrast=await page.locator('.ib-hypothesis-matrix').evaluate(root=>{
+      const light=(node)=>{const c=getComputedStyle(node).color.match(/\\d+/g)?.map(Number)||[];return c.length===3&&c[0]<75&&c[1]<95&&c[2]<110};
+      const body=root.querySelector('td'),heading=root.querySelector('th');
+      const ink=light(body);
+      const headerColor=getComputedStyle(heading).color;
+      return ink&&headerColor==='rgb(255, 255, 255)';
+   });
+   check(matrixContrast,'Contraste legible de texto y cabeceras en matriz '+id);
+
    check(await page.locator('#core-rule-evidence .ib-hypothesis-matrix tbody tr').count()>=1,'Hipótesis y pruebas pendientes visibles '+id);
    const nav=page.locator('.ib-expert-nav');
    check(await nav.isVisible(),'Acceso experto visible '+id);
