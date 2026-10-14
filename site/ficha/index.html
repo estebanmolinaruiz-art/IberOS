@@ -131,6 +131,16 @@ body.iberos-ficha .ib-original-placeholder{background:#ead9b9}
 .ib-expert-nav a{font-size:max(.93rem,15px);line-height:1.45}
 .ib-expert-nav a:focus-visible,.ib-sign-choice:focus-visible{outline:3px solid #ffcf75;outline-offset:3px}
 @media(max-width:700px){.ib-sign-reading,.ib-normalized-reading,.ib-analysis-card{padding:15px;font-size:1rem}.ib-expert-nav a{min-height:40px}}
+
+/* Readability correction: do not encode transcription in pale ochre ink. */
+.ib-normalized-reading .ib-sign-script,.ib-sign-line .ib-sign-script{color:#112e42!important;background:transparent!important;font-weight:700}
+.ib-normalized-reading strong,.ib-sign-line>span{color:#203d50!important;font-size:.9rem!important}
+.ib-normalized-reading small,.ib-sign-line small{color:#294251!important;font-size:.86rem!important}
+.ib-expert-nav a,.ib-expert-nav button{color:#fff!important;border-color:#cfb384!important;background:#1d4052!important}
+.ib-expert-nav a:hover,.ib-expert-nav button:hover{background:#315c70!important}
+.ib-reconstruction .ib-caption{color:#593e23!important}
+.ib-hypothesis-matrix td,.ib-analysis-card td{overflow-wrap:anywhere}
+@media(max-width:700px){.ib-sign-line .ib-sign-script,.ib-normalized-reading .ib-sign-script{overflow-wrap:anywhere;word-break:normal}.ib-expert-nav a{padding:10px 12px}}
 </style></head><body class="iberos-inner iberos-ficha"><div id="head"></div><aside class="ib-discovery-help" aria-label="Cómo leer esta ficha"><details><summary>✦ Frente a la pieza · aprende a leer las pistas</summary><div class="ib-help-content"><p><strong>Primero:</strong> identifica el objeto y lee la gran propuesta central. <strong>Después:</strong> compara evidencia, inferencia, variantes y bibliografía.</p><p><strong>Qué esperar:</strong> una hipótesis no es una traducción probada. Si aparece «No establecida», la lectura sigue abierta: es información científica, no un fallo.</p><div class="ib-help-route"><a href="#geography-slot">Contexto geográfico ↘</a><a href="#documentary-slot">Acceso experto · evidencia y bibliografía ↘</a><a href="#variant-review-slot">Variantes ↘</a><a href="../corpus/">Elegir otra pieza →</a><a href="../laboratorio/">Abrir cuaderno de investigación →</a></div></div></details></aside><main><div id="body"><div class="notice" role="status">Cargando ficha arqueológica… Si permanece este mensaje, consulta el <a href="../corpus/">Corpus</a>.</div></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
