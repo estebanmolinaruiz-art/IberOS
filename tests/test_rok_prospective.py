@@ -51,3 +51,29 @@ def test_nonboolean_independence_is_invalid():
     candidate = sample("a", "one", "TARGET")
     candidate["held_out"] = "yes"
     assert assess_rok_prospective([candidate, sample("b", "two", "NEGATIVE")])["status"] == "BLOCKED"
+
+
+def test_shared_leak_group_blocks_independence():
+    a = sample("edition-A", "physical-1", "TARGET")
+    b = sample("edition-B", "physical-2", "NON_ROK")
+    a["LEAK_GROUP"] = b["LEAK_GROUP"] = "same-copy-lineage"
+    result = assess_rok_prospective([a, b])
+    assert result["status"] == "BLOCKED"
+    assert any("cross-edition dependency" in error for error in result["errors"])
+
+
+def test_specific_dependency_group_blocks_independence():
+    a = sample("edition-A", "physical-1", "TARGET")
+    b = sample("edition-B", "physical-2", "NEGATIVE")
+    a["Dependency_Group"] = b["Dependency_Group"] = "SPECIFIC_DEPENDENCY"
+    result = assess_rok_prospective([a, b])
+    assert result["status"] == "BLOCKED"
+
+
+def test_generic_dependency_labels_do_not_claim_shared_identity():
+    a = sample("edition-A", "physical-1", "TARGET")
+    b = sample("edition-B", "physical-2", "NON_ROK")
+    a["Dependency_Group"] = b["Dependency_Group"] = "INDEPENDENT_OR_UNRESOLVED"
+    result = assess_rok_prospective([a, b])
+    assert result["status"] == "READY_FOR_INDEPENDENT_REVIEW"
+    assert result["automatic_core_promotion"] is False
