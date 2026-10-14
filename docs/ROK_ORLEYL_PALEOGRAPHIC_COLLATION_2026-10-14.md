@@ -48,3 +48,21 @@ Una segunda fuente académica consultable, *Palaeohispanica 8* (2008), https://i
 2. Comparar por orden: imagen, dibujo publicado, transliteración editorial, transcripción IberOS, dudas signo por signo.
 3. Guardar `F.9.7-A` y `F.9.7-B` como subentradas **del mismo PHYS_ID** y preservar dependencia.
 4. Usar los glifos codificados de Cathalaunia únicamente como capa secundaria hasta auditar sus equivalencias.
+
+## Verificación directa de fichas digitales — 14/10/2026
+
+Se han abierto las fichas públicas de Cathalaunia y confirmado los metadatos **visibles**:
+
+| Pieza y subentrada | Identificador | Concordancia Hesperia declarada por la ficha | Cita bibliográfica indicada | Tipo de transcripción verificada |
+|---|---|---|---|---|
+| Orleyl F.9.5 | I01936 | CS.21.05 | *MLH* III p.386; *Materiales de la necrópolis ibérica de Orleyl* p.64 | Solo cadena de **códigos de glifos del sitio**; no lectura latina signo a signo |
+| Orleyl F.9.7, cara A | I01938 | CS.21.07 | *MLH* III p.392; *Materiales de la necrópolis ibérica de Orleyl* p.98 | Solo cadena de **códigos de glifos del sitio**; no lectura latina signo a signo |
+| Orleyl F.9.7, cara B | I01939 | Mismo objeto físico, como subentrada enlazada desde I01938 | Paginación específica pendiente | Enlace cruzado confirmado; página individual no pudo recuperarse directamente en esta inspección |
+
+Fuentes: https://cathalaunia.org/Iberika/I01936 y https://cathalaunia.org/Iberika/I01938 (en su sección «Segments» figura I01939).
+
+**Precaución esencial:** los códigos de glifos como `ÎÑWQ`, `-5CM}E` y similares son representación interna; **no** se han descodificado aquí. Tampoco se ha visto lámina o fotografía original, ni se ha podido asociar de manera demostrativa el tramo normalizado `biteŕoketetine` o `basbiteŕoketine` a una línea/cara. La concordancia de un identificador Hesperia es metadata catalográfica, no resolución paleográfica.
+
+**Próximo cotejo necesario:** conseguir escaneo de *MLH* III pp. 386 y 392 y las láminas de *Materiales...* pp. 64 y 98; alinear por cara y línea con una fotografía o facsímil y consignar variantes, signo incierto y separación de palabras. Prohibido transformar codificación propia del repositorio de glifos en valores fonéticos sin leyenda validada.
+
+**ROK-RECIPIENT-02 sigue OPEN; no se registra nuevo HOLD ni cambio de métricas.**
