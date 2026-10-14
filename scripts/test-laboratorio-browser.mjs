@@ -117,6 +117,8 @@ try{
    check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
    check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
    check(await page.locator('#sign-correspondence').count()===1,'Panel de signos en ficha '+objectId);
+   check(await page.locator('.ib-piece-original .doc-cover').count()===0,'Sin portada decorativa en panel de pieza original '+objectId);
+   check(await page.locator('.ib-piece-original .ib-authentic-object, .ib-piece-original .ib-object-awaiting').count()===1,'Imagen acreditada o ausencia explícita '+objectId);
    if(objectId==='IBR-PLM-0002'){
      const first=page.locator('#sign-correspondence .ib-sign-choice').first();
      check(await first.count()>0,'Inventario editorial interactivo de Tivissa');
