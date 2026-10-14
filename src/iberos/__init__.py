@@ -1,3 +1,4 @@
+from .mobile_sync import mobile_object_payload
 from .rule_execution import execute_rules
 from .object_rule_audit import audit_object_rules
 from .prediction_compare import compare_prediction
@@ -71,6 +72,7 @@ from .core import (
 )
 
 __all__ = [
+    "mobile_object_payload",
     "execute_rules",
     "audit_object_rules",
     "compare_prediction",
