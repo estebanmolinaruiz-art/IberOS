@@ -39,5 +39,20 @@ try{
  await page.locator('#go').click();
  const fiche=page.locator('#core-cards a[href*="../ficha/"]').first();
  check((await fiche.getAttribute('href')).includes('IBR-MUS-0001'),'Core enlaza a ficha correcta');
+ for(const id of ['IBR-PLM-0002','IBR-PLM-0003']){
+   const errors=[];
+   const handler=e=>errors.push(e.message);
+   page.on('pageerror',handler);
+   await page.goto(base+'/ficha/?id='+id);
+   await page.locator('#variant-review-slot .section-title').waitFor({timeout:15000});
+   check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
+   check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
+   check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   check(errors.length===0,'Ficha '+id+' sin errores JavaScript: '+errors.join('; '));
+   page.off('pageerror',handler);
+ }
+ await page.goto(base+'/diagnostico/');
+ await page.locator('#results h2').waitFor({timeout:15000});
+ check((await page.locator('#results h2').innerText()).includes('6 de 6'),'Diagnóstico gratuito supera sus seis verificaciones');
  console.log('Laboratorio y Core: pruebas de navegador satisfactorias');
 }finally{await browser.close()}
