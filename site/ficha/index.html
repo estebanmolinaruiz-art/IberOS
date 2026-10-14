@@ -273,10 +273,30 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
     const badges=Object.entries(item.modules||{}).map(([k,v])=>'<span class="pill">'+esc(k)+': '+esc(v)+'</span>').join(" ");
     const candidates=(item.rules||[]).filter(v=>v.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
     const controls=(item.rules||[]).filter(v=>v.applicability==="GENERAL_GUARD_AVAILABLE");
+    const enrichedRules=Promise.resolve(fetch("../data/core_rule_catalog_v1.json")).then(resp=>{if(!resp.ok)throw Error("HTTP "+resp.status);return resp.json()}).catch(()=>null);
+    enrichedRules.then(catalog=>{
+      const host=document.getElementById("core-rule-evidence");
+      if(!host)return;
+      if(!catalog){host.textContent="Catálogo de reglas no disponible: consultar informe de auditoría.";return}
+      const byId=new Map((catalog.entries||[]).map(x=>[x.id,x]));
+      const matches=(item.rules||[]).filter(x=>x.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
+      if(!matches.length){host.textContent="No hay reglas familiares candidatas para esta pieza; no se han inferido aplicaciones.";return}
+      const title=document.createElement("h3");title.textContent="Reglas candidatas · procedencia científica";
+      const list=document.createElement("ul");
+      for(const match of matches){
+        const spec=byId.get(match.id);
+        const li=document.createElement("li");const strong=document.createElement("strong");strong.textContent=match.id;
+        li.append(strong,document.createTextNode(" · "+(spec?.validation||"Sin cotejo con el catálogo")+" · "+(spec?.description||"Candidato por metadatos; descripción no vinculada")));
+        list.append(li);
+      }
+      const note=document.createElement("p");note.textContent="Se enumeran candidaturas basadas en etiquetas del registro, no ejecuciones ni traducciones comprobadas.";
+      host.replaceChildren(title,list,note);
+    });
+
     slot.innerHTML='<h2>Análisis CORE · Reglas y módulos</h2><p class="meta">'+esc(payload.schema)+' · '+esc(payload.source)+'</p><div class="rc-tags">'+badges+'</div><h3>Reglas candidatas</h3>'+
       (candidates.length?'<ul>'+candidates.map(v=>'<li>'+esc(v.id)+' · Sin ejecución epigráfica validada</li>').join("")+'</ul>':'<p>No hay reglas de familia identificadas por metadatos.</p>')+
       '<p>Controles generales disponibles: '+controls.length+'. La coincidencia de una regla no demuestra su aplicación.</p>'+
-      '<p class="notice"><strong>Interpretación científica:</strong> ninguna traducción nueva validada automáticamente.</p>';
+      '<p class="notice"><strong>Interpretación científica:</strong> ninguna traducción nueva validada automáticamente.</p><div id="core-rule-evidence" aria-live="polite">Consultando catálogo científico…</div>';
   })
   .catch(error=>{console.warn("No se pudo cargar CORE",error);const slot=document.getElementById("core-audit-slot");if(slot)slot.innerHTML='<h2>Análisis CORE</h2><p>Informe CORE temporalmente no disponible; consulta la documentación de la ficha.</p>'});
  document.getElementById("expertExport")?.addEventListener("click",async()=>{
