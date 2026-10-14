@@ -61,29 +61,49 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
                           "prediction": row["prediction"],
                           "segmentation": row["segmentation"],
                           "control_type": row["control_type"]})
-    # Conservative cross-edition dependency audit. Shared leak/dependency
-    # identifiers cannot be treated as independent prospective witnesses.
-    seen_groups: dict[str, str] = {}
+    # Union all identifiers, including transitive physical / leak / dependency
+    # bridges. One connected component is at most one documentary witness.
+    from .core import GENERIC_DEPENDENCY_LABELS
+    parents = list(range(len(observations)))
+    def root(i: int) -> int:
+        while parents[i] != i:
+            parents[i] = parents[parents[i]]
+            i = parents[i]
+        return i
+    def join(a: int, b: int) -> None:
+        a, b = root(a), root(b)
+        if a != b:
+            parents[max(a, b)] = min(a, b)
+    seen: dict[str, int] = {}
+    usable = []
     for i, row in enumerate(observations):
         if not isinstance(row, dict) or not isinstance(row.get("physical_id"), str):
             continue
         phys = row["physical_id"].strip()
         if not phys:
             continue
+        usable.append(i)
+        keys = ["PHYS:" + phys]
         for name in ("LEAK_GROUP", "Dependency_Group"):
             value = row.get(name)
             if not isinstance(value, str) or not value.strip():
                 continue
             value = value.strip()
-            if name == "Dependency_Group" and value.upper() in (
-                "INDEPENDENT_OR_UNRESOLVED", "DEPENDENT_COPY"
-            ):
+            if name == "Dependency_Group" and value.upper() in GENERIC_DEPENDENCY_LABELS:
                 continue
-            key = name + ":" + value
-            if key in seen_groups and seen_groups[key] != phys:
-                errors.append(f"observations[{i}]: cross-edition dependency {key}")
+            keys.append(name + ":" + value)
+        for key in keys:
+            if key in seen:
+                join(i, seen[key])
             else:
-                seen_groups[key] = phys
+                seen[key] = i
+    components: dict[int, list[int]] = {}
+    for i in usable:
+        components.setdefault(root(i), []).append(i)
+    duplicates = [members for members in components.values() if len(members) > 1]
+    for members in duplicates:
+        errors.append("transitive documentary dependency: observations " +
+                      ", ".join(str(i) for i in members))
     has_target = any(x["control_type"] == "TARGET" for x in summaries)
     has_control = any(x["control_type"] != "TARGET" for x in summaries)
     if not has_target:
@@ -94,6 +114,8 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
             "hypotheses": dict(HYPOTHESES),
             "status": "BLOCKED" if errors else "READY_FOR_INDEPENDENT_REVIEW",
             "errors": errors, "witnesses": summaries,
+            "documentary_components": [members for _, members in sorted(components.items())],
+            "documentary_unit_count": len(components),
             "official_rok_recipient_gate": "OPEN",
             "scientific_state": "UNVERIFIED",
             "automatic_core_promotion": False}
