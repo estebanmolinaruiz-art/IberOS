@@ -27,6 +27,11 @@ jobs:
           python -m pip install -e .
           python scripts/export_web_core.py
           python -c "import json; x=json.load(open('site/data/core_object_audit_v1.json')); assert x['object_count']==38"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit scientific Core to web integrations
+        run: node scripts/test-integration.mjs
       - name: Embed deployed commit marker in published artifact
         env:
           EXPECTED_SHA: ${{ github.sha }}
