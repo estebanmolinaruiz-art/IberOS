@@ -46,3 +46,12 @@ Archivo primario adjuntado por el investigador `mupreva194_mupreva153_101.pdf`, 
 Confirmado **que existe correspondencia de figura, cara y fotografía** y que Fletcher advierte del problema de trazos visibles pertenecientes al reverso. Confirmada documentalmente la localización de la variante en VII-B línea 2. **NO confirmado** por autopsia que cada valor de la transliteración sea seguro. El cotejo fino debe trabajar con sector delimitado del dibujo, imagen ampliada, variantes de signo y marcas de incertidumbre sin trasladar automáticamente el valor fonético editorial.
 
 **ROK-RECIPIENT-02 OPEN; ninguna modificación de métricas ni promoción semántica.**
+
+## Cotejo visual paralelo de cuatro imágenes — 14/10/2026
+Se han renderizado directamente desde el PDF aportado a 170 ppp las siguientes páginas: **65** (figura 22, dibujo de Orleyl V), **153** (lámina XVII, fotografía de V), **111** (figura 25, dibujo de VII-B) y **158** (lámina XXII, fotografía de VII-B). Se ha compuesto un panel visual 2×2 de las cuatro páginas para inspección simultánea, con rótulos de procedencia.
+
+**Resultado positivo:** se puede establecer el par figura/fotografía para cada plomo y apreciar diferencias de visibilidad entre calco editorial y superficie fotografiada. En VII-B, la imagen de la lámina XXII muestra amplias zonas muy oscuras y deterioradas; una lectura de todos los signos a partir de esta fotografía no sería auditable.
+
+**Límite científico:** no se han extraído con evidencia visual autónoma las coordenadas exactas de las secuencias `BITEROKETETINE` y `BASBITEROKETINE` en ambos soportes. No se certifica la forma de signos individuales, variantes de róticas ni la frontera de `TE` solo porque el editor la transcriba. Los cotejos anteriores entre las dos cadenas son **alineaciones de Fletcher, no nueva lectura paleográfica**. La siguiente etapa precisa identificar dirección de lectura y sector exacto sobre los calcos, y contrastar el mismo sector en foto, con incertidumbre signo a signo.
+
+La lámina de trabajo generada localmente no se añade automáticamente al repositorio GitHub. `ROK-RECIPIENT-02=OPEN`; indicadores sin cambios.
