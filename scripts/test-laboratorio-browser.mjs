@@ -83,6 +83,12 @@ try{
  const [journeyFile]=await Promise.all([page.waitForEvent('download'),page.locator('#json').click()]);
  const journey=JSON.parse((await (await import('node:fs/promises')).readFile(await journeyFile.path())).toString('utf8'));
  check(journey.object==='IBR-PLM-0002'&&journey.name==='Recorrido completo IberOS','Proyecto exportado conserva la pieza y el nombre');
+ await page.goto(base+'/atlas/?q=Pech-Maho');
+ await page.locator('#mapStatus').waitFor({timeout:15000});
+ check(await page.locator('#mapStatus').isVisible(),'Atlas informa de procedencia sin nodo cartográfico');
+ check((await page.locator('#mapStatus').innerText()).includes('Pech-Maho'),'Atlas conserva el nombre de la procedencia solicitada');
+ await page.goto(base+'/atlas/?q=Castellet%20de%20Banyoles');
+ check((await page.locator('#siteQ').inputValue()).includes('Castellet de Banyoles'),'Atlas recibe búsqueda geográfica desde Tivissa');
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
  check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
