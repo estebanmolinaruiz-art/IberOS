@@ -33,6 +33,13 @@ try{
  await page.goto(base+'/webengine/?q=IBR-MUS-0001');
  await page.locator('#core-cards .core-result-card').first().waitFor();
  check((await page.locator('#core-cards .core-result-card').count())>=1,'Core muestra tarjetas visuales');
+ await page.locator('#core-rule-audit details').waitFor({timeout:15000});
+ const scientificRules=await page.locator('#core-rule-audit').innerText();
+ check(scientificRules.includes('reglas de traducción verificadas'),'Core muestra conteo auditado de reglas');
+ check(scientificRules.includes('0 reglas de traducción verificadas'),'Core no confunde protocolos con traducciones verificadas');
+ await page.locator('#core-rule-audit summary').click();
+ check(await page.locator('#core-rule-audit li').count()>0,'Catálogo científico Python visible e interactivo');
+
  check((await page.locator('#core-cards .interpretation-main').first().innerText()).length>10,'Core muestra interpretación o límite explícito');
  await page.locator('#q').fill('IBEROS_SIN_COINCIDENCIAS_PRUEBA_2026');
  await page.locator('#go').click();
