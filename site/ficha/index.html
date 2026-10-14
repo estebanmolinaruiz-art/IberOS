@@ -328,6 +328,28 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
     const badges=Object.entries(item.modules||{}).map(([k,v])=>'<span class="pill">'+esc(k)+': '+esc(v)+'</span>').join(" ");
     const candidates=(item.rules||[]).filter(v=>v.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
     const controls=(item.rules||[]).filter(v=>v.applicability==="GENERAL_GUARD_AVAILABLE");
+    const evaluated=item.evaluated_rules||[];
+    const evaluationHost=document.createElement("div");
+    evaluationHost.className="notice";
+    const heading=document.createElement("strong");
+    heading.textContent="Reglas ejecutadas con observaciones revisadas: "+evaluated.length;
+    evaluationHost.append(heading);
+    if(!evaluated.length){
+      const p=document.createElement("p");
+      p.textContent="Sin ejecuciones autorizadas para esta pieza. Las reglas candidatas no constituyen resultados.";
+      evaluationHost.append(p);
+    }else{
+      const list=document.createElement("ul");
+      for(const execution of evaluated){
+        for(const result of execution.results||[]){
+          const li=document.createElement("li");
+          li.textContent=(execution.evidence_id||"Fuente no identificada")+" · "+result.rule+" · "+result.status+" · Sin validación semántica automática";
+          list.append(li);
+        }
+      }
+      evaluationHost.append(list);
+    }
+    slot.append(evaluationHost);
     const enrichedRules=Promise.all([
       fetch("../data/core_rule_catalog_v1.json").then(resp=>{if(!resp.ok)throw Error("Catalog HTTP "+resp.status);return resp.json()}),
       fetch("../data/scientific-review-queue-v1.json").then(resp=>{if(!resp.ok)throw Error("Review HTTP "+resp.status);return resp.json()})
