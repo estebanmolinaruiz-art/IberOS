@@ -1,0 +1,26 @@
+name: scientific-discovery-watch
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 7 * * *"
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - name: Ingest public OpenAlex metadata into isolated artifact
+        run: python scripts/sync_discoveries.py --out /tmp/iberos-openalex-candidates.jsonl --limit 20
+      - name: Upload unverified inbox for human review
+        uses: actions/upload-artifact@v4
+        with:
+          name: openalex-unverified-candidates
+          path: /tmp/iberos-openalex-candidates.jsonl
+          if-no-files-found: error
+          retention-days: 30
