@@ -1,3 +1,4 @@
+from .prediction_compare import compare_prediction
 from .discovery_link import proposed_object_links
 from .discovery_store import append_discoveries, classify_discovery
 from .multimodule import research_pipeline
@@ -68,6 +69,7 @@ from .core import (
 )
 
 __all__ = [
+    "compare_prediction",
     "proposed_object_links",
     "append_discoveries",
     "classify_discovery",
