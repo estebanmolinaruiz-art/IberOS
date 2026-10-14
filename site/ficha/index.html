@@ -54,6 +54,35 @@
 .ib-evidence-chain{display:flex;flex-wrap:wrap;gap:8px}.ib-evidence-chain span{background:#bfd0ce;padding:7px 9px;border-radius:5px;font:.79rem system-ui,sans-serif}
 .ib-evidence-chain span:nth-child(n+4){background:#e6c9a4}.ib-state{font-weight:700;color:#805223}
 @media(max-width:790px){.ib-analysis-grid{grid-template-columns:1fr;margin:12px 10px}}
+
+/* IberOS ficha canónica — equivalencia visual con lámina aprobada */
+body.iberos-ficha main{background:radial-gradient(ellipse at top,#ebd7b3,#d6bd92);padding:8px 12px 44px}
+body.iberos-ficha #body{max-width:1360px;margin:auto;background:#f7eddb;padding:18px clamp(12px,2vw,28px) 30px;box-shadow:0 10px 34px #533b2444;border:1px solid #c5a57a;border-radius:7px}
+body.iberos-ficha .ib-canonical-banner{max-width:none;margin:0;background:linear-gradient(108deg,#752418,#a74b32 68%,#753021);border-radius:7px 7px 0 0;padding:15px 23px}
+body.iberos-ficha .ib-canonical-banner span{font-size:clamp(1.55rem,3.2vw,2.7rem)}
+body.iberos-ficha .ib-canonical-flags{max-width:none;margin:0 0 10px;justify-content:space-between;background:#e9dbc4;padding:9px;border-radius:0 0 7px 7px}
+body.iberos-ficha .ib-canonical-flags span{flex:1;text-align:center;background:#a13b2b;border:1px solid #bd9260;white-space:normal}
+body.iberos-ficha .ib-canonical-flags span:nth-child(2){background:#245567}
+body.iberos-ficha .ib-canonical-flags span:nth-child(3){background:#4f674a}
+body.iberos-ficha .ib-canonical-flags span:nth-child(4){background:#a27430}
+body.iberos-ficha .ib-primary-grid,body.iberos-ficha .ib-analysis-grid{max-width:none;gap:11px}
+body.iberos-ficha .ib-primary-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+body.iberos-ficha .ib-primary-object{padding:0;background:transparent;border:0;box-shadow:none;display:flex;flex-direction:column;gap:10px}
+body.iberos-ficha .artifact-summary,body.iberos-ficha .ib-sign-reading,body.iberos-ficha .ib-source-images{border:1px solid #bea17c;border-radius:7px;background:linear-gradient(120deg,#fff8ec,#ede0ca);box-shadow:none}
+body.iberos-ficha .ib-sign-reading,body.iberos-ficha .artifact-summary{padding:14px}
+body.iberos-ficha .ib-sign-reading h2{background:#1c4a59;color:#fff4e3;font:700 1.15rem Georgia,serif;padding:10px;margin:-14px -14px 14px;border-radius:6px 6px 0 0}
+body.iberos-ficha .ib-sign-line{border:1px solid #cfb395;border-left:5px solid #2c5b69;border-radius:5px}
+body.iberos-ficha .ib-sign-script{font-size:clamp(1rem,1.9vw,1.5rem);color:#122b46}
+body.iberos-ficha .ib-reconstruction{max-width:none;border:2px solid #8d3329;border-radius:8px;background:linear-gradient(#fff7e8,#f1dfc2);padding:20px;margin:13px auto;box-shadow:none}
+body.iberos-ficha .ib-reconstruction .ib-caption{margin:-20px -20px 15px;border-radius:5px 5px 0 0;background:#8d3025;padding:12px;color:#fff5e5;letter-spacing:.04em}
+body.iberos-ficha .ib-analysis-grid{margin:12px auto}
+body.iberos-ficha .ib-analysis-card{border-radius:6px;box-shadow:none;background:linear-gradient(#fff8e9,#efe1c6)}
+body.iberos-ficha .ib-analysis-card h2{background:#1c4a59;color:#fff4e6}
+body.iberos-ficha .ib-geography{max-width:none}
+body.iberos-ficha .ib-expert-nav{max-width:none;margin:0 0 12px;gap:6px;padding:7px;background:#0c2b36}
+body.iberos-ficha .ib-expert-nav a,body.iberos-ficha .ib-expert-nav button{font-size:.75rem;padding:5px 8px}
+body.iberos-ficha .ib-original-placeholder{background:#ead9b9}
+@media(max-width:820px){body.iberos-ficha .ib-primary-grid,body.iberos-ficha .ib-analysis-grid{grid-template-columns:1fr}body.iberos-ficha #body{padding:10px}body.iberos-ficha .ib-canonical-flags span{min-width:42%}}
 </style></head><body class="iberos-inner iberos-ficha"><div id="head"></div><aside class="ib-discovery-help" aria-label="Cómo leer esta ficha"><details><summary>✦ Frente a la pieza · aprende a leer las pistas</summary><div class="ib-help-content"><p><strong>Primero:</strong> identifica el objeto y lee la gran propuesta central. <strong>Después:</strong> compara evidencia, inferencia, variantes y bibliografía.</p><p><strong>Qué esperar:</strong> una hipótesis no es una traducción probada. Si aparece «No establecida», la lectura sigue abierta: es información científica, no un fallo.</p><div class="ib-help-route"><a href="#geography-slot">Contexto geográfico ↘</a><a href="#documentary-slot">Acceso experto · evidencia y bibliografía ↘</a><a href="#variant-review-slot">Variantes ↘</a><a href="../corpus/">Elegir otra pieza →</a><a href="../laboratorio/">Abrir cuaderno de investigación →</a></div></div></details></aside><main><div id="body"><div class="notice" role="status">Cargando ficha arqueológica… Si permanece este mensaje, consulta el <a href="../corpus/">Corpus</a>.</div></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
