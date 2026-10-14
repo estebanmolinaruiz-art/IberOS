@@ -273,24 +273,38 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
     const badges=Object.entries(item.modules||{}).map(([k,v])=>'<span class="pill">'+esc(k)+': '+esc(v)+'</span>').join(" ");
     const candidates=(item.rules||[]).filter(v=>v.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
     const controls=(item.rules||[]).filter(v=>v.applicability==="GENERAL_GUARD_AVAILABLE");
-    const enrichedRules=Promise.resolve(fetch("../data/core_rule_catalog_v1.json")).then(resp=>{if(!resp.ok)throw Error("HTTP "+resp.status);return resp.json()}).catch(()=>null);
-    enrichedRules.then(catalog=>{
+    const enrichedRules=Promise.all([
+      fetch("../data/core_rule_catalog_v1.json").then(resp=>{if(!resp.ok)throw Error("Catalog HTTP "+resp.status);return resp.json()}),
+      fetch("../data/scientific-review-queue-v1.json").then(resp=>{if(!resp.ok)throw Error("Review HTTP "+resp.status);return resp.json()})
+    ]).catch(()=>null);
+    enrichedRules.then(data=>{
       const host=document.getElementById("core-rule-evidence");
       if(!host)return;
-      if(!catalog){host.textContent="Catálogo de reglas no disponible: consultar informe de auditoría.";return}
+      if(!data){host.textContent="Evidencia o catálogo científico no disponible; no se infiere validación.";return}
+      const [catalog,queue]=data;
       const byId=new Map((catalog.entries||[]).map(x=>[x.id,x]));
+      const review=(queue.records||[]).find(x=>x.object_id===r.OBJECT_ID);
       const matches=(item.rules||[]).filter(x=>x.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
-      if(!matches.length){host.textContent="No hay reglas familiares candidatas para esta pieza; no se han inferido aplicaciones.";return}
-      const title=document.createElement("h3");title.textContent="Reglas candidatas · procedencia científica";
+      const title=document.createElement("h3");title.textContent="Cadena de evidencia y límites por pieza";
+      const summary=document.createElement("p");summary.textContent="Candidaturas por metadatos: "+matches.length+" · Evidencia editorial vinculada: "+(review?.references_checked?.length||0)+" fuentes · Validación de traducción: no acreditada";
       const list=document.createElement("ul");
       for(const match of matches){
-        const spec=byId.get(match.id);
-        const li=document.createElement("li");const strong=document.createElement("strong");strong.textContent=match.id;
-        li.append(strong,document.createTextNode(" · "+(spec?.validation||"Sin cotejo con el catálogo")+" · "+(spec?.description||"Candidato por metadatos; descripción no vinculada")));
+        const spec=byId.get(match.id),li=document.createElement("li"),strong=document.createElement("strong");
+        strong.textContent=match.id;li.append(strong,document.createTextNode(" · "+(spec?.validation||"Sin catálogo")+" · "+(spec?.description||"Descripción no vinculada")));
         list.append(li);
       }
-      const note=document.createElement("p");note.textContent="Se enumeran candidaturas basadas en etiquetas del registro, no ejecuciones ni traducciones comprobadas.";
-      host.replaceChildren(title,list,note);
+      if(!matches.length){const li=document.createElement("li");li.textContent="Sin reglas familiares candidatas para esta pieza.";list.append(li)}
+      const evidence=document.createElement("details"),label=document.createElement("summary");label.textContent="Fuentes documentales y obstáculos de validación";evidence.append(label);
+      if(review){
+        for(const ref of review.references_checked||[]){
+          const para=document.createElement("p");para.append(document.createTextNode((ref.citation||"Referencia")+" · "+(ref.status||"En revisión")+" "));
+          if(typeof ref.url==="string"&&ref.url.startsWith("https://")){const a=document.createElement("a");a.href=ref.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Consultar fuente ↗";para.append(a)}
+          evidence.append(para);
+        }
+        for(const blocker of review.technical_audit?.blockers||[]){const para=document.createElement("p");para.textContent="Pendiente: "+blocker;evidence.append(para)}
+      }else{const para=document.createElement("p");para.textContent="Esta pieza todavía no dispone de un expediente editorial individual revisado.";evidence.append(para)}
+      const note=document.createElement("p");note.textContent="Las fuentes respaldan el expediente documental; no prueban por sí mismas cada hipótesis ni permiten asignar confianza numérica.";
+      host.replaceChildren(title,summary,list,evidence,note);
     });
 
     slot.innerHTML='<h2>Análisis CORE · Reglas y módulos</h2><p class="meta">'+esc(payload.schema)+' · '+esc(payload.source)+'</p><div class="rc-tags">'+badges+'</div><h3>Reglas candidatas</h3>'+
