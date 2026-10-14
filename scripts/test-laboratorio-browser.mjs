@@ -68,7 +68,7 @@ try{
    });
    check(normalizedInk,'Transliteración normalizada con tinta de alto contraste '+id);
    const ratios=await page.evaluate(()=>{
-     const rgb=value=>(value.match(/[\\d.]+/g)||[]).slice(0,3).map(Number);
+     const rgb=value=>(value.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
      const lum=parts=>parts.slice(0,3).map(v=>{v=v/255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((acc,v,i)=>acc+v*[.2126,.7152,.0722][i],0);
      const contrast=(fg,bg)=>{const a=lum(rgb(fg)),b=lum(rgb(bg));return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)};
      return [
