@@ -171,6 +171,19 @@ try{
    check((await page.locator('#sign-reading-slot').innerText()).length>45,'Lectura o ausencia documental explícita '+objectId);
    check(await page.locator('#sign-reading-slot .ib-normalized-reading').count()>=1,'Panel de normalización en ficha '+objectId);
    check(await page.locator('#sign-correspondence').count()===1,'Panel de signos en ficha '+objectId);
+   const legibility=await page.locator('#sign-reading-slot').evaluate(root=>{
+     const text=root.querySelector('.ib-normalized-reading .ib-sign-script');
+     const nav=document.querySelector('.ib-expert-nav a');
+     const rgb=value=>(value.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
+     const lum=value=>rgb(value).map(v=>{const n=v/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4}).reduce((sum,v,i)=>sum+v*[.2126,.7152,.0722][i],0);
+     const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+     if(!text||!nav)return {reading:0,navigation:0};
+     const textStyle=getComputedStyle(text),bgStyle=getComputedStyle(text.closest('.ib-normalized-reading'));
+     const navStyle=getComputedStyle(nav);
+     return {reading:ratio(textStyle.color,bgStyle.backgroundColor),navigation:ratio(navStyle.color,navStyle.backgroundColor)};
+   });
+   check(legibility.reading>=4.5&&legibility.navigation>=4.5,'Contraste AA de lectura y navegación '+objectId+' '+JSON.stringify(legibility));
+
    await page.locator('#graphic-viewer-slot .ib-graphic-viewer').waitFor({timeout:15000});
    check(await page.locator('#graphic-viewer-slot .ib-graphic-viewer').count()===1,'Visor gráfico documental '+objectId);
    if(objectId==='IBR-PLM-0002'||objectId==='IBR-PLM-0003')check(await page.locator('#graphic-viewer-slot .ib-graphic-source').count()===0,'Sin reproducción gráfica no autorizada '+objectId);
