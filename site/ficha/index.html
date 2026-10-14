@@ -60,11 +60,28 @@ function updateInterpretation(){const main=document.getElementById("interpretati
    const dossier=["IBR-PLM-0002","IBR-PLM-0003","IBR-PLM-0004"].includes(en.OBJECT_ID)?'<p><a class="btn gold" href="https://zenodo.org/records/22957236/files/IberOS_CaseStudies_I_v1.0_4_fichas.pdf?download=1">Abrir dossier PDF ↗</a></p>':'';
    return extractionWarning+'<div class="section-kicker" style="margin-top:30px">Lectura documental</div><h2 class="section-title">Evidencia, inferencia y límites</h2><div class="case-grid"><article class="card"><span class="pill ok">Evidencia documentada</span><h3>Qué sostiene la ficha</h3><p>'+esc(en.evidence||"—")+'</p></article><article class="card"><span class="pill warn">Inferencia propuesta</span><h3>Qué se infiere</h3><p>'+esc(en.inference||"—")+'</p></article><article class="card"><span class="pill">Hipótesis</span><h3>Qué sigue abierto</h3><p>'+esc(en.hypothesis||"—")+'</p></article></div><div class="detail" style="margin-top:14px"><section><div class="card"><h3>Límites</h3><p>'+esc(en.limits||"—")+'</p><h3>Estado epistemológico</h3><p>'+esc(en.epistemology||"—")+'</p></div></section><aside><div class="card"><h3>Bibliografía</h3><ul>'+bib+'</ul>'+citation+'<div class="notice">'+esc(en.note||en.extraction_note||"")+'</div>'+dossier+'</div></aside></div>';
  }
+ function variantReviewHtml(record){
+  if(!record||!record.variant_review)return '';
+  const v=record.variant_review;
+  const variants=Array.isArray(v.variants)?v.variants:[];
+  const rows=variants.map(item=>'<article class="card"><h3>'+esc(item.locus||"Pasaje en revisión")+'</h3><p><strong>Lectura A:</strong> '+esc(item.reading_a||"No registrada")+'</p><p><small>'+esc(item.source_a||"Fuente pendiente")+'</small></p><p><strong>Lectura B / análisis alternativo:</strong> '+esc(item.reading_b||"No registrada")+'</p><p><small>'+esc(item.source_b||"Fuente pendiente")+'</small></p><p><strong>Diferencia:</strong> '+esc(item.difference||"Sin determinar")+'</p><p>'+esc(item.notes||"")+'</p><span class="pill warn">Variante sin resolver · no es traducción</span></article>').join('');
+  const checks=(Array.isArray(v.issues)?v.issues:[]).map(x=>'<li>'+esc(x)+'</li>').join('');
+  const refs=(Array.isArray(record.references_checked)?record.references_checked:[]).filter(x=>typeof x.url==="string"&&/^https:\/\//.test(x.url)).map(x=>'<li><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+esc(x.citation||"Publicación")+'</a> · '+esc(x.status||"Pendiente")+'</li>').join('');
+  return '<section class="wrap" aria-label="Cotejo de variantes"><div class="section-kicker">Core · control epigráfico</div><h2 class="section-title">Lecturas, variantes y verificaciones</h2><div class="notice">Registro documental en revisión. No existe aprobación científica de segmentos ni traducción confirmada.</div><div class="case-grid">'+rows+'</div><details><summary>Comprobaciones pendientes y fuentes</summary><ul>'+checks+refs+'</ul></details></section>';
+ }
+ function loadVariantReview(){
+   const host=document.getElementById("variant-review-slot");if(!host)return;
+   fetch("../data/scientific-review-queue-v1.json").then(x=>{if(!x.ok)throw Error("HTTP "+x.status);return x.json()}).then(data=>{
+     const record=Array.isArray(data.records)?data.records.find(x=>x.object_id===r.OBJECT_ID):null;
+     host.innerHTML=variantReviewHtml(record);
+   }).catch(error=>{console.warn("Variantes no disponibles",error);host.innerHTML='<div class="notice">El cotejo de variantes no está disponible temporalmente. La ficha científica principal sigue accesible.</div>'});
+ }
  function relatedHtml(){
    if(!related.length)return "";
    return '<div class="section-kicker" style="margin-top:30px">Objetos relacionados</div><h2 class="section-title">Paralelos por familia</h2><div class="corpus-grid">'+related.map(x=>'<article class="result-card"><div class="media"></div><div class="copy"><div class="meta">'+esc(x)+'</div><h3>'+esc(by[x]?.Nombre_objeto||x)+'</h3><a class="btn alt" href="?id='+encodeURIComponent(x)+'">Abrir ficha →</a></div></article>').join("")+'</div>';
  }
- body.innerHTML='<section class="artifact-stage">'+summaryHtml()+'</section>'+reconstructionHtml()+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>'+relatedHtml();
+ body.innerHTML='<section class="artifact-stage">'+summaryHtml()+'</section>'+reconstructionHtml()+metadataHtml()+'<div id="documentary-slot"><div class="notice" style="margin-top:26px">Cargando lectura documental…</div></div>+'<div id="variant-review-slot"></div>'+relatedHtml();
+ loadVariantReview();
  const slot=document.getElementById("documentary-slot");
  const shard=shardFor(r.OBJECT_ID);
  if(!shard){
