@@ -65,7 +65,7 @@ try{
    check(await page.locator('#core-rule-evidence details p').count()>=2,'Fuentes y obstáculos visibles '+id);
    check(await page.locator('#core-rule-evidence .ib-hypothesis-matrix th').count()===4,'Matriz científica con cuatro columnas '+id);
    const matrixContrast=await page.locator('.ib-hypothesis-matrix').evaluate(root=>{
-      const light=(node)=>{const c=getComputedStyle(node).color.match(/\\d+/g)?.map(Number)||[];return c.length===3&&c[0]<75&&c[1]<95&&c[2]<110};
+      const light=(node)=>{const c=getComputedStyle(node).color.match(/\d+/g)?.map(Number)||[];return c.length===3&&c[0]<75&&c[1]<95&&c[2]<110};
       const body=root.querySelector('td'),heading=root.querySelector('th');
       const ink=light(body);
       const headerColor=getComputedStyle(heading).color;
@@ -155,6 +155,16 @@ try{
      check((await page.locator('#ib-sign-detail').innerText()).includes('Pendiente de verificación individual'),'Límites del signo visibles');
    }
    check((await page.locator('#sign-reading-slot').innerText()).includes('01 · LECTURA EDITORIAL'),'Lectura editorial visible '+objectId);
+   if(['IBR-CER-0001','IBR-PLM-0002','IBR-PLM-0003'].includes(objectId)){
+     await page.setViewportSize({width:390,height:844});
+     const mobile=await page.locator('.ib-primary-grid').evaluate(el=>{
+       const rect=el.getBoundingClientRect();
+       return rect.width>0&&rect.width<=document.documentElement.clientWidth+2;
+     });
+     check(mobile,'Ficha legible dentro de viewport móvil '+objectId);
+     await page.setViewportSize({width:1280,height:800});
+   }
+
  }
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
