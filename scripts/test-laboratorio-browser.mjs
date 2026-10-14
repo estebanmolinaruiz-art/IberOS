@@ -48,6 +48,19 @@ try{
    check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
    check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   const nav=page.locator('.ib-expert-nav');
+   check(await nav.isVisible(),'Acceso experto visible '+id);
+   check((await nav.locator('a').count())===4,'Cuatro accesos expertos '+id);
+   check((await nav.locator('a[href="#documentary-slot"]').count())===1,'Enlace de evidencia '+id);
+   check((await nav.locator('a[href="#variant-review-slot"]').count())===1,'Enlace de variantes '+id);
+   check((await nav.locator('a[href*="../webengine/?q="]').first().getAttribute('href')).includes(id),'Core apunta a la pieza '+id);
+   const [exported]=await Promise.all([page.waitForEvent('download'),nav.locator('#expertExport').click()]);
+   const exportedJson=JSON.parse((await (await import('node:fs/promises')).readFile(await exported.path())).toString('utf8'));
+   check(exportedJson.object_id===id&&exportedJson.documentary_enrichment?.OBJECT_ID===id,'JSON documentado de '+id);
+   check(exportedJson.scientific_review?.object_id===id&&exportedJson.scientific_review?.publication_approved===false,'Exportación conserva revisión no aprobada '+id);
+   const size=await page.locator('#interpretationMain').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
+   check(size<=23,'Tamaño de interpretación compacto '+id+' ('+size+' px)');
+
    check(errors.length===0,'Ficha '+id+' sin errores JavaScript: '+errors.join('; '));
    page.off('pageerror',handler);
  }
