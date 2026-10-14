@@ -19,7 +19,19 @@
       "RIGHTS_PENDING",
       "READY_FOR_DISPLAY",
       "SIGN_MAPPING_PENDING"
-    ]
+    ],
+    "glyph_entry_required": [
+      "label",
+      "svg_url",
+      "transliteration",
+      "source_locator",
+      "source_position_verified",
+      "equivalence_reviewed",
+      "reviewed",
+      "image_position_pct",
+      "license"
+    ],
+    "image_position_pct_description": "Rectangle {x,y,width,height} in percentage coordinates relative to the source figure; verified only. 0–100."
   },
   "records": [
     {
@@ -33,7 +45,8 @@
       "rights_verified": false,
       "exact_object_match_verified": true,
       "glyphs": [],
-      "sign_mapping_status": "SIGN_MAPPING_PENDING"
+      "sign_mapping_status": "SIGN_MAPPING_PENDING",
+      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols."
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -46,7 +59,8 @@
       "rights_verified": false,
       "exact_object_match_verified": false,
       "glyphs": [],
-      "sign_mapping_status": "SIGN_MAPPING_PENDING"
+      "sign_mapping_status": "SIGN_MAPPING_PENDING",
+      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols."
     }
   ]
 }
