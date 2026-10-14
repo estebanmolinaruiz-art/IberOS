@@ -5,6 +5,8 @@ const base='http://127.0.0.1:8765';
 function check(v,msg){if(!v)throw Error('FALLA: '+msg);console.log('✓ '+msg)}
 try{
  await page.goto(base+'/laboratorio/?id=IBR-CER-0002');
+ check((await page.locator('#save').innerText()).includes('Ver mi cuaderno'),'Botón de visualización comprensible');
+ check((await page.locator('#json').innerText()).includes('Guardar una copia'),'Botón para guardar copia comprensible');
  await page.locator('#name').fill('Prueba de recuperación IberOS');
  await page.locator('#question').fill('¿Se conserva la pregunta de investigación?');
  await page.reload();
