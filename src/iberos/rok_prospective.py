@@ -61,6 +61,29 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
                           "prediction": row["prediction"],
                           "segmentation": row["segmentation"],
                           "control_type": row["control_type"]})
+    # Conservative cross-edition dependency audit. Shared leak/dependency
+    # identifiers cannot be treated as independent prospective witnesses.
+    seen_groups: dict[str, str] = {}
+    for i, row in enumerate(observations):
+        if not isinstance(row, dict) or not isinstance(row.get("physical_id"), str):
+            continue
+        phys = row["physical_id"].strip()
+        if not phys:
+            continue
+        for name in ("LEAK_GROUP", "Dependency_Group"):
+            value = row.get(name)
+            if not isinstance(value, str) or not value.strip():
+                continue
+            value = value.strip()
+            if name == "Dependency_Group" and value.upper() in (
+                "INDEPENDENT_OR_UNRESOLVED", "DEPENDENT_COPY"
+            ):
+                continue
+            key = name + ":" + value
+            if key in seen_groups and seen_groups[key] != phys:
+                errors.append(f"observations[{i}]: cross-edition dependency {key}")
+            else:
+                seen_groups[key] = phys
     has_target = any(x["control_type"] == "TARGET" for x in summaries)
     has_control = any(x["control_type"] != "TARGET" for x in summaries)
     if not has_target:
