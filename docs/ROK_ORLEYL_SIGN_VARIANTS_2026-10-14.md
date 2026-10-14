@@ -64,3 +64,14 @@ El contraste `BITEROKETETINE` / `BITEROKETINE` permanece **editorialmente docume
 **Control previo al etiquetado signo a signo:** obtener coordenadas de cada grafema con una leyenda validada y registrar los estados `VISIBLE`, `UNCERTAIN`, `RESTORED` de forma independiente en dibujo y fotografía. Sin esto no se registran lecturas diplomáticas nuevas.
 
 **Resultado:** `ROK-RECIPIENT-02=OPEN`, cero promociones semánticas y ningún cambio de indicadores CORE.
+
+## Tanda de verificación editorial reproducible — 2026-10-14
+Inspección del PDF aportado directamente:
+- PDF **p. 67**, Fletcher, Orleyl V línea 3: `BI-TE-R-O-KE-TE-TI-N-E`.
+- PDF **p. 110**, Orleyl VII-B línea 2: `BA-S-BI-TE-R-O-KE-TI-N-E`; **BAS** figura en el pasaje completo y no debe borrarse sin indicar que se está seleccionando una unidad comparativa.
+- PDF **p. 118**, «Notas finales»: la comparación explícita del editor es `GUDUR BITEROKETETINE` frente a `GUDUBOIKE BITEROKETINE`.
+- Se ha generado una lámina local de prueba con las tres páginas renderizadas: `orleyl_evidencia_editorial_paginas_67_110_118.png`. No está incorporada automáticamente como imagen al repositorio.
+
+**Estado de prueba:** `EDITORIAL_TRANSCRIPTION_CONFIRMED`; `GRAPHIC_GLYPH_VERIFIED=false`; `MORPHEME_TE_VERIFIED=false`. Los recortes de los dibujos siguen siendo regiones candidatas de renglón; ningún grafema se ha validado por posicionamiento fotográfico independiente.
+
+**No confundir:** diferencia formal documentada vs. asignación de valor gramatical. `ROK-RECIPIENT-02` sigue OPEN; congelación científica intacta.
