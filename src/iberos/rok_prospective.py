@@ -84,7 +84,7 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
             continue
         usable.append(i)
         keys = ["PHYS:" + phys]
-        for name in ("LEAK_GROUP", "Dependency_Group"):
+        for name in ("LEAK_GROUP", "Dependency_Group", "TEXT_DEPENDENCY_GROUP"):
             value = row.get(name)
             if not isinstance(value, str) or not value.strip():
                 continue
@@ -97,6 +97,16 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
                 join(i, seen[key])
             else:
                 seen[key] = i
+    # Context is recorded for archaeological review, not used to merge objects.
+    shared_contexts: dict[str, list[int]] = {}
+    for i, row in enumerate(observations):
+        if not isinstance(row, dict):
+            continue
+        context = row.get("archaeological_context")
+        if isinstance(context, str) and context.strip():
+            shared_contexts.setdefault(context.strip(), []).append(i)
+    shared_contexts = {key: ids for key, ids in shared_contexts.items()
+                       if len(ids) > 1}
     components: dict[int, list[int]] = {}
     for i in usable:
         components.setdefault(root(i), []).append(i)
@@ -116,6 +126,8 @@ def assess_rok_prospective(observations: Any) -> dict[str, Any]:
             "errors": errors, "witnesses": summaries,
             "documentary_components": [members for _, members in sorted(components.items())],
             "documentary_unit_count": len(components),
+            "shared_archaeological_contexts": shared_contexts,
+            "context_independence_review_required": bool(shared_contexts),
             "official_rok_recipient_gate": "OPEN",
             "scientific_state": "UNVERIFIED",
             "automatic_core_promotion": False}
