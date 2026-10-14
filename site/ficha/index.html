@@ -151,7 +151,7 @@ if(dataLoadFailed){
  }
  function initGraphicGlyphs(item){
   const root=document.getElementById("graphic-viewer-slot");const plate=root?.querySelector(".ib-glyph-map");if(!plate)return;
-  const glyphs=item.glyphs;
+  const glyphs=item.glyphs.filter(g=>g&&g.reviewed===true&&g.source_position_verified===true&&g.equivalence_reviewed===true&&typeof g.svg_url==="string"&&/^https:\/\//.test(g.svg_url)&&typeof g.label==="string"&&typeof g.source_locator==="string"&&typeof g.license==="string"&&g.image_position_pct&&["x","y","width","height"].every(k=>Number.isFinite(g.image_position_pct[k])&&g.image_position_pct[k]>=0&&g.image_position_pct[k]<=100)&&g.image_position_pct.width>0&&g.image_position_pct.height>0&&g.image_position_pct.x+g.image_position_pct.width<=100&&g.image_position_pct.y+g.image_position_pct.height<=100);
   plate.querySelectorAll("[data-glyph]").forEach(button=>button.addEventListener("click",()=>{
    const index=Number(button.dataset.glyph);const g=glyphs[index];if(!g)return;
    plate.querySelectorAll("[data-glyph]").forEach(x=>x.setAttribute("aria-pressed",String(Number(x.dataset.glyph)===index)));
