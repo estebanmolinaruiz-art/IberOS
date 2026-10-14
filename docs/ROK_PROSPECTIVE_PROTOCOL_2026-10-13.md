@@ -27,3 +27,8 @@ La salida `READY_FOR_INDEPENDENT_REVIEW` significa exclusivamente que los campos
 El módulo prospectivo añade comprobaciones de grupos `LEAK_GROUP` y `Dependency_Group` específicos compartidos por testigos que alegan distintas identidades físicas. La detección produce BLOCKED, no REVIEW. Las etiquetas genéricas `INDEPENDENT_OR_UNRESOLVED` y `DEPENDENT_COPY` no se usan como identidades compartidas. Tests adversariales incorporados.
 
 **Limitación:** se trata de detección directa entre parejas con un mismo identificador; no reemplaza una auditoría completa de componentes conexas ni una comprobación arqueológica de la procedencia. La entrada aún es declarativa. Los nuevos commits necesitan confirmación CI específica. El gate oficial ROK continúa OPEN y no hay modificación de porcentajes.
+
+## Control de componentes transitivas — 2026-10-14
+`assess_rok_prospective` agrupa ahora los registros con componentes conexas creadas por `physical_id`, `LEAK_GROUP` y grupos `Dependency_Group` específicos. Por ejemplo, A conectado a B mediante LEAK y B conectado a C mediante un grupo específico impide contar A y C como independientes. El resultado proporciona `documentary_components` y `documentary_unit_count`; dependencias repetidas llevan a `BLOCKED`. Se añaden pruebas de puente transitivo y fuentes separadas.
+
+El catálogo y las identidades siguen siendo **declarativos** y los resultados de pruebas sintéticas no convalidan autenticidad ni independencia real. La ejecución de GitHub Actions para estos commits todavía debe comprobarse. El gate científico oficial ROK-RECIPIENT-02 sigue OPEN.
