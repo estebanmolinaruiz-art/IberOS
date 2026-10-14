@@ -5,7 +5,9 @@ No geographic observation is allowed to promote linguistic hypotheses.
 """
 from __future__ import annotations
 from typing import Any
-from .core import get_object
+import json
+from pathlib import Path
+from .core import get_object, REPO_ROOT
 
 ATLAS_NODES = (
     {"id":"KELIN","name":"Los Villares / Kelin","query":"Los Villares","lat":39.55354,"lon":-1.28322,"precision":"SITE_REFERENCE","zone":"LEV"},
@@ -18,6 +20,17 @@ ATLAS_NODES = (
 
 def atlas_nodes() -> list[dict[str, Any]]:
     """Copy published atlas references; never present them as artifact locations."""
+    source = REPO_ROOT / "site" / "data" / "geo_atlas_nodes.json"
+    if source.is_file():
+        nodes = json.loads(source.read_text(encoding="utf-8"))
+        if not isinstance(nodes, list) or len(nodes) != 6:
+            raise ValueError("Unexpected shared GEO catalogue")
+        required = {"id", "name", "query", "lat", "lon", "precision", "zone"}
+        if any(not isinstance(row, dict) or not required.issubset(row) for row in nodes):
+            raise ValueError("Malformed shared GEO catalogue")
+        return [dict(n) for n in nodes]
+    # Compatibility fallback for standalone iberos==1.0.1 installs;
+    # must remain identical to the shared source under CI.
     return [dict(n) for n in ATLAS_NODES]
 
 def geo_context(object_id: str) -> dict[str, Any]:
@@ -28,7 +41,7 @@ def geo_context(object_id: str) -> dict[str, Any]:
     # The matched catalogue text is descriptive, not proof of exact findspot.
     haystack = " | ".join((obj.get("Yacimiento") or "", obj.get("Localidad") or ""))
     words = haystack.casefold()
-    matches = [dict(n) for n in ATLAS_NODES if n["query"].casefold() in words]
+    matches = [dict(n) for n in atlas_nodes() if n["query"].casefold() in words]
     return {
         "object_id": object_id,
         "catalogue_yacimiento": obj.get("Yacimiento", ""),
