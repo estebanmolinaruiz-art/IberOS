@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Scientific-Review-Queue/1.0",
-  "note": "Review queue: bibliographic locations are not segment approval. Scientific conclusions untouched.",
+  "note": "Bibliographic alignment and comparison only; no automatic segmentation, translation, independence or publication approval.",
   "records": [
     {
       "object_id": "IBR-PLM-0002",
@@ -22,6 +22,13 @@
           "url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
           "status": "PUBLICATION_LOCATED_TEXT_NOT_YET_ALIGNED",
           "note": "Comprobar en edición y fotografía que la secuencia atribuida a T.07.03 pertenece exactamente al testimonio citado; no aprobar lectura por coincidencia de yacimiento."
+        },
+        {
+          "citation": "Asensio, Miró, Sanmartí y Velaza (2003), Inscripción ibérica sobre plomo procedente de Castellet de Banyoles (Tivissa), Palaeohispanica 3, pp. 195-204",
+          "url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+          "locator": "pp. 201-204, lectura y comentario epigráfico (verificación fina pendiente)",
+          "status": "EDITION_TEXT_LOCATED_OBJECT_MATCH_REQUIRES_FINAL_CHECK",
+          "note": "La edición documenta śalaiaŕkis, secuencias -teŕokan, śalir y numerales; conserva expresamente sin resolver el contenido exacto. No trasvasar glosas semánticas."
         }
       ]
     },
@@ -47,6 +54,13 @@
           "reading": "]itiatu:ban:kutur:biteŕokan",
           "status": "SECONDARY_EDITION_LOCATED_UNVERIFIED_AGAINST_OBJECT",
           "note": "La lectura reproducida requiere cotejo con edición original y con las lecturas de Hesperia; no valida semántica ni independencia."
+        },
+        {
+          "citation": "Ferrer i Jané (2014), Ibèric kutu i els abecedaris ibèrics, Veleia 31, p. 250",
+          "url": "https://addi.ehu.es/bitstream/handle/10810/37273/13345-59626-1-PB.pdf?isAllowed=y&sequence=1",
+          "locator": "p. 250, tabla de testimonios B.7.38*",
+          "status": "COMPARATIVE_READING_REGISTERED_PENDING_COLLATION",
+          "note": "Cita ...ban / kutur / bideŕokan en cuadro comparativo. Confrontar delimitación exacta con Untermann y Velaza; no contabilizar la misma pieza como testimonio independiente."
         }
       ]
     }
