@@ -32,3 +32,13 @@ El módulo prospectivo añade comprobaciones de grupos `LEAK_GROUP` y `Dependenc
 `assess_rok_prospective` agrupa ahora los registros con componentes conexas creadas por `physical_id`, `LEAK_GROUP` y grupos `Dependency_Group` específicos. Por ejemplo, A conectado a B mediante LEAK y B conectado a C mediante un grupo específico impide contar A y C como independientes. El resultado proporciona `documentary_components` y `documentary_unit_count`; dependencias repetidas llevan a `BLOCKED`. Se añaden pruebas de puente transitivo y fuentes separadas.
 
 El catálogo y las identidades siguen siendo **declarativos** y los resultados de pruebas sintéticas no convalidan autenticidad ni independencia real. La ejecución de GitHub Actions para estos commits todavía debe comprobarse. El gate científico oficial ROK-RECIPIENT-02 sigue OPEN.
+
+## Tres dimensiones de independencia — 2026-10-14
+
+- **Identidad física:** `physical_id` repetido implica una sola unidad; diferentes `physical_id` pueden representar piezas diferentes.
+- **Dependencia textual:** `TEXT_DEPENDENCY_GROUP` idéntico conecta las ediciones y bloquea su cómputo como corroboraciones independientes, aunque sean objetos físicos distintos. `LEAK_GROUP` y grupos específicos también conectan registros de forma transitiva.
+- **Contexto arqueológico:** `archaeological_context` compartido queda registrado en `shared_archaeological_contexts` y activa `context_independence_review_required`, **sin fusionar automáticamente** objetos físicamente separados.
+
+Pruebas añadidas con identificadores ilustrativos Orleyl F.9.5/F.9.7 y copia textual Marsal: verifican el comportamiento del software, no la identificación física definitiva de estas piezas. No introducir controles `EXCLUDED_CONTROL` como evidencia positiva aunque se pueda simular un par de dependencia en tests.
+
+La salida `READY_FOR_INDEPENDENT_REVIEW` no certifica independencia arqueológica ni lectura; exige auditoría humana. ROK-RECIPIENT-02 sigue OPEN.
