@@ -64,6 +64,25 @@ try{
    check(errors.length===0,'Ficha '+id+' sin errores JavaScript: '+errors.join('; '));
    page.off('pageerror',handler);
  }
+ // Recorrido completo reproducible: descubrimiento, evidencia, motor y cuaderno.
+ await page.goto(base+'/corpus/?q=IBR-PLM-0002');
+ const corpusLink=page.locator('#grid a[href*="../ficha/?id=IBR-PLM-0002"]').first();
+ await corpusLink.waitFor({timeout:15000});
+ check(await corpusLink.isVisible(),'Corpus encuentra Tivissa y ofrece ficha');
+ await corpusLink.click();
+ await page.locator('#interpretationMain').waitFor({timeout:15000});
+ check(new URL(page.url()).searchParams.get('id')==='IBR-PLM-0002','Corpus abre la pieza correcta');
+ const coreLink=page.locator('.ib-expert-nav a[href*="../webengine/?q="]');
+ await coreLink.click();
+ check(new URL(page.url()).searchParams.get('q')==='IBR-PLM-0002','Acceso experto envía la misma pieza al Core');
+ await page.locator('#core-cards').waitFor();
+ await page.goto(base+'/laboratorio/?id=IBR-PLM-0002');
+ check(await page.locator('#object').inputValue()==='IBR-PLM-0002','Laboratorio conserva la pieza de origen');
+ await page.locator('#name').fill('Recorrido completo IberOS');
+ await page.locator('#question').fill('¿Qué evidencia sostiene esta interpretación?');
+ const [journeyFile]=await Promise.all([page.waitForEvent('download'),page.locator('#json').click()]);
+ const journey=JSON.parse((await (await import('node:fs/promises')).readFile(await journeyFile.path())).toString('utf8'));
+ check(journey.object==='IBR-PLM-0002'&&journey.name==='Recorrido completo IberOS','Proyecto exportado conserva la pieza y el nombre');
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
  check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
