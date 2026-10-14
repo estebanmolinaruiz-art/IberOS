@@ -55,3 +55,12 @@ Se han renderizado directamente desde el PDF aportado a 170 ppp las siguientes p
 **Límite científico:** no se han extraído con evidencia visual autónoma las coordenadas exactas de las secuencias `BITEROKETETINE` y `BASBITEROKETINE` en ambos soportes. No se certifica la forma de signos individuales, variantes de róticas ni la frontera de `TE` solo porque el editor la transcriba. Los cotejos anteriores entre las dos cadenas son **alineaciones de Fletcher, no nueva lectura paleográfica**. La siguiente etapa precisa identificar dirección de lectura y sector exacto sobre los calcos, y contrastar el mismo sector en foto, con incertidumbre signo a signo.
 
 La lámina de trabajo generada localmente no se añade automáticamente al repositorio GitHub. `ROK-RECIPIENT-02=OPEN`; indicadores sin cambios.
+
+## Nueva comprobación con figuras orientadas — 2026-10-14
+Se han examinado con el PDF aportado las imágenes de figura 22 (PDF p. 65, Orleyl V) y figura 25 (PDF p. 111, VII-B); ambas han sido rotadas a orientación de lectura y colocadas juntas en una lámina local de investigación `orleyl_dibujos_cotejo_correcto.png`. **Se han conservado las figuras completas, no se pretende que el recorte identifique por sí mismo el comienzo y final exactos de cada morfema.**
+
+El contraste `BITEROKETETINE` / `BITEROKETINE` permanece **editorialmente documentado** en Fletcher. La transcripción completa VII-B incluye además `BAS-`. Sigue sin demostrarse de manera independiente mediante la imagen la asignación y calidad de cada signo; el trabajo visual ha servido para preparar la localización definitiva por renglón, sin modificar la lectura establecida.
+
+**Control previo al etiquetado signo a signo:** obtener coordenadas de cada grafema con una leyenda validada y registrar los estados `VISIBLE`, `UNCERTAIN`, `RESTORED` de forma independiente en dibujo y fotografía. Sin esto no se registran lecturas diplomáticas nuevas.
+
+**Resultado:** `ROK-RECIPIENT-02=OPEN`, cero promociones semánticas y ningún cambio de indicadores CORE.
