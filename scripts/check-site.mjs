@@ -10,7 +10,7 @@ for(const p of html){if(!existsSync(base+p))continue;const t=readFileSync(base+p
 for(const [i,m] of scripts.entries()){if(!m[2].trim())continue;if(/\bapplication\/ld\+json\b/i.test(m[1])){try{JSON.parse(m[2]);assert(true,'JSON-LD '+p+' #'+(i+1))}catch(e){assert(false,'JSON-LD inválido '+p+' #'+(i+1))}continue}try{const code=m[2];const tmp='/tmp/iberos-check-'+process.pid+'-'+i+(m[1].includes('module')?'.mjs':'.js');const {writeFileSync,unlinkSync}=await import('node:fs');writeFileSync(tmp,code);execFileSync(process.execPath,['--check',tmp],{stdio:'pipe'});unlinkSync(tmp);assert(true,'JavaScript '+p+' #'+(i+1))}catch(e){assert(false,'JavaScript '+p+' #'+(i+1)+' '+String(e.stderr||e.message).slice(0,180))}}}
 for(const p of ['data/objects.csv','data/families.csv'])if(existsSync(base+p)){const text=readFileSync(base+p,'utf8');assert(text.includes('OBJECT_ID')&&text.trim().split(/\r?\n/).length>35,'CSV no vacío '+p)}
 for(const p of ['data/iberos-result-v1.schema.json','data/real_3d_resources.json','models/inscribed-placa.gltf','models/inscribed-estela.gltf'])if(existsSync(base+p)){try{JSON.parse(readFileSync(base+p,'utf8'));assert(true,'JSON legible '+p)}catch(e){assert(false,'JSON inválido '+p)}}
-console.log('\n'+(checks-errors)+'/'+checks+' controles correctos');if(errors)process.exitCode=1;
+
 
 import {readdirSync,statSync} from 'node:fs';
 import {join,relative,dirname,resolve} from 'node:path';
@@ -46,3 +46,5 @@ if(existsSync(base+'ficha/index.html')){
  assert(source.includes('loadVariantReview()')&&source.includes('scientific-review-queue-v1.json'),'Ficha conectada a variantes');
  assert(source.includes('publication_approved===true'),'Ficha exige autorización científica');
 }
+
+console.log('\n'+(checks-errors)+'/'+checks+' controles correctos');if(errors)process.exitCode=1;
