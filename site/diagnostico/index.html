@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IberOS · Diagnóstico gratuito</title><link rel="stylesheet" href="../assets/iberos-plus.css">
+<style>main{max-width:970px;margin:30px auto;padding:24px} .test{margin:12px 0;padding:14px;background:#fff9ea;border:1px solid #c6a979;border-radius:9px;color:#132c3d} .ok{border-left:5px solid #348068}.fail{border-left:5px solid #a5443e}.pending{border-left:5px solid #b18a43}pre{white-space:pre-wrap;overflow-wrap:anywhere}a{color:#164f76}</style></head>
+<body class="iberos-inner"><div id="head"></div><main><h1>Diagnóstico de IberOS+</h1><p>Comprobación gratuita, ejecutada en este navegador. No modifica los resultados científicos ni transmite información del usuario.</p>
+<button id="run" type="button">Repetir comprobación</button><div id="results" role="status" aria-live="polite"></div>
+<p><a href="../ficha/?id=IBR-PLM-0002">Abrir Tivissa</a> · <a href="../ficha/?id=IBR-PLM-0003">Abrir Pech-Maho</a> · <a href="../fichas/">Archivo de fichas</a></p>
+</main><script type="module">
+import {header,esc,csv} from "../assets/portal-data.js";
+document.getElementById("head").innerHTML=header("../");
+const target=document.getElementById("results");
+const checks=[
+ ["Catálogo de piezas","../data/objects.csv",t=>{const rows=csv(t);for(const id of ["IBR-PLM-0002","IBR-PLM-0003"]){if(!rows.some(r=>r.OBJECT_ID===id))throw Error("Falta "+id)}return rows.length+" piezas; Tivissa y Pech-Maho presentes"}],
+ ["Familias documentales","../data/families.csv",t=>{const rows=csv(t);if(!rows.length)throw Error("Archivo vacío");return rows.length+" relaciones"}],
+ ["Análisis científico publicado","../data/ficha-enrichment-3.json",t=>{const rows=JSON.parse(t);if(!Array.isArray(rows))throw Error("Formato no válido");for(const id of ["IBR-PLM-0002","IBR-PLM-0003"]){const r=rows.find(x=>x.OBJECT_ID===id);if(!r?.hypothesis||!r?.limits)throw Error("Faltan hipótesis o límites de "+id)}return "Hipótesis y límites presentes para ambas piezas"}],
+ ["Expedientes de variantes","../data/scientific-review-queue-v1.json",t=>{const d=JSON.parse(t);for(const id of ["IBR-PLM-0002","IBR-PLM-0003"]){const r=d.records?.find(x=>x.object_id===id);if(!r||!r.variant_review?.variants?.length)throw Error("Faltan variantes de "+id);if(r.publication_approved!==false)throw Error("Estado científico no esperado en "+id)}return "Variantes cargadas; publicación de segmentos bloqueada"}],
+ ["Módulo de presentación","../assets/portal-data.js",t=>{if(!t.includes("export function header"))throw Error("Módulo incompleto");return "Módulo accesible"}],
+ ["Ficha individual","../ficha/",t=>{if(!t.includes("loadVariantReview"))throw Error("Versión sin visor de variantes");return "Código del visor de variantes accesible"}]
+];
+async function run(){target.innerHTML='<p>Comprobando archivos publicados…</p>';const records=await Promise.all(checks.map(async ([name,url,test])=>{try{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status);return {name,ok:true,message:test(await response.text())}}catch(e){return {name,ok:false,message:String(e.message||e)}}}));const passed=records.filter(x=>x.ok).length;target.innerHTML='<h2>'+passed+' de '+records.length+' comprobaciones correctas</h2>'+records.map(x=>'<div class="test '+(x.ok?"ok":"fail")+'"><strong>'+(x.ok?"✓ ":"✗ ")+esc(x.name)+'</strong><p>'+esc(x.message)+'</p></div>').join('')+'<p>Esta prueba verifica disponibilidad y coherencia básica de archivos, no un cotejo paleográfico ni una traducción científica.</p>';}
+document.getElementById("run").addEventListener("click",run);run();
+</script></body></html>
