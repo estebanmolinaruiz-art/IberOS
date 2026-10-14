@@ -81,6 +81,15 @@
           "Verify sign-level evidence for śalir and accompanying numerals",
           "Distinguish documented writing from functional claims about -te- and ROK"
         ]
+      },
+      "original_edition": {
+        "citation": "Asensio, Miró, Sanmartí y Velaza (2003), Inscripción ibérica sobre plomo procedente de Castellet de Banyoles (Tivissa), Palaeohispanica 3, 195–204",
+        "url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf",
+        "locator": "Artículo completo, pp. 195–204; identificar y cotejar las figuras de la pieza antes de incorporarlas",
+        "object_identification": "Plomo del Castellet de Banyoles (Tivissa), testimonio atribuido a T.07.03; cotejo de correspondencia física pendiente",
+        "image_status": "SOURCE_PDF_LOCATED_FIGURE_MATCH_AND_REUSE_PERMISSION_PENDING",
+        "source_link_verified": true,
+        "autopsy": false
       }
     },
     {
