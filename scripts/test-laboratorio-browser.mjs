@@ -62,6 +62,12 @@ try{
      const [r,g,b]=rgb(el);return r<90&&g<100&&b<120;
    });
    check(readingContrast,'Lectura ibérica con tinta oscura '+id);
+   const normalizedInk=await page.locator('.ib-normalized-reading .ib-sign-script').first().evaluate(el=>{
+     const nums=getComputedStyle(el).color.match(/\d+/g)?.map(Number)||[];
+     return nums.length>=3&&nums[0]<80&&nums[1]<95&&nums[2]<110;
+   });
+   check(normalizedInk,'Transliteración normalizada con tinta de alto contraste '+id);
+
    check(await page.locator('.ib-expert-nav a').first().isVisible(),'Navegación experta visible '+id);
 
    await page.locator('#core-rule-evidence').waitFor({timeout:15000});
