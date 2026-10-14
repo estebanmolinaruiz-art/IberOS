@@ -58,6 +58,18 @@
         "material_object_checked": false,
         "independence_confirmed": false,
         "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN",
+        "method": "Compare edition readings against primary epigraphic witness; preserve graphemic variants and word boundaries",
+        "variants": [],
+        "source_dependence": "Different editions of the same inscribed object must not count as independent attestations",
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED",
+        "issues": [
+          "Confirm uninterrupted transcription of śalaiaŕkis-te-ŕokan vs alternative boundary proposals",
+          "Verify sign-level evidence for śalir and accompanying numerals",
+          "Distinguish documented writing from functional claims about -te- and ROK"
+        ]
       }
     },
     {
@@ -119,6 +131,18 @@
         "material_object_checked": false,
         "independence_confirmed": false,
         "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN",
+        "method": "Compare edition readings against primary epigraphic witness; preserve graphemic variants and word boundaries",
+        "variants": [],
+        "source_dependence": "Different editions of the same inscribed object must not count as independent attestations",
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED",
+        "issues": [
+          "Compare Untermann (2014) / Velaza reading with 1988 editio princeps",
+          "Check ban:kutur:biteŕokan graphemic boundaries in original edition",
+          "Do not treat same inscribed support in different publications as independent evidence"
+        ]
       }
     }
   ]
