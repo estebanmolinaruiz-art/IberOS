@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Scientific-Review-Queue/1.0",
-  "note": "Control técnico verificable de publicación. Referencias catalogadas no equivalen a independencia, lectura contrastada o validación semántica.",
+  "note": "Editorial passages located. No direct artefact collation, independent physical attestation or semantic certification. No segments approved.",
   "records": [
     {
       "object_id": "IBR-PLM-0002",
@@ -44,6 +44,20 @@
           "No existen reconstruction_segments revisados por el Core",
           "No hay autorización científica de publicación"
         ]
+      },
+      "editorial_collation": {
+        "status": "EDITION_PASSAGE_VERIFIED",
+        "edition": "Asensio, Miró, Sanmartí, Velaza (2003), Palaeohispanica 3",
+        "pages": "200-203",
+        "url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+        "observations": [
+          "Page 200 (PDF index 5): transcription of śalaiaŕkisteŕokan and śalir with numeral signs; typography in original edition must be preserved for citation",
+          "Page 202 (PDF index 7): explicit alternative boundary for -te/-ŕokan and comparison to ROK paradigms",
+          "Page 203 (PDF index 8): semantic values of verbal-looking forms remain unknown"
+        ],
+        "material_object_checked": false,
+        "independence_confirmed": false,
+        "semantic_validation": false
       }
     },
     {
@@ -90,6 +104,21 @@
           "No existen reconstruction_segments revisados por el Core",
           "No hay autorización científica de publicación"
         ]
+      },
+      "editorial_collation": {
+        "status": "SECONDARY_EDITION_PASSAGE_VERIFIED",
+        "edition": "Velaza, Chronica Epigraphica Iberica XII, Palaeohispanica 15",
+        "pages": "253-254",
+        "url": "https://diposit.ub.edu/bitstreams/6970ecc1-1770-4e7d-9566-76ea7a5d1ddd/download",
+        "locator": "Section 1.7, B.7.38, A I line 8",
+        "reading": "]itiatu:ban:kutur:biteŕokan",
+        "observations": [
+          "Velaza republishes Untermann (2014) reading; this is not an independent physical witness",
+          "The publication notes substantial differences from the 1988 editio princeps; collate these prior to philological approval"
+        ],
+        "material_object_checked": false,
+        "independence_confirmed": false,
+        "semantic_validation": false
       }
     }
   ]
