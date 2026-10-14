@@ -25,3 +25,26 @@ Fecha: 2026-10-14. **Estado: transcripción secundaria localizada; imágenes ori
 `EVIDENCE`: existen estudios publicados con estas transcripciones. `INFERENCE`: semejanza formal de secuencias. `HYPOTHESIS`: posible función gramatical o fórmula. `UNRESOLVED`: segmentación exacta, lectura signo por signo en soporte y papel de destinatario.
 
 **ROK-RECIPIENT-02: OPEN.** No se altera la autoridad ni los indicadores CORE. No crear una falsa validación prospectiva a partir de documentación retrospectiva.
+
+## Localización de fichas paleográficas digitales — 14/10/2026
+
+Se han identificado dos registros epigráficos **individuales**, con glifos enlazados y segmentos digitales, que permiten contrastar signo a signo en una siguiente revisión, pero **no se equiparan a fotografías originales ni a una transcripción diplomática autenticada**:
+
+- **F.9.5**: corpus digital *Cathalaunia Iberika*, identificador `I01936`, página https://cathalaunia.org/Iberika/I01936. Clasifica el soporte como plomo, procedencia La Punta d'Orleyl, La Vall d'Uixó; proporciona transcripción codificada, listas de segmentos y múltiples imágenes de glifos. Los códigos internos de glifos no son una transliteración normalizada; prohibido inferir de ellos signos fonéticos sin la tabla de equivalencia y contraste con edición.
+- **F.9.7, cara A**: `I01938`, página https://cathalaunia.org/Iberika/I01938.
+- **F.9.7, cara B**: `I01939`, listado en https://cathalaunia.org/Iberika/GLIF249. **No sumar cara A y B como dos objetos físicos.**
+- **F.9.6**: `I01937`, testimonio físico adicional del mismo conjunto arqueológico, que no debe mezclarse con F.9.5 ni F.9.7.
+
+Una segunda fuente académica consultable, *Palaeohispanica 8* (2008), https://ifc.dpz.es/recursos/publicaciones/28/40/_ebook.pdf, confirma F.9.5, F.9.6 y F.9.7 como los tres plomos de tumba II. El museo valenciano incluye un registro bibliográfico de *Materiales de la necrópolis ibérica de Orley*: https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va.
+
+### Resultado inmediato
+- Identidades y puntos de acceso paleográfico localizados: **sí**.
+- Fotografías originales cotejadas / calcos cotejados cara a cara: **no**.
+- Lectura diplomática, línea y cara del tramo `kutur · biteŕoketetine` / `kutu+ike · basbiteŕoketine` verificadas en soporte: **no**.
+- `ROK-RECIPIENT-02`: **OPEN**, ninguna promoción científica.
+
+### Protocolo para seguir
+1. Localizar lámina completa o fotografía de cada **cara** y registrar procedencia, licencia y paginación.
+2. Comparar por orden: imagen, dibujo publicado, transliteración editorial, transcripción IberOS, dudas signo por signo.
+3. Guardar `F.9.7-A` y `F.9.7-B` como subentradas **del mismo PHYS_ID** y preservar dependencia.
+4. Usar los glifos codificados de Cathalaunia únicamente como capa secundaria hasta auditar sus equivalencias.
