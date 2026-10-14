@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 from iberos.core import load_registry, AUTHORITY
 from iberos.object_rule_audit import audit_object_rules
+from iberos.rule_catalog import rule_catalog
 
 def build():
     objects = {}
@@ -29,6 +30,7 @@ def main():
     target=Path("site/data/core_object_audit_v1.json")
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(build(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    (target.parent/"core_rule_catalog_v1.json").write_text(json.dumps(rule_catalog(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
 if __name__=="__main__":
     main()
