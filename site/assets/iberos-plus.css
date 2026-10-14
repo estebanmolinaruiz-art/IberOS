@@ -880,3 +880,17 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .fiche-preview{padding:13px 15px;margin:13px 0 16px;box-shadow:none}
 .fiche-preview .interpretation-main{font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.28}
 .fiche-preview .interpretation-eyebrow{font-size:.64rem}
+
+/* Guía breve de descubrimiento: bienvenida contextual, discreta y accesible */
+.ib-discovery-help{max-width:1100px;margin:16px auto;padding:0 16px;position:relative;z-index:2}
+.ib-discovery-help details{background:#fff8e8;color:#183347;border:1px solid #b99a65;border-radius:12px;box-shadow:0 5px 18px #071b2b1a}
+.ib-discovery-help summary{cursor:pointer;list-style:none;padding:13px 18px;font:700 .94rem/1.4 system-ui,sans-serif}
+.ib-discovery-help summary::-webkit-details-marker{display:none}
+.ib-discovery-help summary:after{content:"+";float:right;font-size:1.1rem}
+.ib-discovery-help details[open] summary:after{content:"−"}
+.ib-discovery-help .ib-help-content{padding:0 18px 15px;font: .91rem/1.55 system-ui,sans-serif}
+.ib-discovery-help p{margin:7px 0;color:#273e4c}
+.ib-discovery-help a{color:#005773;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.ib-discovery-help .ib-help-route{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+.ib-discovery-help .ib-help-route a{padding:7px 10px;border:1px solid #bd9f70;border-radius:7px;background:#f5ead3}
+@media(max-width:650px){.ib-discovery-help{margin:9px auto;padding:0 10px}.ib-discovery-help summary{padding:11px 13px}.ib-discovery-help .ib-help-content{padding:0 13px 12px}}
