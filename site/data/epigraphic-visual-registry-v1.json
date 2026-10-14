@@ -31,7 +31,16 @@
       "image_position_pct",
       "license"
     ],
-    "image_position_pct_description": "Rectangle {x,y,width,height} in percentage coordinates relative to the source figure; verified only. 0–100."
+    "image_position_pct_description": "Rectangle {x,y,width,height} in percentage coordinates relative to the source figure; verified only. 0–100.",
+    "watermark_and_attribution": {
+      "rule": "Preserve visible original photographer/author/museum watermark without cropping, masking or replacing; a watermark or credit does not grant reproduction rights.",
+      "publish_requires": [
+        "verified_reuse_permission_or_license",
+        "complete_author_and_source_credit",
+        "watermark_preserved_if_present"
+      ],
+      "when_unlicensed": "Show citation and link to original publication only; do not embed or copy."
+    }
   },
   "records": [
     {
@@ -49,7 +58,10 @@
       "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols.",
       "figure_pdf_page": 6,
       "source_figure_url": "https://ifc.dpz.es/recursos/publicaciones/25/25/14asensioetal.pdf#page=6",
-      "figure_access_note": "El enlace abre la página del PDF que contiene las figuras 3 y 4 de la edición (p. 200 impresa). No implica licencia para incrustar las figuras."
+      "figure_access_note": "El enlace abre la página del PDF que contiene las figuras 3 y 4 de la edición (p. 200 impresa). No implica licencia para incrustar las figuras.",
+      "watermark_preserved_verified": false,
+      "image_author_credit_verified": false,
+      "image_reuse_permission_verified": false
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -63,7 +75,10 @@
       "exact_object_match_verified": false,
       "glyphs": [],
       "sign_mapping_status": "SIGN_MAPPING_PENDING",
-      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols."
+      "sign_mapping_note": "No approved individual SVG trace or verified position. Do not populate from generic font or invented symbols.",
+      "watermark_preserved_verified": false,
+      "image_author_credit_verified": false,
+      "image_reuse_permission_verified": false
     }
   ]
 }
