@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Scientific-Review-Queue/1.0",
-  "note": "Bibliographic alignment and comparison only; no automatic segmentation, translation, independence or publication approval.",
+  "note": "Control técnico verificable de publicación. Referencias catalogadas no equivalen a independencia, lectura contrastada o validación semántica.",
   "records": [
     {
       "object_id": "IBR-PLM-0002",
@@ -30,7 +30,21 @@
           "status": "EDITION_TEXT_LOCATED_OBJECT_MATCH_REQUIRES_FINAL_CHECK",
           "note": "La edición documenta śalaiaŕkis, secuencias -teŕokan, śalir y numerales; conserva expresamente sin resolver el contenido exacto. No trasvasar glosas semánticas."
         }
-      ]
+      ],
+      "technical_audit": {
+        "protocol": "WEB-CORE-RELEASE-GATE/1.0",
+        "reference_records": 2,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "La correspondencia exacta de la transcripción con el objeto aún no está cerrada",
+          "No existe catálogo de fuentes con identificador físico y localizador comprobados para auditar independencia",
+          "No existen reconstruction_segments revisados por el Core",
+          "No hay autorización científica de publicación"
+        ]
+      }
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -62,7 +76,21 @@
           "status": "COMPARATIVE_READING_REGISTERED_PENDING_COLLATION",
           "note": "Cita ...ban / kutur / bideŕokan en cuadro comparativo. Confrontar delimitación exacta con Untermann y Velaza; no contabilizar la misma pieza como testimonio independiente."
         }
-      ]
+      ],
+      "technical_audit": {
+        "protocol": "WEB-CORE-RELEASE-GATE/1.0",
+        "reference_records": 2,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "La correspondencia exacta de la transcripción con el objeto aún no está cerrada",
+          "No existe catálogo de fuentes con identificador físico y localizador comprobados para auditar independencia",
+          "No existen reconstruction_segments revisados por el Core",
+          "No hay autorización científica de publicación"
+        ]
+      }
     }
   ]
 }
