@@ -37,7 +37,17 @@
           "purpose": "Contraste entre identificadores T.07.01 y T.07.03; pieza distinta",
           "verified_3d_model": false
         }
-      ]
+      ],
+      "institutional_contact": {
+        "institution": "Museu d'Arqueologia de Catalunya",
+        "email": "infomac@gencat.cat",
+        "request_page": "https://www.mac.cat/ca/menu-inferior/cessio-d-imatges",
+        "custody_status": "NOT_CONFIRMED_FOR_THIS_EXACT_OBJECT",
+        "request": "Confirmar custodio e inventario T.07.03; consultar disponibilidad de fotogrametría, geometría original y fotografía de inscripción, derechos y crédito"
+      },
+      "acquisition_status": "CONTACT_PREPARED_NOT_SENT",
+      "files_received": false,
+      "rights_permission_received": false
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -64,7 +74,17 @@
           "purpose": "Distinguir distintos plomos excavados; no implica disponibilidad de modelo 3D",
           "verified_3d_model": false
         }
-      ]
+      ],
+      "institutional_contact": {
+        "institution": "Musée des Corbières / Mairie de Sigean",
+        "phone": "+33 4 68 41 59 89",
+        "information_page": "https://www.sigean.fr/decouvrir-sigean/histoire-et-patrimoine/oppidum-de-pech-maho.html",
+        "custody_status": "NOT_CONFIRMED_FOR_THIS_EXACT_OBJECT",
+        "request": "Identificar custodio e inventario de B.7.38 y preguntar por escaneo 3D con inscripción auténtica y licencia"
+      },
+      "acquisition_status": "CONTACT_PREPARED_NOT_SENT",
+      "files_received": false,
+      "rights_permission_received": false
     }
   ]
 }
