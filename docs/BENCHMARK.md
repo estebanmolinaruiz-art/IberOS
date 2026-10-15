@@ -143,7 +143,7 @@ Autoridad congelada:
 - technical floor: `C539`
 - ROK network: `C541`
 
-DOI del software v1.0.1: **10.5281/zenodo.22997623**
+Identificador Zenodo reservado observado para el software v1.0.1: **10.5281/zenodo.22997623**. No se cita como DOI público mientras no resuelva de forma verificable en Zenodo/DataCite.
 
 ## Control separado de D(E/I)
 
