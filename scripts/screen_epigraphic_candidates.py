@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Create an auditable, non-interpretative screening report for extracted inscriptions."""
 import json
+from difflib import SequenceMatcher
 from pathlib import Path
 from audit_epigraphic_extractions import assess
 
@@ -11,8 +12,18 @@ def build():
     for item in queue.get("items",[]):
         gate=assess(item)
         variants=item.get("edition_readings",[])
+        comparisons=[]
+        for i,left in enumerate(variants):
+            for right in variants[i+1:]:
+                a=left.get("reading") or ""
+                b=right.get("reading") or ""
+                edits=[{"operation":op,"left":a[start:end],"right":b[bs:be]}
+                       for op,start,end,bs,be in SequenceMatcher(None,a,b,autojunk=False).get_opcodes()
+                       if op!="equal"]
+                comparisons.append({"reading_a":a,"reading_b":b,"grapheme_differences":edits,
+                                    "meaning_inferred":False,"epigraphic_assessment":"AWAITING_PALEOGRAPHIC_REVIEW"})
         rows.append({"object_id":item.get("object_id"),"bibliographic_ficha_id":item.get("source_bibliographic_ficha_id"),
-            "source_doi":item.get("source_doi"),"variant_count":len(variants),
+            "source_doi":item.get("source_doi"),"variant_count":len(variants),"variant_comparisons":comparisons,
             "attested_edition_variants":[{"reading":v.get("reading"),"role":v.get("role"),"citation_location":v.get("citation_location"),
                 "review_status":v.get("review_status")} for v in variants],
             "missing_requirements":gate["missing_requirements"],"core_gate_status":gate["core_status"],
