@@ -201,7 +201,7 @@ if(dataLoadFailed){
   if(!candidates.length)return "";
   return '<details class="ib-documentary-checklist"><summary>Reproducciones externas candidatas (sin cotejo de identidad)</summary><ul>'+candidates.map(c=>{
     const url=typeof c.record_url==="string"&&/^https:\/\//.test(c.record_url)?c.record_url:null;
-    return '<li><strong>'+esc(c.source||"Fuente")+'</strong> · '+esc(c.license_claim||"Licencia pendiente")+' · Correspondencia epigráfica: '+(c.exact_object_match_verified===true?"cotejada":"pendiente")+(url?' · <a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Ver fuente original ↗</a>':"")+'</li>';
+    return '<li><strong>'+esc(c.source||"Fuente")+'</strong> · '+esc(c.license_claim||"Licencia pendiente")+' · Correspondencia epigráfica: '+(c.exact_object_match_verified===true?"cotejada":"pendiente")+(url?' · <a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">Ver fuente original ↗</a>':"")+'<ul class="ib-candidate-checks">'+(Array.isArray(c.match_requirements)?c.match_requirements:[]).map(req=>'<li>Por comprobar: '+esc(req)+'</li>').join('')+'</ul></li>';
   }).join("")+'</ul><p>La licencia de una imagen no demuestra que represente esta inscripción.</p></details>';
 }
 function visualRegistryHtml(item){
