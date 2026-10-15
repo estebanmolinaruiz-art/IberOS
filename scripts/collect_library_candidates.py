@@ -8,17 +8,23 @@ import urllib.parse
 import urllib.request
 
 BASE = pathlib.Path(__file__).resolve().parents[1] / "site" / "data"
-TERMS = ["Iberian epigraphy", "Palaeohispanic inscriptions", "Iberian script"]
+TERMS = ["Iberian epigraphy", "Palaeohispanic inscriptions", "Iberian script", "Iberian language inscriptions", "Palaeohispanic epigraphy", "Iberian paleography", "Iberian lead tablets", "Pech Maho inscriptions"]
 def norm(s):
     return re.sub(r"[^a-z0-9]+", "", str(s).casefold())
 def collect(limit):
     seen = set()
     items = []
     for term in TERMS:
-        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": min(limit, 100), "select": "DOI,title,author,published,URL,publisher"})
+        if len(items) >= limit:
+            break
+        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": min(100, limit - len(items)), "select": "DOI,title,author,published,URL,publisher"})
         request = urllib.request.Request(url, headers={"User-Agent": "IberOS-Library/1.0 (research metadata; contact via GitHub project)"})
-        with urllib.request.urlopen(request, timeout=18) as response:
-            results = json.load(response).get("message", {}).get("items", [])
+        try:
+            with urllib.request.urlopen(request, timeout=25) as response:
+                results = json.load(response).get("message", {}).get("items", [])
+        except Exception as exc:
+            print(f"Source unavailable for {term}: {exc}")
+            continue
         for item in results:
             title = (item.get("title") or [""])[0]
             doi = item.get("DOI", "").strip().lower()
@@ -39,9 +45,19 @@ def main():
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--output", type=pathlib.Path, default=BASE / "library_candidates_v1.json")
     args = parser.parse_args()
-    if not 1 <= args.limit <= 100:
-        parser.error("limit must be from 1 to 100")
+    if not 1 <= args.limit <= 1000:
+        parser.error("limit must be from 1 to 1000")
     records = collect(args.limit)
+    if args.output.exists():
+        previous = json.loads(args.output.read_text(encoding="utf-8"))
+        existing = previous.get("items", [])
+        used = {x.get("doi", "").lower() or norm(x.get("title", "")) for x in existing}
+        for item in records:
+            key = (item.get("doi") or "").lower() or norm(item["title"])
+            if key not in used:
+                existing.append(item)
+                used.add(key)
+        records = existing
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps({"schema": "IberOS-Library-Candidates/1.0", "review_required": True,
                                       "items": records}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
