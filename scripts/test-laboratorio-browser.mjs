@@ -20,6 +20,8 @@ try{
  check(json.name==='Prueba de recuperación IberOS'&&json.object==='IBR-CER-0002','Exportación JSON íntegra');
  check(json.core_audit_reference?.object_id==='IBR-CER-0002'&&json.core_audit_reference?.interpretation_status==='NOT_VALIDATED','Exportación incluye auditoría Core trazable sin validación inventada');
  check(Array.isArray(json.core_audit_reference?.rule_sources)&&json.core_audit_reference.rule_sources.every(x=>x.id&&x.applicability&&x.semantic_translation_verified===false),'Exportación identifica reglas, aplicabilidad y ausencia de validación semántica');
+ check(await page.locator('#preview .core-evidence-detail summary').count()===1,'Cuaderno muestra procedencia documental de las reglas');
+ check((await page.locator('#preview .core-evidence-detail').innerText()).includes('Fuente declarada:'),'Cuaderno permite leer fuentes de reglas');
  check(json.core_audit_reference?.source_record?.catalog==='core_rule_catalog_v1.json','Exportación conserva referencia al catálogo de reglas');
  await page.locator('#name').fill('Cambios temporales');
  page.once('dialog',dialog=>{void dialog.accept().catch(()=>{});});
