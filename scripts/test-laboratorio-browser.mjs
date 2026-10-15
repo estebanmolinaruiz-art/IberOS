@@ -57,6 +57,8 @@ try{
    check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
    check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   await page.locator('#core-audit-slot .ib-core-state').first().waitFor({timeout:15000});
+   check((await page.locator('#core-audit-slot .ib-core-state').first().innerText()).includes('Contexto geográfico'),'Estados científicos legibles en español '+id);
    const identityColors=await page.locator('.artifact-summary').evaluate(root=>{
      const values=selector=>{const node=root.querySelector(selector);return node?getComputedStyle(node).color:"missing"};
      return {title:values('h1'),description:values('p.meta'),button:values('.artifact-actions a:nth-child(2)')};
