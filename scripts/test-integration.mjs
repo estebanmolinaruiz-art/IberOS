@@ -29,6 +29,9 @@ assert(bibliographyPage.includes('extractionCards')&&bibliographyPage.includes('
 assert(readFileSync(base+'recursos/index.html','utf8').includes('../bibliografia/'),'Library links to public bibliographic fiche viewer');
 const extractionQueue=json('data/epigraphic_extraction_candidates_v1.json');
 const extractionAudit=json('data/epigraphic_extraction_audit_v1.json');
+const extractionScreening=json('data/epigraphic_screening_v1.json');
+assert(extractionScreening.items.length===extractionQueue.items.length&&extractionScreening.items.every(x=>x.core_rules_executed===0&&x.automated_translation===null),'Pre-Core epigraphic screening does not invent rule results or translations');
+assert(extractionScreening.items.some(x=>x.object_id==='SOURCES-SOSES-RING-1890'&&x.variant_count===3),'Soses screening preserves three contrasting attested edition variants');
 assert(extractionQueue.items.length===extractionAudit.items.length&&extractionQueue.items.every(x=>!x.transcription&&x.core_analysis_allowed===false)&&extractionAudit.items.every(x=>x.ready_for_core===false&&x.core_status==='BLOCKED_UNVERIFIED_EVIDENCE'),'Sourced inscription leads remain blocked until transcription and independent review');
 assert(extractionQueue.items.some(x=>x.object_id==='SOURCES-SOSES-RING-1890'&&x.edition_readings?.length===3&&x.edition_readings.some(v=>v.reading==='belśtaŕtike')&&!x.transcription),'Soses preserves variant edition readings without claiming independently verified transcription');
 assert(readFileSync('scripts/audit_epigraphic_extractions.py','utf8').includes('independent_review_completed'),'New epigraphic object processing requires independent review');
