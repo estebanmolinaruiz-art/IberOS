@@ -227,6 +227,26 @@ try{
    }
 
  }
+ // Navigation integrity: all visible directory links resolve to a real public document.
+ await page.goto(base+'/mapa-web/');
+ const directoryLinks=await page.locator('main a[href]').evaluateAll(nodes=>nodes.map(a=>({href:a.getAttribute('href'),label:a.textContent.trim()})).filter(a=>a.href&&!a.href.startsWith('#')));
+ const broken=[];
+ for(const item of directoryLinks){
+   const url=new URL(item.href,page.url());
+   if(url.origin!==new URL(base).origin)continue;
+   const response=await page.request.get(url.toString());
+   if(!response.ok())broken.push(item.label+' '+url.pathname+' HTTP '+response.status());
+ }
+ check(broken.length===0,'Menú completo: todos los enlaces internos responden correctamente '+broken.join('; '));
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(base+'/proyectos/');
+ const mobileNav=page.locator('.menu-toggle');
+ check(await mobileNav.isVisible(),'Navegación móvil accesible desde Proyectos');
+ await mobileNav.click();
+ check(await mobileNav.getAttribute('aria-expanded')==='true','Menú móvil anuncia estado abierto');
+ await page.keyboard.press('Escape');
+ check(await mobileNav.getAttribute('aria-expanded')==='false','Menú móvil se cierra con Escape');
+ await page.setViewportSize({width:1280,height:800});
  await page.goto(base+'/proyectos/');
  await page.locator('#project-list .project-card').first().waitFor({timeout:15000});
  check((await page.locator('#project-list').innerText()).includes('Reconstrucción arqueológica de La Picola'),'Proyectos presenta La Picola en curso');
