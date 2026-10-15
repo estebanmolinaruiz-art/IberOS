@@ -20,6 +20,8 @@ const lab=readFileSync(base+'laboratorio/index.html','utf8');
 const atlas=readFileSync(base+'atlas/index.html','utf8');
 const statusPage=readFileSync(base+'estado/index.html','utf8');
 const registry3d=json('data/epigraphic-3d-registry-v1.json');
+const external3d=json('data/real_3d_resources.json');
+assert(external3d.length>=6&&external3d.every(x=>x.display_policy==='LINK_TO_ORIGINAL'&&x.local_file_hosted===false&&x.reuse_permission_verified_for_iberos===false),'External 3D resources link to legitimate origin without unverified local redistribution');
 assert(registry3d.objects.length>=2&&registry3d.objects.every(x=>x.model_status==='SOURCE_REQUIRED'&&x.inscription_from_object_verified===false&&!x.model_url),'3D originals remain explicitly unverified until real inscription models exist');
 assert(registry3d.objects.every(x=>Array.isArray(x.research_leads)&&x.research_leads.length>=1&&x.research_leads.every(y=>y.verified_3d_model===false)),'Documentary leads are not misrepresented as verified 3D files');
 assert(registry3d.objects.every(x=>x.institutional_contact&&x.institutional_contact.custody_status==='NOT_CONFIRMED_FOR_THIS_EXACT_OBJECT'&&x.acquisition_status==='CONTACT_PREPARED_NOT_SENT'&&x.files_received===false),'Contacts documented without inventing custody, requests or actual 3D files');
