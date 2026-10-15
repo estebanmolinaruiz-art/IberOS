@@ -114,7 +114,13 @@
     "bibliographic_lead": "https://www.academia.edu/487470/Una_tortera_amb_inscripci%C3%B3_ib%C3%A8rica_de_Can_Rodon_de_lHort_Cabrera_de_Mar_",
     "source_description_verified": true,
     "catalog_crosswalk_status": "NOT_MATCHED_TO_IBEROS_38",
-    "epigraphic_reading_status": "NEEDS_EDITION_COLLATION"
+    "epigraphic_reading_status": "NEEDS_EDITION_COLLATION",
+    "atlas_provenance": {
+      "site": "Can Rodon de l'Hort, Cabrera de Mar",
+      "source": "Publicador del recurso 3D",
+      "atlas_node_verified": false,
+      "atlas_query": "Can Rodon de l'Hort"
+    }
   },
   {
     "title": "Cerámica ibérica inscrita — Sant Miquel, Montornès",
@@ -135,7 +141,13 @@
     "transcription_reported_by_uploader": "/ti/ki/r/?/r/ki",
     "source_description_verified": true,
     "catalog_crosswalk_status": "NOT_MATCHED_TO_IBEROS_38",
-    "epigraphic_reading_status": "UNVERIFIED_UPLOADER_READING"
+    "epigraphic_reading_status": "UNVERIFIED_UPLOADER_READING",
+    "atlas_provenance": {
+      "site": "Castell de Sant Miquel, Montornès del Vallès",
+      "source": "Publicador del recurso 3D",
+      "atlas_node_verified": false,
+      "atlas_query": "Montornès del Vallès"
+    }
   },
   {
     "title": "Estela con escritura del Sudoeste — Museo de Silves",
@@ -188,6 +200,12 @@
     "exact_epigraphic_object_match_verified": false,
     "authentic_inscription_visible_verified": false,
     "reuse_permission_verified_for_iberos": false,
-    "display_note": "Modelo del MAC con autoría y referencia de inventario; no se describe inscripción."
+    "display_note": "Modelo del MAC con autoría y referencia de inventario; no se describe inscripción.",
+    "atlas_provenance": {
+      "site": "Olèrdola",
+      "source": "Ficha museística del recurso 3D",
+      "atlas_node_verified": false,
+      "atlas_query": "Olèrdola"
+    }
   }
 ]
