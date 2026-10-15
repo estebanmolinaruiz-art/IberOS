@@ -15,7 +15,7 @@
 @media(max-width:600px){.audit table{font-size:.84rem}.audit th,.audit td{padding:10px 6px}}
 </style></head><body class="iberos-inner"><div id="head"></div>
 <main class="audit"><div class="section-kicker">Control de calidad público</div>
-<h1>Estado de funcionamiento de IberOS+</h1>
+<h1>Estado de funcionamiento de IberOS+</h1><p id="release-version" class="wait" aria-live="polite">Consultando la versión publicada…</p>
 <p>Comprobaciones reales realizadas desde este navegador. La presencia de un archivo no garantiza que todas sus funciones internas trabajen correctamente. Para probar búsquedas, exportación y rotación 3D, utiliza los accesos de cada módulo.</p>
 <p><button id="check" type="button">Repetir comprobaciones</button> <strong id="count" aria-live="polite"></strong></p>
 <table><thead><tr><th>Elemento</th><th>Estado</th><th>Comprobación</th></tr></thead><tbody id="tests"></tbody></table>
@@ -24,6 +24,12 @@
 <script type="module">
 import {header} from "../assets/portal-data.js";
 document.getElementById("head").innerHTML=header("../");
+fetch("../deployment-version.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("versión no disponible");return r.json()}).then(data=>{
+  const node=document.getElementById("release-version");
+  const sha=String(data.commit||data.sha||data.commit_sha||"");
+  if(!/^[a-f0-9]{40}$/.test(sha))throw Error("identificador de versión no reconocido");
+  node.className="ok";node.textContent="Versión pública comprobable: "+sha.slice(0,12)+" · Esta etiqueta identifica el despliegue, no valida traducciones.";
+}).catch(()=>{const node=document.getElementById("release-version");node.className="wait";node.textContent="Identificador de despliegue no disponible; consultar GitHub Actions.";});
 const items=[
 ["Portada","../index.html","html"],
 ["Corpus","../corpus/index.html","html"],
