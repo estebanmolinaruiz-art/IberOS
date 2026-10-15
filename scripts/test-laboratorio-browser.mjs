@@ -247,6 +247,15 @@ try{
  }
  check(broken.length===0,'Menú completo: todos los enlaces internos responden correctamente '+broken.join('; '));
  await page.setViewportSize({width:390,height:844});
+ await page.goto(base+'/modelos3d/');
+ await page.locator('#resource3d-count').getByText('11 recursos encontrados').waitFor({timeout:15000});
+ await page.locator('#inscribed3d').click();
+ check((await page.locator('#resource3d-count').innerText()).includes('2 recursos encontrados'),'Filtro 3D: dos epigrafías ibéricas pendientes de cotejo');
+ check(await page.locator('#external3d .resource-card').count()===2,'Filtro 3D no mezcla inscripciones y patrimonio general');
+ check(await page.locator('#inscribed3d').getAttribute('aria-pressed')==='true','Filtro 3D comunica selección accesible');
+ await page.locator('#heritage3d').click();
+ check(await page.locator('#external3d .resource-card').count()===9,'Filtro patrimonial conserva el resto de recursos');
+ check(await page.locator('a[href="../atlas/"]').count()>=1,'Colección 3D enlaza con Atlas');
  await page.goto(base+'/proyectos/');
  const mobileNav=page.locator('.menu-toggle');
  check(await mobileNav.isVisible(),'Navegación móvil accesible desde Proyectos');
