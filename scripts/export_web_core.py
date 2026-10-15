@@ -35,6 +35,13 @@ def main():
     target=Path("site/data/core_object_audit_v1.json")
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(build(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
+    empty_proposals = {"schema":"IberOS-Interpretation-Web/1.0","authority":dict(AUTHORITY),
+                       "object_count":len(load_registry()),
+                       "objects":{x["OBJECT_ID"]:{"candidates":[],"translation_validated":False,
+                                                "status":"AWAITING_DOCUMENTED_HYPOTHESES"}
+                                  for x in load_registry()},
+                       "notice":"Sin propuestas aprobadas para publicar; no se fabrican traducciones."}
+    (target.parent/"core_interpretations_v1.json").write_text(json.dumps(empty_proposals,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
     (target.parent/"core_evidence_triage_v1.json").write_text(json.dumps(build_evidence_triage(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     (target.parent/"core_rule_catalog_v1.json").write_text(json.dumps(rule_catalog(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
