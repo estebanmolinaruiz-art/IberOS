@@ -142,7 +142,7 @@
   {
     "title": "Revisión de epigrafía ibérica turolense",
     "category": "Publicaciones",
-    "authors": "Investigadores del artículo",
+    "authors": "Ignacio Simón Cornago",
     "institution": "Universidad de Salamanca · Zephyrus",
     "description": "Revisión de grafitos y estelas de Teruel, incluidos San Antonio, Azaila y La Iglesuela del Cid.",
     "url": "https://revistas.usal.es/uno/index.php/0514-7336/article/download/9038/9641/33938",
@@ -228,5 +228,25 @@
     "url": "https://sketchfab.com/giravolt/collections/museu-darqueologia-de-catalunya-empuries-03da40de76ec4e2b9084c1363cead240",
     "rights": "Enlace a la fuente original; comprobar licencia individual antes de copiar o integrar materiales.",
     "kind": "Colección 3D"
+  },
+  {
+    "title": "La escritura ibérica meridional",
+    "category": "Publicaciones",
+    "authors": "Jesús Rodríguez Ramos",
+    "institution": "Zephyrus · Universidad de Salamanca",
+    "description": "Análisis de transcripción, evolución paleográfica y paralelos léxicos de la escritura ibérica meridional.",
+    "url": "https://revistas.usal.es/uno/index.php/0514-7336/article/view/9755",
+    "rights": "Enlace a edición original; comprobar la licencia antes de reproducir texto o imágenes.",
+    "kind": "Artículo científico"
+  },
+  {
+    "title": "Pech-Maho: plomo con inscripciones etruscas y griegas",
+    "category": "Publicaciones",
+    "authors": "Michel Lejeune; Jean Pouilloux; Yves Solier",
+    "institution": "Revue archéologique de Narbonnaise · Persée",
+    "description": "Edición del plomo con escritura etrusca y griega arcaica; material comparativo distinto de los plomos ibéricos.",
+    "url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1323",
+    "rights": "Enlazar y citar la publicación; revisar las condiciones de reproducción.",
+    "kind": "Edición epigráfica"
   }
 ]
