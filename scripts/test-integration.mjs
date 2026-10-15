@@ -19,6 +19,13 @@ const ficha=readFileSync(base+'ficha/index.html','utf8');
 const lab=readFileSync(base+'laboratorio/index.html','utf8');
 const atlas=readFileSync(base+'atlas/index.html','utf8');
 const statusPage=readFileSync(base+'estado/index.html','utf8');
+const projects=json('data/projects-news-v1.json');
+const projectsPage=readFileSync(base+'proyectos/index.html','utf8');
+const navigation=readFileSync(base+'assets/portal-data.js','utf8');
+assert(projects.projects.some(p=>p.id==='la-picola-reconstruction'&&p.status==='IN_PROGRESS'&&p.public_news_approved===false),'La Picola stays in-progress, not published as news');
+assert(projects.news.length===0&&projectsPage.includes('editorial_approval')&&projectsPage.includes('media_rights_verification'),'News gated on source editorial and reuse rights');
+assert(navigation.includes('proyectos/')&&readFileSync(base+'mapa-web/index.html','utf8').includes('../proyectos/'),'Projects and News linked from navigation and full menu');
+
 assert(statusPage.includes('deployment-version.json')&&statusPage.includes('release-version'),'Status dashboard exposes verifiable public deployment version');
 const web=readFileSync(base+'webengine/index.html','utf8');
 const rules=json('data/core_rule_catalog_v1.json');
