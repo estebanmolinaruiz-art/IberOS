@@ -1,0 +1,44 @@
+{
+  "schema": "IberOS-Library-Growth/1.0",
+  "targets": {
+    "phase_1": 500,
+    "long_term": 10000
+  },
+  "review_policy": {
+    "external_metadata_can_be_ingested": true,
+    "auto_approve_for_scientific_core": false,
+    "require_source_url": true,
+    "require_unique_identifier_or_url": true,
+    "required_status": "PENDING_EDITORIAL_REVIEW",
+    "deduplicate_by": [
+      "doi",
+      "canonical_url",
+      "normalized_title"
+    ],
+    "do_not_copy_copyrighted_full_text": true
+  },
+  "sources": [
+    {
+      "name": "Crossref",
+      "api": "https://api.crossref.org/works",
+      "mode": "metadata_only",
+      "terms": [
+        "Iberian epigraphy",
+        "Palaeohispanic inscriptions",
+        "Pech Maho inscriptions"
+      ]
+    },
+    {
+      "name": "OpenAlex",
+      "api": "https://api.openalex.org/works",
+      "mode": "metadata_only",
+      "terms": [
+        "Iberian language inscriptions",
+        "Palaeohispanic scripts"
+      ]
+    }
+  ],
+  "current_curated_catalog": "iberian_resources.json",
+  "candidate_catalog": "library_candidates_v1.json",
+  "scientific_gate": "human_review_before_core"
+}
