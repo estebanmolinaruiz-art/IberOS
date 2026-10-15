@@ -1,0 +1,66 @@
+{
+  "schema": "IberOS-Library-Candidates/1.0",
+  "review_required": true,
+  "items": [
+    {
+      "title": "Chronica epigraphica Iberica XVI (2022–23)",
+      "doi": "10.36707/palaeohispanica.v24i1.679",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/article/download/622/682",
+      "authors": "Javier Velaza Frías",
+      "publisher": "Palaeohispanica",
+      "discovery_term": "Novedades epigráficas ibéricas",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
+      "discovery_method": "targeted_source_lookup"
+    },
+    {
+      "title": "Los iberos en la Cerdanya: arqueología y epigrafía",
+      "doi": "10.36707/palaeohispanica.v23i0.532",
+      "url": "https://portalrecerca.uab.cat/es/publications/los-iberos-en-la-cerdanya-arqueolog%C3%ADa-y-epigraf%C3%ADa/",
+      "authors": "Joan Ferrer i Jané; Oriol Olesti",
+      "publisher": "Palaeohispanica",
+      "discovery_term": "Inscripciones rupestres ibéricas",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
+      "discovery_method": "targeted_source_lookup"
+    },
+    {
+      "title": "Aspectos paleográficos de la epigrafía ibérica rupestre de Cerdaña y su contexto histórico-arqueológico",
+      "doi": "10.36707/palaeohispanica.v25i1.709",
+      "url": "https://ekoizpen-zientifikoa.ehu.eus/documentos/696e816af58f1850516f3a2b?lang=es",
+      "authors": "Jack Thomas Lambert",
+      "publisher": "Palaeohispanica",
+      "discovery_term": "Paleografía",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
+      "discovery_method": "targeted_source_lookup"
+    },
+    {
+      "title": "The Iberian inscription of the ring from Soses",
+      "doi": "10.5209/cfcg.90633",
+      "url": "https://revistas.ucm.es/index.php/CFCG/en/article/view/90633",
+      "authors": "Eugenio R. Luján Martínez",
+      "publisher": "Cuadernos de Filología Clásica",
+      "discovery_term": "Nuevas lecturas ibéricas",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
+      "discovery_method": "targeted_source_lookup"
+    },
+    {
+      "title": "Epigraphy: The Palaeohispanic Languages",
+      "doi": "10.1007/978-3-030-30018-0_3222",
+      "url": "https://doi.org/10.1007/978-3-030-30018-0_3222",
+      "authors": "Alejandro G. Sinner; Javier Velaza Frías",
+      "publisher": "Springer",
+      "discovery_term": "Epigrafía paleohispánica",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
+      "discovery_method": "targeted_source_lookup"
+    }
+  ]
+}
