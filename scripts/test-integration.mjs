@@ -18,6 +18,8 @@ assert([...ids].every(id=>audit.objects[id].object_id===id&&audit.objects[id].au
 const ficha=readFileSync(base+'ficha/index.html','utf8');
 const lab=readFileSync(base+'laboratorio/index.html','utf8');
 const atlas=readFileSync(base+'atlas/index.html','utf8');
+const statusPage=readFileSync(base+'estado/index.html','utf8');
+assert(statusPage.includes('deployment-version.json')&&statusPage.includes('release-version'),'Status dashboard exposes verifiable public deployment version');
 const web=readFileSync(base+'webengine/index.html','utf8');
 const rules=json('data/core_rule_catalog_v1.json');
 assert(rules.counts.documented_entries===rules.entries.length,'Inventario de reglas generado desde Core Python');
