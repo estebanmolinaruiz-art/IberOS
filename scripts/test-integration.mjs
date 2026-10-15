@@ -56,8 +56,8 @@ assert(registry3d.policy.public_authentic_3d_requires.includes('inscription_from
 const projects=json('data/projects-news-v1.json');
 const projectsPage=readFileSync(base+'proyectos/index.html','utf8');
 const navigation=readFileSync(base+'assets/portal-data.js','utf8');
-assert(projects.projects.some(p=>p.id==='la-picola-reconstruction'&&p.status==='IN_PROGRESS'&&p.public_news_approved===false),'La Picola stays in-progress, not published as news');
-assert(projects.news.every(n=>n.public_news_approved!==true||!(n.editorial_approval===true&&n.source_verification===true&&n.media_rights_verification===true))&&projectsPage.includes('editorial_approval')&&projectsPage.includes('media_rights_verification'),'News gated on source editorial and reuse rights');
+assert(projects.projects.some(p=>p.id==='la-picola-reconstruction'&&p.status==='IN_PROGRESS'),'La Picola remains an in-progress reconstruction despite a published progress update');
+assert(projects.news.every(n=>n.public_news_approved!==true||(n.editorial_approval===true&&n.source_verification===true&&n.media_rights_verification===true))&&projectsPage.includes('editorial_approval')&&projectsPage.includes('media_rights_verification'),'Published News requires editorial, source and reuse rights approval');
 assert(navigation.includes('proyectos/')&&readFileSync(base+'mapa-web/index.html','utf8').includes('../proyectos/'),'Projects and News linked from navigation and full menu');
 
 assert(statusPage.includes('deployment-version.json')&&statusPage.includes('release-version'),'Status dashboard exposes verifiable public deployment version');
