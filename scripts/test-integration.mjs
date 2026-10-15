@@ -24,6 +24,8 @@ const external3d=json('data/real_3d_resources.json');
 assert(external3d.length>=6&&external3d.every(x=>x.display_policy==='LINK_TO_ORIGINAL'&&x.local_file_hosted===false&&x.reuse_permission_verified_for_iberos===false),'External 3D resources link to legitimate origin without unverified local redistribution');
 assert(external3d.length>=9&&external3d.filter(x=>x.inscription_category==='IBERIAN_INSCRIPTION_REPORTED').length>=2,'3D catalog includes at least two reported Iberian inscriptions');
 assert(external3d.length>=11&&external3d.filter(x=>x.inventory_number?.startsWith('MAC ')).length>=2,'Museum photogrammetry links preserve exact published inventory numbers');
+assert(external3d.filter(x=>x.atlas_provenance).length>=3&&external3d.filter(x=>x.atlas_provenance).every(x=>x.atlas_provenance.atlas_node_verified===false&&x.atlas_provenance.atlas_query),'3D provenance links cannot imply unverified geographic nodes');
+assert(readFileSync(base+'modelos3d/index.html','utf8').includes('atlas/?q='),'3D catalog exposes Atlas lookup for documented provenance');
 assert(external3d.filter(x=>x.inscription_category==='IBERIAN_INSCRIPTION_REPORTED').every(x=>x.catalog_crosswalk_status==='NOT_MATCHED_TO_IBEROS_38'&&x.authentic_inscription_visible_verified===false),'Reported inscriptions are not falsely linked to existing Core corpus records');
 assert(external3d.some(x=>x.inscription_category==='SOUTHWEST_SCRIPT_NOT_IBERIAN_LANGUAGE'),'Southwest-script comparisons remain distinct from Iberian-language inscriptions');
 assert(registry3d.objects.length>=2&&registry3d.objects.every(x=>x.model_status==='SOURCE_REQUIRED'&&x.inscription_from_object_verified===false&&!x.model_url),'3D originals remain explicitly unverified until real inscription models exist');
