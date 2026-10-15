@@ -1,5 +1,25 @@
 {
   "schema": "IberOS-Epigraphic-Extraction-Candidates/1.0",
-  "items": [],
+  "items": [
+    {
+      "object_id": "SOURCES-SOSES-RING-1890",
+      "name": "Anillo con inscripción ibérica de Soses",
+      "source_doi": "10.5209/cfcg.90633",
+      "source_url": "https://revistas.ucm.es/index.php/CFCG/article/view/90633",
+      "edition_figure": "Luján Martínez (2024), pp. 9–16, figuras de la documentación de 1890",
+      "inventory_or_catalogue_id": "BDHesp L.07.01 (citado en la edición, pendiente de cotejo directo)",
+      "transcription": null,
+      "reviewer": null,
+      "review_date": null,
+      "source_bibliographic_ficha_id": "BIB-000004",
+      "physical_object_status": "LOST_REPORTED",
+      "source_observation": "La publicación revisa la lectura sobre fotografía histórica de 1890; la pieza está perdida.",
+      "exact_object_match_verified": false,
+      "transcription_checked_against_edition": false,
+      "source_rights_checked": false,
+      "independent_review_completed": false,
+      "core_analysis_allowed": false
+    }
+  ],
   "note": "Only add individual inscription records after exact source figure, object identity, transcription and reviewer have been documented."
 }
