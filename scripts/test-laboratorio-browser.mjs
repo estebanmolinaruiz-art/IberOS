@@ -14,9 +14,11 @@ try{
  check(await page.locator('#question').inputValue()==='¿Se conserva la pregunta de investigación?','Pregunta persiste tras recarga');
  check(await page.locator('#object').inputValue()==='IBR-CER-0002','Selección de pieza persiste');
  check(await page.locator('#actions a[href="../ficha/?id=IBR-CER-0002#core-audit-slot"]').count()===1,'Laboratorio enlaza auditoría científica específica de la pieza');
+ await page.waitForFunction(()=>document.querySelector('#preview')?.textContent.includes('Reglas candidatas:'),null,{timeout:15000});
  const [dl]=await Promise.all([page.waitForEvent('download'),page.locator('#json').click()]);
  const json=JSON.parse((await (await import('node:fs/promises')).readFile(await dl.path())).toString('utf8'));
  check(json.name==='Prueba de recuperación IberOS'&&json.object==='IBR-CER-0002','Exportación JSON íntegra');
+ check(json.core_audit_reference?.object_id==='IBR-CER-0002'&&json.core_audit_reference?.interpretation_status==='NOT_VALIDATED','Exportación incluye auditoría Core trazable sin validación inventada');
  await page.locator('#name').fill('Cambios temporales');
  page.once('dialog',dialog=>{void dialog.accept().catch(()=>{});});
  await page.locator('#importProject').setInputFiles({name:'proyecto.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(json))});
