@@ -78,3 +78,8 @@ assert(graphics.policy.watermark_and_attribution?.publish_requires.length===3,'P
 assert(graphics.records.every(x=>x.image_reuse_permission_verified===false&&x.image_author_credit_verified===false&&x.watermark_preserved_verified===false),'Material sin permisos no se habilita para reproducción');
 assert(ficha.includes('item.watermark_preserved_verified===true')&&ficha.includes('item.image_reuse_permission_verified===true'),'Visor impide reproducir imágenes sin permiso y conservación de marca de agua');
 console.log('Integración IberOS: Core científico → motor web → fichas → GEO → laboratorio comprobada a nivel de datos y rutas.');
+
+const candidateFeed=json('data/core_interpretations_v1.json');
+assert(candidateFeed.schema==='IberOS-Interpretation-Web/1.0'&&candidateFeed.object_count===38,'Las 38 fichas tienen estado de hipótesis visible');
+assert(Object.values(candidateFeed.objects).every(x=>x.translation_validated===false&&x.candidates.length===0),'Nunca se inventan traducciones en la exportación automática');
+assert(ficha.includes('translation-candidates-slot')&&ficha.includes('core_interpretations_v1.json'),'Las fichas muestran panel de posibles interpretaciones');
