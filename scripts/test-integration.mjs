@@ -22,6 +22,8 @@ const statusPage=readFileSync(base+'estado/index.html','utf8');
 const library=json('data/iberian_resources.json');
 const libraryPolicy=json('data/library-growth-policy-v1.json');
 const libraryQueue=json('data/library_candidates_v1.json');
+const bibliographyFichas=json('data/bibliographic_fichas_v1.json');
+assert(bibliographyFichas.items.length===libraryQueue.items.length&&bibliographyFichas.items.every(x=>x.type==='BIBLIOGRAPHIC_SOURCE_NOT_OBJECT'&&x.core_processing.status==='BLOCKED_UNVERIFIED_OBJECT'&&x.core_processing.rule_results.length===0),'Bibliographic fichas cannot be mistaken for validated inscriptions or automatic Core results');
 assert(libraryQueue.items.length>=5&&libraryQueue.items.every(x=>x.status==='PENDING_EDITORIAL_REVIEW'&&x.core_evidence_approved===false&&x.doi.startsWith('10.')),'Candidate bibliography has DOI references and cannot be promoted without review');
 assert(new Set(libraryQueue.items.map(x=>x.doi.toLowerCase())).size===libraryQueue.items.length,'Candidate bibliography has no duplicate DOI identifiers');
 assert(readFileSync(base+'recursos/index.html','utf8').includes('candidateList'),'Library separates public candidate review list from curated references');
