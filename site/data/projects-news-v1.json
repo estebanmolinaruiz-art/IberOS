@@ -1,0 +1,21 @@
+{
+  "schema": "IberOS-Projects-News/1.0",
+  "policy": {
+    "public_news_requires": ["editorial_approval", "source_verification", "media_rights_verification"],
+    "drafts_are_not_public_news": true,
+    "do_not_claim_finished_reconstruction_without_evidence": true
+  },
+  "projects": [
+    {
+      "id": "la-picola-reconstruction",
+      "title": "Reconstrucción arqueológica de La Picola",
+      "location": "Santa Pola, Alicante",
+      "status": "IN_PROGRESS",
+      "public_news_approved": false,
+      "editorial_note": "Reconstrucción en curso; noticia prevista solo cuando se autorice la publicación de información y materiales contrastados.",
+      "source_links": [],
+      "media": []
+    }
+  ],
+  "news": []
+}
