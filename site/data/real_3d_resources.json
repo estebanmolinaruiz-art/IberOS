@@ -7,7 +7,13 @@
     "url": "https://www.man.es/man/estudio/proyectos-investigacion/protohistoria/iconografia-iberica.html",
     "license": "Proyecto oficial; consultar condiciones del MAN/CSIC antes de copiar o redistribuir modelos",
     "reuse": "external_only",
-    "model_type": "scan/photogrammetry"
+    "model_type": "scan/photogrammetry",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   },
   {
     "title": "Dama de Elche — Javier Luengo / ArqueoBytes",
@@ -17,7 +23,13 @@
     "url": "https://sketchfab.com/3d-models/dama-de-elche-06ec29c753ef428fb68271d4e36b5fc5",
     "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
     "reuse": "cc_by",
-    "model_type": "photogrammetry"
+    "model_type": "photogrammetry",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   },
   {
     "title": "Guerrero de Moixent — Jorge Del Reguero",
@@ -27,7 +39,13 @@
     "url": "https://sketchfab.com/3d-models/guerrero-de-moixent-ecc48c0db3da4279b1932537da658f09",
     "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
     "reuse": "cc_by",
-    "model_type": "reconstruction/reproduction"
+    "model_type": "reconstruction/reproduction",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   },
   {
     "title": "Plato cerámico ibérico — Cerro de las Cabezas",
@@ -37,7 +55,13 @@
     "url": "https://sketchfab.com/3d-models/iberian-ceramic-plate-cerro-de-las-cabezas-c64581d4d89749e7bba0f83675d53c46",
     "license": "CC BY-NC según la ficha del recurso incluida en el paquete IberOS",
     "reuse": "cc_by_nc",
-    "model_type": "photogrammetry"
+    "model_type": "photogrammetry",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   },
   {
     "title": "Estatuas ibéricas del Cerro de los Santos",
@@ -47,7 +71,13 @@
     "url": "https://sketchfab.com/3d-models/iberian-statues-from-cerro-de-los-santos-18cd19846f2f4c0985a9a62185d853fa",
     "license": "CC BY según la ficha del recurso incluida en el paquete IberOS",
     "reuse": "cc_by",
-    "model_type": "3d_model"
+    "model_type": "3d_model",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   },
   {
     "title": "Exvoto mujer con pajarito — MAN",
@@ -57,6 +87,12 @@
     "url": "https://sketchfab.com/3d-models/exvoto-mujer-con-pajarito-468b013f7ea94d03bf7a87c4a94a2b67",
     "license": "Licencia de reutilización no verificada en el paquete; enlazar sin copiar",
     "reuse": "external_only",
-    "model_type": "3d_model"
+    "model_type": "3d_model",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Recurso externo; su presencia pública no autoriza copia o redistribución. Comprobar condiciones vigentes en el proveedor."
   }
 ]
