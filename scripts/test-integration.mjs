@@ -21,6 +21,7 @@ const atlas=readFileSync(base+'atlas/index.html','utf8');
 const statusPage=readFileSync(base+'estado/index.html','utf8');
 const registry3d=json('data/epigraphic-3d-registry-v1.json');
 assert(registry3d.objects.length>=2&&registry3d.objects.every(x=>x.model_status==='SOURCE_REQUIRED'&&x.inscription_from_object_verified===false&&!x.model_url),'3D originals remain explicitly unverified until real inscription models exist');
+assert(registry3d.objects.every(x=>Array.isArray(x.research_leads)&&x.research_leads.length>=1&&x.research_leads.every(y=>y.verified_3d_model===false)),'Documentary leads are not misrepresented as verified 3D files');
 assert(registry3d.policy.public_authentic_3d_requires.includes('inscription_from_object_verified')&&readFileSync(base+'modelos3d/index.html','utf8').includes('epigraphic-3d-registry-v1.json'),'3D site requires exact real inscription and reads provenance gate');
 const projects=json('data/projects-news-v1.json');
 const projectsPage=readFileSync(base+'proyectos/index.html','utf8');
