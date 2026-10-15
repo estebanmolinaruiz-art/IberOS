@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+"""Collect candidate bibliography metadata; never publish as scientific evidence."""
+import argparse
+import json
+import pathlib
+import re
+import urllib.parse
+import urllib.request
+
+BASE = pathlib.Path(__file__).resolve().parents[1] / "site" / "data"
+TERMS = ["Iberian epigraphy", "Palaeohispanic inscriptions", "Iberian script"]
+def norm(s):
+    return re.sub(r"[^a-z0-9]+", "", str(s).casefold())
+def collect(limit):
+    seen = set()
+    items = []
+    for term in TERMS:
+        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": min(limit, 100), "select": "DOI,title,author,published,URL,publisher"})
+        request = urllib.request.Request(url, headers={"User-Agent": "IberOS-Library/1.0 (research metadata; contact via GitHub project)"})
+        with urllib.request.urlopen(request, timeout=18) as response:
+            results = json.load(response).get("message", {}).get("items", [])
+        for item in results:
+            title = (item.get("title") or [""])[0]
+            doi = item.get("DOI", "").strip().lower()
+            link = item.get("URL", "")
+            key = doi or norm(title)
+            if not title or not link or not key or key in seen:
+                continue
+            seen.add(key)
+            items.append({"title": title, "doi": doi or None, "url": link,
+                          "authors": "; ".join(((a.get("given", "") + " " + a.get("family", "")).strip() for a in item.get("author", [])))[:500],
+                          "publisher": item.get("publisher", ""), "discovery_term": term,
+                          "status": "PENDING_EDITORIAL_REVIEW", "core_evidence_approved": False,
+                          "rights": "Metadata link only; original publisher retains content rights"})
+    return items
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", type=int, default=25)
+    parser.add_argument("--output", type=pathlib.Path, default=BASE / "library_candidates_v1.json")
+    args = parser.parse_args()
+    if not 1 <= args.limit <= 100:
+        parser.error("limit must be from 1 to 100")
+    records = collect(args.limit)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps({"schema": "IberOS-Library-Candidates/1.0", "review_required": True,
+                                      "items": records}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{len(records)} candidates queued for review; zero approved for Core")
+
+if __name__ == "__main__":
+    main()
