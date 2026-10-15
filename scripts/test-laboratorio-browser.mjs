@@ -196,7 +196,7 @@ try{
    if(objectId==='IBR-PLM-0002'||objectId==='IBR-PLM-0003')check(await page.locator('#graphic-viewer-slot .ib-graphic-source').count()===0,'Sin reproducción gráfica no autorizada '+objectId);
    if(objectId==='IBR-PLM-0002'||objectId==='IBR-PLM-0003')check(await page.locator('#graphic-viewer-slot .ib-documentary-checklist a[href^="https://"]').count()>=1,'Enlace a imagen externa candidata, sin presentar reproducción no cotejada '+objectId);
    if(objectId==='IBR-PLM-0002'||objectId==='IBR-PLM-0003'){
-     const checklist=page.locator('#graphic-viewer-slot .ib-documentary-checklist');
+     const checklist=page.locator('#graphic-viewer-slot .ib-documentary-checklist').filter({has:page.locator('summary').getByText('Verificación documental de imagen y signos')});
      check(await checklist.count()===1,'Requisitos gráficos auditables '+objectId);
      await checklist.locator('summary').click();
      check((await checklist.innerText()).includes('Signos gráficos individualizados aptos para publicación: 0'),'Sin glifos falsamente acreditados '+objectId);
