@@ -267,7 +267,8 @@ try{
  await page.goto(base+'/proyectos/');
  await page.locator('#project-list .project-card').first().waitFor({timeout:15000});
  check((await page.locator('#project-list').innerText()).includes('Reconstrucción arqueológica de La Picola'),'Proyectos presenta La Picola en curso');
- check((await page.locator('#news-list').innerText()).includes('No hay noticias aprobadas'),'La Picola no se publica como noticia terminada');
+ check((await page.locator('#news-list').innerText()).includes('primeros avances de la reconstrucción 3D'),'News publica el avance de La Picola sin presentar el proyecto como finalizado');
+ check(await page.locator('#news-list img[src="../assets/la-picola-rec101.jpg"]').count()===1,'News muestra la imagen firmada REC-101');
  check(await page.locator('.main-nav a[href$="proyectos/"]').count()===1,'Menú principal incluye Proyectos / News');
  await page.goto(base+'/mapa-web/');
  check(await page.locator('a[href="../proyectos/"]').count()>=1,'Menú completo enlaza Proyectos / News');
