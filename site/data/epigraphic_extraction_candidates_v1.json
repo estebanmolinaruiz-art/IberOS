@@ -18,7 +18,32 @@
       "transcription_checked_against_edition": false,
       "source_rights_checked": false,
       "independent_review_completed": false,
-      "core_analysis_allowed": false
+      "core_analysis_allowed": false,
+      "edition_readings": [
+        {
+          "reading": "suśtaŕtike",
+          "attribution": "Untermann (1990), transmitida y analizada por Luján (2024)",
+          "role": "PREVIOUS_EDITION",
+          "citation_location": "Luján (2024), p. 11–12",
+          "review_status": "SECONDARY_CROSS_CHECK_PENDING"
+        },
+        {
+          "reading": "belśtaŕtike",
+          "attribution": "Luján Martínez (2024)",
+          "role": "PREFERRED_BY_EDITION_AUTHOR",
+          "citation_location": "Luján (2024), p. 14",
+          "review_status": "INDEPENDENT_REVIEW_PENDING"
+        },
+        {
+          "reading": "belśtaŕm̄ke",
+          "attribution": "Luján Martínez (2024)",
+          "role": "ALTERNATIVE_LESS_LIKELY",
+          "citation_location": "Luján (2024), p. 14",
+          "review_status": "INDEPENDENT_REVIEW_PENDING"
+        }
+      ],
+      "edition_pdf_url": "https://revistas.ucm.es/index.php/CFCG/article/download/90633/4564456569086/4564456708295",
+      "edition_reading_notes": "Luján propone belśtaŕtike preferentemente y belśtaŕm̄ke como alternativa menos probable; no constituye verificación independiente ni traducción."
     }
   ],
   "note": "Only add individual inscription records after exact source figure, object identity, transcription and reviewer have been documented."
