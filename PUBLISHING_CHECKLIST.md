@@ -1,6 +1,6 @@
 # IberOS — estado de publicación y lista de verificación
 
-Actualizado: 2026-10-11
+Actualizado: 2026-10-15
 
 ## GitHub
 - [x] Repositorio público `estebanmolinaruiz-art/IberOS`
@@ -9,7 +9,7 @@ Actualizado: 2026-10-11
 - [x] GitHub Pages habilitada
 - [x] Releases `v1.0.0` y `v1.0.1`
 - [x] Licencia Apache-2.0
-- [x] CITATION.cff coherente con v1.0.1 y DOI de software
+- [x] CITATION.cff coherente con v1.0.1 y referencias públicas verificadas; DOI específico de software pendiente
 
 ## PyPI
 - [x] Paquete público `iberos`
@@ -58,7 +58,7 @@ Actualizado: 2026-10-11
 ## Benchmark y marco académico
 - [x] Informe técnico citable en Zenodo
 - [x] Case Studies I citable en Zenodo
-- [x] Software v1.0.1 con DOI propio
+- [x] Software v1.0.1 público en GitHub y PyPI; DOI específico de software pendiente de publicación/verificación pública
 - [x] 38 objetos curados declarados y almacenados
 - [x] Separación EVIDENCE / INFERENCE / HYPOTHESIS / ESTIMATED TRANSLATION
 - [x] Protocolo de benchmark reproducible publicado en `docs/BENCHMARK.md`
@@ -66,6 +66,6 @@ Actualizado: 2026-10-11
 
 ## Consistencia de versión
 
-`GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1 = Zenodo software v1.0.1`
+`GitHub v1.0.1 = pyproject.toml 1.0.1 = CITATION.cff 1.0.1 = PyPI 1.0.1`; el registro Zenodo específico de software permanece pendiente de publicación/verificación pública.
 
 La prueba externa de instalación/CLI queda cerrada. El DOI específico de software vuelve a estado pendiente hasta que el depósito Zenodo sea públicamente resoluble. El benchmark reproducible queda cerrado. Permanece como mejora de archivo duradero recuperar el SWHID verificable.
