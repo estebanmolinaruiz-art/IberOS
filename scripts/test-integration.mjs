@@ -28,7 +28,7 @@ assert(bibliographyPage.includes('bibliographic_fichas_v1.json')&&bibliographyPa
 assert(readFileSync(base+'recursos/index.html','utf8').includes('../bibliografia/'),'Library links to public bibliographic fiche viewer');
 const extractionQueue=json('data/epigraphic_extraction_candidates_v1.json');
 const extractionAudit=json('data/epigraphic_extraction_audit_v1.json');
-assert(extractionQueue.items.length===extractionAudit.items.length&&extractionQueue.items.length===0,'Unverified bibliography does not create fabricated epigraphic transcriptions');
+assert(extractionQueue.items.length===extractionAudit.items.length&&extractionQueue.items.every(x=>!x.transcription&&x.core_analysis_allowed===false)&&extractionAudit.items.every(x=>x.ready_for_core===false&&x.core_status==='BLOCKED_UNVERIFIED_EVIDENCE'),'Sourced inscription leads remain blocked until transcription and independent review');
 assert(readFileSync('scripts/audit_epigraphic_extractions.py','utf8').includes('independent_review_completed'),'New epigraphic object processing requires independent review');
 assert(bibliographyFichas.items.length===libraryQueue.items.length&&bibliographyFichas.items.every(x=>x.type==='BIBLIOGRAPHIC_SOURCE_NOT_OBJECT'&&x.core_processing.status==='BLOCKED_UNVERIFIED_OBJECT'&&x.core_processing.rule_results.length===0),'Bibliographic fichas cannot be mistaken for validated inscriptions or automatic Core results');
 assert(libraryQueue.items.length>=5&&libraryQueue.items.every(x=>x.status==='PENDING_EDITORIAL_REVIEW'&&x.core_evidence_approved===false&&x.doi.startsWith('10.')),'Candidate bibliography has DOI references and cannot be promoted without review');
