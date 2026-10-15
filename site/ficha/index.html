@@ -159,6 +159,13 @@ body.iberos-ficha .ib-primary-grid .artifact-summary .artifact-actions a:first-c
 body.iberos-ficha .ib-primary-grid .artifact-summary .artifact-actions a:focus-visible{outline:3px solid #1f4e5f;outline-offset:2px}
 body.iberos-ficha .ib-primary-grid .artifact-summary .pill{background:#dce5e8!important;color:#1f4e5f!important;-webkit-text-fill-color:#1f4e5f!important;border:1px solid #afc3c9!important}
 body.iberos-ficha .ib-primary-grid .ib-piece-original h2,body.iberos-ficha .ib-primary-grid .ib-panel-heading{color:#fff9ec!important;-webkit-text-fill-color:#fff9ec!important}
+
+/* Core states are readable on phones; internal enum codes are not public-facing labels. */
+body.iberos-ficha #core-audit-slot .rc-tags{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:8px;margin:12px 0}
+body.iberos-ficha #core-audit-slot .ib-core-state{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;padding:10px 12px;background:#e4edf0!important;color:#173c4a!important;border:1px solid #a7bec6;border-radius:9px;font:500 .88rem/1.5 system-ui,sans-serif}
+body.iberos-ficha #core-audit-slot .ib-core-state strong{font-size:.9rem;color:#173c4a}
+body.iberos-ficha #core-audit-slot .ib-core-state span{color:#294a57}
+body.iberos-ficha #core-audit-slot .notice,body.iberos-ficha #core-audit-slot .notice strong,body.iberos-ficha #core-audit-slot .notice p{color:#193747!important;opacity:1!important}
 </style></head><body class="iberos-inner iberos-ficha"><div id="head"></div><aside class="ib-discovery-help" aria-label="Cómo leer esta ficha"><details><summary>✦ Frente a la pieza · aprende a leer las pistas</summary><div class="ib-help-content"><p><strong>Primero:</strong> identifica el objeto y lee la gran propuesta central. <strong>Después:</strong> compara evidencia, inferencia, variantes y bibliografía.</p><p><strong>Qué esperar:</strong> una hipótesis no es una traducción probada. Si aparece «No establecida», la lectura sigue abierta: es información científica, no un fallo.</p><div class="ib-help-route"><a href="#geography-slot">Contexto geográfico ↘</a><a href="#documentary-slot">Acceso experto · evidencia y bibliografía ↘</a><a href="#variant-review-slot">Variantes ↘</a><a href="../corpus/">Elegir otra pieza →</a><a href="../laboratorio/">Abrir cuaderno de investigación →</a></div></div></details></aside><main><div id="body"><div class="notice" role="status">Cargando ficha arqueológica… Si permanece este mensaje, consulta el <a href="../corpus/">Corpus</a>.</div></div></main><footer><div class="wrap">Ficha web derivada del registro público. La portada documental no se presenta como fotografía del objeto.</div></footer>
 <script type="module">import{showResearchContext}from"../assets/research-context.js";showResearchContext();
 import{header,text,csv,esc}from"../assets/portal-data.js";
@@ -342,7 +349,9 @@ const lines=Array.isArray(record?.edition_lineation?.editorial_lines)?record.edi
     if(!slot)return;
     const item=payload.objects?.[r.OBJECT_ID];
     if(!item){slot.innerHTML='<h2>Análisis CORE</h2><p>Auditoría no disponible para este objeto.</p>';return}
-    const badges=Object.entries(item.modules||{}).map(([k,v])=>'<span class="pill">'+esc(k)+': '+esc(v)+'</span>').join(" ");
+    const moduleLabels={GEO:"Contexto geográfico",INFER:"Inferencia",LEXSEM:"Léxico y significado",MORPH:"Morfología",PALEO:"Paleografía",TRACE:"Trazabilidad"};
+    const statusLabels={CONTEXT_ONLY:"Solo contexto",PENDING_INDEPENDENT_VALIDATION:"Pendiente de validación independiente",HYPOTHESES_NOT_TRANSLATION:"Hipótesis; no traducción",REGISTRY_TAG_ONLY:"Solo etiqueta del registro",METADATA_ONLY:"Solo metadatos",DOCUMENTARY_METADATA:"Metadatos documentales"};
+    const badges=Object.entries(item.modules||{}).map(([k,v])=>'<span class="pill ib-core-state"><strong>'+esc(moduleLabels[k]||k)+'</strong><span>'+esc(statusLabels[v]||String(v).replaceAll("_"," ").toLowerCase())+'</span></span>').join(" ");
     const candidates=(item.rules||[]).filter(v=>v.applicability==="CANDIDATE_FROM_REGISTRY_TAGS");
     const controls=(item.rules||[]).filter(v=>v.applicability==="GENERAL_GUARD_AVAILABLE");
     const evaluated=item.evaluated_rules||[];
