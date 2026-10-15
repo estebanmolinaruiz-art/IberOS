@@ -23,7 +23,21 @@
       "model_license_verified": false,
       "author_credit_verified": false,
       "watermark_preserved_verified": false,
-      "notes": "Buscar fotogrametría o escaneado de este plomo exacto y verificar la inscripción antes de publicar 3D auténtico."
+      "notes": "Buscar fotogrametría o escaneado de este plomo exacto y verificar la inscripción antes de publicar 3D auténtico.",
+      "research_leads": [
+        {
+          "title": "Lámina de plomo 32 del Castellet de Banyoles — referencia T.07.03",
+          "url": "https://es.wikipedia.org/wiki/L%C3%A1mina_de_plomo_32_de_El_Castellet_de_Banyoles",
+          "purpose": "Orientación bibliográfica para identificar la pieza exacta; no constituye un escaneado 3D ni prueba de derechos",
+          "verified_3d_model": false
+        },
+        {
+          "title": "Estudio epigráfico de T.07.01 utilizado como control para evitar confusiones",
+          "url": "https://diposit.ub.edu/bitstreams/0865dbd6-0f0c-43a8-a4fd-32e841a93d53/download",
+          "purpose": "Contraste entre identificadores T.07.01 y T.07.03; pieza distinta",
+          "verified_3d_model": false
+        }
+      ]
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -36,7 +50,21 @@
       "model_license_verified": false,
       "author_credit_verified": false,
       "watermark_preserved_verified": false,
-      "notes": "Distinguir B.7.38 de otros plomos hallados en Pech-Maho; no atribuirles un modelo genérico."
+      "notes": "Distinguir B.7.38 de otros plomos hallados en Pech-Maho; no atribuirles un modelo genérico.",
+      "research_leads": [
+        {
+          "title": "Solier y Barbouteau (1988), estudio de nuevos plomos de la región de Narbona",
+          "url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1324",
+          "purpose": "Cotejar designación plomo 6 frente al registro IberOS; ninguna equivalencia confirmada",
+          "verified_3d_model": false
+        },
+        {
+          "title": "Solier (1979), excavación y plomos de Pech-Maho",
+          "url": "https://www.persee.fr/doc/ran_0557-7705_1979_num_12_1_1037",
+          "purpose": "Distinguir distintos plomos excavados; no implica disponibilidad de modelo 3D",
+          "verified_3d_model": false
+        }
+      ]
     }
   ]
 }
