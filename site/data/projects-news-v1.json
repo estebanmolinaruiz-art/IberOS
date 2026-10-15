@@ -17,16 +17,27 @@
       "status": "IN_PROGRESS",
       "public_news_approved": false,
       "editorial_note": "Reconstrucción visual 3D de la fase ibérica (siglos V–IV a. C.) en desarrollo. Se ensayan hipótesis espaciales sobre viviendas, muralla, torre y paisaje, diferenciando evidencias arqueológicas, restituciones comparativas y elementos ilustrativos. La imagen REC–101 se encuentra preparada para difusión una vez confirmado crédito y derechos de publicación.",
-      "source_links": [],
+      "source_links": [
+        {
+          "title": "Badie y Moret (1997): metrología y organización espacial de La Picola",
+          "url": "https://www.persee.fr/doc/palla_0031-0387_1997_num_46_1_1428",
+          "doi": "10.3406/palla.1997.1428"
+        },
+        {
+          "title": "Declaración BIC zona arqueológica de La Picola (BOE, 2022)",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-4134"
+        }
+      ],
       "media": [],
       "progress_image": {
         "asset_expected": "site/assets/la-picola-rec101.jpg",
         "caption": "La Picola (Santa Pola) · Reconstrucción 3D orientativa. Fase ibérica, siglos V–IV a. C. · REC–101.",
-        "file_uploaded_to_public_site": false,
+        "file_uploaded_to_public_site": true,
         "rights_confirmation": "AUTHORIZED_BY_PROJECT_OWNER",
         "author_credit": "Autoría y reconstrucción 3D: Proyecto IberOS",
         "image_is_reconstruction": true,
-        "archaeological_accuracy_claim": "NOT_DEFINITIVE"
+        "archaeological_accuracy_claim": "NOT_DEFINITIVE",
+        "scientific_caveat": "El emplazamiento en promontorio y la costa mostrados en la imagen NO corresponden a la topografía documentada de La Picola, situada en terreno bajo y llano. No utilizar la lámina para geolocalización o reconstrucción paisajística exacta."
       }
     }
   ],
@@ -35,24 +46,35 @@
       "id": "la-picola-rec101-progress-2026-10",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: primeros avances de la reconstrucción 3D de la fase ibérica",
-      "summary": "IberOS desarrolla una recreación tridimensional orientativa de La Picola (Santa Pola), centrada en la organización del asentamiento durante los siglos V–IV a. C. La propuesta estudia las viviendas del sector excavado, la muralla, la torre y los espacios de circulación. El trabajo diferencia los elementos apoyados en documentación arqueológica de las restituciones comparativas y las recreaciones sin evidencia directa. Esta fase permite visualizar y revisar hipótesis, pero no representa una reconstrucción arqueológica definitiva.",
-      "status": "DRAFT_IMAGE_UPLOAD_AND_SOURCE_CHECK_PENDING",
-      "public_news_approved": false,
+      "summary": "El Proyecto IberOS presenta REC–101, una propuesta visual en desarrollo sobre el asentamiento ibérico de La Picola (Santa Pola), de los siglos V–IV a. C. La lámina explora de forma orientativa viviendas, murallas y espacios de circulación, diferenciando estructuras documentadas de reconstrucciones hipotéticas. AVISO: el promontorio y el paisaje costero de la imagen son recreaciones artísticas y no representan la topografía histórica documentada: La Picola se emplazaba en terreno bajo y llano, como describen Badie y Moret (1997). Esta ilustración no constituye una reconstrucción arqueológica definitiva.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
       "editorial_approval": true,
-      "source_verification": false,
+      "source_verification": true,
       "media_rights_verification": true,
       "media": [
         {
           "path": "../assets/la-picola-rec101.jpg",
-          "status": "NOT_UPLOADED",
+          "status": "PUBLISHED",
           "kind": "3D_RECONSTRUCTION",
-          "caption": "Reconstrucción ilustrativa REC–101; hipótesis y evidencias diferenciadas en la lámina.",
+          "caption": "REC–101 · Recreación 3D orientativa; emplazamiento elevado, costa y escenas NO documentados para La Picola.",
           "credit": "Autoría y reconstrucción 3D: Proyecto IberOS",
           "rights": "PUBLICATION_AUTHORIZED_BY_PROJECT_OWNER"
         }
       ],
-      "publication_date": null,
-      "author_credit": "Autoría y reconstrucción 3D: Proyecto IberOS"
+      "publication_date": "2026-10-15",
+      "author_credit": "Autoría y reconstrucción 3D: Proyecto IberOS",
+      "sources": [
+        {
+          "title": "Badie y Moret (1997): metrología y organización espacial de La Picola",
+          "url": "https://www.persee.fr/doc/palla_0031-0387_1997_num_46_1_1428",
+          "doi": "10.3406/palla.1997.1428"
+        },
+        {
+          "title": "Declaración BIC zona arqueológica de La Picola (BOE, 2022)",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-4134"
+        }
+      ]
     }
   ]
 }
