@@ -57,6 +57,12 @@ try{
    check((await page.locator('#variant-review-slot').innerText()).includes('Lecturas, variantes y verificaciones'),'Ficha '+id+' muestra cotejo de variantes');
    check((await page.locator('#variant-review-slot article.card').count())>=1,'Ficha '+id+' presenta variante documentada');
    check((await page.locator('#interpretationMain').innerText()).length>10,'Ficha '+id+' presenta interpretación o límite');
+   const identityColors=await page.locator('.artifact-summary').evaluate(root=>{
+     const values=selector=>{const node=root.querySelector(selector);return node?getComputedStyle(node).color:"missing"};
+     return {title:values('h1'),description:values('p.meta'),button:values('.artifact-actions a:nth-child(2)')};
+   });
+   check(Object.values(identityColors).every(c=>/^rgb\\((?:[0-9]+,?\\s*){3}\\)$/.test(c)&&Number(c.match(/[0-9]+/)[0])<90),'Identificación oscura y botones legibles '+id+' '+JSON.stringify(identityColors));
+
    const readingContrast=await page.locator('.ib-sign-reading').evaluate(el=>{
      const rgb=x=>{const m=getComputedStyle(x).color.match(/\d+/g);return m?m.slice(0,3).map(Number):[]};
      const [r,g,b]=rgb(el);return r<90&&g<100&&b<120;
