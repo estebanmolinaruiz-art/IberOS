@@ -23,8 +23,8 @@
         "asset_expected": "site/assets/la-picola-rec101.jpg",
         "caption": "La Picola (Santa Pola) · Reconstrucción 3D orientativa. Fase ibérica, siglos V–IV a. C. · REC–101.",
         "file_uploaded_to_public_site": false,
-        "rights_confirmation": "PENDING",
-        "author_credit": "PENDING",
+        "rights_confirmation": "AUTHORIZED_BY_PROJECT_OWNER",
+        "author_credit": "Autoría y reconstrucción 3D: Proyecto IberOS",
         "image_is_reconstruction": true,
         "archaeological_accuracy_claim": "NOT_DEFINITIVE"
       }
@@ -36,20 +36,23 @@
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: primeros avances de la reconstrucción 3D de la fase ibérica",
       "summary": "IberOS desarrolla una recreación tridimensional orientativa de La Picola (Santa Pola), centrada en la organización del asentamiento durante los siglos V–IV a. C. La propuesta estudia las viviendas del sector excavado, la muralla, la torre y los espacios de circulación. El trabajo diferencia los elementos apoyados en documentación arqueológica de las restituciones comparativas y las recreaciones sin evidencia directa. Esta fase permite visualizar y revisar hipótesis, pero no representa una reconstrucción arqueológica definitiva.",
-      "status": "DRAFT_MEDIA_AND_RIGHTS_PENDING",
+      "status": "DRAFT_IMAGE_UPLOAD_AND_SOURCE_CHECK_PENDING",
       "public_news_approved": false,
       "editorial_approval": true,
       "source_verification": false,
-      "media_rights_verification": false,
+      "media_rights_verification": true,
       "media": [
         {
           "path": "../assets/la-picola-rec101.jpg",
           "status": "NOT_UPLOADED",
           "kind": "3D_RECONSTRUCTION",
-          "caption": "Reconstrucción ilustrativa REC–101; hipótesis y evidencias diferenciadas en la lámina."
+          "caption": "Reconstrucción ilustrativa REC–101; hipótesis y evidencias diferenciadas en la lámina.",
+          "credit": "Autoría y reconstrucción 3D: Proyecto IberOS",
+          "rights": "PUBLICATION_AUTHORIZED_BY_PROJECT_OWNER"
         }
       ],
-      "publication_date": null
+      "publication_date": null,
+      "author_credit": "Autoría y reconstrucción 3D: Proyecto IberOS"
     }
   ]
 }
