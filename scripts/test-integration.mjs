@@ -25,6 +25,7 @@ const libraryQueue=json('data/library_candidates_v1.json');
 const bibliographyFichas=json('data/bibliographic_fichas_v1.json');
 const bibliographyPage=readFileSync(base+'bibliografia/index.html','utf8');
 assert(bibliographyPage.includes('bibliographic_fichas_v1.json')&&bibliographyPage.includes('epigraphic_extraction_audit_v1.json'),'Public bibliography presents fichas and Core eligibility audit separately');
+assert(bibliographyPage.includes('extractionCards')&&bibliographyPage.includes('missing_requirements'),'Bibliographic viewer exposes individual Core gate requirements');
 assert(readFileSync(base+'recursos/index.html','utf8').includes('../bibliografia/'),'Library links to public bibliographic fiche viewer');
 const extractionQueue=json('data/epigraphic_extraction_candidates_v1.json');
 const extractionAudit=json('data/epigraphic_extraction_audit_v1.json');
