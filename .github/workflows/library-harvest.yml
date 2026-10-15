@@ -1,0 +1,37 @@
+name: Biblioteca - cosecha bibliográfica
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Número máximo de candidatas a consultar (hasta 500)"
+        required: false
+        default: "500"
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Fetch candidate bibliographic metadata (unreviewed)
+        env:
+          REQUESTED_LIMIT: ${{ inputs.limit }}
+        run: |
+          python scripts/collect_library_candidates.py --limit "$REQUESTED_LIMIT" --output library_candidates_review.json
+      - name: Validate no automatic scientific promotion
+        run: |
+          python - <<'PY'
+          import json
+          data=json.load(open('library_candidates_review.json'))
+          assert all(x['status']=='PENDING_EDITORIAL_REVIEW' and x['core_evidence_approved'] is False for x in data['items'])
+          print(len(data['items']), 'pending-review candidates; zero Core promotions')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iberos-library-unreviewed-candidates
+          path: library_candidates_review.json
+          retention-days: 30
