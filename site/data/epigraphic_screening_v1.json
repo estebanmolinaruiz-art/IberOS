@@ -38,8 +38,49 @@
       "core_gate_status": "BLOCKED_UNVERIFIED_EVIDENCE",
       "core_rules_executed": 0,
       "automated_translation": null,
-      "decision": "AWAIT_DOCUMENTARY_REVIEW"
+      "decision": "AWAIT_DOCUMENTARY_REVIEW",
+      "variant_comparisons": [
+        {
+          "reading_a": "suśtaŕtike",
+          "reading_b": "belśtaŕtike",
+          "grapheme_differences": [
+            {
+              "operation": "replace",
+              "left": "su",
+              "right": "bel"
+            }
+          ],
+          "meaning_inferred": false,
+          "epigraphic_assessment": "AWAITING_PALEOGRAPHIC_REVIEW"
+        },
+        {
+          "reading_a": "suśtaŕtike",
+          "reading_b": "belśtaŕm̄ke",
+          "grapheme_differences": [
+            {
+              "operation": "replace",
+              "left": "suśtaŕti",
+              "right": "belśtaŕm̄"
+            }
+          ],
+          "meaning_inferred": false,
+          "epigraphic_assessment": "AWAITING_PALEOGRAPHIC_REVIEW"
+        },
+        {
+          "reading_a": "belśtaŕtike",
+          "reading_b": "belśtaŕm̄ke",
+          "grapheme_differences": [
+            {
+              "operation": "replace",
+              "left": "ti",
+              "right": "m̄"
+            }
+          ],
+          "meaning_inferred": false,
+          "epigraphic_assessment": "AWAITING_PALEOGRAPHIC_REVIEW"
+        }
+      ]
     }
   ],
-  "notice": "A transcription variant is a documented hypothesis, not a validated translation. Core rules have not run in this screening."
+  "notice": "Mechanical grapheme contrasts between edition alternatives; no verified semantic reading, no Core rule execution."
 }
