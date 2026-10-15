@@ -1,3 +1,4 @@
+from .interpretation_candidates import compare_interpretations
 from .mobile_sync import mobile_object_payload
 from .rule_execution import execute_rules
 from .object_rule_audit import audit_object_rules
@@ -72,6 +73,7 @@ from .core import (
 )
 
 __all__ = [
+    "compare_interpretations",
     "mobile_object_payload",
     "execute_rules",
     "audit_object_rules",
