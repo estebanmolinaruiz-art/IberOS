@@ -110,7 +110,11 @@
     "exact_epigraphic_object_match_verified": false,
     "authentic_inscription_visible_verified": false,
     "reuse_permission_verified_for_iberos": false,
-    "display_note": "Fuente describe inscripción ibérica; cotejo epigráfico exacto pendiente. Abrir modelo original."
+    "display_note": "Fuente describe inscripción ibérica; cotejo epigráfico exacto pendiente. Abrir modelo original.",
+    "bibliographic_lead": "https://www.academia.edu/487470/Una_tortera_amb_inscripci%C3%B3_ib%C3%A8rica_de_Can_Rodon_de_lHort_Cabrera_de_Mar_",
+    "source_description_verified": true,
+    "catalog_crosswalk_status": "NOT_MATCHED_TO_IBEROS_38",
+    "epigraphic_reading_status": "NEEDS_EDITION_COLLATION"
   },
   {
     "title": "Cerámica ibérica inscrita — Sant Miquel, Montornès",
@@ -127,7 +131,11 @@
     "exact_epigraphic_object_match_verified": false,
     "authentic_inscription_visible_verified": false,
     "reuse_permission_verified_for_iberos": false,
-    "display_note": "Publicador describe inscripción ibérica; identidad catalográfica y trazos pendientes de cotejo."
+    "display_note": "Publicador describe inscripción ibérica; identidad catalográfica y trazos pendientes de cotejo.",
+    "transcription_reported_by_uploader": "/ti/ki/r/?/r/ki",
+    "source_description_verified": true,
+    "catalog_crosswalk_status": "NOT_MATCHED_TO_IBEROS_38",
+    "epigraphic_reading_status": "UNVERIFIED_UPLOADER_READING"
   },
   {
     "title": "Estela con escritura del Sudoeste — Museo de Silves",
@@ -145,5 +153,41 @@
     "authentic_inscription_visible_verified": false,
     "reuse_permission_verified_for_iberos": false,
     "display_note": "Escritura del Sudoeste: recurso comparativo, no inscripción en lengua ibérica."
+  },
+  {
+    "title": "Copa cerámica ibérica · Castellar de Santisteban (MAC)",
+    "object": "Copa cerámica a torno, inventario MAC BCN-029121",
+    "author": "Museu d'Arqueologia de Catalunya",
+    "institution": "Museu d'Arqueologia de Catalunya",
+    "url": "https://sketchfab.com/3d-models/copa-de-ceramica-a-torn-iberica-a5825cd911a640bba7e337da80a33887",
+    "license": "Consultar las condiciones de reutilización de la ficha original",
+    "reuse": "external_only",
+    "model_type": "photogrammetry",
+    "inventory_number": "MAC BCN-029121",
+    "inscription_category": "NO_EPIGRAPHIC_INSCRIPTION_REPORTED",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Fotogrametría del MAC con inventario publicado; sin inscripción ibérica documentada en la descripción."
+  },
+  {
+    "title": "Bol cerámico ibérico · Olèrdola (MAC)",
+    "object": "Bol cerámico, inventario MAC OLE-001066",
+    "author": "Irene Franco / Giravolt",
+    "institution": "Museu d'Arqueologia de Catalunya",
+    "url": "https://sketchfab.com/3d-models/bol-de-ceramica-a-torn-iberica-54980685b19e4cb0bc8b2cd26b77209e",
+    "license": "Consultar las condiciones de reutilización de la ficha original",
+    "reuse": "external_only",
+    "model_type": "photogrammetry",
+    "inventory_number": "MAC OLE-001066",
+    "inscription_category": "NO_EPIGRAPHIC_INSCRIPTION_REPORTED",
+    "display_policy": "LINK_TO_ORIGINAL",
+    "local_file_hosted": false,
+    "exact_epigraphic_object_match_verified": false,
+    "authentic_inscription_visible_verified": false,
+    "reuse_permission_verified_for_iberos": false,
+    "display_note": "Modelo del MAC con autoría y referencia de inventario; no se describe inscripción."
   }
 ]
