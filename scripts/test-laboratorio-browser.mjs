@@ -227,6 +227,13 @@ try{
    }
 
  }
+ await page.goto(base+'/proyectos/');
+ await page.locator('#project-list .project-card').first().waitFor({timeout:15000});
+ check((await page.locator('#project-list').innerText()).includes('Reconstrucción arqueológica de La Picola'),'Proyectos presenta La Picola en curso');
+ check((await page.locator('#news-list').innerText()).includes('No hay noticias aprobadas'),'La Picola no se publica como noticia terminada');
+ check(await page.locator('.main-nav a[href$="proyectos/"]').count()===1,'Menú principal incluye Proyectos / News');
+ await page.goto(base+'/mapa-web/');
+ check(await page.locator('a[href="../proyectos/"]').count()>=1,'Menú completo enlaza Proyectos / News');
  await page.goto(base+'/diagnostico/');
  await page.locator('#results h2').waitFor({timeout:15000});
  check((await page.locator('#results h2').innerText()).includes('7 de 7'),'Diagnóstico gratuito supera sus siete verificaciones');
