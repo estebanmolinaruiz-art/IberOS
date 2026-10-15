@@ -41,7 +41,7 @@ def main():
                                                 "status":"AWAITING_DOCUMENTED_HYPOTHESES"}
                                   for x in load_registry()},
                        "notice":"Sin propuestas aprobadas para publicar; no se fabrican traducciones."}
-    (target.parent/"core_interpretations_v1.json").write_text(json.dumps(empty_proposals,ensure_ascii=False,indent=2,sort_keys=True)+"\\n",encoding="utf-8")
+    (target.parent/"core_interpretations_v1.json").write_text(json.dumps(empty_proposals,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     (target.parent/"core_evidence_triage_v1.json").write_text(json.dumps(build_evidence_triage(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     (target.parent/"core_rule_catalog_v1.json").write_text(json.dumps(rule_catalog(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
