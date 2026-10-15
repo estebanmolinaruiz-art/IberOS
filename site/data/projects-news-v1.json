@@ -1,7 +1,11 @@
 {
   "schema": "IberOS-Projects-News/1.0",
   "policy": {
-    "public_news_requires": ["editorial_approval", "source_verification", "media_rights_verification"],
+    "public_news_requires": [
+      "editorial_approval",
+      "source_verification",
+      "media_rights_verification"
+    ],
     "drafts_are_not_public_news": true,
     "do_not_claim_finished_reconstruction_without_evidence": true
   },
@@ -12,10 +16,40 @@
       "location": "Santa Pola, Alicante",
       "status": "IN_PROGRESS",
       "public_news_approved": false,
-      "editorial_note": "Reconstrucción en curso; noticia prevista solo cuando se autorice la publicación de información y materiales contrastados.",
+      "editorial_note": "Reconstrucción visual 3D de la fase ibérica (siglos V–IV a. C.) en desarrollo. Se ensayan hipótesis espaciales sobre viviendas, muralla, torre y paisaje, diferenciando evidencias arqueológicas, restituciones comparativas y elementos ilustrativos. La imagen REC–101 se encuentra preparada para difusión una vez confirmado crédito y derechos de publicación.",
       "source_links": [],
-      "media": []
+      "media": [],
+      "progress_image": {
+        "asset_expected": "site/assets/la-picola-rec101.jpg",
+        "caption": "La Picola (Santa Pola) · Reconstrucción 3D orientativa. Fase ibérica, siglos V–IV a. C. · REC–101.",
+        "file_uploaded_to_public_site": false,
+        "rights_confirmation": "PENDING",
+        "author_credit": "PENDING",
+        "image_is_reconstruction": true,
+        "archaeological_accuracy_claim": "NOT_DEFINITIVE"
+      }
     }
   ],
-  "news": []
+  "news": [
+    {
+      "id": "la-picola-rec101-progress-2026-10",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: primeros avances de la reconstrucción 3D de la fase ibérica",
+      "summary": "IberOS desarrolla una recreación tridimensional orientativa de La Picola (Santa Pola), centrada en la organización del asentamiento durante los siglos V–IV a. C. La propuesta estudia las viviendas del sector excavado, la muralla, la torre y los espacios de circulación. El trabajo diferencia los elementos apoyados en documentación arqueológica de las restituciones comparativas y las recreaciones sin evidencia directa. Esta fase permite visualizar y revisar hipótesis, pero no representa una reconstrucción arqueológica definitiva.",
+      "status": "DRAFT_MEDIA_AND_RIGHTS_PENDING",
+      "public_news_approved": false,
+      "editorial_approval": true,
+      "source_verification": false,
+      "media_rights_verification": false,
+      "media": [
+        {
+          "path": "../assets/la-picola-rec101.jpg",
+          "status": "NOT_UPLOADED",
+          "kind": "3D_RECONSTRUCTION",
+          "caption": "Reconstrucción ilustrativa REC–101; hipótesis y evidencias diferenciadas en la lámina."
+        }
+      ],
+      "publication_date": null
+    }
+  ]
 }
