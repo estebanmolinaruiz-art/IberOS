@@ -92,7 +92,14 @@
           ],
           "evidence_note": "DRAC metadata confirms a photograph of an inscribed lead from Castellet de Banyoles, but does not explicitly identify T.07.03."
         }
-      ]
+      ],
+      "edition_identifiers": {
+        "doi": "10.36707/palaeohispanica.v0i3.339",
+        "publication_year": 2003,
+        "article_pages": "195–204",
+        "source_type": "primary_epigraphic_edition",
+        "object_identity_status": "EDITION_MATCH_REPORTED_BUT_EXTERNAL_PHOTO_UNMATCHED"
+      }
     },
     {
       "object_id": "IBR-PLM-0003",
@@ -139,7 +146,15 @@
           ],
           "evidence_note": "Commons metadata confirms a photographed copy of a Pech-Maho lead inscription, but not equivalence to B.7.38."
         }
-      ]
+      ],
+      "edition_identifiers": {
+        "doi": "10.3406/ran.1988.1324",
+        "publication_year": 1988,
+        "article_pages": "61–94",
+        "source_type": "primary_epigraphic_edition",
+        "object_identity_status": "B.7.38_EXTERNAL_PHOTO_UNMATCHED",
+        "caution": "La edición describe varios plomos; la referencia al plomo 6 no demuestra equivalencia con B.7.38."
+      }
     }
   ]
 }
