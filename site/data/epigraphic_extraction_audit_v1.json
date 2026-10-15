@@ -1,5 +1,21 @@
 {
   "schema": "IberOS-Epigraphic-Extraction-Audit/1.0",
-  "items": [],
+  "items": [
+    {
+      "object_id": "SOURCES-SOSES-RING-1890",
+      "ready_for_core": false,
+      "missing_requirements": [
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "automatic_semantic_validation": false
+    }
+  ],
   "note": "An eligible record requires controlled scientific review; it is not a validated translation."
 }
