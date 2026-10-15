@@ -1,0 +1,42 @@
+{
+  "schema": "IberOS-Epigraphic-3D-Gate/1.0",
+  "policy": {
+    "public_authentic_3d_requires": [
+      "exact_object_match_verified",
+      "geometry_from_object_verified",
+      "inscription_from_object_verified",
+      "model_license_verified",
+      "author_credit_verified",
+      "watermark_preserved_verified"
+    ],
+    "symbolic_is_never_original": true
+  },
+  "objects": [
+    {
+      "object_id": "IBR-PLM-0002",
+      "name": "Plomo de Tivissa",
+      "model_status": "SOURCE_REQUIRED",
+      "model_url": null,
+      "exact_object_match_verified": false,
+      "geometry_from_object_verified": false,
+      "inscription_from_object_verified": false,
+      "model_license_verified": false,
+      "author_credit_verified": false,
+      "watermark_preserved_verified": false,
+      "notes": "Buscar fotogrametría o escaneado de este plomo exacto y verificar la inscripción antes de publicar 3D auténtico."
+    },
+    {
+      "object_id": "IBR-PLM-0003",
+      "name": "Plomo de Pech-Maho",
+      "model_status": "SOURCE_REQUIRED",
+      "model_url": null,
+      "exact_object_match_verified": false,
+      "geometry_from_object_verified": false,
+      "inscription_from_object_verified": false,
+      "model_license_verified": false,
+      "author_credit_verified": false,
+      "watermark_preserved_verified": false,
+      "notes": "Distinguir B.7.38 de otros plomos hallados en Pech-Maho; no atribuirles un modelo genérico."
+    }
+  ]
+}
