@@ -1,0 +1,45 @@
+{
+  "schema": "IberOS-Extraction-Screening/1.0",
+  "items": [
+    {
+      "object_id": "SOURCES-SOSES-RING-1890",
+      "bibliographic_ficha_id": "BIB-000004",
+      "source_doi": "10.5209/cfcg.90633",
+      "variant_count": 3,
+      "attested_edition_variants": [
+        {
+          "reading": "suśtaŕtike",
+          "role": "PREVIOUS_EDITION",
+          "citation_location": "Luján (2024), p. 11–12",
+          "review_status": "SECONDARY_CROSS_CHECK_PENDING"
+        },
+        {
+          "reading": "belśtaŕtike",
+          "role": "PREFERRED_BY_EDITION_AUTHOR",
+          "citation_location": "Luján (2024), p. 14",
+          "review_status": "INDEPENDENT_REVIEW_PENDING"
+        },
+        {
+          "reading": "belśtaŕm̄ke",
+          "role": "ALTERNATIVE_LESS_LIKELY",
+          "citation_location": "Luján (2024), p. 14",
+          "review_status": "INDEPENDENT_REVIEW_PENDING"
+        }
+      ],
+      "missing_requirements": [
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_gate_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "core_rules_executed": 0,
+      "automated_translation": null,
+      "decision": "AWAIT_DOCUMENTARY_REVIEW"
+    }
+  ],
+  "notice": "A transcription variant is a documented hypothesis, not a validated translation. Core rules have not run in this screening."
+}
