@@ -129,6 +129,10 @@ assert(Object.values(publication.records).every(x=>Array.isArray(x.pending_docum
 assert(archive.includes('pendingEditorial(')&&archive.includes('Documentación pendiente'),'Archivo público presenta requisitos pendientes por pieza');
 assert(archive.includes('Abrir cuaderno de investigación para esta pieza')&&archive.includes('encodeURIComponent(id)')&&archive.includes('Requisitos editoriales, no pruebas'),'Cada expediente pendiente conecta a su cuaderno sin elevar requisitos a hechos lingüísticos');
 assert(archive.includes('id="documentation-protocol"')&&archive.includes('cotejo de signos con una edición epigráfica')&&archive.includes('No se atribuye un significado sin pruebas'),'Archivo explica protocolo de completar expedientes sin inventar lecturas');
+assert(archive.includes('docs/INVITACION_REVISION_CIENTIFICA_IBEROS_2026-10-16.md')&&archive.includes('enviar observaciones documentadas'),'Archivo de fichas ofrece revisión externa y contacto científico');
+const publicPresentation=readFileSync(base+'presentacion/index.html','utf8');
+assert(publicPresentation.includes('docs/INVITACION_REVISION_CIENTIFICA_IBEROS_2026-10-16.md')&&publicPresentation.includes('docs/COTEJO_VAL_ALEGRE_CAMINREAL_2026-10-16.md'),'Presentación pública enlaza protocolo y cotejo de fuentes');
+
 
 const priority=json('data/fiche_publication_priority_v1.json');
 assert(priority.schema==='IberOS-Publication-Priority/1.0','Cola de trabajo editorial exportada');
