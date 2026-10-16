@@ -36,3 +36,13 @@
 
 ## Uso por los demás hilos
 Consultar primero `main`, los workflows y este documento; después revisar `docs/PROJECT_SYNC_2026-10-14.md`, `docs/PUBLICATION_BATCH_2026-10-16.md` y el expediente del módulo correspondiente. Evitar sustituir archivos del Core o reconstruir ZIP desde una copia anterior sin comparar SHA, procedencia y esquema.
+
+## Adenda de integración posterior — lote Coimbra y 13 expedientes
+
+Después del punto de corte anterior, la rama compartida incorporó:
+- `e467f66f`: cita de edición de Coimbra para el caso `kaŕb` (páginas 155–157), conservando la hipótesis nominal como **no validada**.
+- `4f6200d7`: comprobación de procedencia de Coimbra y **13 fichas con interpretación editorial pública** según el título del commit; este recuento corresponde a cobertura editorial, **no** a 13 traducciones demostradas. Consultar la generación de `fiche_publication_status_v1.json` para el recuento de cada despliegue.
+
+**Comprobación CI del corte `4f6200d7`:** tests y comprobaciones web completadas con éxito; GitHub Pages seguía en progreso durante esta consulta. La presencia de un commit posterior de sincronización documental no valida por sí sola el despliegue de ninguna versión.
+
+**Instrucción común:** antes de cotejar o ampliar Coimbra, consultar la edición citada y su trazabilidad; preservar la separación entre observación paleográfica, propuesta onomástica y equivalencia semántica. Los módulos de WEB no deben promover hipótesis de las 13 fichas al Core.
