@@ -13,7 +13,7 @@ async function loadPublicationStatus(){
 function pendingEditorial(id){
  const pending=publicationRecords[id]?.pending_documentation;
  if(!Array.isArray(pending)||!pending.length)return "";
- return '<details class="notice"><summary>Documentación pendiente ('+pending.length+')</summary><ul>'+pending.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></details>';
+ return '<details class="notice"><summary>Documentación pendiente ('+pending.length+')</summary><ul>'+pending.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul><p><a href="../laboratorio/?id='+encodeURIComponent(id)+'">Abrir cuaderno de investigación para esta pieza →</a></p><p class="meta">Requisitos editoriales, no pruebas de una lectura ni de un significado.</p></details>';
 }
 function publicationLabel(id){
  const state=publicationRecords[id]?.publication_status;
