@@ -8,6 +8,7 @@ from iberos.object_rule_audit import audit_object_rules
 from iberos.rule_catalog import rule_catalog
 from iberos.reviewed_observations import evaluate_reviewed_observations
 from iberos.evidence_triage import build_evidence_triage
+from iberos.publication_gate import build_publication_manifest
 
 def build(observations=None):
     evaluations = evaluate_reviewed_observations(observations if observations is not None else [])
@@ -40,6 +41,7 @@ def main():
     featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
     interpretations={x["OBJECT_ID"]:{"candidates":[],"translation_validated":False,
                                       "status":"AWAITING_DOCUMENTED_HYPOTHESES"} for x in load_registry()}
+    (target.parent/"fiche_publication_status_v1.json").write_text(json.dumps(build_publication_manifest(featured),ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     for item in featured:
         oid=item.get("OBJECT_ID")
         if oid not in interpretations or not all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","limits","evidence")):
