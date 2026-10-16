@@ -162,3 +162,5 @@ assert(['IBR-PLM-0007','IBR-PLM-0008'].every(id=>publication.records[id].feature
 assert(['IBR-PLM-0011','IBR-PLM-0012'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Moleta e Illeta aportan documentación editorial sin validar significado');
 
 assert(['IBR-PLM-0009','IBR-PLM-0010'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false&&c.reading_verified_independently===false)),'Serreta y Cigarralejo mantienen interpretaciones con fuente sin promover lecturas ni significado');
+
+assert(publication.records['IBR-PLM-0013'].featured_interpretation_available&&candidateFeed.objects['IBR-PLM-0013'].candidates.some(c=>c.sources.some(src=>src.includes('10.1387/veleia.22508'))&&c.meaning_validated===false&&c.reading_verified_independently===false),'Pico de los Ajos 2018 mantiene atribución editorial y significado sin validar');
