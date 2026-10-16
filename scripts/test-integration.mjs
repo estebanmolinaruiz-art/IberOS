@@ -92,5 +92,6 @@ console.log('Integración IberOS: Core científico → motor web → fichas → 
 
 const candidateFeed=json('data/core_interpretations_v1.json');
 assert(candidateFeed.schema==='IberOS-Interpretation-Web/1.0'&&candidateFeed.object_count===38,'Las 38 fichas tienen estado de hipótesis visible');
-assert(Object.values(candidateFeed.objects).every(x=>x.translation_validated===false&&x.candidates.length===0),'Nunca se inventan traducciones en la exportación automática');
+assert(Object.values(candidateFeed.objects).every(x=>x.translation_validated===false&&x.candidates.every(c=>c.epistemic_layer==='HYPOTHESIS'&&c.meaning_validated===false&&c.reading_verified_independently===false&&c.sources.length>0)),'Hipótesis editoriales con fuente, sin promoción automática');
+assert(Object.values(candidateFeed.objects).filter(x=>x.candidates.length>0).length===6,'Seis fichas destacadas existentes generan hipótesis editoriales trazables');
 assert(ficha.includes('translation-candidates-slot')&&ficha.includes('core_interpretations_v1.json'),'Las fichas muestran panel de posibles interpretaciones');
