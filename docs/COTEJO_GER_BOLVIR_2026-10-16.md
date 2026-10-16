@@ -32,3 +32,13 @@ La comparación de Ferrer i Jané (2013), resumida por la revista, distingue los
 - **Promoción a Core / validación semántica / cambio automático de `citation`:** ninguno.
 
 **Siguiente control:** conseguir fotografía o facsímil reproducible de la figura 9, registrar cada grafema por posición y comprobar las concordancias con la edición antes de dar por resuelta la lectura.
+
+## Comprobación adicional de la figura 9 (acceso a edición, sin facsímil independiente)
+
+En el PDF editorial `https://ifc.dpz.es/recursos/publicaciones/33/39/26ferrer.pdf`, **página 9 del archivo, página impresa 454**, el pie de la **figura 9** identifica **Ger arriba y Bolvir abajo**. El texto en pp. 453–455 confirma:
+
+- **Ger:** lectura editorial de izquierda a derecha, parejas complejo-simple, inscripción aparentemente completa con signos indeterminables por erosión y trazos modernos superpuestos. La referencia editorial al signo en forma de iota debe tratarse como identificación propuesta por el autor, no como inspección nueva de IberOS.
+- **Bolvir:** lectura editorial derecha a izquierda, argumentada a partir de la orientación de `bi` y las parejas de signos; la mitad izquierda está oculta por concreciones u oxidación.
+- Ambos mantienen parejas complejo-simple; se describen diferencias de orden y se circunscribe la dualidad observada a oclusivas dentales y velares. La posible interpretación votiva es inferencia comparativa, no prueba de función.
+
+**Límite operativo:** la petición de captura visual de la página 9 del PDF ha devuelto `Cache miss`. La descarga alternativa desde el entorno de ejecución tampoco pudo resolverse por fallo de DNS. Por tanto, **no se han identificado ni confirmado manualmente los grafemas individuales de la figura** y el cotejo paleográfico permanece **PENDIENTE**. La evidencia textual sí está contrastada con la edición. No crear reconstrucción propia ni cambiar indicadores de validación del Core basándose solo en su transcripción indexada.
