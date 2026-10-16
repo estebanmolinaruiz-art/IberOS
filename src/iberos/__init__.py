@@ -1,3 +1,4 @@
+from .library_readings_bridge import analyze_library_readings
 from .semantic_hypothesis_engine import suggest_semantic_domains
 from .interpretation_candidates import compare_interpretations
 from .mobile_sync import mobile_object_payload
@@ -74,6 +75,7 @@ from .core import (
 )
 
 __all__ = [
+    "analyze_library_readings",
     "suggest_semantic_domains",
     "compare_interpretations",
     "mobile_object_payload",
