@@ -42,12 +42,19 @@ def main():
                                       "status":"AWAITING_DOCUMENTED_HYPOTHESES"} for x in load_registry()}
     for item in featured:
         oid=item.get("OBJECT_ID")
-        if oid not in interpretations or not all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","limits","citation","evidence")):
+        if oid not in interpretations or not all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","limits","evidence")):
+            continue
+        # Some original fichas have an empty suggested citation but contain
+        # bibliographic references. Retain actual sources without fabricating a citation.
+        citation = item.get("citation", "").strip()
+        bibliography = [ref.strip() for ref in item.get("bibliography", []) if isinstance(ref, str) and ref.strip()]
+        sources = [citation] if citation else bibliography
+        if not sources:
             continue
         interpretations[oid]["candidates"].append({
             "id":"EDITORIAL-FEATURED-01",
             "possible_translation":item["hypothesis"],
-            "sources":[item["citation"]],
+            "sources":sources,
             "supporting_observations":[item["evidence"]],
             "objections":[item["limits"]],
             "epistemic_layer":"HYPOTHESIS",
