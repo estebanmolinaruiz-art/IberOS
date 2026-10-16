@@ -11,3 +11,11 @@ def test_featured_complete_object_is_removed_from_pending():
     report=build_publication_priority([entry])
     assert all(x["object_id"]!="IBR-PLM-0002" for x in report["tasks"])
     assert report["automatic_core_promotion"] is False
+
+def test_pseudoscript_and_known_forgeries_are_not_linguistic_translation_work():
+    tasks={x["object_id"]:x for x in build_publication_priority([])["tasks"]}
+    assert tasks["IBR-COI-0002"]["workstream"]=="SIGNARY_OR_PSEUDOSCRIPT"
+    assert tasks["IBR-CER-0005"]["workstream"]=="SIGNARY_OR_PSEUDOSCRIPT"
+    assert tasks["IBR-CTL-0001"]["workstream"]=="CONTROL_AUTHENTICITY"
+    assert tasks["IBR-COI-0001"]["workstream"]=="TEXTUAL_INTERPRETATION"
+    assert all(x["eligible_for_automatic_translation"] is False for x in tasks.values())
