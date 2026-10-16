@@ -1,0 +1,43 @@
+{
+  "schema": "IberOS-Source-Verification/1.0",
+  "checked_on": "2026-10-16",
+  "checks": [
+    {
+      "object_id": "SOURCES-SOSES-RING-1890",
+      "source_url": "https://revistas.ucm.es/index.php/CFCG/article/view/90633",
+      "doi": "10.5209/cfcg.90633",
+      "bibliographic_metadata_checked": true,
+      "article_author": "Eugenio R. Luján Martínez",
+      "published_year": 2024,
+      "documentary_issue": "Lost original; 1890 photograph; editorial variants remain to be checked against full edition",
+      "transcription_checked_against_edition": false,
+      "physical_object_identity_confirmed": false,
+      "semantic_analysis_eligible": false
+    },
+    {
+      "object_id": "SOURCES-GADOR-LEAD-2025",
+      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/718",
+      "doi": "10.36707/palaeohispanica.v25i1.718",
+      "bibliographic_metadata_checked": true,
+      "article_author": "José Vicente Montes Novella",
+      "published_year": 2025,
+      "documentary_issue": "Disputed sign readings and unresolved text structure; exact diplomatic transcription still needs editorial verification",
+      "transcription_checked_against_edition": false,
+      "physical_object_identity_confirmed": false,
+      "semantic_analysis_eligible": false
+    },
+    {
+      "object_id": "SOURCES-TORRES-VASE-2025",
+      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/711",
+      "doi": "10.36707/palaeohispanica.v25i1.711",
+      "bibliographic_metadata_checked": true,
+      "article_author": "Raúl Manchón Gómez",
+      "published_year": 2025,
+      "documentary_issue": "Publication discusses authenticity concerns about the Louvre vessel; no secure eligible reading",
+      "transcription_checked_against_edition": false,
+      "physical_object_identity_confirmed": false,
+      "semantic_analysis_eligible": false
+    }
+  ],
+  "scientific_promotion": false
+}
