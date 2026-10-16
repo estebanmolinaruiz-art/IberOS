@@ -61,6 +61,66 @@
       "core_evidence_approved": false,
       "rights": "Solo metadatos y enlace; comprobar condiciones del editor",
       "discovery_method": "targeted_source_lookup"
+    },
+    {
+      "title": "Azaila: escribiendo en una ciudad ibérica",
+      "doi": "10.36707/palaeohispanica.v25i1.710",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/710",
+      "authors": "Aránzazu López Fernández",
+      "publisher": "Palaeohispanica 25 (2025)",
+      "discovery_term": "contextual corpus",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Metadatos y enlace al editor; cotejar condiciones para imágenes y texto",
+      "discovery_method": "publisher_verified_metadata"
+    },
+    {
+      "title": "El plomo de Gádor, nueva lectura y análisis",
+      "doi": "10.36707/palaeohispanica.v25i1.718",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/718",
+      "authors": "José Vicente Montes Novella",
+      "publisher": "Palaeohispanica 25 (2025)",
+      "discovery_term": "inscription edition",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Metadatos y enlace al editor; cotejar condiciones para imágenes y texto",
+      "discovery_method": "publisher_verified_metadata"
+    },
+    {
+      "title": "El Vaso de Torres (Jaén) con inscripción ibérica: estudio de la transmisión documental (s. XVII-XIX) y de su autenticidad",
+      "doi": "10.36707/palaeohispanica.v25i1.711",
+      "url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/711",
+      "authors": "Raúl Manchón Gómez",
+      "publisher": "Palaeohispanica 25 (2025)",
+      "discovery_term": "authenticity caution",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Metadatos y enlace al editor; cotejar condiciones para imágenes y texto",
+      "discovery_method": "publisher_verified_metadata"
+    },
+    {
+      "title": "Epigrafía y alfabetización en la peninsula ibérica: ecos del pasado, retos del presente",
+      "doi": "10.36707/palaeohispanica.v25i1.732",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/732",
+      "authors": "Alex Mullen",
+      "publisher": "Palaeohispanica 25 (2025)",
+      "discovery_term": "methodology",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Metadatos y enlace al editor; cotejar condiciones para imágenes y texto",
+      "discovery_method": "publisher_verified_metadata"
+    },
+    {
+      "title": "Hacia una definición de la epigrafía del sudoeste: Lugares, gentes, formas y motivos de una cultura epigráfica enigmática",
+      "doi": "10.36707/palaeohispanica.v25i1.691",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/pt/article/view/691",
+      "authors": "David Muñoz Cuadrillero",
+      "publisher": "Palaeohispanica 25 (2025)",
+      "discovery_term": "comparative non-Iberian",
+      "status": "PENDING_EDITORIAL_REVIEW",
+      "core_evidence_approved": false,
+      "rights": "Metadatos y enlace al editor; cotejar condiciones para imágenes y texto",
+      "discovery_method": "publisher_verified_metadata"
     }
   ]
 }
