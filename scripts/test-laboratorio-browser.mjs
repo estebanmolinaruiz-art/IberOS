@@ -133,7 +133,7 @@ try{
    check(exportedJson.object_id===id&&exportedJson.documentary_enrichment?.OBJECT_ID===id,'JSON documentado de '+id);
    check(exportedJson.scientific_review?.object_id===id&&exportedJson.scientific_review?.publication_approved===false,'Exportación conserva revisión no aprobada '+id);
    const size=await page.locator('#interpretationMain').evaluate(el=>parseFloat(getComputedStyle(el).fontSize));
-   check(size<=23,'Tamaño de interpretación compacto '+id+' ('+size+' px)');
+   check(size>=24&&size<=36,'Interpretación destacada legible sin tamaño excesivo '+id+' ('+size+' px)');
 
    check(errors.length===0,'Ficha '+id+' sin errores JavaScript: '+errors.join('; '));
    page.off('pageerror',handler);
