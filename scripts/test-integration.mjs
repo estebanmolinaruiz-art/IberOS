@@ -93,7 +93,10 @@ console.log('Integración IberOS: Core científico → motor web → fichas → 
 const candidateFeed=json('data/core_interpretations_v1.json');
 assert(candidateFeed.schema==='IberOS-Interpretation-Web/1.0'&&candidateFeed.object_count===38,'Las 38 fichas tienen estado de hipótesis visible');
 assert(Object.values(candidateFeed.objects).every(x=>x.translation_validated===false&&x.candidates.every(c=>c.epistemic_layer==='HYPOTHESIS'&&c.meaning_validated===false&&c.reading_verified_independently===false&&c.sources.length>0)),'Hipótesis editoriales con fuente, sin promoción automática');
-assert(Object.values(candidateFeed.objects).filter(x=>x.candidates.length>0).length===4,'Cuatro fichas destacadas con cita y evidencia generan hipótesis trazables');
+const featuredEditorial=json('data/ficha-enrichment-featured.json');
+const documentedEditorial=featuredEditorial.filter(x=>ids.has(x.OBJECT_ID)&&['hypothesis','limits','evidence'].every(k=>typeof x[k]==='string'&&x[k].trim())&&(typeof x.citation==='string'&&x.citation.trim()||Array.isArray(x.bibliography)&&x.bibliography.some(v=>typeof v==='string'&&v.trim())));
+const actualEditorial=Object.entries(candidateFeed.objects).filter(([,record])=>record.candidates.length>0);
+assert(documentedEditorial.length>=4&&actualEditorial.length===documentedEditorial.length&&documentedEditorial.every(x=>candidateFeed.objects[x.OBJECT_ID].candidates.some(c=>c.sources.length>0)),'Todas las fichas editoriales documentadas generan hipótesis trazables sin promoción científica');
 assert(ficha.includes('translation-candidates-slot')&&ficha.includes('core_interpretations_v1.json'),'Las fichas muestran panel de posibles interpretaciones');
 
 const editorialQueue=json('data/editorial_readings_review_v1.json');
