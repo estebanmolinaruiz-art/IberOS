@@ -115,3 +115,6 @@ assert(Object.values(publication.records).filter(x=>x.featured_interpretation_av
 const archive=readFileSync(base+'fichas/index.html','utf8');
 assert(archive.includes('fiche_publication_status_v1.json')&&archive.includes('pubstate'),'Archivo consulta y filtra por estado de publicación editorial');
 assert(archive.includes('Interpretación editorial disponible')&&archive.includes('Interpretación en revisión'),'Archivo distingue interpretaciones publicables y revisión pendiente');
+
+assert(Object.values(publication.records).every(x=>Array.isArray(x.pending_documentation)),'Cada ficha enumera documentación editorial pendiente');
+assert(archive.includes('pendingEditorial(')&&archive.includes('Documentación pendiente'),'Archivo público presenta requisitos pendientes por pieza');
