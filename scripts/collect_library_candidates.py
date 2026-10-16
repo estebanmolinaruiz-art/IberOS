@@ -14,10 +14,11 @@ def norm(s):
 def collect(limit):
     seen = set()
     items = []
+    per_term = max(1, (limit + len(TERMS) - 1) // len(TERMS))
     for term in TERMS:
         if len(items) >= limit:
             break
-        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": min(100, limit - len(items)), "select": "DOI,title,author,published,URL,publisher"})
+        url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": min(100, per_term), "select": "DOI,title,author,published,URL,publisher"})
         request = urllib.request.Request(url, headers={"User-Agent": "IberOS-Library/1.0 (research metadata; contact via GitHub project)"})
         try:
             with urllib.request.urlopen(request, timeout=25) as response:
@@ -30,12 +31,13 @@ def collect(limit):
             doi = item.get("DOI", "").strip().lower()
             link = item.get("URL", "")
             key = doi or norm(title)
-            if not title or not link or not key or key in seen:
+            if not title or not link or not doi.startswith("10.") or key in seen:
                 continue
             seen.add(key)
             items.append({"title": title, "doi": doi or None, "url": link,
                           "authors": "; ".join(((a.get("given", "") + " " + a.get("family", "")).strip() for a in item.get("author", [])))[:500],
                           "publisher": item.get("publisher", ""), "discovery_term": term,
+                          "discovery_method": "crossref_candidate_search",
                           "status": "PENDING_EDITORIAL_REVIEW", "core_evidence_approved": False,
                           "rights": "Metadata link only; original publisher retains content rights"})
     return items
