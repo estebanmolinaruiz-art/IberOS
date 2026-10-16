@@ -30,6 +30,8 @@ assert(readFileSync(base+'recursos/index.html','utf8').includes('../bibliografia
 const extractionQueue=json('data/epigraphic_extraction_candidates_v1.json');
 const extractionAudit=json('data/epigraphic_extraction_audit_v1.json');
 const extractionScreening=json('data/epigraphic_screening_v1.json');
+assert(libraryQueue.items.length>=10&&bibliographyFichas.items.length===libraryQueue.items.length,'Expanded bibliography creates one reviewable fiche per unique reference');
+assert(extractionQueue.items.length>=3&&extractionQueue.items.some(x=>x.authenticity_status==='AUTHENTICITY_DISPUTED'),'Corpus intake preserves disputed object authenticity and source attribution');
 assert(extractionScreening.items.length===extractionQueue.items.length&&extractionScreening.items.every(x=>x.core_rules_executed===0&&x.automated_translation===null),'Pre-Core epigraphic screening does not invent rule results or translations');
 assert(extractionScreening.items.some(x=>x.object_id==='SOURCES-SOSES-RING-1890'&&x.variant_count===3),'Soses screening preserves three contrasting attested edition variants');
 assert(extractionScreening.items.some(x=>x.object_id==='SOURCES-SOSES-RING-1890'&&x.variant_comparisons?.length===3&&x.variant_comparisons.every(y=>y.meaning_inferred===false&&y.grapheme_differences.length>0)),'Soses variants have three mechanical grapheme contrasts, never semantic claims');
