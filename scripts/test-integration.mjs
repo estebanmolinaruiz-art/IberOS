@@ -148,3 +148,5 @@ assert(publication.records['IBR-LAP-0001'].featured_interpretation_available&&ca
 assert(['IBR-LAP-0002','IBR-LAP-0003','IBR-LAP-0004'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'La Vispesa Sinarcas y Santa Perpetua tienen atribución y siguen como hipótesis');
 
 assert(['IBR-MON-0001','IBR-OBJ-0001'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Moneda erder y tortera Can Rodon conservan fuentes e incertidumbre');
+
+assert(publication.records['IBR-MUS-0002'].featured_interpretation_available&&candidateFeed.objects['IBR-MUS-0002'].candidates.some(c=>c.sources.some(t=>t.includes('palaeohispanica.v23i0.520'))&&c.meaning_validated===false),'Andelo conserva fuente concreta y significado no validado');
