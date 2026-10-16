@@ -43,6 +43,33 @@
   ],
   "news": [
     {
+      "id": "iberos-presentacion-publica-2026-10-16",
+      "title": "IberOS abre su presentación pública y demostraciones de investigación epigráfica",
+      "summary": "IberOS pone a disposición del público su portal de investigación sobre escritura ibérica, con un corpus navegable, fichas documentadas, Laboratorio y demostraciones guiadas de Tivissa, Pech-Maho y Coimbra. Cada caso distingue evidencias observadas, inferencias e hipótesis provisionales. El proyecto no presenta traducciones semánticas validadas; invita a consultar fuentes, objeciones y materiales reproducibles. Acceso a la presentación: https://estebanmolinaruiz-art.github.io/IberOS/presentacion/ · Demostraciones: https://estebanmolinaruiz-art.github.io/IberOS/demostracion/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-10-16",
+      "author_credit": "Proyecto IberOS",
+      "sources": [
+        {
+          "title": "Repositorio público IberOS y código de investigación",
+          "url": "https://github.com/estebanmolinaruiz-art/IberOS"
+        },
+        {
+          "title": "Presentación pública IberOS",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/presentacion/"
+        },
+        {
+          "title": "Demostraciones documentadas",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/demostracion/"
+        }
+      ]
+    },
+    {
       "id": "la-picola-rec101-progress-2026-10",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: primeros avances de la reconstrucción 3D de la fase ibérica",
