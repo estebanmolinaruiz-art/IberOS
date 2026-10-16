@@ -11,8 +11,15 @@ def build_publication_priority(featured: list[dict]) -> dict:
         if state["publication_status"]=="PUBLICABLE_EDITORIAL":
             continue
         pending=state["pending_documentation"]
+        special_control=oid.startswith("IBR-CTL-")
+        non_linguistic=oid in {"IBR-COI-0002","IBR-CER-0003","IBR-CER-0005"}
+        workstream=("CONTROL_AUTHENTICITY" if special_control else
+                    "SIGNARY_OR_PSEUDOSCRIPT" if non_linguistic else
+                    "TEXTUAL_INTERPRETATION")
         tasks.append({
             "object_id":oid,
+            "workstream":workstream,
+            "eligible_for_automatic_translation":False,
             "object_name":reg[oid].get("Nombre_objeto") or oid,
             "pending_documentation":pending,
             "pending_count":len(pending),
@@ -21,7 +28,7 @@ def build_publication_priority(featured: list[dict]) -> dict:
             "scientific_state":"UNVERIFIED",
             "automatic_core_promotion":False,
         })
-    tasks.sort(key=lambda row:(row["pending_count"],not row["editorial_fiche_registered"],row["object_id"]))
+    tasks.sort(key=lambda row:(row["workstream"]!="TEXTUAL_INTERPRETATION",row["pending_count"],not row["editorial_fiche_registered"],row["object_id"]))
     return {"schema":"IberOS-Publication-Priority/1.0","authority":dict(AUTHORITY),
             "pending_count":len(tasks),"tasks":tasks,
             "automatic_core_promotion":False,
