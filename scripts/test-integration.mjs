@@ -110,7 +110,7 @@ assert(sourceChecks.checks.every(x=>x.bibliographic_metadata_checked===true&&x.t
 const publication=json('data/fiche_publication_status_v1.json');
 assert(publication.object_count===38&&Object.keys(publication.records).length===38,'Manifest de publicación por pieza completo');
 assert(Object.values(publication.records).every(x=>x.translation_validated===false&&x.automatic_core_promotion===false),'Publicación editorial no valida traducciones');
-assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length===13,'Trece interpretaciones editoriales con citas y objeciones disponibles');
+assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length===14,'Catorce interpretaciones editoriales con citas y objeciones disponibles');
 
 const archive=readFileSync(base+'fichas/index.html','utf8');
 assert(archive.includes('fiche_publication_status_v1.json')&&archive.includes('pubstate'),'Archivo consulta y filtra por estado de publicación editorial');
@@ -137,3 +137,5 @@ assert(['IBR-CER-0001','IBR-PLM-0005','IBR-PLM-0006'].every(id=>publication.reco
 assert(['IBR-CER-0002','IBR-CER-0003','IBR-CER-0004'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.every(c=>c.meaning_validated===false)),'Llíria, Castellet y Joncosa publicados solo como hipótesis editoriales');
 
 assert(publication.records['IBR-COI-0001'].featured_interpretation_available&&candidateFeed.objects['IBR-COI-0001'].candidates.some(x=>x.meaning_validated===false&&x.sources.some(s=>s.includes('palaeohispanica.v0i16.29'))),'Coimbra kaŕb incorpora cita editorial sin validación automática');
+
+assert(publication.records['IBR-LAP-0001'].featured_interpretation_available&&candidateFeed.objects['IBR-LAP-0001'].candidates.some(c=>c.sources.some(x=>x.includes('palaeohispanica.v0i9.243'))&&!c.meaning_validated),'El árula C.18.7 incluye fuente precisa sin validación semántica');
