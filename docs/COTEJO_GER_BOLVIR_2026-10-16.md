@@ -42,3 +42,11 @@ En el PDF editorial `https://ifc.dpz.es/recursos/publicaciones/33/39/26ferrer.pd
 - Ambos mantienen parejas complejo-simple; se describen diferencias de orden y se circunscribe la dualidad observada a oclusivas dentales y velares. La posible interpretación votiva es inferencia comparativa, no prueba de función.
 
 **Límite operativo:** la petición de captura visual de la página 9 del PDF ha devuelto `Cache miss`. La descarga alternativa desde el entorno de ejecución tampoco pudo resolverse por fallo de DNS. Por tanto, **no se han identificado ni confirmado manualmente los grafemas individuales de la figura** y el cotejo paleográfico permanece **PENDIENTE**. La evidencia textual sí está contrastada con la edición. No crear reconstrucción propia ni cambiar indicadores de validación del Core basándose solo en su transcripción indexada.
+
+## Reproducción de la figura 9 localizada (verificación de acceso)
+
+- **Referencia visual directa:** https://www.researchgate.net/figure/Els-signaris-de-la-Cerdanya-Ger-Dalt-Bolvir-A-sota_fig2_261950513 — figura 9 subida a ResearchGate, identificada como «Els signaris de la Cerdanya. Ger (Dalt). Bolvir (A sota)», vinculada a la publicación de Ferrer i Jané (2013).
+- **Artículo editorial original y DOI:** https://ifc-ojs.es/index.php/palaeohispanica/en/article/view/175 y https://doi.org/10.36707/palaeohispanica.v0i13.175.
+- **Intentos de acceso:** se ha confirmado existencia del PDF original y de sus 15 páginas mediante indexación; captura de la página PDF n.º 9 (índice 8), error «Cache miss»; descarga directa desde entorno de ejecución, fallo DNS. **No se ha descargado ni inspeccionado la imagen de manera independiente.**
+- **Derechos:** ResearchGate advierte que la figura puede tener copyright; mantener solo el enlace externo, atribución a Joan Ferrer i Jané y referencia académica. Solicitar licencia expresa si se desea reproducirla localmente.
+- **Pendiente para cerrar el control:** facsímil verificable a resolución suficiente, lectura por posiciones y revisión humana de signos erosivos y concreciones. No alterar el estado del Core.
