@@ -40,6 +40,18 @@ def main():
     # Reuse actual existing editorial hypotheses; do not claim semantic verification.
     featured_path=Path("site/data/ficha-enrichment-featured.json")
     featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
+    # Merge existing curated fiche shards, keeping featured entries authoritative.
+    featured_ids={item.get("OBJECT_ID") for item in featured}
+    for shard in range(1,6):
+        source=Path(f"site/data/ficha-enrichment-{shard}.json")
+        if not source.exists():
+            continue
+        for item in json.loads(source.read_text(encoding="utf-8")):
+            if item.get("OBJECT_ID") in featured_ids:
+                continue
+            if all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","evidence","limits","citation")):
+                featured.append(item)
+                featured_ids.add(item["OBJECT_ID"])
     interpretations={x["OBJECT_ID"]:{"candidates":[],"translation_validated":False,
                                       "status":"AWAITING_DOCUMENTED_HYPOTHESES"} for x in load_registry()}
     (target.parent/"fiche_publication_priority_v1.json").write_text(json.dumps(build_publication_priority(featured),ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
