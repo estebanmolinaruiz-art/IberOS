@@ -30,3 +30,21 @@
 Próxima comprobación: revisar la lámina del dolium junto a `kutuki[---]` / `[---]kituku` y cotejar páginas y lecturas de `likine` y `ekiar` en Caminreal.
 
 **Regla de sincronización:** conservar `C594/C474/C539/C541` y todos los indicadores de validación sin cambios; trasladar únicamente la trazabilidad documental comprobable a las fichas.
+
+## Segunda pasada sobre las ediciones originales — 2026-10-16
+
+### Val de Alegre I (Díaz Ariño y Mayayo 2008, pp. 199–201)
+
+- **Pág. 199:** pieza 4, Museo de Teruel `vad.2000.25`, dolium inciso antes de la cocción, en cara interior del borde. Incisiones descritas como tenues; signo primero cuadrangular en lugar de curvo/romboidal.
+- **Pág. 200:** segundo signo comparado con `tu2` de Untermann; tercero, parcial por fractura y retrógrado, semejante a `ki6`. Transcripción editorial preferida `kutuki[---]` **pero no única**: `[---]kituku` resulta posible con sentido inverso. Preferencia de lectura fundada en recurrencia de `kutu-`, **no** en que la grafía desambigüe completamente la dirección. La supuesta segmentación `kutu-ki` permanece hipótesis lingüística.
+- **Pág. 201, lámina 1, figura 4:** la edición incorpora una reproducción gráfica original del objeto. **La vista de la página mediante el servicio de capturas devolvió error**, por lo que no se registra una validación visual independiente de la dirección ni de los ductus. Se requiere inspección humana de la lámina en https://ifc.dpz.es/recursos/publicaciones/28/40/11diazmayayo.pdf antes de cerrar PALEO.
+- **Decisión:** conservar `READING_DIRECTION_OPEN`; `kutuki[---]` = lectura editorial preferida; `[---]kituku` = alternativa editorial. Sin nueva observación física independiente.
+
+### Caminreal (Simón Cornago 2015, pp. 99–100, 107–110)
+
+- **Págs. 99–100:** documenta la fórmula `NP-te + ekiar`; el valor funcional depende de interpretación del sufijo `-te`, y existen posiciones contrapuestas entre verbo cercano a «hacer» y apelativo. No convertir esa equivalencia en hecho.
+- **Pág. 102 (PDF p. 15):** la síntesis identifica `likine` como antropónimo, `ekiar` como término de léxico común (categoría verbal o nominal debatida) y `usekeŕteku` como referencia toponímica con `-ku`.
+- **Págs. 107–110:** discute artesano, propietario, promotor y variantes explicativas; la identificación de `likine` como musivario no está cerrada por el mero hecho de aparecer en mosaicos.
+- **Decisión:** `EKIAR_SEMANTICS_OPEN`, `LIKINE_ROLE_OPEN`. No asignar traducción literal ni lectura gráfica nueva.
+
+**Resultado verificable de esta segunda pasada:** 2 ediciones textualmente cotejadas con pasajes relevantes, 1 conjunto explícito de variantes de dirección y 2 debates funcionales; **0 fotografías/láminas inspeccionadas satisfactoriamente mediante el visor**, **0 traducciones validadas**, **0 cambios en Core**. Fuentes originales: https://ifc.dpz.es/recursos/publicaciones/28/40/11diazmayayo.pdf y https://ifc.dpz.es/recursos/publicaciones/35/02/03simon.pdf.
