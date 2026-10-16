@@ -160,3 +160,5 @@ assert(publication.records['IBR-OBJ-0002'].featured_interpretation_available&&ca
 assert(['IBR-PLM-0007','IBR-PLM-0008'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Casinos y Tos Pelat poseen atribución editorial sin equivalencia léxica confirmada');
 
 assert(['IBR-PLM-0011','IBR-PLM-0012'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Moleta e Illeta aportan documentación editorial sin validar significado');
+
+assert(['IBR-PLM-0009','IBR-PLM-0010'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false&&c.reading_verified_independently===false)),'Serreta y Cigarralejo mantienen interpretaciones con fuente sin promover lecturas ni significado');
