@@ -95,3 +95,7 @@ assert(candidateFeed.schema==='IberOS-Interpretation-Web/1.0'&&candidateFeed.obj
 assert(Object.values(candidateFeed.objects).every(x=>x.translation_validated===false&&x.candidates.every(c=>c.epistemic_layer==='HYPOTHESIS'&&c.meaning_validated===false&&c.reading_verified_independently===false&&c.sources.length>0)),'Hipótesis editoriales con fuente, sin promoción automática');
 assert(Object.values(candidateFeed.objects).filter(x=>x.candidates.length>0).length===4,'Cuatro fichas destacadas con cita y evidencia generan hipótesis trazables');
 assert(ficha.includes('translation-candidates-slot')&&ficha.includes('core_interpretations_v1.json'),'Las fichas muestran panel de posibles interpretaciones');
+
+const editorialQueue=json('data/editorial_readings_review_v1.json');
+assert(editorialQueue.schema==='IberOS-Editorial-Readings-Queue/1.0','Cola de lecturas documentales generada');
+assert(editorialQueue.records.every(x=>x.eligible_for_core_execution===false&&x.exact_object_match_verified===false),'Las variantes editoriales nunca se hacen pasar por lecturas revisadas');
