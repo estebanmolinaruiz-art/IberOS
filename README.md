@@ -65,6 +65,8 @@ La arquitectura completa del sistema, los módulos, los datos, los workflows, la
 
 Registro comprobado el 08-10-2026: [publicaciones y fuentes de la tesis](docs/INTERNET_REGISTRY_2026-10-08.md).
 
+Sincronización transversal vigente: [FORMULAICITY-STRATA-01 (2026-10-16)](docs/CROSS_THREAD_SYNC_2026-10-16_FORMULAICITY.md). Se aplica como candidato metodológico no promocional a Motor/Validation, D(E/I), KUTUR, Write, Talk, tesis y La Picola.
+
 Incluye Corpus Ibèrika, el dataset paleohispánico de 2026 y la revisión de Villares V de Ferrer i Jané (2024). Las fuentes externas requieren concordancias y controles de independencia antes de incorporarse a una validación.
 
 La sincronización documental mantiene C594/C474/C539/C541; no cambia resultados científicos ni métricas. El programa se distribuye bajo Apache-2.0; el informe y los Case Studies en Zenodo se publican bajo CC BY 4.0.
