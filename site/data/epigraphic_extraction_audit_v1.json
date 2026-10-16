@@ -15,6 +15,40 @@
       ],
       "core_status": "BLOCKED_UNVERIFIED_EVIDENCE",
       "automatic_semantic_validation": false
+    },
+    {
+      "object_id": "SOURCES-GADOR-LEAD-2025",
+      "ready_for_core": false,
+      "missing_requirements": [
+        "edition_figure",
+        "inventory_or_catalogue_id",
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "automatic_semantic_validation": false
+    },
+    {
+      "object_id": "SOURCES-TORRES-VASE-2025",
+      "ready_for_core": false,
+      "missing_requirements": [
+        "edition_figure",
+        "inventory_or_catalogue_id",
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "automatic_semantic_validation": false
     }
   ],
   "note": "An eligible record requires controlled scientific review; it is not a validated translation."
