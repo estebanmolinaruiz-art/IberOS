@@ -35,13 +35,33 @@ def main():
     target=Path("site/data/core_object_audit_v1.json")
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(build(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
-    empty_proposals = {"schema":"IberOS-Interpretation-Web/1.0","authority":dict(AUTHORITY),
-                       "object_count":len(load_registry()),
-                       "objects":{x["OBJECT_ID"]:{"candidates":[],"translation_validated":False,
-                                                "status":"AWAITING_DOCUMENTED_HYPOTHESES"}
-                                  for x in load_registry()},
-                       "notice":"Sin propuestas aprobadas para publicar; no se fabrican traducciones."}
-    (target.parent/"core_interpretations_v1.json").write_text(json.dumps(empty_proposals,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
+    # Reuse actual existing editorial hypotheses; do not claim semantic verification.
+    featured_path=Path("site/data/ficha-enrichment-featured.json")
+    featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
+    interpretations={x["OBJECT_ID"]:{"candidates":[],"translation_validated":False,
+                                      "status":"AWAITING_DOCUMENTED_HYPOTHESES"} for x in load_registry()}
+    for item in featured:
+        oid=item.get("OBJECT_ID")
+        if oid not in interpretations or not all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","limits","citation","evidence")):
+            continue
+        interpretations[oid]["candidates"].append({
+            "id":"EDITORIAL-FEATURED-01",
+            "possible_translation":item["hypothesis"],
+            "sources":[item["citation"]],
+            "supporting_observations":[item["evidence"]],
+            "objections":[item["limits"]],
+            "epistemic_layer":"HYPOTHESIS",
+            "meaning_validated":False,
+            "reading_verified_independently":False,
+            "provenance":"EXISTING_FEATURED_FICHA_EDITORIAL",
+            "estimated_probability":None,
+        })
+        interpretations[oid]["status"]="EXISTING_EDITORIAL_HYPOTHESIS_UNVERIFIED"
+    interpretation_feed={"schema":"IberOS-Interpretation-Web/1.0",
+                         "authority":dict(AUTHORITY),"object_count":len(interpretations),
+                         "objects":interpretations,
+                         "notice":"Se muestran hipótesis editoriales existentes; ninguna traducción validada automáticamente."}
+    (target.parent/"core_interpretations_v1.json").write_text(json.dumps(interpretation_feed,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     (target.parent/"core_evidence_triage_v1.json").write_text(json.dumps(build_evidence_triage(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     (target.parent/"core_rule_catalog_v1.json").write_text(json.dumps(rule_catalog(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
