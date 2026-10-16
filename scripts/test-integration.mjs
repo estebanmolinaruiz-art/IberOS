@@ -111,3 +111,7 @@ const publication=json('data/fiche_publication_status_v1.json');
 assert(publication.object_count===38&&Object.keys(publication.records).length===38,'Manifest de publicación por pieza completo');
 assert(Object.values(publication.records).every(x=>x.translation_validated===false&&x.automatic_core_promotion===false),'Publicación editorial no valida traducciones');
 assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length===6,'Seis interpretaciones editoriales con cita listas para consulta');
+
+const archive=readFileSync(base+'fichas/index.html','utf8');
+assert(archive.includes('fiche_publication_status_v1.json')&&archive.includes('pubstate'),'Archivo consulta y filtra por estado de publicación editorial');
+assert(archive.includes('Interpretación editorial disponible')&&archive.includes('Interpretación en revisión'),'Archivo distingue interpretaciones publicables y revisión pendiente');
