@@ -122,6 +122,7 @@ assert(archive.includes('0 traducciones semánticas validadas declaradas')&&Obje
 
 assert(Object.values(publication.records).every(x=>Array.isArray(x.pending_documentation)),'Cada ficha enumera documentación editorial pendiente');
 assert(archive.includes('pendingEditorial(')&&archive.includes('Documentación pendiente'),'Archivo público presenta requisitos pendientes por pieza');
+assert(archive.includes('Abrir cuaderno de investigación para esta pieza')&&archive.includes('encodeURIComponent(id)')&&archive.includes('Requisitos editoriales, no pruebas'),'Cada expediente pendiente conecta a su cuaderno sin elevar requisitos a hechos lingüísticos');
 assert(archive.includes('id="documentation-protocol"')&&archive.includes('cotejo de signos con una edición epigráfica')&&archive.includes('No se atribuye un significado sin pruebas'),'Archivo explica protocolo de completar expedientes sin inventar lecturas');
 
 const priority=json('data/fiche_publication_priority_v1.json');
