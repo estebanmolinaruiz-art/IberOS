@@ -99,3 +99,7 @@ assert(ficha.includes('translation-candidates-slot')&&ficha.includes('core_inter
 const editorialQueue=json('data/editorial_readings_review_v1.json');
 assert(editorialQueue.schema==='IberOS-Editorial-Readings-Queue/1.0','Cola de lecturas documentales generada');
 assert(editorialQueue.records.every(x=>x.eligible_for_core_execution===false&&x.exact_object_match_verified===false),'Las variantes editoriales nunca se hacen pasar por lecturas revisadas');
+
+const sourceChecks=json('data/epigraphic_source_verification_v1.json');
+assert(sourceChecks.checks.length===3,'Tres publicaciones tienen metadatos bibliográficos cotejados');
+assert(sourceChecks.checks.every(x=>x.bibliographic_metadata_checked===true&&x.transcription_checked_against_edition===false&&x.semantic_analysis_eligible===false),'Metadatos cotejados no promueven lecturas ni semántica');
