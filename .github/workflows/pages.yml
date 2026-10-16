@@ -56,7 +56,7 @@ jobs:
           import json, os, time, urllib.request
           base=os.environ["PUBLIC_BASE"].rstrip("/")
           expected=os.environ["EXPECTED_SHA"]
-          paths=["/deployment-version.json", "/ficha/?id=IBR-PLM-0002", "/data/epigraphic-visual-registry-v1.json"]
+          paths=["/deployment-version.json", "/ficha/?id=IBR-PLM-0002", "/data/epigraphic-visual-registry-v1.json", "/demostracion/", "/data/ficha-enrichment-featured.json"]
           for attempt in range(1,13):
               try:
                   responses={}
@@ -74,7 +74,14 @@ jobs:
                   data=json.loads(responses[paths[2]])
                   if not any(x.get("object_id")=="IBR-PLM-0002" for x in data.get("records",[])):
                       raise RuntimeError("Registro gráfico público sin Tivissa")
-                  print(f"VERIFICADO: sitio público responde; versión {expected}; ficha y registro disponibles")
+                  demo=responses["/demostracion/"]
+                  featured=json.loads(responses["/data/ficha-enrichment-featured.json"])
+                  ids={x.get("OBJECT_ID") for x in featured}
+                  if not all(x in ids for x in ("IBR-PLM-0002","IBR-PLM-0003","IBR-PLM-0004")):
+                      raise RuntimeError("Faltan casos documentados Tivissa, Pech-Maho o Coimbra")
+                  if "URLSearchParams(location.search)" not in demo or "case-title" not in demo:
+                      raise RuntimeError("Demostración pública sin selector de casos")
+                  print(f"VERIFICADO: sitio público responde; versión {expected}; ficha, registro y demostraciones disponibles")
                   break
               except Exception as e:
                   print(f"Intento {attempt}/12: {e}",flush=True)
