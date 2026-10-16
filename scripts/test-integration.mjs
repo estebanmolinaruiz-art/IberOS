@@ -152,3 +152,5 @@ assert(['IBR-MON-0001','IBR-OBJ-0001'].every(id=>publication.records[id].feature
 assert(publication.records['IBR-MUS-0002'].featured_interpretation_available&&candidateFeed.objects['IBR-MUS-0002'].candidates.some(c=>c.sources.some(t=>t.includes('palaeohispanica.v23i0.520'))&&c.meaning_validated===false),'Andelo conserva fuente concreta y significado no validado');
 
 assert(publication.records['IBR-OBJ-0002'].featured_interpretation_available&&candidateFeed.objects['IBR-OBJ-0002'].candidates.some(c=>c.sources.some(x=>x.includes('pp. 237–238'))&&c.meaning_validated===false&&c.reading_verified_independently===false),'Oliete atribuye las alternativas sin validar kutu ni la lectura');
+
+assert(['IBR-PLM-0007','IBR-PLM-0008'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Casinos y Tos Pelat poseen atribución editorial sin equivalencia léxica confirmada');
