@@ -123,3 +123,5 @@ const priority=json('data/fiche_publication_priority_v1.json');
 assert(priority.schema==='IberOS-Publication-Priority/1.0','Cola de trabajo editorial exportada');
 assert(priority.pending_count===Object.values(publication.records).filter(r=>r.publication_status!=='PUBLICABLE_EDITORIAL').length,'Cola solo incluye fichas con documentación pendiente');
 assert(priority.tasks.every(r=>r.automatic_core_promotion===false),'Priorización no implica validación científica');
+
+assert(archive.includes('editorial-priority')&&archive.includes('fiche_publication_priority_v1.json')&&archive.includes('showEditorialPriority()'),'Archivo presenta cola editorial priorizada enlazada a las fichas');
