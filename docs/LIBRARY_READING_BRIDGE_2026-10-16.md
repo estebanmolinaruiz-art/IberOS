@@ -12,3 +12,11 @@ python scripts/analyze_library_readings.py --input lecturas_revisadas.jsonl --ou
 No se crea ningún archivo con evidencias nuevas al instalar el módulo. No se han identificado datos auténticos de la biblioteca ampliada listos para la ejecución de este contrato. Salidas: `suggestions` hipotéticas, `translation_validated=false`, `automatic_core_promotion=false`. El sistema no genera traducciones completas ni presupone independencia de lecturas, objetos o fuentes. Las autoridades C594/C474/C539/C541 siguen congeladas.
 
 **Siguiente tarea**: localizar la exportación real de lecturas y decisiones editoriales, verificar sus fuentes y vincularla a este comando; revisar el lote antes de publicar resultados individuales en las fichas.
+
+## Integración editorial real — 16-10-2026
+
+El exportador `scripts/export_web_core.py` consume ahora las seis entradas de `site/data/ficha-enrichment-featured.json` y crea `site/data/core_interpretations_v1.json` durante el despliegue. Cada hipótesis conserva el texto interpretativo **ya existente** en la ficha destacada, la cita, su evidencia y sus objeciones. El panel «Posible traducción» de la ficha pública puede consultarlas sin inventar nuevas frases.
+
+**Limitación esencial:** estas son hipótesis editoriales previas, no registros JSONL de lecturas revisadas por el puente `analyze_library_readings`. No se han introducido en el motor semántico como nuevas observaciones ni se ha comprobado independientemente la transcripción original. El export marca `reading_verified_independently=false`, `meaning_validated=false` y `translation_validated=false`; las restantes 32 piezas muestran abstención.
+
+La integración real con la biblioteca ampliada a escala completa requerirá extraer transcripciones exactas de sus ediciones, asignar un vínculo verificable a la pieza física y documentar cada revisión individual.
