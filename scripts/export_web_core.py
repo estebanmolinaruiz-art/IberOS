@@ -69,6 +69,14 @@ def main():
                          "objects":interpretations,
                          "notice":"Se muestran hipótesis editoriales existentes; ninguna traducción validada automáticamente."}
     (target.parent/"core_interpretations_v1.json").write_text(json.dumps(interpretation_feed,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
+    # Bibliographic page checked externally; inscription-level reading still blocked.
+    source_check_path=Path("data/review/epigraphic_source_verification_2026-10-16.json")
+    if source_check_path.exists():
+        source_checks=json.loads(source_check_path.read_text(encoding="utf-8"))
+        assert source_checks["schema"]=="IberOS-Source-Verification/1.0"
+        assert all(row["semantic_analysis_eligible"] is False for row in source_checks["checks"])
+        (target.parent/"epigraphic_source_verification_v1.json").write_text(
+            json.dumps(source_checks,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     # Existing edition readings are review candidates, never approved CORE inputs.
     extraction_path=Path("site/data/epigraphic_extraction_candidates_v1.json")
     extraction=json.loads(extraction_path.read_text(encoding="utf-8")) if extraction_path.exists() else {"items":[]}
