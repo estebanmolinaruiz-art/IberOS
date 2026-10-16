@@ -80,6 +80,54 @@
           "epigraphic_assessment": "AWAITING_PALEOGRAPHIC_REVIEW"
         }
       ]
+    },
+    {
+      "object_id": "SOURCES-GADOR-LEAD-2025",
+      "bibliographic_ficha_id": "BIB-000007",
+      "source_doi": "10.36707/palaeohispanica.v25i1.718",
+      "variant_count": 0,
+      "variant_comparisons": [],
+      "attested_edition_variants": [],
+      "missing_requirements": [
+        "edition_figure",
+        "inventory_or_catalogue_id",
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_gate_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "core_rules_executed": 0,
+      "automated_translation": null,
+      "decision": "AWAIT_DOCUMENTARY_REVIEW",
+      "authenticity_status": "UNRESOLVED_READINGS"
+    },
+    {
+      "object_id": "SOURCES-TORRES-VASE-2025",
+      "bibliographic_ficha_id": "BIB-000008",
+      "source_doi": "10.36707/palaeohispanica.v25i1.711",
+      "variant_count": 0,
+      "variant_comparisons": [],
+      "attested_edition_variants": [],
+      "missing_requirements": [
+        "edition_figure",
+        "inventory_or_catalogue_id",
+        "transcription",
+        "reviewer",
+        "review_date",
+        "exact_object_match_verified",
+        "transcription_checked_against_edition",
+        "source_rights_checked",
+        "independent_review_completed"
+      ],
+      "core_gate_status": "BLOCKED_UNVERIFIED_EVIDENCE",
+      "core_rules_executed": 0,
+      "automated_translation": null,
+      "decision": "AWAIT_DOCUMENTARY_REVIEW",
+      "authenticity_status": "AUTHENTICITY_DISPUTED"
     }
   ],
   "notice": "Mechanical grapheme contrasts between edition alternatives; no verified semantic reading, no Core rule execution."
