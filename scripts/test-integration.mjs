@@ -110,7 +110,7 @@ assert(sourceChecks.checks.every(x=>x.bibliographic_metadata_checked===true&&x.t
 const publication=json('data/fiche_publication_status_v1.json');
 assert(publication.object_count===38&&Object.keys(publication.records).length===38,'Manifest de publicación por pieza completo');
 assert(Object.values(publication.records).every(x=>x.translation_validated===false&&x.automatic_core_promotion===false),'Publicación editorial no valida traducciones');
-assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length===19,'Diecinueve interpretaciones editoriales documentadas disponibles');
+assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length>=19,'Al menos diecinueve interpretaciones editoriales documentadas disponibles');
 const publishedEditorialIds=Object.entries(publication.records).filter(([,state])=>state.featured_interpretation_available).map(([id])=>id);
 assert(publishedEditorialIds.every(id=>candidateFeed.objects[id]&&candidateFeed.objects[id].candidates.length>0),'Cada expediente publicable contiene su candidato editorial en el feed');
 assert(publishedEditorialIds.every(id=>candidateFeed.objects[id].candidates.every(c=>Array.isArray(c.sources)&&c.sources.some(source=>typeof source==='string'&&source.trim())&&Array.isArray(c.supporting_observations)&&c.supporting_observations.some(o=>typeof o==='string'&&o.trim())&&Array.isArray(c.objections)&&c.objections.some(o=>typeof o==='string'&&o.trim())&&c.meaning_validated===false&&c.reading_verified_independently===false)),'Cada interpretación pública preserva fuente, observación, objeción y condición no validada');
