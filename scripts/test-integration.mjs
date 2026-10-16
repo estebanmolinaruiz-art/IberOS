@@ -118,3 +118,8 @@ assert(archive.includes('Interpretación editorial disponible')&&archive.include
 
 assert(Object.values(publication.records).every(x=>Array.isArray(x.pending_documentation)),'Cada ficha enumera documentación editorial pendiente');
 assert(archive.includes('pendingEditorial(')&&archive.includes('Documentación pendiente'),'Archivo público presenta requisitos pendientes por pieza');
+
+const priority=json('data/fiche_publication_priority_v1.json');
+assert(priority.schema==='IberOS-Publication-Priority/1.0','Cola de trabajo editorial exportada');
+assert(priority.pending_count===Object.values(publication.records).filter(r=>r.publication_status!=='PUBLICABLE_EDITORIAL').length,'Cola solo incluye fichas con documentación pendiente');
+assert(priority.tasks.every(r=>r.automatic_core_promotion===false),'Priorización no implica validación científica');
