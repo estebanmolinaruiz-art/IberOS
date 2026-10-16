@@ -115,6 +115,10 @@ assert(Object.values(publication.records).filter(x=>x.featured_interpretation_av
 const archive=readFileSync(base+'fichas/index.html','utf8');
 assert(archive.includes('fiche_publication_status_v1.json')&&archive.includes('pubstate'),'Archivo consulta y filtra por estado de publicación editorial');
 assert(archive.includes('Interpretación editorial disponible')&&archive.includes('Interpretación en revisión'),'Archivo distingue interpretaciones publicables y revisión pendiente');
+assert(archive.includes('id="editorial-summary"')&&archive.includes('id="editorial-summary-text"'),'Archivo muestra el resumen de cobertura científica');
+assert(archive.includes('records.filter(x=>x.publication_status==="PUBLICABLE_EDITORIAL").length')&&archive.includes('records.filter(x=>x.publication_status==="EDITORIAL_REVIEW_REQUIRED").length'),'Resumen calcula estados a partir del manifest sin cifras editoriales inventadas');
+assert(archive.includes('0 traducciones semánticas validadas declaradas')&&Object.values(publication.records).every(x=>x.translation_validated===false),'Resumen público no anuncia traducciones semánticas validadas');
+
 
 assert(Object.values(publication.records).every(x=>Array.isArray(x.pending_documentation)),'Cada ficha enumera documentación editorial pendiente');
 assert(archive.includes('pendingEditorial(')&&archive.includes('Documentación pendiente'),'Archivo público presenta requisitos pendientes por pieza');
