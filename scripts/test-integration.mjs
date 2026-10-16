@@ -106,3 +106,8 @@ assert(editorialQueue.records.every(x=>x.eligible_for_core_execution===false&&x.
 const sourceChecks=json('data/epigraphic_source_verification_v1.json');
 assert(sourceChecks.checks.length===3,'Tres publicaciones tienen metadatos bibliográficos cotejados');
 assert(sourceChecks.checks.every(x=>x.bibliographic_metadata_checked===true&&x.transcription_checked_against_edition===false&&x.semantic_analysis_eligible===false),'Metadatos cotejados no promueven lecturas ni semántica');
+
+const publication=json('data/fiche_publication_status_v1.json');
+assert(publication.object_count===38&&Object.keys(publication.records).length===38,'Manifest de publicación por pieza completo');
+assert(Object.values(publication.records).every(x=>x.translation_validated===false&&x.automatic_core_promotion===false),'Publicación editorial no valida traducciones');
+assert(Object.values(publication.records).filter(x=>x.featured_interpretation_available).length===6,'Seis interpretaciones editoriales con cita listas para consulta');
