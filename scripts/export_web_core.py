@@ -69,6 +69,30 @@ def main():
                          "objects":interpretations,
                          "notice":"Se muestran hipótesis editoriales existentes; ninguna traducción validada automáticamente."}
     (target.parent/"core_interpretations_v1.json").write_text(json.dumps(interpretation_feed,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
+    # Existing edition readings are review candidates, never approved CORE inputs.
+    extraction_path=Path("site/data/epigraphic_extraction_candidates_v1.json")
+    extraction=json.loads(extraction_path.read_text(encoding="utf-8")) if extraction_path.exists() else {"items":[]}
+    reading_queue=[]
+    for entry in extraction.get("items",[]):
+        for idx,variant in enumerate(entry.get("edition_readings") or []):
+            if not isinstance(variant,dict) or not isinstance(variant.get("reading"),str) or not variant["reading"].strip():
+                continue
+            reading_queue.append({
+                "source_object_id":entry.get("object_id"),
+                "candidate_reading_id":str(entry.get("object_id"))+"-ED-"+str(idx+1),
+                "reading":variant["reading"],"attribution":variant.get("attribution"),
+                "citation_location":variant.get("citation_location"),
+                "curated_object_id":None,
+                "exact_object_match_verified":False,
+                "transcription_checked_against_edition":False,
+                "eligible_for_core_execution":False,
+                "review_status":"SECONDARY_READING_UNVERIFIED",
+            })
+    queue={"schema":"IberOS-Editorial-Readings-Queue/1.0",
+           "count":len(reading_queue),"records":reading_queue,
+           "automatic_core_promotion":False,
+           "notice":"Lecturas editoriales preexistentes pendientes de cotejo; no entran en CORE."}
+    (target.parent/"editorial_readings_review_v1.json").write_text(json.dumps(queue,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     (target.parent/"core_evidence_triage_v1.json").write_text(json.dumps(build_evidence_triage(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
     (target.parent/"core_rule_catalog_v1.json").write_text(json.dumps(rule_catalog(),ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
