@@ -195,3 +195,5 @@ const pechEdition=json('data/pech_maho_edition_comparison_v1.json');
 assert(pechEdition.scholarly_edition_check.published_transcription===']itiatu:ban:kutur:biteŕokan'&&pechEdition.scholarly_edition_check.facsimile_reinspected===false&&pechEdition.reading_approved===false,'Pech Maho line cited without invented graphic verification');
 
 assert(pechEdition.scholarly_edition_check.additional_comparandum.published_transcription===']śiśalirbitiŕokankube'&&pechEdition.reading_approved===false,'Pech-Maho documented co-occurrence is not decipherment');
+
+assert(pechEdition.form_comparison.independent_physical_objects===2&&pechEdition.form_comparison.shared_morphology_verified===false&&pechEdition.form_comparison.shared_semantics_verified===false,'ROK forms remain unvalidated and same-piece references not double counted');
