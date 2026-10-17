@@ -1,0 +1,80 @@
+{
+  "schema": "IberOS-ROK-Cross-Object-Comparison/1.0",
+  "protocol": "ROK-RECIPIENT-02",
+  "reference_scope": "existing frozen candidate set only",
+  "entries": [
+    {
+      "reference": "D.0.1",
+      "working_note": "Primary anchor; not independent validation",
+      "published_reading_or_internal_note": "BASTUBAR-ER + TEŔOKAN + UTUR",
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": true,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "F.9.5",
+      "working_note": "Orleyl; E/KUTUR/ROK network; E role unresolved",
+      "published_reading_or_internal_note": null,
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "F.9.7",
+      "working_note": "Orleyl; aŕeŕ-e / KUTU / BAS-BITEŔOK reported",
+      "published_reading_or_internal_note": null,
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "H.0.1",
+      "working_note": "Formal E/ER+ROK compatible; recipient role unresolved",
+      "published_reading_or_internal_note": null,
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "B.7.38",
+      "working_note": "Pech-Maho; two lines same physical object",
+      "published_reading_or_internal_note": "A I 3: ]śiśalirbitiŕokankube; A I 8: ]itiatu:ban:kutur:biteŕokan",
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "C.17.1",
+      "working_note": "Reported eŕok family occurrence; no externally fixed recipient",
+      "published_reading_or_internal_note": null,
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    },
+    {
+      "reference": "C.21.10",
+      "working_note": "Tivissa; śalaiaŕkis-teŕokan segmentation contested",
+      "published_reading_or_internal_note": "śalaiaŕkis-te-ŕokan",
+      "exact_line_and_figure_review_completed": false,
+      "recipient_role_fixed_externally": false,
+      "counts_as_independent_validation": false,
+      "semantic_approval": false,
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+    }
+  ],
+  "physical_witness_rule": "Multiple lines from B.7.38 or F.9.7 are never counted as independent physical objects; D.0.1 is the originating anchor.",
+  "semantic_gate": "OPEN",
+  "automatically_promote_to_core": false
+}
