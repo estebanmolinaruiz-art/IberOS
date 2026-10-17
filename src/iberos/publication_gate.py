@@ -28,6 +28,20 @@ def build_publication_manifest(featured: list[dict]) -> dict:
             for field,label in labels.items():
                 if not isinstance(f.get(field),str) or not f[field].strip():
                     pending.append(label)
+        verification={
+            "bibliographic_reference_present":bool(f and (str(f.get("citation") or "").strip() or f.get("bibliography"))),
+            "editorial_hypothesis_documented":editorial_complete and not is_documentary_control,
+            "reading_compared_with_original_edition":False,
+            "independent_epigraphic_review_completed":False,
+            "image_rights_verified":False,
+            "original_3d_model_rights_verified":False,
+        }
+        verification_pending=[
+            "Cotejar transcripción con edición o facsímil original",
+            "Registrar revisión epigráfica independiente",
+            "Verificar licencia y atribución de imágenes",
+            "Comprobar licencia y procedencia del modelo 3D antes de integrarlo",
+        ]
         records[oid]={
             "object_id":oid,
             "publication_status":("DOCUMENTARY_CONTROL_AVAILABLE" if is_documentary_control and editorial_complete and fiche_registered else "DOCUMENTARY_CONTROL_REVIEW" if is_documentary_control else "PUBLICABLE_EDITORIAL" if editorial_complete and fiche_registered else "EDITORIAL_REVIEW_REQUIRED"),
@@ -35,6 +49,8 @@ def build_publication_manifest(featured: list[dict]) -> dict:
             "documentary_control":is_documentary_control,
             "editorial_fiche_registered":fiche_registered,
             "pending_documentation":pending,
+            "scientific_documentation_checklist":verification,
+            "scientific_documentation_pending":verification_pending,
             "translation_validated":False,
             "scientific_validation_status":"UNVERIFIED",
             "automatic_core_promotion":False,
