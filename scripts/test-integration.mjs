@@ -181,3 +181,5 @@ assert(sourceReview.records.every(x=>x.reading_approved===false&&x.original_edit
 
 const coimbraEdition=json('data/coimbra_edition_comparison_v1.json');
 assert(coimbraEdition.object_id==='IBR-PLM-0004'&&coimbraEdition.disputed_readings.length===2&&coimbraEdition.reading_approved===false&&coimbraEdition.independent_epigraphic_review_completed===false,'Coimbra compara variantes editoriales sin validación independiente');
+
+for(const file of ['tivissa_edition_comparison_v1.json','pech_maho_edition_comparison_v1.json']) { const review=json('data/'+file); assert(review.reading_approved===false&&review.semantic_validation===false&&review.claims.length>0&&review.claims_needing_further_verification.length>0,'Tivissa y Pech-Maho siguen sin validación de lectura ni significado'); }
