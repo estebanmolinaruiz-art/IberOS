@@ -178,3 +178,6 @@ assert(archive.includes('scientificDocumentation('),'Archivo presenta checklist 
 const sourceReview=json('data/featured_documentary_review_v1.json');
 assert(sourceReview.record_count===6&&sourceReview.automatically_validated===false,'Seis fichas destacadas requieren verificación independiente');
 assert(sourceReview.records.every(x=>x.reading_approved===false&&x.original_edition_page_or_figure_checked===null),'Ninguna cita acredita por sí sola lectura cotejada');
+
+const coimbraEdition=json('data/coimbra_edition_comparison_v1.json');
+assert(coimbraEdition.object_id==='IBR-PLM-0004'&&coimbraEdition.disputed_readings.length===2&&coimbraEdition.reading_approved===false&&coimbraEdition.independent_epigraphic_review_completed===false,'Coimbra compara variantes editoriales sin validación independiente');
