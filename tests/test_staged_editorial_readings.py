@@ -35,3 +35,17 @@ def test_three_editorial_transcriptions_keep_uncertainty():
     assert variants["dual"]["B"]!=variants["nondual"]["B"]
     assert all(r["uncertainties"] and r["source_location"] for r in rows)
     assert all(r["review_status"]!="APPROVED_READING" for r in rows)
+
+def test_casinos_printed_edition_preserved_separately_from_working_normalization():
+    rows=[json.loads(s) for s in READINGS.read_text(encoding="utf-8").splitlines() if s.strip()]
+    casinos=next(x for x in rows if x["object_id"]=="IBR-PLM-0007")
+    printed=casinos["editorial_edition_transcription"]
+    assert printed["dual"]["A"][1].startswith("abaŕgeŕes.")
+    assert printed["nondual"]["A"][1].startswith("abaŕkeŕes.")
+    assert printed["dual"]["B"][0].startswith("ideŕ.")
+    assert printed["nondual"]["B"][0].startswith("iteŕ.")
+    assert printed["dual"]["B"][2].endswith("gi I /")
+    assert printed["nondual"]["B"][2].endswith("ki I /")
+    assert "(])" in printed["dual"]["A"][0]
+    assert {x["figure"] for x in casinos["figures_inspected_from_uploaded_pdf"]}=={1,2}
+    assert casinos["review_status"]=="PENDING_GRAPHIC_REVIEW"
