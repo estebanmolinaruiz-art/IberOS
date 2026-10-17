@@ -28,11 +28,27 @@
         "reported_string": "kutur · biteŕoketetine",
         "uncertainty": "Table is secondary; punctuation and exact line location require first edition",
         "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
-        "primary_edition": "Fletcher Valls (1981), Los plomos escritos Orleyl V, VI y VII, Materiales de la necrópolis ibérica de Orleyl, pp. 63–119",
+        "primary_edition": "Fletcher Valls (1981), pp. 63–131, capítulo IV",
         "primary_edition_checked": false,
         "signs_verified": false,
         "meaning_validated": false
-      }
+      },
+      "primary_source_locator": {
+        "author": "Domingo Fletcher Valls",
+        "year": 1981,
+        "publication": "Materiales de la necrópolis ibérica de Orleyl",
+        "chapter": "Los plomos escritos (Orleyl V, VI y VII)",
+        "pages": "63–131",
+        "institution": "Museu de Prehistòria de València",
+        "institution_catalogue": "https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va",
+        "pdf": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
+        "status": "PRIMARY_EDITION_LOCATED_TEXT_NOT_RETRIEVED"
+      },
+      "pending_validation": [
+        "Comparar transcripción y numeración de líneas de Fletcher 1981 con las posteriores",
+        "Inspeccionar fotografías y láminas originales antes de aprobar la lectura",
+        "Atribuir variantes a una edición concreta y documentar signos dudosos"
+      ]
     },
     {
       "reference": "F.9.7",
@@ -49,11 +65,27 @@
         "reported_string": "kutu+ike · basbiteŕoketine",
         "uncertainty": "kutu+ike has expressly doubtful final reading; alternatives kutuboike / kututaike / kutubeike noted by author",
         "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
-        "primary_edition": "Fletcher Valls (1981), Los plomos escritos Orleyl V, VI y VII, Materiales de la necrópolis ibérica de Orleyl, pp. 63–119",
+        "primary_edition": "Fletcher Valls (1981), pp. 63–131, capítulo IV",
         "primary_edition_checked": false,
         "signs_verified": false,
         "meaning_validated": false
-      }
+      },
+      "primary_source_locator": {
+        "author": "Domingo Fletcher Valls",
+        "year": 1981,
+        "publication": "Materiales de la necrópolis ibérica de Orleyl",
+        "chapter": "Los plomos escritos (Orleyl V, VI y VII)",
+        "pages": "63–131",
+        "institution": "Museu de Prehistòria de València",
+        "institution_catalogue": "https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va",
+        "pdf": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
+        "status": "PRIMARY_EDITION_LOCATED_TEXT_NOT_RETRIEVED"
+      },
+      "pending_validation": [
+        "Comparar transcripción y numeración de líneas de Fletcher 1981 con las posteriores",
+        "Inspeccionar fotografías y láminas originales antes de aprobar la lectura",
+        "Atribuir variantes a una edición concreta y documentar signos dudosos"
+      ]
     },
     {
       "reference": "H.0.1",
@@ -98,5 +130,6 @@
   ],
   "physical_witness_rule": "Multiple lines from B.7.38 or F.9.7 are never counted as independent physical objects; D.0.1 is the originating anchor.",
   "semantic_gate": "OPEN",
-  "automatically_promote_to_core": false
+  "automatically_promote_to_core": false,
+  "review_note": "Edición original localizada en catálogo institucional, pero el PDF no pudo recuperarse en esta consulta. No se certifican las lecturas ni la inspección de láminas."
 }
