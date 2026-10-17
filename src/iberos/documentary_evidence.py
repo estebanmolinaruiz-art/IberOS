@@ -13,7 +13,12 @@ def build_documentary_evidence(featured: list[dict]) -> dict:
         own_citation=str(item.get("citation") or "").strip()
         is_internal=own_citation.lower().startswith(("cita sugerida","molina ruiz"))
         primary=citations[0] if citations else ""
+        crosscheck_priority=oid in {"IBR-PLM-0002","IBR-PLM-0003","IBR-PLM-0004"}
         records.append({
+            "review_batch":"LEAD_THREE_2026_10_17" if crosscheck_priority else None,
+            "edition_identity_pending":crosscheck_priority,
+            "diplomatic_transcription_pending":crosscheck_priority,
+            "variant_attribution_pending":crosscheck_priority,
             "object_id":oid,
             "editorial_fiche_path":item.get("pdf_path"),
             "citation_in_fiche":own_citation,
