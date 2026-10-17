@@ -33,7 +33,12 @@
         "signs_verified": false,
         "meaning_validated": false,
         "fletcher_1981_parallel": "ORLEYL V 18 y 19: GUDUR BITEROKETETINE",
-        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review"
+        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review",
+        "fletcher_verified_comparison_source": "Fletcher Valls 1981, PDF p. 77 (discussion V-19), drawing fig. 22 PDF p.65 / fig.25 PDF p.111",
+        "figure_orientation_checked": true,
+        "detailed_glyph_to_transliteration_alignment": "PENDING",
+        "drawing_review_status": "FIGURES_ISOLATED_ENLARGED_NOT_SIGN_MAPPED",
+        "textual_variant_1981": "GUDUR BITEROKETETINE"
       },
       "primary_source_locator": {
         "author": "Domingo Fletcher Valls",
@@ -78,7 +83,12 @@
         "signs_verified": false,
         "meaning_validated": false,
         "fletcher_1981_parallel": "ORLEYL VII-B 6 y 7: GUDUBOIKE BITEROKETINE",
-        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review"
+        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review",
+        "fletcher_verified_comparison_source": "Fletcher Valls 1981, PDF p. 77 (discussion V-19), drawing fig. 22 PDF p.65 / fig.25 PDF p.111",
+        "figure_orientation_checked": true,
+        "detailed_glyph_to_transliteration_alignment": "PENDING",
+        "drawing_review_status": "FIGURES_ISOLATED_ENLARGED_NOT_SIGN_MAPPED",
+        "textual_variant_1981": "GUDUBOIKE BITEROKETINE"
       },
       "primary_source_locator": {
         "author": "Domingo Fletcher Valls",
@@ -147,5 +157,5 @@
   "physical_witness_rule": "Multiple lines from B.7.38 or F.9.7 are never counted as independent physical objects; D.0.1 is the originating anchor.",
   "semantic_gate": "OPEN",
   "automatically_promote_to_core": false,
-  "review_note": "Fletcher 1981 full PDF inspected locally: comparison at PDF page 77, overview drawings fig.22 Orleyl V and fig.25 Orleyl VII-B. Author's Basque parallels are historical conjectures, not adopted as scientific decipherment. Graphic sign-by-sign verification remains open."
+  "review_note": "Figures 22 and 25 rotated into horizontal orientation, isolated in local comparison image. Original Fletcher PDF p.77 explicitly compares GUDUR BITEROKETETINE with GUDUBOIKE BITEROKETINE (missing -TE-). This verifies the printed comparison only; assignment to individual graph shapes and modern normalization pending."
 }
