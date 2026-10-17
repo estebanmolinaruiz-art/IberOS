@@ -1,0 +1,72 @@
+{
+  "schema": "IberOS-Palaeographic-Alignment/1.0",
+  "scope": "three featured lead objects",
+  "rows": [
+    {
+      "review_id": "PAL-001",
+      "object_id": "IBR-PLM-0002",
+      "object_name": "Tivissa",
+      "editorial_segment": "śalaiaŕkis-te-ŕokan",
+      "attribution": "Asensio et al. (2003), Palaeohispanica 3, 195–204",
+      "doi": "10.36707/palaeohispanica.v0i3.339",
+      "specific_check": "Revisar separación antropónimo/sufijo y signos en edición y lámina",
+      "source_facsimile_coordinates": null,
+      "sign_by_sign_verified": false,
+      "second_reviewer": null,
+      "core_execution_allowed": false
+    },
+    {
+      "review_id": "PAL-002",
+      "object_id": "IBR-PLM-0002",
+      "object_name": "Tivissa",
+      "editorial_segment": "śalir",
+      "attribution": "Asensio et al. (2003), Palaeohispanica 3, 195–204",
+      "doi": "10.36707/palaeohispanica.v0i3.339",
+      "specific_check": "Verificar localización y relación material con expresión cuantificada",
+      "source_facsimile_coordinates": null,
+      "sign_by_sign_verified": false,
+      "second_reviewer": null,
+      "core_execution_allowed": false
+    },
+    {
+      "review_id": "PAL-003",
+      "object_id": "IBR-PLM-0003",
+      "object_name": "Pech-Maho B.7.38",
+      "editorial_segment": "...ban kutu r bideŕokan",
+      "attribution": "Ferrer i Jané (2014), Veleia 31, tabla comparativa",
+      "doi": "10.1387/veleia.13345",
+      "specific_check": "Localizar edición primaria, fracturas, espacios y lectura de r; la tabla es secundaria",
+      "source_facsimile_coordinates": null,
+      "sign_by_sign_verified": false,
+      "second_reviewer": null,
+      "core_execution_allowed": false
+    },
+    {
+      "review_id": "PAL-004",
+      "object_id": "IBR-PLM-0004",
+      "object_name": "Coimbra",
+      "editorial_segment": "kukebuŕke",
+      "attribution": "López Fernández (2016), Palaeohispanica 16, p. 161",
+      "doi": "10.36707/palaeohispanica.v0i16.29",
+      "specific_check": "Comparar con lectura anterior kukeburbe en figura 4 o 5",
+      "source_facsimile_coordinates": null,
+      "sign_by_sign_verified": false,
+      "second_reviewer": null,
+      "core_execution_allowed": false
+    },
+    {
+      "review_id": "PAL-005",
+      "object_id": "IBR-PLM-0004",
+      "object_name": "Coimbra",
+      "editorial_segment": "leŕsge[ / neŕsge[",
+      "attribution": "López Fernández (2016), Palaeohispanica 16, p. 161",
+      "doi": "10.36707/palaeohispanica.v0i16.29",
+      "specific_check": "Registrar ambigüedad del primer signo y la pérdida al final del segmento",
+      "source_facsimile_coordinates": null,
+      "sign_by_sign_verified": false,
+      "second_reviewer": null,
+      "core_execution_allowed": false
+    }
+  ],
+  "note": "Segmentos documentados o citados en fichas/ediciones, sin validación signo por signo independiente; no son lecturas nuevas."
+}
