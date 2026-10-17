@@ -22,5 +22,16 @@
   ],
   "reading_approved": false,
   "autopsy_by_iberos": false,
-  "semantic_validation": false
+  "semantic_validation": false,
+  "scholarly_edition_check": {
+    "reference": "Javier Velaza, Chronica Epigraphica Iberica XII (2014), Palaeohispanica 15 (2015), pp. 252–253, §1.7",
+    "url": "https://ifc.dpz.es/recursos/publicaciones/35/02/12velaza.pdf",
+    "underlying_edition": "J. Untermann, Iberische Bleiinschriften in Südfrankreich und im Empordà, Berlín 2014, pp. 62–69",
+    "editio_princeps": "Y. Solier y H. Barbouteau, Découverte de nouveaux plombs inscrits en ibère dans la région de Narbonne, RAN 21 (1988), pp. 61–94",
+    "location": "Cara A I, línea 8",
+    "published_transcription": "]itiatu:ban:kutur:biteŕokan",
+    "difference_from_comparative": "Ferrer 2014 tabla comparativa: ...ban kutu r bideŕokan; Velaza 2015: :ban:kutur:biteŕokan",
+    "facsimile_reinspected": false,
+    "exact_signs_independently_confirmed": false
+  }
 }
