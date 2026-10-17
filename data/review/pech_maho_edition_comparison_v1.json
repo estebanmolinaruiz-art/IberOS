@@ -1,0 +1,26 @@
+{
+  "schema": "IberOS-Edition-Comparison/1.0",
+  "object_id": "IBR-PLM-0003",
+  "edition": "Ferrer i Jané (2014), Ibèric kutu i els abecedaris ibèrics, Veleia 31",
+  "doi": "10.1387/veleia.13345",
+  "url": "https://www.researchgate.net/publication/262143836_Iberic_kutu_i_els_abecedaris_iberics",
+  "edition_page": 251,
+  "claims": [
+    {
+      "kind": "secondary_comparative_citation",
+      "content": "En la tabla comparativa figura Pech-Maho B.7.38* con los segmentos fragmentarios «...ban kutu r bideŕokan»."
+    },
+    {
+      "kind": "epistemic_limit",
+      "content": "La tabla es una referencia comparativa, no la autopsia ni una traducción del objeto por IberOS."
+    }
+  ],
+  "claims_needing_further_verification": [
+    "Localizar la edición primaria exacta de B.7.38*",
+    "Confrontar signos y límites de ...ban, kutur y bideŕokan en fotografía y edición primaria",
+    "Evaluar si el espaciado de la tabla es paleográfico o tipográfico"
+  ],
+  "reading_approved": false,
+  "autopsy_by_iberos": false,
+  "semantic_validation": false
+}
