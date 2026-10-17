@@ -16,22 +16,44 @@
     {
       "reference": "F.9.5",
       "working_note": "Orleyl; E/KUTUR/ROK network; E role unresolved",
-      "published_reading_or_internal_note": null,
+      "published_reading_or_internal_note": "kutur · biteŕoketetine",
       "exact_line_and_figure_review_completed": false,
       "recipient_role_fixed_externally": false,
       "counts_as_independent_validation": false,
       "semantic_approval": false,
-      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role",
+      "scholarly_comparison": {
+        "edition": "Ferrer i Jané, «Ibèric kutu i els abecedaris ibèrics», Veleia 31 (2014), p. 250–251, table of kutu variants",
+        "url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+        "reported_string": "kutur · biteŕoketetine",
+        "uncertainty": "Table is secondary; punctuation and exact line location require first edition",
+        "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
+        "primary_edition": "Fletcher Valls (1981), Los plomos escritos Orleyl V, VI y VII, Materiales de la necrópolis ibérica de Orleyl, pp. 63–119",
+        "primary_edition_checked": false,
+        "signs_verified": false,
+        "meaning_validated": false
+      }
     },
     {
       "reference": "F.9.7",
       "working_note": "Orleyl; aŕeŕ-e / KUTU / BAS-BITEŔOK reported",
-      "published_reading_or_internal_note": null,
+      "published_reading_or_internal_note": "kutu+ike · basbiteŕoketine",
       "exact_line_and_figure_review_completed": false,
       "recipient_role_fixed_externally": false,
       "counts_as_independent_validation": false,
       "semantic_approval": false,
-      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role"
+      "follow_up": "Find primary edition with object-specific line/figure, photograph rights, and externally grounded syntactic role",
+      "scholarly_comparison": {
+        "edition": "Ferrer i Jané, «Ibèric kutu i els abecedaris ibèrics», Veleia 31 (2014), p. 250–251, table of kutu variants",
+        "url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+        "reported_string": "kutu+ike · basbiteŕoketine",
+        "uncertainty": "kutu+ike has expressly doubtful final reading; alternatives kutuboike / kututaike / kutubeike noted by author",
+        "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
+        "primary_edition": "Fletcher Valls (1981), Los plomos escritos Orleyl V, VI y VII, Materiales de la necrópolis ibérica de Orleyl, pp. 63–119",
+        "primary_edition_checked": false,
+        "signs_verified": false,
+        "meaning_validated": false
+      }
     },
     {
       "reference": "H.0.1",
