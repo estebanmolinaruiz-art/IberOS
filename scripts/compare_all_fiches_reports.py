@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
 """Run a non-promoting, reproducible cross-check for all editorial fiches."""
 import json
+import argparse
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"site"/"data"
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--reviewed-readings', help='Optional JSONL of reviewed readings; no approval inferred from fiche prose')
+    args=parser.parse_args()
+    from iberos.library_readings_bridge import analyze_library_readings
+    reading_reports={}
+    if args.reviewed_readings:
+        input_rows=[json.loads(line) for line in Path(args.reviewed_readings).read_text(encoding='utf-8-sig').splitlines() if line.strip()]
+        review=analyze_library_readings(input_rows)
+        for item in review['reports']:
+            reading_reports.setdefault(item['object_id'],[]).append(item)
     rows=[]
     for shard in range(1,6):
         rows.extend(json.loads((DATA/f"ficha-enrichment-{shard}.json").read_text(encoding="utf-8")))
@@ -27,6 +38,8 @@ def main():
         ref=row.get("citation","")
         fields={k:bool(isinstance(row.get(k),str) and row[k].strip()) for k in ("evidence","inference","hypothesis","limits","citation")}
         # Editorial prose is NOT an independently transcribed, signed-off epigraphic reading.
+        evaluated=reading_reports.get(oid,[])
+        approved=[x for x in evaluated if x["review_gate_passed"]]
         result.append({
             "object_id":oid,
             "title":row.get("title",""),
@@ -36,8 +49,10 @@ def main():
             "editorial_fields":fields,
             "featured_in_public_selection":oid in fmap,
             "hypothesis_vs_report":"DOCUMENTARY_COMPARISON_ONLY",
-            "reviewed_sign_transcription_available_in_this_input":False,
-            "core_execution":"BLOCKED_MISSING_REVIEWED_TRANSCRIPTION",
+            "reviewed_sign_transcription_available_in_this_input":bool(approved),
+            "core_execution":"NON_PROMOTING_DOMAIN_SUGGESTIONS" if approved else "BLOCKED_MISSING_REVIEWED_TRANSCRIPTION",
+            "reviewed_reading_count":len(approved),
+            "semantic_domain_suggestions":[z for reading in approved for z in reading["suggestions"]],
             "agreement_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
             "conflict_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
             "new_semantic_inference":None,
@@ -49,15 +64,15 @@ def main():
         "count":len(result),
         "cited_count":sum(x["citation_present"] for x in result),
         "editorial_complete_count":sum(x["editorial_fields_complete"] for x in result),
-        "core_executed_count":0,
+        "core_executed_count":sum(x["core_execution"]=="NON_PROMOTING_DOMAIN_SUGGESTIONS" for x in result),
         "scientifically_validated_translations":0,
         "records":result,
     }
     out=DATA/"all_fiches_report_comparison_v1.json"
     out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"IBEROS ALL-FICHES: {report['count']} objects; {report['cited_count']} citations; {report['editorial_complete_count']} editorial-complete; 0 Core semantic executions (reviewed transcriptions absent)")
+    print(f"IBEROS ALL-FICHES: {report['count']} objects; {report['cited_count']} citations; {report['editorial_complete_count']} editorial-complete; {report['core_executed_count']} non-promoting semantic-domain evaluations")
     assert report["count"]==38 and report["cited_count"]==38
-    assert all(x["core_execution"]=="BLOCKED_MISSING_REVIEWED_TRANSCRIPTION" for x in result)
+    assert all(not x["translation_validated"] and x["new_semantic_inference"] is None for x in result)
 
 if __name__=="__main__":
     main()
