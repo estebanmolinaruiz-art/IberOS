@@ -46,5 +46,31 @@
       "El paralelismo entre bitiŕokan / biteŕokan requiere cotejo paleográfico antes de agrupar variantes.",
       "No sumar una nueva pieza física al corpus curado."
     ]
+  },
+  "form_comparison": {
+    "forms": [
+      {
+        "form": "bitiŕokan",
+        "location": "Pech-Maho A I 3",
+        "context": "śalir and bitiŕokan contiguous",
+        "vowel": "i"
+      },
+      {
+        "form": "biteŕokan",
+        "location": "Pech-Maho A I 8",
+        "context": "kutur:biteŕokan",
+        "vowel": "e"
+      },
+      {
+        "form": "teŕokan",
+        "location": "Tivissa",
+        "context": "anthroponym and proposed teŕokan",
+        "vowel": "e"
+      }
+    ],
+    "shared_morphology_verified": false,
+    "shared_semantics_verified": false,
+    "independent_physical_objects": 2,
+    "source_status": "published readings; not independently checked visually"
   }
 }
