@@ -136,7 +136,7 @@ assert(publicPresentation.includes('docs/INVITACION_REVISION_CIENTIFICA_IBEROS_2
 
 const priority=json('data/fiche_publication_priority_v1.json');
 assert(priority.schema==='IberOS-Publication-Priority/1.0','Cola de trabajo editorial exportada');
-assert(priority.pending_count===Object.values(publication.records).filter(r=>r.publication_status!=='PUBLICABLE_EDITORIAL').length,'Cola solo incluye fichas con documentación pendiente');
+assert(priority.pending_count===Object.values(publication.records).filter(r=>!['PUBLICABLE_EDITORIAL','DOCUMENTARY_CONTROL_AVAILABLE'].includes(r.publication_status)).length,'Cola solo incluye fichas con documentación pendiente');
 assert(priority.tasks.every(r=>r.automatic_core_promotion===false),'Priorización no implica validación científica');
 
 assert(archive.includes('editorial-priority')&&archive.includes('fiche_publication_priority_v1.json')&&archive.includes('showEditorialPriority()'),'Archivo presenta cola editorial priorizada enlazada a las fichas');
@@ -166,3 +166,5 @@ assert(['IBR-PLM-0009','IBR-PLM-0010'].every(id=>publication.records[id].feature
 assert(publication.records['IBR-PLM-0013'].featured_interpretation_available&&candidateFeed.objects['IBR-PLM-0013'].candidates.some(c=>c.sources.some(src=>src.includes('10.1387/veleia.22508'))&&c.meaning_validated===false&&c.reading_verified_independently===false),'Pico de los Ajos 2018 mantiene atribución editorial y significado sin validar');
 
 assert(['IBR-RUP-0001','IBR-RUP-0002','IBR-RUP-0003','IBR-RUP-0004','IBR-RUP-0005'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Cinco signarios rupestres con referencia específica sin traducción validada');
+
+assert(['IBR-COI-0002','IBR-CTL-0001','IBR-CTL-0002','IBR-CTL-0003'].every(id=>publication.records[id].publication_status==='DOCUMENTARY_CONTROL_AVAILABLE'&&publication.records[id].featured_interpretation_available===false&&candidateFeed.objects[id].candidates.length===0),'Los cuatro controles documentales no se presentan como traducciones ni evidencia independiente');
