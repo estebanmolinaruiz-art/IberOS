@@ -193,3 +193,5 @@ assert(paleography.rows.filter(x=>x.object_id==='IBR-PLM-0004').every(x=>x.editi
 
 const pechEdition=json('data/pech_maho_edition_comparison_v1.json');
 assert(pechEdition.scholarly_edition_check.published_transcription===']itiatu:ban:kutur:biteŕokan'&&pechEdition.scholarly_edition_check.facsimile_reinspected===false&&pechEdition.reading_approved===false,'Pech Maho line cited without invented graphic verification');
+
+assert(pechEdition.scholarly_edition_check.additional_comparandum.published_transcription===']śiśalirbitiŕokankube'&&pechEdition.reading_approved===false,'Pech-Maho documented co-occurrence is not decipherment');
