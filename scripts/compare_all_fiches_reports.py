@@ -40,6 +40,7 @@ def main():
         # Editorial prose is NOT an independently transcribed, signed-off epigraphic reading.
         evaluated=reading_reports.get(oid,[])
         approved=[x for x in evaluated if x["review_gate_passed"]]
+        pending=[x for x in evaluated if not x["review_gate_passed"]]
         result.append({
             "object_id":oid,
             "title":row.get("title",""),
@@ -53,6 +54,13 @@ def main():
             "independently_verified_sign_transcription":False,
             "core_execution":"NON_PROMOTING_DOMAIN_SUGGESTIONS" if approved else "BLOCKED_MISSING_APPROVED_READING",
             "editorially_approved_reading_count":len(approved),
+            "pending_editorial_readings":[{
+                "reading_id":p["reading_id"],
+                "review_reference":next((source.get("review_reference") for source in input_rows if source.get("reading_id")==p["reading_id"]),None) if args.reviewed_readings else None,
+                "editorial_transcription":next((source.get("editorial_transcription") for source in input_rows if source.get("reading_id")==p["reading_id"]),None) if args.reviewed_readings else None,
+                "uncertainties":next((source.get("uncertainties",[]) for source in input_rows if source.get("reading_id")==p["reading_id"]),[]) if args.reviewed_readings else [],
+                "scientific_reading_status":"PENDING_GRAPHIC_REVIEW"
+            } for p in pending],
             "semantic_domain_suggestions":[z for reading in approved for z in reading["suggestions"]],
             "agreement_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
             "conflict_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
@@ -65,6 +73,7 @@ def main():
         "count":len(result),
         "cited_count":sum(x["citation_present"] for x in result),
         "editorial_complete_count":sum(x["editorial_fields_complete"] for x in result),
+        "pending_readings_count":sum(len(x["pending_editorial_readings"]) for x in result),
         "core_executed_count":sum(x["core_execution"]=="NON_PROMOTING_DOMAIN_SUGGESTIONS" for x in result),
         "scientifically_validated_translations":0,
         "records":result,
