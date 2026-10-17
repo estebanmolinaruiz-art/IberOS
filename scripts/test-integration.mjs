@@ -183,3 +183,6 @@ const coimbraEdition=json('data/coimbra_edition_comparison_v1.json');
 assert(coimbraEdition.object_id==='IBR-PLM-0004'&&coimbraEdition.disputed_readings.length===2&&coimbraEdition.reading_approved===false&&coimbraEdition.independent_epigraphic_review_completed===false,'Coimbra compara variantes editoriales sin validación independiente');
 
 for(const file of ['tivissa_edition_comparison_v1.json','pech_maho_edition_comparison_v1.json']) { const review=json('data/'+file); assert(review.reading_approved===false&&review.semantic_validation===false&&review.claims.length>0&&review.claims_needing_further_verification.length>0,'Tivissa y Pech-Maho siguen sin validación de lectura ni significado'); }
+
+const paleography=json('data/palaeographic_alignment_priority_v1.json');
+assert(paleography.rows.length===5&&new Set(paleography.rows.map(x=>x.object_id)).size===3&&paleography.rows.every(x=>x.sign_by_sign_verified===false&&x.core_execution_allowed===false),'Cinco cotejos paleográficos pendientes sin admisión automática al CORE');
