@@ -1,0 +1,26 @@
+{
+  "schema": "IberOS-Edition-Comparison/1.0",
+  "object_id": "IBR-PLM-0002",
+  "edition": "Asensio, Miró, Sanmartí y Velaza (2003), Palaeohispanica 3, 195–204",
+  "doi": "10.36707/palaeohispanica.v0i3.339",
+  "url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+  "edition_page": 204,
+  "claims": [
+    {
+      "kind": "editorial_analysis",
+      "content": "La publicación propone como probable una carta de carácter comercial por numerales y śalir; no descifra su contenido concreto."
+    },
+    {
+      "kind": "published_segmentation",
+      "content": "La conclusión editorial describe -teŕokan y -teŕeikiaŕ junto a antropónimos como candidatos a secuencias verbales, sin glosa probada."
+    }
+  ],
+  "claims_needing_further_verification": [
+    "Transcripción diplomática signo por signo de todas las líneas",
+    "Comprobación gráfica precisa de śalaiaŕkis y el sufijo -teŕokan respecto al dibujo",
+    "Variantes entre las lecturas de los editores y la segmentación de IberOS"
+  ],
+  "reading_approved": false,
+  "autopsy_by_iberos": false,
+  "semantic_validation": false
+}
