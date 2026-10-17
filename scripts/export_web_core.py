@@ -42,6 +42,12 @@ def main():
     featured_path=Path("site/data/ficha-enrichment-featured.json")
     featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
     # Merge existing curated fiche shards, keeping featured entries authoritative.
+    for comparison_name in ("tivissa_edition_comparison_v1.json","pech_maho_edition_comparison_v1.json"):
+        evidence_path=Path("data/review")/comparison_name
+        evidence=json.loads(evidence_path.read_text(encoding="utf-8"))
+        assert evidence["reading_approved"] is False and evidence["semantic_validation"] is False
+        (target.parent/comparison_name).write_text(
+            json.dumps(evidence,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     comparison_path=Path("data/review/coimbra_edition_comparison_v1.json")
     if comparison_path.exists():
         edition_comparison=json.loads(comparison_path.read_text(encoding="utf-8"))
