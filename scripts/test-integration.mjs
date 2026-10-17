@@ -186,3 +186,5 @@ for(const file of ['tivissa_edition_comparison_v1.json','pech_maho_edition_compa
 
 const paleography=json('data/palaeographic_alignment_priority_v1.json');
 assert(paleography.rows.length===5&&new Set(paleography.rows.map(x=>x.object_id)).size===3&&paleography.rows.every(x=>x.sign_by_sign_verified===false&&x.core_execution_allowed===false),'Cinco cotejos paleográficos pendientes sin admisión automática al CORE');
+
+assert(paleography.rows.every(x=>x.source_url&&x.source_location&&x.source_location_status==='BIBLIOGRAPHIC_LOCATOR_ONLY'&&x.source_facsimile_coordinates===null&&x.sign_by_sign_verified===false),'Cinco localizadores bibliográficos disponibles sin suponer revisión gráfica');
