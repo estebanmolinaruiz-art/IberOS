@@ -105,15 +105,15 @@
     "pdf_path": "fichas/controles/IberOS_CaseStudies_Control_IBR-COI-0002_Pseudoescritura_v1.0.pdf",
     "pages": 2,
     "evidence": "La decoración está compuesta por motivos que imitan signos de escritura, pero algunos elementos se alejan de formas epigráficas regulares y aparecen también motivos vegetales. La secuencia carece de coherencia interna suficiente para tratarla como texto lingüístico.",
-    "inference": "La explicación más económica es que el artesano empleó signos o formas inspiradas en un signario como recurso decorativo y de prestigio. También se ha planteado que pudiera derivar de un texto copiado sin comprensión; ambas posibilidades implican dependencia visual, no producción de un mensaje lingüístico fiable.…",
-    "hypothesis": "",
-    "limits": "",
+    "inference": "Motivos gráficos comparables a signos, sin secuencia epigráfica fiable. La interpretación decorativa es provisional; no se reconstruyen palabras ni significado.",
+    "hypothesis": "Clasificación documental: pseudoescritura o decoración inspirada en signos; no constituye un texto ibérico traducible.",
+    "limits": "No se acredita una lectura lingüística continua ni una equivalencia de signos estable. No debe alimentar MORPH ni aumentar frecuencias léxicas.",
     "epistemology": "ESTADO IBEROS Clasificación: CONTROL CONTEXTUAL. Escrituralidad lingüística: NO APOYADA. Valor del objeto: ALTO como prueba negativa. Semántica: NO APLICA.",
     "bibliography": [
       "López Fernández, A. (2016). “Epigrafía ibérica de Coimbra del Barranco Ancho (Jumilla, Murcia)”. Palaeohispanica 16, 155-181. DOI: 10.36707/palaeohispanica.v0i16.29.",
       "Iniesta, A.; García Cano, J. M.; Berrocal, M. C. (1984-1985). “Grafitos prelatinos sobre cerámica en Murcia”."
     ],
-    "citation": "",
+    "citation": "López Fernández, A. (2016), «Epigrafía ibérica de Coimbra del Barranco Ancho (Jumilla, Murcia)», Palaeohispanica 16, pp. 155–181, DOI 10.36707/palaeohispanica.v0i16.29. Referencia contextual del conjunto; la clasificación concreta de la decoración procede de la ficha editorial de IberOS y sigue pendiente de cotejo individual con las figuras originales.",
     "note": "Contenido extraído automáticamente del PDF IberOS integrado. Para tablas, color, disposición y lectura exacta de signos, consultar el PDF original."
   },
   {
@@ -122,15 +122,15 @@
     "pdf_path": "fichas/controles/IberOS_CaseStudies_Control_IBR-CTL-0001_v1.0.pdf",
     "pages": 2,
     "evidence": "La pieza procede de la denominada Operación Júpiter y está depositada en València desde 2001. La bibliografía destaca además que las falsificaciones omitieron rasgos paleográficos sutiles presentes en el original, entre ellos la dualidad de la vibrante ŕ. DEPENDENCIA DOCUMENTAL La semejanza con el original no constituye una segunda ocurrencia independiente de las secuencias ibéricas:…",
-    "inference": "",
-    "hypothesis": "",
-    "limits": "",
+    "inference": "Control de autenticidad y dependencia de inscripciones previamente documentadas; no constituye un testimonio lingüístico independiente.",
+    "hypothesis": "Clasificación documental: copia o falsificación estudiada para el control epigráfico, no para traducir el íbero.",
+    "limits": "Excluir de las ocurrencias independientes y de las inferencias semánticas. Registrar únicamente semejanzas, divergencias y procedencia documental; no deducir intenciones personales.",
     "epistemology": "ESTADO IBEROS Autenticidad como testimonio antiguo: RECHAZADA en la bibliografía especializada. Dependencia respecto al modelo: ALTA. Uso en corpus: EXCLUDED/CONTROL. Valor metodológico: ALTO.",
     "bibliography": [
       "Ferrer i Jané, J.; Escrivà Torres, V. (2018 [publicado 2019]). “Estudio epigráfico de la inscripción ibérica de la tinajilla de la Fundación Ballesta, ya conocida por un dibujo y dos falsificaciones”. Palaeohispanica 18, 171- 187. DOI:…",
       "IberOS v1.0. Informe técnico principal. DOI: 10.5281/zenodo.22939179. Nota: la clasificación de falsificación procede de la documentación epigráfica citada.…"
     ],
-    "citation": "",
+    "citation": "Ferrer i Jané, J.; Escrivà Torres, V. (2018), «Estudio epigráfico de la inscripción ibérica de la tinajilla de la Fundación Ballesta, ya conocida por un dibujo y dos falsificaciones», Palaeohispanica 18, 171–187. Estudia las dos copias como falsificaciones documentadas, sin nuevas ocurrencias lingüísticas independientes.",
     "note": "Contenido extraído automáticamente del PDF IberOS integrado. Para tablas, color, disposición y lectura exacta de signos, consultar el PDF original."
   }
 ]
