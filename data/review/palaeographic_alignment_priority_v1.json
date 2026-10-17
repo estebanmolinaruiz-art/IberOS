@@ -69,10 +69,12 @@
       "second_reviewer": null,
       "core_execution_allowed": false,
       "source_url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
-      "source_location": "López Fernández 2016, p. 161; figures 4–5 are candidates, precise crop and sign position unverified",
-      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_location": "López Fernández 2016, p. 159 figs. 4 (fotografía), 5 (dibujo); p. 161 nueva lectura y notas de líneas 5–6",
+      "source_location_status": "EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED",
       "source_image_rights": "NOT_VERIFIED",
-      "graphical_discrepancy": "Edition variant kukeburbe / kukebuŕke; final consonant and vibrante require direct graphic check"
+      "graphical_discrepancy": "Texto p. 160 consigna lectura posterior a restauración «kukeburbe»; nueva lectura p. 161 «kukebuŕke». En p. 160 se describe contacto de trazos de u y k (segundo y tercer signos). Revisar dibujo figura 5 antes de aprobar signos.",
+      "edition_text_checked": true,
+      "graphic_directly_inspected": false
     },
     {
       "review_id": "PAL-005",
@@ -87,10 +89,12 @@
       "second_reviewer": null,
       "core_execution_allowed": false,
       "source_url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
-      "source_location": "López Fernández 2016, p. 161; figures 4–5 are candidates, precise crop and sign position unverified",
-      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_location": "López Fernández 2016, p. 159 figs. 4 (fotografía), 5 (dibujo); p. 161 nueva lectura y notas de líneas 5–6",
+      "source_location_status": "EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED",
       "source_image_rights": "NOT_VERIFIED",
-      "graphical_discrepancy": "Edition alternatives leŕsge[ / neŕsge[; first sign ambiguous and ending incomplete"
+      "graphical_discrepancy": "Nota de línea 6 p. 161 ofrece «leŕsge[» o «neŕsge[». Imagen exacta del primer signo pendiente de cotejo.",
+      "edition_text_checked": true,
+      "graphic_directly_inspected": false
     }
   ],
   "note": "Segmentos documentados o citados en fichas/ediciones, sin validación signo por signo independiente; no son lecturas nuevas.",
