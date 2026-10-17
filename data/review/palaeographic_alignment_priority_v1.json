@@ -14,11 +14,13 @@
       "sign_by_sign_verified": false,
       "second_reviewer": null,
       "core_execution_allowed": false,
-      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i3.339",
-      "source_location": "Asensio et al. 2003, pp. 195–204; exact figure and line not verified",
-      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+      "source_location": "Asensio et al. (2003), p. 200 figs. 3 y 4; lectura continua p. 200, línea 2; comentario de segmentación pp. 202–203",
+      "source_location_status": "EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED",
       "source_image_rights": "NOT_VERIFIED",
-      "graphical_discrepancy": "Pending direct figure and facsimile inspection"
+      "graphical_discrepancy": "La edición p. 202 discute si -te forma parte del antropónimo o de -ŕokan; segmentación no resuelta",
+      "edition_text_checked": true,
+      "graphic_directly_inspected": false
     },
     {
       "review_id": "PAL-002",
@@ -32,11 +34,13 @@
       "sign_by_sign_verified": false,
       "second_reviewer": null,
       "core_execution_allowed": false,
-      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i3.339",
-      "source_location": "Asensio et al. 2003, pp. 195–204; exact figure and line not verified",
-      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+      "source_location": "Asensio et al. (2003), p. 200 figs. 3 y 4; lectura continua p. 200, línea 2; comentario de segmentación pp. 202–203",
+      "source_location_status": "EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED",
       "source_image_rights": "NOT_VERIFIED",
-      "graphical_discrepancy": "Pending direct figure and facsimile inspection"
+      "graphical_discrepancy": "La edición p. 203 sitúa śalir en vecindad de un numeral y del paradigma -teŕokan; glosa léxica no confirmada",
+      "edition_text_checked": true,
+      "graphic_directly_inspected": false
     },
     {
       "review_id": "PAL-003",
@@ -54,7 +58,9 @@
       "source_location": "Ferrer i Jané 2014, comparison table, exact page and image not verified; primary edition still outstanding",
       "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
       "source_image_rights": "NOT_VERIFIED",
-      "graphical_discrepancy": "Published secondary segmentation '...ban kutu r bideŕokan' may reflect formatting rather than sign dividers; no facsimile checked"
+      "graphical_discrepancy": "Published secondary segmentation '...ban kutu r bideŕokan' may reflect formatting rather than sign dividers; no facsimile checked",
+      "cross_reference": "Asensio et al. (2003), p. 202, cita B.7.38 B,7 kuturbiteŕokan y B.7.38 A,3 bitiŕokan como comparanda; no reemplaza autopsia de Pech-Maho",
+      "cross_reference_url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054"
     },
     {
       "review_id": "PAL-004",
