@@ -5,15 +5,15 @@
     "pdf_path": "fichas/controles/IberOS_CaseStudies_Control_IBR-CTL-0002_v1.0.pdf",
     "pages": 2,
     "evidence": "La segunda copia pertenece al legado Esteve del Museo de Castelló, también documentada desde 2001. La bibliografía destaca además que las falsificaciones omitieron rasgos paleográficos sutiles presentes en el original, entre ellos la dualidad de la vibrante ŕ. DEPENDENCIA DOCUMENTAL La semejanza con el original no constituye una segunda ocurrencia independiente de las secuencias ibéricas:…",
-    "inference": "",
-    "hypothesis": "",
-    "limits": "",
+    "inference": "Control de autenticidad y dependencia de inscripciones previamente documentadas; no constituye un testimonio lingüístico independiente.",
+    "hypothesis": "Clasificación documental: copia o falsificación estudiada para el control epigráfico, no para traducir el íbero.",
+    "limits": "Excluir de las ocurrencias independientes y de las inferencias semánticas. Registrar únicamente semejanzas, divergencias y procedencia documental; no deducir intenciones personales.",
     "epistemology": "ESTADO IBEROS Autenticidad como testimonio antiguo: RECHAZADA en la bibliografía especializada. Dependencia respecto al modelo: ALTA. Uso en corpus: EXCLUDED/CONTROL. Valor metodológico: ALTO.",
     "bibliography": [
       "Ferrer i Jané, J.; Escrivà Torres, V. (2018 [publicado 2019]). “Estudio epigráfico de la inscripción ibérica de la tinajilla de la Fundación Ballesta, ya conocida por un dibujo y dos falsificaciones”. Palaeohispanica 18, 171- 187. DOI:…",
       "IberOS v1.0. Informe técnico principal. DOI: 10.5281/zenodo.22939179. Nota: la clasificación de falsificación procede de la documentación epigráfica citada.…"
     ],
-    "citation": "",
+    "citation": "Ferrer i Jané, J.; Escrivà Torres, V. (2018), «Estudio epigráfico de la inscripción ibérica de la tinajilla de la Fundación Ballesta, ya conocida por un dibujo y dos falsificaciones», Palaeohispanica 18, 171–187. Estudia las dos copias como falsificaciones documentadas, sin nuevas ocurrencias lingüísticas independientes.",
     "note": "Contenido extraído automáticamente del PDF IberOS integrado. Para tablas, color, disposición y lectura exacta de signos, consultar el PDF original."
   },
   {
@@ -22,15 +22,15 @@
     "pdf_path": "fichas/controles/IberOS_CaseStudies_Control_IBR-CTL-0003_Marsal_C07-003_v1.0.pdf",
     "pages": 2,
     "evidence": "Entre las secuencias copiadas desde Orleyl F.9.7 se documentan paralelos con iunstirika : selkiniustai, belaike, arere : kutuboike e itikereuteti. En la falsificación aparecen omisiones, recortes y deformaciones que revelan dependencia del modelo. DEPENDENCIA DOCUMENTAL La pieza no aporta nuevas ocurrencias lingüísticas de esas secuencias.…",
-    "inference": "",
-    "hypothesis": "",
-    "limits": "",
+    "inference": "Control de autenticidad y dependencia de inscripciones previamente documentadas; no constituye un testimonio lingüístico independiente.",
+    "hypothesis": "Clasificación documental: copia o falsificación estudiada para el control epigráfico, no para traducir el íbero.",
+    "limits": "Excluir de las ocurrencias independientes y de las inferencias semánticas. Registrar únicamente semejanzas, divergencias y procedencia documental; no deducir intenciones personales.",
     "epistemology": "ESTADO IBEROS Falsedad: documentada en la publicación especializada. Modelo principal: Orleyl F.9.7. Independencia lingüística: NULA. Valor metodológico: ALTO como control adversarial.",
     "bibliography": [
       "Luján, E. R.; López Fernández, A. (2017). “Nuevas inscripciones paleohispánicas del Museo Arqueológico de Sevilla”. Palaeohispanica 17, 125-139. DOI: 10.36707/palaeohispanica.v0i17.136.",
       "IberOS v1.0. Informe técnico principal. DOI: 10.5281/zenodo.22939179. Nota: la ficha no atribuye intenciones al falsificador. Registra únicamente relaciones documentales y errores de copia descritos por la bibliografía."
     ],
-    "citation": "",
+    "citation": "Luján, E. R.; López Fernández, A. (2017), «Nuevas inscripciones paleohispánicas del Museo Arqueológico de Sevilla», Palaeohispanica 17, 125–139, DOI 10.36707/palaeohispanica.v0i17.136. Fuente de clasificación y cotejo de dependencias; no aporta nuevas unidades lingüísticas independientes.",
     "note": "Contenido extraído automáticamente del PDF IberOS integrado. Para tablas, color, disposición y lectura exacta de signos, consultar el PDF original."
   },
   {
