@@ -200,3 +200,5 @@ assert(pechEdition.form_comparison.independent_physical_objects===2&&pechEdition
 
 const rokCross=json('data/rok_cross_object_comparison_v1.json');
 assert(rokCross.entries.length===7&&rokCross.semantic_gate==='OPEN'&&rokCross.entries.every(x=>x.semantic_approval===false&&x.counts_as_independent_validation===false),'ROK cross-object reference set remains open and unvalidated');
+
+assert(['F.9.5','F.9.7'].every(ref=>rokCross.entries.find(x=>x.reference===ref)?.scholarly_comparison?.signs_verified===false),'Orleyl comparisons remain subject to first-edition review');
