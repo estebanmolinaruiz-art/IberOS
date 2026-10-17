@@ -29,9 +29,11 @@
         "uncertainty": "Table is secondary; punctuation and exact line location require first edition",
         "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
         "primary_edition": "Fletcher Valls (1981), pp. 63–131, capítulo IV",
-        "primary_edition_checked": false,
+        "primary_edition_checked": true,
         "signs_verified": false,
-        "meaning_validated": false
+        "meaning_validated": false,
+        "fletcher_1981_parallel": "ORLEYL V 18 y 19: GUDUR BITEROKETETINE",
+        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review"
       },
       "primary_source_locator": {
         "author": "Domingo Fletcher Valls",
@@ -42,12 +44,18 @@
         "institution": "Museu de Prehistòria de València",
         "institution_catalogue": "https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va",
         "pdf": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
-        "status": "PRIMARY_EDITION_LOCATED_TEXT_NOT_RETRIEVED"
+        "status": "PRIMARY_EDITION_PDF_TEXT_AND_OVERVIEW_DRAWINGS_INSPECTED",
+        "local_pdf_pages": [
+          64,
+          77,
+          65
+        ],
+        "figure": "Fig. 22, Orleyl V"
       },
       "pending_validation": [
-        "Comparar transcripción y numeración de líneas de Fletcher 1981 con las posteriores",
-        "Inspeccionar fotografías y láminas originales antes de aprobar la lectura",
-        "Atribuir variantes a una edición concreta y documentar signos dudosos"
+        "Align each reading with exact graphical sign sequence in figure",
+        "Record 1981/2014 transcription differences sign-by-sign",
+        "Obtain independent epigraphic review before approval"
       ]
     },
     {
@@ -66,9 +74,11 @@
         "uncertainty": "kutu+ike has expressly doubtful final reading; alternatives kutuboike / kututaike / kutubeike noted by author",
         "context": "Orleyl tomb II excavated deposit; funerary discovery does not prove text is funerary in meaning",
         "primary_edition": "Fletcher Valls (1981), pp. 63–131, capítulo IV",
-        "primary_edition_checked": false,
+        "primary_edition_checked": true,
         "signs_verified": false,
-        "meaning_validated": false
+        "meaning_validated": false,
+        "fletcher_1981_parallel": "ORLEYL VII-B 6 y 7: GUDUBOIKE BITEROKETINE",
+        "review_scope": "Primary edition text and overview drawings inspected; no validated sign-level tracing or independent review"
       },
       "primary_source_locator": {
         "author": "Domingo Fletcher Valls",
@@ -79,12 +89,18 @@
         "institution": "Museu de Prehistòria de València",
         "institution_catalogue": "https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va",
         "pdf": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
-        "status": "PRIMARY_EDITION_LOCATED_TEXT_NOT_RETRIEVED"
+        "status": "PRIMARY_EDITION_PDF_TEXT_AND_OVERVIEW_DRAWINGS_INSPECTED",
+        "local_pdf_pages": [
+          64,
+          77,
+          110
+        ],
+        "figure": "Fig. 25, Orleyl VII-B"
       },
       "pending_validation": [
-        "Comparar transcripción y numeración de líneas de Fletcher 1981 con las posteriores",
-        "Inspeccionar fotografías y láminas originales antes de aprobar la lectura",
-        "Atribuir variantes a una edición concreta y documentar signos dudosos"
+        "Align each reading with exact graphical sign sequence in figure",
+        "Record 1981/2014 transcription differences sign-by-sign",
+        "Obtain independent epigraphic review before approval"
       ]
     },
     {
@@ -131,5 +147,5 @@
   "physical_witness_rule": "Multiple lines from B.7.38 or F.9.7 are never counted as independent physical objects; D.0.1 is the originating anchor.",
   "semantic_gate": "OPEN",
   "automatically_promote_to_core": false,
-  "review_note": "Edición original localizada en catálogo institucional, pero el PDF no pudo recuperarse en esta consulta. No se certifican las lecturas ni la inspección de láminas."
+  "review_note": "Fletcher 1981 full PDF inspected locally: comparison at PDF page 77, overview drawings fig.22 Orleyl V and fig.25 Orleyl VII-B. Author's Basque parallels are historical conjectures, not adopted as scientific decipherment. Graphic sign-by-sign verification remains open."
 }
