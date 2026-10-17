@@ -14,7 +14,7 @@ jobs:
         run: |
           python scripts/run_library_pipeline.py
       - name: Compare IberOS against all curated fiche reports
-        run: python scripts/compare_all_fiches_reports.py
+        run: python scripts/compare_all_fiches_reports.py --reviewed-readings data/review/editorial_readings_pending_v1.jsonl
       - uses: actions/upload-artifact@v4
         with:
           name: iberos-all-fiches-report-comparison
