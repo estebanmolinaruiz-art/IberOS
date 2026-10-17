@@ -49,9 +49,10 @@ def main():
             "editorial_fields":fields,
             "featured_in_public_selection":oid in fmap,
             "hypothesis_vs_report":"DOCUMENTARY_COMPARISON_ONLY",
-            "reviewed_sign_transcription_available_in_this_input":bool(approved),
-            "core_execution":"NON_PROMOTING_DOMAIN_SUGGESTIONS" if approved else "BLOCKED_MISSING_REVIEWED_TRANSCRIPTION",
-            "reviewed_reading_count":len(approved),
+            "editorially_approved_reading_in_input":bool(approved),
+            "independently_verified_sign_transcription":False,
+            "core_execution":"NON_PROMOTING_DOMAIN_SUGGESTIONS" if approved else "BLOCKED_MISSING_APPROVED_READING",
+            "editorially_approved_reading_count":len(approved),
             "semantic_domain_suggestions":[z for reading in approved for z in reading["suggestions"]],
             "agreement_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
             "conflict_with_report":"NOT_TESTABLE_FROM_EDITORIAL_PROSE",
@@ -73,6 +74,7 @@ def main():
     print(f"IBEROS ALL-FICHES: {report['count']} objects; {report['cited_count']} citations; {report['editorial_complete_count']} editorial-complete; {report['core_executed_count']} non-promoting semantic-domain evaluations")
     assert report["count"]==38 and report["cited_count"]==38
     assert all(not x["translation_validated"] and x["new_semantic_inference"] is None for x in result)
+    assert all(not x["independently_verified_sign_transcription"] for x in result)
 
 if __name__=="__main__":
     main()
