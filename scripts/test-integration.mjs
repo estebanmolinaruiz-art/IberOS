@@ -174,3 +174,7 @@ assert(candidateFeed.objects['IBR-CER-0005'].candidates.every(c=>c.meaning_valid
 
 assert(Object.values(publication.records).every(v=>v.scientific_documentation_checklist&&v.scientific_documentation_pending.length===4),'Checklist documental completo en 38 objetos');
 assert(archive.includes('scientificDocumentation('),'Archivo presenta checklist documental');
+
+const sourceReview=json('data/featured_documentary_review_v1.json');
+assert(sourceReview.record_count===6&&sourceReview.automatically_validated===false,'Seis fichas destacadas requieren verificación independiente');
+assert(sourceReview.records.every(x=>x.reading_approved===false&&x.original_edition_page_or_figure_checked===null),'Ninguna cita acredita por sí sola lectura cotejada');
