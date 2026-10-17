@@ -8,7 +8,7 @@ def build_publication_priority(featured: list[dict]) -> dict:
     reg={row["OBJECT_ID"]:row for row in load_registry()}
     tasks=[]
     for oid,state in manifest["records"].items():
-        if state["publication_status"]=="PUBLICABLE_EDITORIAL":
+        if state["publication_status"] in {"PUBLICABLE_EDITORIAL","DOCUMENTARY_CONTROL_AVAILABLE"}:
             continue
         pending=state["pending_documentation"]
         special_control=oid.startswith("IBR-CTL-")
