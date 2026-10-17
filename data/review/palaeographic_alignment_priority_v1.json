@@ -49,7 +49,7 @@
       "editorial_segment": "...ban kutu r bideŕokan",
       "attribution": "Ferrer i Jané (2014), Veleia 31, tabla comparativa",
       "doi": "10.1387/veleia.13345",
-      "specific_check": "Localizar edición primaria, fracturas, espacios y lectura de r; la tabla es secundaria",
+      "specific_check": "Localizar edición primaria, fracturas, espacios y lectura de r; la tabla es secundaria; cotejar también línea A I 3 y la posible diferencia bitiŕokan/biteŕokan",
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
@@ -63,7 +63,13 @@
       "cross_reference_url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
       "edition_text_checked": true,
       "graphic_directly_inspected": false,
-      "edition_segment": "]itiatu:ban:kutur:biteŕokan"
+      "edition_segment": "]itiatu:ban:kutur:biteŕokan",
+      "additional_published_line": {
+        "location": "Cara A I, línea 3",
+        "transcription": "]śiśalirbitiŕokankube",
+        "source": "Velaza, Palaeohispanica 15 (2015), p. 253",
+        "status": "PUBLISHED_READING_UNVERIFIED_GRAPHICALLY"
+      }
     },
     {
       "review_id": "PAL-004",
