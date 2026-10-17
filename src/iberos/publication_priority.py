@@ -12,7 +12,7 @@ def build_publication_priority(featured: list[dict]) -> dict:
             continue
         pending=state["pending_documentation"]
         special_control=oid.startswith("IBR-CTL-")
-        non_linguistic=oid in {"IBR-COI-0002","IBR-CER-0003","IBR-CER-0005"}
+        non_linguistic=oid.startswith("IBR-RUP-") or oid in {"IBR-COI-0002","IBR-CER-0003","IBR-CER-0005","IBR-PLM-0008"}
         workstream=("CONTROL_AUTHENTICITY" if special_control else
                     "SIGNARY_OR_PSEUDOSCRIPT" if non_linguistic else
                     "TEXTUAL_INTERPRETATION")
