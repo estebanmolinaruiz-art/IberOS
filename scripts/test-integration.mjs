@@ -187,6 +187,9 @@ for(const file of ['tivissa_edition_comparison_v1.json','pech_maho_edition_compa
 const paleography=json('data/palaeographic_alignment_priority_v1.json');
 assert(paleography.rows.length===5&&new Set(paleography.rows.map(x=>x.object_id)).size===3&&paleography.rows.every(x=>x.sign_by_sign_verified===false&&x.core_execution_allowed===false),'Cinco cotejos paleográficos pendientes sin admisión automática al CORE');
 
-assert(paleography.rows.every(x=>x.source_url&&x.source_location&&['BIBLIOGRAPHIC_LOCATOR_ONLY','EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED'].includes(x.source_location_status)&&x.source_facsimile_coordinates===null&&x.sign_by_sign_verified===false),'Cinco localizadores bibliográficos disponibles sin suponer revisión gráfica');
+assert(paleography.rows.every(x=>x.source_url&&x.source_location&&['BIBLIOGRAPHIC_LOCATOR_ONLY','EDITION_TEXT_AND_FIGURE_CAPTIONS_CONFIRMED','PUBLISHED_TRANSCRIPTION_AND_EXACT_LINE_CONFIRMED'].includes(x.source_location_status)&&x.source_facsimile_coordinates===null&&x.sign_by_sign_verified===false),'Cinco localizadores bibliográficos disponibles sin suponer revisión gráfica');
 
 assert(paleography.rows.filter(x=>x.object_id==='IBR-PLM-0004').every(x=>x.edition_text_checked===true&&x.graphic_directly_inspected===false),'Coimbra editorial text checked, graphic pending');
+
+const pechEdition=json('data/pech_maho_edition_comparison_v1.json');
+assert(pechEdition.scholarly_edition_check.published_transcription===']itiatu:ban:kutur:biteŕokan'&&pechEdition.scholarly_edition_check.facsimile_reinspected===false&&pechEdition.reading_approved===false,'Pech Maho line cited without invented graphic verification');
