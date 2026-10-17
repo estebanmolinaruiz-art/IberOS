@@ -32,6 +32,19 @@
     "published_transcription": "]itiatu:ban:kutur:biteŕokan",
     "difference_from_comparative": "Ferrer 2014 tabla comparativa: ...ban kutu r bideŕokan; Velaza 2015: :ban:kutur:biteŕokan",
     "facsimile_reinspected": false,
-    "exact_signs_independently_confirmed": false
+    "exact_signs_independently_confirmed": false,
+    "additional_comparandum": {
+      "location": "Cara A I, línea 3",
+      "published_transcription": "]śiśalirbitiŕokankube",
+      "source": "Velaza (2015), Palaeohispanica 15, p. 253, §1.7 (reproducción de Untermann 2014)",
+      "significance": "Co-presencia en el mismo documento de śalir / bitiŕokan y de ban:kutur:biteŕokan; sin inferencia de sentido ni reconstrucción de separadores en línea 3",
+      "reading_approved": false
+    },
+    "analytical_controls": [
+      "Las líneas 3 y 8 no son una secuencia contigua ni dos pruebas independientes de significado.",
+      "La ausencia de separadores visibles en la transcripción de línea 3 impide imponer límites morfológicos.",
+      "El paralelismo entre bitiŕokan / biteŕokan requiere cotejo paleográfico antes de agrupar variantes.",
+      "No sumar una nueva pieza física al corpus curado."
+    ]
   }
 }
