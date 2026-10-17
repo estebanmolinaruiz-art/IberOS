@@ -171,3 +171,6 @@ assert(['IBR-COI-0002','IBR-CTL-0001','IBR-CTL-0002','IBR-CTL-0003'].every(id=>p
 
 assert(publication.records['IBR-CER-0005'].publication_status==='PUBLICABLE_EDITORIAL'&&priority.pending_count===0&&publication.object_count===38,'Las 38 fichas tienen expediente editorial o control documental completo');
 assert(candidateFeed.objects['IBR-CER-0005'].candidates.every(c=>c.meaning_validated===false),'Val de Alegre nunca se transforma en traducción confirmada');
+
+assert(Object.values(publication.records).every(v=>v.scientific_documentation_checklist&&v.scientific_documentation_pending.length===4),'Checklist documental completo en 38 objetos');
+assert(archive.includes('scientificDocumentation('),'Archivo presenta checklist documental');
