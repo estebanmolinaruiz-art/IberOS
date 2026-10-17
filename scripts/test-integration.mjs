@@ -164,3 +164,5 @@ assert(['IBR-PLM-0011','IBR-PLM-0012'].every(id=>publication.records[id].feature
 assert(['IBR-PLM-0009','IBR-PLM-0010'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false&&c.reading_verified_independently===false)),'Serreta y Cigarralejo mantienen interpretaciones con fuente sin promover lecturas ni significado');
 
 assert(publication.records['IBR-PLM-0013'].featured_interpretation_available&&candidateFeed.objects['IBR-PLM-0013'].candidates.some(c=>c.sources.some(src=>src.includes('10.1387/veleia.22508'))&&c.meaning_validated===false&&c.reading_verified_independently===false),'Pico de los Ajos 2018 mantiene atribución editorial y significado sin validar');
+
+assert(['IBR-RUP-0001','IBR-RUP-0002','IBR-RUP-0003','IBR-RUP-0004','IBR-RUP-0005'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Cinco signarios rupestres con referencia específica sin traducción validada');
