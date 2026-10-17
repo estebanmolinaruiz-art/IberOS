@@ -42,6 +42,13 @@ def main():
     featured_path=Path("site/data/ficha-enrichment-featured.json")
     featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
     # Merge existing curated fiche shards, keeping featured entries authoritative.
+    comparison_path=Path("data/review/coimbra_edition_comparison_v1.json")
+    if comparison_path.exists():
+        edition_comparison=json.loads(comparison_path.read_text(encoding="utf-8"))
+        assert edition_comparison["reading_approved"] is False
+        assert edition_comparison["independent_epigraphic_review_completed"] is False
+        (target.parent/"coimbra_edition_comparison_v1.json").write_text(
+            json.dumps(edition_comparison,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     (target.parent/"featured_documentary_review_v1.json").write_text(json.dumps(build_documentary_evidence(featured),ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     featured_ids={item.get("OBJECT_ID") for item in featured}
     for shard in range(1,6):
