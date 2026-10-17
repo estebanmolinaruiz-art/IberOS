@@ -13,7 +13,12 @@
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i3.339",
+      "source_location": "Asensio et al. 2003, pp. 195–204; exact figure and line not verified",
+      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_image_rights": "NOT_VERIFIED",
+      "graphical_discrepancy": "Pending direct figure and facsimile inspection"
     },
     {
       "review_id": "PAL-002",
@@ -26,7 +31,12 @@
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i3.339",
+      "source_location": "Asensio et al. 2003, pp. 195–204; exact figure and line not verified",
+      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_image_rights": "NOT_VERIFIED",
+      "graphical_discrepancy": "Pending direct figure and facsimile inspection"
     },
     {
       "review_id": "PAL-003",
@@ -39,7 +49,12 @@
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+      "source_location": "Ferrer i Jané 2014, comparison table, exact page and image not verified; primary edition still outstanding",
+      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_image_rights": "NOT_VERIFIED",
+      "graphical_discrepancy": "Published secondary segmentation '...ban kutu r bideŕokan' may reflect formatting rather than sign dividers; no facsimile checked"
     },
     {
       "review_id": "PAL-004",
@@ -52,7 +67,12 @@
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
+      "source_location": "López Fernández 2016, p. 161; figures 4–5 are candidates, precise crop and sign position unverified",
+      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_image_rights": "NOT_VERIFIED",
+      "graphical_discrepancy": "Edition variant kukeburbe / kukebuŕke; final consonant and vibrante require direct graphic check"
     },
     {
       "review_id": "PAL-005",
@@ -65,8 +85,14 @@
       "source_facsimile_coordinates": null,
       "sign_by_sign_verified": false,
       "second_reviewer": null,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
+      "source_location": "López Fernández 2016, p. 161; figures 4–5 are candidates, precise crop and sign position unverified",
+      "source_location_status": "BIBLIOGRAPHIC_LOCATOR_ONLY",
+      "source_image_rights": "NOT_VERIFIED",
+      "graphical_discrepancy": "Edition alternatives leŕsge[ / neŕsge[; first sign ambiguous and ending incomplete"
     }
   ],
-  "note": "Segmentos documentados o citados en fichas/ediciones, sin validación signo por signo independiente; no son lecturas nuevas."
+  "note": "Segmentos documentados o citados en fichas/ediciones, sin validación signo por signo independiente; no son lecturas nuevas.",
+  "review_policy": "Locators do not establish visual comparison: exact source figure coordinates and rights must be checked before setting sign_by_sign_verified"
 }
