@@ -58,6 +58,8 @@ def main():
     (target.parent/"fiche_publication_status_v1.json").write_text(json.dumps(build_publication_manifest(featured),ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     for item in featured:
         oid=item.get("OBJECT_ID")
+        if oid.startswith("IBR-CTL-") or oid=="IBR-COI-0002":
+            continue
         if oid not in interpretations or not all(isinstance(item.get(k),str) and item[k].strip() for k in ("hypothesis","limits","evidence")):
             continue
         # Some original fichas have an empty suggested citation but contain
