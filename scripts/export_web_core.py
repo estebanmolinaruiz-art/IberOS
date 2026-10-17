@@ -48,6 +48,11 @@ def main():
         assert evidence["reading_approved"] is False and evidence["semantic_validation"] is False
         (target.parent/comparison_name).write_text(
             json.dumps(evidence,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
+    alignment=json.loads(Path("data/review/palaeographic_alignment_priority_v1.json").read_text(encoding="utf-8"))
+    assert len(alignment["rows"])==5
+    assert all(row["sign_by_sign_verified"] is False and row["core_execution_allowed"] is False for row in alignment["rows"])
+    (target.parent/"palaeographic_alignment_priority_v1.json").write_text(
+        json.dumps(alignment,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     comparison_path=Path("data/review/coimbra_edition_comparison_v1.json")
     if comparison_path.exists():
         edition_comparison=json.loads(comparison_path.read_text(encoding="utf-8"))
