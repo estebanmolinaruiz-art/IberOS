@@ -9,6 +9,7 @@ from iberos.rule_catalog import rule_catalog
 from iberos.reviewed_observations import evaluate_reviewed_observations
 from iberos.evidence_triage import build_evidence_triage
 from iberos.publication_gate import build_publication_manifest
+from iberos.documentary_evidence import build_documentary_evidence
 from iberos.publication_priority import build_publication_priority
 
 def build(observations=None):
@@ -41,6 +42,7 @@ def main():
     featured_path=Path("site/data/ficha-enrichment-featured.json")
     featured=json.loads(featured_path.read_text(encoding="utf-8")) if featured_path.exists() else []
     # Merge existing curated fiche shards, keeping featured entries authoritative.
+    (target.parent/"featured_documentary_review_v1.json").write_text(json.dumps(build_documentary_evidence(featured),ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     featured_ids={item.get("OBJECT_ID") for item in featured}
     for shard in range(1,6):
         source=Path(f"site/data/ficha-enrichment-{shard}.json")
