@@ -16,6 +16,7 @@ def build_publication_manifest(featured: list[dict]) -> dict:
     for oid,obj in registry.items():
         f=by_id.get(oid)
         editorial_complete=bool(f and all(isinstance(f.get(k),str) and f[k].strip() for k in ("hypothesis","evidence","limits","citation")))
+        is_documentary_control=oid.startswith("IBR-CTL-") or oid=="IBR-COI-0002"
         fiche_registered=bool(obj.get("Ficha_existente","").strip().lower() in {"sí","si","yes"})
         pending=[]
         if not fiche_registered:
@@ -29,8 +30,9 @@ def build_publication_manifest(featured: list[dict]) -> dict:
                     pending.append(label)
         records[oid]={
             "object_id":oid,
-            "publication_status":"PUBLICABLE_EDITORIAL" if editorial_complete and fiche_registered else "EDITORIAL_REVIEW_REQUIRED",
-            "featured_interpretation_available":editorial_complete,
+            "publication_status":("DOCUMENTARY_CONTROL_AVAILABLE" if is_documentary_control and editorial_complete and fiche_registered else "DOCUMENTARY_CONTROL_REVIEW" if is_documentary_control else "PUBLICABLE_EDITORIAL" if editorial_complete and fiche_registered else "EDITORIAL_REVIEW_REQUIRED"),
+            "featured_interpretation_available":editorial_complete and not is_documentary_control,
+            "documentary_control":is_documentary_control,
             "editorial_fiche_registered":fiche_registered,
             "pending_documentation":pending,
             "translation_validated":False,
