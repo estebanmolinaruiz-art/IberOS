@@ -197,3 +197,6 @@ assert(pechEdition.scholarly_edition_check.published_transcription===']itiatu:ba
 assert(pechEdition.scholarly_edition_check.additional_comparandum.published_transcription===']śiśalirbitiŕokankube'&&pechEdition.reading_approved===false,'Pech-Maho documented co-occurrence is not decipherment');
 
 assert(pechEdition.form_comparison.independent_physical_objects===2&&pechEdition.form_comparison.shared_morphology_verified===false&&pechEdition.form_comparison.shared_semantics_verified===false,'ROK forms remain unvalidated and same-piece references not double counted');
+
+const rokCross=json('data/rok_cross_object_comparison_v1.json');
+assert(rokCross.entries.length===7&&rokCross.semantic_gate==='OPEN'&&rokCross.entries.every(x=>x.semantic_approval===false&&x.counts_as_independent_validation===false),'ROK cross-object reference set remains open and unvalidated');
