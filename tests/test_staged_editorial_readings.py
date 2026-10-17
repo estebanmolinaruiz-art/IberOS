@@ -23,3 +23,15 @@ def test_pending_readings_do_not_trigger_semantic_rules():
         assert row["core_execution"]=="BLOCKED_MISSING_APPROVED_READING"
         assert not row["semantic_domain_suggestions"]
         assert not row["translation_validated"]
+
+def test_three_editorial_transcriptions_keep_uncertainty():
+    rows=[json.loads(s) for s in READINGS.read_text(encoding="utf-8").splitlines() if s.strip()]
+    by_id={r["object_id"]:r for r in rows}
+    assert "likinete" in by_id["IBR-MUS-0001"]["editorial_transcription"]["iberian"]
+    assert "tebanen" in by_id["IBR-LAP-0005"]["editorial_transcription"]["iberian"]
+    assert "[" in by_id["IBR-LAP-0005"]["editorial_transcription"]["latin"]
+    variants=by_id["IBR-PLM-0007"]["editorial_transcription"]
+    assert set(variants)=={"dual","nondual"}
+    assert variants["dual"]["B"]!=variants["nondual"]["B"]
+    assert all(r["uncertainties"] and r["source_location"] for r in rows)
+    assert all(r["review_status"]!="APPROVED_READING" for r in rows)
