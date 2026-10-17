@@ -168,3 +168,6 @@ assert(publication.records['IBR-PLM-0013'].featured_interpretation_available&&ca
 assert(['IBR-RUP-0001','IBR-RUP-0002','IBR-RUP-0003','IBR-RUP-0004','IBR-RUP-0005'].every(id=>publication.records[id].featured_interpretation_available&&candidateFeed.objects[id].candidates.some(c=>c.sources.length>0&&c.meaning_validated===false)),'Cinco signarios rupestres con referencia específica sin traducción validada');
 
 assert(['IBR-COI-0002','IBR-CTL-0001','IBR-CTL-0002','IBR-CTL-0003'].every(id=>publication.records[id].publication_status==='DOCUMENTARY_CONTROL_AVAILABLE'&&publication.records[id].featured_interpretation_available===false&&candidateFeed.objects[id].candidates.length===0),'Los cuatro controles documentales no se presentan como traducciones ni evidencia independiente');
+
+assert(publication.records['IBR-CER-0005'].publication_status==='PUBLICABLE_EDITORIAL'&&priority.pending_count===0&&publication.object_count===38,'Las 38 fichas tienen expediente editorial o control documental completo');
+assert(candidateFeed.objects['IBR-CER-0005'].candidates.every(c=>c.meaning_validated===false),'Val de Alegre nunca se transforma en traducción confirmada');
