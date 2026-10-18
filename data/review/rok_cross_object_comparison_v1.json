@@ -192,7 +192,12 @@
         "Trace modern readings with attributed editions and line boundaries",
         "Independent reviewer decision of segmentation"
       ],
-      "rok_recipient_02": "OPEN"
+      "rok_recipient_02": "OPEN",
+      "documentary_case_closed": true,
+      "documentary_close_reason": "Original Fletcher 1981 passages and comparative TE string registered; no further source-locating task for this bounded textual claim.",
+      "scientific_case_closed": false,
+      "pending_separate_workstream": "PALAEO_GRAPHIC_SIGN_MAPPING_AND_INDEPENDENT_REVIEW",
+      "final_disposition": "DOCUMENTARY_CLOSED_SCIENTIFIC_OPEN"
     }
   }
 }
