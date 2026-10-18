@@ -177,6 +177,22 @@
     "morpheme_boundary_confirmed": false,
     "semantic_effect_confirmed": false,
     "sign_positions_mapped": false,
-    "warning": "Bracket alignment is analytical string comparison only, not a diplomatic transcription or identification of individual ancient signs."
+    "warning": "Bracket alignment is analytical string comparison only, not a diplomatic transcription or identification of individual ancient signs.",
+    "decision": {
+      "status": "TEXTUAL_DIFFERENCE_DOCUMENTED_MORPHOLOGY_UNRESOLVED",
+      "historical_comparison": "BITEROKETETINE vs BITEROKETINE",
+      "normalized_modern_comparanda": [
+        "biteŕoketetine",
+        "biteŕoketine"
+      ],
+      "normalizations_not_independently_verified": true,
+      "conclusion": "The historical TE substring differs. This alone cannot show TE is a detachable grammatical morpheme, nor whether it expresses a participant role.",
+      "required_next_evidence": [
+        "Direct glyph-by-glyph mapping to Fletcher fig.22 and fig.25",
+        "Trace modern readings with attributed editions and line boundaries",
+        "Independent reviewer decision of segmentation"
+      ],
+      "rok_recipient_02": "OPEN"
+    }
   }
 }
