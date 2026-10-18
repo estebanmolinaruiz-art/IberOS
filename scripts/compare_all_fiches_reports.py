@@ -18,12 +18,13 @@ def main():
         review=analyze_library_readings(input_rows)
         for item in review['reports']:
             reading_reports.setdefault(item['object_id'],[]).append(item)
-    graphic=json.loads((ROOT/"data/review/casinos_graphic_uncertainties_v1.json").read_text(encoding="utf-8"))
     graphic_by_id={}
-    for evidence in graphic["records"]:
-        if evidence["sign_by_sign_verified"] or evidence["core_execution_allowed"] or evidence["meaning_validated"]:
-            raise ValueError("Unreviewed graphic evidence must not be promoted")
-        graphic_by_id.setdefault(evidence["object_id"],[]).append(evidence)
+    for graphic_file in ("casinos_graphic_uncertainties_v1.json","sagunto_caminreal_graphic_uncertainties_v1.json"):
+      graphic=json.loads((ROOT/"data/review"/graphic_file).read_text(encoding="utf-8"))
+      for evidence in graphic["records"]:
+          if evidence["sign_by_sign_verified"] or evidence["core_execution_allowed"] or evidence["meaning_validated"]:
+              raise ValueError("Unreviewed graphic evidence must not be promoted")
+          graphic_by_id.setdefault(evidence["object_id"],[]).append(evidence)
     rows=[]
     for shard in range(1,6):
         rows.extend(json.loads((DATA/f"ficha-enrichment-{shard}.json").read_text(encoding="utf-8")))
