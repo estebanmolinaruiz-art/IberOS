@@ -1,12 +1,12 @@
 {
   "schema": "IberOS-Graphic-Evidence-Review/1.0",
-  "method": "Editorial records, no graphic autopsy",
+  "method": "Editorial comparison only; source images identified but not independently inspected for these records",
   "record_count": 4,
   "records": [
     {
       "evidence_id": "SAGUNTO-LAT-01",
       "object_id": "IBR-LAP-0005",
-      "region": "01",
+      "region": "LAT-01",
       "location": "línea latina F.11.8",
       "editorial_alternatives": "M.F]ABIVS.M.L.ISIDORVS.COERAV[IT",
       "editorial_note": "Fragmentos inicial y final; no equivalencia automática con línea ibérica",
@@ -17,12 +17,19 @@
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "required_next_evidence": [
+        "high-resolution reproduction with traceable source",
+        "sign-position annotation against editorial transcript",
+        "independent qualified sign-by-sign assessment"
+      ],
+      "public_image_reuse_authorized": false
     },
     {
       "evidence_id": "SAGUNTO-IBR-01",
       "object_id": "IBR-LAP-0005",
-      "region": "01",
+      "region": "IBR-01",
       "location": "línea ibérica F.11.8",
       "editorial_alternatives": "]itoŕ.tebanen.otar.koroto[",
       "editorial_note": "Lectura editorial fragmentaria; correspondencia tebanen/coeravit discutida",
@@ -33,12 +40,19 @@
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "required_next_evidence": [
+        "high-resolution reproduction with traceable source",
+        "sign-position annotation against editorial transcript",
+        "independent qualified sign-by-sign assessment"
+      ],
+      "public_image_reuse_authorized": false
     },
     {
       "evidence_id": "CAMINREAL-SEG-01",
       "object_id": "IBR-MUS-0001",
-      "region": "01",
+      "region": "SEG-01",
       "location": "secuencia musiva E.7.1",
       "editorial_alternatives": "likinete · ekiar · usekeŕteku",
       "editorial_note": "Distinguir lectura unida likinete de interpretación segmentada likine-te",
@@ -49,12 +63,19 @@
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "required_next_evidence": [
+        "high-resolution reproduction with traceable source",
+        "sign-position annotation against editorial transcript",
+        "independent qualified sign-by-sign assessment"
+      ],
+      "public_image_reuse_authorized": false
     },
     {
       "evidence_id": "CAMINREAL-PUNC-01",
       "object_id": "IBR-MUS-0001",
-      "region": "01",
+      "region": "PUNC-01",
       "location": "zona anterior al inicio del texto",
       "editorial_alternatives": "posible interpunción / tesela no lingüística",
       "editorial_note": "No asignar carácter de separador hasta cotejo visual",
@@ -65,7 +86,14 @@
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
-      "core_execution_allowed": false
+      "core_execution_allowed": false,
+      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "required_next_evidence": [
+        "high-resolution reproduction with traceable source",
+        "sign-position annotation against editorial transcript",
+        "independent qualified sign-by-sign assessment"
+      ],
+      "public_image_reuse_authorized": false
     }
   ],
   "automatic_core_promotion": false,
