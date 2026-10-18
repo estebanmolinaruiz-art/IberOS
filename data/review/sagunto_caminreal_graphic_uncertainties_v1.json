@@ -1,6 +1,6 @@
 {
   "schema": "IberOS-Graphic-Evidence-Review/1.0",
-  "method": "Editorial comparison only; source images identified but not independently inspected for these records",
+  "method": "Photographic sources viewed or identified at image level; NO sign-by-sign verification and no translation validation",
   "record_count": 4,
   "records": [
     {
@@ -12,19 +12,21 @@
       "editorial_note": "Fragmentos inicial y final; no equivalencia automática con línea ibérica",
       "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
       "source": "Orduña 2008, Emerita 76(2), pp. 281-283; MLH III F.11.8 por cotejar",
-      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "visual_inspection": "ACADEMIC_FIGURE_LOCATED_NOT_SIGN_VERIFIED",
       "sign_by_sign_verified": false,
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
       "core_execution_allowed": false,
-      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "source_access_status": "SAGUNTO_FIGURE_5_VISUAL_PREVIEW_AVAILABLE_WITHOUT_SIGN_LEVEL_CHECK",
       "required_next_evidence": [
         "high-resolution reproduction with traceable source",
         "sign-position annotation against editorial transcript",
         "independent qualified sign-by-sign assessment"
       ],
-      "public_image_reuse_authorized": false
+      "public_image_reuse_authorized": false,
+      "graphic_observation": "Figura 5 de Estarán Tolosa (2021), p.535, presenta bloque fragmentado con dos líneas; los caracteres no se certificaron individualmente.",
+      "photo_source_url": "https://ifc.dpz.es/recursos/publicaciones/39/22/_ebook.pdf"
     },
     {
       "evidence_id": "SAGUNTO-IBR-01",
@@ -35,19 +37,21 @@
       "editorial_note": "Lectura editorial fragmentaria; correspondencia tebanen/coeravit discutida",
       "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
       "source": "Orduña 2008, Emerita 76(2), pp. 281-283",
-      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "visual_inspection": "ACADEMIC_FIGURE_LOCATED_NOT_SIGN_VERIFIED",
       "sign_by_sign_verified": false,
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
       "core_execution_allowed": false,
-      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "source_access_status": "SAGUNTO_FIGURE_5_VISUAL_PREVIEW_AVAILABLE_WITHOUT_SIGN_LEVEL_CHECK",
       "required_next_evidence": [
         "high-resolution reproduction with traceable source",
         "sign-position annotation against editorial transcript",
         "independent qualified sign-by-sign assessment"
       ],
-      "public_image_reuse_authorized": false
+      "public_image_reuse_authorized": false,
+      "graphic_observation": "Figura 5 de Estarán Tolosa (2021), p.535, presenta bloque fragmentado con dos líneas; los caracteres no se certificaron individualmente.",
+      "photo_source_url": "https://ifc.dpz.es/recursos/publicaciones/39/22/_ebook.pdf"
     },
     {
       "evidence_id": "CAMINREAL-SEG-01",
@@ -58,19 +62,21 @@
       "editorial_note": "Distinguir lectura unida likinete de interpretación segmentada likine-te",
       "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
       "source": "Simón Cornago 2015, Palaeohispanica 15, p. 96",
-      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "visual_inspection": "WEB_PHOTO_VIEWED_NO_SIGN_VERIFICATION",
       "sign_by_sign_verified": false,
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
       "core_execution_allowed": false,
-      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "source_access_status": "COMMONS_PHOTO_VIEWED_LOW_RESOLUTION_FOR_SIGN_CHECK",
       "required_next_evidence": [
         "high-resolution reproduction with traceable source",
         "sign-position annotation against editorial transcript",
         "independent qualified sign-by-sign assessment"
       ],
-      "public_image_reuse_authorized": false
+      "public_image_reuse_authorized": false,
+      "graphic_observation": "En la fotografía Commons se distingue banda inscrita horizontal en el borde inferior del mosaico, pero no se confirmó de forma independiente la totalidad de los signos ni la puntuación inicial.",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Mosaico_Casa_de_Likine_-_La_Caridad.jpg"
     },
     {
       "evidence_id": "CAMINREAL-PUNC-01",
@@ -81,19 +87,21 @@
       "editorial_note": "No asignar carácter de separador hasta cotejo visual",
       "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
       "source": "Simón Cornago 2015, Palaeohispanica 15, p. 96",
-      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "visual_inspection": "WEB_PHOTO_VIEWED_NO_SIGN_VERIFICATION",
       "sign_by_sign_verified": false,
       "review_status": "PENDING_GRAPHIC_REVIEW",
       "independent_reviewer": null,
       "meaning_validated": false,
       "core_execution_allowed": false,
-      "source_access_status": "SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED",
+      "source_access_status": "COMMONS_PHOTO_VIEWED_LOW_RESOLUTION_FOR_SIGN_CHECK",
       "required_next_evidence": [
         "high-resolution reproduction with traceable source",
         "sign-position annotation against editorial transcript",
         "independent qualified sign-by-sign assessment"
       ],
-      "public_image_reuse_authorized": false
+      "public_image_reuse_authorized": false,
+      "graphic_observation": "En la fotografía Commons se distingue banda inscrita horizontal en el borde inferior del mosaico, pero no se confirmó de forma independiente la totalidad de los signos ni la puntuación inicial.",
+      "photo_source_url": "https://commons.wikimedia.org/wiki/File:Mosaico_Casa_de_Likine_-_La_Caridad.jpg"
     }
   ],
   "automatic_core_promotion": false,
