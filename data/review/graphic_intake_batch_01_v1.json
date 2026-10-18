@@ -1,0 +1,208 @@
+{
+  "schema": "IberOS-Graphic-Intake-Batch/1.0",
+  "batch": 1,
+  "created_on": "2026-10-18",
+  "records": [
+    {
+      "order": 1,
+      "object_id": "IBR-CER-0005",
+      "name": "Dolium de Val de Alegre I",
+      "corpus_role": "CONTROL_ONLY",
+      "catalogue_source": "https://doi.org/10.1387/veleia.13345",
+      "triage_score": 4,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 2,
+      "object_id": "IBR-CER-0002",
+      "name": "Vaso de los Letreros de Llíria",
+      "corpus_role": "INCLUDE",
+      "catalogue_source": "https://doi.org/10.36707/palaeohispanica.v0i17.132",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 3,
+      "object_id": "IBR-LAP-0001",
+      "name": "Árula ibérica de Tarragona",
+      "corpus_role": "CONDITIONAL",
+      "catalogue_source": "https://doi.org/10.36707/palaeohispanica.v0i9.243",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 4,
+      "object_id": "IBR-LAP-0002",
+      "name": "Estela-monumento de La Vispesa",
+      "corpus_role": "CONDITIONAL",
+      "catalogue_source": "https://ifc.dpz.es/publicaciones/ebooks/id/2722",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 5,
+      "object_id": "IBR-OBJ-0001",
+      "name": "Tortera inscrita de Can Rodon",
+      "corpus_role": "CONTROL_ONLY",
+      "catalogue_source": "https://doi.org/10.1387/veleia.13345",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 6,
+      "object_id": "IBR-PLM-0008",
+      "name": "Signarios del Tos Pelat",
+      "corpus_role": "CONTROL_ONLY",
+      "catalogue_source": "https://doi.org/10.36707/palaeohispanica.v0i11.82",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 7,
+      "object_id": "IBR-PLM-0011",
+      "name": "Plomo de la Moleta del Remei",
+      "corpus_role": "CONDITIONAL",
+      "catalogue_source": "https://doi.org/10.36707/palaeohispanica.v0i8.265",
+      "triage_score": 3,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 8,
+      "object_id": "IBR-CER-0004",
+      "name": "Inscripción de La Joncosa",
+      "corpus_role": "INCLUDE",
+      "catalogue_source": "https://doi.org/10.1387/veleia.2850",
+      "triage_score": 2,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 9,
+      "object_id": "IBR-PLM-0009",
+      "name": "Plomo I de La Serreta",
+      "corpus_role": "INCLUDE",
+      "catalogue_source": "https://es.wikipedia.org/wiki/Plomo_de_La_Serreta",
+      "triage_score": 2,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    },
+    {
+      "order": 10,
+      "object_id": "IBR-PLM-0012",
+      "name": "Lámina greco-ibérica de la Illeta dels Banyets",
+      "corpus_role": "INCLUDE",
+      "catalogue_source": "https://doi.org/10.36707/palaeohispanica.v24i1.629",
+      "triage_score": 2,
+      "source_is_primary_verified": false,
+      "figure_page_verified": false,
+      "facsimile_inspected": false,
+      "permissions_verified": false,
+      "sign_by_sign_verified": false,
+      "semantic_validation": false,
+      "work_to_do": [
+        "verify source resolves to relevant edition",
+        "locate exact figure and printed page",
+        "assess image quality and reuse rights",
+        "record line and sign variants with source"
+      ]
+    }
+  ],
+  "scientifically_validated_translations": 0
+}
