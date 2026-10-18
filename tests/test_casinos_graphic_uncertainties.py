@@ -26,5 +26,7 @@ def test_all_fiches_report_includes_five_unapproved_graphic_regions():
     assert casinos["graphic_uncertainty_count"]==5
     assert {x["region"] for x in casinos["graphic_uncertainties"]}=={"A1","A3","B1","B2","B3"}
     assert all(not x["sign_by_sign_verified"] for x in casinos["graphic_uncertainties"])
+    assert all(len(x["requirements_before_core"])==4 for x in casinos["graphic_uncertainties"])
+    assert report["objects_with_graphic_uncertainty"]==["IBR-PLM-0007"]
     assert casinos["core_execution"]=="BLOCKED_MISSING_APPROVED_READING"
     assert report["core_executed_count"]==0
