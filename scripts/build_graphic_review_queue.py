@@ -33,12 +33,16 @@ def build_queue():
         output.append({"object_id":oid,"name":row.get("Nombre_objeto",""),"reference":row.get("Referencia_epigráfica",""),
             "source_url":row.get("Fuente",""),"paleo_status_catalogue":row.get("PALEO_Status",""),
             "entry_status_catalogue":row.get("ENTRY_Status",""),"triage_score":score,
+            "corpus_role":row.get("IberOS_Inclusion",""),
+            "review_lanes":("NEGATIVE_CONTROL" if row.get("IberOS_Inclusion")=="EXCLUDED_CONTROL" else ("SIGNARY_CONTROL" if row.get("IberOS_Inclusion")=="CONTROL_ONLY" else "EPIGRAPHIC_REVIEW")),
+            "core_semantic_eligible":False,
             "priority_basis":"CATALOGUE_WORKFLOW_ONLY","image_access_checked":False,
             "image_rights_checked":False,"graphic_reading_verified":False,"translation_validated":False,
             "next_step":"Locate primary edition and image, verify licensing and original sign legibility"})
     output.sort(key=lambda x:(-x["triage_score"],x["object_id"]))
     return {"schema":"IberOS-Graphic-Queue/1.0","total_objects":38,"unreviewed_queue_count":len(output),
         "objects_with_existing_graphic_observations":len(counts),"prioritization":"Operational triage based on existing catalogue; NOT image-source availability or quality ranking",
+        "first_batch":[{"object_id":r["object_id"],"name":r["name"],"source_url":r["source_url"],"review_lanes":r["review_lanes"],"task":"Verify edition, figure, reproduction rights and sign legibility"} for r in output[:10]],
         "records":output,"validated_translations":0}
 
 if __name__=="__main__":
