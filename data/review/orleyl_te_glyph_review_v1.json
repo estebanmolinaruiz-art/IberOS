@@ -45,7 +45,7 @@
   "eligible_for_core_execution": false,
   "notice": "The case object id is a placeholder link to the curated Orleyl record and must not be used to identify both inscribed objects until their IDs are independently reconciled.",
   "image_quality_control": {
-    "review_status": "FAILED_FOR_SIGN_LEVEL_COMPARISON",
+    "review_status": "FULL_FIGURE_ORIENTATION_CORRECTED_GLYPH_MAPPING_PENDING",
     "observation": "The previous Orleyl VII-B line crop contains mostly blank space and does not reproduce enough glyphs to check the proposed TE absence.",
     "usable_overview": "Fletcher figures 22 and 25 show inscriptions at overview scale, but target TE glyphs have not been aligned to exact positions.",
     "previous_crop_may_be_used_as_evidence": false,
@@ -55,6 +55,16 @@
       "Map each glyph and divider to a source figure pixel coordinate and edition transliteration",
       "Compare independently with figure 22 and later readings"
     ],
-    "reviewer_independent": false
+    "reviewer_independent": false,
+    "corrected_full_figure": {
+      "figure": "25, Orleyl VII-B",
+      "previous_orientation": "UPSIDE_DOWN",
+      "correction": "ROTATED_180_DEGREES",
+      "caption_legible": true,
+      "complete_inscribed_field_visible": true,
+      "glyph_to_text_line_mapping_complete": false,
+      "source": "Fletcher Valls (1981), fig.25",
+      "license_for_web_redistribution_verified": false
+    }
   }
 }
