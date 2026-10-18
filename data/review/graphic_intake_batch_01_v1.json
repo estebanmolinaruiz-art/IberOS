@@ -21,7 +21,11 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+      "reference_title": "Ibèric \"kutu\" i els abecedaris ibèrics",
+      "reference_note": "Joan Ferrer i Jané, Veleia 31 (2014). Fuente editorial común para Can Rodon y Val de Alegre. Hipótesis de abecedarios no duales; no implica comprobación gráfica de signos.",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 2,
@@ -89,7 +93,10 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "catalogue_source_issue": "WRONG_LINK: IFC id 2722 corresponde a Los judíos de Uncastillo en la Edad Media, no a la estela de La Vispesa",
+      "bibliographic_landing_page_checked": false,
+      "source_correction_required": true
     },
     {
       "order": 5,
@@ -109,7 +116,11 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+      "reference_title": "Ibèric \"kutu\" i els abecedaris ibèrics",
+      "reference_note": "Joan Ferrer i Jané, Veleia 31 (2014). Fuente editorial común para Can Rodon y Val de Alegre. Hipótesis de abecedarios no duales; no implica comprobación gráfica de signos.",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 6,
@@ -204,7 +215,10 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "source_detail_status": "SECONDARY_REFERENCE_FOUND_PRIMARY_EDITION_PENDING",
+      "secondary_source_url": "https://www.centroarqueologicosaguntino.es/uploads/descargas/477_117%20Las%20inscripciones%20ibericas%20de%20la%20serreta%20y%20su%20contexto%20arqueologico%2028-29.pdf",
+      "secondary_source_note": "Documentación contextual y bibliografía de Serreta I; la ficha cita una página enciclopédica como fuente inicial, no edición primaria; revisión de edición original pendiente."
     },
     {
       "order": 10,
@@ -233,5 +247,6 @@
     }
   ],
   "scientifically_validated_translations": 0,
-  "verified_bibliographic_landing_pages": 6
+  "verified_bibliographic_landing_pages": 8,
+  "bibliographic_source_errors": 1
 }
