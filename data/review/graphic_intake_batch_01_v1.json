@@ -149,7 +149,12 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ifc-ojs.es/index.php/palaeohispanica/ca/article/view/265",
+      "reference_title": "Una inscripción ibérica sobre plomo procedente del poblado de la Moleta del Remei",
+      "reference_note": "Ferrer i Jané et al., Palaeohispanica 8 (2008), pp. 203–216. Edición describe 21 signos en tres líneas, soporte fragmentario y alterado. Sitio web registra fecha digital de 2019; no confundir con año del volumen.",
+      "source_detail_status": "JOURNAL_ABSTRACT_CHECKED_NO_FIGURE_INSPECTION",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 8,
@@ -209,9 +214,14 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/629",
+      "reference_title": "Una nueva lámina de plomo con inscripciones en alfabeto greco-ibérico de la Illeta dels Banyets",
+      "reference_note": "Ferrer i Jané, Olcina Doménech, Martínez Carmona y Verdú Parra, Palaeohispanica 24 (2024), pp. 247–278; lámina hallada plegada en 2018. La página de revista anuncia licencia CC BY-SA 4.0 del artículo, no supone necesariamente derechos independientes sobre cada fotografía.",
+      "source_detail_status": "JOURNAL_ABSTRACT_CHECKED_NO_FIGURE_INSPECTION",
+      "bibliographic_landing_page_checked": true
     }
   ],
   "scientifically_validated_translations": 0,
-  "verified_bibliographic_landing_pages": 2
+  "verified_bibliographic_landing_pages": 4
 }
