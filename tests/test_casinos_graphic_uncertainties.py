@@ -44,5 +44,7 @@ def test_sagunto_caminreal_regions_are_traceable_and_require_independent_review(
     assert len({(r["object_id"],r["region"]) for r in records})==len(records)
     assert all(len(r["required_next_evidence"])==3 for r in records)
     assert all(not r["public_image_reuse_authorized"] for r in records)
-    assert all(r["source_access_status"]=="SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED" for r in records)
+    assert all(r["photo_source_url"].startswith("https://") for r in records)
+    assert all(r["graphic_observation"] for r in records)
+    assert all("SIGN" in r["visual_inspection"] or "SIGN" in r["source_access_status"] for r in records)
     assert all(r["independent_reviewer"] is None and not r["meaning_validated"] for r in records)
