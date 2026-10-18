@@ -1,0 +1,91 @@
+{
+  "schema": "IberOS-Graphic-Review-Processes/1.0",
+  "date": "2026-10-18",
+  "scope_object_count": 3,
+  "evidence_count": 9,
+  "process_count": 10,
+  "processes": [
+    {
+      "id": "P01",
+      "title": "Inventory all graphic evidence",
+      "deliverable": "9 records for 3 objects",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P02",
+      "title": "Unique evidence identifiers",
+      "deliverable": "Each source observation has stable ID",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P03",
+      "title": "Disambiguate inscription sides",
+      "deliverable": "Casinos A/B and Sagunto Latin/Iberian",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P04",
+      "title": "Separate editions from readings",
+      "deliverable": "Keep editorial alternates without endorsement",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P05",
+      "title": "Tag actual image inspection",
+      "deliverable": "Differentiate viewed photo, drawing, figure locator",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P06",
+      "title": "Record preservation defects",
+      "deliverable": "Track breaks erosion concretion and unclear strokes",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P07",
+      "title": "Identify missing independent reviews",
+      "deliverable": "All nine remain without expert sign approval",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P08",
+      "title": "Track reproduction permissions",
+      "deliverable": "Do not upload unlicensed images",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P09",
+      "title": "Assert semantic Core safety",
+      "deliverable": "No uncertain region may promote interpretation",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    },
+    {
+      "id": "P10",
+      "title": "Prepare prioritized graphic review queue",
+      "deliverable": "A1/A3/B1/B2/B3, Sagunto, Caminreal",
+      "status": "COMPLETE",
+      "scope": "IBR-PLM-0007; IBR-LAP-0005; IBR-MUS-0001",
+      "scientific_validation": false
+    }
+  ],
+  "scientifically_validated_translations": 0,
+  "notes": "Completion means documentary/control workflow implemented; it does not mean graphics have been independently decoded or expert-approved."
+}
