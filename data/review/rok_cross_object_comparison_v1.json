@@ -157,5 +157,26 @@
   "physical_witness_rule": "Multiple lines from B.7.38 or F.9.7 are never counted as independent physical objects; D.0.1 is the originating anchor.",
   "semantic_gate": "OPEN",
   "automatically_promote_to_core": false,
-  "review_note": "Figures 22 and 25 rotated into horizontal orientation, isolated in local comparison image. Original Fletcher PDF p.77 explicitly compares GUDUR BITEROKETETINE with GUDUBOIKE BITEROKETINE (missing -TE-). This verifies the printed comparison only; assignment to individual graph shapes and modern normalization pending."
+  "review_note": "Figures 22 and 25 rotated into horizontal orientation, isolated in local comparison image. Original Fletcher PDF p.77 explicitly compares GUDUR BITEROKETETINE with GUDUBOIKE BITEROKETINE (missing -TE-). This verifies the printed comparison only; assignment to individual graph shapes and modern normalization pending.",
+  "fletcher_te_contrast": {
+    "source": "Fletcher Valls 1981, discussion Orleyl V-19, PDF p.77, drawings figs.22 and 25",
+    "readings": [
+      {
+        "object": "F.9.5",
+        "historical": "BITEROKETETINE",
+        "comparison": "BITEROKE[TE]TINE"
+      },
+      {
+        "object": "F.9.7",
+        "historical": "BITEROKETINE",
+        "comparison": "BITEROKE[]TINE"
+      }
+    ],
+    "observed_difference": "TE appears in historical Orleyl V string but not VII-B string",
+    "modern_equivalence_confirmed": false,
+    "morpheme_boundary_confirmed": false,
+    "semantic_effect_confirmed": false,
+    "sign_positions_mapped": false,
+    "warning": "Bracket alignment is analytical string comparison only, not a diplomatic transcription or identification of individual ancient signs."
+  }
 }
