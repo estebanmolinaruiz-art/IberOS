@@ -216,4 +216,4 @@ assert(rokCross.fletcher_te_contrast.decision.documentary_case_closed===true&&ro
 const orleylGlyph=json('data/orleyl_te_glyph_review_v1.json');
 assert(orleylGlyph.cases.length===2&&orleylGlyph.exact_glyph_coordinates_verified===false&&orleylGlyph.eligible_for_core_execution===false,'Orleyl figures indexed without claiming per-glyph approval');
 
-assert(orleylGlyph.image_quality_control.review_status==='FAILED_FOR_SIGN_LEVEL_COMPARISON'&&orleylGlyph.image_quality_control.previous_crop_may_be_used_as_evidence===false,'Defective Orleyl VII-B crop excluded from proof');
+assert(orleylGlyph.image_quality_control.review_status==='FULL_FIGURE_ORIENTATION_CORRECTED_GLYPH_MAPPING_PENDING'&&orleylGlyph.image_quality_control.previous_crop_may_be_used_as_evidence===false,'Defective Orleyl VII-B crop excluded from proof');
