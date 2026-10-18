@@ -18,6 +18,12 @@ def main():
         review=analyze_library_readings(input_rows)
         for item in review['reports']:
             reading_reports.setdefault(item['object_id'],[]).append(item)
+    graphic=json.loads((ROOT/"data/review/casinos_graphic_uncertainties_v1.json").read_text(encoding="utf-8"))
+    graphic_by_id={}
+    for evidence in graphic["records"]:
+        if evidence["sign_by_sign_verified"] or evidence["core_execution_allowed"] or evidence["meaning_validated"]:
+            raise ValueError("Unreviewed graphic evidence must not be promoted")
+        graphic_by_id.setdefault(evidence["object_id"],[]).append(evidence)
     rows=[]
     for shard in range(1,6):
         rows.extend(json.loads((DATA/f"ficha-enrichment-{shard}.json").read_text(encoding="utf-8")))
@@ -50,6 +56,8 @@ def main():
             "editorial_fields":fields,
             "featured_in_public_selection":oid in fmap,
             "hypothesis_vs_report":"DOCUMENTARY_COMPARISON_ONLY",
+            "graphic_uncertainty_count":len(graphic_by_id.get(oid,[])),
+            "graphic_uncertainties":[{"evidence_id":e["evidence_id"],"region":e["region"],"location":e["location"],"alternatives":e["editorial_alternatives"],"review_status":e["review_status"],"sign_by_sign_verified":False} for e in graphic_by_id.get(oid,[])],
             "editorially_approved_reading_in_input":bool(approved),
             "independently_verified_sign_transcription":False,
             "core_execution":"NON_PROMOTING_DOMAIN_SUGGESTIONS" if approved else "BLOCKED_MISSING_APPROVED_READING",
@@ -73,6 +81,7 @@ def main():
         "count":len(result),
         "cited_count":sum(x["citation_present"] for x in result),
         "editorial_complete_count":sum(x["editorial_fields_complete"] for x in result),
+        "graphic_uncertainty_count":sum(x["graphic_uncertainty_count"] for x in result),
         "pending_readings_count":sum(len(x["pending_editorial_readings"]) for x in result),
         "core_executed_count":sum(x["core_execution"]=="NON_PROMOTING_DOMAIN_SUGGESTIONS" for x in result),
         "scientifically_validated_translations":0,
