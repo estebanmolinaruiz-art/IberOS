@@ -95,8 +95,13 @@
         "record line and sign variants with source"
       ],
       "catalogue_source_issue": "WRONG_LINK: IFC id 2722 corresponde a Los judíos de Uncastillo en la Edad Media, no a la estela de La Vispesa",
-      "bibliographic_landing_page_checked": false,
-      "source_correction_required": true
+      "bibliographic_landing_page_checked": true,
+      "source_correction_required": true,
+      "verified_reference_url": "https://euskerarenjatorria.eus/wp-content/uploads/2013/06/Bin%C3%A9far-1.pdf",
+      "reference_title": "Nuevas interpretaciones sobre el monumento ibérico de La Vispesa (Tamarite de Litera, Huesca)",
+      "reference_note": "Ignasi Garcés Estallo, Caesaraugusta 78 (2007), pp.337–354; copia académica localizada; véase además ficha de Patrimonio Cultural de Aragón y catálogo Museo de Huesca. El enlace catalogado original no corresponde a esta obra.",
+      "source_detail_status": "ACADEMIC_ARTICLE_IDENTIFIED_NO_SIGN_VERIFICATION",
+      "corrected_primary_bibliographic_source": "Garcés Estallo (2007), Caesaraugusta 78, 337–354"
     },
     {
       "order": 5,
@@ -216,9 +221,13 @@
         "assess image quality and reuse rights",
         "record line and sign variants with source"
       ],
-      "source_detail_status": "SECONDARY_REFERENCE_FOUND_PRIMARY_EDITION_PENDING",
+      "source_detail_status": "MUSEUM_CATALOGUE_VERIFIED_PRIMARY_PALEOGRAPHIC_EDITION_PENDING",
       "secondary_source_url": "https://www.centroarqueologicosaguntino.es/uploads/descargas/477_117%20Las%20inscripciones%20ibericas%20de%20la%20serreta%20y%20su%20contexto%20arqueologico%2028-29.pdf",
-      "secondary_source_note": "Documentación contextual y bibliografía de Serreta I; la ficha cita una página enciclopédica como fuente inicial, no edición primaria; revisión de edición original pendiente."
+      "secondary_source_note": "Documentación contextual y bibliografía de Serreta I; la ficha cita una página enciclopédica como fuente inicial, no edición primaria; revisión de edición original pendiente.",
+      "verified_reference_url": "https://www.alcoi.org/export/sites/default/es/areas/cultura/museo/descargas/publi_catalogo/catalogo_cas_04_CATALOGO_MATERIALES.pdf",
+      "reference_title": "Catálogo del Museu Arqueològic Municipal d'Alcoi: Plomo I de La Serreta",
+      "reference_note": "Catálogo de museo, p.205, inventario 1.016; describe lámina grecoibérica con textos en ambas caras y cautela sobre su relación. Fuente museística de catalogación; no sustituye la edición paleográfica primaria (Fletcher y Silgo 1992; Untermann 1990).",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 10,
@@ -247,6 +256,7 @@
     }
   ],
   "scientifically_validated_translations": 0,
-  "verified_bibliographic_landing_pages": 8,
-  "bibliographic_source_errors": 1
+  "verified_bibliographic_landing_pages": 10,
+  "bibliographic_source_errors": 1,
+  "primary_paleographic_editions_fully_checked": 0
 }
