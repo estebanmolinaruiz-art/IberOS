@@ -208,3 +208,5 @@ assert(['F.9.5','F.9.7'].every(ref=>{const x=rokCross.entries.find(y=>y.referenc
 assert(rokCross.entries.filter(x=>['F.9.5','F.9.7'].includes(x.reference)).every(x=>x.scholarly_comparison.fletcher_1981_parallel&&x.scholarly_comparison.signs_verified===false),'Fletcher reading contrast verified as documentary, not sign-level approval');
 
 assert(rokCross.fletcher_te_contrast.modern_equivalence_confirmed===false&&rokCross.fletcher_te_contrast.morpheme_boundary_confirmed===false&&rokCross.fletcher_te_contrast.sign_positions_mapped===false,'Fletcher TE contrast remains textual and morphologically unverified');
+
+assert(rokCross.fletcher_te_contrast.decision.status==='TEXTUAL_DIFFERENCE_DOCUMENTED_MORPHOLOGY_UNRESOLVED'&&rokCross.fletcher_te_contrast.decision.rok_recipient_02==='OPEN','Orleyl TE textual contrast resolved without false morphology');
