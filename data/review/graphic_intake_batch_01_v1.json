@@ -41,7 +41,11 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/242",
+      "reference_title": "¿Un posible fragmento literario ibérico en la cerámica de San Miguel de Liria (MLH F.13.3)?",
+      "reference_note": "Silgo Gauche; Palaeohispanica 9 (2009), pp.515–516; secondary interpretative note, not photographic verification; separate from catalogue DOI v0i17.132.",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 3,
@@ -61,7 +65,11 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/243",
+      "reference_title": "Una inscripción ibérica sobre un árula de Tarragona (C.18.7)",
+      "reference_note": "Simón Cornago; Palaeohispanica 9 (2009), pp.517–530; edition locates artefact in Museu Nacional Arqueològic de Tarragona; figures pending direct inspection.",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 4,
@@ -204,5 +212,6 @@
       ]
     }
   ],
-  "scientifically_validated_translations": 0
+  "scientifically_validated_translations": 0,
+  "verified_bibliographic_landing_pages": 2
 }
