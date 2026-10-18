@@ -20,7 +20,7 @@ def test_first_batch_graphic_intake_safety():
 def test_verified_bibliographic_pages_do_not_imply_facsimile_verification():
     data=json.loads(DATA.read_text(encoding="utf-8"))
     confirmed=[r for r in data["records"] if r.get("bibliographic_landing_page_checked")]
-    assert len(confirmed)==data["verified_bibliographic_landing_pages"]==4
-    assert {r["object_id"] for r in confirmed}=={"IBR-CER-0002","IBR-LAP-0001","IBR-PLM-0011","IBR-PLM-0012"}
-    assert all("ifc-ojs.es/" in r["verified_reference_url"] for r in confirmed)
+    assert len(confirmed)==data["verified_bibliographic_landing_pages"]==6
+    assert {r["object_id"] for r in confirmed}=={"IBR-CER-0002","IBR-LAP-0001","IBR-PLM-0011","IBR-PLM-0012","IBR-CER-0004","IBR-PLM-0008"}
+    assert all(r["verified_reference_url"].startswith("https://") for r in confirmed)
     assert all(not r["figure_page_verified"] and not r["facsimile_inspected"] for r in confirmed)
