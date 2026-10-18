@@ -129,7 +129,12 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ifc.dpz.es/recursos/publicaciones/31/37/_ebook.pdf",
+      "reference_title": "El plomo escrito del Tos Pelat (Moncada, Valencia)",
+      "reference_note": "Burriel y colaboradores, Palaeohispanica 11 (2011), pp.191–224; signarios duales, fragmentación impide reconstruir orden completo de signos. PDF publicado; láminas no examinadas signo por signo.",
+      "source_detail_status": "JOURNAL_PDF_TEXT_CHECKED_NO_FIGURE_INSPECTION",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 7,
@@ -174,7 +179,12 @@
         "locate exact figure and printed page",
         "assess image quality and reuse rights",
         "record line and sign variants with source"
-      ]
+      ],
+      "verified_reference_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/2850",
+      "reference_title": "Nova lectura de la inscripció ibèrica de La Joncosa (Jorba, Barcelona)",
+      "reference_note": "Joan Ferrer i Jané, Veleia 23 (2006); nueva lectura post-restauración, diez líneas y casi 350 signos. Fecha electrónica OJS 2011 distinta del año del volumen 2006.",
+      "source_detail_status": "JOURNAL_ABSTRACT_CHECKED_NO_FIGURE_INSPECTION",
+      "bibliographic_landing_page_checked": true
     },
     {
       "order": 9,
@@ -223,5 +233,5 @@
     }
   ],
   "scientifically_validated_translations": 0,
-  "verified_bibliographic_landing_pages": 4
+  "verified_bibliographic_landing_pages": 6
 }
