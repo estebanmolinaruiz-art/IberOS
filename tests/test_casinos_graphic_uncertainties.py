@@ -36,3 +36,13 @@ def test_sagunto_caminreal_uncertainties_are_blocked():
     assert x["record_count"]==4
     assert {r["object_id"] for r in x["records"]}=={"IBR-LAP-0005","IBR-MUS-0001"}
     assert all(not r["sign_by_sign_verified"] and not r["core_execution_allowed"] for r in x["records"])
+
+def test_sagunto_caminreal_regions_are_traceable_and_require_independent_review():
+    other=json.loads((DATA.parent/"sagunto_caminreal_graphic_uncertainties_v1.json").read_text(encoding="utf-8"))
+    records=other["records"]
+    assert len({r["evidence_id"] for r in records})==len(records)
+    assert len({(r["object_id"],r["region"]) for r in records})==len(records)
+    assert all(len(r["required_next_evidence"])==3 for r in records)
+    assert all(not r["public_image_reuse_authorized"] for r in records)
+    assert all(r["source_access_status"]=="SOURCE_LOCATED_IMAGE_NOT_INDEPENDENTLY_EXAMINED" for r in records)
+    assert all(r["independent_reviewer"] is None and not r["meaning_validated"] for r in records)
