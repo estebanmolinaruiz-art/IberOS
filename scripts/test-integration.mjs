@@ -206,3 +206,5 @@ assert(['F.9.5','F.9.7'].every(ref=>rokCross.entries.find(x=>x.reference===ref)?
 assert(['F.9.5','F.9.7'].every(ref=>{const x=rokCross.entries.find(y=>y.reference===ref);return x.primary_source_locator.status==='PRIMARY_EDITION_PDF_TEXT_AND_OVERVIEW_DRAWINGS_INSPECTED'&&x.scholarly_comparison.primary_edition_checked===true&&x.scholarly_comparison.signs_verified===false;}),'Orleyl primary source located but unchecked');
 
 assert(rokCross.entries.filter(x=>['F.9.5','F.9.7'].includes(x.reference)).every(x=>x.scholarly_comparison.fletcher_1981_parallel&&x.scholarly_comparison.signs_verified===false),'Fletcher reading contrast verified as documentary, not sign-level approval');
+
+assert(rokCross.fletcher_te_contrast.modern_equivalence_confirmed===false&&rokCross.fletcher_te_contrast.morpheme_boundary_confirmed===false&&rokCross.fletcher_te_contrast.sign_positions_mapped===false,'Fletcher TE contrast remains textual and morphologically unverified');
