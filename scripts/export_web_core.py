@@ -48,6 +48,10 @@ def main():
         assert evidence["reading_approved"] is False and evidence["semantic_validation"] is False
         (target.parent/comparison_name).write_text(
             json.dumps(evidence,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
+    orleyl_glyph=json.loads(Path("data/review/orleyl_te_glyph_review_v1.json").read_text(encoding="utf-8"))
+    assert len(orleyl_glyph["cases"])==2 and orleyl_glyph["exact_glyph_coordinates_verified"] is False
+    (target.parent/"orleyl_te_glyph_review_v1.json").write_text(
+        json.dumps(orleyl_glyph,ensure_ascii=False,indent=2,sort_keys=True)+chr(10),encoding="utf-8")
     rok_cross=json.loads(Path("data/review/rok_cross_object_comparison_v1.json").read_text(encoding="utf-8"))
     assert len(rok_cross["entries"])==7 and rok_cross["semantic_gate"]=="OPEN"
     assert all(not x["counts_as_independent_validation"] for x in rok_cross["entries"])
