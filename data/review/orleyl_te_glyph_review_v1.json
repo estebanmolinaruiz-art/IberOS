@@ -1,0 +1,47 @@
+{
+  "schema": "IberOS-Orleyl-TE-Glyph-Review/1.0",
+  "protocol": "ROK-RECIPIENT-02",
+  "edition": {
+    "author": "Domingo Fletcher Valls",
+    "year": 1981,
+    "title": "Los plomos escritos (Orleyl V, VI y VII)",
+    "source_url": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
+    "comparison_location": "PDF p.77, comentario Orleyl V-19"
+  },
+  "cases": [
+    {
+      "reference": "F.9.5",
+      "historic_reading": "BITEROKETETINE",
+      "figure": "22",
+      "figure_pdf_page": 65,
+      "sequence": "Orleyl V-19",
+      "glyph_positions_verified": [],
+      "target_substring": "TE",
+      "target_glyph_position": null
+    },
+    {
+      "reference": "F.9.7",
+      "historic_reading": "BITEROKETINE",
+      "figure": "25",
+      "figure_pdf_page": 111,
+      "sequence": "Orleyl VII-B 7",
+      "glyph_positions_verified": [],
+      "target_substring": "TE absent in editorial string",
+      "target_glyph_position": null
+    }
+  ],
+  "required_checks": [
+    "Match each sign to exact line and image coordinates",
+    "Record visual alternative readings and damaged signs",
+    "Distinguish original ink/strokes from editorial drawings",
+    "Compare normalized modern editions at same sign positions",
+    "Independent expert checks segmentation"
+  ],
+  "drawing_inspected_at_overview_level": true,
+  "exact_glyph_coordinates_verified": false,
+  "modern_readings_independently_verified": false,
+  "te_morpheme_confirmed": false,
+  "recipient_semantics_confirmed": false,
+  "eligible_for_core_execution": false,
+  "notice": "The case object id is a placeholder link to the curated Orleyl record and must not be used to identify both inscribed objects until their IDs are independently reconciled."
+}
