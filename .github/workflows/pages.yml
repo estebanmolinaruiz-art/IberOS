@@ -1,7 +1,8 @@
 name: pages
 on:
-  push:
-    branches: ["main"]
+  # Publicar solo después de acumular un lote de 10 cambios.
+  # Los tests siguen ejecutándose con cada push; Pages solo por lanzamiento manual.
+  workflow_dispatch:
 
 concurrency:
   group: "pages"
