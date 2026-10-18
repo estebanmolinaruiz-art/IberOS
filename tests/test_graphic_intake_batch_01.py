@@ -20,7 +20,15 @@ def test_first_batch_graphic_intake_safety():
 def test_verified_bibliographic_pages_do_not_imply_facsimile_verification():
     data=json.loads(DATA.read_text(encoding="utf-8"))
     confirmed=[r for r in data["records"] if r.get("bibliographic_landing_page_checked")]
-    assert len(confirmed)==data["verified_bibliographic_landing_pages"]==6
-    assert {r["object_id"] for r in confirmed}=={"IBR-CER-0002","IBR-LAP-0001","IBR-PLM-0011","IBR-PLM-0012","IBR-CER-0004","IBR-PLM-0008"}
+    assert len(confirmed)==data["verified_bibliographic_landing_pages"]==8
+    assert {r["object_id"] for r in confirmed}=={"IBR-CER-0002","IBR-LAP-0001","IBR-PLM-0011","IBR-PLM-0012","IBR-CER-0004","IBR-PLM-0008","IBR-CER-0005","IBR-OBJ-0001"}
     assert all(r["verified_reference_url"].startswith("https://") for r in confirmed)
     assert all(not r["figure_page_verified"] and not r["facsimile_inspected"] for r in confirmed)
+
+def test_false_vispesa_link_is_explicitly_blocked():
+    data=json.loads(DATA.read_text(encoding="utf-8"))
+    row=next(x for x in data["records"] if x["object_id"]=="IBR-LAP-0002")
+    assert row["source_correction_required"] is True
+    assert row["catalogue_source_issue"].startswith("WRONG_LINK:")
+    assert row.get("bibliographic_landing_page_checked") is not True
+    assert data["bibliographic_source_errors"]==1
