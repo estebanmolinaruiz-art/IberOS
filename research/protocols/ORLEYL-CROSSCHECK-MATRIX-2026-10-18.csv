@@ -1,0 +1,5 @@
+case_id,object_id,side,row,editorial_reference,image_source,image_sha256,region_x_min,region_y_min,region_x_max,region_y_max,observed_sign,editorial_reading,iberos_hypothesis,comparison_object,comparison_sign,evidence_level,reviewer,review_date,notes
+ORL-VIIB-ROW-01,Orleyl VII,B,unconfirmed,unconfirmed,unconfirmed,,,,,,unconfirmed,unconfirmed,unconfirmed,Orleyl V,unconfirmed,PENDING,,,Row candidate not graphically segmented; do not assert coordinates
+ORL-V-CTRL-01,Orleyl V,unconfirmed,unconfirmed,unconfirmed,unconfirmed,,,,,,unconfirmed,unconfirmed,unconfirmed,Orleyl VII,unconfirmed,PENDING,,,Comparison control; no signs matched
+TE-MORPH-01,unassigned,unconfirmed,unconfirmed,unconfirmed,unconfirmed,,,,,,unconfirmed,unconfirmed,TE morphological function proposed,unassigned,unconfirmed,HYPOTHESIS,,,Requires independent positive and negative attestations
+ROK-RECIPIENT-02,unassigned,unconfirmed,unconfirmed,unconfirmed,unconfirmed,,,,,,unconfirmed,unconfirmed,Protocol open,unassigned,unconfirmed,PENDING,,,Freeze preregistered criteria before running
