@@ -43,5 +43,18 @@
   "te_morpheme_confirmed": false,
   "recipient_semantics_confirmed": false,
   "eligible_for_core_execution": false,
-  "notice": "The case object id is a placeholder link to the curated Orleyl record and must not be used to identify both inscribed objects until their IDs are independently reconciled."
+  "notice": "The case object id is a placeholder link to the curated Orleyl record and must not be used to identify both inscribed objects until their IDs are independently reconciled.",
+  "image_quality_control": {
+    "review_status": "FAILED_FOR_SIGN_LEVEL_COMPARISON",
+    "observation": "The previous Orleyl VII-B line crop contains mostly blank space and does not reproduce enough glyphs to check the proposed TE absence.",
+    "usable_overview": "Fletcher figures 22 and 25 show inscriptions at overview scale, but target TE glyphs have not been aligned to exact positions.",
+    "previous_crop_may_be_used_as_evidence": false,
+    "required_remediation": [
+      "Re-identify exact line on figure 25 from published sign numbering rather than guessed image row",
+      "Crop the complete relevant sequence with context on both sides",
+      "Map each glyph and divider to a source figure pixel coordinate and edition transliteration",
+      "Compare independently with figure 22 and later readings"
+    ],
+    "reviewer_independent": false
+  }
 }
