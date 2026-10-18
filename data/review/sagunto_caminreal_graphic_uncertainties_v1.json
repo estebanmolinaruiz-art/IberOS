@@ -1,0 +1,73 @@
+{
+  "schema": "IberOS-Graphic-Evidence-Review/1.0",
+  "method": "Editorial records, no graphic autopsy",
+  "record_count": 4,
+  "records": [
+    {
+      "evidence_id": "SAGUNTO-LAT-01",
+      "object_id": "IBR-LAP-0005",
+      "region": "01",
+      "location": "línea latina F.11.8",
+      "editorial_alternatives": "M.F]ABIVS.M.L.ISIDORVS.COERAV[IT",
+      "editorial_note": "Fragmentos inicial y final; no equivalencia automática con línea ibérica",
+      "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
+      "source": "Orduña 2008, Emerita 76(2), pp. 281-283; MLH III F.11.8 por cotejar",
+      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "sign_by_sign_verified": false,
+      "review_status": "PENDING_GRAPHIC_REVIEW",
+      "independent_reviewer": null,
+      "meaning_validated": false,
+      "core_execution_allowed": false
+    },
+    {
+      "evidence_id": "SAGUNTO-IBR-01",
+      "object_id": "IBR-LAP-0005",
+      "region": "01",
+      "location": "línea ibérica F.11.8",
+      "editorial_alternatives": "]itoŕ.tebanen.otar.koroto[",
+      "editorial_note": "Lectura editorial fragmentaria; correspondencia tebanen/coeravit discutida",
+      "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
+      "source": "Orduña 2008, Emerita 76(2), pp. 281-283",
+      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "sign_by_sign_verified": false,
+      "review_status": "PENDING_GRAPHIC_REVIEW",
+      "independent_reviewer": null,
+      "meaning_validated": false,
+      "core_execution_allowed": false
+    },
+    {
+      "evidence_id": "CAMINREAL-SEG-01",
+      "object_id": "IBR-MUS-0001",
+      "region": "01",
+      "location": "secuencia musiva E.7.1",
+      "editorial_alternatives": "likinete · ekiar · usekeŕteku",
+      "editorial_note": "Distinguir lectura unida likinete de interpretación segmentada likine-te",
+      "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
+      "source": "Simón Cornago 2015, Palaeohispanica 15, p. 96",
+      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "sign_by_sign_verified": false,
+      "review_status": "PENDING_GRAPHIC_REVIEW",
+      "independent_reviewer": null,
+      "meaning_validated": false,
+      "core_execution_allowed": false
+    },
+    {
+      "evidence_id": "CAMINREAL-PUNC-01",
+      "object_id": "IBR-MUS-0001",
+      "region": "01",
+      "location": "zona anterior al inicio del texto",
+      "editorial_alternatives": "posible interpunción / tesela no lingüística",
+      "editorial_note": "No asignar carácter de separador hasta cotejo visual",
+      "damage": "NO_FACSIMILE_INDEPENDENTLY_INSPECTED",
+      "source": "Simón Cornago 2015, Palaeohispanica 15, p. 96",
+      "visual_inspection": "EDITORIAL_TEXT_ONLY",
+      "sign_by_sign_verified": false,
+      "review_status": "PENDING_GRAPHIC_REVIEW",
+      "independent_reviewer": null,
+      "meaning_validated": false,
+      "core_execution_allowed": false
+    }
+  ],
+  "automatic_core_promotion": false,
+  "translation_validated": false
+}
