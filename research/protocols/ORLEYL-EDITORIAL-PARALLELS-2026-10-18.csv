@@ -1,0 +1,4 @@
+case_id,source,source_page_label,object,editorial_segment,editorial_reading,comparison_object,comparison_segment,comparison_editorial_reading,review_status,notes
+ORL-SEQ-06,Mesado_et_al_1981_Fletcher,p118,Orleyl VII-B,13-14,USKEIKEAI IUNSTIR,Orleyl VI,12-13,USKEIKE IUSTIR,EDITORIAL_ONLY,Segment strings as rendered in source; no graphic verification
+ORL-SEQ-08,Mesado_et_al_1981_Fletcher,p118,Orleyl VII-B,12-14,BARBIN[KE] USKEIKEAI IUNSTIR,Orleyl VII-A,3-5,BARBINKEAI USKEIKE IUNSTIR,EDITORIAL_ONLY,Bracketed signs are supplied editorial reconstruction
+ORL-SEQ-05,Mesado_et_al_1981_Fletcher,p117,Orleyl V,27-31,BODODASEAI SELKEAI BARDUNEAI UNIBEIKEAI ANERAI,Orleyl VII-A,7-8-9-12-13,BODODASEAI SELKEAI BARDONEAI AURUN[IBEI]KEAI ANERAI,EDITORIAL_ONLY,Check spelling against page facsimile before using for tests
