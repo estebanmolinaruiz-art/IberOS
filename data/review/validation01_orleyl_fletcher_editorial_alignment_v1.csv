@@ -1,0 +1,3 @@
+object_id,edition,physical_line,editorial_word,comparable_core,atomic_core_tokens,peripheral_segment,segmentation_hypothesis,source_pdf_page,source_print_page,figure,glyph_review,cohort,evidence_note
+ORLEYL-V,Fletcher_1981,3,BITEROKETETINE,BITEROKETETINE,"bi te r o ke te ti n e",,"biteroke + tetine",67,66,22,NOT_INDEPENDENTLY_VERIFIED,DEVELOPMENT,"Fletcher V-19; fig22 PDF p65; print p76 discusses segmentation; no gold hold"
+ORLEYL-VII,Fletcher_1981,2,BASBITEROKETINE,BITEROKETINE,"bi te r o ke ti n e",BAS,"bas may belong previous word; biteroke + tine",109,108,25,NOT_INDEPENDENTLY_VERIFIED,DEVELOPMENT,"Fletcher VII-B-7; fig25 PDF p111; print p113 discusses BAS boundary"
