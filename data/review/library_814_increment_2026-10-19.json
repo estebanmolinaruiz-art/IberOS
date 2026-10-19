@@ -1,0 +1,48 @@
+{
+  "schema": "IberOS-814-Increment/1.0",
+  "date": "2026-10-19",
+  "candidate_inventory_count": 814,
+  "distinct_doi_in_working_csv": 814,
+  "global_verified_count": "NOT_AUDITED",
+  "new_publisher_metadata_verified": 4,
+  "records": [
+    {
+      "doi": "10.36707/palaeohispanica.v0i9.238",
+      "title": "Un nuevo grafito ibérico procedente de La Cabañeta",
+      "url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/238",
+      "scope": "DIRECT",
+      "full_text_read": false,
+      "core_approved": false,
+      "global_deduplication": "PENDING"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v23i0.538",
+      "title": "Cinco inscripciones ibéricas nororientales sobre plomo halladas en contextos urbanos",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/de/article/view/538",
+      "scope": "DIRECT",
+      "full_text_read": false,
+      "core_approved": false,
+      "global_deduplication": "PENDING"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i14.54",
+      "title": "Un plomo ibérico de Casinos con numerales léxicos y expresiones metrológicas",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/54",
+      "scope": "DIRECT",
+      "full_text_read": false,
+      "core_approved": false,
+      "global_deduplication": "PENDING"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v25i1.723",
+      "title": "Algunas reflexiones sobre la realidad arqueológica y cultural asociada a la escritura del suroeste",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/723",
+      "scope": "COMPARATIVE",
+      "full_text_read": false,
+      "core_approved": false,
+      "global_deduplication": "PENDING"
+    }
+  ],
+  "note": "Count represents raw DOI-based candidate inventory; it does not represent 814 pertinent confirmed bibliographic records. Comparative southwest inscription source should not count toward strict Iberian-language scope without clear taxonomy.",
+  "website_redeployed": false
+}
