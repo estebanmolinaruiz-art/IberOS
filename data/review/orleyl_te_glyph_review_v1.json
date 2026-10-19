@@ -73,7 +73,7 @@
     "candidate_physical_row": 2,
     "physical_rows_visible": 5,
     "transcription_context": "areŕe : kutuboike : basbiteŕoketine : iŕika",
-    "candidate_row_status": "SECONDARY_TRANSCRIPTION_LOCATOR_NOT_GLYPH_VERIFICATION",
+    "candidate_row_status": "CONFIRMED_BY_FLETCHER_LINE_2_EDITORIAL_TRANSCRIPTION_NOT_GLYPH_VERIFIED",
     "annotated_image_local_only": "orleyl_vii_b_line_candidate_annotated.png",
     "glyph_sequence_bounds_verified": false,
     "te_absence_graphically_verified": false,
@@ -147,7 +147,7 @@
         "mapped_to_fletcher_element_7": false
       }
     ],
-    "finding": "Five graphic rows can be examined individually, but no unique BITEROKETINE span is yet identified. The editorial element VII-B 7 is not equivalent to visible graphic row 5.",
+    "finding": "Fletcher's transcription on PDF p.110 assigns BASBITEROKETINE to physical line 2 of VII-B; sign-level attribution remains pending. Earlier five bands use another raster, so coordinates must not be transplanted.",
     "visual_sequence_assigned": false,
     "sign_by_sign_verification": false,
     "publication_rights_checked": false
@@ -257,5 +257,34 @@
     "quotation_summary": "Fletcher questions whether BAS belongs to the previous word despite a vertical dotted divider; identifies -BITEROKE parallel in V-19 and 41, and -TINE versus V-19 -TETINE.",
     "effect": "SEGMENTATION_AMBIGUITY_REGISTERED",
     "visual_position_verified": false
+  },
+  "fletcher_line2_2026_10_19": {
+    "status": "PHYSICAL_ROW_2_EDITORIALLY_CONFIRMED_SIGN_POSITIONS_PENDING",
+    "basis": "Original PDF user supplied; Fletcher 1981, PDF p.110 transcription, fig.25 PDF p.111",
+    "graphic_row": 2,
+    "editorial_items": [
+      "VII-B-6 CUDUBOIKE",
+      "VII-B-7 BASBITEROKETINE",
+      "VII-B-8 IRICA"
+    ],
+    "raster_local": {
+      "source_render_scale": 2.5,
+      "orientation": "90_CLOCKWISE",
+      "dimensions_px": [
+        1906,
+        1439
+      ],
+      "inspection_bbox_xyxy_px": [
+        410,
+        554,
+        1710,
+        614
+      ],
+      "exclusive_line_bounds_verified": false
+    },
+    "photo_page": 158,
+    "separator_before_bas_verified": false,
+    "sign_coordinates_verified": false,
+    "core_promotion": false
   }
 }
