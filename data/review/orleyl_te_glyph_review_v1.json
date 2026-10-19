@@ -183,5 +183,71 @@
     "editorial_line_numbers_are_not_physical_rows": true,
     "te_morpheme_confirmed": false,
     "eligible_for_core_execution": false
+  },
+  "source_raster_reconciliation_v3": {
+    "status": "HISTORIC_CROPS_ARE_CANDIDATE_REGIONS_NOT_VERIFIED_GLYPHS",
+    "provenance": "docs/ROK_ORLEYL_RASTER_LINE_AUDIT_2026-10-14.md; docs/ROK_ORLEYL_PRIMARY_EDITION_COLLATION_2026-10-14.md",
+    "historical_candidate_regions": [
+      {
+        "object": "Orleyl V",
+        "source_figure": 22,
+        "pdf_page": 65,
+        "reference": "line 3",
+        "orientation": "ROTATED_90_CLOCKWISE",
+        "raster_dimensions_px": [
+          1296,
+          979
+        ],
+        "bbox_xyxy_px": [
+          0,
+          431,
+          1296,
+          495
+        ],
+        "status": "CANDIDATE_REGION_MULTIROW",
+        "photo_pdf_page": 153
+      },
+      {
+        "object": "Orleyl VII-B",
+        "source_figure": 25,
+        "pdf_page": 111,
+        "reference": "line 2",
+        "orientation": "ROTATED_90_CLOCKWISE",
+        "raster_dimensions_px": [
+          1296,
+          979
+        ],
+        "bbox_xyxy_px": [
+          0,
+          368,
+          1296,
+          440
+        ],
+        "status": "CANDIDATE_REGION_WITH_NEIGHBOR",
+        "photo_pdf_page": 158
+      }
+    ],
+    "modern_figure25_bands": {
+      "dimensions_px": [
+        2287,
+        1727
+      ],
+      "orientation": "ORIENTED_FOR_READING",
+      "source_field": "figure_25_inspection.inspection_bands",
+      "coordinate_frame_compatible_with_historical_regions": false
+    },
+    "access_check_2026_10_19": {
+      "online_primary_pdf_retrieval": "TIMEOUT",
+      "repository_image_files_matching_orleyl": "NONE_IN_MAIN_TREE",
+      "visual_glyph_verification_performed_now": false
+    },
+    "independent_photographic_comparison": false,
+    "gate": "OPEN",
+    "rules": [
+      "Never transplant pixel coordinates between differently scaled or rotated rasters",
+      "Historical regions are explicitly non-exclusive and include neighboring signs/rows",
+      "Confirm target dividers and rótica on the actual figure before assigning any sign position",
+      "No TE morphological or recipient semantic promotion without independent review"
+    ]
   }
 }
