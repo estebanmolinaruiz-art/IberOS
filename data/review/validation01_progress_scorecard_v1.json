@@ -1,0 +1,100 @@
+{
+  "protocol": "VALIDATION-01",
+  "date": "2026-10-19",
+  "measurement": "READINESS_NOT_SCIENTIFIC_VALIDITY",
+  "milestones": [
+    {
+      "id": "M01",
+      "task": "Definir pregunta falsable y diseño TE-MASK como borrador",
+      "weight": 5,
+      "status": "DONE",
+      "evidence": "docs/VALIDATION01_TE_MASK_OPERATIONAL_PROTOCOL_DRAFT_2026-10-19.md"
+    },
+    {
+      "id": "M02",
+      "task": "Obtener fuente primaria Fletcher Orleyl V y VII",
+      "weight": 5,
+      "status": "DONE",
+      "evidence": "docs/VALIDATION01_FLETCHER_1981_PDF_PRIMARY_REVIEW_2026-10-19.md"
+    },
+    {
+      "id": "M03",
+      "task": "Cotejar lecturas editoriales y diferencia te",
+      "weight": 5,
+      "status": "DONE",
+      "evidence": "data/review/validation01_orleyl_fletcher_editorial_alignment_v1.csv"
+    },
+    {
+      "id": "M04",
+      "task": "Localizar físicamente líneas y preparar recortes",
+      "weight": 5,
+      "status": "DONE",
+      "evidence": "docs/VALIDATION01_ORLEYL_LINE_CROPS_REVIEW_2026-10-19.md"
+    },
+    {
+      "id": "M05",
+      "task": "Integrar auditoría de lecturas, bloqueo HOLD y scoring",
+      "weight": 10,
+      "status": "DONE",
+      "evidence": "scripts/validation01_pipeline.py"
+    },
+    {
+      "id": "M06",
+      "task": "Cotejar signos individuales en V-19 y VII-B-7",
+      "weight": 10,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M07",
+      "task": "Obtener segunda revisión independiente de líneas",
+      "weight": 10,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M08",
+      "task": "Ejecutar piloto DEVELOPMENT sobre líneas revisadas",
+      "weight": 10,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M09",
+      "task": "Cerrar diseño, baseline B, predictor IberOS y preinscripción",
+      "weight": 10,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M10",
+      "task": "Reunir al menos 20 grupos físicos HOLD inéditos auditados",
+      "weight": 15,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M11",
+      "task": "Sellar predicciones antes de revelar gold independiente",
+      "weight": 5,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M12",
+      "task": "Puntuar ciegamente con intervalos y controles",
+      "weight": 5,
+      "status": "PENDING",
+      "evidence": ""
+    },
+    {
+      "id": "M13",
+      "task": "Replicar y documentar veredicto independiente",
+      "weight": 5,
+      "status": "PENDING",
+      "evidence": ""
+    }
+  ],
+  "scientific_status": "NOT_EVALUATED",
+  "caveat": "30% readiness by predefined administrative weighting is not 30% chance of validation or correctness."
+}
