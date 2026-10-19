@@ -224,6 +224,48 @@
         "reason": "Bibliografía comprobada sin cotejo de objetos y grafemas"
       },
       "source_rights": "Metadata and external link only"
+    },
+    {
+      "id": "BIB-000013",
+      "type": "BIBLIOGRAPHIC_SOURCE_NOT_OBJECT",
+      "title": "Towards a systematization of Palaeohispanic scripts in Unicode: synthesising multiple transcription hypotheses into two consensus encodings",
+      "doi": "10.36707/palaeohispanica.v0i15.37",
+      "url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/37",
+      "authors": "Joan Ferrer i Jané; Noemí Moncunill Martí; Javier Velaza Frías",
+      "publisher": "Palaeohispanica",
+      "year": 2015,
+      "source_scope": "Signarios y codificación de escrituras paleohispánicas",
+      "review_status": "BIBLIOGRAPHIC_METADATA_VERIFIED_FULL_TEXT_PENDING",
+      "source_verified": "journal_landing_page",
+      "object_identity_verified": false,
+      "epigraphic_transcription_verified": false,
+      "core_processing": {
+        "status": "BLOCKED_UNVERIFIED_OBJECT",
+        "rule_results": [],
+        "reason": "Estudio bibliográfico sin autopsia ni signos independientemente verificados"
+      },
+      "source_rights": "Metadata and external link only"
+    },
+    {
+      "id": "BIB-000014",
+      "type": "BIBLIOGRAPHIC_SOURCE_NOT_OBJECT",
+      "title": "El sistema dual de la escritura celtibérica desde la perspectiva ibérica",
+      "doi": "10.36707/palaeohispanica.v21i0.427",
+      "url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/427",
+      "authors": "Joan Ferrer i Jané",
+      "publisher": "Palaeohispanica",
+      "year": 2021,
+      "source_scope": "Comparación de escrituras ibérica y celtibérica; estudio de variantes",
+      "review_status": "BIBLIOGRAPHIC_METADATA_VERIFIED_FULL_TEXT_PENDING",
+      "source_verified": "journal_landing_page",
+      "object_identity_verified": false,
+      "epigraphic_transcription_verified": false,
+      "core_processing": {
+        "status": "BLOCKED_UNVERIFIED_OBJECT",
+        "rule_results": [],
+        "reason": "Estudio bibliográfico sin autopsia ni signos independientemente verificados"
+      },
+      "source_rights": "Metadata and external link only"
     }
   ],
   "scientific_policy": "No automatic Core analysis of unverified bibliographic titles"
