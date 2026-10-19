@@ -1,0 +1,69 @@
+{
+  "schema": "IberOS-Moleta-Landmark-Proposals/1.0",
+  "object_id": "IBR-PLM-0011",
+  "photo_crop_pixels": [
+    915,
+    405
+  ],
+  "drawing_crop_pixels": [
+    805,
+    365
+  ],
+  "source": "User provided published figure 4 photo and figure 5 drawing (Ferrer et al. 2008)",
+  "registration_state": "PROPOSED_SILHOUETTE_ONLY_UNVERIFIED",
+  "landmarks": [
+    {
+      "label": "left_tip",
+      "photo": [
+        16,
+        298
+      ],
+      "drawing": [
+        12,
+        291
+      ]
+    },
+    {
+      "label": "upper_right_peak",
+      "photo": [
+        690,
+        20
+      ],
+      "drawing": [
+        691,
+        12
+      ]
+    },
+    {
+      "label": "rightmost_edge",
+      "photo": [
+        895,
+        158
+      ],
+      "drawing": [
+        787,
+        148
+      ]
+    },
+    {
+      "label": "lower_right_corner",
+      "photo": [
+        883,
+        380
+      ],
+      "drawing": [
+        777,
+        320
+      ]
+    }
+  ],
+  "landmark_policy": "Approximate manually identified support silhouette landmarks; drawing is idealized, warped and artistically reorganized, so landmark similarity does NOT establish a geometric homography.",
+  "fit_transform": null,
+  "fit_residual_px": null,
+  "sign_correspondences_confirmed": 0,
+  "sign_level_rois": [],
+  "unresolved_signs": 5,
+  "independent_glyph_verification": 0,
+  "rights_to_republish": false,
+  "next_step": "Review and independently validate each silhouette landmark, quantify image-to-drawing distortion, then annotate signs on the unaltered photograph without assuming a global transform."
+}
