@@ -1,0 +1,78 @@
+{
+  "schema": "IberOS-Moleta-Graphic-Ambiguities/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source_url": "https://ifc.dpz.es/recursos/publicaciones/28/40/12ferreretal.pdf",
+  "bibliography": "Ferrer i Jané, Garcia i Rubert, Moreno Martínez y Velaza Frías (2008), Palaeohispanica 8, 203-216",
+  "figures": [
+    {
+      "figure": 4,
+      "page": 215,
+      "medium": "photograph",
+      "credit": "I. Moreno, GRAP"
+    },
+    {
+      "figure": 5,
+      "page": 216,
+      "medium": "drawing"
+    }
+  ],
+  "inspection_status": "SOURCE_TEXT_CHECKED_FIGURES_NOT_VISUALLY_RETRIEVED",
+  "records": [
+    {
+      "region": "zone1_line2_sign3",
+      "source_page": 207,
+      "alternative_readings": [
+        "ta1",
+        "ko1"
+      ],
+      "reason": "Rotated / deformed strokes following partial melting; author tentatively favors ta1",
+      "resolved": false
+    },
+    {
+      "region": "zone1_line2_sign4",
+      "source_page": 207,
+      "alternative_readings": [
+        "be3",
+        "bo2",
+        "bo4"
+      ],
+      "reason": "Multiple candidate strokes and uncertain upper corner",
+      "resolved": false
+    },
+    {
+      "region": "zone1_line2_sign8",
+      "source_page": 207,
+      "alternative_readings": [
+        "tu1",
+        "ku2"
+      ],
+      "reason": "Metal indentation narrows original sign profile",
+      "resolved": false
+    },
+    {
+      "region": "zone2_midline_uncertain_sign",
+      "source_page": 208,
+      "alternative_readings": [
+        "ta1",
+        "ko1",
+        "a1"
+      ],
+      "reason": "Only upper portion clearly visible; author notes strictly visible strokes may support a1",
+      "resolved": false
+    },
+    {
+      "region": "zone2_late_sign",
+      "source_page": 208,
+      "alternative_readings": [
+        "m",
+        "a3"
+      ],
+      "reason": "Upper linking stroke cannot be confirmed",
+      "resolved": false
+    }
+  ],
+  "independent_glyph_count": 0,
+  "semantic_validation": false,
+  "core_semantic_approval": false,
+  "next_step": "Retrieve/obtain original figure 4 photograph and fig 5 drawing; compare region-by-region with second reviewer"
+}
