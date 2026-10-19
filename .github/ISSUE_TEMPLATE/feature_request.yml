@@ -1,0 +1,23 @@
+name: "Propuesta de mejora / Enhancement"
+description: "Mejora técnica, accesibilidad o documentación / Technical, accessibility, or documentation suggestion"
+title: "[Mejora] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problema que resuelve / Problem to solve"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Propuesta y criterio de éxito / Proposed change and success criterion"
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: "Cómo verificarla / How to verify"
+  - type: markdown
+    attributes:
+      value: "Los cambios científicos quedan fuera de este formulario y requieren revisión experta. / Scientific changes require expert review."
