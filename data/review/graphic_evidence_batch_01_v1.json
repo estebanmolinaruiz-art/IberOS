@@ -240,10 +240,10 @@
       "source_type": "ACADEMIC_REFERENCE",
       "specific_figure": "Fig. 5 pre/post-restoration photos; Fig. 6 archaeological and epigraphic drawings; Fig. 8 close-ups of ko/bo",
       "printed_page": 256,
-      "face": null,
-      "line": null,
+      "face": "A",
+      "line": 1,
       "sign_index": null,
-      "image_citation": "Ferrer i Jané et al. (2024), Palaeohispanica 24, figs.5,6,8, pp.256,259–260",
+      "image_citation": "Ferrer i Jané et al. (2024), p.260, Fig.8 bottom-left panel (bo/ko)",
       "visible_glyph_description": null,
       "editorial_reading": "ildurkon",
       "alternative_readings": [
@@ -255,7 +255,7 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "next_action": "Obtain licensed original resolution photograph; record pixel ROI and blind double review of bo/ko",
       "additional_printed_pages": [
         259,
         260
@@ -264,7 +264,8 @@
       "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF",
       "graphic_uncertainty_note": "The edition attributes possible diagonal strokes to folds or scratches; alternatives not independently re-read",
       "editorial_reading_note": "Preferred by Ferrer i Jané et al. (2024), p.260; alternative ildurbon not eliminated by surface condition",
-      "visual_comparison_note": "Fig.5 photographic surfaces before/after partial unfolding; Fig.6 archaeological versus epigraphic drawing with drawn major fold zones; Fig.8 photographed close-ups show dense surface marks around disputed bo/ko sign, insufficient here for independent stroke assignment."
+      "visual_comparison_note": "Fig.5 photographic surfaces before/after partial unfolding; Fig.6 archaeological versus epigraphic drawing with drawn major fold zones; Fig.8 photographed close-ups show dense surface marks around disputed bo/ko sign, insufficient here for independent stroke assignment.",
+      "specific_ambiguity_record": "data/review/illeta_bo_ko_decision_v1.json"
     }
   ],
   "figures_or_figure_sets_located": 5,
