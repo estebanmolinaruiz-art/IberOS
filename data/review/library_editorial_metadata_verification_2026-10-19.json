@@ -1,0 +1,46 @@
+{
+  "schema": "IberOS-Bibliographic-Editorial-Review/1.0",
+  "review_date": "2026-10-19",
+  "basis": "Publisher landing page and abstract; not full-text or epigraphic image collation",
+  "source": "data/review/library_41_priority_review_summary_v1.json",
+  "records": [
+    {
+      "doi": "10.36707/palaeohispanica.v0i19.221",
+      "title": "Epigrafía ibérica de Libisosa",
+      "authors": [
+        "Héctor Uroz Rodríguez",
+        "Javier Velaza Frías"
+      ],
+      "journal": "Palaeohispanica",
+      "volume": "19",
+      "year": 2019,
+      "pages": "211-228",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/221",
+      "editorial_decision": "ACCEPT_BIBLIOGRAPHIC_METADATA",
+      "relevance": "DIRECT_IBERIAN_EPIGRAPHY",
+      "scope_note": "16 southeastern-script inscriptions from Libisosa; inscription-level validation remains pending",
+      "full_text_read": false,
+      "core_evidence_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i17.142",
+      "title": "Imagen y texto en la epigrafía funeraria ibérica",
+      "authors": [
+        "Javier Velaza Frías"
+      ],
+      "journal": "Palaeohispanica",
+      "volume": "17",
+      "year": 2017,
+      "pages": "235-248",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/142",
+      "editorial_decision": "ACCEPT_BIBLIOGRAPHIC_METADATA",
+      "relevance": "DIRECT_IBERIAN_EPIGRAPHIC_CONTEXT",
+      "scope_note": "Funerary Iberian inscriptions, image/text relations; issue year 2017, online publication date 2019-06-25",
+      "full_text_read": false,
+      "core_evidence_approved": false
+    }
+  ],
+  "other_27_candidates": "Not independently enumerated in repository summary; need original review package to safely assign item-level decisions",
+  "deduplication_rule": "DOI exact match, normalized title + authors, and separately inscribed witness ID; editions of one inscription are not independent attestations",
+  "web_published": false
+}
