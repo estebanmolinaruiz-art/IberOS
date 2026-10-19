@@ -9,6 +9,8 @@ def test_grid_and_leave_one_out():
  assert r["grid_points"]==9
  assert r["n_cases"]==7
  assert len(r["leave_one_observation_out"])==7
+ assert r["loo_hybrid_wins"]==7
+ assert r["grid_hybrid_wins"]==9
  assert r["metro_aoki01"]=="NOT_EXTERNALLY_VALIDATED"
 def test_invalid_grid():
  import pytest
