@@ -110,7 +110,7 @@
       "source_url": "https://addi.ehu.es/bitstream/handle/10810/37273/13345-59626-1-PB.pdf?isAllowed=y&sequence=1",
       "source_type": "ACADEMIC_REFERENCE",
       "specific_figure": "Figura 1. Abecedaris de Can Rodon",
-      "printed_page": 231,
+      "printed_page": null,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -125,7 +125,7 @@
       "eligible_for_core": false,
       "semantic_translation_validated": false,
       "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
-      "evidence_kind": "FIGURE_CAPTION_AND_PUBLISHED_PAGE_LOCATED",
+      "evidence_kind": "FIGURE_CAPTION_LOCATED_PAGE_TO_VERIFY",
       "figure_reference_located": true
     },
     {
@@ -247,5 +247,6 @@
     }
   ],
   "figures_or_figure_sets_located": 3,
-  "textual_only_source_location_count": 1
+  "textual_only_source_location_count": 1,
+  "page_number_verification_note": "Can Rodon figure 1 caption found, exact printed page not independently established; not asserted."
 }
