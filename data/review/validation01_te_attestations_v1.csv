@@ -1,0 +1,2 @@
+case_id,object_id,physical_group,source_url,source_reference,script,face,line,transcription_editorial,transcription_alternatives,reading_scope,te_observed,negative_coverage_confirmed,photo_or_drawing_reviewed,independent_reviewer,status,cohort,notes
+ORLEYL-TE-DEVELOPMENT,IBR-PLM-0006,UNRESOLVED,https://hesperia.ucm.es/,Punta de Orleyl; edition to verify,Ibérica nororiental,,,,,NOT_ASSESSED,UNKNOWN,NO,NO,,SOURCE_REQUIRED,DEVELOPMENT_ONLY,Previously studied; never claim blind TE confirmation
