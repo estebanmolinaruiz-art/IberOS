@@ -71,7 +71,9 @@ jobs:
                       with urllib.request.urlopen(request,timeout=20) as response:
                           if response.status!=200: raise RuntimeError(f"{path}: HTTP {response.status}")
                           responses[path]=response.read().decode("utf-8")
-                  if "¿Qué es IberOS?" not in responses["/que-es-iberos/"]:\n                      raise RuntimeError("Falta la página pública de presentación IberOS")\n                  manifest=json.loads(responses[paths[0]])
+                  if "¿Qué es IberOS?" not in responses["/que-es-iberos/"]:
+                      raise RuntimeError("Falta la página pública de presentación IberOS")
+                  manifest=json.loads(responses[paths[0]])
                   if manifest.get("commit")!=expected:
                       raise RuntimeError(f"Public SHA {manifest.get('commit')} != {expected}")
                   if "graphic-viewer-slot" not in responses[paths[1]]:
