@@ -1,0 +1,18 @@
+object_id,source_pdf_page,editorial_word_id,glyph_index,editorial_sign,normalized_bbox,visual_identification,visual_reviewer,independent_reviewer,status,notes
+ORLEYL-V,65,V-19,1,bi,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,2,te,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,3,r,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,4,o,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,5,ke,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,6,te,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,7,ti,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,8,n,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-V,65,V-19,9,e,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,1,bi,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,2,te,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,3,r,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,4,o,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,5,ke,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,6,ti,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,7,n,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
+ORLEYL-VII,111,VII-B-7,8,e,,,,,PENDING_VISUAL_ALIGNMENT,Source editorial token only; no independent glyph match
