@@ -26,3 +26,12 @@ No usar archivos Excel exportados a CSV si se pierden los marcadores de subrayad
 - VALIDATION-01 blind: sigue bloqueado
 
 Siguiente acción: descargar la hoja de cálculo directamente del titular, o solicitarla a `correu@ibers.cat`, conservar su licencia y marcas de edición; después procesar y verificar recuentos antes de informar de miles.
+
+## Actualización técnica: importador v2 (2026-10-19)
+- `scripts/import_iberian_bulk_csv.py` conserva ahora `editorial_markup` (subrayados, negritas y otras marcas, si la extracción del archivo origen las transmite explícitamente); no reconstruye estilos perdidos.
+- Retiene el número de fila original `source_row` y cuenta grupos físicos identificados y aquellos con varias lecturas.
+- Reporta registros sin identidad física y duplicados exactos, sin borrar variantes legítimas de una misma pieza.
+- Rechaza sobrescribir el fichero de entrada y rechaza códigos de licencia no declarados.
+- La importación sigue siendo exclusivamente `RAW_UNREVIEWED`; `te_status=UNKNOWN` y `hold_eligible=NO`.
+- Se añadieron pruebas para el formato de más de 2500 filas (sintéticas), metadatos editoriales, agrupación física y seguridad.
+- **Pendiente**: obtención del Excel real desde ibers.cat; no hay miles de lecturas auténticas incorporadas. Ejecución del CI posterior al cambio sin confirmar.
