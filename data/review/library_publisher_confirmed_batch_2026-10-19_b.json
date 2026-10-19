@@ -1,0 +1,71 @@
+{
+  "schema": "IberOS-Verified-Publisher-Metadata-Batch/1.0",
+  "verified_at": "2026-10-19",
+  "publisher": "Palaeohispanica",
+  "count": 5,
+  "records": [
+    {
+      "doi": "10.36707/palaeohispanica.v22i0.449",
+      "title": "Un nuevo epígrafe ibérico con antropónimo latino de Libisosa",
+      "authors": "Héctor Uroz Rodríguez; Javier Velaza Frías",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/449",
+      "scope": "DIRECT",
+      "metadata_verified": true,
+      "article_fully_read": false,
+      "epigraphic_claims_verified": false,
+      "core_evidence_approved": false,
+      "status": "BIBLIOGRAPHIC_METADATA_VERIFIED"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i15.42",
+      "title": "Las inscripciones ibéricas en escritura suroriental de El Castellar de Meca (Ayora)",
+      "authors": "Joan Ferrer i Jané; Alberto J. Lorrio Alvarado; Javier Velaza Frías",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/42",
+      "scope": "DIRECT",
+      "metadata_verified": true,
+      "article_fully_read": false,
+      "epigraphic_claims_verified": false,
+      "core_evidence_approved": false,
+      "status": "BIBLIOGRAPHIC_METADATA_VERIFIED"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i15.37",
+      "title": "Towards a systematization of Palaeohispanic scripts in Unicode: synthesising multiple transcription hypotheses into two consensus encodings",
+      "authors": "Joan Ferrer i Jané; Noemí Moncunill Martí; Javier Velaza Frías",
+      "publisher_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/37",
+      "scope": "METHOD",
+      "metadata_verified": true,
+      "article_fully_read": false,
+      "epigraphic_claims_verified": false,
+      "core_evidence_approved": false,
+      "status": "BIBLIOGRAPHIC_METADATA_VERIFIED"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i20.385",
+      "title": "Las escrituras epicóricas de la península Ibérica",
+      "authors": "Joan Ferrer i Jané",
+      "publisher_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/385",
+      "scope": "METHOD",
+      "metadata_verified": true,
+      "article_fully_read": false,
+      "epigraphic_claims_verified": false,
+      "core_evidence_approved": false,
+      "status": "BIBLIOGRAPHIC_METADATA_VERIFIED"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v25i1.732",
+      "title": "Epigrafía y alfabetización en la peninsula ibérica:ecos del pasado, retos del presente",
+      "authors": "Alex Mullen",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/732",
+      "scope": "CONTEXT",
+      "metadata_verified": true,
+      "article_fully_read": false,
+      "epigraphic_claims_verified": false,
+      "core_evidence_approved": false,
+      "status": "BIBLIOGRAPHIC_METADATA_VERIFIED"
+    }
+  ],
+  "deduplication_required_against_existing_catalog": true,
+  "disclaimer": "This batch confirms publisher metadata, not novel globally unique records, total bibliography size or scientific validation.",
+  "website_deployed": false
+}
