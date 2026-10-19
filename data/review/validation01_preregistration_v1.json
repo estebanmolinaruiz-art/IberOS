@@ -1,0 +1,15 @@
+{
+  "protocol": "IberOS-VALIDATION-01",
+  "version": "draft-2026-10-19",
+  "status": "DRAFT_NOT_FROZEN",
+  "question": "¿Predice IberOS un patrón contextual ibérico previamente especificado, no usado para construir sus reglas, mejor que un baseline independiente?",
+  "target_definition": "PENDING",
+  "prediction_rule_frozen": "PENDING",
+  "baseline_rule_frozen": "PENDING",
+  "split_plan_frozen": "PENDING",
+  "freeze_commit": "PENDING",
+  "blind_gold_protocol": "PENDING",
+  "minimum_hold_physical_groups": 20,
+  "note": "Detectar el signo TE no es un resultado lingüístico: evitar una variable gold tautológicamente idéntica a la lectura TE. El gold debe medir una propiedad contextual independiente definida antes de puntuar.",
+  "status_linguistic": "NOT_EVALUATED"
+}
