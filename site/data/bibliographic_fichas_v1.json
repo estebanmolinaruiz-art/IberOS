@@ -180,6 +180,50 @@
         "reason": "Pendiente la verificación de objeto, lectura y evidencia"
       },
       "source_rights": "Metadata and external link only"
+    },
+    {
+      "id": "BIB-000011",
+      "title": "Epigrafía ibérica de Libisosa",
+      "doi": "10.36707/palaeohispanica.v0i19.221",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/221",
+      "authors": "Héctor Uroz Rodríguez; Javier Velaza Frías",
+      "year": 2019,
+      "pages": "211–228",
+      "source_scope": "16 inscripciones indicadas por el resumen editorial; identidades físicas individuales pendientes",
+      "type": "BIBLIOGRAPHIC_SOURCE_NOT_OBJECT",
+      "publisher": "Palaeohispanica",
+      "review_status": "BIBLIOGRAPHIC_METADATA_VERIFIED_FULL_TEXT_PENDING",
+      "source_verified": "journal_landing_page",
+      "object_identity_verified": false,
+      "epigraphic_transcription_verified": false,
+      "core_processing": {
+        "status": "BLOCKED_UNVERIFIED_OBJECT",
+        "rule_results": [],
+        "reason": "Bibliografía comprobada sin cotejo de objetos y grafemas"
+      },
+      "source_rights": "Metadata and external link only"
+    },
+    {
+      "id": "BIB-000012",
+      "title": "Imagen y texto en la epigrafía funeraria ibérica",
+      "doi": "10.36707/palaeohispanica.v0i17.142",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/142",
+      "authors": "Javier Velaza Frías",
+      "year": 2017,
+      "pages": "235–248",
+      "source_scope": "Estudio histórico sobre la relación de imagen y texto funerario ibérico",
+      "type": "BIBLIOGRAPHIC_SOURCE_NOT_OBJECT",
+      "publisher": "Palaeohispanica",
+      "review_status": "BIBLIOGRAPHIC_METADATA_VERIFIED_FULL_TEXT_PENDING",
+      "source_verified": "journal_landing_page",
+      "object_identity_verified": false,
+      "epigraphic_transcription_verified": false,
+      "core_processing": {
+        "status": "BLOCKED_UNVERIFIED_OBJECT",
+        "rule_results": [],
+        "reason": "Bibliografía comprobada sin cotejo de objetos y grafemas"
+      },
+      "source_rights": "Metadata and external link only"
     }
   ],
   "scientific_policy": "No automatic Core analysis of unverified bibliographic titles"
