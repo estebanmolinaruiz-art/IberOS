@@ -76,9 +76,9 @@ jobs:
                   manifest=json.loads(responses[paths[0]])
                   if manifest.get("commit")!=expected:
                       raise RuntimeError(f"Public SHA {manifest.get('commit')} != {expected}")
-                  if "graphic-viewer-slot" not in responses[paths[1]]:
+                  if "graphic-viewer-slot" not in responses["/ficha/?id=IBR-PLM-0002"]:
                       raise RuntimeError("Ficha pública sin contenedor de visor gráfico")
-                  data=json.loads(responses[paths[2]])
+                  data=json.loads(responses["/data/epigraphic-visual-registry-v1.json"])
                   if not any(x.get("object_id")=="IBR-PLM-0002" for x in data.get("records",[])):
                       raise RuntimeError("Registro gráfico público sin Tivissa")
                   demo=responses["/demostracion/"]
