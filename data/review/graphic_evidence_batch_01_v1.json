@@ -181,7 +181,8 @@
         216
       ],
       "figure_reference_located": true,
-      "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF"
+      "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF",
+      "visual_comparison_note": "Primary text pp.207–208 describes melted zone 1 and partially hidden zone 2, including ambiguous ta1/ko1 and be3/bo2/bo4. Figure screenshots could not be retrieved in this inspection; no independent image comparison."
     },
     {
       "review_id": "B01-GR-08",
@@ -244,12 +245,12 @@
       "sign_index": null,
       "image_citation": "Ferrer i Jané et al. (2024), Palaeohispanica 24, figs.5,6,8, pp.256,259–260",
       "visible_glyph_description": null,
-      "editorial_reading": "ildurkon (preferred by edition)",
+      "editorial_reading": "ildurkon",
       "alternative_readings": [
         "ildurbon"
       ],
       "image_reuse_rights": "NOT_VERIFIED",
-      "visual_evidence_status": "NOT_INSPECTED",
+      "visual_evidence_status": "PUBLISHED_PHOTOS_AND_DRAWING_VISUALLY_INSPECTED_NOT_SIGN_VERIFIED",
       "independent_reviewer": null,
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
@@ -261,7 +262,9 @@
       ],
       "figure_reference_located": true,
       "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF",
-      "graphic_uncertainty_note": "The edition attributes possible diagonal strokes to folds or scratches; alternatives not independently re-read"
+      "graphic_uncertainty_note": "The edition attributes possible diagonal strokes to folds or scratches; alternatives not independently re-read",
+      "editorial_reading_note": "Preferred by Ferrer i Jané et al. (2024), p.260; alternative ildurbon not eliminated by surface condition",
+      "visual_comparison_note": "Fig.5 photographic surfaces before/after partial unfolding; Fig.6 archaeological versus epigraphic drawing with drawn major fold zones; Fig.8 photographed close-ups show dense surface marks around disputed bo/ko sign, insufficient here for independent stroke assignment."
     }
   ],
   "figures_or_figure_sets_located": 5,
