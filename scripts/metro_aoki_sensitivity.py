@@ -23,7 +23,7 @@ def analyze(rows,low=41,high=43,step=.25):
     loo=[]
     for r in rows:
         scores=score(rows,42,excluded=r["case_id"])
-        loo.append({"excluded":r["case_id"],"winner":min(scores,key=scores.get()),
+        loo.append({"excluded":r["case_id"],"winner":min(scores,key=scores.get),
                     "rmse_pct":{k:round(v,5) for k,v in scores.items()}})
     return {"kind":"RETROSPECTIVE_IN_SAMPLE_SENSITIVITY","n_cases":len(rows),"grid":values,
             "leave_one_observation_out":loo,"grid_hybrid_wins":sum(x["winner"]=="HYBRID" for x in values),
