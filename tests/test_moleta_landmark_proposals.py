@@ -27,3 +27,13 @@ def test_exploratory_affine_is_not_approved_for_glyph_registration():
     assert "NOT approved" in diagnostic["interpretation"]
     assert d["fit_transform"] is None
     assert d["sign_correspondences_confirmed"]==0
+
+def test_leave_one_out_affine_is_unstable_and_cannot_assign_signs():
+    d=json.loads((ROOT/"data/review/moleta_landmark_proposals_v1.json").read_text(encoding="utf-8"))
+    check=d["leave_one_out_affine_diagnostic"]
+    assert check["held_out_landmarks"]==[x["label"] for x in d["landmarks"]]
+    assert len(check["held_out_errors_px"])==4
+    assert max(check["held_out_errors_px"])==check["maximum_error_px"]>300
+    assert min(check["held_out_errors_px"])==check["minimum_error_px"]>50
+    assert d["fit_transform"] is None
+    assert d["sign_correspondences_confirmed"]==0
