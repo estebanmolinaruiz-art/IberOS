@@ -10,6 +10,16 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -e . pytest 'Pillow>=10,<13'
       - run: pytest -q
+      - name: VALIDATION-01 evidence gate (diagnostic, not scientific approval)
+        if: always()
+        run: python scripts/validation01_pipeline.py --output /tmp/validation01_readiness.json
+      - name: Upload VALIDATION-01 readiness diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-validation01-readiness
+          path: /tmp/validation01_readiness.json
+          if-no-files-found: ignore
       - name: Verify bibliography-to-Core review pipeline
         run: |
           python scripts/run_library_pipeline.py
