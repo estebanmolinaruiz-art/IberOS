@@ -88,3 +88,16 @@ Molina Ruiz, Esteban. *IberOS: marco experimental para el análisis interno y la
 Casos de estudio:
 
 Molina Ruiz, Esteban. *IberOS Case Studies I: cuatro fichas analíticas de validación en epigrafía ibérica*. DOI: 10.5281/zenodo.22957236
+
+## Descubrir y compartir IberOS (acceso gratuito)
+
+- **Explorar la web:** https://estebanmolinaruiz-art.github.io/IberOS/
+- **Consultar el corpus:** https://estebanmolinaruiz-art.github.io/IberOS/corpus/
+- **Consultar fichas:** https://estebanmolinaruiz-art.github.io/IberOS/fichas/
+- **Instalar el paquete Python:** https://pypi.org/project/iberos/
+- **Consultar metodología y límites:** [Arquitectura](docs/ARCHITECTURE.md) y [benchmark](docs/BENCHMARK.md).
+- **Leer el informe técnico:** https://doi.org/10.5281/zenodo.22939179
+- **Consultar casos de estudio:** https://doi.org/10.5281/zenodo.22957236
+- **Material de difusión reutilizable:** [kit de difusión gratuito](docs/DIFUSION_GRATUITA.md).
+
+IberOS es un **marco experimental de análisis y validación reproducible**, no un desciframiento demostrado del ibérico. Las hipótesis, inferencias y lecturas documentadas se mantienen diferenciadas. La participación y la revisión crítica son bienvenidas.
