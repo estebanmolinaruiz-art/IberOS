@@ -1,0 +1,26 @@
+{
+  "schema": "IberOS-802-Recovered-Harvest-Audit/1.0",
+  "date": "2026-10-19",
+  "source_run": 39275422274,
+  "source_artifact": 12196578351,
+  "source_file": "library_candidates_review.json",
+  "artifact_expires": "2026-11-18",
+  "records_recovered": 802,
+  "unique_dois_in_original_harvest": 802,
+  "individual_queue_created": true,
+  "queue_format": "CSV available as user download in accompanying conversation",
+  "automated_screening": {
+    "title_scope_review": 96,
+    "previously_verified_doi_in_harvest": 4,
+    "remaining_automatic_candidates": 702
+  },
+  "caveats": [
+    "Automated rule-based scope screening does not establish publisher confirmation or scientific evidence",
+    "Previously recorded 18 relevant and 9 ambiguous candidates cannot be mapped to DOI without original editorial line-item file",
+    "Four earlier confirmed DOIs also in harvest are not new distinct bibliography additions",
+    "Potential false positives in Pech Maho Greek epigraphy, Iberian ethnographic uses and unorthodox attribution require editorial checks"
+  ],
+  "new_scientific_approvals": 0,
+  "public_site_redeployed": false,
+  "next_step": "Review selected 96 title hits individually, resolve all 27 legacy editorial decisions using original review package, validate publisher links and cross-check existing site/data/iberian_resources.json"
+}
