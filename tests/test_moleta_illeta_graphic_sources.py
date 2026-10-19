@@ -14,8 +14,10 @@ def test_moleta_illeta_figures_and_editorial_uncertainty():
     assert {259,260}.issubset(set(illeta["additional_printed_pages"]))
     assert illeta["editorial_reading"]=="ildurkon"
     assert "ildurbon" in illeta["alternative_readings"]
+    assert moleta["visual_evidence_status"]=="NOT_INSPECTED"
+    assert illeta["visual_evidence_status"]=="PUBLISHED_PHOTOS_AND_DRAWING_VISUALLY_INSPECTED_NOT_SIGN_VERIFIED"
+    assert "Fig.8" in illeta["visual_comparison_note"]
     for item in (moleta,illeta):
-        assert item["visual_evidence_status"]=="NOT_INSPECTED"
         assert item["sign_by_sign_verified"] is False
         assert item["eligible_for_core"] is False
     assert data["signs_independently_verified"]==0
