@@ -65,5 +65,29 @@
   "unresolved_signs": 5,
   "independent_glyph_verification": 0,
   "rights_to_republish": false,
-  "next_step": "Review and independently validate each silhouette landmark, quantify image-to-drawing distortion, then annotate signs on the unaltered photograph without assuming a global transform."
+  "next_step": "Revalidate individual silhouette landmarks and establish local sign features before permitting any geometric transform. Current global affine RMSE 23.25 px is unsuitable for sign-level alignment.",
+  "exploratory_affine_diagnostic": {
+    "method": "ordinary_least_squares_four_unverified_point_pairs",
+    "photo_to_drawing_matrix": [
+      [
+        0.8780268390430703,
+        -0.21856240366370822,
+        68.26768733828688
+      ],
+      [
+        -0.03783171288931056,
+        0.86999713595242,
+        30.064106610443968
+      ]
+    ],
+    "residual_px_by_landmark": [
+      5.664540957750027,
+      23.23391350982465,
+      35.584308581087235,
+      18.014936029012677
+    ],
+    "rmse_px": 23.252326220012364,
+    "maximum_residual_px": 35.584308581087235,
+    "interpretation": "High error for sign-level identification; landmarks themselves not independently confirmed; transformation NOT approved."
+  }
 }
