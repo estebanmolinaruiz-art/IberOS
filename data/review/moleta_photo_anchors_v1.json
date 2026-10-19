@@ -1,0 +1,120 @@
+{
+  "schema": "IberOS-Moleta-Photographic-Anchors/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source": "Uploaded Ferrer et al. (2008), figures 4/5, pp.215/216",
+  "status": "BROAD_VISUAL_ANCHORS_NOT_GLYPH_ROIS",
+  "photo_image_dimensions": [
+    915,
+    405
+  ],
+  "drawing_image_dimensions": [
+    805,
+    365
+  ],
+  "photo_regions": [
+    {
+      "label": "A",
+      "rect": [
+        160,
+        125,
+        410,
+        290
+      ]
+    },
+    {
+      "label": "B",
+      "rect": [
+        425,
+        105,
+        665,
+        310
+      ]
+    },
+    {
+      "label": "C",
+      "rect": [
+        655,
+        65,
+        895,
+        350
+      ]
+    }
+  ],
+  "drawing_regions": [
+    {
+      "label": "A",
+      "rect": [
+        115,
+        100,
+        340,
+        310
+      ]
+    },
+    {
+      "label": "B",
+      "rect": [
+        345,
+        85,
+        570,
+        295
+      ]
+    },
+    {
+      "label": "C",
+      "rect": [
+        555,
+        8,
+        787,
+        335
+      ]
+    }
+  ],
+  "cross_image_landmarks_verified": false,
+  "unresolved_editorial_regions": [
+    {
+      "region_id": "zone1_line2_sign3",
+      "photo_sign_rect": null,
+      "drawing_sign_rect": null,
+      "photo_stroke_trace": null,
+      "independent_readings": [],
+      "status": "NEEDS_SIGN_LOCATION_AND_SECOND_REVIEW"
+    },
+    {
+      "region_id": "zone1_line2_sign4",
+      "photo_sign_rect": null,
+      "drawing_sign_rect": null,
+      "photo_stroke_trace": null,
+      "independent_readings": [],
+      "status": "NEEDS_SIGN_LOCATION_AND_SECOND_REVIEW"
+    },
+    {
+      "region_id": "zone1_line2_sign8",
+      "photo_sign_rect": null,
+      "drawing_sign_rect": null,
+      "photo_stroke_trace": null,
+      "independent_readings": [],
+      "status": "NEEDS_SIGN_LOCATION_AND_SECOND_REVIEW"
+    },
+    {
+      "region_id": "zone2_midline_uncertain_sign",
+      "photo_sign_rect": null,
+      "drawing_sign_rect": null,
+      "photo_stroke_trace": null,
+      "independent_readings": [],
+      "status": "NEEDS_SIGN_LOCATION_AND_SECOND_REVIEW"
+    },
+    {
+      "region_id": "zone2_late_sign",
+      "photo_sign_rect": null,
+      "drawing_sign_rect": null,
+      "photo_stroke_trace": null,
+      "independent_readings": [],
+      "status": "NEEDS_SIGN_LOCATION_AND_SECOND_REVIEW"
+    }
+  ],
+  "photo_visual_observation": "Incised-looking linear features mingle with corrosion and reflective deformation; individual sign attribution is not secure at this rendering.",
+  "drawing_visual_observation": "Central dense crossings and right-end upright/angled line clusters are clear in the illustration, but exact one-to-one photograph registration not established.",
+  "rights_verified": false,
+  "signs_verified": 0,
+  "core_allowed": false
+}
