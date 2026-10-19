@@ -1,0 +1,49 @@
+{
+  "schema": "IberOS-810-Bibliographic-Extension/1.0",
+  "date": "2026-10-19",
+  "previous_csv_records": 806,
+  "new_dois": 4,
+  "current_distinct_dois_in_working_csv": 810,
+  "verified_metadata_in_working_csv": 12,
+  "remaining_to_candidate_goal": 190,
+  "new_records": [
+    {
+      "doi": "10.36707/palaeohispanica.v24i1.629",
+      "title": "Una nueva lámina de plomo con inscripciones en alfabeto greco-ibérico de la Illeta dels Banyets (El Campello, Alicante)",
+      "source": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/629",
+      "publisher_metadata_verified": true,
+      "article_read": false,
+      "core_evidence_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v24i1.627",
+      "title": "Lube: un antropónimo celtibérico iberizado de San Miguel III",
+      "source": "https://www.ifc-ojs.es/index.php/palaeohispanica/de/article/view/627",
+      "publisher_metadata_verified": true,
+      "article_read": false,
+      "core_evidence_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v25i1.703",
+      "title": "La casa de Taŕśabań",
+      "source": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/703",
+      "publisher_metadata_verified": true,
+      "article_read": false,
+      "core_evidence_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v23i0.530",
+      "title": "Greeks and Iberians in contact: the testimony of Greek inscriptions",
+      "source": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/view/530",
+      "publisher_metadata_verified": true,
+      "article_read": false,
+      "core_evidence_approved": false
+    }
+  ],
+  "cautions": [
+    "810 is a candidate inventory size, not 810 relevant or scholarly-validated references",
+    "Deduplicated by DOI within working CSV, not against every repository resource",
+    "Full PDF reading and inscription verification pending"
+  ],
+  "site_redeployed": false
+}
