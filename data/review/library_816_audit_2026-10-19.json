@@ -1,0 +1,32 @@
+{
+  "schema": "IberOS-Library-816-Audit/1.0",
+  "date": "2026-10-19",
+  "prior_catalog_count": 814,
+  "current_working_catalog_count": 816,
+  "unique_dois_within_working_csv": 816,
+  "new_publisher_verified_records": [
+    {
+      "doi": "10.36707/palaeohispanica.v0i8.265",
+      "title": "Una inscripción ibérica sobre plomo procedente del poblado de la Moleta del Remei (Alcanar, Montsià, Tarragona)",
+      "publisher_url": "https://ifc-ojs.es/index.php/palaeohispanica/ca/article/view/265",
+      "scope": "DIRECT_EPIGRAPHIC_SOURCE"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v25i1.704",
+      "title": "La dualitat de les vibrants a les escriptures paleohispàniques: del plom de la Bastida a la mà d’Irulegi",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/de/article/view/704",
+      "scope": "PALEOGRAPHIC_METHOD"
+    }
+  ],
+  "verified_metadata_flags_prior": 16,
+  "verified_metadata_flags_current": 18,
+  "remaining_candidate_gap": 184,
+  "scientifically_approved_new_entries": 0,
+  "important_corrections": [
+    "Prior narrative count of 12 verified was inconsistent with the 814 CSV actual 16 true values.",
+    "Some automated 802 harvest hits are outside Iberian language studies; 816 DOIs is not 816 pertinent confirmed references.",
+    "No full text or direct glyph assessment was completed for these two records."
+  ],
+  "global_catalog_deduplication": "PENDING",
+  "public_website_republished": false
+}
