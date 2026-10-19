@@ -1,0 +1,58 @@
+{
+  "schema": "IberOS-Sign-Ambiguity/1.0",
+  "id": "ILLET-A-L1-BO-KO-01",
+  "object_id": "IBR-PLM-0012",
+  "inscription_face": "A",
+  "inscription_line": 1,
+  "sign_position": "After ildur, before final n; specific character index pending explicit diplomatic alignment",
+  "source": {
+    "article": "Ferrer i Jané, Martínez, Olcina y Verdú (2024), Palaeohispanica 24, pp.247–278",
+    "url": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
+    "printed_page": 260,
+    "pdf_page_index_zero_based": 13,
+    "figure": 8,
+    "figure_panel": "bottom-left photograph, explicitly captioned bo o ko"
+  },
+  "editorial_options": [
+    {
+      "reading": "ildurkon",
+      "target_sign": "ko",
+      "position": "preferred_by_authors",
+      "rationale": "Authors judge apparent diagonal strokes may belong to striations at fold; lexical kon also favors this reconstruction"
+    },
+    {
+      "reading": "ildurbon",
+      "target_sign": "bo",
+      "position": "allowed_by_authors",
+      "rationale": "If diagonal strokes belong to inscription and not fold/scratches, bo remains graphically possible"
+    }
+  ],
+  "evidence": {
+    "photo_panel_identified": true,
+    "photo_panel_located": true,
+    "local_pixel_roi": null,
+    "original_image_extracted": false,
+    "material_distortion": [
+      "fold",
+      "surface striations"
+    ],
+    "independent_stroke_tracing": false,
+    "distinctive_diagonal_engraving_confirmed": false,
+    "second_reviewer": null
+  },
+  "decision": {
+    "graphic_status": "UNRESOLVED_BO_KO",
+    "editorial_preference": "ko",
+    "independently_read_sign": null,
+    "eligible_for_core": false,
+    "semantic_validation": false,
+    "confidence_score": null
+  },
+  "next_protocol": [
+    "Obtain original-resolution licensed photograph of figure 8 bottom-left panel",
+    "Register image file hash and pixel-region bounds",
+    "Trace candidates for intentional incisions versus fold striations blind to lexical readings",
+    "Conduct independent second review",
+    "Compare with authenticated greco-Iberian bo and ko reference forms without semantic priors"
+  ]
+}
