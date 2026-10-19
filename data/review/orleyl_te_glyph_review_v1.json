@@ -6,7 +6,7 @@
     "year": 1981,
     "title": "Los plomos escritos (Orleyl V, VI y VII)",
     "source_url": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf",
-    "comparison_location": "PDF p.77, comentario Orleyl V-19"
+    "comparison_location": "PDF p.89 (printed p.88), Orleyl V-19; VII-B-7 discussion in PDF approximately p.114 (printed p.113); verify pagination per viewer"
   },
   "cases": [
     {
@@ -172,10 +172,10 @@
     "target_anchor_after": "iŕika",
     "critical_note": "The edited word has ŕ, while Fletcher's upper-case transcription writes R. Do not use unaccented string matching to assert graphic sign identity.",
     "segmentation_hypotheses": [
-      "bas|biteŕoke|tine",
-      "bas|biteŕoke|te|tine"
+      "BAS|BITEROKE|TINE (editorial analytical option only)",
+      "(previous word + BAS)|BITEROKE|TINE (Fletcher's stated alternative at VII-B-7)"
     ],
-    "segmentation_note": "These are only comparison hypotheses, not established morpheme boundaries. Second hypothesis reflects the extra TE documented in Orleyl V; it must not be asserted for VII.",
+    "segmentation_note": "The additional -TE- is attested editorially in V-19, not VII-B-7; earlier hypothetical VII-B 'bas|biteŕoke|te|tine' was an invalid conflation of testimonies and is retired. Fletcher explicitly cautions BAS may be the end of the preceding word despite dotted separation.",
     "orientation": "ROTATED_180_DEGREES_ORIENTED_FOR_READING",
     "physical_row": null,
     "image_coordinates": null,
@@ -249,5 +249,13 @@
       "Confirm target dividers and rótica on the actual figure before assigning any sign position",
       "No TE morphological or recipient semantic promotion without independent review"
     ]
+  },
+  "primary_source_new_check_2026_10_19": {
+    "source": "https://mupreva.org/web_mupreva_dedalo/publicaciones/101/va",
+    "locator": "VII-B-7.-BASBITEROKETINE",
+    "verified_from_indexed_edition_text": true,
+    "quotation_summary": "Fletcher questions whether BAS belongs to the previous word despite a vertical dotted divider; identifies -BITEROKE parallel in V-19 and 41, and -TINE versus V-19 -TETINE.",
+    "effect": "SEGMENTATION_AMBIGUITY_REGISTERED",
+    "visual_position_verified": false
   }
 }
