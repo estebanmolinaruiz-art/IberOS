@@ -349,5 +349,51 @@
     "photo_verified": false,
     "semantic_gate": "OPEN",
     "next_action": "Re-annotate full row including all initial signs and each vertical-dot cluster. Match boundary signs to Fletcher syllabic sequence and photograph before accepting any box."
+  },
+  "figure25_line2_separator_audit_v2": {
+    "status": "VISUAL_SEPARATOR_CANDIDATES_WITH_EDITORIAL_ALIGNMENT",
+    "source": "User supplied Fletcher 1981 PDF p.111 fig25 and p.110 complete transcription",
+    "pdf_sha256": "cc8e110f12d8047567e30ee6344a345e599ee55638450b78e22bccfbbc9c6551",
+    "raster": {
+      "dimensions_px": [
+        1906,
+        1439
+      ],
+      "scale": 2.5,
+      "rotation_degrees_clockwise": 90,
+      "context_bbox_xyxy": [
+        395,
+        530,
+        1720,
+        635
+      ]
+    },
+    "candidate_separator_x": [
+      752,
+      979,
+      1402,
+      1602
+    ],
+    "editorial_line_2": [
+      "initial group (uncertain)",
+      "CUDUBOIKE",
+      "BASBITEROKETINE",
+      "IRICA"
+    ],
+    "target_between_separator_candidates": [
+      "S2",
+      "S3"
+    ],
+    "candidate_target_x_range": [
+      979,
+      1402
+    ],
+    "observation": "Dots-like marks at four proposed vertical boundaries visible in Fletcher drawing; row-neighbor traces remain in the wide context strip.",
+    "provisional": true,
+    "sign_by_sign_verified": false,
+    "photo_verified": false,
+    "te_glyph_absence_verified": false,
+    "eligible_for_core_execution": false,
+    "retired_group_boxes_source": "figure25_line2_group_candidates_2026_10_19"
   }
 }
