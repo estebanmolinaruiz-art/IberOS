@@ -15,7 +15,7 @@ def test_graphic_evidence_first_batch_is_consistent_and_unverified():
         if x.get("figure_reference_located"):
             assert x["specific_figure"]
         assert x["face"] is None and x["line"] is None and x["sign_index"] is None
-        assert x["visual_evidence_status"]=="NOT_INSPECTED"
+        assert x["visual_evidence_status"] in {"NOT_INSPECTED","PUBLISHED_PHOTOS_AND_DRAWING_VISUALLY_INSPECTED_NOT_SIGN_VERIFIED"}
         assert x["image_reuse_rights"]=="NOT_VERIFIED"
         assert x["sign_by_sign_verified"] is False
         assert x["eligible_for_core"] is False and x["semantic_translation_validated"] is False
