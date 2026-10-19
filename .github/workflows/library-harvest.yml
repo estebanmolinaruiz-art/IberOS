@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,7 +25,7 @@ jobs:
         env:
           REQUESTED_LIMIT: ${{ inputs.limit || '1000' }}
         run: |
-          python scripts/collect_library_candidates.py --limit "$REQUESTED_LIMIT" --output library_candidates_review.json
+          python scripts/collect_library_candidates.py --limit "$REQUESTED_LIMIT" --batch-size 25 --delay 2 --output library_candidates_review.json
       - name: Validate no automatic scientific promotion
         run: |
           python - <<'PY'
@@ -37,6 +37,7 @@ jobs:
           print(len(data['items']), 'pending-review candidates; zero Core promotions')
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: iberos-library-unreviewed-candidates
           path: library_candidates_review.json
