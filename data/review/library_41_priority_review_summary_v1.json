@@ -1,0 +1,22 @@
+{
+  "schema": "IberOS-41-Bibliographic-Review-Summary/1.0",
+  "source_run": 39275422274,
+  "original_802_records": true,
+  "reviewed_candidate_metadata": 41,
+  "levels": {
+    "verified_journal_metadata": 2,
+    "potentially_relevant_pending_source": 18,
+    "requires_disambiguation": 9,
+    "out_of_scope_by_title_provisional": 12
+  },
+  "verified_dois": [
+    "10.36707/palaeohispanica.v0i19.221",
+    "10.36707/palaeohispanica.v0i17.142"
+  ],
+  "review_method": "Manual title-level scope screening over 41 candidates and direct journal landing-page check for two DOIs",
+  "source_documents_read": 0,
+  "scientifically_approved_epigraphic_fiches": 0,
+  "automatic_core_promotion": false,
+  "caution": "Metadata verified is not full article or glyph verification; title-based exclusions are provisional, not definitive",
+  "next_step": "Verify landing pages of 18 relevant candidates and clarify nine ambiguous titles; create bibliographic fiches with explicit evidence level"
+}
