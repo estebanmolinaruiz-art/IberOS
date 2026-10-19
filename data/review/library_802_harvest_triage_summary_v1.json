@@ -1,0 +1,20 @@
+{
+  "schema": "IberOS-Crossref-Harvest-Review-Summary/1.0",
+  "source_run": 39275422274,
+  "source_artifact": 12196578351,
+  "source_metadata_records": 802,
+  "unique_dois_within_run": 802,
+  "screening_method": "Conservative title-only keyword pre-screen on exported Crossref metadata",
+  "triage": {
+    "PRIORITY_METADATA_REVIEW": 16,
+    "BROAD_AMBIGUOUS_REVIEW": 24,
+    "SECONDARY_METADATA_REVIEW": 1,
+    "LOW_PRIORITY_NOT_CONFIRMED": 761
+  },
+  "scientific_articles_individually_read": 0,
+  "scientific_fiches_approved": 0,
+  "semantic_core_promotions": 0,
+  "review_stage": "PRELIMINARY_AUTOMATIC_TRIAGE_COMPLETED_EDITORIAL_PENDING",
+  "note": "Counts are candidate titles, not scientifically vetted references. Full triage file available in the downloadable review package accompanying conversation; original GitHub Actions artifact available for 30 days.",
+  "next_step": "Human verification of DOI landing pages, titles, authors and relevance for priority and ambiguous buckets before publishing fiche metadata"
+}
