@@ -32,3 +32,9 @@ ROK-RECIPIENT-02 = OPEN. exact_glyph_coordinates_verified = false. te_morpheme_c
 - **IberOS+ · Web pública / IberOS+web v2**: visualización y despliegue solamente después de consultar el estado de evidencia del expediente.
 - Cualquier avance en otro hilo debe mencionar la clave de tarea, el archivo canónico, el commit y el nuevo dato observado.
 - Los hilos no pueden renombrarse, cerrarse ni sincronizarse automáticamente por este archivo; es una convención de coordinación.
+
+## Instrumento nuevo — paneles reproducibles (19-10-2026)
+- [Script de extracción de páginas originales](../scripts/orleyl_prepare_source_panels.py) y [pruebas de no promoción](../tests/test_orleyl_source_panels.py).
+- Ejecución local: `python scripts/orleyl_prepare_source_panels.py --pdf Fletcher1981.pdf --out /tmp/orleyl-panels` (requiere PyMuPDF).
+- Genera cuatro paneles y un manifiesto con hash SHA-256, dimensiones, páginas y estado `PENDING`; **no** identifica ni valida grafemas.
+- Bloqueo restante: ejecutar con copia legítima del PDF, inspeccionar figuras y fotografías, anotar separadores y caracteres reales. No subir el PDF o paneles sin comprobar derechos.
