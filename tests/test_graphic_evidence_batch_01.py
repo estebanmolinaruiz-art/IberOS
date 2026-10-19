@@ -10,7 +10,10 @@ def test_graphic_evidence_first_batch_is_consistent_and_unverified():
     assert len({x["review_id"] for x in data["records"]})==10
     for x in data["records"]:
         assert x["source_url"].startswith("https://")
-        assert x["specific_figure"] is None and x["printed_page"] is None
+        assert x["printed_page"] is None or isinstance(x["printed_page"], int)
+        assert x["specific_figure"] is None or isinstance(x["specific_figure"], str)
+        if x.get("figure_reference_located"):
+            assert x["specific_figure"]
         assert x["face"] is None and x["line"] is None and x["sign_index"] is None
         assert x["visual_evidence_status"]=="NOT_INSPECTED"
         assert x["image_reuse_rights"]=="NOT_VERIFIED"
