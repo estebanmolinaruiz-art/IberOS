@@ -286,5 +286,51 @@
     "separator_before_bas_verified": false,
     "sign_coordinates_verified": false,
     "core_promotion": false
+  },
+  "figure25_line2_group_candidates_2026_10_19": {
+    "source": "User-supplied Fletcher 1981 PDF, page 111 fig 25; transliteration PDF page 110",
+    "source_pdf_sha256": "cc8e110f12d8047567e30ee6344a345e599ee55638450b78e22bccfbbc9c6551",
+    "orientation": "ROTATE_90_CLOCKWISE",
+    "render_scale": 2.5,
+    "rendered_dimensions_px": [
+      1906,
+      1439
+    ],
+    "line": 2,
+    "boxes_xyxy_px": [
+      {
+        "reading": "CUDUBOIKE",
+        "bbox": [
+          664,
+          549,
+          855,
+          617
+        ]
+      },
+      {
+        "reading": "BASBITEROKETINE",
+        "bbox": [
+          866,
+          549,
+          1239,
+          617
+        ]
+      },
+      {
+        "reading": "IRICA",
+        "bbox": [
+          1250,
+          549,
+          1608,
+          617
+        ]
+      }
+    ],
+    "status": "CANDIDATE_GROUP_BOUNDARIES_FROM_FLETCHER_ALIGNMENT",
+    "separator_points": "VISIBLE_IN_DRAWING; precise association provisional",
+    "glyphs_individually_verified": false,
+    "photo_plate_XXII_glyphs_verified": false,
+    "semantic_gate": "OPEN",
+    "note": "Manual approximate block polygons in this specific raster; not cross-raster reusable."
   }
 }
