@@ -45,7 +45,7 @@
   "eligible_for_core_execution": false,
   "notice": "The case object id is a placeholder link to the curated Orleyl record and must not be used to identify both inscribed objects until their IDs are independently reconciled.",
   "image_quality_control": {
-    "review_status": "FULL_FIGURE_ORIENTATION_CORRECTED_GLYPH_MAPPING_PENDING",
+    "review_status": "FIVE_VISIBLE_ROWS_ISOLATED_TARGET_GLYPHS_NOT_IDENTIFIED",
     "observation": "The previous Orleyl VII-B line crop contains mostly blank space and does not reproduce enough glyphs to check the proposed TE absence.",
     "usable_overview": "Fletcher figures 22 and 25 show inscriptions at overview scale, but target TE glyphs have not been aligned to exact positions.",
     "previous_crop_may_be_used_as_evidence": false,
@@ -78,5 +78,78 @@
     "glyph_sequence_bounds_verified": false,
     "te_absence_graphically_verified": false,
     "figure_rights_for_redistribution_verified": false
+  },
+  "figure_25_inspection": {
+    "source_image_dimensions_px": [
+      2287,
+      1727
+    ],
+    "orientation": "ORIENTED_FOR_READING",
+    "inspection_bands": [
+      {
+        "visual_row": 1,
+        "x_range_px": [
+          480,
+          2175
+        ],
+        "y_range_px": [
+          580,
+          667
+        ],
+        "mapped_to_fletcher_element_7": false
+      },
+      {
+        "visual_row": 2,
+        "x_range_px": [
+          480,
+          2175
+        ],
+        "y_range_px": [
+          652,
+          733
+        ],
+        "mapped_to_fletcher_element_7": false
+      },
+      {
+        "visual_row": 3,
+        "x_range_px": [
+          480,
+          2175
+        ],
+        "y_range_px": [
+          722,
+          807
+        ],
+        "mapped_to_fletcher_element_7": false
+      },
+      {
+        "visual_row": 4,
+        "x_range_px": [
+          480,
+          2175
+        ],
+        "y_range_px": [
+          795,
+          884
+        ],
+        "mapped_to_fletcher_element_7": false
+      },
+      {
+        "visual_row": 5,
+        "x_range_px": [
+          480,
+          2175
+        ],
+        "y_range_px": [
+          872,
+          978
+        ],
+        "mapped_to_fletcher_element_7": false
+      }
+    ],
+    "finding": "Five graphic rows can be examined individually, but no unique BITEROKETINE span is yet identified. The editorial element VII-B 7 is not equivalent to visible graphic row 5.",
+    "visual_sequence_assigned": false,
+    "sign_by_sign_verification": false,
+    "publication_rights_checked": false
   }
 }
