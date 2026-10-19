@@ -151,5 +151,37 @@
     "visual_sequence_assigned": false,
     "sign_by_sign_verification": false,
     "publication_rights_checked": false
+  },
+  "editorial_alignment_v2": {
+    "status": "TEXTUAL_ALIGNMENT_CONFIRMED_GLYPH_ALIGNMENT_PENDING",
+    "primary_source": {
+      "author": "Domingo Fletcher Valls",
+      "year": 1981,
+      "reference": "Orleyl VII-B-7",
+      "reading": "BASBITEROKETINE",
+      "comment": "Fletcher explicitly contrasts -TINE here with -TETINE in Orleyl V-19",
+      "url": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_101.pdf"
+    },
+    "secondary_source": {
+      "attribution": "Rodríguez Ramos (2005), transcription reproduced in Zaragoza TFM (2014), p. 107",
+      "url": "https://zaguan.unizar.es/record/31144/files/TAZ-TFM-2014-595.pdf",
+      "context": "areŕe : kutuboike : basbiteŕoketine : iŕika :"
+    },
+    "target_word": "basbiteŕoketine",
+    "target_anchor_before": "kutuboike",
+    "target_anchor_after": "iŕika",
+    "critical_note": "The edited word has ŕ, while Fletcher's upper-case transcription writes R. Do not use unaccented string matching to assert graphic sign identity.",
+    "segmentation_hypotheses": [
+      "bas|biteŕoke|tine",
+      "bas|biteŕoke|te|tine"
+    ],
+    "segmentation_note": "These are only comparison hypotheses, not established morpheme boundaries. Second hypothesis reflects the extra TE documented in Orleyl V; it must not be asserted for VII.",
+    "orientation": "ROTATED_180_DEGREES_ORIENTED_FOR_READING",
+    "physical_row": null,
+    "image_coordinates": null,
+    "next_check": "Identify visually the two flanking separators, then annotate individual signs on the complete figure 25; retain unverified status until image evidence.",
+    "editorial_line_numbers_are_not_physical_rows": true,
+    "te_morpheme_confirmed": false,
+    "eligible_for_core_execution": false
   }
 }
