@@ -1,0 +1,57 @@
+{
+  "schema": "IberOS-Bibliographic-Editorial-Batch/1.0",
+  "date": "2026-10-19",
+  "method": "Direct verification of Palaeohispanica publisher article pages, crosschecked against 802 harvest CSV",
+  "records": [
+    {
+      "doi": "10.36707/palaeohispanica.v0i15.38",
+      "title": "Cultura epigráfica y romanización en el ámbito ibérico meridional",
+      "authors": "Javier Herrera Rando",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/ca/article/view/38",
+      "scope": "IBERIAN_EPIGRAPHIC_CONTEXT",
+      "publisher_metadata_confirmed": true,
+      "in_original_802_harvest": false,
+      "duplicate_check_all_repository_files": "PENDING",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i20.370",
+      "title": "Ibérico",
+      "authors": "Noemí Moncunill Martí; Javier Velaza Frías",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/370",
+      "scope": "IBERIAN_LANGUAGE_SYNTHESIS",
+      "publisher_metadata_confirmed": true,
+      "in_original_802_harvest": false,
+      "duplicate_check_all_repository_files": "PENDING",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i9.251",
+      "title": "Notas sobre algunas inscripciones paleohispánicas",
+      "authors": "Eugenio R. Luján",
+      "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/251",
+      "scope": "CRITICAL_READINGS_MIXED",
+      "publisher_metadata_confirmed": true,
+      "in_original_802_harvest": false,
+      "duplicate_check_all_repository_files": "PENDING",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v25i1.691",
+      "title": "Hacia una definición de la epigrafía del sudoeste: Lugares, gentes, formas y motivos de una cultura epigráfica enigmática",
+      "authors": "David Muñoz Cuadrillero",
+      "url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/691",
+      "scope": "COMPARATIVE_NON_IBERIAN",
+      "publisher_metadata_confirmed": true,
+      "in_original_802_harvest": false,
+      "duplicate_check_all_repository_files": "PENDING",
+      "full_text_read": false,
+      "core_approved": false
+    }
+  ],
+  "net_new_confirmed_global_count": "UNDETERMINED",
+  "website_published": false
+}
