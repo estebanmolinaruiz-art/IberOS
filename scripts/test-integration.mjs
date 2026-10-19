@@ -216,6 +216,8 @@ assert(rokCross.fletcher_te_contrast.decision.documentary_case_closed===true&&ro
 const orleylGlyph=json('data/orleyl_te_glyph_review_v1.json');
 assert(orleylGlyph.cases.length===2&&orleylGlyph.exact_glyph_coordinates_verified===false&&orleylGlyph.eligible_for_core_execution===false,'Orleyl figures indexed without claiming per-glyph approval');
 
-assert(orleylGlyph.image_quality_control.review_status==='FULL_FIGURE_ORIENTATION_CORRECTED_GLYPH_MAPPING_PENDING'&&orleylGlyph.image_quality_control.previous_crop_may_be_used_as_evidence===false,'Defective Orleyl VII-B crop excluded from proof');
+assert(orleylGlyph.image_quality_control.review_status==='FIVE_VISIBLE_ROWS_ISOLATED_TARGET_GLYPHS_NOT_IDENTIFIED'&&orleylGlyph.image_quality_control.previous_crop_may_be_used_as_evidence===false,'Defective Orleyl VII-B crop excluded from proof');
 
 assert(orleylGlyph.figure25_candidate_mapping.candidate_physical_row===2&&orleylGlyph.figure25_candidate_mapping.glyph_sequence_bounds_verified===false&&orleylGlyph.figure25_candidate_mapping.te_absence_graphically_verified===false,'Orleyl VII-B second row is a candidate, not proven sign alignment');
+
+assert(orleylGlyph.figure_25_inspection.inspection_bands.length===5&&orleylGlyph.figure_25_inspection.visual_sequence_assigned===false&&orleylGlyph.exact_glyph_coordinates_verified===false,'Five Orleyl graphic rows located without claiming glyph match');
