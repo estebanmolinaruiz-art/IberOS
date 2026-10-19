@@ -159,10 +159,10 @@
       "review_id": "B01-GR-07",
       "object_id": "IBR-PLM-0011",
       "object_name": "Plomo de la Moleta del Remei",
-      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/ca/article/view/265",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/28/40/12ferreretal.pdf",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "Fig. 4 photograph, Fig. 5 epigraphic drawing",
+      "printed_page": 215,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -176,7 +176,12 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "additional_printed_pages": [
+        216
+      ],
+      "figure_reference_located": true,
+      "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF"
     },
     {
       "review_id": "B01-GR-08",
@@ -230,27 +235,36 @@
       "review_id": "B01-GR-10",
       "object_id": "IBR-PLM-0012",
       "object_name": "Lámina greco-ibérica de la Illeta dels Banyets",
-      "source_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/629",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "Fig. 5 pre/post-restoration photos; Fig. 6 archaeological and epigraphic drawings; Fig. 8 close-ups of ko/bo",
+      "printed_page": 256,
       "face": null,
       "line": null,
       "sign_index": null,
-      "image_citation": null,
+      "image_citation": "Ferrer i Jané et al. (2024), Palaeohispanica 24, figs.5,6,8, pp.256,259–260",
       "visible_glyph_description": null,
-      "editorial_reading": null,
-      "alternative_readings": [],
+      "editorial_reading": "ildurkon (preferred by edition)",
+      "alternative_readings": [
+        "ildurbon"
+      ],
       "image_reuse_rights": "NOT_VERIFIED",
       "visual_evidence_status": "NOT_INSPECTED",
       "independent_reviewer": null,
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "additional_printed_pages": [
+        259,
+        260
+      ],
+      "figure_reference_located": true,
+      "evidence_kind": "FIGURES_AND_PRINTED_PAGES_CONFIRMED_IN_PRIMARY_PDF",
+      "graphic_uncertainty_note": "The edition attributes possible diagonal strokes to folds or scratches; alternatives not independently re-read"
     }
   ],
-  "figures_or_figure_sets_located": 3,
+  "figures_or_figure_sets_located": 5,
   "textual_only_source_location_count": 1,
   "page_number_verification_note": "Can Rodon figure 1 caption found, exact printed page not independently established; not asserted.",
   "primary_edition_pdf_locations_added": 2
