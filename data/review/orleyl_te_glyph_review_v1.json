@@ -326,11 +326,28 @@
         ]
       }
     ],
-    "status": "CANDIDATE_GROUP_BOUNDARIES_FROM_FLETCHER_ALIGNMENT",
+    "status": "SUPERSEDED_PARTIALLY_INVALID_BLOCK_BOUNDARIES",
     "separator_points": "VISIBLE_IN_DRAWING; precise association provisional",
     "glyphs_individually_verified": false,
     "photo_plate_XXII_glyphs_verified": false,
     "semantic_gate": "OPEN",
-    "note": "Manual approximate block polygons in this specific raster; not cross-raster reusable."
+    "note": "Review of full line-2 figure against Fletcher PDF p.110 reveals that the CUDUBOIKE candidate box starts too far right and omits initial strokes/signs. Previous group boxes must not be used as verified group boundaries; target and right-hand box boundaries also remain hypotheses pending individual separator-to-sign collation."
+  },
+  "figure25_line2_reassessment_2026_10_19": {
+    "source": "Uploaded primary Fletcher PDF, PDF pp.110-111",
+    "editorial_sequence": [
+      "preceding editorial element (partially unclear in PDF text extraction)",
+      "CUDUBOIKE",
+      "BASBITEROKETINE",
+      "IRICA"
+    ],
+    "verified_level": "EDITORIAL_ORDER_AND_ROW_ONLY",
+    "observed": "Visible vertical-dot separator clusters in drawn line 2; per-cluster identity and exact pixel boxes not yet independently confirmed",
+    "prior_bbox_warning": "The prior CUDUBOIKE box [664,549,855,617] excludes its initial graphic portion; do not use these previous bounds as evidence",
+    "new_coordinates_verified": false,
+    "glyphs_verified": false,
+    "photo_verified": false,
+    "semantic_gate": "OPEN",
+    "next_action": "Re-annotate full row including all initial signs and each vertical-dot cluster. Match boundary signs to Fletcher syllabic sequence and photograph before accepting any box."
   }
 }
