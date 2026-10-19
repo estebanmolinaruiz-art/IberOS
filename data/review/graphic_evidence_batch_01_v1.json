@@ -59,9 +59,9 @@
       "review_id": "B01-GR-03",
       "object_id": "IBR-LAP-0001",
       "object_name": "Árula ibérica de Tarragona",
-      "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/243",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/29/54/36simon.pdf",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
+      "specific_figure": "Original edition Simón Cornago (2009) C.18.7; illustrations on MNAT inv. 338, figure numbering to verify",
       "printed_page": null,
       "face": null,
       "line": null,
@@ -76,7 +76,9 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "PRIMARY_EDITION_PDF_LOCATED_FIGURE_NUMBER_PENDING",
+      "figure_reference_located": false
     },
     {
       "review_id": "B01-GR-04",
@@ -134,7 +136,7 @@
       "object_name": "Signarios del Tos Pelat",
       "source_url": "https://ifc.dpz.es/recursos/publicaciones/31/37/_ebook.pdf",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
+      "specific_figure": "Láminas y signarios en Burriel et al. 2011, pp.191–224; precise figure unverified",
       "printed_page": null,
       "face": null,
       "line": null,
@@ -149,7 +151,9 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "PRIMARY_EDITION_PDF_LOCATED_FIGURE_NUMBER_PENDING",
+      "figure_reference_located": false
     },
     {
       "review_id": "B01-GR-07",
@@ -248,5 +252,6 @@
   ],
   "figures_or_figure_sets_located": 3,
   "textual_only_source_location_count": 1,
-  "page_number_verification_note": "Can Rodon figure 1 caption found, exact printed page not independently established; not asserted."
+  "page_number_verification_note": "Can Rodon figure 1 caption found, exact printed page not independently established; not asserted.",
+  "primary_edition_pdf_locations_added": 2
 }
