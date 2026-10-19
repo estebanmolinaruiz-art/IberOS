@@ -1,0 +1,8 @@
+case_id,site,object_class,claimed_unit,mass_g,provenance,role
+PC423,Puig Castellar,ponderal,a,423.78,Ferrer 2026 public summary,IN_SAMPLE
+TP418,Tos Pelat,ponderal,a,418,Ferrer 2026 public summary,IN_SAMPLE
+AL424,L Alcudia,ponderal,a,424,Ferrer 2026 public summary,IN_SAMPLE
+PM4129,Puig de la Misericordia,ponderal,o,41.29,Ferrer 2026 related study,IN_SAMPLE
+CI4146,El Cigarralejo tomb 200,ponderal,o,41.46,Ferrer 2026 public summary,IN_SAMPLE
+ARS343,ars heavy drachma,coin,ki,3.43,Ferrer 2026 public summary,IN_SAMPLE
+CI338,El Cigarralejo tomb 200,ponderal,ki,3.38,Ferrer 2026 public summary,IN_SAMPLE
