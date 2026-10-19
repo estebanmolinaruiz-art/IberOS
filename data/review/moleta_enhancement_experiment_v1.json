@@ -1,0 +1,67 @@
+{
+  "schema": "IberOS-Moleta-Enhancement-Experiment/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source": "User-supplied Ferrer et al. 2008 PDFs, Fig. 4 p.215 and Fig.5 p.216",
+  "source_photo_embedded_sha256": "5f818ab3c671e6c84ba434164b66b21747eb944e9111e6e33e62f5e7c79d2201",
+  "source_drawing_embedded_sha256": "a0bd2cd296b7f2d9bbf444acfaf9eedf3a93543b5c7127517cacfdb693ba5fc8",
+  "photo_embedded_pixels": [
+    2125,
+    2124
+  ],
+  "drawing_embedded_pixels": [
+    711,
+    956
+  ],
+  "face_crop_in_original_image_px": [
+    95,
+    130,
+    2020,
+    965
+  ],
+  "processing": [
+    {
+      "name": "original_rgb",
+      "method": "unaltered embedded published image crop"
+    },
+    {
+      "name": "grayscale",
+      "method": "cv2.COLOR_RGB2GRAY"
+    },
+    {
+      "name": "clahe",
+      "method": "clipLimit=2.0 tileGridSize=(12,12)"
+    },
+    {
+      "name": "unsharp",
+      "method": "CLAHE(1.35) - GaussianBlur(sigma=1.4)(0.35)"
+    },
+    {
+      "name": "canny",
+      "method": "Canny(45,130)",
+      "scientific_limit": "Edges are not equal to original incisions"
+    }
+  ],
+  "observations": [
+    "Original and CLAHE preserve approximately the same apparent sign candidates; CLAHE increases visibility of corrosion, scratches and deformation too.",
+    "Strongly textured and partly fused region is not suitable for automatic extraction of reliable glyph identities.",
+    "Published editorial drawing and photograph should be contrasted at matched local regions before any character-level decision."
+  ],
+  "unresolved_regions": [
+    "zone1_line2_sign3",
+    "zone1_line2_sign4",
+    "zone1_line2_sign8",
+    "zone2_midline_uncertain_sign",
+    "zone2_late_sign"
+  ],
+  "resolved_sign_count": 0,
+  "sign_level_roi_confirmed": 0,
+  "semantic_validation": false,
+  "core_promotion": false,
+  "rights_to_republish": false,
+  "next_actions": [
+    "Two independent blind visual annotations of candidate strokes on unaltered image",
+    "Registration of verified pairwise matching photo/drawing sign ROIs",
+    "Score disagreement and missing-stroke uncertainty; reject guesses without discriminating visible features",
+    "Acquire additional oblique lighting or multispectral photos from object custodian if published photo remains ambiguous"
+  ]
+}
