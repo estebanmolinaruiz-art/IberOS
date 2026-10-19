@@ -1,0 +1,1 @@
+Launch retry-aware 1000-candidate Crossref harvest; batch_size=25; 2s intervals; no scientific Core promotion.
