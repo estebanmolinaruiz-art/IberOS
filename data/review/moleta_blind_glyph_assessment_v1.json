@@ -1,0 +1,122 @@
+{
+  "schema": "IberOS-Moleta-Blind-Glyph-Assessment/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source": "Ferrer i Jané et al. (2008), Palaeohispanica 8, figs.4–5",
+  "review_protocol": "Two independent observers must annotate unaltered photograph BEFORE consulting editorial drawing or published glyph alternatives. Spatial ROIs are required for each proposed stroke.",
+  "records": [
+    {
+      "assessment_id": "MOLETA-BLIND-1",
+      "region_id": "zone1_line2_sign3",
+      "photo_pixel_roi": null,
+      "drawing_pixel_roi": null,
+      "landmark_registration_verified": false,
+      "observer_a": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "observer_b": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "editorial_comparison_unlocked": false,
+      "adjudication": "PENDING_INDEPENDENT_OBSERVATIONS",
+      "core_promotion_allowed": false
+    },
+    {
+      "assessment_id": "MOLETA-BLIND-2",
+      "region_id": "zone1_line2_sign4",
+      "photo_pixel_roi": null,
+      "drawing_pixel_roi": null,
+      "landmark_registration_verified": false,
+      "observer_a": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "observer_b": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "editorial_comparison_unlocked": false,
+      "adjudication": "PENDING_INDEPENDENT_OBSERVATIONS",
+      "core_promotion_allowed": false
+    },
+    {
+      "assessment_id": "MOLETA-BLIND-3",
+      "region_id": "zone1_line2_sign8",
+      "photo_pixel_roi": null,
+      "drawing_pixel_roi": null,
+      "landmark_registration_verified": false,
+      "observer_a": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "observer_b": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "editorial_comparison_unlocked": false,
+      "adjudication": "PENDING_INDEPENDENT_OBSERVATIONS",
+      "core_promotion_allowed": false
+    },
+    {
+      "assessment_id": "MOLETA-BLIND-4",
+      "region_id": "zone2_midline_uncertain_sign",
+      "photo_pixel_roi": null,
+      "drawing_pixel_roi": null,
+      "landmark_registration_verified": false,
+      "observer_a": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "observer_b": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "editorial_comparison_unlocked": false,
+      "adjudication": "PENDING_INDEPENDENT_OBSERVATIONS",
+      "core_promotion_allowed": false
+    },
+    {
+      "assessment_id": "MOLETA-BLIND-5",
+      "region_id": "zone2_late_sign",
+      "photo_pixel_roi": null,
+      "drawing_pixel_roi": null,
+      "landmark_registration_verified": false,
+      "observer_a": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "observer_b": {
+        "reviewer": null,
+        "observed_strokes": [],
+        "photo_only_reading": null,
+        "confidence": null
+      },
+      "editorial_comparison_unlocked": false,
+      "adjudication": "PENDING_INDEPENDENT_OBSERVATIONS",
+      "core_promotion_allowed": false
+    }
+  ],
+  "unresolved": 5,
+  "independently_verified": 0,
+  "semantic_validation": false,
+  "rights_verified": false
+}
