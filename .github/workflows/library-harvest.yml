@@ -23,7 +23,7 @@ jobs:
           python-version: "3.11"
       - name: Fetch candidate bibliographic metadata (unreviewed)
         env:
-          REQUESTED_LIMIT: ${{ inputs.limit }}
+          REQUESTED_LIMIT: ${{ inputs.limit || '1000' }}
         run: |
           python scripts/collect_library_candidates.py --limit "$REQUESTED_LIMIT" --output library_candidates_review.json
       - name: Validate no automatic scientific promotion
