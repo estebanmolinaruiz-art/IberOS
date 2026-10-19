@@ -1,11 +1,15 @@
 name: Biblioteca - cosecha bibliográfica
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/library-harvest-trigger/**"
   workflow_dispatch:
     inputs:
       limit:
-        description: "Número máximo de candidatas a consultar (hasta 500)"
+        description: "Número máximo de candidatas a consultar (hasta 1000)"
         required: false
-        default: "500"
+        default: "1000"
 jobs:
   harvest:
     runs-on: ubuntu-latest
@@ -27,6 +31,8 @@ jobs:
           python - <<'PY'
           import json
           data=json.load(open('library_candidates_review.json'))
+          assert len(data['items']) <= int(__import__('os').environ.get('REQUESTED_LIMIT', '1000'))
+          assert len({x['doi'] for x in data['items']}) == len(data['items'])
           assert all(x['status']=='PENDING_EDITORIAL_REVIEW' and x['core_evidence_approved'] is False for x in data['items'])
           print(len(data['items']), 'pending-review candidates; zero Core promotions')
           PY
