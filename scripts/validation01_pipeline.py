@@ -17,13 +17,17 @@ def run(root=ROOT):
     readiness=module("validation01_readiness").evaluate(te,hold,prereg)
     token_audit=module("validation01_te_token_audit").inspect(te)
     score=module("validation01_blind_score").audit(hold)
+    guard=module("validation01_hold_leakage_guard").evaluate(hold,
+        rows(root/"data/review/validation01_te_screening_2026-10-19.csv"),
+        rows(root/"data/review/validation01_orleyl_critical_lines_v1.csv"))
     # Critical: no pilot examples and no prediction/gold artifacts generated automatically.
     return {"pipeline":"IBEROS_VALIDATION01","reading_audit":{"records":token_audit["records"],
             "errors":token_audit["errors"],"counts":token_audit["counts"]},
             "readiness":readiness,"hold_scoring_gate":score["gate"],
             "hold_scoring_problems":score.get("problems",[]),
+            "known_object_leakage":guard,
             "development_mask_generator":"AVAILABLE_MANUAL_REVIEW_ONLY",
-            "pipeline_gate":"BLOCKED" if readiness["gate"]=="BLOCKED" or score["gate"]=="BLOCKED" or token_audit["errors"] else "AUDIT_REQUIRED",
+            "pipeline_gate":"BLOCKED" if readiness["gate"]=="BLOCKED" or score["gate"]=="BLOCKED" or token_audit["errors"] or guard["gate"]=="BLOCKED" else "AUDIT_REQUIRED",
             "scientific_verdict":"NOT_EVALUATED",
             "note":"Workflow integration is not a scientific result; never promote HOLD automatically."}
 if __name__=="__main__":
