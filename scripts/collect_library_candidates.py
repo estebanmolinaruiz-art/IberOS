@@ -6,12 +6,15 @@ import pathlib
 import re
 import urllib.parse
 import urllib.request
+import urllib.error
+import time
+import random
 
 BASE = pathlib.Path(__file__).resolve().parents[1] / "site" / "data"
 TERMS = ["Iberian epigraphy", "Palaeohispanic inscriptions", "Iberian script", "Iberian language inscriptions", "Palaeohispanic epigraphy", "Iberian paleography", "Iberian lead tablets", "Pech Maho inscriptions"]
 def norm(s):
     return re.sub(r"[^a-z0-9]+", "", str(s).casefold())
-def collect(limit):
+def collect(limit, batch_size=25, delay=1.5, retries=5):
     seen = set()
     items = []
     per_term = max(1, (limit + len(TERMS) - 1) // len(TERMS))
@@ -20,15 +23,31 @@ def collect(limit):
             break
         offset = 0
         while offset < per_term and len(items) < limit:
-            page_size = min(100, per_term - offset)
+            page_size = min(batch_size, per_term - offset)
             url = "https://api.crossref.org/works?" + urllib.parse.urlencode({"query.bibliographic": term, "rows": page_size, "offset": offset, "select": "DOI,title,author,published,URL,publisher"})
             request = urllib.request.Request(url, headers={"User-Agent": "IberOS-Library/1.1 (research metadata; contact via GitHub project)"})
-            try:
-                with urllib.request.urlopen(request, timeout=25) as response:
-                    results = json.load(response).get("message", {}).get("items", [])
-            except Exception as exc:
-                print(f"Source unavailable for {term}, offset {offset}: {exc}")
+            results = None
+            for attempt in range(retries + 1):
+                try:
+                    with urllib.request.urlopen(request, timeout=25) as response:
+                        results = json.load(response).get("message", {}).get("items", [])
+                    break
+                except urllib.error.HTTPError as exc:
+                    if exc.code not in (429, 500, 502, 503, 504) or attempt == retries:
+                        print(f"Source unavailable for {term}, offset {offset}: HTTP {exc.code}")
+                        break
+                    retry_after = exc.headers.get("Retry-After")
+                    try:
+                        wait = float(retry_after) if retry_after else delay * (2 ** attempt)
+                    except ValueError:
+                        wait = delay * (2 ** attempt)
+                    time.sleep(min(90.0, max(delay, wait)))
+                except Exception as exc:
+                    print(f"Source unavailable for {term}, offset {offset}: {exc}")
+                    break
+            if results is None:
                 break
+            time.sleep(delay)
             if not results:
                 break
             offset += len(results)
@@ -54,11 +73,15 @@ def collect(limit):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=25)
+    parser.add_argument("--batch-size", type=int, default=25)
+    parser.add_argument("--delay", type=float, default=1.5)
     parser.add_argument("--output", type=pathlib.Path, default=BASE / "library_candidates_v1.json")
     args = parser.parse_args()
     if not 1 <= args.limit <= 1000:
         parser.error("limit must be from 1 to 1000")
-    records = collect(args.limit)
+    if not 1 <= args.batch_size <= 100 or not 0 <= args.delay <= 30:
+        parser.error("batch-size 1..100 and delay 0..30 required")
+    records = collect(args.limit, batch_size=args.batch_size, delay=args.delay)
     if args.output.exists():
         previous = json.loads(args.output.read_text(encoding="utf-8"))
         existing = previous.get("items", [])
