@@ -26,7 +26,7 @@ def test_harvest_over_100_paginates_and_never_approves_core():
         return Response({"message":{"items":items}})
     with patch.object(harvest,"TERMS",["Palaeohispanic epigraphy"]),patch.object(harvest.urllib.request,"urlopen",side_effect=fake_open):
         items=harvest.collect(125)
-    assert calls==[(0,100),(100,25)]
+    assert calls==[(0,25),(25,25),(50,25),(75,25),(100,25)]
     assert len(items)==125 and len({x["doi"] for x in items})==125
     assert all(x["status"]=="PENDING_EDITORIAL_REVIEW" for x in items)
     assert all(x["core_evidence_approved"] is False and x["metadata_relevance_verified"] is False for x in items)
