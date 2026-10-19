@@ -7,18 +7,18 @@
     "figure": 4,
     "printed_page": 215,
     "pdf_page_index_zero_based": 12,
-    "image_available_locally": false,
+    "image_available_locally": true,
     "rights_verified": false
   },
   "drawing": {
     "figure": 5,
     "printed_page": 216,
     "pdf_page_index_zero_based": 13,
-    "image_available_locally": false,
+    "image_available_locally": true,
     "rights_verified": false
   },
-  "method": "Editorial hypotheses form a checklist for future blinded pixel- and line-level comparison; never count a published alternative as an independently inspected glyph.",
-  "inspection_status": "PHOTO_AND_DRAWING_LOCATED_NOT_VISUALLY_COMPARED",
+  "method": "Direct visual comparison of published figure 4 and figure 5 from supplied PDFs; no autopsy, per-glyph pixel ROIs or blinded independent transcription.",
+  "inspection_status": "PUBLISHED_PHOTO_AND_DRAWING_VISUALLY_COMPARED_NO_INDEPENDENT_GLYPH_VERIFICATION",
   "reviewer": null,
   "rows": [
     {
@@ -82,5 +82,28 @@
   "independently_verified_sign_count": 0,
   "semantic_translation_validated": false,
   "core_approval": false,
-  "required_artifact": "Permissioned high resolution source photo and edition drawing with separate hashes and recorded pixel ROIs"
+  "required_artifact": "Permissioned high resolution source photo and edition drawing with separate hashes and recorded pixel ROIs",
+  "uploaded_document_provenance": {
+    "pdf_count": 2,
+    "contents_identical_by_extracted_text": true,
+    "binary_files_identical": false,
+    "photo_embedded_image_dimensions_px": [
+      2125,
+      2124
+    ],
+    "drawing_embedded_image_dimensions_px": [
+      711,
+      956
+    ],
+    "publication_pages": [
+      215,
+      216
+    ],
+    "source": "Two PDFs supplied by project user 2026-10-19; not republished in repository"
+  },
+  "visual_observations": [
+    "Published photograph shows inscribed upper irregular surface and largely uninscribed opposite face; metal deformation and variable contrast obstruct some marks.",
+    "Published drawing simplifies candidate strokes and distinguishes cross-sectional deformation. Drawn lines are editorial interpretation rather than an independent new reading.",
+    "Five ambiguous regions cannot yet be reliably aligned pixel-by-pixel between photograph and drawing, so all decisions remain unresolved."
+  ]
 }
