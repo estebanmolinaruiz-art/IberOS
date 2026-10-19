@@ -1,0 +1,62 @@
+{
+  "schema": "IberOS-Moleta-Photo-Control-Windows/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source": "User-provided published Fig.4 p.215, photograph of inscribed face, extracted into 915x405 pixel crop",
+  "photo_crop_dimensions_px": [
+    915,
+    405
+  ],
+  "window_type": "PHOTOGRAPH_ONLY_UNALIGNED_VISUAL_CONTROLS",
+  "windows": [
+    {
+      "id": "C1",
+      "rect_px": [
+        710,
+        35,
+        850,
+        132
+      ],
+      "observable": "Bright upright/angled-looking linear marks on heavily textured upper-right metal surface",
+      "risk": "Specular highlights, scratches and corrosion may imitate deliberate strokes"
+    },
+    {
+      "id": "C2",
+      "rect_px": [
+        665,
+        120,
+        850,
+        245
+      ],
+      "observable": "Several diagonal and upright-looking features in right central surface",
+      "risk": "Surface folds and light/shadow break apparent strokes; overlaps C1"
+    },
+    {
+      "id": "C3",
+      "rect_px": [
+        250,
+        125,
+        395,
+        263
+      ],
+      "observable": "Linear marks interspersed with relief and dark grooves in central-left zone",
+      "risk": "Dense damage and folds; difficult to isolate incision boundaries"
+    }
+  ],
+  "processing": [
+    {
+      "method": "nearest_neighbor_x4",
+      "role": "Preserve displayed original samples exactly in enlarged pixels"
+    },
+    {
+      "method": "lanczos_x4",
+      "role": "Viewing-only interpolation; not new image detail"
+    }
+  ],
+  "image_files_local_only": true,
+  "reproduction_rights_verified": false,
+  "published_editorial_sign_mapping": false,
+  "photo_drawing_alignment_approved": false,
+  "signs_independently_read": 0,
+  "semantic_translation_validated": false,
+  "next_step": "Blind stroke polygons and reviewer notes for each window on unaltered pixels, followed by separate editor drawing comparison and peer review"
+}
