@@ -1,0 +1,3 @@
+source_id,object_id,face,edition_word_number,physical_line,pdf_page_1based,figure,editorial_word,editorial_atomic_candidate,visual_alignment,full_line_reviewed,independent_reviewer,cohort,notes
+FLETCHER81-V19,ORLEYL-V,A,19,3,65,22,BITEROKETETINE,bi te r o ke te ti n e,NOT_COMPLETED,NO,,DEVELOPMENT,"Editorial sign sequence from Fletcher line 3; verify exact figure placement and dual values"
+FLETCHER81-VIIB7,ORLEYL-VII,B,7,2,111,25,BASBITEROKETINE,ba s bi te r o ke ti n e,NOT_COMPLETED,NO,,DEVELOPMENT,"Fletcher line 2 has BA-S-BI-TE-R-O-KE-TI-N-E; BAS prefix may belong to previous word; word index is not row index"
