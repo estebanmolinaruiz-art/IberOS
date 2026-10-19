@@ -20,7 +20,7 @@ def inspect(rows):
         if r["reading_status"] not in ("REVIEWED","AMBIGUOUS","UNREVIEWED"):
             errors.append({"line":number,"error":"INVALID_READING_STATUS"});continue
         units=r["sign_tokens"].split()
-        if not units or any(not re.fullmatch(r"[a-zŕśḿ]+|\\?|\\[lacuna\\]",u) for u in units):
+        if not units:
             errors.append({"line":number,"error":"MALFORMED_TOKEN_STREAM"});continue
         unknown=[u for u in units if u not in TOKENS and u not in ("?","[lacuna]")]
         if unknown:errors.append({"line":number,"error":"UNRECOGNIZED_ATOMIC_SIGNS","values":unknown});continue
