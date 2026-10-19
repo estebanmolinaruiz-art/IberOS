@@ -65,7 +65,7 @@
   "unresolved_signs": 5,
   "independent_glyph_verification": 0,
   "rights_to_republish": false,
-  "next_step": "Revalidate individual silhouette landmarks and establish local sign features before permitting any geometric transform. Current global affine RMSE 23.25 px is unsuitable for sign-level alignment.",
+  "next_step": "Find local undamaged features within the same inscribed zone, verify manually in both representations and rerun leave-one-out diagnostics before permitting any sign ROI transfer.",
   "exploratory_affine_diagnostic": {
     "method": "ordinary_least_squares_four_unverified_point_pairs",
     "photo_to_drawing_matrix": [
@@ -89,5 +89,24 @@
     "rmse_px": 23.252326220012364,
     "maximum_residual_px": 35.584308581087235,
     "interpretation": "High error for sign-level identification; landmarks themselves not independently confirmed; transformation NOT approved."
+  },
+  "leave_one_out_affine_diagnostic": {
+    "method": "fit_exact_affine_to_other_three_landmark_pairs_and_predict_held_out_pair",
+    "held_out_landmarks": [
+      "left_tip",
+      "upper_right_peak",
+      "rightmost_edge",
+      "lower_right_corner"
+    ],
+    "held_out_errors_px": [
+      381.793108,
+      93.083014,
+      60.776302,
+      120.049424
+    ],
+    "maximum_error_px": 381.793108,
+    "minimum_error_px": 60.776302,
+    "conclusion": "Unstable under omission of a single landmark: prohibit transform-based sign assignment",
+    "assumptions": "Four manually proposed silhouette points are unverified; these are diagnostic extrapolation errors, not per-glyph uncertainty or physical measurement"
   }
 }
