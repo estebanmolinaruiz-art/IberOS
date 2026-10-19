@@ -1,0 +1,64 @@
+{
+  "schema": "IberOS-Bibliography-Publisher-Verified-802-Batch01/1.0",
+  "date": "2026-10-19",
+  "source_artifact_id": 12196578351,
+  "method": "Original 802 DOI CSV inspected and journal publisher landing pages individually checked; no full PDF appraisal",
+  "verified_count": 3,
+  "records": [
+    {
+      "doi": "10.36707/palaeohispanica.v0i16.29",
+      "title": "Epigrafía ibérica de Coimbra del Barranco Ancho (Jumilla)",
+      "authors": "Aránzazu López Fernández",
+      "source": "https://ifc-ojs.es/index.php/palaeohispanica/ca/article/view/29",
+      "classification": "DIRECT_IBERIAN_EPIGRAPHY",
+      "harvest_index": 15,
+      "metadata_verified": true,
+      "scientific_document_read": false,
+      "core_evidence_approved": false,
+      "global_catalog_duplicate_check": "PENDING"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v23i0.539",
+      "title": "Nouvelles inscriptions ibériques sur céramique de Pech Maho (Sigean, Aude, France)",
+      "authors": "Noemí Moncunill Martí; Eric Gailledrat; Joaquín Gorrochategui; Joan Ferrer i Jané",
+      "source": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/539",
+      "classification": "DIRECT_IBERIAN_EPIGRAPHY",
+      "harvest_index": 365,
+      "metadata_verified": true,
+      "scientific_document_read": false,
+      "core_evidence_approved": false,
+      "global_catalog_duplicate_check": "PENDING"
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v21i0.427",
+      "title": "El sistema dual de la escritura celtibérica desde la perspectiva ibérica",
+      "authors": "Joan Ferrer i Jané",
+      "source": "https://www.ifc-ojs.es/index.php/palaeohispanica/de/article/view/427",
+      "classification": "COMPARATIVE_SCRIPT_METHODOLOGY",
+      "harvest_index": 238,
+      "metadata_verified": true,
+      "scientific_document_read": false,
+      "core_evidence_approved": false,
+      "global_catalog_duplicate_check": "PENDING"
+    }
+  ],
+  "provisional_false_positives": [
+    {
+      "harvest_index": 249,
+      "doi": "10.2307/jj.608091.5",
+      "reason": "Modern Romani varieties, not ancient Iberian"
+    },
+    {
+      "harvest_index": 321,
+      "doi": "10.1109/robot61475.2024.10796939",
+      "reason": "Robotics conference, not epigraphy"
+    },
+    {
+      "harvest_index": 439,
+      "doi": "10.3390/soc15070174",
+      "reason": "2025 electricity blackout media, not Iberian script"
+    }
+  ],
+  "next_step": "Cross-check confirmed DOI against curated global bibliography before claiming net new additions",
+  "public_site_redeployed": false
+}
