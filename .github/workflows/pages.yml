@@ -61,7 +61,7 @@ jobs:
           import json, os, time, urllib.request
           base=os.environ["PUBLIC_BASE"].rstrip("/")
           expected=os.environ["EXPECTED_SHA"]
-          paths=["/deployment-version.json", "/ficha/?id=IBR-PLM-0002", "/data/epigraphic-visual-registry-v1.json", "/demostracion/", "/data/ficha-enrichment-featured.json"]
+          paths=["/deployment-version.json", "/que-es-iberos/", "/ficha/?id=IBR-PLM-0002", "/data/epigraphic-visual-registry-v1.json", "/demostracion/", "/data/ficha-enrichment-featured.json"]
           for attempt in range(1,13):
               try:
                   responses={}
@@ -71,7 +71,7 @@ jobs:
                       with urllib.request.urlopen(request,timeout=20) as response:
                           if response.status!=200: raise RuntimeError(f"{path}: HTTP {response.status}")
                           responses[path]=response.read().decode("utf-8")
-                  manifest=json.loads(responses[paths[0]])
+                  if "¿Qué es IberOS?" not in responses["/que-es-iberos/"]:\n                      raise RuntimeError("Falta la página pública de presentación IberOS")\n                  manifest=json.loads(responses[paths[0]])
                   if manifest.get("commit")!=expected:
                       raise RuntimeError(f"Public SHA {manifest.get('commit')} != {expected}")
                   if "graphic-viewer-slot" not in responses[paths[1]]:
