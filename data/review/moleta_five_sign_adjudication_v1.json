@@ -1,0 +1,76 @@
+{
+  "schema": "IberOS-Moleta-Five-Sign-Adjudication/1.0",
+  "object_id": "IBR-PLM-0011",
+  "source": "Ferrer et al. (2008), Palaeohispanica 8, 203–216, user-provided PDFs",
+  "evidence": "Published photograph fig.4 p.215, drawing fig.5 p.216; descriptions pp.207–208",
+  "cases": [
+    {
+      "id": "zone1_line2_sign3",
+      "editorial_page": 207,
+      "options": [
+        "ta1",
+        "ko1"
+      ],
+      "discriminating_evidence_needed": "Need intentional angles independent of melted rotation",
+      "photo_sign_roi": null,
+      "independent_photo_reading": null,
+      "status": "UNRESOLVED_PUBLISHED_IMAGE_INSUFFICIENT"
+    },
+    {
+      "id": "zone1_line2_sign4",
+      "editorial_page": 207,
+      "options": [
+        "be3",
+        "bo2",
+        "bo4"
+      ],
+      "discriminating_evidence_needed": "Need secure upper corner and incised strokes",
+      "photo_sign_roi": null,
+      "independent_photo_reading": null,
+      "status": "UNRESOLVED_PUBLISHED_IMAGE_INSUFFICIENT"
+    },
+    {
+      "id": "zone1_line2_sign8",
+      "editorial_page": 207,
+      "options": [
+        "tu1",
+        "ku2"
+      ],
+      "discriminating_evidence_needed": "Need undistorted sign width and branch visibility",
+      "photo_sign_roi": null,
+      "independent_photo_reading": null,
+      "status": "UNRESOLVED_PUBLISHED_IMAGE_INSUFFICIENT"
+    },
+    {
+      "id": "zone2_midline_uncertain_sign",
+      "editorial_page": 208,
+      "options": [
+        "ta1",
+        "ko1",
+        "a1"
+      ],
+      "discriminating_evidence_needed": "Need lower half, currently obscured; a1 fits strictly visible strokes",
+      "photo_sign_roi": null,
+      "independent_photo_reading": null,
+      "status": "UNRESOLVED_PUBLISHED_IMAGE_INSUFFICIENT"
+    },
+    {
+      "id": "zone2_late_sign",
+      "editorial_page": 208,
+      "options": [
+        "m",
+        "a3"
+      ],
+      "discriminating_evidence_needed": "Need proof of upper joining stroke",
+      "photo_sign_roi": null,
+      "independent_photo_reading": null,
+      "status": "UNRESOLVED_PUBLISHED_IMAGE_INSUFFICIENT"
+    }
+  ],
+  "global_alignment_accepted": false,
+  "independent_signs_verified": 0,
+  "excluded_alternatives": 0,
+  "semantic_translations_validated": 0,
+  "core_promotion": false,
+  "next_required_evidence": "Multi-angle raking light macro photos or RTI with original metal artifact and independent sign-level review"
+}
