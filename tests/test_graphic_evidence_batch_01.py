@@ -14,7 +14,11 @@ def test_graphic_evidence_first_batch_is_consistent_and_unverified():
         assert x["specific_figure"] is None or isinstance(x["specific_figure"], str)
         if x.get("figure_reference_located"):
             assert x["specific_figure"]
-        assert x["face"] is None and x["line"] is None and x["sign_index"] is None
+        assert x["sign_index"] is None
+        if x["object_id"]=="IBR-PLM-0012":
+            assert x["face"]=="A" and x["line"]==1
+        else:
+            assert x["face"] is None and x["line"] is None
         assert x["visual_evidence_status"] in {"NOT_INSPECTED","PUBLISHED_PHOTOS_AND_DRAWING_VISUALLY_INSPECTED_NOT_SIGN_VERIFIED"}
         assert x["image_reuse_rights"]=="NOT_VERIFIED"
         assert x["sign_by_sign_verified"] is False
