@@ -1,0 +1,70 @@
+{
+  "schema": "IberOS-Moleta-Exploratory-Regions/1.0",
+  "object_id": "IBR-PLM-0011",
+  "image_source": "Two user-provided copies of Ferrer et al. (2008), figs.4-5, pp.215-216",
+  "rendered_photo_size": [
+    915,
+    405
+  ],
+  "rendered_drawing_size": [
+    805,
+    365
+  ],
+  "photo_sha256": "8de9ae2dd64e93bed84035f5165b6232ae3ad9021edb13309beb7b15202e2f5f",
+  "drawing_sha256": "8302b510aab60275d5d3825662d834a6945f121ac8b9ee2970c9dbd7017e420c",
+  "region_coordinate_policy": "Exploratory normalized x subdivisions, not homography or per-sign correspondence",
+  "regions": [
+    {
+      "name": "left",
+      "photo_rect": [
+        0,
+        0,
+        366,
+        405
+      ],
+      "drawing_rect": [
+        0,
+        0,
+        322,
+        365
+      ]
+    },
+    {
+      "name": "middle",
+      "photo_rect": [
+        274,
+        0,
+        659,
+        405
+      ],
+      "drawing_rect": [
+        242,
+        0,
+        580,
+        365
+      ]
+    },
+    {
+      "name": "right",
+      "photo_rect": [
+        567,
+        0,
+        915,
+        405
+      ],
+      "drawing_rect": [
+        499,
+        0,
+        805,
+        365
+      ]
+    }
+  ],
+  "published_image_licence_verified": false,
+  "sign_rois_mapped": 0,
+  "graphic_decisions_made": 0,
+  "unresolved_glyph_regions": 5,
+  "semantic_translation_validated": false,
+  "core_promotion_allowed": false,
+  "next_action": "Independently annotate local sign shapes on original unaltered photo and test explicit landmark registration against published drawing"
+}
