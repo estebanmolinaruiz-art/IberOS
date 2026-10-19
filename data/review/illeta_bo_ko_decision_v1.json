@@ -38,7 +38,28 @@
     ],
     "independent_stroke_tracing": false,
     "distinctive_diagonal_engraving_confirmed": false,
-    "second_reviewer": null
+    "second_reviewer": null,
+    "published_page_viewport": {
+      "source": "publisher PDF displayed page screenshot, p.260",
+      "screenshot_dimensions_px": [
+        964,
+        1361
+      ],
+      "figure_8_bottom_left_approx_rect_px": [
+        140,
+        1052,
+        402,
+        1248
+      ],
+      "coordinate_system": "PDF screenshot viewport only, not original photography",
+      "normalized_approx_bounds": [
+        0.145,
+        0.773,
+        0.417,
+        0.917
+      ],
+      "confidence": "approximate panel region by visual layout; NOT a sign stroke bounding box"
+    }
   },
   "decision": {
     "graphic_status": "UNRESOLVED_BO_KO",
@@ -49,10 +70,10 @@
     "confidence_score": null
   },
   "next_protocol": [
-    "Obtain original-resolution licensed photograph of figure 8 bottom-left panel",
-    "Register image file hash and pixel-region bounds",
-    "Trace candidates for intentional incisions versus fold striations blind to lexical readings",
-    "Conduct independent second review",
-    "Compare with authenticated greco-Iberian bo and ko reference forms without semantic priors"
+    "Obtain authorized original-resolution photograph or publisher figure image",
+    "Register hash, dimensions, and sign-level pixel ROI based on actual file",
+    "Trace folds/striations separately from original incisions, blind to lexical priors",
+    "Submit two independent graphic readings",
+    "Score ko vs bo against authenticated greco-Iberian grapheme controls"
   ]
 }
