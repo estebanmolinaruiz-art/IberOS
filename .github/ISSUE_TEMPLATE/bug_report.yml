@@ -1,0 +1,37 @@
+name: "Error técnico / Bug report"
+description: "Informar de un problema reproducible en la web o el software / Report a reproducible technical issue"
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Gracias por ayudar a mejorar IberOS. No publiques datos personales ni credenciales. / Thank you for helping improve IberOS. Do not share credentials."
+  - type: input
+    id: url
+    attributes:
+      label: "URL o módulo afectado / Affected URL or module"
+      placeholder: "https://estebanmolinaruiz-art.github.io/IberOS/..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Pasos para reproducir / Steps to reproduce"
+      placeholder: "1. Abrir... 2. Pulsar... 3. Observar..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Resultado esperado y resultado real / Expected and actual result"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Navegador y dispositivo / Browser and device"
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: "Alcance / Scope"
+      options:
+        - label: "No solicito modificar CORE, métricas ni locks científicos / I am not requesting changes to frozen scientific authority"
