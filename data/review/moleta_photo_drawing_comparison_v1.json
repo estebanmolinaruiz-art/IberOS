@@ -1,0 +1,86 @@
+{
+  "schema": "IberOS-Photo-Drawing-Comparison/1.0",
+  "object_id": "IBR-PLM-0011",
+  "reference": "Ferrer i Jané et al. (2008), Palaeohispanica 8, pp.203-216",
+  "source_url": "https://ifc.dpz.es/recursos/publicaciones/28/40/12ferreretal.pdf",
+  "photo": {
+    "figure": 4,
+    "printed_page": 215,
+    "pdf_page_index_zero_based": 12,
+    "image_available_locally": false,
+    "rights_verified": false
+  },
+  "drawing": {
+    "figure": 5,
+    "printed_page": 216,
+    "pdf_page_index_zero_based": 13,
+    "image_available_locally": false,
+    "rights_verified": false
+  },
+  "method": "Editorial hypotheses form a checklist for future blinded pixel- and line-level comparison; never count a published alternative as an independently inspected glyph.",
+  "inspection_status": "PHOTO_AND_DRAWING_LOCATED_NOT_VISUALLY_COMPARED",
+  "reviewer": null,
+  "rows": [
+    {
+      "region": "zone1_line2_sign3",
+      "candidate_readings": [
+        "ta1",
+        "ko1"
+      ],
+      "trace_test": "Separate intentionally incised strokes from rotated or thermally deformed marks; compare both media",
+      "photo_strokes_recorded": null,
+      "drawing_strokes_recorded": null,
+      "decision": "UNRESOLVED"
+    },
+    {
+      "region": "zone1_line2_sign4",
+      "candidate_readings": [
+        "be3",
+        "bo2",
+        "bo4"
+      ],
+      "trace_test": "Test upper corner and horizontal/diagonal components in original photograph versus drawn reconstruction",
+      "photo_strokes_recorded": null,
+      "drawing_strokes_recorded": null,
+      "decision": "UNRESOLVED"
+    },
+    {
+      "region": "zone1_line2_sign8",
+      "candidate_readings": [
+        "tu1",
+        "ku2"
+      ],
+      "trace_test": "Check whether an indentation conceals the sign profile",
+      "photo_strokes_recorded": null,
+      "drawing_strokes_recorded": null,
+      "decision": "UNRESOLVED"
+    },
+    {
+      "region": "zone2_midline_uncertain_sign",
+      "candidate_readings": [
+        "ta1",
+        "ko1",
+        "a1"
+      ],
+      "trace_test": "Map unequivocally visible upper strokes before assigning any lower limbs",
+      "photo_strokes_recorded": null,
+      "drawing_strokes_recorded": null,
+      "decision": "UNRESOLVED"
+    },
+    {
+      "region": "zone2_late_sign",
+      "candidate_readings": [
+        "m",
+        "a3"
+      ],
+      "trace_test": "Look for an intentional joining stroke rather than surface damage",
+      "photo_strokes_recorded": null,
+      "drawing_strokes_recorded": null,
+      "decision": "UNRESOLVED"
+    }
+  ],
+  "independently_verified_sign_count": 0,
+  "semantic_translation_validated": false,
+  "core_approval": false,
+  "required_artifact": "Permissioned high resolution source photo and edition drawing with separate hashes and recorded pixel ROIs"
+}
