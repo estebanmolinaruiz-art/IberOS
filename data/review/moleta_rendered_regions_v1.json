@@ -1,0 +1,58 @@
+{
+  "schema": "IberOS-Moleta-Image-Regions/1.0",
+  "object_id": "IBR-PLM-0011",
+  "created_on": "2026-10-19",
+  "source": "User-supplied Ferrer et al. 2008 PDFs, figs. 4 and 5, pp. 215-216",
+  "coordinate_convention": "pixel x0,y0,x1,y1 in locally rendered 1736x2456 or 1737x2456 PNG page snapshots, origin top left; coarse inscribed face bands only",
+  "regions": [
+    {
+      "label": "published_photo_inscribed_face",
+      "figure": 4,
+      "printed_page": 215,
+      "rendered_page_dimensions": [
+        1736,
+        2456
+      ],
+      "bounds_px": [
+        325,
+        715,
+        1240,
+        1120
+      ],
+      "crop_dimensions_px": [
+        915,
+        405
+      ],
+      "crop_status": "GENERATED_LOCALLY",
+      "per_sign_alignment": false
+    },
+    {
+      "label": "published_drawing_inscribed_face",
+      "figure": 5,
+      "printed_page": 216,
+      "rendered_page_dimensions": [
+        1737,
+        2456
+      ],
+      "bounds_px": [
+        370,
+        535,
+        1175,
+        900
+      ],
+      "crop_dimensions_px": [
+        805,
+        365
+      ],
+      "crop_status": "GENERATED_LOCALLY",
+      "per_sign_alignment": false
+    }
+  ],
+  "published_image_rights_verified": false,
+  "local_files_not_committed": true,
+  "sign_roi_count": 0,
+  "region_uncertainty_count": 5,
+  "independently_verified_sign_count": 0,
+  "semantic_translation_validated": false,
+  "next_step": "Annotate five sign-level locations separately in both cropped panels, verify orientation and editorial alignment, then perform blinded second review"
+}
