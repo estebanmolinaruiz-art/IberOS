@@ -11,10 +11,10 @@
       "review_id": "B01-GR-01",
       "object_id": "IBR-CER-0005",
       "object_name": "Dolium de Val de Alegre I",
-      "source_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+      "source_url": "https://addi.ehu.es/bitstream/handle/10810/37273/13345-59626-1-PB.pdf?isAllowed=y&sequence=1",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "Reference in prose to Val de Alegre dolium, primary drawing/photograph not yet located",
+      "printed_page": 235,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -28,7 +28,9 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "TEXTUAL_REFERENCE_ONLY_NOT_IMAGE",
+      "figure_reference_located": false
     },
     {
       "review_id": "B01-GR-02",
@@ -80,10 +82,10 @@
       "review_id": "B01-GR-04",
       "object_id": "IBR-LAP-0002",
       "object_name": "Estela-monumento de La Vispesa",
-      "source_url": "https://euskerarenjatorria.eus/wp-content/uploads/2013/06/Bin%C3%A9far-1.pdf",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/27/22/25.garces.pdf",
       "source_type": "ACADEMIC_ARTICLE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "FIG. 1. Vistas frontal y lateral del relieve n.º 1",
+      "printed_page": 341,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -97,16 +99,18 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "PUBLISHED_FIGURE_CAPTION_LOCATED",
+      "figure_reference_located": true
     },
     {
       "review_id": "B01-GR-05",
       "object_id": "IBR-OBJ-0001",
       "object_name": "Tortera inscrita de Can Rodon",
-      "source_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/13345",
+      "source_url": "https://addi.ehu.es/bitstream/handle/10810/37273/13345-59626-1-PB.pdf?isAllowed=y&sequence=1",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "Figura 1. Abecedaris de Can Rodon",
+      "printed_page": 231,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -120,7 +124,9 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "FIGURE_CAPTION_AND_PUBLISHED_PAGE_LOCATED",
+      "figure_reference_located": true
     },
     {
       "review_id": "B01-GR-06",
@@ -174,8 +180,8 @@
       "object_name": "Inscripción de La Joncosa",
       "source_url": "https://ojs.ehu.eus/index.php/Veleia/article/view/2850",
       "source_type": "ACADEMIC_REFERENCE",
-      "specific_figure": null,
-      "printed_page": null,
+      "specific_figure": "Figura 1 dibujo idealizado; figuras 8–16 secciones gráficas",
+      "printed_page": 131,
       "face": null,
       "line": null,
       "sign_index": null,
@@ -189,7 +195,9 @@
       "sign_by_sign_verified": false,
       "eligible_for_core": false,
       "semantic_translation_validated": false,
-      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
+      "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level",
+      "evidence_kind": "FIGURE_CAPTIONS_AND_PAGE_IDENTIFIED_FROM_ARTICLE_TEXT",
+      "figure_reference_located": true
     },
     {
       "review_id": "B01-GR-09",
@@ -237,5 +245,7 @@
       "semantic_translation_validated": false,
       "next_action": "Locate precise printed figure and line; compare published transcription with image at sign level"
     }
-  ]
+  ],
+  "figures_or_figure_sets_located": 3,
+  "textual_only_source_location_count": 1
 }
