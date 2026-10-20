@@ -83,7 +83,7 @@
     },
     {
       "id": "ILB18-OUT-02",
-      "editorial_face": "A, lower-right (paper's designation; do not assume exterior)",
+      "editorial_face": "A (2024 fig.6 p.259; detailed discussion p.258)",
       "location": "lower-right",
       "editorial_transcription": "++ (+)+(+)e",
       "uncertainties": [
@@ -109,10 +109,11 @@
     "object_counts_as_one_independent_physical_group": true,
     "automatic_core_promotion": false
   },
-  "note": "Ferrer et al. 2024 section 4 explicitly places the lower-right third text on cara A, so prior IberOS exterior assignment is not verified and should be treated as a metadata inconsistency. Do not infer physical inner/outer association from labels without checking figures.",
+  "note": "Face A established by figure 6 and detailed description; abstract uses contradictory 'exterior'. Neither photos nor drawing guarantee certainty of third text individual signs.",
   "metadata_conflict": {
     "previous_iberos_label": "ILB18-OUT-02 exterior lower right",
     "primary_edition_description": "cara A extremo inferior derecho",
-    "status": "OPEN_RECONCILIATION_REQUIRED"
+    "status": "RESOLVED_BY_PRIMARY_FIGURE_WITH_ABSTRACT_DISCREPANCY",
+    "finding": "The abstract states exterior, but section 4 p.258, figure 6 p.259, and conclusions p.275 put third text in cara A. Use A as figure-grounded face and preserve abstract inconsistency."
   }
 }
