@@ -1,0 +1,51 @@
+{
+  "schema": "IberOS-External-Epigraphic-Witnesses/1.0",
+  "description": "Documented physical witnesses not yet reconciled to the 38-object IberOS CORE. These are not numbered Core records and never count as validated transcriptions.",
+  "items": [
+    {
+      "external_witness_id": "EXT-GADOR-MLH-H.01.01",
+      "title": "Plomo de Gádor",
+      "corpus_reference": "MLH H.01.01",
+      "core_object_id": null,
+      "core_crosswalk_status": "NO_CONFIRMED_CORE_MATCH",
+      "excluded_core_id": "IBR-PLM-0013",
+      "excluded_core_id_reason": "That CORE ID refers to the Pico de los Ajos lead, not Gádor.",
+      "repository": "Real Academia de la Historia",
+      "findspot_status": "Reported Almería 1862; precise findspot disputed",
+      "primary_edition": {
+        "authors": "José Vicente Montes Novella",
+        "year": 2025,
+        "title": "El plomo de Gádor, nueva lectura y análisis",
+        "journal": "Palaeohispanica",
+        "volume": "25",
+        "pages": "301–324",
+        "doi": "10.36707/palaeohispanica.v25i1.718",
+        "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/718",
+        "pdf": "https://ifc-ojs.es/index.php/palaeohispanica/article/download/718/719/7009"
+      },
+      "figure_locators": [
+        {
+          "printed_page": 303,
+          "figure": "1",
+          "status": "EDITORIAL_LOCATOR"
+        },
+        {
+          "printed_page": 307,
+          "figure": "3",
+          "status": "EDITORIAL_LOCATOR"
+        },
+        {
+          "printed_page": 313,
+          "figure": "4–6",
+          "status": "EDITORIAL_LOCATOR"
+        }
+      ],
+      "image_url": null,
+      "rights_to_republish_figures_verified": false,
+      "sign_reading_independently_verified": false,
+      "translation_validated": false,
+      "core_processing_allowed": false,
+      "review_status": "PUBLISHER_SOURCE_IDENTIFIED_CROSSWALK_PENDING"
+    }
+  ]
+}
