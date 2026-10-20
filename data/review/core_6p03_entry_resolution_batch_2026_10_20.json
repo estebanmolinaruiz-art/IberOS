@@ -1,0 +1,81 @@
+{
+  "schema": "IberOS-6P03-Entry-Resolution-Batch/1.0",
+  "date": "2026-10-20",
+  "scope": "Can Rodon, La Serreta I and Illeta dels Banyets (2018)",
+  "entries": [
+    {
+      "object_id": "IBR-OBJ-0001",
+      "support_count": 1,
+      "entry_type": "external_index_group",
+      "upstream_ids": [
+        "I03095",
+        "I03096"
+      ],
+      "source": "https://cathalaunia.org/Iberika/I03095",
+      "group_reference": "B.44.39; CE10,P12,2 Cabrera a/b",
+      "status": "INDEX_LINK_CONFIRMED_PUBLISHED_ENTRY_PAGE",
+      "primary_edition": "Ferrer i Jané, Sinner and Martín Menéndez (2011), Una tortera amb inscripció ibèrica de Can Rodon de l'Hort",
+      "physical_signs_verified": false,
+      "independent_subtexts_not_claimed": true
+    },
+    {
+      "object_id": "IBR-PLM-0009",
+      "support_count": 1,
+      "entry_type": "faces_and_overwritten_text",
+      "upstream_ids": [],
+      "provisional_units": [
+        {
+          "id": "A1",
+          "location": "face A principal text"
+        },
+        {
+          "id": "A2",
+          "location": "face A secondary/overwritten text"
+        },
+        {
+          "id": "B",
+          "location": "face B"
+        }
+      ],
+      "source": "https://es.wikipedia.org/wiki/Plomo_de_La_Serreta",
+      "references": [
+        "MLH G.1.1",
+        "Hesperia A.04.01a",
+        "Hesperia A.04.01b"
+      ],
+      "status": "SECONDARY_DESCRIPTION_PRIMARY_ID_CHECK_PENDING",
+      "primary_edition_checked": false,
+      "physical_signs_verified": false
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "support_count": 1,
+      "entry_type": "three_texts_one_support",
+      "upstream_ids": [],
+      "provisional_units": [
+        {
+          "id": "INTERIOR",
+          "location": "interior first two lines"
+        },
+        {
+          "id": "EXTERIOR_UPPER",
+          "location": "exterior first two lines"
+        },
+        {
+          "id": "EXTERIOR_LOWER",
+          "location": "exterior lower-right, uncertain"
+        }
+      ],
+      "source": "https://doi.org/10.36707/palaeohispanica.v24i1.629",
+      "primary_edition": "Ferrer i Jané, Olcina Doménech, Martínez Carmona and Verdú Parra (2024), Palaeohispanica 24:247-278",
+      "status": "PRIMARY_EDITION_THREE_TEXTS_DOCUMENTED",
+      "physical_signs_verified": false
+    }
+  ],
+  "invariants": {
+    "new_physical_objects": 0,
+    "independent_holdout_groups_added": 0,
+    "automatic_semantic_promotion": false
+  },
+  "notes": "Subtext labels are work units, not new physical objects or validation groups."
+}
