@@ -1,0 +1,33 @@
+{
+  "schema": "IberOS-Epigraphy-Strict-Triage/1.0",
+  "date": "2026-10-20",
+  "source": "819 unique DOI working inventory",
+  "selection": "Palaeohispanica title-focused Iberian epigraphy subset plus Solier 1979 edition",
+  "selected": 28,
+  "direct_iberian_epigraphic_source_candidates": 12,
+  "epigraphic_documents_to_identify": 4,
+  "methodology_or_comparative_context": 12,
+  "publisher_metadata_previously_verified": 21,
+  "publisher_metadata_not_yet_verified": 7,
+  "selection_note": "Scope based on title and existing provenance flags, not new direct reading of 28 full publications; excludes many clearly irrelevant modern script hits; not exhaustive of Iberian bibliography.",
+  "priority_dois": [
+    "10.36707/palaeohispanica.v0i16.29",
+    "10.36707/palaeohispanica.v0i19.221",
+    "10.36707/palaeohispanica.v23i0.538",
+    "10.36707/palaeohispanica.v0i14.54",
+    "10.36707/palaeohispanica.v24i1.629",
+    "10.36707/palaeohispanica.v0i8.265",
+    "10.36707/palaeohispanica.v25i1.718",
+    "10.3406/ran.1979.1037"
+  ],
+  "evidence_requirements": [
+    "DOI and journal landing page",
+    "full text or precise page and figure",
+    "physical artifact identity and corpus concordance",
+    "sign-by-sign transcription checked against image",
+    "independence of physical witnesses and prior editions",
+    "license and source attribution"
+  ],
+  "scientific_core_promotions": 0,
+  "web_deployed": false
+}
