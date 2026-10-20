@@ -1,0 +1,24 @@
+{
+  "schema": "IberOS-Bibliography-Audit/1.0",
+  "date": "2026-10-20",
+  "previous_total": 816,
+  "current_total": 819,
+  "unique_dois": 819,
+  "new_dois": [
+    "10.36707/palaeohispanica.v0i15.41",
+    "10.36707/palaeohispanica.v22i0.445",
+    "10.36707/palaeohispanica.v25i1.718"
+  ],
+  "existing_doi_verified": [
+    "10.36707/palaeohispanica.v21i0.417"
+  ],
+  "publisher_metadata_verified_flags": 22,
+  "scientific_claims_approved_in_this_batch": 0,
+  "remaining_to_1000_candidate_records": 181,
+  "deduplication": "DOI uniqueness within working CSV only; global audit pending",
+  "cautions": [
+    "Not all 819 are pertinent; many initial Crossref results are off-topic",
+    "Article and glyph evidence require review before CORE promotion"
+  ],
+  "website_deployed": false
+}
