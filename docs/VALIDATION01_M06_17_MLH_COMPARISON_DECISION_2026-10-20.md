@@ -1,0 +1,9 @@
+# VALIDATION-01 — Cotejo individual de los 17 signos, registro MLH (20-10-2026)
+
+**Fuentes:** Fletcher et al. (1981), figuras 22 y 25, facsímiles conservados; Ferrer i Jané (2013), figura 9 (inspeccionada directamente), y Ferrer i Jané (2020), figura 7 (signario dual esquemático). Olcoz Yanguas y Medrano Marqués (2011), *Una propuesta de normalización de la escritura celtibérica*, p. 144 y figura 1, https://ojs.ehu.eus/index.php/Veleia/article/download/6303/8077/33477, **reproduce los 28 signos y alógrafos numerados de Untermann, MLH III.1, pp. 246–247** según su texto. Se ha comprobado el texto, pero **la imagen de la figura 1 no se pudo recuperar en este turno** y por ello no se ha asignado ningún código de variante MLH.
+
+La tabla `data/review/validation01_m06_17_mlh_comparison_decision_2026-10-20.csv` registra las 17 observaciones con estado individual, incluidos los 3 TE subdivididos, 2 KE con forma curvada/angulosa, 2 BI con recorte incompleto, 2 R/Ŕ no diferenciados, 2 TI de dualidad dudosa, y los restantes O/N/E. Todos los valores fonéticos siguen siendo **lecturas editoriales de Fletcher**, no nuevas lecturas independientes.
+
+Este cotejo es **morfológico preliminar**: no equiparar circunferencia/cierre romboidal con el mismo alógrafo ni deducir automáticamente te/de, ke/ge, ti/di. El trabajo de Olcoz/Medrano se centra en escritura celtibérica derivada de la nororiental, por lo que para códigos de Orleyl importa la tabla ibérica de Untermann que reproduce y no trasladar de forma acrítica códigos celtibéricos.
+
+**Criterio de terminación M06:** examinar visualmente la figura 1 o el MLH original, adjudicar las variantes numeradas cuando estén justificadas, corregir recortes BI/VII-B y documentar discrepancias sin forzar certeza. M06=PENDING, M07=PENDING, 30/100 preparación y VALIDATION-01=NOT_EVALUATED.
