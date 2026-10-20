@@ -1,0 +1,26 @@
+{
+  "schema": "IberOS-819-Title-Scope-Audit/1.0",
+  "date": "2026-10-20",
+  "source": "iberos_819_catalogo_revision_2026-10-20.csv",
+  "total": 819,
+  "doi_unique": 819,
+  "counts": {
+    "high_priority_source_check": 49,
+    "ambiguous_manual_scope_check": 130,
+    "likely_out_of_scope_title_only": 31,
+    "low_priority_source_check": 587,
+    "verified_metadata_target": 12,
+    "verified_metadata_scope_pending": 10
+  },
+  "metadata_verified_total": 22,
+  "method": "Title-only conservative heuristic applied to 819 DOI worklist, distinct from publisher checks or article/full epigraphic review",
+  "limitations": [
+    "Machine title matching has false positives and false negatives; 'Iberian writing and language' should be manually prioritised despite landing in ambiguous bucket",
+    "The 31 suspected off-topic entries are not definitive exclusions",
+    "No increase in verified references; no new documents read",
+    "The 819 records are candidate DOI IDs not 819 pertinent scholarly citations"
+  ],
+  "next_stage": "Manually confirm landing page and abstract of 49 high priority and examine ambiguous items, correcting title-rule failures; cross-reference existing verified 22 and avoid duplicating cases",
+  "public_site_deployed": false,
+  "core_promotions": 0
+}
