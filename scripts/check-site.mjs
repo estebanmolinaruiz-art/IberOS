@@ -33,6 +33,14 @@ if(existsSync(base+'sitemap.xml')){
 }
 
 
+if(existsSync(base+'data/epigraphic-external-witnesses-v1.json')){
+ try{
+  const witnesses=JSON.parse(readFileSync(base+'data/epigraphic-external-witnesses-v1.json','utf8')).items;
+  assert(Array.isArray(witnesses)&&witnesses.some(x=>x.external_witness_id==='EXT-GADOR-MLH-H.01.01'&&x.core_object_id===null&&x.excluded_core_id==='IBR-PLM-0013'&&x.core_processing_allowed===false&&x.translation_validated===false),'Gádor separado de Pico de los Ajos y bloqueado para CORE');
+ }catch(e){assert(false,'Registro externo de Gádor ilegible: '+e.message)}
+}
+
+
 import {readdirSync,statSync} from 'node:fs';
 import {join,relative,dirname,resolve} from 'node:path';
 function walk(dir){return readdirSync(dir).flatMap(name=>{const p=join(dir,name);return statSync(p).isDirectory()?walk(p):[p]})}
