@@ -1,0 +1,75 @@
+{
+  "schema": "IberOS-6P03-Subentry-Reconciliation/1.0",
+  "date": "2026-10-20",
+  "status": "PARTIAL_INDEX_RECONCILIATION_NOT_PRIMARY_COLLATION",
+  "cases": [
+    {
+      "object_id": "IBR-CER-0002",
+      "index_group": "F.13.3 / V.06.008",
+      "index_source": "https://cathalaunia.org/Iberika/I01994",
+      "index_group_entries": [
+        "I01994",
+        "I01995",
+        "I01996",
+        "I01997",
+        "I01998",
+        "I01999",
+        "I02000",
+        "I02001",
+        "I02002",
+        "I02003",
+        "I02004",
+        "I02005",
+        "I02006",
+        "I02007",
+        "I02008",
+        "I02009",
+        "I02010",
+        "I02011",
+        "I02012",
+        "I02013",
+        "I02014",
+        "I02015"
+      ],
+      "entry_count": 22,
+      "evidence": "Cathalaunia I01994 lists grouped f.13.3 1 through 16c and individual links I01994–I02015",
+      "physical_inscriptions_confirmed": false,
+      "edition_sign_by_sign_confirmed": false,
+      "notes": "One indexed group may comprise many labelled entries; no inference of separate physical objects."
+    },
+    {
+      "object_id": "IBR-CER-0004",
+      "index_source": "https://cathalaunia.org/Iberika/I02560",
+      "index_group_entries": [
+        "I02560",
+        "I02561",
+        "I02562"
+      ],
+      "status": "PARTIAL_GROUP",
+      "notes": "Three entries in IberOS preexisting table; fourth group record not assigned without direct match."
+    },
+    {
+      "object_id": "IBR-PLM-0008",
+      "index_source": "https://cathalaunia.org/Iberika/I03049",
+      "index_group_entries": [
+        "I03049",
+        "I03050"
+      ],
+      "status": "V_21_01_ONLY_PARTIAL_GROUP",
+      "notes": "V.21.02 identification still pending."
+    },
+    {
+      "object_id": "IBR-OBJ-0001",
+      "status": "NO_VERIFIED_ENTRY_SPLIT"
+    },
+    {
+      "object_id": "IBR-PLM-0009",
+      "status": "NO_VERIFIED_ENTRY_SPLIT"
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "status": "NO_VERIFIED_ENTRY_SPLIT"
+    }
+  ],
+  "automatic_scientific_promotion": false
+}
