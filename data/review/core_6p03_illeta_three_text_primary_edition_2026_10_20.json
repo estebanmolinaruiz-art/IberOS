@@ -1,0 +1,45 @@
+{
+  "schema": "IberOS-6P03-Illeta-Edition-Text-Link/1.0",
+  "date": "2026-10-20",
+  "object_id": "IBR-PLM-0012",
+  "edition": {
+    "doi": "10.36707/palaeohispanica.v24i1.629",
+    "primary_pdf": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
+    "pages": "247-278",
+    "authors": "Ferrer i Jané, Olcina, Martínez, Verdú (2024)"
+  },
+  "physical_object_count": 1,
+  "text_units": [
+    {
+      "id": "ILB18-IN-01",
+      "face": "interior",
+      "position": "first two lines",
+      "editorial_reading_fragments": [
+        "ildurkon / ildurbon",
+        "oś<(<)"
+      ],
+      "status": "EDITORIAL_ALTERNATIVES_NOT_INDEPENDENT_GLYPH_REVIEW"
+    },
+    {
+      "id": "ILB18-OUT-01",
+      "face": "exterior",
+      "position": "first two lines",
+      "editorial_reading_fragments": [
+        "ka+belauŕ",
+        "nai"
+      ],
+      "status": "EDITORIAL_NOT_INDEPENDENT_GLYPH_REVIEW"
+    },
+    {
+      "id": "ILB18-OUT-02",
+      "face": "exterior",
+      "position": "lower right",
+      "editorial_reading_fragments": [],
+      "status": "UNREAD_OR_UNCERTAIN_EDITORIAL"
+    }
+  ],
+  "three_reuses_proven": false,
+  "baseline_holdout_independent_count": 1,
+  "individual_glyph_photo_verified": false,
+  "automatic_core_promotion": false
+}
