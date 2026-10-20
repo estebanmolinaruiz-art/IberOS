@@ -12,6 +12,27 @@ for(const p of ['data/objects.csv','data/families.csv'])if(existsSync(base+p)){c
 for(const p of ['data/iberos-result-v1.schema.json','data/real_3d_resources.json','models/inscribed-placa.gltf','models/inscribed-estela.gltf'])if(existsSync(base+p)){try{JSON.parse(readFileSync(base+p,'utf8'));assert(true,'JSON legible '+p)}catch(e){assert(false,'JSON inválido '+p)}}
 
 
+/* Search discovery: make every submitted sitemap URL correspond to a real static page. */
+if(existsSync(base+'sitemap.xml')){
+ const xml=readFileSync(base+'sitemap.xml','utf8');
+ const baseUrl='https://estebanmolinaruiz-art.github.io/IberOS/';
+ const locations=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1].trim());
+ assert(xml.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'),'Sitemap usa namespace estándar');
+ assert(locations.length>=14 && new Set(locations).size===locations.length,'Sitemap contiene 14+ URL únicas');
+ for(const url of locations){
+  let ok=false;
+  try{
+   const u=new URL(url);
+   const rel=u.href.startsWith(baseUrl) ? decodeURIComponent(u.pathname.slice('/IberOS/'.length)) : null;
+   ok=rel!==null && !u.search && !u.hash && existsSync(base+rel+(rel.endsWith('/')||rel===''?'':'/')+'index.html');
+  }catch{}
+  assert(ok,'Sitemap enlaza a página estática publicada: '+url);
+ }
+ const robots=existsSync(base+'robots.txt')?readFileSync(base+'robots.txt','utf8'):'';
+ assert(robots.includes('Sitemap: '+baseUrl+'sitemap.xml'),'robots.txt referencia el sitemap publicado');
+}
+
+
 import {readdirSync,statSync} from 'node:fs';
 import {join,relative,dirname,resolve} from 'node:path';
 function walk(dir){return readdirSync(dir).flatMap(name=>{const p=join(dir,name);return statSync(p).isDirectory()?walk(p):[p]})}
