@@ -73,6 +73,29 @@ jobs:
                           responses[path]=response.read().decode("utf-8")
                   if "¿Qué es IberOS?" not in responses["/que-es-iberos/"]:
                       raise RuntimeError("Falta la página pública de presentación IberOS")
+                  # Sitemap must be public, XML parseable, and list this site's HTML URLs.
+                  import xml.etree.ElementTree as ET
+                  sitemap_url=base+"/sitemap.xml"
+                  with urllib.request.urlopen(urllib.request.Request(sitemap_url,headers={"User-Agent":"IberOS-Deploy-Verification/1.0","Cache-Control":"no-cache"}),timeout=20) as site_response:
+                      if site_response.status!=200: raise RuntimeError("Sitemap HTTP status not 200")
+                      sitemap_type=site_response.headers.get("Content-Type","").lower()
+                      if not ("xml" in sitemap_type or "text/plain" in sitemap_type):
+                          raise RuntimeError("Unexpected sitemap content type: "+sitemap_type)
+                      sitemap_xml=site_response.read()
+                  root=ET.fromstring(sitemap_xml)
+                  namespace="{http://www.sitemaps.org/schemas/sitemap/0.9}"
+                  if root.tag!=namespace+"urlset": raise RuntimeError("Sitemap XML root not urlset")
+                  listed=[node.text for node in root.findall(namespace+"url/"+namespace+"loc")]
+                  if len(listed)<14 or len(set(listed))!=len(listed):
+                      raise RuntimeError("Sitemap has fewer than 14 unique URLs or duplicates")
+                  if not all(u and u.startswith(base+"/") for u in listed):
+                      raise RuntimeError("Sitemap contains URL outside public site")
+                  robots_url=base+"/robots.txt"
+                  with urllib.request.urlopen(robots_url,timeout=20) as robots_response:
+                      robots=robots_response.read().decode("utf-8")
+                  if "Sitemap: "+sitemap_url not in robots:
+                      raise RuntimeError("robots.txt does not advertise deployed sitemap")
+                  print(f"SITEMAP VERIFIED: HTTP 200; {len(listed)} unique site URLs; valid XML; advertised by robots.txt",flush=True)
                   manifest=json.loads(responses[paths[0]])
                   if manifest.get("commit")!=expected:
                       raise RuntimeError(f"Public SHA {manifest.get('commit')} != {expected}")
