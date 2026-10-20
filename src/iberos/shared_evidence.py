@@ -50,10 +50,15 @@ def validate_evidence(records: list[dict]) -> dict:
                     raise ValueError("Invalid evidence bounding box")
         if item.get("scientifically_validated") is True or item.get("automatic_core_promotion") is True:
             raise ValueError("Evidence intake cannot assert scientific validation or promotion")
+        dependencies = item.get("dependent_on", [])
+        if not isinstance(dependencies, list):
+            raise ValueError("dependent_on must be a list")
+        preserved = {k:item[k] for k in ("source_image_sha256", "bbox_xyxy", "source_page", "sign_label", "reading_alternatives", "reviewer") if k in item}
         out.append({
             "evidence_id":eid,"object_id":oid,"source_reference":source,
             "layer":layer,"state":state,"pillars":list(pillars),
-            "dependent_on":list(item.get("dependent_on") or []),
+            "dependent_on":list(dependencies),
+            **preserved,
             "scientifically_validated":False,"automatic_core_promotion":False
         })
     ids = set(seen)
@@ -63,6 +68,20 @@ def validate_evidence(records: list[dict]) -> dict:
             raise ValueError("Dependencies must refer to other records in the same batch")
         if len(deps) != len(set(deps)):
             raise ValueError("Duplicate evidence dependency")
+    graph = {record["evidence_id"]:record["dependent_on"] for record in out}
+    visited, visiting = set(), set()
+    def visit(node):
+        if node in visiting:
+            raise ValueError("Circular evidence dependency")
+        if node in visited:
+            return
+        visiting.add(node)
+        for dep in graph[node]:
+            visit(dep)
+        visiting.remove(node)
+        visited.add(node)
+    for node in graph:
+        visit(node)
     return {"schema":"IberOS-Core-Shared-Evidence/1.0","count":len(out),
             "layers":dict(Counter(x["layer"] for x in out)),
             "records":out,"automatic_core_promotion":False,
