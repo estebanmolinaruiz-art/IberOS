@@ -3,6 +3,9 @@ on:
   push:
     paths:
       - 'scripts/audit_core_six_pillars.py'
+      - 'src/iberos/corpus_evidence_bridge.py'
+      - 'scripts/export_corpus_evidence_bridge.py'
+      - 'tests/test_corpus_evidence_bridge.py'
       - 'tests/test_audit_core_six_pillars.py'
       - 'data/curated/**'
       - 'data/review/validation01_progress_scorecard_v1.json'
@@ -31,6 +34,7 @@ jobs:
         run: |
           mkdir -p /tmp/iberos-six-pillars
           python scripts/audit_core_six_pillars.py --out /tmp/iberos-six-pillars/core_six_pillar_audit.json
+          PYTHONPATH=src python scripts/export_corpus_evidence_bridge.py --out /tmp/iberos-six-pillars/corpus_evidence_bridge.json
           git rev-parse HEAD > /tmp/iberos-six-pillars/repository_commit.txt
           python -m json.tool /tmp/iberos-six-pillars/core_six_pillar_audit.json > /dev/null
       - name: Upload audit evidence
