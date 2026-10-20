@@ -1,0 +1,22 @@
+{
+  "schema": "IberOS-Focused-Bibliographic-Audit/1.0",
+  "date": "2026-10-20",
+  "inventory_unique_dois": 819,
+  "high_priority_title_hits": 49,
+  "individual_publisher_metadata_checks": 4,
+  "publisher_confirmed_chapter_and_volume_dois": [
+    "10.1093/oso/9780198790822.003.0004",
+    "10.1093/oso/9780198790822.001.0001"
+  ],
+  "publisher_toc_confirmed_doi_metadata_needs_final_crosscheck": [
+    "10.1484/m.lectio-eb.5.102575",
+    "10.1093/oso/9780198790822.003.0013"
+  ],
+  "related_seg_records": 15,
+  "seg_prefix": "10.1163/1874-6772_seg_",
+  "issue": "Different SEG bibliographic notices about the Greek commercial transaction at Pech Maho are not independent Iberian-language witnesses. Preserve as comparative/editorial context with provenance.",
+  "review_scope": "Publisher web pages and tables of contents, no full-text or sign-by-sign review",
+  "new_core_evidence": 0,
+  "new_doi_added": 0,
+  "public_website_published": false
+}
