@@ -21,7 +21,10 @@
         "pages": "301–324",
         "doi": "10.36707/palaeohispanica.v25i1.718",
         "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/718",
-        "pdf": "https://ifc-ojs.es/index.php/palaeohispanica/article/download/718/719/7009"
+        "pdf": "https://ifc.dpz.es/recursos/publicaciones/41/87/12montes.pdf",
+        "publication_record_url": "https://ifc-ojs.es/index.php/palaeohispanica/es/article/view/718",
+        "article_license_stated": "CC BY-SA 4.0",
+        "article_license_caveat": "La licencia editorial declarada no confirma por sí sola derechos autónomos de todas las fotografías de terceros; verificar créditos de cada figura antes de reutilizar."
       },
       "figure_locators": [
         {
@@ -45,7 +48,32 @@
       "sign_reading_independently_verified": false,
       "translation_validated": false,
       "core_processing_allowed": false,
-      "review_status": "PUBLISHER_SOURCE_IDENTIFIED_CROSSWALK_PENDING"
+      "review_status": "PUBLISHER_SOURCE_IDENTIFIED_CROSSWALK_PENDING",
+      "palaeography_review": {
+        "source": "Montes Novella (2025), pp. 311–313, figs. 4–6",
+        "missing_initial_sign": {
+          "candidates_reported": [
+            "ba",
+            "ta",
+            "o",
+            "u",
+            "bi"
+          ],
+          "author_preferred": "ba",
+          "secondary": "ta",
+          "status": "PUBLISHED_HYPOTHESIS_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Comparación publicada del ductus: inclinación a derecha de ba; ta como alternativa secundaria. No se reconstruye el trazo ausente como certeza."
+        },
+        "critical_sign": "S64",
+        "status": "VALUE_DISPUTED",
+        "line_bar_counts_reported": [
+          9,
+          6,
+          4,
+          3
+        ],
+        "interpretive_limit": "No se adoptan identificaciones de numerales ni equivalencias monetarias como traducción demostrada."
+      }
     }
   ]
 }
