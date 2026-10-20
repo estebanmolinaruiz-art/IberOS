@@ -466,5 +466,35 @@
     "photo_confirmed": false,
     "notes": "Numbering is an alignment scaffold, not a positive sign identification; source image drawing only; no TE morphological conclusion.",
     "core_gate": "OPEN"
+  },
+  "independent_visual_silhouette_review_2026_10_20": {
+    "status": "TEN_VISIBLE_SHAPES_EDITORIAL_LABELS_NOT_INDEPENDENTLY_CONFIRMED",
+    "figure25_pdf_page": 111,
+    "photo_plateXXII_pdf_page": 158,
+    "transcription_pdf_page": 110,
+    "source_pdf_sha256": "cc8e110f12d8047567e30ee6344a345e599ee55638450b78e22bccfbbc9c6551",
+    "target_candidate_bbox_xyxy": [
+      979,
+      554,
+      1402,
+      614
+    ],
+    "neutral_silhouettes": [
+      "near-vertical stroke",
+      "angular zigzag",
+      "upright with curved loop",
+      "four-section quadrilateral cluster",
+      "diamond head descending stem",
+      "two uprights joined diagonally",
+      "angular sign with triangular interior",
+      "three uprights joined by lower bar with extending center",
+      "two uprights joined diagonally",
+      "forked vertical with oblique branches"
+    ],
+    "count": 10,
+    "sign_identity_independently_confirmed": false,
+    "photo_independent_sign_mapping": false,
+    "photo_warning": "Published halftone has heavy damage and opposite-face show-through described by Fletcher; no clean photo-to-drawing 1:1 match achieved",
+    "next_gate": "Compare independent signary variants and sign-level drawing/photo coordinates; do not claim TE function."
   }
 }
