@@ -1,0 +1,3 @@
+object_id,editor,source_pdf_page,source_figure_page,physical_line,word_number,preceding_editorial_word,target_editorial_tokens,following_editorial_word,evidence_level,visual_glyphs_verified,reviewer_independent,split
+ORLEYL-V,Fletcher 1981,67,65,3,19,GU-DU-R,BI-TE-R-O-KE-TE-TI-N-E,E-R-A-TI-A-R-E,PRIMARY_EDITORIAL_LINE,0,,DEVELOPMENT
+ORLEYL-VII,Fletcher 1981,110,111,2,7,CU-DU-BO-I-KE,BA-S-BI-TE-R-O-KE-TI-N-E,I-R-I-C-A,PRIMARY_EDITORIAL_LINE,0,,DEVELOPMENT
