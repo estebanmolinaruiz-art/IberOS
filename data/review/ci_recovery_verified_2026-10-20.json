@@ -1,0 +1,32 @@
+{
+  "schema": "IberOS-CI-Recovery-Verification/1.0",
+  "date": "2026-10-20",
+  "commit": "f7c8cb3c4c9770795aa6d00a97d25d136ffc3051",
+  "root_cause": "Missing PyMuPDF/fitz dependency during pytest collection of tests/test_validation01_fletcher_crop_v2.py",
+  "fix": "Installed PyMuPDF>=1.24,<2 in tests and benchmark GitHub Actions workflows",
+  "runs": [
+    {
+      "workflow": "tests",
+      "run_id": 39406478454,
+      "conclusion": "success"
+    },
+    {
+      "workflow": "benchmark",
+      "run_id": 39406478571,
+      "conclusion": "success"
+    },
+    {
+      "workflow": "Comprobaciones web gratuitas",
+      "run_id": 39406478538,
+      "conclusion": "success"
+    }
+  ],
+  "scientific_validation": "NOT_INFERRED_FROM_CI",
+  "bibliography_resume": {
+    "candidate_dois": 819,
+    "verified_metadata_flags": 22,
+    "high_priority_to_review": 49,
+    "ambiguous_to_review": 130
+  },
+  "website_deployment": "NOT_CLAIMED"
+}
