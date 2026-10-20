@@ -32,14 +32,19 @@
     },
     {
       "id": "ILB18-OUT-02",
-      "face": "exterior",
+      "face": "UNRESOLVED: edition section 4 describes third text in cara A, while this record previously placed it on exterior",
       "position": "lower right",
       "editorial_reading_fragments": [],
-      "status": "UNREAD_OR_UNCERTAIN_EDITORIAL"
+      "status": "PRIMARY_EDITION_FACE_MISMATCH_OPEN_REVIEW"
     }
   ],
   "three_reuses_proven": false,
   "baseline_holdout_independent_count": 1,
   "individual_glyph_photo_verified": false,
-  "automatic_core_promotion": false
+  "automatic_core_promotion": false,
+  "face_reconciliation": {
+    "status": "OPEN",
+    "finding": "Ferrer et al. (2024) page 258, section 4 describes third lower-right text as cara A; prior mapping as exterior requires figure-based crosscheck.",
+    "source_pdf": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf"
+  }
 }
