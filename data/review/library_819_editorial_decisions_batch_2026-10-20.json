@@ -1,0 +1,54 @@
+{
+  "schema": "IberOS-Individual-Editorial-Review/1.0",
+  "reviewed_at": "2026-10-20",
+  "source_catalog_dois": 819,
+  "checked_existing_dois": 4,
+  "added_dois": 0,
+  "decisions": [
+    {
+      "doi": "10.3406/ran.1979.1037",
+      "scope": "DIRECT_IBERIAN_EPIGRAPHY",
+      "publisher_url": "https://www.persee.fr/doc/ran_0557-7705_1979_num_12_1_1037",
+      "publisher_metadata_confirmed": true,
+      "source_content_reviewed": "abstract_or_opening_passage_only",
+      "article_full_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.3406/ran.1988.1323",
+      "scope": "COMPARATIVE_GREEK_ETRUSCAN",
+      "publisher_url": "https://www.persee.fr/doc/ran_0557-7705_1988_num_21_1_1323",
+      "publisher_metadata_confirmed": true,
+      "source_content_reviewed": "abstract_or_opening_passage_only",
+      "article_full_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.3406/ran.1968.880",
+      "scope": "ARCHAEOLOGICAL_CONTEXT_ONLY",
+      "publisher_url": "https://www.persee.fr/doc/ran_0557-7705_1968_num_1_1_880",
+      "publisher_metadata_confirmed": true,
+      "source_content_reviewed": "abstract_or_opening_passage_only",
+      "article_full_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.36707/palaeohispanica.v0i12.64",
+      "scope": "COMPARATIVE_CELTIBERIAN",
+      "publisher_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/64",
+      "publisher_metadata_confirmed": true,
+      "source_content_reviewed": "abstract_or_opening_passage_only",
+      "article_full_read": false,
+      "core_approved": false
+    }
+  ],
+  "counts": {
+    "direct_iberian": 1,
+    "comparative_linguistic": 1,
+    "comparative_greek_etruscan": 1,
+    "archaeological_context": 1
+  },
+  "dedup": "Same DOI already present in 819 list; count no additions",
+  "next": "Continue checking other priority and ambiguous candidates; verify independent witnesses for Pech Maho",
+  "web_published": false
+}
