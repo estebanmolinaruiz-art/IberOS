@@ -32,10 +32,10 @@
     },
     {
       "id": "ILB18-OUT-02",
-      "face": "UNRESOLVED: edition section 4 describes third text in cara A, while this record previously placed it on exterior",
-      "position": "lower right",
+      "face": "cara A (edición 2024, figura 6, p.259; sección 4 p.258)",
+      "position": "lower-right of cara A",
       "editorial_reading_fragments": [],
-      "status": "PRIMARY_EDITION_FACE_MISMATCH_OPEN_REVIEW"
+      "status": "PRIMARY_FIGURE_FACE_RECONCILED_GLYPHS_UNVERIFIED"
     }
   ],
   "three_reuses_proven": false,
@@ -43,8 +43,9 @@
   "individual_glyph_photo_verified": false,
   "automatic_core_promotion": false,
   "face_reconciliation": {
-    "status": "OPEN",
-    "finding": "Ferrer et al. (2024) page 258, section 4 describes third lower-right text as cara A; prior mapping as exterior requires figure-based crosscheck.",
-    "source_pdf": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf"
+    "status": "RESOLVED_EDITORIAL_FIGURE",
+    "finding": "Article abstract (p.247) says exterior; detailed section p.258, fig.6 p.259, and conclusions p.275 say cara A. Fig.6 places third text below ildurkon / oś<(<) on cara A.",
+    "source_pdf": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
+    "caveat": "Retain contradiction between abstract and figure, no independent photographic sign validation."
   }
 }
