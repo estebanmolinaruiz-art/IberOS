@@ -1,0 +1,10 @@
+editorial_value,v_glyph_index,vii_glyph_index,visual_comparison,observed_shape,signary_independent_verified,reviewer_independent,evidence_level
+bi,1,1,PARTIAL,partial crop at border,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+te,2,2,CONSISTENT,quadrangular shape internally subdivided,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+r,3,3,CONSISTENT,diamond with downward tail,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+o,4,4,CONSISTENT,two uprights with diagonal link,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+ke,5,5,VARIANT,rounded/angular in V versus sharply angular in VII,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+ti,7,6,CONSISTENT,upright and crossbar,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+n,8,7,CONSISTENT,angular strokes,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+e,9,8,CONSISTENT,branching form,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
+te (additional),6,,CONSISTENT_WITH_TE_SHAPE,quadrangular internally subdivided in V only,NO,NO,SHAPE_COMPARISON_EDITORIAL_KEY_KNOWN
