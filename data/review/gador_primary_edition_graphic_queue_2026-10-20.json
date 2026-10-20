@@ -1,0 +1,108 @@
+{
+  "schema": "IberOS-Gador-Primary-Edition-Review/1.0",
+  "date": "2026-10-20",
+  "object": {
+    "name": "Plomo de Gádor",
+    "corpus_id": "MLH III H.01.01",
+    "repository": "Real Academia de la Historia",
+    "findspot": "Reported Sierra de Gádor/Almería; Barranco del Rey precise attribution unresolved",
+    "size_mm": [
+      175,
+      110
+    ],
+    "lines": "three main plus one inverse",
+    "physical_witnesses": 1
+  },
+  "edition": {
+    "author": "José Vicente Montes Novella",
+    "title": "El plomo de Gádor, nueva lectura y análisis",
+    "journal": "Palaeohispanica",
+    "volume": 25,
+    "year": 2025,
+    "pages": "301-324",
+    "doi": "10.36707/palaeohispanica.v25i1.718",
+    "pdf": "https://ifc.dpz.es/recursos/publicaciones/41/87/12montes.pdf",
+    "figures": [
+      {
+        "fig": 1,
+        "page": 303,
+        "scope": "current photograph of lead"
+      },
+      {
+        "fig": 3,
+        "page": 307,
+        "scope": "facsimile Untermann MLH III reading"
+      },
+      {
+        "fig": 4,
+        "page": 313,
+        "scope": "ba graphic control"
+      },
+      {
+        "fig": 5,
+        "page": 313,
+        "scope": "ta graphic control"
+      },
+      {
+        "fig": 6,
+        "page": 313,
+        "scope": "o graphic control"
+      }
+    ]
+  },
+  "open_cases": [
+    {
+      "code": "GAD-INITIAL-01",
+      "options": [
+        "ba",
+        "ta",
+        "o",
+        "u",
+        "bi"
+      ],
+      "author_preference": "ba; ta alternate",
+      "status": "AUTHOR_HYPOTHESIS_NOT_INDEPENDENTLY_TRACED"
+    },
+    {
+      "code": "GAD-S42-01",
+      "options": [
+        "ke/ki",
+        "be",
+        "bé"
+      ],
+      "status": "VALUE_AND_FUNCTION_UNRESOLVED"
+    },
+    {
+      "code": "GAD-METROLOGY-01",
+      "token": "śtaŕion",
+      "hypotheses": [
+        "Greek stater-related loan",
+        "other local lexical / mining association"
+      ],
+      "status": "SEMANTICS_UNVERIFIED"
+    },
+    {
+      "code": "GAD-NUMERALS-01",
+      "author_count": [
+        9,
+        6,
+        4,
+        3
+      ],
+      "status": "PUBLISHED_COUNTS_NOT_INDEPENDENTLY_RECOUNTED"
+    }
+  ],
+  "provenance_status": "DOCUMENTED_PUBLISHER_PDF_TEXT_AND_FIGURE_CAPTIONS",
+  "visual_sign_by_sign_verified": false,
+  "independent_autopsy": false,
+  "core_evidence_promotion": false,
+  "translation_validated": false,
+  "required_next": [
+    "Inspect figures 1 and 4-6 visually using high resolution copy",
+    "Crosswalk physical inventory identifier RAH with MLH H.01.01",
+    "Keep author alternatives from 2025 apart from independent reading",
+    "Collect older editorial facsimile evidence for dependencies",
+    "Review rights for public reproduction"
+  ],
+  "site_republished": false
+}
