@@ -1,0 +1,60 @@
+{
+  "schema": "IberOS-Epigraphy-Priority-Evidence-Matrix/1.0",
+  "date": "2026-10-20",
+  "purpose": "Avoid repeated work across IberOS research threads and identify precise blockers",
+  "objects": [
+    {
+      "name": "Casinos",
+      "id": "IBR-PLM-0007",
+      "doi": "10.36707/palaeohispanica.v0i14.54",
+      "evidence": "Published photos fig1 p207, drawings fig2 p208; editorial transcriptions p212",
+      "source_files": [
+        "docs/INSPECCION_GRAFICA_CASINOS_FIGURAS_1_2_2026-10-18.md",
+        "data/review/casinos_graphic_uncertainties_v1.json"
+      ],
+      "open_graphic_cases": 5,
+      "blocker": "Independent sign-level review across doubtful regions; provenance lacks excavated context",
+      "core_eligible": false
+    },
+    {
+      "name": "Moleta del Remei",
+      "id": "IBR-PLM-0011",
+      "doi": "10.36707/palaeohispanica.v0i8.265",
+      "evidence": "Photo fig4 p215; drawing fig5 p216; five disputed signs",
+      "source_files": [
+        "docs/COTEJO_MOLETA_REMEI_2026-10-17.md",
+        "data/review/moleta_five_sign_adjudication_v1.json"
+      ],
+      "open_graphic_cases": 5,
+      "blocker": "Original-resolution multiangle photos / RTI and independent blind readings",
+      "core_eligible": false
+    },
+    {
+      "name": "Illeta dels Banyets",
+      "id": "IBR-PLM-0012",
+      "doi": "10.36707/palaeohispanica.v24i1.629",
+      "evidence": "Figure 8 p260 ambiguity bo/ko",
+      "source_files": [
+        "docs/COTEJO_ILLETA_BANYETS_2026-10-17.md",
+        "data/review/illeta_bo_ko_decision_v1.json"
+      ],
+      "open_graphic_cases": 1,
+      "blocker": "Differentiate engraved diagonal strokes from folds under independent review",
+      "core_eligible": false
+    },
+    {
+      "name": "Gádor",
+      "doi": "10.36707/palaeohispanica.v25i1.718",
+      "source_files": [
+        "site/data/library_candidates_v1.json"
+      ],
+      "evidence": "Publisher bibliographic metadata; no sign-level graphic case verified in reviewed files",
+      "open_graphic_cases": null,
+      "blocker": "Locate primary figures, material object identification, exact edition page and transcription",
+      "core_eligible": false
+    }
+  ],
+  "note": "Evidence inventory from existing checked project reports, not a newly performed autopsy or proof of sign readings.",
+  "new_scientific_signs_approved": 0,
+  "website_deployed": false
+}
