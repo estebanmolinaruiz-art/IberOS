@@ -19,6 +19,15 @@ try{
   if(!expected.test(html))throw Error(label+' carece de enlace o identificador esperado');
   console.log('✓ '+label+' disponible con contexto de Tivissa');
  }
+ const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
+ if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
+ await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
+ const mainText=await page.locator('#interpretationMain').innerText();
+ if(!mainText.trim())throw Error('Ficha sin contenido visible en el panel principal de interpretación');
+ const caveat=await page.locator('.ib-reconstruction').innerText();
+ if(!caveat.includes('no una traducción confirmada') || !caveat.includes('No se ofrece una traducción literal sin evidencia contrastada.'))
+  throw Error('Ficha no informa de los límites científicos de la interpretación');
+ console.log('✓ Ficha presenta interpretación visible con cautelas de validación científica');
  const corpus=await page.goto(base+'/corpus/?q=Tivissa',{waitUntil:'domcontentloaded'});
  await page.waitForTimeout(1000);
  if(await page.locator('a[href*="../ficha/?id=IBR-PLM-0002"]').count()===0)throw Error('Corpus no muestra acceso a ficha de Tivissa');
