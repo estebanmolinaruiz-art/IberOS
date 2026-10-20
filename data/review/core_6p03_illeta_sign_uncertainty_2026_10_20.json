@@ -24,7 +24,7 @@
   "text_units": [
     {
       "id": "ILB18-IN-01",
-      "editorial_face": "A (interior)",
+      "editorial_face": "A (paper's designation; physical interior/exterior requires photo reconciliation)",
       "line_1": "ildurkon / ildurbon",
       "line_2": "oś<(<)",
       "uncertainties": [
@@ -50,7 +50,7 @@
     },
     {
       "id": "ILB18-OUT-01",
-      "editorial_face": "B (exterior)",
+      "editorial_face": "B (paper's designation; physical interior/exterior requires photo reconciliation)",
       "line_1": "ka+belauŕ",
       "line_2": "nai",
       "uncertainties": [
@@ -83,7 +83,7 @@
     },
     {
       "id": "ILB18-OUT-02",
-      "editorial_face": "A (exterior side uncertain; check edition terminology)",
+      "editorial_face": "A, lower-right (paper's designation; do not assume exterior)",
       "location": "lower-right",
       "editorial_transcription": "++ (+)+(+)e",
       "uncertainties": [
@@ -109,5 +109,10 @@
     "object_counts_as_one_independent_physical_group": true,
     "automatic_core_promotion": false
   },
-  "note": "Editorial descriptions extracted from published edition; photographic reading independently unverified. Face A/B naming in article requires reconciliation with interior/exterior before marking individual graphic regions."
+  "note": "Ferrer et al. 2024 section 4 explicitly places the lower-right third text on cara A, so prior IberOS exterior assignment is not verified and should be treated as a metadata inconsistency. Do not infer physical inner/outer association from labels without checking figures.",
+  "metadata_conflict": {
+    "previous_iberos_label": "ILB18-OUT-02 exterior lower right",
+    "primary_edition_description": "cara A extremo inferior derecho",
+    "status": "OPEN_RECONCILIATION_REQUIRED"
+  }
 }
