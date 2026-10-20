@@ -1,0 +1,126 @@
+{
+  "schema": "IberOS-Expanded-Bibliographic-Review/1.0",
+  "date": "2026-10-20",
+  "inventory_total": 819,
+  "doi_uniqueness_within_csv": 819,
+  "publisher_toc_checks": [
+    {
+      "doi": "10.1093/oso/9780198790822.003.0001",
+      "scope": "METHODOLOGY_PALAEHISPANIC",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0002",
+      "scope": "ARCHAEOLOGICAL_CONTEXT",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0003",
+      "scope": "COMPARATIVE_PHOENICIAN",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0004",
+      "scope": "DIRECT_SCRIPT_METHODOLOGY",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0005",
+      "scope": "COMPARATIVE_SOUTHWEST",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0006",
+      "scope": "COMPARATIVE_ANDALUSIAN",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0007",
+      "scope": "DIRECT_IBERIAN_LANGUAGE_SCRIPT",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0008",
+      "scope": "CONTACT_SOUTHERN_GAUL",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0009",
+      "scope": "COMPARATIVE_VASCO_IBERIAN_THEORY",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0010",
+      "scope": "COMPARATIVE_CELTIBERIAN",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0011",
+      "scope": "COMPARATIVE_LUSITANIAN",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0012",
+      "scope": "ARCHAEOLOGICAL_CONTEXT",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0013",
+      "scope": "COMPARATIVE_NUMISMATICS",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    },
+    {
+      "doi": "10.1093/oso/9780198790822.003.0014",
+      "scope": "CONTACT_LATINIZATION",
+      "publisher_page": "https://academic.oup.com/book/36477",
+      "verification": "PUBLISHER_TABLE_OF_CONTENTS",
+      "full_text_read": false,
+      "core_approved": false
+    }
+  ],
+  "provisional_out_of_scope_title_only_count": 25,
+  "provisional_out_of_scope_title_only_method": "Modern script uses (software, film, generic writing), not individual publisher review",
+  "metadata_confirmed_flags_in_working_csv": 40,
+  "note": "The 40 flags include 14 OUP TOC checks and 26 previously marked; they do not imply scientific manuscript approval or 40 directly pertinent references.",
+  "web_published": false,
+  "core_promotions": 0
+}
