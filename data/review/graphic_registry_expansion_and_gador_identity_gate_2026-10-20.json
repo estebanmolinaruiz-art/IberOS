@@ -1,0 +1,25 @@
+{
+  "schema": "IberOS-Graphic-Registry-Expansion/1.0",
+  "date": "2026-10-20",
+  "source_registry": "site/data/epigraphic-visual-registry-v1.json",
+  "previous_records": 2,
+  "added_records": [
+    "IBR-PLM-0007",
+    "IBR-PLM-0011",
+    "IBR-PLM-0012"
+  ],
+  "new_total": 5,
+  "all_added_figures": "publisher edition source link, visual rights and glyph positions unapproved",
+  "gador": {
+    "title": "Plomo de Gádor",
+    "corpus_reference": "MLH H.01.01",
+    "doi": "10.36707/palaeohispanica.v25i1.718",
+    "edition_pdf": "https://ifc.dpz.es/recursos/publicaciones/41/87/12montes.pdf",
+    "status": "EXTERNAL_OBJECT_CROSSWALK_PENDING",
+    "issue": "No verified row for Gádor in site/data/objects.csv. IBR-PLM-0013 is Pico de los Ajos, not Gádor; do not attach Gádor materials to this object.",
+    "next_step": "Create or formally reconcile independent external epigraphic witness before integrating Gádor in the visual registry."
+  },
+  "core_promotion": false,
+  "public_image_hosting": false,
+  "automatic_translations_validated": 0
+}
