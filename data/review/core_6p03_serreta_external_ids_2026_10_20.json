@@ -1,0 +1,62 @@
+{
+  "schema": "IberOS-6P03-Serreta-External-Identifier-Crosswalk/1.0",
+  "date": "2026-10-20",
+  "object_id": "IBR-PLM-0009",
+  "object_name": "Plomo I de La Serreta",
+  "physical_witness_count": 1,
+  "writing_system": "GRECO_IBERIAN",
+  "external_ids": {
+    "MLH": [
+      "G.1.1a",
+      "G.1.1b"
+    ],
+    "HESPERIA": [
+      "A.04.01a",
+      "A.04.01b"
+    ],
+    "CATHALAUNIA_IBERIKA": []
+  },
+  "external_id_status": {
+    "MLH": "ATTESTED_IN_SECONDARY_HESPERIA_EXTRACT_NOT_PRIMARY_VERIFIED",
+    "HESPERIA": "ATTESTED_IN_SECONDARY_HESPERIA_EXTRACT_NOT_DIRECT_LINK_VERIFIED",
+    "CATHALAUNIA_IBERIKA": "NO_MATCH_CONFIRMED_SCOPE_MISMATCH_POSSIBLE"
+  },
+  "physical_text_units": [
+    {
+      "unit": "A1",
+      "location": "cara A primer texto, siete líneas",
+      "possible_external_id": "A.04.01a",
+      "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+    },
+    {
+      "unit": "A2",
+      "location": "cara A segundo texto superpuesto, dos líneas",
+      "possible_external_id": "A.04.01a",
+      "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+    },
+    {
+      "unit": "B",
+      "location": "cara B, cinco líneas",
+      "possible_external_id": "A.04.01b",
+      "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+    }
+  ],
+  "bibliography": [
+    {
+      "citation": "Untermann, Monumenta Linguarum Hispanicarum III (1990), G.1.1",
+      "verified_primary_page": false
+    },
+    {
+      "citation": "Fletcher y Silgo (1992), El plomo ibérico escrito Serreta I, Recerques del Museu d'Alcoi 1:9–36",
+      "url": "https://cathalaunia.org/BibliografiaIBR/BIBR00809"
+    }
+  ],
+  "external_secondary_source": "https://es.scribd.com/document/840964434/grecoiberoA",
+  "source_note": "Secondary Hesperia excerpt explicitly associates G.01.01a with A.04.01a, identifies two texts on A, and cross-ref G.01.01b. Primary pages not directly accessed.",
+  "scientific_gates": {
+    "primary_edition_collated": false,
+    "physical_entry_sign_verified": false,
+    "automatic_promotion": false
+  },
+  "physical_object_new_count": 0
+}
