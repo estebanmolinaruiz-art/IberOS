@@ -1,0 +1,4 @@
+sample_id,object_id,pdf_page,source_glyph_index,editorial_value,outline,internal_division,visual_observation,exact_variant_status,phonetic_source,independent_signary_review,independent_reader,decision
+TE-V-02,ORLEYL-V,65,2,te,quadrangular_oblique,subdivided,"Slanted four-sided outline with internal partitions; cropped adjacent line visible",UNRESOLVED,FLETCHER_1981,NO,,SAME_GRAPHIC_FAMILY_COMPATIBLE
+TE-V-06,ORLEYL-V,65,6,te,quadrangular_oblique,subdivided,"Slanted outline with long interior oblique crossing stroke",UNRESOLVED,FLETCHER_1981,NO,,SAME_GRAPHIC_FAMILY_COMPATIBLE
+TE-VIIB-02,ORLEYL-VII,111,2,te,diamond_like,subdivided,"More symmetric diamond-like divided outline; adjacent glyph above crop",UNRESOLVED,FLETCHER_1981,NO,,SAME_GRAPHIC_FAMILY_COMPATIBLE
