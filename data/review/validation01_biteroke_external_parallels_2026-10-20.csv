@@ -1,0 +1,4 @@
+candidate_id,reference,reported_sequence,primary_reference,source_url,source_kind,object_is_independent_from_orleyl_V_VII,reading_verified,hold_eligible,notes
+ALT-BALONES, A.03.01 Balones,biterokitin,A.03.01,https://www.ucm.es/archivoepigraficohispania/file/bae07-f01-ngomo?ver=,ACADEMIC_SECONDARY_PARALLEL,YES,NO,NO,"Obtain primary plate, editor, object identity; already exposed in research so DEVELOPMENT"
+ALT-ORLEYL-091,CS.21.091 Orleyl,biteroketo,CS.21.091,https://www.ucm.es/archivoepigraficohispania/file/bae07-f01-ngomo?ver=,ACADEMIC_SECONDARY_PARALLEL,UNKNOWN,NO,NO,"Verify identity and distinct physical object; possible textual difference to check"
+ALT-ORLEYL-VII,CS.21.07 Orleyl,basbiteŕoketine,CS.21.07,https://www.ucm.es/archivoepigraficohispania/file/bae07-f01-ngomo?ver=,ACADEMIC_SECONDARY_PARALLEL,NO,NO,NO,"Known Orleyl VII; editorial support not new independent observation"
