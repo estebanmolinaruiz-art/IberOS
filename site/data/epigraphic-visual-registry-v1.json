@@ -155,6 +155,86 @@
         "object_identity_status": "B.7.38_EXTERNAL_PHOTO_UNMATCHED",
         "caution": "La edición describe varios plomos; la referencia al plomo 6 no demuestra equivalencia con B.7.38."
       }
+    },
+    {
+      "object_id": "IBR-PLM-0007",
+      "epigraphic_reference": "BDH V.02.02",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/34/21/09ferrerescriva.pdf",
+      "source_citation": "Ferrer i Jané y Escrivà Torres (2014), Palaeohispanica 14, 205–227",
+      "figure_locator": "figs. 1–2, pp. 207–208",
+      "figure_pdf_page": 3,
+      "doi": "10.36707/palaeohispanica.v0i14.54",
+      "status": "FIGURE_IDENTIFIED",
+      "image_url": null,
+      "rights_verified": false,
+      "exact_object_match_verified": true,
+      "glyphs": [],
+      "sign_mapping_status": "SIGN_MAPPING_PENDING",
+      "sign_mapping_note": "Figura editorial identificada, pero posiciones y trazos de grafemas no verificados independientemente.",
+      "watermark_preserved_verified": false,
+      "image_author_credit_verified": false,
+      "image_reuse_permission_verified": false,
+      "rights_review": {
+        "status": "PERMISSION_NOT_DOCUMENTED",
+        "author_watermark_policy": "PRESERVE_IF_PRESENT",
+        "image_copy_allowed": false,
+        "reason": "El acceso a la edición no acredita autorización para incorporar fotografías o dibujos originales en IberOS.",
+        "next_action": "Verificar licencia y crédito específicos de cada figura; mantener enlace a la edición original."
+      },
+      "source_figure_url": "https://ifc.dpz.es/recursos/publicaciones/34/21/09ferrerescriva.pdf#page=3"
+    },
+    {
+      "object_id": "IBR-PLM-0011",
+      "epigraphic_reference": "Moleta del Remei, plomo publicado en 2008",
+      "source_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/en/article/view/265",
+      "source_citation": "Ferrer i Jané et al. (2008), Palaeohispanica 8, 203–216",
+      "figure_locator": "fig. 4, p. 215 (fotografía); fig. 5, p. 216 (dibujo)",
+      "doi": "10.36707/palaeohispanica.v0i8.265",
+      "status": "FIGURE_IDENTIFIED",
+      "image_url": null,
+      "rights_verified": false,
+      "exact_object_match_verified": true,
+      "glyphs": [],
+      "sign_mapping_status": "SIGN_MAPPING_PENDING",
+      "sign_mapping_note": "Figura editorial identificada, pero posiciones y trazos de grafemas no verificados independientemente.",
+      "watermark_preserved_verified": false,
+      "image_author_credit_verified": false,
+      "image_reuse_permission_verified": false,
+      "rights_review": {
+        "status": "PERMISSION_NOT_DOCUMENTED",
+        "author_watermark_policy": "PRESERVE_IF_PRESENT",
+        "image_copy_allowed": false,
+        "reason": "El acceso a la edición no acredita autorización para incorporar fotografías o dibujos originales en IberOS.",
+        "next_action": "Verificar licencia y crédito específicos de cada figura; mantener enlace a la edición original."
+      },
+      "source_figure_url": "https://www.ifc-ojs.es/index.php/palaeohispanica/en/article/view/265"
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "epigraphic_reference": "Illeta dels Banyets, lámina grecoibérica descubierta en 2018",
+      "source_url": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
+      "source_citation": "Ferrer i Jané et al. (2024), Palaeohispanica 24, 247–278",
+      "figure_locator": "fig. 8, p. 260 (alternativa bo/ko)",
+      "figure_pdf_page": 14,
+      "doi": "10.36707/palaeohispanica.v24i1.629",
+      "status": "FIGURE_IDENTIFIED",
+      "image_url": null,
+      "rights_verified": false,
+      "exact_object_match_verified": true,
+      "glyphs": [],
+      "sign_mapping_status": "SIGN_MAPPING_PENDING",
+      "sign_mapping_note": "Figura editorial identificada, pero posiciones y trazos de grafemas no verificados independientemente.",
+      "watermark_preserved_verified": false,
+      "image_author_credit_verified": false,
+      "image_reuse_permission_verified": false,
+      "rights_review": {
+        "status": "PERMISSION_NOT_DOCUMENTED",
+        "author_watermark_policy": "PRESERVE_IF_PRESENT",
+        "image_copy_allowed": false,
+        "reason": "El acceso a la edición no acredita autorización para incorporar fotografías o dibujos originales en IberOS.",
+        "next_action": "Verificar licencia y crédito específicos de cada figura; mantener enlace a la edición original."
+      },
+      "source_figure_url": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf#page=14"
     }
   ]
 }
