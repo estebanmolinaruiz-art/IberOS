@@ -1,0 +1,42 @@
+name: CORE six pillars audit
+on:
+  push:
+    paths:
+      - 'scripts/audit_core_six_pillars.py'
+      - 'tests/test_audit_core_six_pillars.py'
+      - 'data/curated/**'
+      - 'data/review/validation01_progress_scorecard_v1.json'
+      - 'data/review/orleyl_te_glyph_review_v1.json'
+      - '.github/workflows/core-six-pillars.yml'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/audit_core_six_pillars.py'
+      - 'tests/test_audit_core_six_pillars.py'
+      - '.github/workflows/core-six-pillars.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests for six-pillar audit
+        run: python -m unittest discover -s tests -p 'test_audit_core_six_pillars.py' -v
+      - name: Produce reproducible audit and commit reference
+        run: |
+          mkdir -p /tmp/iberos-six-pillars
+          python scripts/audit_core_six_pillars.py --out /tmp/iberos-six-pillars/core_six_pillar_audit.json
+          git rev-parse HEAD > /tmp/iberos-six-pillars/repository_commit.txt
+          python -m json.tool /tmp/iberos-six-pillars/core_six_pillar_audit.json > /dev/null
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-core-six-pillars-audit
+          path: /tmp/iberos-six-pillars/
+          if-no-files-found: warn
