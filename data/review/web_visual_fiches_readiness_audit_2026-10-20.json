@@ -1,0 +1,40 @@
+{
+  "schema": "IberOS-Visual-Fiches-Readiness-Audit/1.0",
+  "date": "2026-10-20",
+  "deployment_last_verified": "a60a2d3e9d2d745dc48437a472edce695909bbb4",
+  "visual_registry": "site/data/epigraphic-visual-registry-v1.json",
+  "records": 2,
+  "records_reviewed": [
+    {
+      "object_id": "IBR-PLM-0002",
+      "name": "Tivissa",
+      "figure": "Asensio et al. 2003, figures 3–4, printed p.200, PDF page 6",
+      "publication_source_available": true,
+      "exact_object_match_verified": true,
+      "third_party_image_candidate_matched": false,
+      "licensed_for_local_reproduction": false,
+      "sign_mapping_approved": false,
+      "followup": "Compare exact external museum object to T.07.03, verify rights before publication, then independent sign-level checks"
+    },
+    {
+      "object_id": "IBR-PLM-0003",
+      "name": "Pech-Maho",
+      "publication_source_available": true,
+      "figure_locator": null,
+      "external_photograph_exact_match_verified": false,
+      "licensed_for_local_reproduction": false,
+      "sign_mapping_approved": false,
+      "followup": "Identify figure and specific physical lead corresponding to B.7.38; confirm not conflated with other Pech Maho pieces"
+    }
+  ],
+  "public_fiche_enrichment_featured_records": 6,
+  "visual_authenticity_conclusion": "No unverified photographs may be hosted as original inscription faces. External links are permissible with proper identification.",
+  "scientific_new_sign_approvals": 0,
+  "website_deployed_in_this_audit": false,
+  "development_priorities": [
+    "Pech-Maho B.7.38 figure identification and object crosswalk",
+    "Tivissa exact DRAC museum photo versus published object verification",
+    "Extend source/figure registry to Casinos, Moleta, Illeta and Gádor using already established editorial locators",
+    "Verify accessible source links and credit/licence per figure"
+  ]
+}
