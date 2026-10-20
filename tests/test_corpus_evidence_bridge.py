@@ -27,3 +27,5 @@ class CorpusBridgeTests(unittest.TestCase):
         self.assertGreater(result["curated_objects"],0)
         self.assertEqual(result["linked_objects"]+result["unlinked_curated_objects"],result["curated_objects"])
         self.assertFalse(result["evidence"]["automatic_core_promotion"])
+        self.assertEqual(result["linked_objects"],result["curated_objects"])
+        self.assertEqual(result["issues"],[])
