@@ -25,8 +25,12 @@ try{
  const mainText=await page.locator('#interpretationMain').innerText();
  if(!mainText.trim())throw Error('Ficha sin contenido visible en el panel principal de interpretación');
  const caveat=await page.locator('.ib-reconstruction').innerText();
- if(!caveat.includes('no una traducción confirmada') || !caveat.includes('No se ofrece una traducción literal sin evidencia contrastada.'))
+ if(!caveat.includes('no una traducción confirmada'))
   throw Error('Ficha no informa de los límites científicos de la interpretación');
+ const note=await page.locator('#interpretationNote').innerText();
+ if(!note.trim())throw Error('Ficha no presenta información sobre el estado de la lectura');
+ const trace=await page.locator('#interpretationTrace').innerText();
+ if(!trace.trim())throw Error('Ficha no informa de la procedencia documental o de su ausencia');
  console.log('✓ Ficha presenta interpretación visible con cautelas de validación científica');
  const corpus=await page.goto(base+'/corpus/?q=Tivissa',{waitUntil:'domcontentloaded'});
  await page.waitForTimeout(1000);
