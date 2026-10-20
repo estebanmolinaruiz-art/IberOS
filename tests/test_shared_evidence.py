@@ -19,4 +19,17 @@ class SharedEvidenceTests(unittest.TestCase):
     def test_cross_record_dependencies(self):
         result=validate_evidence([BASE,{**BASE,"evidence_id":"E2","layer":"LINGUISTIC_HYPOTHESIS","pillars":["MORPH"],"dependent_on":["E1"]}])
         self.assertEqual(result["records"][1]["dependent_on"],["E1"])
+    def test_graphic_metadata_is_preserved(self):
+        graphic={**BASE,"layer":"GRAPHIC","source_image_sha256":"a"*64,"bbox_xyxy":[1,2,20,30],"source_page":111}
+        result=validate_evidence([graphic])
+        self.assertEqual(result["records"][0]["bbox_xyxy"],[1,2,20,30])
+        self.assertEqual(result["records"][0]["source_image_sha256"],"a"*64)
+    def test_circular_dependencies_are_blocked(self):
+        first={**BASE,"dependent_on":["E2"]}
+        second={**BASE,"evidence_id":"E2","dependent_on":["E1"]}
+        with self.assertRaises(ValueError):
+            validate_evidence([first,second])
+    def test_invalid_dependencies_type_is_blocked(self):
+        with self.assertRaises(ValueError):
+            validate_evidence([{**BASE,"dependent_on":"E2"}])
 if __name__=="__main__": unittest.main()
