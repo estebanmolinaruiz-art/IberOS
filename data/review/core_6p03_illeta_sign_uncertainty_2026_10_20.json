@@ -1,0 +1,113 @@
+{
+  "schema": "IberOS-6P03-Illeta-Sign-Uncertainty/1.0",
+  "date": "2026-10-20",
+  "object_id": "IBR-PLM-0012",
+  "source": {
+    "title": "Ferrer i Jané et al. (2024), Una nueva lámina de plomo ... Illeta dels Banyets",
+    "doi": "10.36707/palaeohispanica.v24i1.629",
+    "pdf": "https://ifc.dpz.es/recursos/publicaciones/40/82/09ferrer.pdf",
+    "edition_pages": "247-278",
+    "diplomatic_discussion_pages": [
+      257,
+      258,
+      259,
+      260
+    ],
+    "figure_refs": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "physical_witness_count": 1,
+  "text_units": [
+    {
+      "id": "ILB18-IN-01",
+      "editorial_face": "A (interior)",
+      "line_1": "ildurkon / ildurbon",
+      "line_2": "oś<(<)",
+      "uncertainties": [
+        {
+          "location": "A1 sign 6",
+          "readings": [
+            "k",
+            "b"
+          ],
+          "reason": "crosses fold; other scratches may imitate diagonals",
+          "published_preference": "k"
+        },
+        {
+          "location": "A2 final angle",
+          "readings": [
+            "<",
+            "possible second <"
+          ],
+          "reason": "adjacent surface damage; only first angle clear"
+        }
+      ],
+      "edition_section": "4. La transcripción, pp. 257-258"
+    },
+    {
+      "id": "ILB18-OUT-01",
+      "editorial_face": "B (exterior)",
+      "line_1": "ka+belauŕ",
+      "line_2": "nai",
+      "uncertainties": [
+        {
+          "location": "B1 initial sign",
+          "readings": [
+            "k",
+            "b"
+          ],
+          "reason": "initial stroke unclear, first sign partly conjectural"
+        },
+        {
+          "location": "B1 third sign",
+          "readings": [
+            "r",
+            "uncertain"
+          ],
+          "reason": "fold obscures discriminating stroke"
+        },
+        {
+          "location": "B2 initial sign",
+          "readings": [
+            "i",
+            "n"
+          ],
+          "reason": "fold; editorial n inferred from context, visually vertical stroke"
+        }
+      ],
+      "edition_section": "4. La transcripción, pp. 258-259"
+    },
+    {
+      "id": "ILB18-OUT-02",
+      "editorial_face": "A (exterior side uncertain; check edition terminology)",
+      "location": "lower-right",
+      "editorial_transcription": "++ (+)+(+)e",
+      "uncertainties": [
+        {
+          "location": "lower right signs",
+          "readings": [
+            "l",
+            "d",
+            "i",
+            "numeral strokes"
+          ],
+          "reason": "4-6 signs, difficult orientation and fold/surface fissures"
+        }
+      ],
+      "edition_section": "4. La transcripción, p. 258"
+    }
+  ],
+  "review_flags": {
+    "primary_edition_text_checked": true,
+    "editorial_uncertainty_mapped": true,
+    "photographic_independent_signs_verified": false,
+    "translation_validated": false,
+    "object_counts_as_one_independent_physical_group": true,
+    "automatic_core_promotion": false
+  },
+  "note": "Editorial descriptions extracted from published edition; photographic reading independently unverified. Face A/B naming in article requires reconciliation with interior/exterior before marking individual graphic regions."
+}
