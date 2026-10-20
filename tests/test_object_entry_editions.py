@@ -1,5 +1,11 @@
 from pathlib import Path
-from scripts.audit_object_entry_editions import inspect
+import importlib.util
+
+SCRIPT=Path(__file__).resolve().parents[1] / 'scripts' / 'audit_object_entry_editions.py'
+spec=importlib.util.spec_from_file_location('object_entry_editions', SCRIPT)
+module=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+inspect=module.inspect
 
 def test_object_entry_edition_consistency():
     report=inspect(Path(__file__).resolve().parents[1])
