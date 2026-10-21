@@ -20,18 +20,20 @@ def run(root=ROOT):
     guard=module("validation01_hold_leakage_guard").evaluate(hold,
         rows(root/"data/review/validation01_te_screening_2026-10-19.csv"),
         rows(root/"data/review/validation01_orleyl_critical_lines_v1.csv"))
+    m06=module("validation01_m06_gate").evaluate(root)
     # Critical: no pilot examples and no prediction/gold artifacts generated automatically.
     return {"pipeline":"IBEROS_VALIDATION01","reading_audit":{"records":token_audit["records"],
             "errors":token_audit["errors"],"counts":token_audit["counts"]},
             "readiness":readiness,"hold_scoring_gate":score["gate"],
             "hold_scoring_problems":score.get("problems",[]),
-            "known_object_leakage":guard,
+            "known_object_leakage":guard,"m06_evidence_gate":m06,
             "development_mask_generator":"AVAILABLE_MANUAL_REVIEW_ONLY",
-            "pipeline_gate":"BLOCKED" if readiness["gate"]=="BLOCKED" or score["gate"]=="BLOCKED" or token_audit["errors"] or guard["gate"]=="BLOCKED" else "AUDIT_REQUIRED",
+            "pipeline_gate":"BLOCKED" if m06["gate"]=="BLOCKED" or readiness["gate"]=="BLOCKED" or score["gate"]=="BLOCKED" or token_audit["errors"] or guard["gate"]=="BLOCKED" else "AUDIT_REQUIRED",
             "scientific_verdict":"NOT_EVALUATED",
             "note":"Workflow integration is not a scientific result; never promote HOLD automatically."}
 if __name__=="__main__":
-    p=argparse.ArgumentParser();p.add_argument("--output");a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument("--output");p.add_argument("--require-ready",action="store_true");a=p.parse_args()
     report=run();body=json.dumps(report,ensure_ascii=False,indent=2)+"\n"
     if a.output:Path(a.output).write_text(body,encoding="utf8")
     print(body,end="")
+    if a.require_ready and report["pipeline_gate"]=="BLOCKED":sys.exit(2)
