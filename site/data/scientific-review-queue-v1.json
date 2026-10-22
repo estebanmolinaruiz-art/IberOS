@@ -294,6 +294,12 @@
           "status": "EDITION_LOCATED_SIGN_COLLATION_PENDING",
           "note": "Revista p. 10: fotografía de caras; p. 13: dibujos 1922/1962; p. 14: variantes editoriales. Fuente aportada al proyecto; no implica permiso automático de reproducción. Enlace al índice oficial del museo, no al PDF directo de la figura.",
           "url": "https://www.alcoi.org/es/areas/cultura/museo/publicaciones/recerques/recerques_0001.html"
+        },
+        {
+          "citation": "Museu Arqueològic Municipal Camil Visedo Moltó (Alcoi), Catálogo de materiales, Plomo I de La Serreta, p. 205.",
+          "url": "https://www.alcoi.org/export/sites/default/es/areas/cultura/museo/descargas/publi_catalogo/catalogo_cas_04_CATALOGO_MATERIALES.pdf",
+          "status": "OFFICIAL_MUSEUM_OBJECT_DESCRIPTION_IDENTIFIED",
+          "note": "Inventario 1.016; 17,1 × 6,2 × 0,1 cm; cronología propuesta s. IV–III a.C. No asegura relación entre textos de ambas caras."
         }
       ],
       "technical_audit": {
@@ -304,6 +310,7 @@
         "segment_validation": "NOT_RUN_NO_SEGMENTS",
         "publication_gate": "BLOCKED",
         "blockers": [
+          "Discrepancia cronológica y vínculo entre textos de ambas caras sin resolución",
           "Límites de renglón sobre fotografías no comprobados",
           "0 signos acreditados por cotejo fotográfico independiente",
           "Diferencias entre transcripciones históricas sin adjudicación gráfica",
@@ -337,6 +344,13 @@
         "graphic_signs_verified": false,
         "independent_review_complete": false,
         "semantic_translation_validated": false
+      },
+      "editorial_collation": {
+        "observations": [
+          "El catálogo museístico propone s. IV–III a.C. frente a s. III–II a.C. del catálogo IberOS; conservar discrepancia.",
+          "El museo señala inscripciones en ambas caras sin asegurar relación entre ellas.",
+          "Objeto inventario 1.016; dimensiones 17,1 × 6,2 × 0,1 cm."
+        ]
       }
     },
     {
