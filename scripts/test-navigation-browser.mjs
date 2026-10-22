@@ -57,6 +57,20 @@ try{
   }
  }
  console.log('✓ '+seen.size+' destinos internos de navegación accesibles');
+ // Check critical data-driven sections are populated, not merely that HTML exists.
+ const populated=[
+  ['/corpus/','.result-card',1,'Corpus'],
+  ['/fichas/','a[href*="../ficha/"]',1,'Fichas'],
+  ['/modelos3d/','#external3d a[href^="https://"]',6,'Modelos 3D originales'],
+  ['/recursos/','#externalResources .resource-card',1,'Biblioteca'],
+  ['/proyectos/','#projects article, #news article',1,'Proyectos']
+ ];
+ for(const [path,selector,min,label] of populated){
+  await page.goto(base+path,{waitUntil:'domcontentloaded'});
+  try{await page.locator(selector).first().waitFor({state:'attached',timeout:12000})}catch{throw Error(label+' no presenta el contenido esperado ('+selector+')')}
+  const n=await page.locator(selector).count();if(n<min)throw Error(label+' contenido insuficiente: '+n);
+  console.log('✓ '+label+': '+n+' elementos cargados');
+ }
  const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
  if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
  await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
