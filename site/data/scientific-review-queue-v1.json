@@ -582,6 +582,454 @@
         "verified_signs": 0,
         "figure_locator_verified": false
       }
+    },
+    {
+      "object_id": "IBR-CER-0001",
+      "title": "Tinajilla de la Fundación Ballesta",
+      "epigraphic_reference": "Sin referencia MLH fijada",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Tinajilla de la Fundación Ballesta",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i18.13",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Separar lecturas de labio y pared y cotejar sus signos con las figuras de la edición",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Dos inscripciones en labio y pared. Registrar como entradas de un solo recipiente."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CER-0003",
+      "title": "Signario del Castellet de Bernabé",
+      "epigraphic_reference": "V.06.003",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Signario del Castellet de Bernabé",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i13.175",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Comprobar orden, valores y variantes duales del signario frente a fotografía y dibujo",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Signario dual de control paleográfico, no texto cuya traducción esté determinada."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CER-0004",
+      "title": "Inscripción de La Joncosa",
+      "epigraphic_reference": "La Joncosa / Jorba",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Inscripción de La Joncosa",
+          "url": "https://doi.org/10.1387/veleia.2850",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Cotejar líneas y signos de la inscripción con la edición, sin aceptar segmentación automática",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Texto de diez líneas; registro requiere cotejo de lineación y unidades internas."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CER-0005",
+      "title": "Dolium de Val de Alegre I",
+      "epigraphic_reference": "Val de Alegre I",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Dolium de Val de Alegre I",
+          "url": "https://doi.org/10.1387/veleia.13345",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Comprobar trazo y carácter incompleto de kutuki[ y su atribución paleográfica",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Fragmento ante coctionem; posible secuencia kutuki[ registrada en el catálogo."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-COI-0001",
+      "title": "Cerámica inscrita de Coimbra del Barranco Ancho",
+      "epigraphic_reference": "MU.01.02",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Cerámica inscrita de Coimbra del Barranco Ancho",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Alinear grafito kaŕb con la figura original y verificar límites e identificación física",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Grafito breve kaŕb en el fondo exterior de una cerámica, según ficha del catálogo."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0001",
+      "title": "Plomo de Ullastret",
+      "epigraphic_reference": "C.2.3 / GI.15.04",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Plomo de Ullastret",
+          "url": "https://mnamon.sns.it/index.php?id=13&lang=en&page=Esempi",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Verificar edición específica de C.2.3, secuencias y relación con objeto físico",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Plomo con recurrencias gráficas mencionadas en la documentación de IberOS."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0006",
+      "title": "Plomo de Punta de Orleyl",
+      "epigraphic_reference": "F.9.8",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Plomo de Punta de Orleyl",
+          "url": "https://mupreva.org/web_mupreva_dedalo/publicaciones/1642/va",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Cotejar edición F.9.8 y signos; separar numerales, segmentaciones y paralelos",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "La ficha del catálogo señala reiteraciones y cuantificación; no hay semántica demostrada."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "title": "Lámina grecoibérica de Illeta dels Banyets",
+      "epigraphic_reference": "Illeta dels Banyets 2018",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia bibliográfica enlazada en el catálogo IberOS para Lámina grecoibérica de Illeta dels Banyets",
+          "url": "https://doi.org/10.36707/palaeohispanica.v24i1.629",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Enlace heredado del catálogo; comprobar publicación, páginas, identificación de la pieza y figuras antes de aprobarlo."
+        }
+      ],
+      "required_checks": [
+        "Distinguir tres episodios textuales y verificar solapamientos en la documentación gráfica",
+        "Confirmar la correspondencia entre identificador del objeto físico, edición y todas las entradas textuales",
+        "Verificar derechos y atribuciones de fotografías o calcos antes de integrarlos",
+        "Realizar cotejo epigráfico independiente y contrastar variantes",
+        "No inferir traducción literal ni valor semántico por paralelos no validados"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace bibliográfico del catálogo no revisado independientemente",
+          "Sin cotejo gráfico individual con edición primaria",
+          "Sin autorización gráfica ni dictamen semántico independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "El registro distingue tres textos o reutilizaciones de un mismo soporte."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
