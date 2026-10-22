@@ -314,6 +314,76 @@
         "independently_confirmed_signs": 0,
         "source_file": "docs/CORE_6P03_SERRETA_12_ROW_ALIGNMENT_2026-10-20.md"
       }
+    },
+    {
+      "object_id": "IBR-PLM-0013",
+      "title": "Pequeño plomo del Pico de los Ajos (campaña 2018)",
+      "epigraphic_reference": "Pico de los Ajos 2018 · edición Veleia 38 (2021)",
+      "source_record": "ficha-enrichment-5.json",
+      "scientific_state": "PRIMARY_EDITION_IDENTIFIED_GRAPHIC_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Ferrer i Jané et al. (2021), Una pequeña lámina de plomo con inscripción ibérica de paleografía arcaica del Pico de los Ajos (Yátova, València), Veleia 38, 91–109",
+          "url": "https://ojs.ehu.eus/index.php/Veleia/article/view/22508",
+          "locator": "artículo y edición completa; figuras y signos por cotejar",
+          "status": "PRIMARY_ARTICLE_METADATA_AND_ABSTRACT_VERIFIED"
+        },
+        {
+          "citation": "Universitat de Barcelona, depósito institucional del artículo (versión publicada)",
+          "url": "https://diposit.ub.edu/items/946bd614-70ea-4602-9738-bacc46d8890b",
+          "status": "PUBLISHED_EDITION_REPOSITORY_IDENTIFIED"
+        }
+      ],
+      "required_checks": [
+        "Cotejar cada trazo en fotografías y figuras del artículo contra la transliteración editorial, por cara y línea",
+        "Distinguir dos caras y un texto probablemente continuo, sin contarlas como dos testimonios independientes",
+        "Comparar las variantes duales de te y ŕ signo a signo, documentando sus localizadores",
+        "Separar la cronología de amortización (finales s. II/inicios I a. C.) de la datación paleográfica posible (hasta s. IV a. C.)",
+        "Tratar kutuŕ y la posible interpretación votiva o religiosa como hipótesis editorial, no traducción probada",
+        "Comprobar permisos antes de mostrar reproducciones de figuras originales"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-PRIMARY-EDITION/1.0",
+        "reference_records": 2,
+        "source_identifiers_verified": true,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Sin contraste gráfico independiente de te y ŕ sobre ambas caras",
+          "Interpretación votiva hipotética, no validación semántica",
+          "No confirmada la autorización de reproducir figuras de la edición",
+          "Sin revisión epigráfica independiente de segmentación y signos"
+        ]
+      },
+      "editorial_collation": {
+        "status": "ABSTRACT_VERIFIED_PRIMARY_ARTICLE_IDENTIFIED",
+        "edition": "Ferrer i Jané et al. (2021), Veleia 38, pp. 91–109",
+        "observations": [
+          "Plomo plegado encontrado en campaña de 2018 en Pico de los Ajos, Yátova",
+          "Una línea inscrita en cada cara; probablemente un solo texto completo",
+          "Coexistencia explícita de variantes duales de te y ŕ",
+          "Elemento kutuŕ y paralelos votivos sugieren hipótesis religiosa, no traducción demostrada",
+          "Posible paleografía arcaica anterior a la amortización en contexto de reciclaje de metales"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "GRAPHIC_COLLATION_OPEN",
+        "method": "Sign-by-sign comparison of the two te and two ŕ sign shapes against primary edition figures; not yet validated",
+        "variants": [],
+        "source_dependence": "Two faces on a single lead sheet must not be counted as independent objects",
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "PRIMARY_SOURCE_IDENTIFIED_SIGN_IMAGES_NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
