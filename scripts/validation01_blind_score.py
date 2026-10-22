@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """VALIDATION-01: blind, leak-safe scoring; not a test of translation truth."""
-import argparse,csv,json,hashlib,random
+import argparse,csv,json,hashlib,random,re
+from datetime import datetime
 from collections import Counter
 from pathlib import Path
 
@@ -16,6 +17,7 @@ def audit(rows,minimum=20):
         id=r.get("physical_group","").strip()
         if not id:problems.append([i,"MISSING_PHYSICAL_ID"]);continue
         if id in seen and seen[id]!=split:problems.append([i,"LEAKAGE_BETWEEN_SPLITS"])
+        if id in seen and seen[id]==split:problems.append([i,"DUPLICATE_PHYSICAL_GROUP_IN_SPLIT"])
         seen[id]=split
         if split!="HOLD":continue
         hold.append(r)
@@ -24,8 +26,14 @@ def audit(rows,minimum=20):
         for k in ("gold_label","iberos_prediction","baseline_prediction"):
             if r.get(k,"") not in LABELS:problems.append([i,"INVALID_"+k])
         if r.get("reading_reviewed")!="YES":problems.append([i,"UNREVIEWED_READING"])
-        if r.get("prediction_locked_at","")>=r.get("gold_reviewed_at",""):problems.append([i,"NOT_PROSPECTIVELY_LOCKED"])
-        if r.get("predictions_frozen_sha256","")=="":
+        try:
+            lock=datetime.fromisoformat(r.get("prediction_locked_at","").replace("Z","+00:00"))
+            gold=datetime.fromisoformat(r.get("gold_reviewed_at","").replace("Z","+00:00"))
+            if lock.tzinfo is None or gold.tzinfo is None or lock>=gold:
+                problems.append([i,"NOT_PROSPECTIVELY_LOCKED"])
+        except (ValueError,TypeError):
+            problems.append([i,"INVALID_LOCK_OR_GOLD_TIMESTAMP"])
+        if not re.fullmatch(r"[0-9a-fA-F]{64}",r.get("predictions_frozen_sha256","")):
             problems.append([i,"NO_PREDICTION_COMMITMENT"])
         if not r.get("gold_independent_reviewer","").strip():
             problems.append([i,"NO_INDEPENDENT_GOLD_REVIEW"])
