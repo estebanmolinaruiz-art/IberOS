@@ -447,6 +447,73 @@
         "verified_signs": 0,
         "figure_locator_verified": false
       }
+    },
+    {
+      "object_id": "IBR-PLM-0004",
+      "title": "Plomo grecoibérico de Coimbra del Barranco Ancho",
+      "epigraphic_reference": "Identificador epigráfico externo pendiente de cotejo",
+      "source_record": "ficha-enrichment-featured.json",
+      "scientific_state": "PRIMARY_EDITION_IDENTIFIED_SIGN_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "López Fernández, Aránzazu (2016; publicación digital 2019), Epigrafía ibérica de Coimbra del Barranco Ancho (Jumilla, Murcia), Palaeohispanica 16, pp. 155–181.",
+          "url": "https://ifc-ojs.es/index.php/palaeohispanica/ca/article/view/29",
+          "status": "PUBLISHER_RECORD_ABSTRACT_VERIFIED",
+          "note": "Estudio general y primer análisis filológico del plomo después de su restauración. No se considera revisada la lectura signo por signo."
+        },
+        {
+          "citation": "López Fernández, artículo completo, PDF ofrecido por Institución Fernando el Católico",
+          "url": "https://ifc.dpz.es/recursos/publicaciones/35/76/09lopezfernandez.pdf",
+          "status": "PRIMARY_PDF_IDENTIFIED_NOT_INDEPENDENTLY_COLLATED"
+        }
+      ],
+      "required_checks": [
+        "Vincular identificador de objeto físico y edición exacta del plomo, sin confundir las demás inscripciones del yacimiento",
+        "Cotejar fotografía y dibujo del plomo restaurado con lectura grecoibérica y variantes editoriales, signo a signo",
+        "Registrar los signos dudosos y los límites de líneas con figuras y localizadores precisos",
+        "Distinguir los segmentos analíticos NP-KE-Q de una lectura epigráfica autorizada; no incorporar el verbo V previamente descartado",
+        "Evaluar hipótesis transaccionales y lingüísticas frente a alternativas sin proponer una traducción literal demostrada",
+        "Comprobar licencias de las fotografías y conseguir revisión independiente"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-PRIMARY-SOURCE/1.0",
+        "reference_records": 2,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Correspondencia exacta de objeto y lectura con el catálogo externo no certificada",
+          "Sin alineación gráfica independiente de fotografía, dibujo y signos",
+          "Segmentación NP-KE-Q no aprobada por revisión externa",
+          "Sin permisos de reproducción acreditados ni validación semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "PUBLISHER_ARTICLE_ABSTRACT_VERIFIED",
+        "edition": "López Fernández, Palaeohispanica 16 (2016), pp. 155–181",
+        "observations": [
+          "El estudio documenta epigrafía grecoibérica del yacimiento Coimbra del Barranco Ancho.",
+          "La autora presenta análisis filológico del plomo tras restauración.",
+          "El patrón NP-KE-Q se mantiene como propuesta de IberOS y no como transcripción comprobada o traducción establecida."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN",
+        "variants": [],
+        "source_dependence": "La misma pieza publicada por diferentes autores es un solo testimonio físico",
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "PRIMARY_FIGURES_NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
