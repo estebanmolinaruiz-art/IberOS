@@ -310,8 +310,8 @@
         "segment_validation": "NOT_RUN_NO_SEGMENTS",
         "publication_gate": "BLOCKED",
         "blockers": [
+          "Fotografías y calcos localizados en trabajo interno de 2026-10-20, pero no está certificado el emparejamiento de cada línea a la fotografía.",
           "Discrepancia cronológica y vínculo entre textos de ambas caras sin resolución",
-          "Límites de renglón sobre fotografías no comprobados",
           "0 signos acreditados por cotejo fotográfico independiente",
           "Diferencias entre transcripciones históricas sin adjudicación gráfica",
           "Autorización de reproducción y revisión independiente pendientes"
@@ -335,7 +335,17 @@
         "lower_lines": 5,
         "sign_by_sign_verified": false,
         "independently_confirmed_signs": 0,
-        "source_file": "docs/CORE_6P03_SERRETA_12_ROW_ALIGNMENT_2026-10-20.md"
+        "source_file": "docs/CORE_6P03_SERRETA_12_ROW_ALIGNMENT_2026-10-20.md",
+        "source_images_available_in_private_working_material": true,
+        "source_images_publicly_reproduced": false,
+        "source_image_provenance": "Fletcher Valls y Silgo Gauche (1992), Recerques 1: PDF p. 2 (revista p. 10) fotos A/B, J. Untermann; PDF p. 5 (revista p. 13) calcos 1922/1962.",
+        "internal_audit_refs": [
+          "docs/CORE_6P03_SERRETA_1992_PRIMARY_PDF_IMAGES_RECOVERED_2026-10-20.md",
+          "docs/CORE_6P03_SERRETA_1992_LINE_CROP_AUDIT_2026-10-20.md"
+        ],
+        "individual_lines_isolated_in_historical_drawing": 12,
+        "vertical_lines_still_to_isolate": 2,
+        "photo_to_drawing_line_mapping_verified": false
       },
       "completeness_audit": {
         "cataloged": true,
@@ -475,7 +485,8 @@
           "result": "PDF_TEXT_ACCESSIBLE_SCREENSHOT_FAILED_CACHE_MISS_AND_DOWNLOAD_HTTP_500",
           "verified_signs": 0,
           "notes": "Text and bibliography accessible, but images on pages 99–101 could not be rendered for independent paleographic inspection. Preserve A3 a3/ba1 and final ś1/n1 as editorial variants."
-        }
+        },
+        "latest_attempt": "2026-10-22: visores web no renderizaron páginas; cotejo de trazos no realizado"
       },
       "completeness_audit": {
         "cataloged": true,
