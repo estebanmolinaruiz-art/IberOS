@@ -393,10 +393,13 @@
           "Una línea inscrita en cada cara; probablemente un solo texto completo",
           "Coexistencia explícita de variantes duales de te y ŕ",
           "Elemento kutuŕ y paralelos votivos sugieren hipótesis religiosa, no traducción demostrada",
-          "Posible paleografía arcaica anterior a la amortización en contexto de reciclaje de metales"
+          "Posible paleografía arcaica anterior a la amortización en contexto de reciclaje de metales",
+          "Separadores de cara B: siete puntos descritos como claros; segundo posiblemente cinco, con fractura en puntos inferiores (p. 102)."
         ],
         "autopsy": false,
-        "semantic_validation": false
+        "semantic_validation": false,
+        "editorial_transliteration": "tořaibeleś / de · teřargeida · kutuŕ",
+        "editorial_transliteration_source": "Ferrer et al., Veleia 38, 2021, p. 102. Disposición entre caras interpretada según edición; no traducción."
       },
       "variant_review": {
         "status": "GRAPHIC_COLLATION_OPEN",
@@ -415,6 +418,27 @@
             "reading_b": "n1",
             "difference": "Trazo final afectado por corte lateral del plomo",
             "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
+          },
+          {
+            "locus": "Cara B cuarto signo, Veleia 38, p. 101",
+            "reading_a": "a3",
+            "reading_b": "ḿ4b",
+            "difference": "Rotura semicircular en ambas caras, probable a3 según editores",
+            "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
+          },
+          {
+            "locus": "Cara B signo tras segundo ŕ, Veleia 38, p. 101",
+            "reading_a": "r5",
+            "reading_b": "a3/a4",
+            "difference": "Compresión y marcas de daño dificultan trazo inferior",
+            "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
+          },
+          {
+            "locus": "Cara B signo final, Veleia 38, p. 101",
+            "reading_a": "ŕ7",
+            "reading_b": "r3",
+            "difference": "La rotura del lateral conserva mitad izquierda de cabeza; r3 juzgada menos probable",
+            "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
           }
         ],
         "source_dependence": "Two faces on a single lead sheet must not be counted as independent objects",
@@ -426,8 +450,9 @@
         "verified_signs": 0,
         "figure_locator_verified": true,
         "figure_locators": [
-          "fig. 7 (p. 99): lámina desplegada antes de limpiar",
-          "figs. 8–9 (p. 100 y siguientes): lectura y signos en cara A"
+          "Figura 7: estado del plomo antes de la limpieza (comprobar página exacta en PDF)",
+          "Figura 8: fotografía tras primera restauración, Veleia 38, p. 101, SIP Museu de Prehistòria de València",
+          "Figura 9: dibujo de ambas caras, Veleia 38, p. 102"
         ],
         "visual_audit_2026_10_22": {
           "attempted": true,
