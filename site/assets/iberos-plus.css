@@ -943,3 +943,6 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .ib-project-feature-image img{width:100%;height:100%;object-fit:contain;object-position:center}
 @media(max-width:850px){.ib-project-feature-image{height:auto;aspect-ratio:16/9}}
 @media(max-width:600px){.ib-project-feature-image{height:100%;min-height:135px;aspect-ratio:auto}}
+
+/* Ajuste final solicitado: elevar suavemente Nuevos Proyectos en escritorio. */
+@media(min-width:851px){.ib-project-feature{top:8.5%}}
