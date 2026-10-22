@@ -1,0 +1,13 @@
+FOLCH_TAG,CANDIDATE_RAW_CHARS,STATUS,NOTES
+Us4,"#;M;&;q;C",UNRESOLVED_MULTI_GLYPH,"La etiqueta aparece en secuencias de 2-3 glifos; no se asigna a un carácter concreto."
+Uo3,"2;Q;R;Ñ;{",UNRESOLVED_MULTI_GLYPH,"La etiqueta aparece repetidamente, pero no hay fila de un solo glifo."
+Uka4,"X;9;#",UNRESOLVED_MULTI_GLYPH,"Hay secuencias cortas compatibles, sin aislamiento suficiente."
+Uka5,"Y;]",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Uka6,"ë;S",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Utu3,"ä;é;R",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Ube6,"`;J",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Ute16,"j;6;W",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Uku3,"&;I",UNRESOLVED_MULTI_GLYPH,"No hay evidencia de un solo glifo."
+Ur2,"!;S",UNRESOLVED_MULTI_GLYPH,"Nota editorial no aísla el glifo."
+Ua2,"ì;&",UNRESOLVED_MULTI_GLYPH,"La nota identifica una segunda versión pero no el carácter exacto."
+Ue6,"Ù;L;(",UNRESOLVED_MULTI_GLYPH,"Anotación aproximada; no apta para mapeo automático."
