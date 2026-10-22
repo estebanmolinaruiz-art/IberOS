@@ -144,6 +144,14 @@
         ],
         "sign_class_source_locator": "Asensio et al. 2003, p. 201; transcribe classes only, glyph correspondence and diacritics need direct figure verification",
         "visual_verification_limit": "PDF text and figure captions located; figure image itself not successfully retrieved for sign-by-sign audit"
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -255,6 +263,14 @@
         "sign_by_sign_verified": false,
         "figure_locator_verified": false,
         "warning": "No representar los dos puntos de la transliteración editorial como interpunciones originales de esta pieza; las divisiones son editoriales."
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -313,6 +329,14 @@
         "sign_by_sign_verified": false,
         "independently_confirmed_signs": 0,
         "source_file": "docs/CORE_6P03_SERRETA_12_ROW_ALIGNMENT_2026-10-20.md"
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -383,6 +407,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -446,6 +478,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -513,6 +553,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": true,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -581,6 +629,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -637,6 +693,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -693,6 +757,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -749,6 +821,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -805,6 +885,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -861,6 +949,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -917,6 +1013,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -973,6 +1077,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1029,6 +1141,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1085,6 +1205,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1141,6 +1269,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1197,6 +1333,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1253,6 +1397,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1309,6 +1461,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1365,6 +1525,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1421,6 +1589,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1477,6 +1653,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1536,6 +1720,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1595,6 +1787,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1654,6 +1854,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1713,6 +1921,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1772,6 +1988,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1784,12 +2008,14 @@
       "reconstruction_segments": [],
       "references_checked": [
         {
-          "citation": "Fuente asociada a Villares V en el catálogo IberOS",
-          "status": "SOURCE_URL_MISSING_OR_TRUNCATED",
-          "note": "Enlace ausente o incompleto en el catálogo: requiere reconstrucción a partir de referencia bibliográfica."
+          "citation": "Ferrer i Jané, Joan (2024). Una nova mirada al plom ibèric Villares V (Kelin, Caudete de las Fuentes). Un text comptable amb deu transaccions. ELEA 21, pp. 309–360.",
+          "url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+          "status": "AUTHOR_PUBLICATION_PAGE_LOCATED_FIGURES_NOT_INDEPENDENTLY_COLLATED",
+          "note": "Figura 1 fotografías y figura 2 dibujos según el texto de la publicación. Relectura bobaida y organización en diez registros propuestas por el autor, no traducción establecida."
         }
       ],
       "required_checks": [
+        "Cotejar caras A y B, figuras 1–2 de Ferrer (2024), líneas y signos frente a edición previa de Fletcher",
         "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
         "Confirmar objeto físico, procedencia e identificador externo",
         "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
@@ -1798,7 +2024,7 @@
       ],
       "technical_audit": {
         "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
-        "reference_records": 0,
+        "reference_records": 1,
         "source_identifiers_verified": false,
         "physical_independence_audited": false,
         "segment_validation": "NOT_RUN_NO_SEGMENTS",
@@ -1830,6 +2056,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1889,6 +2123,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1948,6 +2190,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -1960,12 +2210,14 @@
       "reconstruction_segments": [],
       "references_checked": [
         {
-          "citation": "Fuente asociada a Plomo de El Cigarralejo en el catálogo IberOS",
-          "status": "SOURCE_URL_MISSING_OR_TRUNCATED",
-          "note": "Enlace ausente o incompleto en el catálogo: requiere reconstrucción a partir de referencia bibliográfica."
+          "citation": "Museo de Arte Ibérico El Cigarralejo, sala VIII: exhibición del plomo grecoibérico",
+          "url": "https://museosregiondemurcia.carm.es/web/museo-de-arte-iberico-el-cigarralejo/sala-viii",
+          "status": "OFFICIAL_MUSEUM_OBJECT_REFERENCE_LOCATED_NOT_EPIGRAPHIC_EDITION",
+          "note": "Confirma exhibición y escritura grecoibérica; no reemplaza una edición científica de signos y figuras."
         }
       ],
       "required_checks": [
+        "Conseguir y contrastar la edición epigráfica G.13.1 / MU.04.01, con fotografías y variantes",
         "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
         "Confirmar objeto físico, procedencia e identificador externo",
         "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
@@ -2006,6 +2258,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2065,6 +2325,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2124,6 +2392,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2183,6 +2459,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2242,6 +2526,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2301,6 +2593,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     },
     {
@@ -2360,6 +2660,14 @@
         "sign_by_sign_verified": false,
         "verified_signs": 0,
         "figure_locator_verified": false
+      },
+      "completeness_audit": {
+        "cataloged": true,
+        "source_link_recorded": true,
+        "source_edition_verified": false,
+        "graphic_signs_verified": false,
+        "independent_review_complete": false,
+        "semantic_translation_validated": false
       }
     }
   ]
