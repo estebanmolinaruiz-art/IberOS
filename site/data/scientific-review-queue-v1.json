@@ -282,6 +282,7 @@
       "publication_approved": false,
       "reconstruction_segments": [],
       "required_checks": [
+        "Completar 14 fichas de renglón A1–A7, B1–B5, T1–T2 con coordenadas fotográficas y del calco, signos y revisión independiente, usando la matriz JSON del repositorio",
         "Revisar las fotografías de ambas caras de la edición de Fletcher Valls y Silgo Gauche (1992) frente a dibujos históricos",
         "Alinear individualmente siete renglones de la cara A y cinco de la cara B con cada signo visible",
         "Resolver variantes ORTI/ORITI, BUISTINER/BUISTINERI, TURLBAI/TURABAI, IUNSTIR/IUNSTIRI, SALIRG/SALIRIG, BIRINAR/BIRIGNAR y SEBAGEDIRAN/SEBAGEDIRAIN",
@@ -345,7 +346,14 @@
         ],
         "individual_lines_isolated_in_historical_drawing": 12,
         "vertical_lines_still_to_isolate": 2,
-        "photo_to_drawing_line_mapping_verified": false
+        "photo_to_drawing_line_mapping_verified": false,
+        "row_level_matrix": "data/review/serreta_photo_drawing_14_row_matrix_v1.json",
+        "row_matrix_summary": {
+          "historical_horizontal_rows_isolated": 12,
+          "vertical_rows_unisolated": 2,
+          "certified_photo_to_drawing_matches": 0,
+          "certified_signs": 0
+        }
       },
       "completeness_audit": {
         "cataloged": true,
