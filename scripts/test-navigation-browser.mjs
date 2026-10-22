@@ -79,6 +79,10 @@ try{
  const caveat=await page.locator('.ib-reconstruction').innerText();
  if(!caveat.includes('no una traducción confirmada'))
   throw Error('Ficha no informa de los límites científicos de la interpretación');
+ const guide=await page.locator('.ib-ficha-guide').innerText();
+ if(!guide.includes('Cómo leer este expediente científico')||!guide.includes('Fuentes y reproducibilidad')||!guide.includes('Regla de fiabilidad'))
+  throw Error('Ficha sin guía clara para diferenciar lectura, hipótesis, fuentes y validación');
+ console.log('✓ Ficha presenta guía de interpretación rigurosa');
  const note=await page.locator('#interpretationNote').innerText();
  if(!note.trim())throw Error('Ficha no presenta información sobre el estado de la lectura');
  const trace=await page.locator('#interpretationTrace').innerText();
