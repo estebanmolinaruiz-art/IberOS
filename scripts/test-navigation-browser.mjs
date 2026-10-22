@@ -19,6 +19,16 @@ try{
   if(!expected.test(html))throw Error(label+' carece de enlace o identificador esperado');
   console.log('✓ '+label+' disponible con contexto de Tivissa');
  }
+ const publicModules=['/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
+ for(const path of publicModules){
+  const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
+  if(!response||response.status()!==200)throw Error('Módulo '+path+' HTTP '+(response?.status()??'sin respuesta'));
+  const title=await page.title();
+  if(!title.trim())throw Error('Módulo '+path+' no tiene título');
+  const visibleTechnical=await page.locator('pre').evaluateAll(nodes=>nodes.filter(el=>{const rect=el.getBoundingClientRect();const style=getComputedStyle(el);return rect.width>0&&rect.height>0&&style.display!=='none'&&style.visibility!=='hidden'&&el.closest('details:not([open])')===null&&/^\\s*[\\[{]\\s*["{]/.test(el.textContent||'')}).length);
+  if(visibleTechnical)throw Error('Módulo '+path+' muestra JSON técnico visible en lugar de resultado legible');
+  console.log('✓ Módulo '+path+' abre correctamente y no muestra JSON crudo como resultado principal');
+ }
  const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
  if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
  await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
