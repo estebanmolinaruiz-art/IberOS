@@ -352,7 +352,8 @@
           "citation": "Ferrer i Jané et al. (2021), Una pequeña lámina de plomo con inscripción ibérica de paleografía arcaica del Pico de los Ajos (Yátova, València), Veleia 38, 91–109",
           "url": "https://ojs.ehu.eus/index.php/Veleia/article/view/22508",
           "locator": "artículo y edición completa; figuras y signos por cotejar",
-          "status": "PRIMARY_ARTICLE_METADATA_AND_ABSTRACT_VERIFIED"
+          "status": "PUBLISHER_PAGE_ABSTRACT_AND_METADATA_VERIFIED_2026_10_22",
+          "note": "Comprobado en la página editorial Veleia: publicado 28-02-2021, DOI 10.1387/veleia.22508, una línea por cara probablemente en un texto continuo, variantes duales te y ŕ, cronología paleográfica diferente de amortización. Figuras no cotejadas signo a signo."
         },
         {
           "citation": "Universitat de Barcelona, depósito institucional del artículo (versión publicada)",
@@ -383,7 +384,7 @@
         ]
       },
       "editorial_collation": {
-        "status": "ABSTRACT_VERIFIED_PRIMARY_ARTICLE_IDENTIFIED",
+        "status": "PUBLISHER_ABSTRACT_VERIFIED_2026_10_22",
         "edition": "Ferrer i Jané et al. (2021), Veleia 38, pp. 91–109",
         "observations": [
           "Plomo plegado encontrado en campaña de 2018 en Pico de los Ajos, Yátova",
@@ -429,8 +430,8 @@
         {
           "citation": "Simón Cornago, Ignacio (2015 [publicación electrónica 2019]), Treinta años de investigaciones sobre la inscripción musiva de Caminreal (Hispania Citerior; MLH E.7.1 = K.5.3), Palaeohispanica 15, pp. 87–127.",
           "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/39",
-          "status": "JOURNAL_RECORD_AND_ABSTRACT_VERIFIED",
-          "note": "El resumen diferencia cuatro debates: el antropónimo likine, el término ekiar, el topónimo y la identidad de likine. Las lecturas de signos y figuras aún precisan cotejo directo."
+          "status": "PUBLISHER_PAGE_ABSTRACT_AND_DOI_VERIFIED_2026_10_22",
+          "note": "Comprobada publicación Palaeohispanica 15 (2015), pp. 87-127, publicación digital 10-06-2019, DOI 10.36707/palaeohispanica.v0i15.39; cuatro controversias: likine, ekiar, topónimo e identidad. Sin validación de signos."
         }
       ],
       "required_checks": [
@@ -456,7 +457,7 @@
         ]
       },
       "editorial_collation": {
-        "status": "ABSTRACT_VERIFIED_FULL_ARTICLE_NOT_SIGN_COLLATED",
+        "status": "PUBLISHER_ABSTRACT_VERIFIED_2026_10_22",
         "edition": "Simón Cornago, Palaeohispanica 15, 87–127",
         "observations": [
           "El artículo sintetiza treinta años de estudios de la inscripción musiva ibérica en opus signinum procedente de La Caridad.",
