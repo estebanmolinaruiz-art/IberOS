@@ -256,6 +256,63 @@
         "figure_locator_verified": false,
         "warning": "No representar los dos puntos de la transliteración editorial como interpunciones originales de esta pieza; las divisiones son editoriales."
       }
+    },
+    {
+      "object_id": "IBR-PLM-0009",
+      "title": "Plomo I de La Serreta",
+      "epigraphic_reference": "MLH G.1.1 · Hesperia A.04.01a/b",
+      "source_record": "ficha-enrichment-4.json",
+      "scientific_state": "PENDING_GRAPHIC_SIGN_COLLATION",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "required_checks": [
+        "Revisar las fotografías de ambas caras de la edición de Fletcher Valls y Silgo Gauche (1992) frente a dibujos históricos",
+        "Alinear individualmente siete renglones de la cara A y cinco de la cara B con cada signo visible",
+        "Resolver variantes ORTI/ORITI, BUISTINER/BUISTINERI, TURLBAI/TURABAI, IUNSTIR/IUNSTIRI, SALIRG/SALIRIG, BIRINAR/BIRIGNAR y SEBAGEDIRAN/SEBAGEDIRAIN",
+        "Mantener una pieza física y dos entradas editoriales A.04.01a y A.04.01b, sin duplicar testimonios",
+        "Verificar autorización de reproducción de figuras y revisión epigráfica independiente"
+      ],
+      "references_checked": [
+        {
+          "citation": "Fletcher Valls y Silgo Gauche, Recerques del Museu d'Alcoi 1 (1992), pp. 9–36",
+          "status": "EDITION_LOCATED_SIGN_COLLATION_PENDING",
+          "note": "Revista p. 10: fotografía de caras; p. 13: dibujos 1922/1962; p. 14: variantes editoriales. Fuente aportada al proyecto; no implica permiso automático de reproducción."
+        }
+      ],
+      "technical_audit": {
+        "protocol": "CORE-6P03/SERRETA",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": true,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Límites de renglón sobre fotografías no comprobados",
+          "0 signos acreditados por cotejo fotográfico independiente",
+          "Diferencias entre transcripciones históricas sin adjudicación gráfica",
+          "Autorización de reproducción y revisión independiente pendientes"
+        ]
+      },
+      "variant_review": {
+        "status": "OPEN",
+        "variants": [
+          {
+            "locus": "Cara A/B: lecturas históricas por comprobar visualmente",
+            "reading_a": "ORTI; BUISTINER; TURLBAI; IUNSTIR; SALIRG; BIRINAR; SEBAGEDIRAN",
+            "reading_b": "ORITI; BUISTINERI; TURABAI; IUNSTIRI; SALIRIG; BIRIGNAR; SEBAGEDIRAIN",
+            "difference": "Alternativas editoriales históricas; la atribución individual de cada signo y renglón no está comprobada",
+            "assessment": "TEXTUAL_VARIANTS_ONLY_NOT_SIGN_VERIFIED"
+          }
+        ]
+      },
+      "graphic_collation": {
+        "status": "DOCUMENTARY_ALIGNMENT_ONLY",
+        "upper_lines": 7,
+        "lower_lines": 5,
+        "sign_by_sign_verified": false,
+        "independently_confirmed_signs": 0,
+        "source_file": "docs/CORE_6P03_SERRETA_12_ROW_ALIGNMENT_2026-10-20.md"
+      }
     }
   ]
 }
