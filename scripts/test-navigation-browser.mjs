@@ -84,6 +84,7 @@ try{
   throw Error('Ficha sin guía clara para diferenciar lectura, hipótesis, fuentes y validación');
  console.log('✓ Ficha presenta guía de interpretación rigurosa');
  const identification=await page.locator('.artifact-summary').innerText();
+ if(!identification.includes('Alcance de la ficha')||!identification.includes('Control de entradas'))throw Error('Ficha no explica el alcance de validación paleográfica y de entradas');
  if(!identification.includes('Estado editorial del registro')||!identification.includes('Estado paleográfico')||!identification.includes('Fuente registrada'))throw Error('Ficha sin estado editorial/paleográfico o enlace documental en la identificación');
  const note=await page.locator('#interpretationNote').innerText();
  if(!note.trim())throw Error('Ficha no presenta información sobre el estado de la lectura');
