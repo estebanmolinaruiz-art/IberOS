@@ -1,0 +1,1 @@
+Publish Serreta auditable fourteen-row matrix, preserving unresolved photo/sign fields.
