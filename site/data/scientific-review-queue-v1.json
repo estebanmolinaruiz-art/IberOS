@@ -362,6 +362,7 @@
         }
       ],
       "required_checks": [
+        "Comprobar gráficamente en figs. 8–9 los signos A3 (a3/ba1) y final A (ś1/n1), registrando trazos y confianza",
         "Cotejar cada trazo en fotografías y figuras del artículo contra la transliteración editorial, por cara y línea",
         "Distinguir dos caras y un texto probablemente continuo, sin contarlas como dos testimonios independientes",
         "Comparar las variantes duales de te y ŕ signo a signo, documentando sus localizadores",
@@ -377,6 +378,7 @@
         "segment_validation": "NOT_RUN_NO_SEGMENTS",
         "publication_gate": "BLOCKED",
         "blockers": [
+          "Dos alternativas concretas de la cara A identificadas en edición, todavía sin verificación gráfica propia",
           "Sin contraste gráfico independiente de te y ŕ sobre ambas caras",
           "Interpretación votiva hipotética, no validación semántica",
           "No confirmada la autorización de reproducir figuras de la edición",
@@ -399,15 +401,34 @@
       "variant_review": {
         "status": "GRAPHIC_COLLATION_OPEN",
         "method": "Sign-by-sign comparison of the two te and two ŕ sign shapes against primary edition figures; not yet validated",
-        "variants": [],
+        "variants": [
+          {
+            "locus": "Cara A signo 3, Veleia 38 p. 100",
+            "reading_a": "a3",
+            "reading_b": "ba1 (alternativas menos probables ḿ4b/l2)",
+            "difference": "Cabeza perdida en rotura semicircular; interpretación de Ferrer et al.",
+            "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
+          },
+          {
+            "locus": "Cara A último signo, Veleia 38 p. 100",
+            "reading_a": "ś1",
+            "reading_b": "n1",
+            "difference": "Trazo final afectado por corte lateral del plomo",
+            "assessment": "EDITORIAL_VARIANT_NOT_INDEPENDENTLY_CHECKED"
+          }
+        ],
         "source_dependence": "Two faces on a single lead sheet must not be counted as independent objects",
         "segment_publication": "BLOCKED_UNTIL_VERIFIED"
       },
       "graphic_collation": {
-        "status": "PRIMARY_SOURCE_IDENTIFIED_SIGN_IMAGES_NOT_INDEPENDENTLY_COLLATED",
+        "status": "FIGURE_LOCATORS_IDENTIFIED_SIGN_VERIFICATION_PENDING",
         "sign_by_sign_verified": false,
         "verified_signs": 0,
-        "figure_locator_verified": false
+        "figure_locator_verified": true,
+        "figure_locators": [
+          "fig. 7 (p. 99): lámina desplegada antes de limpiar",
+          "figs. 8–9 (p. 100 y siguientes): lectura y signos en cara A"
+        ]
       },
       "completeness_audit": {
         "cataloged": true,
@@ -416,6 +437,13 @@
         "graphic_signs_verified": false,
         "independent_review_complete": false,
         "semantic_translation_validated": false
+      },
+      "original_edition": {
+        "article_pdf": "https://diposit.ub.edu/bitstreams/1737a2a9-79ef-468a-b5dc-f17d3aa1d436/download",
+        "journal": "Veleia 38 (2021), 91–109",
+        "object_inventory": "Museu de Prehistòria de València, inv. 45899",
+        "publication_page": "https://ojs.ehu.eus/index.php/Veleia/article/view/22508",
+        "status": "FULL_TEXT_EPIGRAPHIC_DESCRIPTION_LOCATED_NOT_GRAPHICALLY_CERTIFIED"
       }
     },
     {
