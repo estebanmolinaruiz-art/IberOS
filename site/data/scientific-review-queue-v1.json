@@ -1030,6 +1030,454 @@
         "verified_signs": 0,
         "figure_locator_verified": false
       }
+    },
+    {
+      "object_id": "IBR-COI-0002",
+      "title": "Vaso con pseudoescritura de Coimbra",
+      "epigraphic_reference": "Referencia por fijar",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CONTROL_EXCLUDED_PENDING_DOCUMENTARY_RECHECK",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Vaso con pseudoescritura de Coimbra",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i16.29",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Verificar diagnóstico de pseudoescritura y excluirlo de traducciones o recuentos epigráficos",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Control de pseudoescritura: no promover decoraciones a texto lingüístico"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CTL-0001",
+      "title": "Copia moderna Ballesta (Operación Júpiter)",
+      "epigraphic_reference": "Sin MLH",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CONTROL_EXCLUDED_PENDING_DOCUMENTARY_RECHECK",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Copia moderna Ballesta (Operación Júpiter)",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i18.13",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Verificar dependencia y mantener excluida de testimonios antiguos independientes",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Control de falsificación moderna dependiente de modelo conocido"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CTL-0002",
+      "title": "Copia moderna Ballesta (legado Esteve)",
+      "epigraphic_reference": "Sin MLH",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CONTROL_EXCLUDED_PENDING_DOCUMENTARY_RECHECK",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Copia moderna Ballesta (legado Esteve)",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i18.13",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "No contabilizar copia moderna como testimonio histórico independiente",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Segundo control de copia dependiente de Ballesta"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-CTL-0003",
+      "title": "Plomo falso de la colección Marsal",
+      "epigraphic_reference": "Colección Marsal C07-003",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CONTROL_EXCLUDED_PENDING_DOCUMENTARY_RECHECK",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Plomo falso de la colección Marsal",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i17.136",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Comprobar argumento de falsificación y preservar exclusión del motor semántico",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Control de autenticidad del plomo registrado como falso"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-LAP-0001",
+      "title": "Árula ibérica de Tarragona",
+      "epigraphic_reference": "MLH C.18.7 · MNAT 338",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Árula ibérica de Tarragona",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i9.243",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Alinear fracturas, fragmentos y signos con edición gráfica",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Texto lapidario fragmentario; lecturas parciales sin glosa final"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-LAP-0002",
+      "title": "Estela-monumento de La Vispesa",
+      "epigraphic_reference": "MLH D.12.1-2 · HU.01.01-02",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Estela-monumento de La Vispesa",
+          "url": "https://ifc.dpz.es/publicaciones/ebooks/id/2722",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "No extraer traducción bélica de la escena sin relación demostrada con el texto",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Soporte con texto fragmentario e iconografía que requiere tratamiento independiente"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-LAP-0003",
+      "title": "Estela funeraria de Sinarcas",
+      "epigraphic_reference": "MLH F.14.1 · V.01.01",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Estela funeraria de Sinarcas",
+          "url": "https://mupreva.org/web_mupreva/catalogo/13543/es",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Contrastar fotografía del soporte, lectura de seltarban y propuestas funerarias",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Ficha con recurso fotográfico documentado; contexto funerario no resuelve parentescos"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-MUS-0002",
+      "title": "Mosaico de Andelo",
+      "epigraphic_reference": "K.28.1 · NA.03.01",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_SOURCE_LINKED_INDEPENDENT_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Referencia de catálogo IberOS: Mosaico de Andelo",
+          "url": "https://doi.org/10.36707/palaeohispanica.v23i0.520",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "Debe verificarse correspondencia entre edición, figura, pieza e identificador antes de declararla cotejada."
+        }
+      ],
+      "required_checks": [
+        "Cotejar ekien y antropónimos con edición; evaluar adscripción paleohispánica",
+        "Confirmar fuente primaria, identificador material y localizador exacto",
+        "Registrar fotografías o calcos con crédito y autorización",
+        "Distinguir observaciones documentadas de hipótesis editoriales",
+        "Exigir revisión independiente antes de aprobar interpretación"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Enlace catalogado sin verificación independiente de edición y figura",
+          "No realizado cotejo gráfico a nivel de signo",
+          "No hay traducción validada ni permisos de reproducción acreditados"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_NOTE_ONLY",
+        "observations": [
+          "Paralelos con Caminreal no prueban la misma sintaxis o lengua"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
