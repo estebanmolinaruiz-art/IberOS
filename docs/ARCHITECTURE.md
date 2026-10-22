@@ -32,8 +32,11 @@ Canonical public data:
 - `data/curated/iberos_family_links_v2.0.csv`
 - `data/curated/iberos_partial_entry_link_v2.4.csv`
 - `data/examples/`
+- `data/external/ibers_folch_jimenez_2024/` — fuente documental externa Folch–Jiménez Huertas (febrero de 2024), con manifiesto de procedencia y plantilla de concordancias.
 
 The public curated layer contains 38 objects.
+
+External datasets are kept outside the curated benchmark until their rows are crosswalked to physical/documentary identities and checked for dependency. In particular, the Folch–Jiménez Huertas corpus is an `EVIDENCE_SOURCE`, not an automatic source of independent confirmations or CORE promotions.
 
 Documentary independence follows:
 
