@@ -41,6 +41,22 @@ try{
  if(!((await page.locator('#write-readable').innerText()).includes('Reconstrucción')))throw Error('Write no explica el resultado');
  if(await page.locator('#out').isVisible())throw Error('Write muestra JSON crudo');
  console.log('✓ Write: explicación visible, JSON técnico plegado');
+ // Validate every visible local navigation target resolves to a real page or asset.
+ const seen=new Set();
+ for(const path of publicModules){
+  await page.goto(base+path,{waitUntil:'domcontentloaded'});
+  const links=await page.locator('a[href]').evaluateAll(nodes=>nodes.map(a=>({href:a.getAttribute('href'),label:(a.getAttribute('aria-label')||a.textContent||'').trim()})));
+  for(const link of links){
+   if(!link.href||link.href.startsWith('#')||/^(mailto:|tel:|javascript:)/i.test(link.href))continue;
+   const url=new URL(link.href,base+path);
+   if(url.origin!==new URL(base).origin)continue;
+   const key=url.pathname;
+   if(seen.has(key))continue;seen.add(key);
+   const response=await page.request.get(url.toString(),{timeout:15000,maxRedirects:5});
+   if(response.status()>=400)throw Error('Enlace interno roto: '+path+' → '+link.href+' ('+response.status()+')');
+  }
+ }
+ console.log('✓ '+seen.size+' destinos internos de navegación accesibles');
  const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
  if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
  await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
