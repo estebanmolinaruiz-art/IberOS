@@ -1,0 +1,25 @@
+{
+  "dataset_id": "EXT-IBERS-FOLCH-JIMENEZ-2024-02",
+  "title": "Corpus informatizado de inscripciones ibéricas (febrero 2024)",
+  "authors": ["David Folch Flórez", "Carme Jiménez Huertas"],
+  "source_site": "https://ibers.cat/corpus.html",
+  "received_from": "David Folch",
+  "received_date": "2026-10-19",
+  "original_filename": "ibers_febrer_24 (5).xls",
+  "sha256_original": "85871b90401a9b7b5ac418644322026d6fcc7d7515f992b3ce3c966639a364a2",
+  "original_size_bytes": 1208320,
+  "sheets": ["text", "cadenes"],
+  "attribution": {
+    "excel": "David Folch y Carme Jiménez Huertas",
+    "font": "Carme Jiménez Huertas"
+  },
+  "usage_note": "Uso libre confirmado por David Folch por correo electrónico; mantener la citación indicada.",
+  "iberos_policy": {
+    "role": "external_reference_dataset",
+    "automatic_core_promotion": false,
+    "automatic_independence_claim": false,
+    "required_crosswalk": "UPSTREAM_ID -> ENTRY_ID/OBJECT_ID before curated use",
+    "epistemic_layer": "EVIDENCE_SOURCE",
+    "notes": "Las lecturas/transcripciones del corpus externo se preservan como fuente documental y no se convierten automáticamente en lectura paleográfica validada por IberOS."
+  }
+}
