@@ -29,6 +29,18 @@ try{
   if(visibleTechnical)throw Error('Módulo '+path+' muestra JSON técnico visible en lugar de resultado legible');
   console.log('✓ Módulo '+path+' abre correctamente y no muestra JSON crudo como resultado principal');
  }
+ await page.goto(base+'/modelos3d/',{waitUntil:'domcontentloaded'});
+ await page.locator('#external3d a[href^="https://"]').first().waitFor({state:'visible',timeout:15000});
+ const sourceLinks=await page.locator('#external3d a[href^="https://"]').count();
+ if(sourceLinks<6)throw Error('Arqueología 3D: menos de seis enlaces a recursos originales');
+ const demo=page.locator('details:has(.viewer-shell)');
+ if(await demo.count()!==1||await demo.getAttribute('open')!==null)throw Error('Modelos 3D de muestra no están separados y plegados');
+ console.log('✓ 3D: '+sourceLinks+' enlaces a modelos originales, demos ocultas');
+ await page.goto(base+'/write/',{waitUntil:'domcontentloaded'});
+ await page.locator('#write-readable strong').waitFor({state:'visible',timeout:15000});
+ if(!((await page.locator('#write-readable').innerText()).includes('Reconstrucción')))throw Error('Write no explica el resultado');
+ if(await page.locator('#out').isVisible())throw Error('Write muestra JSON crudo');
+ console.log('✓ Write: explicación visible, JSON técnico plegado');
  const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
  if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
  await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
