@@ -428,7 +428,15 @@
         "figure_locators": [
           "fig. 7 (p. 99): lámina desplegada antes de limpiar",
           "figs. 8–9 (p. 100 y siguientes): lectura y signos en cara A"
-        ]
+        ],
+        "visual_audit_2026_10_22": {
+          "attempted": true,
+          "publication_pdf": "https://ojs.ehu.eus/index.php/Veleia/article/download/22508/20355/89521",
+          "alternate_pdf": "https://diposit.ub.edu/bitstreams/1737a2a9-79ef-468a-b5dc-f17d3aa1d436/download",
+          "result": "PDF_TEXT_ACCESSIBLE_SCREENSHOT_FAILED_CACHE_MISS_AND_DOWNLOAD_HTTP_500",
+          "verified_signs": 0,
+          "notes": "Text and bibliography accessible, but images on pages 99–101 could not be rendered for independent paleographic inspection. Preserve A3 a3/ba1 and final ś1/n1 as editorial variants."
+        }
       },
       "completeness_audit": {
         "cataloged": true,
@@ -443,7 +451,9 @@
         "journal": "Veleia 38 (2021), 91–109",
         "object_inventory": "Museu de Prehistòria de València, inv. 45899",
         "publication_page": "https://ojs.ehu.eus/index.php/Veleia/article/view/22508",
-        "status": "FULL_TEXT_EPIGRAPHIC_DESCRIPTION_LOCATED_NOT_GRAPHICALLY_CERTIFIED"
+        "status": "FULL_TEXT_EPIGRAPHIC_DESCRIPTION_LOCATED_NOT_GRAPHICALLY_CERTIFIED",
+        "license": "CC BY-NC-ND 4.0, según página inicial del artículo; no implica autorización para crear derivados de las figuras",
+        "archaeological_reference": "PA-VII; Museu de Prehistòria de València inv. 45899"
       }
     },
     {
