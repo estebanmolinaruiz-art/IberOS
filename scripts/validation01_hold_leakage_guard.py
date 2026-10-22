@@ -23,7 +23,7 @@ def evaluate(hold,screening,critical):
             if k in seen:issues.append({'row':i,'issue':'DUPLICATE_HOLD_IDENTITY','previous_row':seen[k],'identity':k})
             seen[k]=i
     return {'gate':'BLOCKED' if issues else 'PASS_KNOWN_OBJECT_SCREEN','known_development_ids':len(known),'issues':issues,
-        'note':'Only documented aliases and normalized exact identifiers are matched. Other uncertain provenance remains subject to human review.'}
+        'note':'Only documented aliases and normalized exact identifiers are matched; human provenance review still required for unknown objects.'}
 def load(path):
     with open(path,encoding='utf-8-sig',newline='') as f:return list(csv.DictReader(f))
 if __name__=='__main__':
