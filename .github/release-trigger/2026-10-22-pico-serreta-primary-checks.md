@@ -1,0 +1,1 @@
+Publish precise primary edition paleographic localizers for Pico de los Ajos and museum identification cross-check for La Serreta. Sign-level independent validation pending.
