@@ -1,0 +1,1 @@
+Publish reconciled documentation: Serreta original photos and historical drawings are already recovered internally; sign-by-sign validation and image rights remain unresolved.
