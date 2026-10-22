@@ -63,7 +63,7 @@ try{
   ['/fichas/','a[href*="../ficha/"]',1,'Fichas'],
   ['/modelos3d/','#external3d a[href^="https://"]',6,'Modelos 3D originales'],
   ['/recursos/','#externalResources .resource-card',1,'Biblioteca'],
-  ['/proyectos/','#projects article, #news article',1,'Proyectos']
+  ['/proyectos/','#project-list article, #news-list article',1,'Proyectos']
  ];
  for(const [path,selector,min,label] of populated){
   await page.goto(base+path,{waitUntil:'domcontentloaded'});
