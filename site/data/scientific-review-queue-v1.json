@@ -384,6 +384,69 @@
         "verified_signs": 0,
         "figure_locator_verified": false
       }
+    },
+    {
+      "object_id": "IBR-MUS-0001",
+      "title": "Mosaico inscrito de La Caridad (Caminreal)",
+      "epigraphic_reference": "MLH E.7.1 = K.5.3",
+      "source_record": "ficha-enrichment-3.json",
+      "scientific_state": "BIBLIOGRAPHIC_SOURCE_IDENTIFIED_COLLATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Simón Cornago, Ignacio (2015 [publicación electrónica 2019]), Treinta años de investigaciones sobre la inscripción musiva de Caminreal (Hispania Citerior; MLH E.7.1 = K.5.3), Palaeohispanica 15, pp. 87–127.",
+          "url": "https://www.ifc-ojs.es/index.php/palaeohispanica/es/article/view/39",
+          "status": "JOURNAL_RECORD_AND_ABSTRACT_VERIFIED",
+          "note": "El resumen diferencia cuatro debates: el antropónimo likine, el término ekiar, el topónimo y la identidad de likine. Las lecturas de signos y figuras aún precisan cotejo directo."
+        }
+      ],
+      "required_checks": [
+        "Comprobar la lectura signo por signo con imágenes y edición original del mosaico; señalar lagunas o restituciones",
+        "Registrar lecturas y variantes de likine, ekiar y usekeŕte-ku con localizadores exactos",
+        "No tratar la interpretación de ekiar como equivalente semántico demostrado a 'hizo' ni deducir autoría sin evaluación de hipótesis alternativas",
+        "Distinguir soporte musivo arqueológico e interpretación histórica de posibles funciones del texto",
+        "Identificar material gráfico original y comprobar derechos de reproducción",
+        "Someter la segmentación y las hipótesis funcionales a revisión especializada"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-SCIENTIFIC-REVIEW/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": true,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Sin cotejo epigráfico independiente de signos, límites y variantes",
+          "No se han adjudicado interpretaciones funcionales de likine / ekiar / topónimo",
+          "Derechos sobre figuras originales no evaluados",
+          "No existe validación semántica independiente"
+        ]
+      },
+      "editorial_collation": {
+        "status": "ABSTRACT_VERIFIED_FULL_ARTICLE_NOT_SIGN_COLLATED",
+        "edition": "Simón Cornago, Palaeohispanica 15, 87–127",
+        "observations": [
+          "El artículo sintetiza treinta años de estudios de la inscripción musiva ibérica en opus signinum procedente de La Caridad.",
+          "La discusión bibliográfica se articula en cuatro problemas: likine, ekiar, topónimo e identidad de likine.",
+          "Se evita inferir una traducción literal o una atribución profesional probada a partir del resumen."
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN",
+        "method": "Compare sign photographs and edition with alternative readings and morphological boundaries",
+        "variants": [],
+        "source_dependence": "Estudios sucesivos del mismo mosaico no son testimonios independientes",
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
