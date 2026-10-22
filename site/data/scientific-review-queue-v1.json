@@ -1478,6 +1478,889 @@
         "verified_signs": 0,
         "figure_locator_verified": false
       }
+    },
+    {
+      "object_id": "IBR-LAP-0004",
+      "title": "Estela ibérica de Santa Perpètua de Mogoda",
+      "epigraphic_reference": "Can Soldevila / Santa Perpètua",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Estela ibérica de Santa Perpètua de Mogoda en el catálogo IberOS",
+          "url": "https://patrimonicultural.diba.cat/index.php/element/estela-iberica",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Estela / monumento",
+          "Yacimiento declarado: Can Soldevila",
+          "Situación paleográfica en catálogo: REVIEW_NEEDED",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-LAP-0005",
+      "title": "Arquitrabe bilingüe de Sagunto",
+      "epigraphic_reference": "MLH F.11.8 · ELRH C56",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Arquitrabe bilingüe de Sagunto en el catálogo IberOS",
+          "url": "https://una-editions.fr/los-pueblos-paleohispanicos-ante-roma/",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Arquitrabe / inscripción bilingüe",
+          "Yacimiento declarado: Saguntum",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-MON-0001",
+      "title": "Semis de ildiŕda con marca erder",
+      "epigraphic_reference": "Semis de ildiŕda con erder",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Semis de ildiŕda con marca erder en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i7.277",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Moneda",
+          "Yacimiento declarado: Ceca de ildiŕda",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-OBJ-0001",
+      "title": "Tortera inscrita de Can Rodon",
+      "epigraphic_reference": "Can Rodon de l'Hort",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Tortera inscrita de Can Rodon en el catálogo IberOS",
+          "url": "https://doi.org/10.1387/veleia.13345",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Separar inscripciones o caras en entradas editoriales preservando un solo objeto físico",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Tortera / signario",
+          "Yacimiento declarado: Can Rodon de l'Hort",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: NEEDS_SUBENTRY_SPLIT"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-OBJ-0002",
+      "title": "Tortera inscrita de Oliete",
+      "epigraphic_reference": "Oliete / El Palomar",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Tortera inscrita de Oliete en el catálogo IberOS",
+          "url": "https://doi.org/10.1387/veleia.13345",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Tortera / candidato a signario",
+          "Yacimiento declarado: El Palomar",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0005",
+      "title": "Villares V",
+      "epigraphic_reference": "F.17.1",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Villares V en el catálogo IberOS",
+          "status": "SOURCE_URL_MISSING_OR_TRUNCATED",
+          "note": "Enlace ausente o incompleto en el catálogo: requiere reconstrucción a partir de referencia bibliográfica."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 0,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Lámina de plomo",
+          "Yacimiento declarado: Los Villares",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0007",
+      "title": "Plomo de Casinos",
+      "epigraphic_reference": "BDH V.02.02",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Plomo de Casinos en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i14.54",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Lámina de plomo",
+          "Yacimiento declarado: Entorno de Casinos",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0008",
+      "title": "Signarios del Tos Pelat",
+      "epigraphic_reference": "BDH V.21.01-02",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Signarios del Tos Pelat en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i11.82",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Separar inscripciones o caras en entradas editoriales preservando un solo objeto físico",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Lámina de plomo / signario",
+          "Yacimiento declarado: Tos Pelat",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: NEEDS_SUBENTRY_SPLIT"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0010",
+      "title": "Plomo de El Cigarralejo",
+      "epigraphic_reference": "MLH G.13.1 · Hesperia MU.04.01",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Plomo de El Cigarralejo en el catálogo IberOS",
+          "status": "SOURCE_URL_MISSING_OR_TRUNCATED",
+          "note": "Enlace ausente o incompleto en el catálogo: requiere reconstrucción a partir de referencia bibliográfica."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 0,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Lámina de plomo",
+          "Yacimiento declarado: Necrópolis de El Cigarralejo",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-PLM-0011",
+      "title": "Plomo de la Moleta del Remei",
+      "epigraphic_reference": "Moleta del Remei",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Plomo de la Moleta del Remei en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i8.265",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Cotejar lectura publicada y geometría de la inscripción contra fotografía, dibujo y edición original",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Lámina de plomo",
+          "Yacimiento declarado: Moleta del Remei",
+          "Situación paleográfica en catálogo: HIGH_UNCERTAINTY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-RUP-0001",
+      "title": "Signario rupestre de Ger",
+      "epigraphic_reference": "Signario de Ger",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Signario rupestre de Ger en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i13.175",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Rupestre / signario",
+          "Yacimiento declarado: Ger",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-RUP-0002",
+      "title": "Signario rupestre de Bolvir",
+      "epigraphic_reference": "Signario de Bolvir",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Signario rupestre de Bolvir en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i13.175",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Rupestre / signario",
+          "Yacimiento declarado: Bolvir",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-RUP-0003",
+      "title": "Signario dual de Latour-de-Carol",
+      "epigraphic_reference": "Latour-de-Carol dual",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Signario dual de Latour-de-Carol en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i15.48",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Rupestre / signario",
+          "Yacimiento declarado: Latour-de-Carol",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-RUP-0004",
+      "title": "Signario no dual de Latour-de-Carol",
+      "epigraphic_reference": "Latour-de-Carol no dual",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Signario no dual de Latour-de-Carol en el catálogo IberOS",
+          "url": "https://doi.org/10.36707/palaeohispanica.v0i15.48",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Rupestre / signario",
+          "Yacimiento declarado: Latour-de-Carol",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
+    },
+    {
+      "object_id": "IBR-RUP-0005",
+      "title": "Abecedario no dual de L'Esquirol",
+      "epigraphic_reference": "BDH B.08.01",
+      "source_record": "site/data/objects.csv",
+      "scientific_state": "CATALOG_INTAKE_INDEPENDENT_SOURCE_VERIFICATION_PENDING",
+      "publication_approved": false,
+      "reconstruction_segments": [],
+      "references_checked": [
+        {
+          "citation": "Fuente asociada a Abecedario no dual de L'Esquirol en el catálogo IberOS",
+          "url": "https://doi.org/10.21001/rap.2021.31.4",
+          "status": "CATALOG_URL_RECORDED_NOT_INDEPENDENTLY_VERIFIED",
+          "note": "URL registrada; no se han comprobado figura ni localizador para este testimonio."
+        }
+      ],
+      "required_checks": [
+        "Distinguir inventario de signos y variantes gráficas de palabras lingüísticas, sin proponer traducción",
+        "Confirmar objeto físico, procedencia e identificador externo",
+        "Revisar ediciones, bibliografía, fechas y diferencias entre lecturas",
+        "Verificar autorización y crédito de reproducciones",
+        "Exigir revisión independiente de cualquier hipótesis semántica"
+      ],
+      "technical_audit": {
+        "protocol": "IBEROS-FICHA-CATALOG-SCREENING/1.0",
+        "reference_records": 1,
+        "source_identifiers_verified": false,
+        "physical_independence_audited": false,
+        "segment_validation": "NOT_RUN_NO_SEGMENTS",
+        "publication_gate": "BLOCKED",
+        "blockers": [
+          "Fuente y figura originales no cotejadas independientemente",
+          "Signos y variantes no validados mediante reproducción verificable",
+          "No existe dictamen científico independiente que permita una traducción semántica"
+        ]
+      },
+      "editorial_collation": {
+        "status": "CATALOG_METADATA_ONLY",
+        "observations": [
+          "Tipo de objeto: Rupestre / signario",
+          "Yacimiento declarado: L'Esquirol",
+          "Situación paleográfica en catálogo: READY",
+          "Estado de entradas en catálogo: ONE_OR_FEW_ENTRIES"
+        ],
+        "autopsy": false,
+        "semantic_validation": false
+      },
+      "variant_review": {
+        "status": "OPEN_NO_ADJUDICATED_VARIANTS",
+        "variants": [],
+        "segment_publication": "BLOCKED_UNTIL_VERIFIED"
+      },
+      "graphic_collation": {
+        "status": "NOT_INDEPENDENTLY_COLLATED",
+        "sign_by_sign_verified": false,
+        "verified_signs": 0,
+        "figure_locator_verified": false
+      }
     }
   ]
 }
