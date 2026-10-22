@@ -1,0 +1,1 @@
+Publish precise page and figure locators for two disputed Pico de los Ajos signs. Graphic verification remains pending.
