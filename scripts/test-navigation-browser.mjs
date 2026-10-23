@@ -37,7 +37,13 @@ try{
  if(await demo.count()!==1||await demo.getAttribute('open')!==null)throw Error('Modelos 3D de muestra no están separados y plegados');
  console.log('✓ 3D: '+sourceLinks+' enlaces a modelos originales, demos ocultas');
  await page.goto(base+'/write/',{waitUntil:'domcontentloaded'});
+ await page.locator('#q').fill('A Bastubar se transfiere un documento.');
+ await page.locator('#go').click();
  await page.locator('#write-readable strong').waitFor({state:'visible',timeout:15000});
+ if(!((await page.locator('#write-feedback').innerText()).includes('Patrón compatible')))throw Error('Write no confirma la entrada procesada');
+ await page.locator('#q').fill('Esteban vende hierro');
+ await page.locator('#go').click();
+ if(!((await page.locator('#write-feedback').innerText()).includes('No existe una regla')))throw Error('Write no explica abstención para frase fuera de gramática');
  if(!((await page.locator('#write-readable').innerText()).includes('Reconstrucción')))throw Error('Write no explica el resultado');
  if(await page.locator('#out').isVisible())throw Error('Write muestra JSON crudo');
  console.log('✓ Write: explicación visible, JSON técnico plegado');
