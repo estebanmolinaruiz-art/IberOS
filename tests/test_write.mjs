@@ -147,3 +147,13 @@ test('Public page marks stretched Latin fallback', async()=>{
   assert.match(html,/letras estiradas = fallback latino/);
   assert.match(html,/scaleX\(\.48\).*scaleY\(1\.35\)/s);
 });
+
+
+test('Stone preview uses irregular carved-stone styling', async()=>{
+  const html=await readFile(new URL('../site/write/index.html',import.meta.url),'utf8');
+  assert.match(html,/clip-path:polygon/);
+  assert.match(html,/radial-gradient/);
+  assert.match(html,/RECREACIÓN/);
+  assert.match(html,/Recreación visual de una piedra grabada/);
+  assert.match(html,/drop-shadow/);
+});
