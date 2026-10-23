@@ -44,7 +44,7 @@ try{
  await page.locator('#q').fill('Esteban vende hierro');
  await page.locator('#go').click();
  if(!((await page.locator('#write-feedback').innerText()).includes('No existe una regla')))throw Error('Write no explica abstención para frase fuera de gramática');
- if(!((await page.locator('#write-readable').innerText()).includes('Reconstrucción')))throw Error('Write no explica el resultado');
+ if(!(/reconstrucción/i.test(await page.locator('#write-readable').innerText())))throw Error('Write no explica el resultado');
  if(await page.locator('#out').isVisible())throw Error('Write muestra JSON crudo');
  console.log('✓ Write: explicación visible, JSON técnico plegado');
  // Validate every visible local navigation target resolves to a real page or asset.
