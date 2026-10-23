@@ -96,6 +96,27 @@ try{
  await page.waitForTimeout(1000);
  if(await page.locator('a[href*="../ficha/?id=IBR-PLM-0002"]').count()===0)throw Error('Corpus no muestra acceso a ficha de Tivissa');
  console.log('✓ Corpus enlaza a la ficha desde resultados reales');
+ // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
+ const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
+ try{
+  for(const [selector,expected] of [
+   ['.tile-hotspot[aria-label="Abrir Fichas"]','/fichas/'],
+   ['.tile-hotspot[aria-label="Abrir Atlas"]','/atlas/'],
+   ['.nav-hotspot[aria-label="Corpus"]','/corpus/']
+  ]){
+   await mobile.goto(base+'/',{waitUntil:'domcontentloaded'});
+   const el=mobile.locator(selector);
+   await el.scrollIntoViewIfNeeded();
+   const box=await el.boundingBox();
+   if(!box||box.width<2||box.height<2)throw Error('iPhone: área táctil inexistente '+selector);
+   const x=box.x+box.width/2,y=box.y+box.height/2;
+   const hit=await mobile.evaluate(({x,y,selector})=>{const link=document.querySelector(selector);const target=document.elementFromPoint(x,y);return !!(link&&target&&(target===link||link.contains(target)))},{x,y,selector});
+   if(!hit)throw Error('iPhone: otro elemento intercepta pulsación '+selector);
+   await mobile.touchscreen.tap(x,y);
+   await mobile.waitForURL('**'+expected,{timeout:10000});
+   console.log('✓ iPhone: título original '+selector+' abre '+expected);
+  }
+ }finally{await mobile.close();}
 }catch(error){errors.push(error.message);await page.screenshot({path:'/tmp/iberos-navigation-fallo.png',fullPage:true}).catch(()=>{});}
 finally{await browser.close();}
 if(errors.length){console.error(errors.join('\n'));process.exit(1);}
