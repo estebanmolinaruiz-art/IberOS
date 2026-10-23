@@ -1,0 +1,1 @@
+Publish fix for stale mobile CSS rule that hid all original flyer navigation hotspots with !important.
