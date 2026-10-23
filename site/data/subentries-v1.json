@@ -156,7 +156,7 @@
       "object_id": "IBR-CER-0004",
       "object_name": "Inscripción de La Joncosa",
       "split_type": "partial_external_index_group",
-      "status": "PARTIAL_GROUP_3_VERIFIED_FOURTH_PENDING",
+      "status": "GROUP_4_ENTRIES_IDENTIFIED_INDEX_LEVEL",
       "source": "https://cathalaunia.org/Iberika/I02560",
       "reference": "B.11.01 / Veleia 23,129",
       "units": [
@@ -180,12 +180,12 @@
         },
         {
           "subentry_id": "IBR-CER-0004-S04",
-          "external_id": null,
-          "label": "cuarto registro del grupo",
-          "mapping_status": "PENDING_DIRECT_MATCH"
+          "external_id": "I03111",
+          "label": "segmento 3",
+          "mapping_status": "INDEX_GROUP_MEMBER_CONFIRMED"
         }
       ],
-      "note": "Tres I-codes están enlazados; el cuarto registro agrupado no se asigna sin coincidencia directa."
+      "note": "Las cuatro entradas del grupo están identificadas en el índice externo: I02560, I02561, I02562 e I03111. Falta cotejo físico/signo a signo."
     },
     {
       "object_id": "IBR-OBJ-0001",
@@ -214,7 +214,7 @@
       "object_id": "IBR-PLM-0008",
       "object_name": "Signarios del Tos Pelat",
       "split_type": "partial_signary_group",
-      "status": "V21_01_TWO_ENTRIES_LINKED_V21_02_PENDING",
+      "status": "V21_01_AND_V21_02_INDEX_LINKS_IDENTIFIED",
       "source": "https://cathalaunia.org/Iberika/I03049",
       "reference": "V.21.01-02",
       "units": [
@@ -232,12 +232,12 @@
         },
         {
           "subentry_id": "IBR-PLM-0008-V21.02",
-          "external_id": null,
-          "label": "V.21.02",
-          "mapping_status": "EXTERNAL_LINK_PENDING"
+          "external_id": "I03052",
+          "label": "V.21.02 / B2",
+          "mapping_status": "INDEX_LINK_IDENTIFIED"
         }
       ],
-      "note": "Los dos I-codes verificados corresponden a V.21.01; V.21.02 sigue pendiente de enlace directo."
+      "note": "V.21.01 mantiene I03049/I03050 y V.21.02 queda identificado como I03052 a nivel de índice externo; sigue pendiente el cotejo paleográfico visual."
     },
     {
       "object_id": "IBR-PLM-0009",
