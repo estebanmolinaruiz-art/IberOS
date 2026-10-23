@@ -1,0 +1,1 @@
+Publish mobile image-relative positioning for the flyer menu and tiles, removing offset due to projects and stats.
