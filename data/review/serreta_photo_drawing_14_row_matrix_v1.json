@@ -30,13 +30,17 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
       ],
-      "priority": "FIRST_TO_VALIDATE"
+      "priority": "FIRST_TO_VALIDATE",
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A2",
@@ -56,12 +60,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A3",
@@ -81,12 +89,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A4",
@@ -106,12 +118,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A5",
@@ -131,12 +147,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A6",
@@ -156,12 +176,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "A7",
@@ -181,12 +205,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "B1",
@@ -206,12 +234,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "B2",
@@ -231,12 +263,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "B3",
@@ -256,12 +292,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "B4",
@@ -281,12 +321,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "B5",
@@ -306,12 +350,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "T1",
@@ -331,12 +379,16 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     },
     {
       "line_id": "T2",
@@ -356,19 +408,40 @@
       "photo_page_printed": 10,
       "drawing_page_printed": 13,
       "mapping_evidence_level": "STRUCTURAL_EDITORIAL_ONLY",
-      "photo_sign_review": "NOT_PERFORMED",
+      "photo_sign_review": "SOURCE_RENDERED_NOT_CERTIFIED",
       "required_visual_checks": [
         "orientación y secuencia de trazos",
         "grietas, superposiciones y extremos de línea",
         "posición de separadores y divergencias 1922/1962"
-      ]
+      ],
+      "primary_pdf_photo_page": 2,
+      "primary_pdf_drawing_page": 5,
+      "primary_pdf_comparison_page": 6,
+      "visual_reference_recovered": true
     }
   ],
   "last_source_access_attempt": {
     "date": "2026-10-23",
-    "source": "https://box.inh.cat/histocat.cat/resource/FletcherSerreta.pdf",
-    "web_result": "502 Bad Gateway",
-    "independent_image_read": false,
-    "notes": "La documentación interna constata figuras recuperadas en una sesión anterior, pero sus píxeles no están disponibles en el entorno presente; sin acceso visual no se certifican coordenadas ni signos."
+    "source": "USER_UPLOADED_PDF",
+    "result": "SUCCESS_SHA256_MATCH_AND_PAGES_RENDERED",
+    "independent_image_read": true,
+    "certified_signs": 0
+  },
+  "source_pdf_verified_2026_10_23": {
+    "user_uploaded_file": "adminRACO,+01RECERQUES01.pdf",
+    "sha256": "9243e794af83094ea754d764e38f64306f6005d9650cf1d35a1ab1ae94479311",
+    "pages": 28,
+    "photo_pages_pdf": [
+      2
+    ],
+    "drawing_pages_pdf": [
+      5
+    ],
+    "variant_pages_pdf": [
+      6
+    ],
+    "pixel_access": true,
+    "review_result": "PHOTOS_AND_DRAWINGS_RENDERED_AND_VISUALLY_INSPECTED_NO_SIGN_CERTIFICATION",
+    "caution": "Photo reproductions have faint scratched marks and fracture lines; contrast-enhanced images are exploratory derivatives and cannot substitute physical or independently confirmed sign identification."
   }
 }
