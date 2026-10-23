@@ -6,6 +6,25 @@ export class IberOSWrite {
   constructor({baseUrl}={}){ this.base = new URL(baseUrl || DEFAULT_BASE, document.baseURI); this.rules = null; this.ready = false; }
   async init(){ this.rules = await loadJSON(new URL("data/write-rules.json", this.base)); this.ready = true; return this; }
   info(){ this.#ready(); return structuredClone(this.rules); }
+  phonographicFallback(input){
+    this.#ready();
+    const source=String(input??"").trim();
+    const normalized=source.toLocaleLowerCase("es-ES").normalize("NFD").replace(/[\u0300-\u036f]/g,"").normalize("NFC");
+    const words=normalized.split(/\s+/u).filter(Boolean);
+    const warnings=[];
+    const encodedWords=words.map(word=>this.#encodeSpanishWord(word,warnings)).filter(x=>x.tokens.length);
+    return {
+      mode:"WRITE_FALLBACK_PHONOGRAPHIC",
+      source_language:"es",
+      source_text:source,
+      semantic_translation:false,
+      script_system:"northeastern_iberian_conventional_modern_mapping",
+      words:encodedWords,
+      tokens:encodedWords.flatMap((x,i)=>i?[{value:"·",kind:"separator"},...x.tokens]:x.tokens),
+      warnings:[...new Set(warnings)],
+      label:"Transliteración moderna aproximada; no traducción ibérica."
+    };
+  }
   reconstruct(input){
     this.#ready();
     const text = String(input ?? "").trim();
@@ -41,8 +60,37 @@ export class IberOSWrite {
     segs.push(this.#seg("UTUR","probable","Tema documental/escrito","No se afirma glosa literal exacta."));
     return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,intent:"transfer_document_to_person",status:"PARTIAL_RECONSTRUCTION",reconstruction:segs.map(x=>x.form).join(" · "),segments:segs,metrics:this.#metrics(segs),guards:["No word-for-word translation claimed.","DE/DI unresolved.","ŔOK exact direction remains open.","Modern names are fallback unless historically attested."]};
   }
-  #genericAbstention(original){ return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇SEMANTIC_FRAME",segments:[this.#seg("◇SEMANTIC_FRAME","gap","Marco semántico no cubierto","No hay reglas suficientes sin inventar léxico o morfología.")],metrics:this.#metrics([{status:"gap"}]),guards:["No invented Iberian output."]}; }
+  #genericAbstention(original){ const fallback=this.phonographicFallback(original); return {engine:"IberOS-Write",engine_version:this.rules.version,input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇SEMANTIC_FRAME",segments:[this.#seg("◇SEMANTIC_FRAME","gap","Marco semántico no cubierto","No hay reglas suficientes sin inventar léxico o morfología.")],fallback,metrics:this.#metrics([{status:"gap"}]),guards:["No invented Iberian semantic output.","Fallback is a modern phonographic representation, not a historical translation."]}; }
   #abstain(original,reasons){ return {engine:"IberOS-Write",engine_version:this.rules?.version||"unknown",input:original,status:"CONTROLLED_ABSTENTION",reconstruction:"◇",segments:[],reasons,metrics:this.#metrics([])}; }
+  #encodeSpanishWord(raw,warnings){
+    const word=String(raw).replace(/[^a-zñü]/gu,"");
+    const tokens=[];
+    const vowels=new Set(["a","e","i","o","u"]);
+    const push=(value,source,kind="sign")=>tokens.push({value,source,kind});
+    for(let i=0;i<word.length;){
+      let c=word[i],n=word[i+1]||"",n2=word[i+2]||"";
+      if(c==="h"){warnings.push("H castellana omitida por carecer de correspondencia fonética directa.");i++;continue;}
+      if(c==="ü"){push("u","ü");i++;continue;}
+      if(vowels.has(c)){push(c,c);i++;continue;}
+      if(c==="r"&&n==="r"){push("ŕ","rr");i+=2;continue;}
+      if(c==="c"&&(n==="e"||n==="i")){push("s","c");i++;continue;}
+      if(c==="z"){push("s","z");i++;continue;}
+      if(c==="q"&&n==="u"&&(n2==="e"||n2==="i")){push("k"+n2,"qu"+n2);i+=3;continue;}
+      if(c==="g"&&n==="u"&&(n2==="e"||n2==="i")){push("k"+n2,"gu"+n2);i+=3;warnings.push("G/QU se normalizan a la serie velar como aproximación moderna.");continue;}
+      if((c==="b"||c==="v"||c==="p")&&vowels.has(n)){push("b"+n,c+n);i+=2;if(c!=="b")warnings.push("P/V se aproximan a la serie labial ibérica.");continue;}
+      if((c==="t"||c==="d")&&vowels.has(n)){push("t"+n,c+n);i+=2;if(c==="d")warnings.push("D se aproxima a la serie dental ibérica.");continue;}
+      if((c==="k"||c==="g")&&vowels.has(n)){push("k"+n,c+n);i+=2;if(c==="g")warnings.push("G se aproxima a la serie velar ibérica.");continue;}
+      if(c==="c"&&vowels.has(n)){push("k"+n,c+n);i+=2;continue;}
+      if(["l","m","n","r","s"].includes(c)){push(c,c);i++;continue;}
+      if(c==="ñ"){push("n","ñ");warnings.push("Ñ se aproxima a N en este fallback moderno.");i++;continue;}
+      if(c==="x"){push("k","x");push("s","x");warnings.push("X se descompone aproximadamente como K+S.");i++;continue;}
+      if(c==="j"||(c==="g"&&(n==="e"||n==="i"))||c==="f"||c==="y"||c==="w"){
+        push("◇",c,"gap");warnings.push("Hay sonidos castellanos sin correspondencia ibérica segura; se muestran como hueco.");i++;continue;
+      }
+      warnings.push("Se omitió un carácter sin regla fonográfica: "+c);i++;
+    }
+    return {source:raw,tokens};
+  }
   #metrics(segments){
     const count=status=>segments.filter(s=>s.status===status).length;
     const total=segments.length;
