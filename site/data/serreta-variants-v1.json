@@ -1,0 +1,86 @@
+{
+  "schema": "IberOS-Serreta-Editorial-Variants/1.0",
+  "date": "2026-10-23",
+  "object_id": "IBR-PLM-0009",
+  "physical_objects": 1,
+  "text_blocks": [
+    "A-I (7 líneas)",
+    "A-II transversal/superpuesto (2 líneas)",
+    "B (5 líneas)"
+  ],
+  "editorial_anchor": "Velaza (2011) as reproduced by Ngomo Fernández (2021)",
+  "source_document": "Fletcher Valls y Silgo Gauche (1992), Recerques del Museu d'Alcoi 1:9–36",
+  "variants": [
+    {
+      "line": "A1",
+      "historical": [
+        "ORTI",
+        "ORITI"
+      ],
+      "modern": "orti",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "A2",
+      "historical": [
+        "BUISTINER",
+        "BUISTINERI"
+      ],
+      "modern": "buiśtiner",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "A2",
+      "historical": [
+        "TURLBAI",
+        "TURABAI"
+      ],
+      "modern": "tuŕlbai",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "B1",
+      "historical": [
+        "IUNSTIR",
+        "IUNSTIRI"
+      ],
+      "modern": "iunstir",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "B1",
+      "historical": [
+        "SALIRG",
+        "SALIRIG"
+      ],
+      "modern": "śalirg",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "B2",
+      "historical": [
+        "BIRINAR",
+        "BIRIGNAR"
+      ],
+      "modern": "birinaŕ",
+      "photo_sign_verified": false
+    },
+    {
+      "line": "B5",
+      "historical": [
+        "SEBAGEDIRAN",
+        "SEBAGEDIRAIN"
+      ],
+      "modern": "sebagediŕan",
+      "photo_sign_verified": false
+    }
+  ],
+  "gates": {
+    "bibliographic_source_verified": true,
+    "twelve_row_modern_reading_recorded": true,
+    "seven_variants_modern_editorial_anchor": true,
+    "seven_independent_glyph_photo_checks": 0,
+    "eligible_for_scientific_promotion": false
+  },
+  "note": "La lectura editorial moderna selecciona una opción en cada variante histórica, pero IberOS no certifica esos grafemas por lectura independiente de la fotografía."
+}
