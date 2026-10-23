@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {IberOSWrite} from '../site/write/iberos-write-v06.mjs';
+import {IberOSWrite} from '../site/write/iberos-write-v07.mjs';
 
 globalThis.document={baseURI:'https://example.invalid/write/'};
 const rules=JSON.parse(await readFile(new URL('../site/write/data/write-rules.json',import.meta.url)));
@@ -126,4 +126,24 @@ test('Public page uses valid n2 glyph and reverse button', async()=>{
   assert.ok(!html.includes('NE Iberian n1.svg'));
   assert.match(html,/Convertir a castellano/);
   assert.match(html,/decodeGeneratedFallback/);
+});
+
+
+test('Unmappable sounds use stretched Latin fallback and remain reversible',()=>{
+  const r=write.reconstruct('Jefe y wifi');
+  const flat=r.fallback.tokens.filter(x=>x.kind!=='separator');
+  assert.ok(flat.some(x=>x.kind==='latin_stretched' && x.value==='J'));
+  assert.ok(flat.some(x=>x.kind==='latin_stretched' && x.value==='F'));
+  assert.ok(flat.some(x=>x.kind==='latin_stretched' && x.value==='Y'));
+  assert.ok(flat.some(x=>x.kind==='latin_stretched' && x.value==='W'));
+  assert.ok(!flat.some(x=>x.value==='◇'));
+  const d=write.decodeGeneratedFallback(r.fallback);
+  assert.equal(d.spanish,'Jefe y wifi');
+});
+
+test('Public page marks stretched Latin fallback', async()=>{
+  const html=await readFile(new URL('../site/write/index.html',import.meta.url),'utf8');
+  assert.match(html,/latin_stretched/);
+  assert.match(html,/letras estiradas = fallback latino/);
+  assert.match(html,/scaleX\(\.48\).*scaleY\(1\.35\)/s);
 });
