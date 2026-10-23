@@ -331,7 +331,7 @@
         ]
       },
       "graphic_collation": {
-        "status": "DOCUMENTARY_ALIGNMENT_ONLY",
+        "status": "SOURCE_PHOTOGRAPHS_RENDERED_SIGN_BY_SIGN_COLLATION_OPEN",
         "upper_lines": 7,
         "lower_lines": 5,
         "sign_by_sign_verified": false,
@@ -353,6 +353,19 @@
           "vertical_rows_unisolated": 2,
           "certified_photo_to_drawing_matches": 0,
           "certified_signs": 0
+        },
+        "upload_verification_2026_10_23": {
+          "pdf_sha256": "9243e794af83094ea754d764e38f64306f6005d9650cf1d35a1ab1ae94479311",
+          "pages_rendered": [
+            2,
+            5,
+            6
+          ],
+          "photos_both_faces_seen": true,
+          "historical_drawings_seen": true,
+          "photo_row_mapping_certified": false,
+          "independent_signs_verified": 0,
+          "notes": "Original re-uploaded and rendered. Image contrast insufficient for reliable individual sign readings without expert comparison."
         }
       },
       "completeness_audit": {
