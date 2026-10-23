@@ -97,3 +97,15 @@ test('Unsupported Spanish receives traceable Iberian-sign phonographic fallback'
   );
   assert.match(r.fallback.label,/no traducción ibérica/i);
 });
+
+
+test('Stone fallback renders Iberian glyphs and not the Latin source', async()=>{
+  const html=await readFile(new URL('../site/write/index.html',import.meta.url),'utf8');
+  assert.match(html,/write-stone-text/);
+  assert.match(html,/renderFallbackTokens/);
+  assert.match(html,/glyphFiles/);
+  assert.match(html,/iberos-write-v05\.mjs\?v=20261023b/);
+  assert.match(html,/Transliteración fonográfica moderna con signos ibéricos/);
+  assert.ok(!html.includes('Texto conservado en grafía latina'));
+  assert.match(html,/img\.onerror=.*◇/s);
+});
