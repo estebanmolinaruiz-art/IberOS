@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {IberOSWrite} from '../site/write/iberos-write.mjs';
+import {IberOSWrite} from '../site/write/iberos-write-v06.mjs';
 
 globalThis.document={baseURI:'https://example.invalid/write/'};
 const rules=JSON.parse(await readFile(new URL('../site/write/data/write-rules.json',import.meta.url)));
@@ -104,8 +104,26 @@ test('Stone fallback renders Iberian glyphs and not the Latin source', async()=>
   assert.match(html,/write-stone-text/);
   assert.match(html,/renderFallbackTokens/);
   assert.match(html,/glyphFiles/);
-  assert.match(html,/iberos-write-v05\.mjs\?v=20261023b/);
+  assert.match(html,/iberos-write-v06\\.mjs\\?v=20261023c/);
   assert.match(html,/Transliteración fonográfica moderna con signos ibéricos/);
   assert.ok(!html.includes('Texto conservado en grafía latina'));
   assert.match(html,/img\.onerror=.*◇/s);
+});
+
+
+test('Generated stone recovers exact Spanish source',()=>{
+  const r=write.reconstruct('Esteban vende hierro');
+  const d=write.decodeGeneratedFallback(r.fallback);
+  assert.equal(d.status,'EXACT_SOURCE_RECOVERY');
+  assert.equal(d.exact,true);
+  assert.equal(d.spanish,'Esteban vende hierro');
+  assert.match(d.warning,/no desciframiento/i);
+});
+
+test('Public page uses valid n2 glyph and reverse button', async()=>{
+  const html=await readFile(new URL('../site/write/index.html',import.meta.url),'utf8');
+  assert.match(html,/n:"NE Iberian n2\.svg"/);
+  assert.ok(!html.includes('NE Iberian n1.svg'));
+  assert.match(html,/Convertir a castellano/);
+  assert.match(html,/decodeGeneratedFallback/);
 });
