@@ -1,0 +1,34 @@
+{
+  "schema": "IberOS-Write-public-rules-v1",
+  "updated": "2026-10-23",
+  "module": "IberOS-Write",
+  "status": "experimental-controlled",
+  "blind_reconstruction_test": "ACTIVE",
+  "rules": [
+    "No inventar léxico ni funciones.",
+    "Usar reconstrucción ibérica solo cuando exista soporte suficiente.",
+    "Marcar por separado VALIDATED, PROBABLE, INFER, FALLBACK y GAP.",
+    "Si no existe reconstrucción defendible, usar abstención o fallback fonográfico castellano explícito.",
+    "Mostrar SEMANTIC-COVERAGE y FALLBACK-RATE.",
+    "No seleccionar DE/DI ni otros contrastes abiertos sin evidencia suficiente.",
+    "No importar automáticamente hipótesis experimentales del núcleo.",
+    "Congelar texto fuente y secuencia escrita antes del render.",
+    "Toda salida visual científica debe llevar WRITE_ID, versión, secuencia exacta y trazabilidad.",
+    "Una imagen no reversible queda como visual ilustrativo y no entra en evidencia científica."
+  ],
+  "pipeline": [
+    "source_text",
+    "semantic_frame",
+    "evidence",
+    "reconstruction_or_abstention_or_fallback",
+    "exact_sequence",
+    "render",
+    "trace_record"
+  ],
+  "fallback": {
+    "source_language": "Spanish",
+    "mode": "phonographic",
+    "script": "Iberian-style signs",
+    "semantic_translation": false
+  }
+}
