@@ -1,6 +1,6 @@
 {
   "engine": "IberOS-Write",
-  "version": "WRITE-GRAMMAR v0.3-web.5",
+  "version": "WRITE-GRAMMAR v0.3-web.6",
   "generated": "2026-10-23",
   "principles": [
     "No inventar léxico ni funciones.",
@@ -12,7 +12,8 @@
     "Aplicar PALEO-RHOTIC-LOCK-01: no neutralizar R/R1 para segmentación, independencia o promoción.",
     "No inferir destinatario por mera presencia de un nombre; negación, preguntas y roles no cubiertos requieren abstención.",
     "Si no existe traducción semántica, generar fallback fonográfico castellano → valores signarios ibéricos, sin dejar la frase en grafía latina.",
-    "Las oclusivas se representan mediante series silábicas ibéricas; no se inventan consonantes alfabéticas inexistentes."
+    "Las oclusivas se representan mediante series silábicas ibéricas; no se inventan consonantes alfabéticas inexistentes.",
+    "Toda piedra fonográfica generada por Write conserva el castellano fuente para recuperación exacta; esto no equivale a descifrar una inscripción antigua."
   ],
   "known_lexemes": {
     "BASTUBAR": {
@@ -73,5 +74,10 @@
     "semantic_translation": false,
     "direction": "Spanish → phonographic normalization → Iberian sign values → documented glyphs",
     "warning": "Representación gráfica moderna; no ortografía ibérica histórica."
+  },
+  "reverse_mode": {
+    "generated_write_stone": "EXACT_SOURCE_RECOVERY",
+    "ancient_or_external_inscription": "SIGN_VALUE_ONLY_UNLESS_SEMANTIC_EVIDENCE",
+    "guard": "Nunca presentar la recuperación de metadata de Write como traducción del ibérico antiguo."
   }
 }
