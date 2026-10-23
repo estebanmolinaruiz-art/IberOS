@@ -1,0 +1,1 @@
+Publish compact iPhone header navigation; remove large mobile button grid.
