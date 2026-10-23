@@ -1,0 +1,1 @@
+Reuploaded Serreta 1992 full edition matches prior source hash; both photos and drawings rendered. No individual signs certified.
