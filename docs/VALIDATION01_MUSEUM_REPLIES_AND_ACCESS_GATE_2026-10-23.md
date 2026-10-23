@@ -20,3 +20,6 @@
 No se ha adquirido un nuevo gold independiente ni los nuevos originales fotográficos. Los dos objetos ya eran conocidos. No promocionar a HOLD. VALIDATION-01 30 % de preparación administrativa, `NOT_EVALUATED`.
 
 Nota de privacidad: este registro reproduce solo un resumen operativo y no las comunicaciones completas.
+
+## Actualización comunicada por el solicitante (23-10-2026)
+El solicitante confirma que **ya ha firmado** el documento de aceptación de normas del MARQ. La actuación del solicitante queda **COMPLETED_USER_SIGNATURE_REPORTED**; queda pendiente confirmación de la autorización administrativa del museo y entrega de las fotografías, sin inventar fecha o enlace. Sustituye el indicador anterior de «firma pendiente» únicamente en lo relativo a la firma del solicitante.
