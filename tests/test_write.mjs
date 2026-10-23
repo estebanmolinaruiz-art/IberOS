@@ -84,3 +84,16 @@ test('Accented recipient remains a marked modern fallback',()=>{
   assert.equal(r.segments[0].form,'MARIA-ER');
   assert.equal(r.segments[0].status,'fallback');
 });
+
+
+test('Unsupported Spanish receives traceable Iberian-sign phonographic fallback',()=>{
+  const r=write.reconstruct('Esteban vende hierro.');
+  assert.equal(r.status,'CONTROLLED_ABSTENTION');
+  assert.equal(r.fallback.mode,'WRITE_FALLBACK_PHONOGRAPHIC');
+  assert.equal(r.fallback.semantic_translation,false);
+  assert.deepEqual(
+    r.fallback.words.map(w=>w.tokens.map(t=>t.value)),
+    [['e','s','te','ba','n'],['be','n','te'],['i','e','ŕ','o']]
+  );
+  assert.match(r.fallback.label,/no traducción ibérica/i);
+});
