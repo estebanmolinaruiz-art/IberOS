@@ -28,7 +28,7 @@ try {
       }
     } finally {await page.close();}
   });
-  test('Write responds to input and exposes graphic output container', async () => {
+  test('Write renders a real graphic result for entered text', async () => {
     const page=await visit('write/');
     try {
       await page.locator('#q').fill('hola mundo');
@@ -37,7 +37,10 @@ try {
       const out=(await page.locator('#out').innerText()).trim();
       const feedback=(await page.locator('#write-feedback').innerText()).trim();
       const graphic=await page.locator('#write-stone-preview').count();
-      assert.ok(out || feedback || graphic, 'Write must show result, feedback or graphic container');
+      assert.match(feedback, /hola mundo/i, 'Write feedback must reflect submitted phrase');
+      assert.ok(!out.startsWith('Error al analizar:'), 'Write must not return technical error');
+      assert.ok(await page.locator('#write-stone-text').locator('img, span, strong').count() > 0, 'Write must render actual sign/token elements, not just an empty stone container');
+      assert.match(await page.locator('#write-stone-note').innerText(), /fonogr[aá]fic|traducci[oó]n/i, 'Graphic output must be explicitly qualified');
     } catch(e) {
       await page.screenshot({path:'/tmp/iberos-e2e-write.png',fullPage:true});
       throw e;
@@ -49,7 +52,8 @@ try {
       await page.locator('#q').fill('SALIR');
       await page.locator('#go').click();
       await page.waitForTimeout(600);
-      assert.ok(await page.locator('#out').count());
+      const result=(await page.locator('#out').innerText()).trim();
+      assert.ok(result.length > 0, 'Core must show non-empty result after query');
     } finally {await page.close();}
   });
 } finally {
