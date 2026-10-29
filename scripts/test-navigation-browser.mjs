@@ -43,7 +43,8 @@ try{
  if(!((await page.locator('#write-feedback').innerText()).includes('Patrón compatible')))throw Error('Write no confirma la entrada procesada');
  await page.locator('#q').fill('Esteban vende hierro');
  await page.locator('#go').click();
- if(!((await page.locator('#write-feedback').innerText()).includes('No existe una regla')))throw Error('Write no explica abstención para frase fuera de gramática');
+ if(!((await page.locator('#write-feedback').innerText()).includes('FALLBACK FONOGRÁFICO MODERNO')))throw Error('Write no distingue abstención semántica de salida gráfica');
+ if((await page.locator('#write-stone-text').innerText()).includes('Sin signos'))throw Error('Write no muestra inscripción para entrada no reconocida');
  if(!(/reconstrucción/i.test(await page.locator('#write-readable').innerText())))throw Error('Write no explica el resultado');
  if(await page.locator('#out').isVisible())throw Error('Write muestra JSON crudo');
  console.log('✓ Write: explicación visible, JSON técnico plegado');
