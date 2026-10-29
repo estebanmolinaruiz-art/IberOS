@@ -1,8 +1,8 @@
-# IberOS — actualización de evidencia institucional (24-10-2026)
+# IberOS — actualización de evidencia institucional (29-10-2026)
 
 ## Alcance
 
-Esta actualización registra respuestas institucionales recibidas para dos objetos del corpus IberOS. Se incorpora como trazabilidad documental y no modifica automáticamente ninguna lectura, hipótesis semántica ni estado CORE.
+Esta actualización registra respuestas institucionales recibidas para objetos del corpus IberOS. Se incorpora como trazabilidad documental y no modifica automáticamente ninguna lectura, hipótesis semántica ni estado CORE.
 
 ## IBR-PLM-0011 — Moleta del Remei
 
@@ -35,18 +35,31 @@ El MARQ confirma recepción de la solicitud de fotografía original en alta reso
 
 Estado del procedimiento:
 1. solicitud recibida;
-2. documento de aceptación de normas enviado a firma del investigador;
-3. después debe firmar el Director;
-4. Enric Verdú prevé realizar una primera tanda de fotografías;
-5. envío posterior a la autorización, posiblemente vía WeTransfer.
+2. documento de aceptación de normas remitido para firma del investigador;
+3. la firma electrónica continúa pendiente por no disponer en este momento de un certificado personal admitido por la sede;
+4. después de la firma del investigador debe firmar el Director;
+5. Enric Verdú prevé realizar una primera tanda de fotografías;
+6. envío posterior a la autorización, posiblemente vía WeTransfer.
 
-La firma desde móvil no ha funcionado. La acción pendiente se mantiene como trámite administrativo a completar desde un entorno de escritorio compatible con firma digital.
+La incidencia es administrativa y no constituye evidencia paleográfica nueva.
 
 ### Efecto en IberOS
 
 `PRIMARY_VISUAL_EVIDENCE_PENDING`
 
 No se modifica la lectura bo/ko hasta recibir y revisar las nuevas fotografías.
+
+## La Serreta — Plomo I
+
+El Museu Arqueològic Municipal Camil Visedo Moltó de Alcoi comunica que no dispone de las fotografías específicas solicitadas y que, por razones de conservación, el Plomo I no puede extraerse de su protección para realizar una nueva sesión fotográfica en esas condiciones.
+
+El museo sí indica que puede solicitarse **consulta presencial de la pieza**.
+
+### Efecto en IberOS
+
+`REMOTE_SPECIFIC_PHOTOS_UNAVAILABLE + IN_PERSON_CONSULTATION_AVAILABLE`
+
+La respuesta no resuelve ninguna lectura dudosa ni modifica el estado paleográfico. Abre una vía de comprobación directa presencial y debe mantenerse separada de cualquier inferencia obtenida de ediciones o reproducciones secundarias.
 
 ## Regla científica
 
