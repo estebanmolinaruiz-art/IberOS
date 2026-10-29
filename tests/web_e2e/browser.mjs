@@ -74,6 +74,23 @@ try {
       throw e;
     } finally {await page.close();}
   });
+  test('Write stone preview is visible, labeled and exportable', async () => {
+    const page=await visit('write/');
+    try {
+      await page.locator('#q').fill('hola mundo');
+      await page.locator('#go').click();
+      await page.waitForFunction(()=>document.querySelector('#write-feedback')?.textContent.includes('hola mundo'),null,{timeout:12000});
+      const stone=page.locator('#write-stone-preview');
+      assert.ok(await stone.isVisible(), 'stone must be visible');
+      assert.match(await stone.getAttribute('aria-label'),/recreaci[oó]n|piedra/i);
+      assert.ok(await page.locator('#write-stone-text').locator('span,img,strong').count()>0,'visual signs must be present');
+      assert.match(await page.locator('#write-stone-note').innerText(),/no es traducci[oó]n|fonogr[aá]fic/i);
+      const downloadPromise=page.waitForEvent('download');
+      await page.locator('#write-stone-export').click();
+      const file=await downloadPromise;
+      assert.match(file.suggestedFilename(),/\.svg$/i);
+    } finally {await page.close();}
+  });
   test('Core query controls are usable', async () => {
     const page=await visit('webengine/');
     try {
