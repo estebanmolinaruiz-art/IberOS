@@ -104,8 +104,9 @@ test('Stone fallback renders Iberian glyphs and not the Latin source', async()=>
   assert.match(html,/write-stone-text/);
   assert.match(html,/renderFallbackTokens/);
   assert.match(html,/glyphFiles/);
-  assert.match(html,/iberos-write-v06\\.mjs\\?v=20261023c/);
-  assert.match(html,/Transliteración fonográfica moderna con signos ibéricos/);
+  assert.match(html,/from["\']\.\/iberos-write-v07\.mjs(?:\?[^"\']*)?["\']/);
+  assert.match(html,/Representación fonográfica experimental con variantes de signos ibéricos nororientales/);
+  assert.match(html,/NO es traducción histórica/);
   assert.ok(!html.includes('Texto conservado en grafía latina'));
   assert.match(html,/img\.onerror=.*◇/s);
 });
