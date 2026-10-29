@@ -78,7 +78,7 @@ function updateStone(result){
  const fallback=result?.fallback || (w && result?.input ? w.phonographicFallback(result.input) : null);
  if(fallback?.tokens?.length){
    renderFallbackTokens(fallback);
-   document.getElementById("write-stone-note").textContent="Representación fonográfica experimental con variantes de signos ibéricos nororientales. NO es traducción histórica; signos y lecturas requieren cotejo por fuente.";
+   document.getElementById("write-stone-note").textContent="Representación fonográfica experimental con variantes de signos ibéricos nororientales. NO es traducción histórica; letras estiradas = fallback latino moderno, no signos ibéricos. Signos y lecturas requieren cotejo por fuente.";
  }else{
    const box=document.getElementById("write-stone-text");box.textContent=result?.reconstruction||"Sin texto";
    document.getElementById("write-stone-values").textContent="";
