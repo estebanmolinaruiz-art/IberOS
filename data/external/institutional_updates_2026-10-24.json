@@ -1,0 +1,55 @@
+{
+  "updated": "2026-10-24",
+  "records": [
+    {
+      "object_id": "IBR-PLM-0011",
+      "object": "Plomo de la Moleta del Remei",
+      "institution": "Museu de les Terres de l'Ebre",
+      "institutional_contact": "M. Mar Villalbí Prades",
+      "custody_status": "CONFIRMED",
+      "museum_registration": "09618",
+      "source_date": "2026-10-23",
+      "source_type": "institutional_email_and_attached_catalogue_record",
+      "metadata": {
+        "site": "Moleta del Remei",
+        "provenance": "Alcanar",
+        "excavation_year": "1988",
+        "stratigraphic_unit": "E II, N 3, H-52",
+        "material": "plom",
+        "dimensions_cm": "6.1 x 2.6",
+        "dating": "ferro-ibèric",
+        "conservation": "bo",
+        "accession_type": "dipòsit",
+        "accession_date": "1993-03-08",
+        "depositor": "Departament de Cultura de la Generalitat de Catalunya"
+      },
+      "imaging": {
+        "good_quality_photos_available": true,
+        "macro_rti_available": false,
+        "reproduction_request_required": true,
+        "public_reuse_requires_separate_authorization": true
+      },
+      "scientific_effect": "DOCUMENTARY_ENRICHMENT_ONLY",
+      "automatic_core_promotion": false
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "object": "Lámina greco-ibérica de la Illeta dels Banyets",
+      "institution": "MARQ Museo Arqueológico de Alicante / Diputación de Alicante",
+      "institutional_contact": "Enric Verdú Parra",
+      "source_date": "2026-10-23",
+      "request_scope": "Fotografía original en alta resolución del detalle del signo dudoso bo/ko",
+      "request_status": "PENDING_RESEARCHER_SIGNATURE",
+      "workflow": [
+        "IberOS request received by MARQ",
+        "Museum rules acceptance document sent to researcher for digital signature",
+        "Director signature follows researcher signature",
+        "First photographic batch planned by Enric Verdú",
+        "Delivery expected after authorization, possibly via WeTransfer"
+      ],
+      "pending_action": "Researcher digital signature from desktop environment",
+      "scientific_effect": "AWAITING_NEW_PRIMARY_VISUAL_EVIDENCE",
+      "automatic_reading_change": false
+    }
+  ]
+}

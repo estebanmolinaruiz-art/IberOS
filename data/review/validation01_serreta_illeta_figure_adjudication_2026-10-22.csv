@@ -1,0 +1,9 @@
+object_id,face,zone,source_figure,pdf_page_index,editorial_candidates,observed_evidence,unresolved_decision,assessment_kind,certainty
+IBR-PLM-0012,A,name_6th_sign,8,13,ko|bo,Photographs of folds and strokes reproduced in fig8,Diagonal marks may be surface striations rather than sign components,EDITORIAL_ALTERNATIVES_REVIEWED,UNRESOLVED
+IBR-PLM-0012,A,metrological_angles,9,20,oś<(<),Figure 9 includes detail of angular sign or signs; repetition qualified as possible,Number and numerical meaning of angle signs not securely established,EDITORIAL_ALTERNATIVES_REVIEWED,UNRESOLVED
+IBR-PLM-0012,A,lower_text,10,21,++(+)+(+ )e|unreadable,Photographic detail fig10 discussed by publication,Greek vs Greco-Iberian affiliation and several signs uncertain,EDITORIAL_ALTERNATIVES_REVIEWED,UNRESOLVED
+IBR-PLM-0012,B,name_beginning,11,22,ka+belauŕ,Figure 11 photo includes damaged beginning and name components,Value of plus-marked sign not independently adjudicated,EDITORIAL_ALTERNATIVES_REVIEWED,UNRESOLVED
+IBR-PLM-0012,B,short_second_line,12,23,nai,Text and illustrations discussed in source,Reconstruction plausible but not blind independent recognition,EDITORIAL_ALTERNATIVES_REVIEWED,UNRESOLVED
+IBR-PLM-0009,A,seven_lines,1,10,editorial_reading,Two-sided figures in Ngomo 2021 cited,Source screenshot service unavailable for trustworthy sign-by-sign alignment,FIGURE_LOCATED_NOT_VISUALLY_REVALIDATED,NOT_EVALUATED
+IBR-PLM-0009,A,transverse_two_lines,1,10,editorial_reading,Article documents second text orientation,Unable to adjudicate individual signs from current viewer,FIGURE_LOCATED_NOT_VISUALLY_REVALIDATED,NOT_EVALUATED
+IBR-PLM-0009,B,five_lines,2,10,editorial_reading,Second face photograph in Ngomo 2021 cited,Unable to adjudicate individual signs from current viewer,FIGURE_LOCATED_NOT_VISUALLY_REVALIDATED,NOT_EVALUATED

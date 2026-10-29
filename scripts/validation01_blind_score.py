@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """VALIDATION-01: blind, leak-safe scoring; not a test of translation truth."""
-import argparse,csv,json,hashlib,random
+import argparse,csv,json,hashlib,random,re
+from datetime import datetime
 from collections import Counter
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from validation01_identity import identity, identities, declared_conflict
 
 FIELDS=("object_id","physical_group","split","source_url","reading_reviewed","prediction_locked_at",
         "gold_reviewed_at","gold_label","iberos_prediction","baseline_prediction")
@@ -15,8 +19,12 @@ def audit(rows,minimum=20):
         if split not in {"TRAIN","VAL","HOLD"}:problems.append([i,"INVALID_SPLIT"]);continue
         id=r.get("physical_group","").strip()
         if not id:problems.append([i,"MISSING_PHYSICAL_ID"]);continue
-        if id in seen and seen[id]!=split:problems.append([i,"LEAKAGE_BETWEEN_SPLITS"])
-        seen[id]=split
+        if declared_conflict(r): problems.append([i,"CONFLICTING_KNOWN_ALIASES"])
+        keys=identities(r)
+        for key in keys:
+            if key in seen and seen[key]!=split:problems.append([i,"LEAKAGE_BETWEEN_SPLITS"])
+            if key in seen and seen[key]==split:problems.append([i,"DUPLICATE_PHYSICAL_GROUP_IN_SPLIT"])
+            seen[key]=split
         if split!="HOLD":continue
         hold.append(r)
         for k in FIELDS:
@@ -24,12 +32,18 @@ def audit(rows,minimum=20):
         for k in ("gold_label","iberos_prediction","baseline_prediction"):
             if r.get(k,"") not in LABELS:problems.append([i,"INVALID_"+k])
         if r.get("reading_reviewed")!="YES":problems.append([i,"UNREVIEWED_READING"])
-        if r.get("prediction_locked_at","")>=r.get("gold_reviewed_at",""):problems.append([i,"NOT_PROSPECTIVELY_LOCKED"])
-        if r.get("predictions_frozen_sha256","")=="":
+        try:
+            lock=datetime.fromisoformat(r.get("prediction_locked_at","").replace("Z","+00:00"))
+            gold=datetime.fromisoformat(r.get("gold_reviewed_at","").replace("Z","+00:00"))
+            if lock.tzinfo is None or gold.tzinfo is None or lock>=gold:
+                problems.append([i,"NOT_PROSPECTIVELY_LOCKED"])
+        except (ValueError,TypeError):
+            problems.append([i,"INVALID_LOCK_OR_GOLD_TIMESTAMP"])
+        if not re.fullmatch(r"[0-9a-fA-F]{64}",r.get("predictions_frozen_sha256","")):
             problems.append([i,"NO_PREDICTION_COMMITMENT"])
         if not r.get("gold_independent_reviewer","").strip():
             problems.append([i,"NO_INDEPENDENT_GOLD_REVIEW"])
-    if len({r.get("physical_group","") for r in hold})<minimum:
+    if len({identity(r.get("physical_group","")) for r in hold})<minimum:
         problems.append([0,"INSUFFICIENT_INDEPENDENT_HOLDOUT"])
     if problems:return {"gate":"BLOCKED","hold_rows":len(hold),"problems":problems,"superiority":"NOT_EVALUATED"}
     def metric(key):

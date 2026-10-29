@@ -894,3 +894,62 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .ib-discovery-help .ib-help-route{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
 .ib-discovery-help .ib-help-route a{padding:7px 10px;border:1px solid #bd9f70;border-radius:7px;background:#f5ead3}
 @media(max-width:650px){.ib-discovery-help{margin:9px auto;padding:0 10px}.ib-discovery-help summary{padding:11px 13px}.ib-discovery-help .ib-help-content{padding:0 13px 12px}}
+
+
+/* Portada: guía inicial compacta y ventana lateral de noticias */
+.ib-discovery-help{max-width:1100px;margin:7px auto 8px}
+.ib-discovery-help summary{padding:8px 13px;font-size:.85rem;line-height:1.25}
+.ib-discovery-help .ib-help-content{padding:0 13px 9px;font-size:.81rem;line-height:1.35}
+.ib-discovery-help p{margin:4px 0}
+.ib-discovery-help .ib-help-route{gap:6px;margin-top:6px}
+.ib-discovery-help .ib-help-route a{padding:5px 8px;font-size:.81rem}
+.ib-news-popup{position:fixed;right:10px;top:32%;z-index:30;font:14px/1.45 system-ui,sans-serif;color:#173347}
+.ib-news-popup details{background:#fff8e8;border:1px solid #b99a65;border-radius:12px;box-shadow:0 8px 25px #071b2b4d;max-width:min(350px,calc(100vw - 24px))}
+.ib-news-popup summary{cursor:pointer;list-style:none;padding:11px 15px;background:#09293d;color:#ffe0a5;font-weight:700;border-radius:10px;white-space:nowrap}
+.ib-news-popup summary::-webkit-details-marker{display:none}
+.ib-news-popup summary:focus-visible{outline:3px solid #f0b85d;outline-offset:3px}
+.ib-news-popup details[open] summary{border-radius:10px 10px 0 0}
+.ib-news-popup details[open] summary::after{content:" ×";float:right;margin-left:20px}
+.ib-news-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#e9b967;margin-left:5px}
+.ib-news-panel{padding:15px;max-height:65vh;overflow:auto}
+.ib-news-intro{font-size:.84rem;margin:5px 0 11px}
+.ib-news-panel article{border-top:1px solid #d9c8a6;padding:11px 0}
+.ib-news-panel article b{display:block;font-size:.88rem}
+.ib-news-panel article p{font-size:.82rem;margin:5px 0;color:#385162}
+.ib-news-all{display:block;color:#005773;font-weight:700;margin-top:7px}
+@media(max-width:700px){.ib-news-popup{top:auto;right:10px;bottom:12px}.ib-news-popup details{max-width:min(330px,calc(100vw - 20px))}.ib-news-panel{max-height:50vh}}
+
+
+/* Proyecto destacado integrado en la portada, no pestaña fijada al navegador. */
+.ib-news-popup{display:none!important}
+.ib-project-feature{position:absolute;z-index:7;top:11%;right:2.1%;width:clamp(210px,21.5%,290px);background:linear-gradient(160deg,rgba(7,32,49,.96),rgba(12,54,72,.94));color:#fff4df;border:1px solid #e3b96d;border-radius:13px;box-shadow:0 14px 35px rgba(0,11,20,.48);overflow:hidden;font-family:system-ui,sans-serif}
+.ib-project-feature-head{padding:9px 12px;display:flex;justify-content:space-between;align-items:center;background:#09273b;color:#f5cb79;font-size:clamp(.7rem,1vw,.89rem);font-weight:800}
+.ib-project-feature-head a{color:#ffd78f;text-decoration:none}
+.ib-project-feature-image{display:block;height:clamp(70px,9vw,122px);overflow:hidden}
+.ib-project-feature-image img{display:block;width:100%;height:100%;object-fit:cover}
+.ib-project-feature-copy{padding:10px 12px 12px}
+.ib-project-feature-state{font-size:.68rem;font-weight:800;color:#ffce83}
+.ib-project-feature-copy h2{font:700 clamp(1.12rem,1.7vw,1.5rem)/1.13 Georgia,serif;color:#fff4df;margin:5px 0}
+.ib-project-feature-copy p{font-size:clamp(.7rem,.9vw,.83rem);line-height:1.3;margin:4px 0}
+.ib-project-feature-copy small{display:block;color:#cbd9db;font-size:.66rem;line-height:1.3;margin:6px 0}
+.ib-project-feature-link{display:inline-block;background:#eac078;color:#082438;border-radius:6px;padding:6px 10px;font-size:.74rem;font-weight:800;text-decoration:none;margin-top:5px}
+.ib-project-feature a:focus-visible{outline:3px solid #62cbe8;outline-offset:2px}
+@media(max-width:850px){.ib-project-feature{top:13%;right:1.3%;width:30%}.ib-project-feature-image{height:72px}.ib-project-feature-copy small{display:none}.ib-project-feature-copy{padding:7px}.ib-project-feature-copy p{font-size:.68rem}}
+@media(max-width:600px){.ib-project-feature{position:relative;top:auto;right:auto;width:auto;margin:9px 12px 13px;border-radius:12px;display:grid;grid-template-columns:42% 1fr}.ib-project-feature-head{grid-column:1 / -1}.ib-project-feature-image{height:100%;min-height:135px}.ib-project-feature-copy{padding:9px}.ib-project-feature-copy small{display:block}.ib-project-feature-copy h2{font-size:1.22rem}.ib-project-feature-copy p{font-size:.79rem}}
+
+
+/* La Picola REC–101: mostrar la lámina original completa, incluido su paisaje. */
+.ib-project-feature-image{height:auto;aspect-ratio:16/9;background:#071b2b}
+.ib-project-feature-image img{width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:850px){.ib-project-feature-image{height:auto;aspect-ratio:16/9}}
+@media(max-width:600px){.ib-project-feature-image{height:100%;min-height:135px;aspect-ratio:auto}}
+
+/* Ajuste final solicitado: elevar suavemente Nuevos Proyectos en escritorio. */
+@media(min-width:851px){.ib-project-feature{top:8.5%}}
+
+/* IberOS visual evidence / image SEO */
+.ib-media-block{margin:24px 0 32px;padding:18px;background:#fffaf1;border:1px solid #ccb488;border-radius:12px;box-shadow:0 6px 20px rgba(7,27,43,.08)}
+.ib-media-block figure{margin:0}.ib-media-block img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #d7c29a;background:#f4ead7}
+.ib-media-block figcaption{margin-top:12px;color:#2b4355;font:15px/1.65 system-ui,sans-serif}
+.ib-caption-title{display:block;font:700 1.05rem/1.4 Georgia,serif;color:#143247;margin-bottom:6px}.ib-caption-meta{display:block;font:700 .77rem/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#7c5c31;margin-bottom:8px}.ib-caption-note{display:block;margin-top:10px;padding:10px 12px;border-left:4px solid #b58a4c;background:#f5ead6;color:#394e5d;font-size:.95rem}
+.ib-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:24px 0}.ib-media-card{background:#fffaf1;border:1px solid #ccb488;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(7,27,43,.08)}.ib-media-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e8dcc7}.ib-media-card-body{padding:14px}.ib-media-card h2,.ib-media-card h3{margin:.2em 0 .45em;color:#143247;font:700 1.15rem/1.3 Georgia,serif}.ib-media-card p{margin:.35em 0;color:#2b4355;line-height:1.55}.ib-media-card .ib-note{font-size:.9rem;color:#5b6570}.ib-media-card a{display:inline-block;margin-top:10px;font-weight:700;color:#17374c}

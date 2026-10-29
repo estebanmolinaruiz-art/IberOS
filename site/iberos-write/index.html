@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IberOS-Write: reglas públicas de reconstrucción, fallback fonográfico y trazabilidad de salidas visuales.">
+<link rel="canonical" href="https://estebanmolinaruiz-art.github.io/IberOS/iberos-write/">
+<meta name="robots" content="index,follow">
+<title>IberOS-Write · Reconstrucción controlada</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#071b2b;color:#fff5dc;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.6}
+main{max-width:1080px;margin:auto;padding:34px 20px 60px}a{color:#ffd58d}.hero{padding:36px 0 18px;border-bottom:1px solid #8a6d45}
+.eyebrow{color:#e7b96e;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:800}h1{font:700 clamp(2.2rem,6vw,4.5rem)/1.02 Georgia,serif;margin:.2em 0}
+.lead{max-width:850px;font-size:1.08rem;color:#efe0bf}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:24px 0}
+.card{background:#123247;border:1px solid #a9814f;border-radius:12px;padding:18px}.card h2,.card h3{margin-top:0;font-family:Georgia,serif}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;margin:2px 4px 2px 0;font-size:.78rem;font-weight:800;border:1px solid #b99b70}
+.valid{color:#f6f0df}.prob{color:#f4d08e}.infer{color:#d6b2ff}.fallback{color:#ff8d86}.gap{color:#b8c3cb}
+.rule{padding:15px 17px;border-left:4px solid #e0b468;background:#0d2a3e;margin:12px 0}.pipeline{font-family:ui-monospace,monospace;background:#041522;padding:15px;border-radius:9px;overflow:auto}
+table{width:100%;border-collapse:collapse;background:#0d2a3e}th,td{border:1px solid #365368;padding:9px;text-align:left;vertical-align:top}th{background:#143a52}
+.warn{background:#3a2714;border:1px solid #8e693b;border-radius:10px;padding:14px}.back{display:inline-block;margin-bottom:18px}
+small{color:#cfbea1}
+</style>
+</head>
+<body><main>
+<a class="back" href="../">← Volver a IberOS+</a>
+<section class="hero">
+<div class="eyebrow">Módulo experimental · salida reversible</div>
+<h1>IberOS-Write</h1>
+<p class="lead">Motor inverso de reconstrucción controlada. Convierte una intención en una propuesta escrita solo cuando existe soporte suficiente; cuando no lo hay, debe abstenerse o usar un fallback fonográfico claramente marcado.</p>
+</section>
+
+<section class="grid">
+<article class="card"><h2>Regla principal</h2><p><strong>No inventar léxico ni funciones.</strong> Una forma visual convincente no sustituye evidencia lingüística.</p></article>
+<article class="card"><h2>Fallback permitido</h2><p>Si no existe reconstrucción ibérica defendible, Write puede representar el castellano <strong>fonográficamente con simbología ibérica</strong>, siempre identificado como fallback y nunca como traducción.</p></article>
+<article class="card"><h2>Trazabilidad obligatoria</h2><p>Toda imagen debe poder volver a su texto fuente y a la secuencia exacta que la generó.</p></article>
+</section>
+
+<h2>Capas de salida</h2>
+<p><span class="badge valid">VALIDADO</span><span class="badge prob">PROBABLE</span><span class="badge infer">INFER</span><span class="badge fallback">FALLBACK</span><span class="badge gap">HUECO / ABSTENCIÓN</span></p>
+
+<table>
+<tr><th>Capa</th><th>Uso</th><th>Regla pública</th></tr>
+<tr><td>Validado</td><td>Lectura, segmentación o función respaldada por IberOS</td><td>Puede mostrarse sin convertirla en traducción literal si esa literalidad no está demostrada.</td></tr>
+<tr><td>Probable</td><td>Reconstrucción compatible con evidencia fuerte</td><td>Debe mantener visible su carácter no definitivo.</td></tr>
+<tr><td>INFER</td><td>Deducción contextual reversible</td><td>Nunca puede convertirse en evidencia para validar otra inferencia.</td></tr>
+<tr><td>Fallback</td><td>Castellano representado fonográficamente</td><td>Debe distinguirse visualmente y declararse como no ibérico semántico.</td></tr>
+<tr><td>Hueco</td><td>Falta de cobertura</td><td>Write se abstiene antes que inventar.</td></tr>
+</table>
+
+<h2>Pipeline obligatorio</h2>
+<div class="pipeline">texto original → marco semántico → evidencia disponible → reconstrucción / abstención / fallback → secuencia exacta → render → WRITE_ID + registro trazable</div>
+
+<div class="rule"><strong>Regla de render:</strong> nunca generar primero una imagen y reconstruir después qué debía decir. La cadena fuente y la secuencia escrita se congelan antes del render.</div>
+<div class="rule"><strong>Regla de reversibilidad:</strong> cada salida visual científica debe incluir <code>WRITE_ID</code>, texto original, versión del motor, secuencia exacta, estado de cada segmento y hash de integridad.</div>
+<div class="rule"><strong>Regla verbal:</strong> Write no seleccionará DE frente a DI, ni resolverá otros contrastes abiertos, sin evidencia independiente suficiente.</div>
+
+<h2>Métricas visibles</h2>
+<div class="grid">
+<article class="card"><h3>SEMANTIC-COVERAGE</h3><p>Qué parte del contenido solicitado está realmente cubierta por elementos lingüísticos defendibles.</p></article>
+<article class="card"><h3>FALLBACK-RATE</h3><p>Qué proporción depende de transliteración/préstamo moderno en lugar de reconstrucción ibérica.</p></article>
+</div>
+
+<h2>Imágenes y pruebas históricas</h2>
+<div class="warn">Una imagen sintética con signos de apariencia ibérica que no conserve su cadena fuente se clasifica como <strong>visual ilustrativo no verificable</strong>. No entra en PALEO, corpus, benchmark ni validación.</div>
+
+<h2>Estado</h2>
+<p>BLIND Reconstruction Test: <strong>activo</strong>. IberOS-Write consume el núcleo IberOS de forma unidireccional y no puede modificarlo automáticamente.</p>
+<p><a href="../laboratorio/">Ir al Laboratorio →</a></p>
+<small>Proyecto IberOS · Esteban Molina Ruiz · Reglas públicas de IberOS-Write actualizadas 23/10/2026.</small>
+</main></body></html>

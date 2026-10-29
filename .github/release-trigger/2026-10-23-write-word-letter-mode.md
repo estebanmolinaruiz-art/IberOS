@@ -1,0 +1,1 @@
+Write includes separate tokenization of romanized Iberian sign-values by letters and words, distinct from speculative semantic reconstruction. Glyph rendering pending documented signary verification.

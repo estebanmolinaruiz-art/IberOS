@@ -496,5 +496,56 @@
     "photo_independent_sign_mapping": false,
     "photo_warning": "Published halftone has heavy damage and opposite-face show-through described by Fletcher; no clean photo-to-drawing 1:1 match achieved",
     "next_gate": "Compare independent signary variants and sign-level drawing/photo coordinates; do not claim TE function."
+  },
+  "comparison_index_reconciliation_2026_10_22": {
+    "project": "IberOS — Esteban Molina Ruiz",
+    "full_editorial_sequence": [
+      "BA",
+      "S",
+      "BI",
+      "TE",
+      "R",
+      "O",
+      "KE",
+      "TI",
+      "N",
+      "E"
+    ],
+    "comparison_substring": [
+      "BI",
+      "TE",
+      "R",
+      "O",
+      "KE",
+      "TI",
+      "N",
+      "E"
+    ],
+    "comparison_index_to_editorial_sequence_index": {
+      "1": 3,
+      "2": 4,
+      "3": 5,
+      "4": 6,
+      "5": 7,
+      "6": 8,
+      "7": 9,
+      "8": 10
+    },
+    "prefix_without_comparison_boxes": [
+      "BA",
+      "S"
+    ],
+    "index_basis": "EDITORIAL_TOKEN_ORDER_ONLY_NOT_VISUAL_SIGN_IDENTIFICATION",
+    "legacy_coordinate_warning": "The 17-sign CSV boxes are preserved for traceability only. Their raster provenance and alignment to the ten-unit candidate block remain unverified. Do not transplant coordinates or infer bounds from the index offset.",
+    "fletcher_bas_boundary": "BAS may belong to the preceding word; sequence numbering does not decide segmentation.",
+    "individual_sign_identifications_verified": false,
+    "photo_confirmed": false,
+    "eligible_for_core_execution": false,
+    "authority_unchanged": [
+      "C594",
+      "C474",
+      "C539",
+      "C541"
+    ]
   }
 }

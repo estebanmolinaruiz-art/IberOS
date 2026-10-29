@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Vaso de los Letreros de Llíria · IberOS</title><desc id="d">Ficha visual de investigación IberOS. No es fotografía del objeto ni traducción demostrada.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071f31"/><stop offset="1" stop-color="#123f5b"/></linearGradient>
+ <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff9ee"/><stop offset="1" stop-color="#f0e1c5"/></linearGradient>
+ <pattern id="grain" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="6" r="1" fill="#8c6d43" opacity=".08"/><circle cx="16" cy="17" r=".8" fill="#8c6d43" opacity=".06"/></pattern>
+ <style>
+ .title{font:700 54px Georgia,serif;fill:#fff9ee}.ref{font:700 23px system-ui,sans-serif;fill:#f2cf86;letter-spacing:.03em}
+ .k{font:700 18px system-ui,sans-serif;fill:#9a6c22;text-transform:uppercase;letter-spacing:.08em}.v{font:700 28px Georgia,serif;fill:#13283a}
+ .body{font:24px system-ui,sans-serif;fill:#2b4355}.brand{font:700 45px Georgia,serif;fill:#071f31}.small{font:18px system-ui,sans-serif;fill:#62717d}
+ .mark{font:700 58px ui-monospace,monospace;fill:#e0b35f}.tag{font:700 20px system-ui,sans-serif;fill:#fff9ee;letter-spacing:.04em}
+ </style>
+</defs>
+<rect width="1200" height="800" fill="url(#paper)"/><rect width="1200" height="255" fill="url(#bg)"/><rect width="1200" height="800" fill="url(#grain)"/>
+<text x="70" y="88" class="ref">IBEROS · FICHA VISUAL · MLH F.13.3 · Hesperia V.06.008</text>
+<text x="70" y="160" class="title">Vaso de los Letreros de Llíria</text>
+<text x="70" y="222" class="mark">V.06.008</text>
+<rect x="70" y="292" width="1060" height="2" fill="#c9a05f"/>
+<text x="70" y="344" class="k">PROCEDENCIA</text><text x="70" y="384" class="v">Tossal de Sant Miquel · Llíria</text>
+<text x="635" y="344" class="k">SOPORTE / ESCRITURA</text><text x="635" y="384" class="v">Cerámica pintada · ibérica nororiental</text>
+<text x="70" y="452" class="k">CRONOLOGÍA</text><text x="70" y="492" class="v">ca. 210/200–180 a.C.</text>
+<text x="635" y="452" class="k">CLAVES DE INVESTIGACIÓN</text><rect x="635" y="466" rx="20" width="495" height="48" fill="#173e53"/><text x="660" y="498" class="tag">EGIAR/EKIAR · ICONOGRAFÍA</text>
+<text x="70" y="570" class="k">QUÉ DOCUMENTA IBEROS</text><text x="70" y="615" class="body">Objeto multimodal con varios letreros, didascalias y una línea</text><text x="70" y="649" class="body">extensa. Lectura dual discutida.</text>
+<rect x="0" y="716" width="1200" height="84" fill="#e8d7b7"/><text x="70" y="770" class="brand">IberOS</text>
+<text x="265" y="751" class="small">RESUMEN VISUAL DOCUMENTAL · NO FOTOGRAFÍA DEL OBJETO</text>
+<text x="265" y="780" class="small">Transliteración e hipótesis ≠ traducción demostrada</text>
+</svg>

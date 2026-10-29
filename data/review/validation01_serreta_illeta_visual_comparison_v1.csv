@@ -1,0 +1,9 @@
+object_id,face,text_block,line,source_pdf_page,figure,editorial_reading_or_scope,graphic_evidence,open_uncertainty,next_verification,status
+IBR-PLM-0009,A,A-I,1-7,5,1,"iŕike ... gaibigait",Museum photograph reproduced,Editorial multi-line reading sourced to Velaza 2011; image-to-token align incomplete,Compare each published sign against original ortho-photo,EDITORIAL_ONLY
+IBR-PLM-0009,A,A-II,1-2,5,1,"sakaŕiskeŕ / arnai",Museum photograph reproduced,Transverse text; physical orientation and segmentation require verification,Independent line-by-line paleography,EDITORIAL_ONLY
+IBR-PLM-0009,B,B,1-5,5,2,"iunstir ... sebagediŕan",Museum photograph reproduced,Five lines no independently checked crops,Check full line against photograph and drawing,EDITORIAL_ONLY
+IBR-PLM-0012,A,A-I,1,11,5,"i l d u r [b/k/ś?] o n",Photographs before and after partial restoration,6th grapheme uncertain due to fold; b or k suggested by authors,Inspect detail fig8 and score alternatives,EDITORIAL_WITH_EXPLICIT_UNCERTAINTY
+IBR-PLM-0012,A,A-I,2,11,5,"o ś < (<)",Photographs after partial restoration,Second angular sign hypothetical due to crack,Inspect detail fig9 against transcription,EDITORIAL_WITH_EXPLICIT_UNCERTAINTY
+IBR-PLM-0012,A,A-II,4,12,5,"4-6 signs unresolved",Photographs and drawing,Possible l/d and 2 bars/e or counting units; potential Greek m alternative,Inspect detail fig10 and avoid forced Iberian reading,UNRESOLVED_EDITORIAL
+IBR-PLM-0012,B,B-I,1,12,5,"ka+belauŕ",Photograph and drawing,First grapheme(s) worn / alternative b discussed,Inspect fig11 of source and author description,EDITORIAL_WITH_EXPLICIT_UNCERTAINTY
+IBR-PLM-0012,B,B-I,2,12,5,"nai",Photograph and drawing,Reconstruction based on remaining traces requires verifying fig12,Inspect photographic detail independent of expected reading,EDITORIAL_ONLY

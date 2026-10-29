@@ -1,0 +1,1 @@
+# IberOS-Write stone glyph test\n\nChecks that the public stone renderer loads the v05 engine, uses Iberian glyph images for fallback, and never reverts to the Latin source string.\n

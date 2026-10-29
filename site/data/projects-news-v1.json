@@ -16,7 +16,7 @@
       "location": "Santa Pola, Alicante",
       "status": "IN_PROGRESS",
       "public_news_approved": false,
-      "editorial_note": "Reconstrucción visual 3D de la fase ibérica (siglos V–IV a. C.) en desarrollo. Se ensayan hipótesis espaciales sobre viviendas, muralla, torre y paisaje, diferenciando evidencias arqueológicas, restituciones comparativas y elementos ilustrativos. La imagen REC–101 se encuentra preparada para difusión una vez confirmado crédito y derechos de publicación.",
+      "editorial_note": "IberOS · PICOLA-3D: avance documental GEO-10. Planta contrastada con Moret–Badie y YARQ_2, orientación provisional, maqueta editable e ilustración litoral interpretativa. Informe e imágenes con fuentes y límites científicos; reconstrucción no definitiva.",
       "source_links": [
         {
           "title": "Badie y Moret (1997): metrología y organización espacial de La Picola",
@@ -26,6 +26,14 @@
         {
           "title": "Declaración BIC zona arqueológica de La Picola (BOE, 2022)",
           "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-4134"
+        },
+        {
+          "title": "Moret y Badie (1998), planta y metrología",
+          "url": "https://doi.org/10.3989/aespa.1998.v71.274"
+        },
+        {
+          "title": "Plan Director del BIC La Picola (2023), capítulo 12",
+          "url": "https://museodelmarsantapola.com/wp-content/uploads/2023/11/PDLAPICOLA-CAP12.pdf"
         }
       ],
       "media": [],
@@ -38,6 +46,16 @@
         "image_is_reconstruction": true,
         "archaeological_accuracy_claim": "NOT_DEFINITIVE",
         "scientific_caveat": "El emplazamiento en promontorio y la costa mostrados en la imagen NO corresponden a la topografía documentada de La Picola, situada en terreno bajo y llano. No utilizar la lámina para geolocalización o reconstrucción paisajística exacta."
+      },
+      "detail_url": "la-picola/",
+      "updated_at": "2026-10-22",
+      "current_report": {
+        "path": "la-picola/",
+        "status": "PROVISIONAL_DOCUMENTARY_RECONSTRUCTION",
+        "geographic_azimuth_final_accepted": false,
+        "external_field_controls": 0,
+        "image_status": "AI_INTERPRETIVE_SCENARIO",
+        "image": "la-picola/imagenes/picola-vista-sur.jpg"
       }
     }
   ],

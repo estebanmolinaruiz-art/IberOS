@@ -1,0 +1,301 @@
+{
+  "schema": "IberOS-Subentries/1.0",
+  "date": "2026-10-23",
+  "status": "PUBLISHED_PROVISIONAL_WITH_SCIENTIFIC_GATES",
+  "invariants": {
+    "new_physical_objects": 0,
+    "independent_holdout_groups_added": 0,
+    "automatic_semantic_promotion": false,
+    "note": "Las subentradas son unidades documentales de trabajo; no nuevos objetos físicos ni validaciones independientes."
+  },
+  "objects": [
+    {
+      "object_id": "IBR-CER-0002",
+      "object_name": "Vaso de los Letreros de Llíria",
+      "split_type": "external_index_group",
+      "status": "INDEX_GROUP_22_ENTRIES_NOT_PHYSICALLY_COLLATED",
+      "source": "https://cathalaunia.org/Iberika/I01994",
+      "reference": "F.13.3 / V.06.008",
+      "units": [
+        {
+          "subentry_id": "IBR-CER-0002-S01",
+          "external_id": "I01994",
+          "label": "entrada indexada 1",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S02",
+          "external_id": "I01995",
+          "label": "entrada indexada 2",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S03",
+          "external_id": "I01996",
+          "label": "entrada indexada 3",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S04",
+          "external_id": "I01997",
+          "label": "entrada indexada 4",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S05",
+          "external_id": "I01998",
+          "label": "entrada indexada 5",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S06",
+          "external_id": "I01999",
+          "label": "entrada indexada 6",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S07",
+          "external_id": "I02000",
+          "label": "entrada indexada 7",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S08",
+          "external_id": "I02001",
+          "label": "entrada indexada 8",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S09",
+          "external_id": "I02002",
+          "label": "entrada indexada 9",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S10",
+          "external_id": "I02003",
+          "label": "entrada indexada 10",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S11",
+          "external_id": "I02004",
+          "label": "entrada indexada 11",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S12",
+          "external_id": "I02005",
+          "label": "entrada indexada 12",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S13",
+          "external_id": "I02006",
+          "label": "entrada indexada 13",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S14",
+          "external_id": "I02007",
+          "label": "entrada indexada 14",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S15",
+          "external_id": "I02008",
+          "label": "entrada indexada 15",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S16",
+          "external_id": "I02009",
+          "label": "entrada indexada 16",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S17",
+          "external_id": "I02010",
+          "label": "entrada indexada 17",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S18",
+          "external_id": "I02011",
+          "label": "entrada indexada 18",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S19",
+          "external_id": "I02012",
+          "label": "entrada indexada 19",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S20",
+          "external_id": "I02013",
+          "label": "entrada indexada 20",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S21",
+          "external_id": "I02014",
+          "label": "entrada indexada 21",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-CER-0002-S22",
+          "external_id": "I02015",
+          "label": "entrada indexada 22",
+          "mapping_status": "INDEX_GROUP_MEMBER_NOT_SIGN_BY_SIGN_COLLATED"
+        }
+      ],
+      "note": "El índice externo agrupa 22 entradas bajo F.13.3. No se infiere que sean 22 objetos físicos ni 22 testimonios independientes."
+    },
+    {
+      "object_id": "IBR-CER-0004",
+      "object_name": "Inscripción de La Joncosa",
+      "split_type": "partial_external_index_group",
+      "status": "GROUP_4_ENTRIES_IDENTIFIED_INDEX_LEVEL",
+      "source": "https://cathalaunia.org/Iberika/I02560",
+      "reference": "B.11.01 / Veleia 23,129",
+      "units": [
+        {
+          "subentry_id": "IBR-CER-0004-S01",
+          "external_id": "I02560",
+          "label": "base",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-CER-0004-S02",
+          "external_id": "I02561",
+          "label": "segmento 1",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-CER-0004-S03",
+          "external_id": "I02562",
+          "label": "segmento 2",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-CER-0004-S04",
+          "external_id": "I03111",
+          "label": "segmento 3",
+          "mapping_status": "INDEX_GROUP_MEMBER_CONFIRMED"
+        }
+      ],
+      "note": "Las cuatro entradas del grupo están identificadas en el índice externo: I02560, I02561, I02562 e I03111. Falta cotejo físico/signo a signo."
+    },
+    {
+      "object_id": "IBR-OBJ-0001",
+      "object_name": "Tortera inscrita de Can Rodon",
+      "split_type": "two_indexed_entries_one_support",
+      "status": "FULL_INDEX_GROUP_LINKED_NO_SIGN_COLLATION",
+      "source": "https://cathalaunia.org/Iberika/I03095",
+      "reference": "B.44.39; CE10,P12,2 Cabrera a/b",
+      "units": [
+        {
+          "subentry_id": "IBR-OBJ-0001-A",
+          "external_id": "I03095",
+          "label": "Cabrera a",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-OBJ-0001-B",
+          "external_id": "I03096",
+          "label": "Cabrera b",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        }
+      ],
+      "note": "Dos entradas enlazadas para una sola tortera física. No se afirma independencia de los dos textos."
+    },
+    {
+      "object_id": "IBR-PLM-0008",
+      "object_name": "Signarios del Tos Pelat",
+      "split_type": "partial_signary_group",
+      "status": "V21_01_AND_V21_02_INDEX_LINKS_IDENTIFIED",
+      "source": "https://cathalaunia.org/Iberika/I03049",
+      "reference": "V.21.01-02",
+      "units": [
+        {
+          "subentry_id": "IBR-PLM-0008-V21.01-A",
+          "external_id": "I03049",
+          "label": "V.21.01 / A2b1",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0008-V21.01-B",
+          "external_id": "I03050",
+          "label": "V.21.01 / A2b2",
+          "mapping_status": "INDEX_LINK_VERIFIED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0008-V21.02",
+          "external_id": "I03052",
+          "label": "V.21.02 / B2",
+          "mapping_status": "INDEX_LINK_IDENTIFIED"
+        }
+      ],
+      "note": "V.21.01 mantiene I03049/I03050 y V.21.02 queda identificado como I03052 a nivel de índice externo; sigue pendiente el cotejo paleográfico visual."
+    },
+    {
+      "object_id": "IBR-PLM-0009",
+      "object_name": "Plomo I de La Serreta",
+      "split_type": "faces_and_overwritten_text",
+      "status": "PROVISIONAL_UNITS_PRIMARY_COLLATION_PENDING",
+      "source": "https://www.alcoi.org/es/areas/cultura/museo/publicaciones/recerques/recerques_0001.html",
+      "reference": "MLH G.1.1 · Hesperia A.04.01a-b",
+      "units": [
+        {
+          "subentry_id": "IBR-PLM-0009-A1",
+          "external_id": "A.04.01a?",
+          "label": "cara A · texto principal · 7 líneas",
+          "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0009-A2",
+          "external_id": "A.04.01a?",
+          "label": "cara A · texto superpuesto · 2 líneas",
+          "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0009-B",
+          "external_id": "A.04.01b?",
+          "label": "cara B · 5 líneas",
+          "mapping_status": "CANDIDATE_NOT_DIRECTLY_COLLATED"
+        }
+      ],
+      "note": "A1/A2/B son unidades físicas de trabajo. La correspondencia exacta con A.04.01a/b no se cierra hasta cotejo primario."
+    },
+    {
+      "object_id": "IBR-PLM-0012",
+      "object_name": "Lámina greco-ibérica de la Illeta dels Banyets",
+      "split_type": "three_texts_one_support",
+      "status": "PRIMARY_EDITION_THREE_TEXTS_DOCUMENTED",
+      "source": "https://doi.org/10.36707/palaeohispanica.v24i1.629",
+      "reference": "Illeta dels Banyets 2018",
+      "units": [
+        {
+          "subentry_id": "IBR-PLM-0012-INT",
+          "external_id": null,
+          "label": "interior · primeras dos líneas",
+          "mapping_status": "PRIMARY_EDITION_UNIT_DOCUMENTED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0012-EXT-U",
+          "external_id": null,
+          "label": "exterior · primeras dos líneas",
+          "mapping_status": "PRIMARY_EDITION_UNIT_DOCUMENTED"
+        },
+        {
+          "subentry_id": "IBR-PLM-0012-EXT-L",
+          "external_id": null,
+          "label": "exterior · zona inferior derecha",
+          "mapping_status": "PRIMARY_EDITION_UNIT_DOCUMENTED_UNCERTAIN"
+        }
+      ],
+      "note": "La edición primaria de 2024 documenta tres textos/reutilizaciones sobre un único soporte; falta cotejo signo a signo independiente."
+    }
+  ]
+}

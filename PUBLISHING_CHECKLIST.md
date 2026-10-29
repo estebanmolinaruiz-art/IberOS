@@ -1,6 +1,6 @@
 # IberOS — estado de publicación y lista de verificación
 
-Actualizado: 2026-10-15
+Actualizado: 2026-10-29
 
 ## GitHub
 - [x] Repositorio público `estebanmolinaruiz-art/IberOS`
@@ -49,7 +49,8 @@ Actualizado: 2026-10-15
 - [x] Corpus y módulos web integrados en el repositorio
 - [x] Portada pública comprobada desde una sesión externa
 - [x] Navegación pública comprobada: corpus, atlas, fichas, laboratorio, 3D, recursos, casos, comunidad, contactar y acerca
-- [x] Sitio web público estable marcado como cumplido para EpiHub
+- [x] Sitio web público disponible y estructurado
+- [ ] EpiHub mantiene pendiente una futura reevaluación hasta que IberOS se integre en un marco académico o institucional de investigación más consolidado
 
 ## Documentación técnica
 - [x] Mapa canónico de arquitectura publicado en `docs/ARCHITECTURE.md`
@@ -63,6 +64,7 @@ Actualizado: 2026-10-15
 - [x] Separación EVIDENCE / INFERENCE / HYPOTHESIS / ESTIMATED TRANSLATION
 - [x] Protocolo de benchmark reproducible publicado en `docs/BENCHMARK.md`
 - [x] Snapshot machine-readable, métricas, gates abiertos y casos negativos publicados; GitHub Actions run `38158963423` verificado con éxito
+- [ ] Marco académico/institucional externo consolidado
 
 ## Consistencia de versión
 

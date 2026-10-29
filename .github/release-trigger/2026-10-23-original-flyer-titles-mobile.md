@@ -1,0 +1,1 @@
+Restore the original flyer title and card hotspots on iPhone; remove extra mobile navigation grid and drawer. Keep invisible search overlay disabled on mobile.
