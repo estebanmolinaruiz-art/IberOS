@@ -49,11 +49,15 @@ try {
   test('Core query controls are usable', async () => {
     const page=await visit('webengine/');
     try {
+      await page.waitForFunction(() => { const out=document.querySelector('#out'); return out && out.textContent.trim().length>0; }, {timeout:12000});
+      const initial=await page.locator('#out').innerText();
+      assert.ok(!initial.startsWith('Error:'), 'Core initialization must succeed');
       await page.locator('#q').fill('SALIR');
       await page.locator('#go').click();
-      await page.waitForTimeout(600);
-      const result=(await page.locator('#out').innerText()).trim();
-      assert.ok(result.length > 0, 'Core must show non-empty result after query');
+      await page.waitForFunction(() => { try { const data=JSON.parse(document.querySelector('#out').textContent); return data && typeof data.count==='number'; } catch { return false; } }, {timeout:12000});
+      const result=JSON.parse(await page.locator('#out').innerText());
+      assert.equal(typeof result.count,'number');
+      assert.ok(result.count>0, 'Known CORE query SALIR must return matches');
     } finally {await page.close();}
   });
 } finally {
