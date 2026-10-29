@@ -74,6 +74,21 @@ try {
       throw e;
     } finally {await page.close();}
   });
+  test('3D external resources and filters respond', async () => {
+    const page=await visit('modelos3d/');
+    try {
+      await page.waitForFunction(()=>document.querySelector('#resource3d-count')?.textContent.trim().length>0,null,{timeout:12000});
+      const total=(await page.locator('#resource3d-count').textContent()).trim();
+      await page.locator('#inscribed3d').click();
+      assert.equal(await page.locator('#inscribed3d').getAttribute('aria-pressed'),'true');
+      await page.locator('#heritage3d').click();
+      assert.equal(await page.locator('#heritage3d').getAttribute('aria-pressed'),'true');
+      await page.locator('#all3d').click();
+      assert.equal(await page.locator('#all3d').getAttribute('aria-pressed'),'true');
+      assert.ok(total.length>0);
+      assert.ok(await page.locator('#external3d a[href^="https://"]').count()>0,'3D resource links must point to original source');
+    } finally {await page.close();}
+  });
   test('Write stone preview is visible, labeled and exportable', async () => {
     const page=await visit('write/');
     try {
