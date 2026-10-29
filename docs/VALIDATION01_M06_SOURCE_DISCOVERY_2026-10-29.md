@@ -20,3 +20,11 @@ Moncunill y Velaza, «Iberian», *Palaeohispanica* 20 (2020): https://ifc.dpz.es
 4. Remitir el paquete M07 ciego por canal separado al revisor independiente; no divulgar clave privada.
 
 **Estado conservado:** M06=PENDING, M07=PENDING, 0/17 verificados independientemente; VALIDATION-01=NOT_EVALUATED, HOLD=0. Nuevas fuentes localizadas no significan nuevas lecturas verificadas.
+
+## Comprobación posterior de la tabla (29-10-2026)
+
+El PDF de Olcoz Yanguas y Medrano Marqués (2011) se pudo abrir como documento de 20 páginas y contrastar su texto. **Figura 1:** tabla de variantes de Untermann, página impresa **145**, índice PDF **4** (quinta página del archivo). Su anuncio y explicación aparecen en la página impresa 144 (índice PDF 3). El texto indica 28 signos ibéricos nororientales y discute macrovariantes, microvariantes, reflexiones y diferencias angulosas/redondeadas; para `ke` señala expresamente excepciones a la simplificación de estilos. No deben igualarse sin más un signo curvo de Orleyl V y uno angular de VII-B. 
+
+**Restricción de inspección:** el visor de captura gráfica devolvió error de caché y la descarga directa local no estuvo disponible. No se ha cotejado píxel a píxel la figura 1; las variantes numeradas exactas de los 17 recortes siguen `UNASSIGNED`.
+
+**Criterio de siguiente inspección:** extraer y ampliar la figura 1 de página PDF 5/20, localizar las filas bi, te/de y ke con numeración publicada, y enfrentar ambas fuentes en una lámina de recortes con procedencia. Registrar cada atribución tentativa con trazos contables, alternativa y calidad del soporte. La ficha institucional del Museu de Prehistòria siguió sin abrirse por HTTP 502: no constituye adquisición de nuevas fotografías.
