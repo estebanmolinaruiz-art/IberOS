@@ -89,24 +89,12 @@ try {
       assert.ok(await page.locator('#external3d a[href^="https://"]').count()>0,'3D resource links must point to original source');
     } finally {await page.close();}
   });
-  test('3D demo assets load and disclose that they are not archaeological originals', async () => {
+  test('3D page excludes symbolic demo viewers', async () => {
     const page=await visit('modelos3d/');
     try {
-      const models=page.locator('model-viewer.inscribed-real-model');
-      assert.equal(await models.count(),2,'Two clearly identified demo viewers');
-      for(let i=0;i<2;i++){
-        const model=models.nth(i);
-        assert.ok(await model.getAttribute('camera-controls')!==null,'viewer must permit camera interaction');
-        const source=await model.getAttribute('src');
-        assert.match(source,/\\.gltf$/);
-        const asset=await page.request.get(new URL(source,page.url()).href);
-        assert.equal(asset.status(),200,'Local 3D geometry must load: '+source);
-        const json=await asset.json();
-        assert.equal(json.asset?.version,'2.0','glTF version');
-        assert.ok(Array.isArray(json.meshes)&&json.meshes.length>0,'3D mesh must contain geometry');
-      }
-      const copy=await page.locator('body').innerText();
-      assert.match(copy,/no son piezas hist[oó]ricas|no son transcripciones arqueol[oó]gicas/i,'demo status must be explicit');
+      assert.equal(await page.locator('model-viewer.inscribed-real-model').count(),0);
+      assert.equal(await page.locator('a[href*="inscribed-placa.gltf"],a[href*="inscribed-estela.gltf"]').count(),0);
+      assert.match(await page.locator('body').innerText(),/modelos 3D originales|piezas arqueol[oó]gicas reales/i);
     } finally {await page.close();}
   });
   test('Write stone preview is visible, labeled and exportable', async () => {
