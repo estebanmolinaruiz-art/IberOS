@@ -13,6 +13,34 @@ jobs:
       - name: VALIDATION-01 evidence gate (diagnostic, not scientific approval)
         if: always()
         run: python scripts/validation01_pipeline.py --output /tmp/validation01_readiness.json
+      - name: Verify M06 strict rejection (expected exit 2, not scientific approval)
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          import sys
+
+          result = subprocess.run(
+              [sys.executable, "scripts/validation01_pipeline.py", "--require-ready"],
+              capture_output=True, text=True,
+          )
+          print(result.stdout, end="")
+          print(result.stderr, end="", file=sys.stderr)
+          if result.returncode != 2:
+              raise SystemExit(f"Expected strict exit 2, received {result.returncode}")
+          report = json.loads(result.stdout)
+          expected = {
+              "pipeline_gate": "BLOCKED",
+              "scientific_verdict": "NOT_EVALUATED",
+          }
+          for field, value in expected.items():
+              if report.get(field) != value:
+                  raise SystemExit(f"Unexpected {field}: {report.get(field)!r}")
+          gate = report.get("m06_evidence_gate", {})
+          if gate.get("gate") != "BLOCKED" or "M06_NOT_DONE" not in gate.get("problems", []):
+              raise SystemExit("Expected M06_NOT_DONE with M06 BLOCKED")
+          print("IberOS: strict rejection verified; no scientific promotion.")
+          PY
       - name: Upload VALIDATION-01 readiness diagnostic
         if: always()
         uses: actions/upload-artifact@v4
