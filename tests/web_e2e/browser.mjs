@@ -28,6 +28,34 @@ try {
       }
     } finally {await page.close();}
   });
+  test('Tool navigation via real mobile clicks', async () => {
+    const page=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+    try {
+      await page.goto('http://127.0.0.1:8765/herramientas/',{waitUntil:'domcontentloaded'});
+      for (const [label,path] of [
+        ['Probar Core','/webengine/'],
+        ['Probar Write','/write/'],
+        ['Probar Talk','/talk/'],
+        ['Abrir Atlas','/atlas/']
+      ]) {
+        await page.goto('http://127.0.0.1:8765/herramientas/',{waitUntil:'domcontentloaded'});
+        await page.getByRole('link',{name:new RegExp(label,'i')}).click();
+        await page.waitForURL(url=>url.pathname.endsWith(path));
+        assert.ok((await page.locator('body').innerText()).length>50,label);
+      }
+    } finally {await page.close();}
+  });
+  test('Talk analysis displays an actual textual result', async () => {
+    const page=await visit('talk/');
+    try {
+      await page.locator('#txt').fill('EKIAR KUTUR SALIR');
+      await page.locator('#run').click();
+      await page.waitForFunction(()=>document.querySelector('#out')?.textContent.trim().length>0,null,{timeout:12000});
+      const result=await page.locator('#out').textContent();
+      assert.ok(result.length>0);
+      assert.doesNotMatch(result,/Error de preparaci[oó]n|Error t[eé]cnico/i);
+    } finally {await page.close();}
+  });
   test('Write renders a real graphic result for entered text', async () => {
     const page=await visit('write/');
     try {
