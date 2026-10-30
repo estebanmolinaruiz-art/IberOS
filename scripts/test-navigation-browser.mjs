@@ -112,6 +112,8 @@ try{
    ['.nav-hotspot[aria-label="Corpus"]','/corpus/']
   ]){
    await mobile.goto(base+'/',{waitUntil:'domcontentloaded'});
+   const news=mobile.locator('#ibNewsOverlay');
+   if(await news.isVisible()){await mobile.locator('#ibNewsClose').click();if(await news.isVisible())throw Error('News: no se cierra el pop-up en móvil');console.log('✓ News: pop-up cerrado, navegación libre en iPhone');}
    const el=mobile.locator(selector);
    await el.scrollIntoViewIfNeeded();
    const box=await el.boundingBox();
