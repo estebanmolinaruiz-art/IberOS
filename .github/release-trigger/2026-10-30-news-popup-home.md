@@ -1,0 +1,1 @@
+Homepage News popup restored for La Picola using established IberOS design system, session dismissal, Esc and mobile focus. Deployment request.
