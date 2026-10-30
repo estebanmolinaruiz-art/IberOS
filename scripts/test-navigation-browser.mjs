@@ -33,9 +33,9 @@ try{
  await page.locator('#external3d a[href^="https://"]').first().waitFor({state:'visible',timeout:15000});
  const sourceLinks=await page.locator('#external3d a[href^="https://"]').count();
  if(sourceLinks<6)throw Error('Arqueología 3D: menos de seis enlaces a recursos originales');
- const demo=page.locator('details:has(.viewer-shell)');
- if(await demo.count()!==1||await demo.getAttribute('open')!==null)throw Error('Modelos 3D de muestra no están separados y plegados');
- console.log('✓ 3D: '+sourceLinks+' enlaces a modelos originales, demos ocultas');
+ if(await page.locator('.viewer-shell').count()!==0)throw Error('3D: todavía presenta visor simbólico no acreditado');
+ await page.locator('#epigraphic3d article').first().waitFor({state:'attached',timeout:15000});
+ console.log('✓ 3D: '+sourceLinks+' enlaces originales, sin modelos de muestra; registro epigráfico presente');
  await page.goto(base+'/write/',{waitUntil:'domcontentloaded'});
  await page.locator('#q').fill('A Bastubar se transfiere un documento.');
  await page.locator('#go').click();
