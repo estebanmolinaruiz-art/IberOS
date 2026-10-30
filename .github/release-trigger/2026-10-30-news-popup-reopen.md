@@ -1,0 +1,1 @@
+Enable persistent NEWS control on project feature to reopen homepage modal even after dismissal within same browser session.
