@@ -1,0 +1,1 @@
+Publish News mini-stone with La Picola picture/title shown on iPhone, fixed on right edge and no session hiding.
