@@ -158,3 +158,13 @@ test('Stone preview uses irregular carved-stone styling', async()=>{
   assert.match(html,/Recreación visual de una piedra grabada/);
   assert.match(html,/drop-shadow/);
 });
+
+
+test('SVG export uses pictured sign glyphs, not the Latin value string', async()=>{
+ const html=await readFile(new URL('../site/write/index.html',import.meta.url),'utf8');
+ assert.match(html,/IberOS-Write-inscripcion-grafica\.svg/);
+ assert.match(html,/<image x=/);
+ assert.match(html,/data:image\/svg\+xml;base64/);
+ assert.match(html,/signos no integrados/);
+ assert.ok(!html.includes('IberOS-Write-borrador-piedra.svg'));
+});
