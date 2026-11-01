@@ -1,0 +1,1 @@
+Publish Write graphical SVG export fix: sign image content embedded when retrievable, unsupported glyph placeholders, experimental stone and semantic warning. No homepage design changes.
