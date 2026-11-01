@@ -2,7 +2,7 @@
 """Dama de Ilice P01: execute strictly evidence-gated pilot against Orleyl editorial inventory."""
 import csv, json, tempfile
 from pathlib import Path
-from corex_p01 import load, run
+from corex_p01 import load, run, stability
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"data/curated/rok_orleyl_editorial_alignment_1981.csv"
 OUT=ROOT/"data/benchmark/dama_ilice_p01_admission_v1.json"
@@ -24,11 +24,13 @@ with tempfile.TemporaryDirectory() as d:
             },ensure_ascii=False)+"\n")
     accepted,rejected=load(p)
     outcome=run(accepted)
+    stability_outcome=stability(accepted)
 summary={
   "program":"DAMA_DE_ILICE","pilot":"COREX_P01","input":str(SOURCE.relative_to(ROOT)),
   "candidate_physical_groups":len({k[0] for k in seen}),
   "candidate_sequences":len(seen),"accepted_sequences":len(accepted),
   "rejected_sequences":len(rejected),"rejection_reasons":rejected,
+  "stability_20_group_holdouts":stability_outcome,
   "outcome":outcome,"scientific_status":"NOT_EVALUATED",
   "note":"Editorial-only Orleyl transcriptions are not independently verified. No model performance or translation may be claimed."
 }
@@ -37,3 +39,4 @@ OUT.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="ut
 print(json.dumps(summary,ensure_ascii=False,indent=2))
 assert not accepted,"No editorial-only sequence may enter P01"
 assert outcome["status"]=="INSUFFICIENT_INDEPENDENT_GROUPS"
+assert stability_outcome["status"]=="INSUFFICIENT_FOR_STABILITY"
