@@ -1,0 +1,1 @@
+Deploy compact nonmodal right-side stone-shaped News card for La Picola on homepage, preserving navigation and mobile footprint.
