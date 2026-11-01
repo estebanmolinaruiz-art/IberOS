@@ -1,0 +1,25 @@
+name: Dama de Ilice physical evidence audit
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/dama_ilice_master_readiness.py'
+      - 'data/review/validation01_master_physical_objects_v1.csv'
+      - '.github/workflows/dama-ilice-audit.yml'
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit physical-object evidence without semantic claims
+        run: python scripts/dama_ilice_master_readiness.py > dama-ilice-inventory.json
+      - name: Print audit
+        run: cat dama-ilice-inventory.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dama-ilice-inventory
+          path: dama-ilice-inventory.json
