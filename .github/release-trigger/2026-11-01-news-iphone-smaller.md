@@ -1,0 +1,1 @@
+Deploy iPhone-only compact News stone: 176px width, right 2px, reduced internal typography and height. Desktop unchanged.
