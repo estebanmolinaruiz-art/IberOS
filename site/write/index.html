@@ -84,7 +84,33 @@ function updateStone(result){
    document.getElementById("write-stone-values").textContent="";
    document.getElementById("write-stone-note").textContent="Reconstrucción textual controlada; la capa gráfica signaria se aplica solo donde existe correspondencia disponible.";
  }
-}document.getElementById("write-stone-export").addEventListener("click",()=>{const val=document.getElementById("write-stone-values").textContent||document.getElementById("write-stone-text").textContent;const clean=val.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));const svg='<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330"><rect width="900" height="330" rx="25" fill="#b4a388" stroke="#79684f" stroke-width="12"/><text x="450" y="55" text-anchor="middle" font-size="23" fill="#382c20">IBEROS WRITE · FALLBACK FONOGRÁFICO</text><text x="450" y="160" text-anchor="middle" font-size="32" fill="#352b20">'+clean+'</text><text x="450" y="280" text-anchor="middle" font-size="18" fill="#352b20">Secuencia fonográfica moderna · NO traducción histórica</text></svg>';const url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml"}));const a=document.createElement("a");a.href=url;a.download="IberOS-Write-borrador-piedra.svg";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+}document.getElementById("write-stone-export").addEventListener("click",async()=>{
+ const area=document.getElementById("write-stone-text");
+ const els=[...area.children];
+ const escapeXML=v=>String(v??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+ let x=75;const glyphs=[];let missing=0;
+ for(const el of els){
+   if(el.tagName==="SPAN"&&el.textContent==="·"){glyphs.push('<text x="'+x+'" y="173" font-size="30" fill="#473a2b">·</text>');x+=28;continue}
+   const img=el.querySelector?.("img");
+   if(img){
+     try{
+       const response=await fetch(img.src,{mode:"cors"});
+       if(!response.ok)throw Error("HTTP "+response.status);
+       const content=await response.text();
+       if(!/^\s*(?:<\?xml[^>]*>\s*)?<svg\b/i.test(content))throw Error("not SVG");
+       const embedded="data:image/svg+xml;base64,"+btoa(unescape(encodeURIComponent(content)));
+       glyphs.push('<image x="'+x+'" y="109" width="37" height="61" href="'+embedded+'"/>');
+     }catch{missing++;glyphs.push('<rect x="'+x+'" y="117" width="31" height="46" fill="none" stroke="#644a34" stroke-dasharray="3 3"/>')}
+     x+=44;continue
+   }
+   missing++;glyphs.push('<rect x="'+x+'" y="117" width="31" height="46" fill="none" stroke="#644a34" stroke-dasharray="3 3"/>');x+=40;
+ }
+ const width=Math.max(580,x+70);
+ const warning=missing?" · "+missing+" signos no integrados (huecos visibles)":"";
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 '+width+' 265" width="'+width+'" height="265"><defs><linearGradient id="p" x2=".8" y2="1"><stop stop-color="#d7c4a2"/><stop offset=".5" stop-color="#ae9674"/><stop offset="1" stop-color="#76644e"/></linearGradient><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="7"/></filter></defs><path d="M22 26 L82 14 H'+(width-70)+' L'+(width-18)+' 37 V224 L'+(width-61)+' 250 H40 L11 219 V61 Z" fill="url(#p)" stroke="#71604a" stroke-width="9"/><path d="M22 26 L82 14 H'+(width-70)+' L'+(width-18)+' 37 V224 L'+(width-61)+' 250 H40 L11 219 V61 Z" filter="url(#g)" opacity=".13"/><text x="54" y="77" font-size="18" fill="#433425" font-family="Georgia">IBEROS WRITE · RECREACIÓN EXPERIMENTAL</text>'+glyphs.join("")+'<text x="53" y="221" font-family="sans-serif" font-size="12" fill="#443322">Adaptación gráfica moderna · NO traducción histórica'+escapeXML(warning)+'</text></svg>';
+ const url=URL.createObjectURL(new Blob([svg],{type:"image/svg+xml;charset=utf-8"}));
+ const a=document.createElement("a");a.href=url;a.download="IberOS-Write-inscripcion-grafica.svg";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
 function run(){if(!w)return;try{const r=w.reconstruct(q.value);currentWriteResult=r;seg.innerHTML=(r.segments||[]).map(x=>'<span class="seg '+escapeHtml(x.status)+'">'+escapeHtml(x.form)+'</span>').join(" ");const readable=document.getElementById("write-readable");const abstain=r.status==="CONTROLLED_ABSTENTION";updateStone({...r,input:q.value,fallback:w.phonographicFallback(q.value)});feedback.textContent=abstain?`Frase analizada: «${q.value.trim()||"(vacía)"}». No existe una traducción ibérica respaldada para esta construcción. Write muestra debajo un FALLBACK FONOGRÁFICO MODERNO con signos ibéricos; no es una traducción histórica.`:`Frase analizada: «${q.value.trim()}». Patrón compatible encontrado: reconstrucción parcial con incertidumbres.`;const statusNames={probable:"Propuesta probable, pendiente de validación",structural:"Estructura posible, significado no resuelto",infer:"Inferencia opcional",fallback:"Adaptación moderna (no histórica)",gap:"Sin evidencia suficiente",validated:"Validado"};const header=document.createElement("strong");header.textContent=abstain?"Sin reconstrucción suficiente":"Reconstrucción provisional";const intro=document.createElement("p");intro.textContent=abstain?"IberOS se abstiene porque no dispone de reglas suficientes para esta entrada.":"Estos segmentos son hipótesis de reconstrucción, no una traducción ibérica demostrada.";const list=document.createElement("ul");for(const x of r.segments||[]){const li=document.createElement("li");li.textContent=x.form+" — "+(statusNames[x.status]||x.status)+". "+(x.role||"")+(x.notes?" · "+x.notes:"");list.append(li)}const foot=document.createElement("p");foot.textContent="Cobertura semántica validada: "+(r.metrics?.semantic_coverage??0)+" %. No mide el desciframiento histórico.";readable.replaceChildren(header,intro,list,foot);out.textContent=JSON.stringify(r,null,2)}catch(e){seg.textContent="";out.textContent="Error al analizar: "+String(e.message||e);feedback.textContent="Error técnico: no se pudo analizar la frase."}}
 const signInput=document.getElementById("write-sign-input"),signOutput=document.getElementById("write-sign-output");
 const signUnits=["ba","be","bi","bo","bu","ta","te","ti","to","tu","ka","ke","ki","ko","ku","a","e","i","o","u","l","m","n","r","ŕ","s","ś","z","ḿ"];
