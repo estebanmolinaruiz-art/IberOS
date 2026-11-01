@@ -1,0 +1,1 @@
+Deploy tiny 92px textured iPhone News stone. Tap to expand details without covering homepage by default.
