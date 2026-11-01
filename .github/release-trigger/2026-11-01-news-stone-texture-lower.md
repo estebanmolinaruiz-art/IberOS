@@ -1,0 +1,1 @@
+Publish 105px iPhone Picola News stone at top 145px with richer mineral texture, retaining approved photo/title and right alignment.
