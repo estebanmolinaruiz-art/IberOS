@@ -1,0 +1,25 @@
+name: Dama de Ilice CORE-X P01 admission
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/corex_p01.py'
+      - 'scripts/dama_ilice_p01_admission.py'
+      - 'data/curated/rok_orleyl_editorial_alignment_1981.csv'
+      - '.github/workflows/dama-ilice-p01.yml'
+jobs:
+  admission:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Execute independent-reading admission and print result
+        run: python scripts/dama_ilice_p01_admission.py
+      - name: Upload diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: dama-ilice-p01-admission
+          path: data/benchmark/dama_ilice_p01_admission_v1.json
