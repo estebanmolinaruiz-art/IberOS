@@ -102,3 +102,16 @@ Molina Ruiz, Esteban. *IberOS Case Studies I: cuatro fichas analíticas de valid
 - **Material de difusión reutilizable:** [kit de difusión gratuito](docs/DIFUSION_GRATUITA.md).
 
 IberOS es un **marco experimental de análisis y validación reproducible**, no un desciframiento demostrado del ibérico. Las hipótesis, inferencias y lecturas documentadas se mantienen diferenciadas. La participación y la revisión crítica son bienvenidas.
+
+
+## Colaboración científica abierta
+
+IberOS busca colaboración con especialistas e instituciones en epigrafía paleohispánica, arqueología computacional, Humanidades Digitales, IA y tecnologías del lenguaje *low-resource/zero-resource*.
+
+Áreas prioritarias: revisión epigráfica, control de procedencia, retrieval, representación multilingüe, benchmarks resistentes a fugas de datos, evaluación fuera de muestra y publicación reproducible de resultados positivos y negativos.
+
+Convocatoria pública: https://estebanmolinaruiz-art.github.io/IberOS/colaboracion/
+
+Contacto: **contacto.iberos@gmail.com**
+
+Las invitaciones de colaboración no implican respaldo, afiliación ni colaboración confirmada por terceros hasta que exista aceptación expresa.
