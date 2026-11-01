@@ -42,9 +42,25 @@ def run(rows,seed=29):
             guess=left[context].most_common(1)[0][0] if left[context] else freq
             ngcorrect+=(guess==c)
     return {'status':'EXPERIMENTAL_BASELINE_ONLY','seed':seed,'training_groups':len({x['physical_group'] for x in train}),'holdout_groups':len(held),'test_characters':total,'frequency_accuracy':round(correct/total,4),'left_bigram_accuracy':round(ngcorrect/total,4),'not_semantic_validation':True}
+def stability(rows, seeds=range(29, 49)):
+    """Repeat group-disjoint holdouts; summarize predictive reliability, not semantics."""
+    trials = [run(rows, seed=int(seed)) for seed in seeds]
+    valid = [r for r in trials if r.get('status') == 'EXPERIMENTAL_BASELINE_ONLY']
+    if len(valid) != len(trials) or not valid:
+        return {'status':'INSUFFICIENT_FOR_STABILITY', 'requested_trials':len(trials), 'valid_trials':len(valid)}
+    def summary(key):
+        xs=sorted(r[key] for r in valid)
+        return {'min':xs[0], 'median':round((xs[(len(xs)-1)//2]+xs[len(xs)//2])/2,4), 'max':xs[-1]}
+    wins=sum(r['left_bigram_accuracy']>r['frequency_accuracy'] for r in valid)
+    return {'status':'EXPERIMENTAL_STABILITY_ONLY','trials':len(valid),
+        'independent_group_holdout':True,'frequency_accuracy':summary('frequency_accuracy'),
+        'left_bigram_accuracy':summary('left_bigram_accuracy'),
+        'bigram_wins':wins,'bigram_ties':sum(r['left_bigram_accuracy']==r['frequency_accuracy'] for r in valid),
+        'not_semantic_validation':True}
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('jsonl');p.add_argument('--seed',type=int,default=29);a=p.parse_args()
     rows,reasons=load(a.jsonl);result=run(rows,a.seed)
-    result.update(accepted_rows=len(rows),rejected_rows=len(reasons),rejection_reasons=reasons[:30],input_sha256=hashlib.sha256(Path(a.jsonl).read_bytes()).hexdigest())
+    result['stability_20_group_holdouts']=stability(rows)\n    result.update(accepted_rows=len(rows),rejected_rows=len(reasons),rejection_reasons=reasons[:30],input_sha256=hashlib.sha256(Path(a.jsonl).read_bytes()).hexdigest())
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
