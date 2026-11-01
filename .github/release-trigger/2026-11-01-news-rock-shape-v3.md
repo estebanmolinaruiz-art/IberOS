@@ -1,0 +1,1 @@
+Publish compact iPhone La Picola News photo on irregular carved rock background with mineral grain, replacing plain gradient card treatment.
