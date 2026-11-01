@@ -20,3 +20,18 @@ def test_independent_split():
     assert r['not_semantic_validation']
 def test_insufficient():
     assert run([])['status']=='INSUFFICIENT_INDEPENDENT_GROUPS'
+
+def test_stability_tracks_variation_without_semantic_claims():
+    rows=[dict(object_id=str(i),physical_group=f'p{i}',transcription=('abce abce abcdef' if i%2 else 'kutu kutu kitura'),source='synthetic',reading_status='EXPERT_REVIEWED') for i in range(12)]
+    result=corex.stability(rows)
+    assert result['status']=='EXPERIMENTAL_STABILITY_ONLY'
+    assert result['trials']==20
+    assert result['independent_group_holdout'] is True
+    assert 0<=result['bigram_wins']<=20
+    assert result['not_semantic_validation'] is True
+    for metric in ('frequency_accuracy','left_bigram_accuracy'):
+        value=result[metric]
+        assert 0<=value['min']<=value['median']<=value['max']<=1
+
+def test_stability_requires_independent_groups():
+    assert corex.stability([])['status']=='INSUFFICIENT_FOR_STABILITY'
