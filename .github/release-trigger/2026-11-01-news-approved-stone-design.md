@@ -1,0 +1,1 @@
+Deploy permanent tiny right-side La Picola News stone based on approved screenshot: stone silhouette asset, image and title, direct link, no modal.
