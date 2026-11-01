@@ -61,6 +61,7 @@ def stability(rows, seeds=range(29, 49)):
 def main():
     p=argparse.ArgumentParser();p.add_argument('jsonl');p.add_argument('--seed',type=int,default=29);a=p.parse_args()
     rows,reasons=load(a.jsonl);result=run(rows,a.seed)
-    result['stability_20_group_holdouts']=stability(rows)\n    result.update(accepted_rows=len(rows),rejected_rows=len(reasons),rejection_reasons=reasons[:30],input_sha256=hashlib.sha256(Path(a.jsonl).read_bytes()).hexdigest())
+    result['stability_20_group_holdouts']=stability(rows)
+    result.update(accepted_rows=len(rows),rejected_rows=len(reasons),rejection_reasons=reasons[:30],input_sha256=hashlib.sha256(Path(a.jsonl).read_bytes()).hexdigest())
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
