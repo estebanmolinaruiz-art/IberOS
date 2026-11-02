@@ -96,6 +96,7 @@ Molina Ruiz, Esteban. *IberOS Case Studies I: cuatro fichas analíticas de valid
 - **Consultar fichas:** https://estebanmolinaruiz-art.github.io/IberOS/fichas/
 - **Instalar el paquete Python:** https://pypi.org/project/iberos/
 - **Dataset / perfil en Hugging Face:** https://huggingface.co/EstebanMR
+- **Research Software Directory:** https://research-software-directory.org/software/iberos
 - **Consultar metodología y límites:** [Arquitectura](docs/ARCHITECTURE.md) y [benchmark](docs/BENCHMARK.md).
 - **Leer el informe técnico:** https://doi.org/10.5281/zenodo.22939179
 - **Consultar casos de estudio:** https://doi.org/10.5281/zenodo.22957236
