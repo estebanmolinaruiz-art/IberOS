@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Molina Ruiz"
     given-names: "Esteban"
-url: "https://github.com/estebanmolinaruiz-art/IberOS/tree/v1.0.1"
+url: "https://estebanmolinaruiz-art.github.io/IberOS/"
 repository-code: "https://github.com/estebanmolinaruiz-art/IberOS"
 references:
   - type: report
@@ -14,21 +14,32 @@ references:
       - family-names: "Molina Ruiz"
         given-names: "Esteban"
     doi: "10.5281/zenodo.22939179"
-    url: "https://zenodo.org/records/22939179"
+    url: "https://doi.org/10.5281/zenodo.22939179"
   - type: article
     title: "IberOS Case Studies I: cuatro fichas analíticas de validación en epigrafía ibérica"
     authors:
       - family-names: "Molina Ruiz"
         given-names: "Esteban"
     doi: "10.5281/zenodo.22957236"
-    url: "https://zenodo.org/records/22957236"
+    url: "https://doi.org/10.5281/zenodo.22957236"
 license: Apache-2.0
 version: "1.0.1"
 date-released: "2026-10-01"
 keywords:
-  - Iberian
-  - epigraphy
+  - Iberian inscriptions
+  - Iberian epigraphy
   - palaeohispanic
+  - computational epigraphy
   - digital humanities
   - computational linguistics
   - reproducibility
+  - archaeology
+preferred-citation:
+  type: report
+  title: "IberOS: marco experimental para el análisis interno y la validación reproducible de inscripciones ibéricas"
+  authors:
+    - family-names: "Molina Ruiz"
+      given-names: "Esteban"
+  year: 2026
+  doi: "10.5281/zenodo.22939179"
+  url: "https://doi.org/10.5281/zenodo.22939179"
