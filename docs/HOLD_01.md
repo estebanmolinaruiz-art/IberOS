@@ -1,13 +1,21 @@
 # HOLD-01: evaluation packet without leakage or invented gold labels
 
-HOLD-01 reserves two independent **candidate** objects not found by name
-in the 38-object curated list: Xàbia Fundació CIRNE lead (Ferrer i Jané
-et al., 2022, DOI 10.3989/aespa.095.022.07) and the La Mesa lead
+HOLD-01 currently holds **one uncertified candidate**, the La Mesa lead
 (Luján & López Fernández, PalHisp 17, DOI 10.36707/palaeohispanica.v0i17.136).
 
-Their exact corpus concordances, full editions, physical provenance, and
-overlap with historical IberOS training data (3,406 legacy ENTRY) still require
-independent audit. They are **not** certified prospective HOLD items.
+**Correction, 2026-11-03:** The Xàbia Fundació CIRNE lead (Ferrer i Jané
+et al., 2022, DOI 10.3989/aespa.095.022.07) appears in the connected
+Folch–Jiménez Huertas February 2024 corpus, spreadsheet ID
+`19ct13SfIqjaUCFzJaROmwGdTIf92vSqvoHoNAAk8bs4`,
+row **4354** in BOTH `text` and `cadenes`. It is therefore
+**EXCLUDED from blind HOLD-01** as preexisting documentary material.
+No claim that this corpus was the engine's training source is made.
+
+La Mesa's exact corpus concordances, full edition, physical provenance,
+and overlap with historical IberOS training data (3,406 legacy ENTRY) still
+require independent audit. Text-search for "Mesa" and "Alcolea" found no match
+in the Folch 2024 spreadsheet's `text` column A–H, but absence of a literal
+match is not proof of independent status. They are **not** certified prospective HOLD items.
 Do not import them into training before a preregistered split audit.
 
 Two attractive mosaic controls (Caminreal, Andelo) are **explicitly
