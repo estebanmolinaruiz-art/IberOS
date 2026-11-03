@@ -5,7 +5,7 @@ from iberos.holdout_01 import CANDIDATES, run
 def test_previous_objects_excluded_from_holdout():
     result = run()
     assert {r["id"] for r in result["preexisting_exclusions"]} == {
-        "IBR-MUS-0001", "IBR-MUS-0002"
+        "IBR-MUS-0001", "IBR-MUS-0002", "HOLD-01-A"
     }
 
 
