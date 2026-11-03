@@ -29,16 +29,20 @@ class HoldCandidate:
 
 CANDIDATES = (
     HoldCandidate(
-        "HOLD-01-A", "Fundacio CIRNE Xabia lead", "https://doi.org/10.3989/aespa.095.022.07",
-        "CIRNE-XABIA-LEAD-2022", "CIRNE-XABIA-2022", "D1",
-        "external_unresolved_function",
-    ),
-    HoldCandidate(
         "HOLD-01-B", "La Mesa Alcolea del Rio lead", "https://doi.org/10.36707/palaeohispanica.v0i17.136",
         "LA-MESA-2017-LEAD", "LA-MESA-2017", "D1", "external_script_transfer",
     ),
 )
 
+
+CIRNE_CORPUS_EXCLUSION = {
+    "id": "HOLD-01-A",
+    "name": "Fundacio CIRNE Xabia lead",
+    "reason": "ALREADY_IN_FOLCH_2024_CORPUS_ROW_4354",
+    "source_spreadsheet": "19ct13SfIqjaUCFzJaROmwGdTIf92vSqvoHoNAAk8bs4",
+    "tabs": ["text", "cadenes"],
+    "row": 4354,
+}
 
 KNOWN_PRIOR = (
     ("IBR-MUS-0001", "Caminreal mosaic MLH E.7.1 = K.5.3"),
@@ -58,6 +62,7 @@ def run() -> dict[str, Any]:
         for item_id, name in KNOWN_PRIOR if item_id in registry_ids
     ]
     assert len(known_exclusions) == 2, "Curated baseline changed; review split"
+    known_exclusions.append(dict(CIRNE_CORPUS_EXCLUSION))
     # The live registry does not yet contain explicit concordances for every
     # external item. Thus absence here is NOT proof of non-contamination.
     hold = [
@@ -81,13 +86,13 @@ def run() -> dict[str, Any]:
         "semantic_gold_available": 0,
         "score_grammar_accuracy": None,
         "model_predictions_executed": False,
-        "candidate_concordance_status": "PENDING_EXTERNAL_ID_AND_OVERLAP_AUDIT",
+        "candidate_concordance_status": "LA_MESA_PENDING_LEGACY_3406_AUDIT",
         "independence_certified": False,
         "holdout_locked_for_prospective_claim": False,
         "release_promotion": False,
         "official_metrics_changed": False,
         "official_metrics": dict(OFFICIAL_METRICS),
-        "note": "Do not score semantics or claim prospective blindness from a retrospective published reading.",
+        "note": "CIRNE Xabia is excluded: Folch 2024 corpus text and cadenes row 4354. La Mesa remains uncertified; no semantic score.",
     }
 
 
