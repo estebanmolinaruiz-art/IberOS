@@ -4,7 +4,7 @@ from iberos_ext.runner import Evidence, evaluate, save_report
 from iberos_ext.functions import leave_one_group_out, terminal_counts, image_pair_manifest
 
 def test_fail_closed():
-    e=Evidence("CASE-NET-PROSPECTIVE-01","","","","","","","","",False,False,"STRICT_PROSPECTIVE_PASS","","")
+    e=Evidence(protocol="CASE-NET-PROSPECTIVE-01",source="",published_at="",version="",phys_id="",leak_group="",prediction_literal="",prediction_lock_sha256="",independent=False,contamination_checked=False,outcome="STRICT_PROSPECTIVE_PASS",controls="",evidence_digest="")
     assert evaluate(e)["classification"]=="INDETERMINATE"
 
 def test_fail_cannot_be_rewritten():
