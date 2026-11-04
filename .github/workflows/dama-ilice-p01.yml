@@ -1,4 +1,4 @@
-name: Dama de Ilice CORE-X P01 admission
+name: Dama de IberOS CORE-X P01 admission
 on:
   workflow_dispatch:
   push:
@@ -21,5 +21,5 @@ jobs:
       - name: Upload diagnostic
         uses: actions/upload-artifact@v4
         with:
-          name: dama-ilice-p01-admission
+          name: dama-de-iberos-p01-admission
           path: data/benchmark/dama_ilice_p01_admission_v1.json
