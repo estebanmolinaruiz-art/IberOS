@@ -1,3 +1,46 @@
+# Actualización 2026-11-04 — FULL3406 ORIGINAL RECUPERADO
+
+**Estado actual: RECUPERADO E INTEGRIDAD VERIFICADA**, gracias al
+respaldo original entregado por el usuario
+`IberOS_Beta_Final_V2_BACKUP_2026-09-23.zip`. El texto del informe
+del 03-11-2026 que sigue a continuación es histórico y ha quedado
+superado respecto a la disponibilidad del archivo.
+
+- Archivo interno **exacto**:
+  `IberOS_LEAK_SAFE_v3_4_9_FULL3406.json` (4.081.128 bytes).
+- SHA-256 del JSON, verificado contra el manifiesto y SHA256SUMS:
+  `3cf66a5e9abbec2a8a356be3432d507da0d967d3310ffdeb3dc22878055d13a4`.
+- SHA-256 del ZIP original:
+  `7211c11c94fe4e9d24335e508e42112074f94bc753831bb6c039a8af09262d01`.
+- **3.406** registros con UID únicos; **1.799** grupos no excluidos
+  según `dependency_key_v3_4_9`.
+- Partición preservada `split_v3_4_9`: TRAIN **2378**, VAL **346**,
+  HOLD **623**, EXCLUDED **59**. Ninguna unidad de dependencia no
+  excluida aparece en dos particiones.
+- Las ocho huellas de `SHA256SUMS.txt` coinciden con los ficheros
+  declarados dentro del ZIP; el propio fichero de sumas no se lista
+  a sí mismo.
+- El backup conserva además el estado maestro C425, cuatro revisiones
+  Validation Suite, instrucciones y manifiestos.
+- **Hallazgo crítico confirmado dentro del FULL3406**: Xàbia/CIRNE,
+  `...Fundació Cirne. A1@R4354`, está ya en TRAIN. Excluirla de
+  HOLD-01 fue correcto.
+- Búsqueda de cadenas de topónimos `Mesa`/`Alcolea` entre los
+  valores de los 3406 registros: **sin coincidencia literal**;
+  no certifica ausencia por referencia alternativa o texto codificado.
+
+La versión Beta `IberOS_BETA_FINAL_0_1.zip` también se inspeccionó,
+pero solo contiene cinco ficheros de especificación/código/estado y
+no incluye FULL3406.
+
+**Precaución**: recuperar e inspeccionar este snapshot **no confirma
+sus hipótesis lingüísticas ni habilita automáticamente validaciones
+ciegas**. Mantener `FULL3406` inmutable; no reemplazar los datos
+públicos curados de 38 objetos ni importar el JSON original a la web
+sin auditoría y decisión de distribución.
+
+---
+
 # Recuperación de FULL3406 / LEGACY — auditoría del 03-11-2026
 
 **Estado:** `LEGACY_3406_NOT_RECOVERED`. No sustituir esta capa por otro
