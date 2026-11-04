@@ -16,11 +16,11 @@ Consolidación del trabajo del hilo web/Write/CORE con el proyecto general IberO
 - Limitación abierta: carga de glifos externos, contraste paleográfico, exportación PNG, y comprobación visual de profundidad de incisión. **No dar Write por terminado**.
 - Especificación: `docs/IBEROS_WRITE_HYBRID_INSCRIPTION_SPEC_2026-10-23.md`.
 
-## CORE — Dama de Ilice
+## CORE — Dama de IberOS
 - Objetivo: avanzar hacia la comprensión de la lengua ibérica con corpus de objetos reales, edición fiable y comparaciones reproducibles.
 - `scripts/corex_p01.py` ahora incorpora `stability(rows)`: 20 divisiones de grupos físicos independientes, resumen de min/mediana/max de exactitud, y frecuencia de victorias del bigrama frente a baseline simple. Test en `tests/test_corex_p01.py`.
 - El error de sintaxis detectado en la primera versión se corrigió en commit `35be965f`.
-- Verificación en GitHub Actions de ese commit: `tests`, `Comprobaciones web gratuitas` y `Dama de Ilice CORE-X P01 admission` = success.
+- Verificación en GitHub Actions de ese commit: `tests`, `Comprobaciones web gratuitas` y `Dama de IberOS CORE-X P01 admission` = success.
 - Es prueba estadística de predicción de caracteres, **no** validación semántica, traducción histórica ni porcentaje de desciframiento.
 
 ## Investigación y documentación
@@ -35,3 +35,9 @@ Consolidación del trabajo del hilo web/Write/CORE con el proyecto general IberO
 
 ## Criterios de evidencia
 Los pases de CI garantizan solo las aserciones automatizadas disponibles. Separar siempre **implementado**, **desplegado**, **probado por navegador**, **comprobado por usuario** y **científicamente validado**.
+
+
+## Sincronización nominal 2026-11-04
+- **Nombre oficial vigente del programa experimental: Dama de IberOS.**
+- La denominación anterior «Dama de Ilice» queda únicamente como referencia histórica o nombre técnico heredado de archivos/rutas, cuando renombrarlos pudiera romper compatibilidad.
+- Ningún cambio de nombre modifica métricas, evidencia, estados de validación ni resultados científicos.
