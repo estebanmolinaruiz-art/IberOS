@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dama de Ilice P01: execute strictly evidence-gated pilot against Orleyl editorial inventory."""
+"""Dama de IberOS P01: execute strictly evidence-gated pilot against Orleyl editorial inventory."""
 import csv, json, tempfile
 from pathlib import Path
 from corex_p01 import load, run, stability
@@ -26,7 +26,7 @@ with tempfile.TemporaryDirectory() as d:
     outcome=run(accepted)
     stability_outcome=stability(accepted)
 summary={
-  "program":"DAMA_DE_ILICE","pilot":"COREX_P01","input":str(SOURCE.relative_to(ROOT)),
+  "program":"DAMA_DE_IBEROS","pilot":"COREX_P01","input":str(SOURCE.relative_to(ROOT)),
   "candidate_physical_groups":len({k[0] for k in seen}),
   "candidate_sequences":len(seen),"accepted_sequences":len(accepted),
   "rejected_sequences":len(rejected),"rejection_reasons":rejected,
