@@ -27,3 +27,20 @@ Todas las coincidencias son D1 de IDENTIFICADOR EDITORIAL, no pruebas
 de identidad de objeto, morfología o significado. No se alteran los
 splits originales, sus claves ni las métricas oficiales. Los casos
 D.12.1-2 y B.7.38 son prioritarios para cotejo externo.
+
+
+## Cotejo arqueológico de D.12.1 / D.12.2
+
+Ignasi Garcés Estallo, «Nuevas interpretaciones sobre el monumento
+ibérico de La Vispesa (Tamarite de Litera, Huesca)»,
+*Cæsaraugusta* 78 (2007), pp. 337-354, identifica explícitamente los
+dos testimonios editoriales: D.12.1 en el relieve con manos cortadas y
+D.12.2 en el fragmento con caballos. La posible procedencia de un único
+monumento y la relación física entre ambos fragmentos son objeto de
+discusión bibliográfica. Fuente de contraste:
+https://euskerarenjatorria.eus/wp-content/uploads/2013/06/Bin%C3%A9far-1.pdf
+
+El hecho de que FULL3406 sitúe las dos referencias en HOLD y TRAIN
+respectivamente **no prueba todavía** una fuga del mismo objeto físico.
+Es una alerta para revisar fotografías, inventario del Museo de Huesca,
+identidad de fragmentos y LEAK_GROUP original antes de puntuar resultados.
