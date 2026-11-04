@@ -6,7 +6,7 @@ import zipfile
 
 import pytest
 
-from scripts.inspect_full3406_backup import inspect_backup
+from iberos.full3406_backup import inspect_backup
 
 
 def make_zip(path, members):
