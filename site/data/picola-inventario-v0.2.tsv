@@ -1,0 +1,37 @@
+id	objeto	tipo	fecha_publicada	procedencia_publicada	inventario_publicado	control	fuente
+MARQ-001	Urna ibérica	Cerámica	IV a. C.	Puerto ibérico de La Picola	S-94-E21-566-15	Sin UE publicada	MARQ p. 258
+MARQ-002	Vasija ibérica	Cerámica	IV a. C.	La Picola	P.I.89 UE 2072 SGI 11295	UE 2072	MARQ p. 259
+MARQ-003	Molino de barquilla y mano	Piedra	IV a. C.	La Picola	S-91-22-578-2	Conjunto de dos componentes	MARQ p. 259
+MARQ-004	Kylix ático de figuras rojas	Cerámica	375–350 a. C.	La Picola	S-91-22-579-1	UE pendiente	MARQ p. 260
+MARQ-005	Ánfora ibérica Ribera 13	Cerámica	IV a. C.	La Picola	105	UE pendiente	MARQ p. 261
+MARQ-006	Fíbula anular de bronce	Metal	IV d. C. impreso	La Picola	S 94.E40.860.20	Datación a contrastar	MARQ p. 261
+MARQ-007	Plato africana D Hayes 50B	Cerámica	IV d. C.	Portus Ilicitanus sin sector Picola	Pol.Urb. salinas/2001-5292	Número coincidente con MARQ-027	MARQ p. 262
+MARQ-008	Olpe de tradición ibérica	Cerámica	I–II d. C.	Portus Ilicitanus sin sector Picola	PI/82-271	ID también en MARQ-020	MARQ p. 262
+MARQ-009	Vasija ocre esgrafiada	Cerámica	Fecha pendiente	Portus Ilicitanus sin sector Picola	SP-PAL85/2561	Fecha no contrastada	MARQ p. 263
+MARQ-010	Lucerna africana D	Cerámica	Fecha pendiente	Portus Ilicitanus sin sector Picola	Pol. Ur. Salinas/89-12315	Fecha no contrastada	MARQ p. 263
+MARQ-011	Herma báquica de terracota	Terracota	I–II d. C.	Portus Ilicitanus sin sector Picola	Pol. Urb. Salinas/89 UE2107 12012	No adscribir al fortín	MARQ p. 264
+MARQ-012	Jarra votiva con huevo	Cerámica	I–II d. C.	Portus Ilicitanus sin sector Picola	P. Sal/01/30.5.01 UE 332	No adscribir al fortín	MARQ p. 264
+MARQ-013	Torso masculino de terracota	Terracota	I d. C.	Registro Picola-89 Cisterna Grande	22057	Edad del objeto no fecha la cisterna	MARQ p. 265
+MARQ-014	Clavija de calefacción	Metal	I–II d. C.	Portus Ilicitanus sin sector Picola	Pal/90-3520	Contexto individual pendiente	MARQ p. 265
+MARQ-015	Recipiente de vidrio funerario	Vidrio	Fecha pendiente	Portus Ilicitanus sin sector Picola	PSAL 2007-558-9545	Verificar ficha y sepultura	MARQ p. 266
+MARQ-016	Vajilla marmorata	Cerámica	Fecha pendiente	Portus Ilicitanus sin sector Picola	Pal/90-3034-08	Fecha pendiente	MARQ p. 266
+MARQ-017	Amuleto de mano/higa	Metal	Fecha pendiente	Portus Ilicitanus sin sector Picola	PI/84-363	Procedencia exacta pendiente	MARQ p. 267
+MARQ-018	Lucerna cristiana	Cerámica	Fecha pendiente	Portus Ilicitanus sin sector Picola	SP-I-157	Procedencia exacta pendiente	MARQ p. 267
+MARQ-019	Ánfora romana Dressel 1	Cerámica	Imperial impreso; revisar	Portus Ilicitanus sin sector Picola	Mar 238	Contrastar variante y fecha	MARQ p. 268
+MARQ-020	Cuenco sigillata Drag. 37a	Cerámica	I d. C.	Portus Ilicitanus sin sector Picola	PI/82-271	ID también en MARQ-008	MARQ p. 268
+MARQ-021	Ara votiva VENERI SACRUM	Piedra	I–II d. C.	Domus del Palmeral; NO Picola	Palmeral/2002-13.051	Fuera del inventario exclusivo Picola	MARQ p. 269
+MARQ-022	Caracola con cuatro anzuelos	Pesca	IV d. C. impreso	Portus Ilicitanus sin sector Picola	Palmeral/90-3044	Cronología publicada a contrastar	MARQ p. 269
+MARQ-023	Mosaico de factoría	Arquitectura	IV d. C.	Factoría romana; contexto concreto pendiente	M/83 177/178	Verificar adscripción precisa	MARQ p. 270
+MARQ-024	Agujas de bronce para redes	Metal	I–II d. C.	Portus Ilicitanus sin sector Picola	M/107	Procedencia exacta pendiente	MARQ p. 271
+MARQ-025	Cantimplora romana	Cerámica	I–II d. C.	Portus Ilicitanus sin sector Picola	Salinas 89 UE2055 12090	No adscribir al fortín	MARQ p. 271
+MARQ-026	Cuenco sudgálico marmorata Drag. 37	Cerámica	I d. C.	Portus Ilicitanus sin sector Picola	Salinas 89 UE2053 11292	No adscribir al fortín	MARQ p. 272
+MARQ-027	Cuenco lucente con cabeza de león	Cerámica	III–IV d. C.	Portus Ilicitanus sin sector Picola	Salinas/2001-5292	Coincidencia con MARQ-007	MARQ p. 272
+EPI-67001	Marca epigráfica candidata	Ánfora ibérica	V–IV a. C.; contexto 430–350/330	La Picola	67001 (repertorio)	r/ŕ propuesta; no validada	Soria-Mata 2015 fig. 16
+EPI-67002	Marca anepigráfica entrecruzada	Ánfora ibérica	V–IV a. C. por yacimiento	La Picola	67002 (repertorio)	Descontextualizada; sin lectura	Soria-Mata 2015 fig. 16
+PIC-EX-001	Moneda griega de Melos	Moneda	IV a. C.	Fundaciones romanas La Picola	Sin ID recuperado	Material residual; origen ibérico desconocido	La Rella 2022
+PIC-EX-002	Fragmentos escultóricos de caliza	Escultura	Época ibérica	Fundaciones romanas La Picola	Sin inventarios individuales	Reutilización constructiva sin probar	La Rella 2022
+PIC-EX-003	Mortero corintio	Cerámica	Primera mitad IV a. C. del contexto	La Picola	Badie 2000 fig. 57.1	No equivale a fecha de fabricación	García Martín 2004
+PIC-EX-004	Borde anfórico massaliota Py 3	Ánfora	Fin VI–V a. C. tipológica	La Picola	Badie 2000 fig. 68.12	Cronología de tipo, no deposición	García Martín 2004
+PIC-EX-005	Dos fragmentos de ánfora corintia A	Ánfora	V–IV a. C. provisional	La Picola	Sin ID museístico	Conjunto de dos fragmentos	García Martín 2004
+PIC-EX-006	Dos bases anfóricas de Grecia oriental	Ánfora	IV a. C.	La Picola	Badie 2000 figs. 68.13–14	Dos fragmentos, no dos vasos probados	García Martín 2004
+PIC-EX-007	Fondo anfórico posiblemente samio	Ánfora	IV a. C. provisional	La Picola	Badie 2000 fig. 68.15	Origen samio hipotético	García Martín 2004
