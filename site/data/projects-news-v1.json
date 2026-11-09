@@ -61,6 +61,30 @@
   ],
   "news": [
     {
+      "id": "picola-cribado-iberico-2026-11-09",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: depuración del catálogo para priorizar la fase ibérica",
+      "summary": "IberOS · PICOLA–GEO separa 14 registros de interés ibérico, dos piezas bajo revisión y 50 registros romanos o sin relación ibérica acreditada. La selección principal no borra el catálogo histórico de 66 registros: preserva también las unidades estratigráficas romanas para evaluar desplazamientos y redeposiciones. La moneda de Melos y los fragmentos escultóricos ibéricos hallados en contextos romanos siguen en la selección, sin atribuirles un emplazamiento original. Consulta la selección y la matriz razonada en la página del inventario: https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-11-09",
+      "author_credit": "IberOS · PICOLA–GEO",
+      "sources": [
+        {
+          "title": "Inventario IberOS v0.3 (66 registros)",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/data/picola-inventario-v0.3.tsv"
+        },
+        {
+          "title": "Matriz de cribado IberOS v0.4",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/data/picola-cribado-iberico-v0.4.tsv"
+        }
+      ]
+    },
+    {
       "id": "picola-inventario-documental-v03-2026-11-09",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: 30 nuevos registros arqueológicos con contexto estratigráfico",
