@@ -61,6 +61,30 @@
   ],
   "news": [
     {
+      "id": "picola-inventario-documental-v03-2026-11-09",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: 30 nuevos registros arqueológicos con contexto estratigráfico",
+      "summary": "IberOS · PICOLA–GEO amplía a 66 fichas y conjuntos su inventario documental: añade 28 registros de la UE 488 del patio de la cetaria y dos piezas de ambientes 3 y 5 sobre restos de peces, publicados por Molina Vidal (2005). Los números representan hallazgos documentales, no necesariamente vasijas completas; las cronologías tipológicas no equivalen a la fecha del depósito. Siguen pendientes numerosos objetos de excavación, fotografías autorizadas y confirmación de custodia museística. Catálogo abierto: https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-11-09",
+      "author_credit": "IberOS · PICOLA–GEO",
+      "sources": [
+        {
+          "title": "Molina Vidal (2005), La cetaria de Picola, pp.109–110",
+          "url": "https://santapola.com/turismo/cetaria_picola/pdf/Cetaria_congreso_sal.pdf"
+        },
+        {
+          "title": "Inventario documental PICOLA v0.3",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/"
+        }
+      ]
+    },
+    {
       "id": "picola-inventario-documental-v02-2026-11-06",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: inventario arqueológico documental y control de reutilizaciones romanas",
