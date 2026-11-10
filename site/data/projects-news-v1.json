@@ -61,6 +61,34 @@
   ],
   "news": [
     {
+      "id": "picola-fichas-documentales-navegables-2026-11-10",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: fichas técnicas navegables para el inventario ibérico",
+      "summary": "IberOS · PICOLA–GEO incorpora fichas documentales navegables para los 16 registros seleccionados: 14 materiales de interés ibérico y dos piezas sometidas a revisión. La ficha de la copa ática MARQ-004 presenta medidas publicadas, cronología T1–T5, fuentes y controles pendientes. La publicación no afirma haber identificado todas las piezas excavadas ni acredita depósitos museísticos, y mantiene el archivo histórico de 66 registros y las evidencias de redeposición romana. Consulte el inventario: https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-11-10",
+      "author_credit": "IberOS · PICOLA–GEO",
+      "sources": [
+        {
+          "title": "Catálogo MARQ, Santa Pola. Arqueología y Museo",
+          "url": "https://marqalicante.com/contenido/publicaciones/pub2_87.pdf"
+        },
+        {
+          "title": "Museo del Mar, La Picola",
+          "url": "https://museodelmarsantapola.com/sedes/la-picola/"
+        },
+        {
+          "title": "Selección ibérica de IberOS v0.4",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/"
+        }
+      ]
+    },
+    {
       "id": "picola-cribado-iberico-2026-11-09",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: depuración del catálogo para priorizar la fase ibérica",
