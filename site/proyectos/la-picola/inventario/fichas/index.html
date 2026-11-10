@@ -1,0 +1,24 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fichas documentales · La Picola | IberOS</title><meta name="description" content="Fichas documentales individualizadas del inventario ibérico de La Picola, con procedencia, cronología, incertidumbres y fuentes.">
+<link rel="canonical" href="https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/inventario/fichas/">
+<link rel="stylesheet" href="../../../../assets/iberos-plus.css">
+<style>body{background:#f7eddb;color:#203c4a;margin:0;font:16px/1.65 system-ui,sans-serif}main{max-width:930px;margin:auto;padding:24px 18px 65px}h1,h2{font-family:Georgia,serif;color:#143c4e}.panel{background:#fff;border:1px solid #d5be97;border-radius:10px;padding:18px;margin:16px 0}dl{display:grid;grid-template-columns:180px 1fr;gap:9px}dt{font-weight:bold}dd{margin:0}a{color:#075875}.notice{border-left:4px solid #a47c43}footer{border-top:2px solid #a47c43;padding-top:14px}@media(max-width:540px){dl{grid-template-columns:1fr}}</style>
+</head><body><main><a href="../">← Inventario ibérico de La Picola</a>
+<p>IberOS · PICOLA–GEO · Fichas documentales en investigación</p><h1 id="title">Ficha técnica</h1>
+<div class="panel notice"><strong>Advertencia:</strong> estas fichas reproducen campos del catálogo documental y no sustituyen los inventarios originales de excavación ni certifican la custodia museística. Los datos desconocidos permanecen como «no verificados». Los registros de conjuntos no representan necesariamente un objeto físico.</div>
+<div id="detail" class="panel" aria-live="polite">Cargando datos…</div>
+<p id="sources"></p><p id="special"></p>
+<footer><strong>IberOS · PICOLA–GEO</strong> · Esteban Molina Ruiz · sin modificaciones de C594, C474, C539 ni C541.</footer></main>
+<script>
+const q=new URLSearchParams(location.search),id=q.get("id")||"",el=document.getElementById("detail"),title=document.getElementById("title");
+const refs={"MARQ":"https://marqalicante.com/contenido/publicaciones/pub2_87.pdf","EPI":"https://rua.ua.es/server/api/core/bitstreams/0efcbea3-557a-41ee-8809-fd3375044ae5/content","PIC":"https://repositorio.uam.es/bitstream/10486/12542/1/60734_garcia_martin_josep_miquel.pdf"};
+function entry(dl,k,v){const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=k;dd.textContent=v||"No verificado";dl.append(dt,dd)}
+fetch("../../../../data/picola-inventario-iberico-v0.4.tsv").then(r=>{if(!r.ok)throw Error("Fallo de datos");return r.text()}).then(s=>{
+const rows=s.trim().split(/\r?\n/).slice(1).map(x=>x.split("\t"));const r=rows.find(x=>x[0]===id);
+if(!r){el.textContent="No hay una ficha correspondiente al identificador solicitado. Consulte la lista principal.";title.textContent="Ficha no encontrada";return}
+title.textContent=r[0]+" · "+r[1];el.replaceChildren();const dl=document.createElement("dl");
+[["Código IberOS",r[0]],["Denominación o conjunto",r[1]],["Familia / soporte",r[2]],["T1 · Cronología publicada",r[3]],["Procedencia publicada",r[4]],["Identificador original o referencia",r[5]],["Controles e incertidumbres",r[6]],["Referencia bibliográfica",r[7]],["T2 · Primer uso","No verificado individualmente"],["T3 · Reutilización","No verificada salvo indicación en referencia"],["T4 · UE / depósito","Consultar procedencia y control; no inferir UE"],["T5 · Alteraciones posteriores","No verificadas individualmente"],["Ubicación y custodia actual","No confirmadas individualmente"],["Imagen","Sin reproducción de terceros no autorizada"]].forEach(x=>entry(dl,...x));el.append(dl);
+const group=r[0].split("-")[0],url=refs[group];if(url){const a=document.createElement("a");a.href=url;a.textContent="Abrir fuente bibliográfica de la familia ("+group+")";a.rel="noopener noreferrer";document.getElementById("sources").append(a)}
+if(id==="MARQ-004"){const a=document.createElement("a");a.href="marq-004/";a.textContent="Ver ficha ampliada MARQ-004 con medidas y controles T1–T5";document.getElementById("special").append(a)}
+}).catch(()=>{el.textContent="No se han podido recuperar los datos; vuelva al inventario general."});
+</script></body></html>
