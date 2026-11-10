@@ -1,0 +1,16 @@
+id	objeto	tipo	fecha_publicada	procedencia_publicada	inventario_publicado	control	fuente
+MARQ-001	Urna ibérica	Cerámica	IV a. C.	Puerto ibérico de La Picola	S-94-E21-566-15	Sin UE publicada	MARQ p. 258
+MARQ-002	Vasija ibérica	Cerámica	IV a. C.	La Picola	P.I.89 UE 2072 SGI 11295	UE 2072	MARQ p. 259
+MARQ-003	Molino de barquilla y mano	Piedra	IV a. C.	La Picola	S-91-22-578-2	Conjunto de dos componentes	MARQ p. 259
+MARQ-004	Kylix ático de figuras rojas	Cerámica	375–350 a. C.	La Picola	S-91-22-579-1	UE pendiente	MARQ p. 260
+MARQ-005	Ánfora ibérica Ribera 13	Cerámica	IV a. C.	La Picola	105	UE pendiente	MARQ p. 261
+MARQ-006	Fíbula anular de bronce	Metal	IV d. C. impreso	La Picola	S 94.E40.860.20	Datación a contrastar	MARQ p. 261
+EPI-67001	Marca epigráfica candidata	Ánfora ibérica	V–IV a. C.; contexto 430–350/330	La Picola	67001 (repertorio)	r/ŕ propuesta; no validada	Soria-Mata 2015 fig. 16
+EPI-67002	Marca anepigráfica entrecruzada	Ánfora ibérica	V–IV a. C. por yacimiento	La Picola	67002 (repertorio)	Descontextualizada; sin lectura	Soria-Mata 2015 fig. 16
+PIC-EX-001	Moneda griega de Melos	Moneda	IV a. C.	Fundaciones romanas La Picola	Sin ID recuperado	Material residual; origen ibérico desconocido	La Rella 2022
+PIC-EX-002	Fragmentos escultóricos de caliza	Escultura	Época ibérica	Fundaciones romanas La Picola	Sin inventarios individuales	Reutilización constructiva sin probar	La Rella 2022
+PIC-EX-003	Mortero corintio	Cerámica	Primera mitad IV a. C. del contexto	La Picola	Badie 2000 fig. 57.1	No equivale a fecha de fabricación	García Martín 2004
+PIC-EX-004	Borde anfórico massaliota Py 3	Ánfora	Fin VI–V a. C. tipológica	La Picola	Badie 2000 fig. 68.12	Cronología de tipo, no deposición	García Martín 2004
+PIC-EX-005	Dos fragmentos de ánfora corintia A	Ánfora	V–IV a. C. provisional	La Picola	Sin ID museístico	Conjunto de dos fragmentos	García Martín 2004
+PIC-EX-006	Dos bases anfóricas de Grecia oriental	Ánfora	IV a. C.	La Picola	Badie 2000 figs. 68.13–14	Dos fragmentos, no dos vasos probados	García Martín 2004
+PIC-EX-007	Fondo anfórico posiblemente samio	Ánfora	IV a. C. provisional	La Picola	Badie 2000 fig. 68.15	Origen samio hipotético	García Martín 2004

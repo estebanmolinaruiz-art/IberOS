@@ -37,16 +37,16 @@ h1,h2,h3{font-family:Georgia,serif;line-height:1.22}h1{font-size:clamp(2rem,4vw,
 <header class="intro"><p class="eyebrow">IberOS · PICOLA–GEO · Catálogo documental v1 · 10 noviembre 2026</p>
 <h1>Objetos, hallazgos y reconstrucción histórica de La Picola</h1>
 <p class="lede">Consulta los materiales ibéricos y las importaciones mediterráneas con sus referencias originales. Cada registro distingue <strong>qué se publicó</strong>, <strong>dónde apareció según la fuente</strong> y <strong>qué falta para localizarlo en un plano</strong>. La reconstrucción 3D se presenta junto al inventario, pero no sustituye las pruebas arqueológicas.</p></header>
-<div class="stats"><div class="stat"><b>66</b>Registros históricos conservados</div><div class="stat"><b>14</b>Registros de interés ibérico</div><div class="stat"><b>2</b>Piezas pendientes de revisión</div><div class="stat"><b>0</b>Ubicaciones métricas autorizadas</div></div>
+<div class="stats"><div class="stat"><b>66</b>Registros históricos conservados</div><div class="stat"><b>14</b>Registros de interés ibérico</div><div class="stat"><b>1</b>Pieza pendiente de revisión</div><div class="stat"><b>0</b>Ubicaciones métricas autorizadas</div></div>
 <div class="layout">
 <section class="panel" aria-label="Catálogo consultable">
 <h2>Catálogo maestro de materiales</h2>
-<p>Por defecto se muestran los 16 registros de la selección ibérica. Los 50 registros restantes pueden consultarse como archivo histórico, <strong>no como objetos ibéricos confirmados</strong>.</p>
+<p>Por defecto se muestran los 15 registros de la selección ibérica. Los 51 registros restantes pueden consultarse como archivo histórico, <strong>no como objetos ibéricos confirmados</strong>.</p>
 <div class="controls">
 <label style="flex:2">Buscar nombre, código, inventario o UE<input id="q" type="search" placeholder="Ej.: kylix, UE 2072, 67001"></label>
-<label>Selección<select id="group"><option value="focus">Interés ibérico y revisión (16)</option><option value="all">Archivo completo (66)</option><option value="PRIORITARIO_IBERICO">Solo interés ibérico (14)</option><option value="REVISION_PENDIENTE">Solo en revisión (2)</option><option value="ARCHIVO_NO_PRIORITARIO">Solo archivo (50)</option></select></label>
+<label>Selección<select id="group"><option value="focus">Interés ibérico y revisión (15)</option><option value="all">Archivo completo (66)</option><option value="PRIORITARIO_IBERICO">Solo interés ibérico (14)</option><option value="REVISION_PENDIENTE">Solo en revisión (1)</option><option value="ARCHIVO_NO_PRIORITARIO">Solo archivo (51)</option></select></label>
 </div>
-<p class="muted"><span id="count">Preparando catálogo…</span> · <a href="../../../data/picola-catalogo-maestro-visual-v1.tsv" download>Descargar tabla maestra (.tsv)</a> · <a href="../inventario/">Inventario documental anterior</a></p>
+<p class="muted"><span id="count">Preparando catálogo…</span> · <a href="../../../data/picola-catalogo-maestro-visual-v1.1.tsv" download>Descargar tabla maestra (.tsv)</a> · <a href="../inventario/">Inventario documental anterior</a></p>
 <div id="cards" class="cards" aria-live="polite"><p>Cargando datos documentales…</p></div>
 <article class="panel detail" id="detail" hidden tabindex="-1" aria-label="Ficha técnica seleccionada"><h2 id="detail-title">Ficha técnica</h2><dl id="facts" class="factgrid"></dl><p id="detail-links"></p></article>
 </section>
@@ -56,7 +56,7 @@ h1,h2,h3{font-family:Georgia,serif;line-height:1.22}h1{font-size:clamp(2rem,4vw,
 <p><a href="../maqueta-geo10.zip" download>Descargar maqueta editable (ZIP, si está disponible)</a></p>
 <div class="no-map"><strong>Localización de objetos: bloqueada científicamente</strong>
 <p>Ni una referencia a La Picola ni una UE sin geometría bastan para colocar un marcador en el recinto. El control REC-105 mantiene <strong>0 homologías métricas independientes aceptadas</strong> entre planos.</p>
-<p>Cuando haya sector/ambiente, geometría de UE, homologación espacial y derechos comprobados, se podrá autorizar una posición. Mientras tanto, las fichas solo muestran <em>procedencia textual</em>.</p></div>
+<p>El <a href="../../../data/picola-perimetro-bic-oficial-v1.tsv">perímetro legal del BIC (21 vértices ETRS89 / UTM 30N)</a> está disponible como referencia territorial oficial; <strong>no son coordenadas de materiales ni de habitaciones ibéricas</strong>. Fuente: <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-4134">declaración BIC (BOE)</a>.</p><p>Cuando haya sector/ambiente, geometría de UE, homologación espacial y derechos comprobados, se podrá autorizar una posición. Mientras tanto, las fichas solo muestran <em>procedencia textual</em>.</p></div>
 <div class="panel warning"><strong>Imágenes de materiales:</strong> el catálogo usa marcadores neutros. Los enlaces bibliográficos no constituyen licencia para copiar fotografías o dibujos. No se exhiben fotos individuales de terceros sin permiso comprobado.</div>
 </aside>
 </div>
@@ -85,6 +85,7 @@ function recordDetails(r){
   for(const [key,value] of entries){const wrap=document.createElement("div");wrap.className="fact";wrap.append(textNode("dt",key),textNode("dd",value));dl.append(wrap)}
   const links=$("detail-links");links.replaceChildren();
   const a=document.createElement("a");a.href=r.fuente_url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Consultar fuente bibliográfica publicada";links.append(a);
+  if(r.imagen_url){const t=document.createElement("span");t.textContent=" · ";links.append(t);const photo=document.createElement("a");photo.href=r.imagen_url;photo.target="_blank";photo.rel="noopener noreferrer";photo.textContent="Consultar fotografía en sitio de la institución (derechos pendientes)";links.append(photo)}
   if(r.estado!=="ARCHIVO_NO_PRIORITARIO"){const s=document.createElement("span");s.textContent=" · ";links.append(s);const b=document.createElement("a");b.href="../inventario/fichas/?id="+encodeURIComponent(r.id);b.textContent="Abrir ficha documental";links.append(b)}
   if(r.id==="MARQ-004"){const t=document.createElement("span");t.textContent=" · ";links.append(t);const b=document.createElement("a");b.href="../inventario/fichas/marq-004/";b.textContent="Ficha ampliada de la copa ática";links.append(b)}
   $("detail").focus();
@@ -110,7 +111,7 @@ function render(){
   body.append(actions);card.append(body);root.append(card)
  }
 }
-fetch("../../../data/picola-catalogo-maestro-visual-v1.tsv").then(r=>{if(!r.ok)throw Error("Datos no disponibles");return r.text()}).then(t=>{
+fetch("../../../data/picola-catalogo-maestro-visual-v1.1.tsv").then(r=>{if(!r.ok)throw Error("Datos no disponibles");return r.text()}).then(t=>{
  const lines=t.trim().split(/\r?\n/).map(line=>line.split("\t"));const keys=lines.shift();
  state.rows=lines.filter(x=>x.length===keys.length).map(x=>Object.fromEntries(keys.map((k,i)=>[k,x[i]])));
  render()

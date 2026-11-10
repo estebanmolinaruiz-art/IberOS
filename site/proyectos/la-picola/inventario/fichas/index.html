@@ -13,7 +13,7 @@
 const q=new URLSearchParams(location.search),id=q.get("id")||"",el=document.getElementById("detail"),title=document.getElementById("title");
 const refs={"MARQ":"https://marqalicante.com/contenido/publicaciones/pub2_87.pdf","EPI":"https://rua.ua.es/server/api/core/bitstreams/0efcbea3-557a-41ee-8809-fd3375044ae5/content","PIC":"https://repositorio.uam.es/bitstream/10486/12542/1/60734_garcia_martin_josep_miquel.pdf"};
 function entry(dl,k,v){const dt=document.createElement("dt"),dd=document.createElement("dd");dt.textContent=k;dd.textContent=v||"No verificado";dl.append(dt,dd)}
-fetch("../../../../data/picola-inventario-iberico-v0.4.tsv").then(r=>{if(!r.ok)throw Error("Fallo de datos");return r.text()}).then(s=>{
+fetch("../../../../data/picola-inventario-iberico-v0.5.tsv").then(r=>{if(!r.ok)throw Error("Fallo de datos");return r.text()}).then(s=>{
 const rows=s.trim().split(/\r?\n/).slice(1).map(x=>x.split("\t"));const r=rows.find(x=>x[0]===id);
 if(!r){el.textContent="No hay una ficha correspondiente al identificador solicitado. Consulte la lista principal.";title.textContent="Ficha no encontrada";return}
 title.textContent=r[0]+" · "+r[1];el.replaceChildren();const dl=document.createElement("dl");

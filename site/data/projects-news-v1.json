@@ -61,6 +61,34 @@
   ],
   "news": [
     {
+      "id": "picola-permisos-fotografia-control-geo-v05-2026-11-10",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: cuatro fotografías identificadas, cronología corregida y perímetro BIC oficial",
+      "summary": "IberOS · PICOLA–GEO ha verificado en la galería institucional del Museo del Mar fotografías publicadas de urna ibérica, vasija ibérica, molino y kylix; se enlazan a la fuente original y no se copian por falta de licencia individual de reproducción. MARQ-009, vaso de paredes finas Mayet XXIV fechado en el siglo I d. C. según catálogo MARQ de 2012, se retira de los pendientes ibéricos y pasa al archivo romano. La selección queda en 14 registros de interés ibérico, 1 pendiente y 51 archivados, conservando 66 registros. Se añade el perímetro BIC con 21 vértices oficiales ETRS89 UTM30, sin interpretarlo como coordenadas de piezas ni homologías de la planta ibérica. Consulte el catálogo: https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/catalogo-visual/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-11-10",
+      "author_credit": "IberOS · PICOLA–GEO",
+      "sources": [
+        {
+          "title": "Museo del Mar, piezas de época antigua",
+          "url": "https://museodelmarsantapola.com/piezas/epoca-antigua/"
+        },
+        {
+          "title": "Catálogo MARQ Santa Pola 2012",
+          "url": "https://marqalicante.com/contenido/publicaciones/pub2_87.pdf"
+        },
+        {
+          "title": "Decreto BIC La Picola, BOE-A-2022-4134",
+          "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2022-4134"
+        }
+      ]
+    },
+    {
       "id": "picola-catalogo-maestro-visual-3d-2026-11-10",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: catálogo visual de hallazgos junto a la reconstrucción 3D",
