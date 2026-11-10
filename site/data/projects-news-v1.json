@@ -61,6 +61,34 @@
   ],
   "news": [
     {
+      "id": "picola-catalogo-maestro-visual-3d-2026-11-10",
+      "project_id": "la-picola-reconstruction",
+      "title": "La Picola: catálogo visual de hallazgos junto a la reconstrucción 3D",
+      "summary": "IberOS · PICOLA–GEO publica un catálogo maestro consultable con 66 registros y fichas documentales; mantiene una selección de 14 registros de interés ibérico, dos sujetos a revisión y 50 en archivo histórico. Cada ficha identifica inventario, cronología, procedencia, sector, ambiente o UE cuando constan en fuentes, y situación de imágenes y depósitos. La vista enlaza la maqueta 3D experimental, pero no inserta objetos sobre ella: REC-105 sigue con cero homologías métricas independientes aceptadas. No se reproducen fotografías de terceros sin licencia. Abrir: https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/catalogo-visual/.",
+      "status": "PUBLISHED",
+      "public_news_approved": true,
+      "editorial_approval": true,
+      "source_verification": true,
+      "media_rights_verification": true,
+      "media": [],
+      "publication_date": "2026-11-10",
+      "author_credit": "IberOS · PICOLA–GEO",
+      "sources": [
+        {
+          "title": "Catálogo maestro IberOS (66 registros)",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/data/picola-catalogo-maestro-visual-v1.tsv"
+        },
+        {
+          "title": "Reconstrucción 3D documental de La Picola",
+          "url": "https://estebanmolinaruiz-art.github.io/IberOS/proyectos/la-picola/"
+        },
+        {
+          "title": "Catálogo MARQ Santa Pola",
+          "url": "https://marqalicante.com/contenido/publicaciones/pub2_87.pdf"
+        }
+      ]
+    },
+    {
       "id": "picola-fichas-documentales-navegables-2026-11-10",
       "project_id": "la-picola-reconstruction",
       "title": "La Picola: fichas técnicas navegables para el inventario ibérico",
