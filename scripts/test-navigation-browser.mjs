@@ -16,6 +16,8 @@ try{
  if(await page.locator('.ib-news-rock').count()!==0)throw Error('Portada escritorio: placa News duplicada');
  const inPageNews=page.locator('.flyer-frame .ib-project-feature');
  if(await inPageNews.count()!==1)throw Error('Portada escritorio: panel Nuevos Proyectos ausente o duplicado');
+ const homeTarget=await page.locator('.nav-hotspot[aria-label="Inicio"]').getAttribute('href');
+ if(homeTarget!=='./')throw Error('Portada: enlace Inicio incorrecto');
  const newsTarget=await inPageNews.locator('a[aria-label="Abrir News"]').getAttribute('href');
  if(newsTarget!=='proyectos/')throw Error('Portada: el enlace NEWS no lleva a Proyectos');
  console.log('✓ Portada escritorio: un solo panel News interior, sin piedra exterior y con enlace correcto');
@@ -157,7 +159,6 @@ try{
    ['.tile-hotspot[aria-label="Abrir Recursos"]','/recursos/'],
    ['.tile-hotspot[aria-label="Abrir Casos de estudio"]','/casos/'],
    ['.tile-hotspot[aria-label="Abrir Comunidad"]','/comunidad/'],
-   ['.nav-hotspot[aria-label="Inicio"]','/'],
    ['.nav-hotspot[aria-label="Corpus"]','/corpus/'],
    ['.nav-hotspot[aria-label="Herramientas"]','/herramientas/'],
    ['.nav-hotspot[aria-label="Comunidad"]','/comunidad/'],
