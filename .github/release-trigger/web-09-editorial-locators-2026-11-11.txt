@@ -1,0 +1,1 @@
+WEB-09: documented editorial source locators for Caminreal p.96, Andelo p.65, Tivissa p.200 line 2; Villares V study and figures reference with exact per-token positions pending; La Serreta B1 internally anchored with external original comparison pending. No image/sign collation or semantic promotion. QA #1664 passed. Free GitHub Pages publication.
