@@ -1,0 +1,111 @@
+{
+  "schema": "IberOS-WEB07-Form-Witnesses/1.0",
+  "date": "2026-11-11",
+  "basis": "Resúmenes editoriales publicados en los expedientes del propio IberOS; no sustituyen cotejo independiente sobre fotografías o calcos.",
+  "scientific_gates": {
+    "new_physical_objects": 0,
+    "photographic_sign_verifications_added": 0,
+    "semantic_promotions": 0,
+    "independence_verified": false
+  },
+  "search_policy": "Exact textual tokens matched in registered form arrays only. Formal comparison links are not equivalence or translation claims. Do not infer absence from this curated subset.",
+  "records": [
+    {
+      "object_id": "IBR-MUS-0001",
+      "title": "Mosaico de Caminreal",
+      "forms": [
+        {
+          "text": "ekiar",
+          "role": "reported_form"
+        }
+      ],
+      "context": "El expediente registra ekiar en una inscripción musiva junto a likine y usekeŕte; la posible relación con producción o autoría sigue siendo una interpretación contextual.",
+      "evidence_status": "Lectura editorial descrita en ficha; sin cotejo fotográfico independiente acreditado por este índice.",
+      "source": "Simón Cornago (2015), Palaeohispanica 15, pp. 87–127",
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v0i15.39",
+      "source_record": "ficha-enrichment-3.json",
+      "dependency_group": "COMPARACION_MOSAICOS_LIKINE",
+      "independence_status": "Independencia textual y dependencia de ediciones por auditar"
+    },
+    {
+      "object_id": "IBR-MUS-0002",
+      "title": "Mosaico de Andelo",
+      "forms": [
+        {
+          "text": "ekien",
+          "role": "reported_form"
+        },
+        {
+          "text": "ekiar",
+          "role": "formal_comparison_only"
+        }
+      ],
+      "context": "El expediente menciona ekien en comparación formal con ekiar de Caminreal. No se atribuye la presencia literal de ekiar a Andelo.",
+      "evidence_status": "Lectura editorial descrita en ficha; interpretación y adscripción lingüística debatidas.",
+      "source": "Orduña Aznar (2023), Palaeohispanica 23, pp. 63–74",
+      "source_url": "https://doi.org/10.36707/palaeohispanica.v23i0.520",
+      "source_record": "ficha-enrichment-3.json",
+      "dependency_group": "COMPARACION_MOSAICOS_LIKINE",
+      "independence_status": "Comparación entre dos piezas; independencia de análisis no acreditada"
+    },
+    {
+      "object_id": "IBR-PLM-0002",
+      "title": "Plomo de Tivissa",
+      "forms": [
+        {
+          "text": "śalir",
+          "role": "reported_form"
+        }
+      ],
+      "context": "La ficha documenta coaparición de śalir con secuencia nominal y expresión numeral. La semántica exacta y la dirección de la relación siguen abiertas.",
+      "evidence_status": "Lectura editorial incluida; transcripción de signos no cotejada independientemente en este índice.",
+      "source": "IberOS Case Studies I, ficha de Tivissa (2026)",
+      "source_url": "https://doi.org/10.5281/zenodo.22957236",
+      "source_record": "ficha-enrichment-3.json",
+      "dependency_group": "SIN_RESOLVER_TIVISSA",
+      "independence_status": "Pendiente de cotejo documental independiente"
+    },
+    {
+      "object_id": "IBR-PLM-0005",
+      "title": "Villares V",
+      "forms": [
+        {
+          "text": "śalir",
+          "role": "reported_form"
+        },
+        {
+          "text": "śalibos",
+          "role": "reported_variant_context"
+        }
+      ],
+      "context": "La ficha resume registros repetitivos con śalir/śalibos y cantidades; la comparación no establece equivalencia léxica ni monetaria.",
+      "evidence_status": "Resumen editorial de ficha; partes dañadas y cotejo de lectura pendientes de evaluación independiente.",
+      "source": "Expediente IberOS Villares V, revisión editorial 2024 recogida en ficha",
+      "source_url": null,
+      "source_record": "ficha-enrichment-4.json",
+      "dependency_group": "SIN_RESOLVER_VILLARES_V",
+      "independence_status": "Pendiente de comprobar fuente editorial primaria y dependencias"
+    },
+    {
+      "object_id": "IBR-PLM-0009",
+      "title": "Plomo de La Serreta",
+      "forms": [
+        {
+          "text": "śalir",
+          "role": "reported_form"
+        },
+        {
+          "text": "śalirg",
+          "role": "reported_variant_context"
+        }
+      ],
+      "context": "El expediente registra śalir/śalirg en ambas caras; el índice de variantes vincula la lectura editorial moderna śalirg con SALIRG y SALIRIG en B1.",
+      "evidence_status": "Variantes editoriales registradas; cero cotejos independientes de signos sobre fotografía en el control WEB-06.",
+      "source": "Fletcher Valls y Silgo Gauche (1992); anclaje editorial Velaza (2011) vía Ngomo Fernández (2021)",
+      "source_url": null,
+      "source_record": "ficha-enrichment-4.json; serreta-variants-v1.json",
+      "dependency_group": "SERRETA_UN_OBJETO_MULTIPLES_TEXTOS",
+      "independence_status": "Un solo objeto físico; distintas caras y fases no son objetos independientes"
+    }
+  ]
+}
