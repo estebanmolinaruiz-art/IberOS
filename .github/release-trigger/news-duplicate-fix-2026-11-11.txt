@@ -1,0 +1,4 @@
+IberOS WEB: public release trigger for removing duplicate floating News plaque.
+Keep the single in-frame Nuevos Proyectos panel.
+Includes regression tests from commit f593e65a87b07cfc09d75bb6233e95c3ff9af497.
+This marker triggers the existing free GitHub Pages deployment workflow.
