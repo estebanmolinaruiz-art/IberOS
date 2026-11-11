@@ -11,6 +11,14 @@ const checks=[
   ['/laboratorio/?id=IBR-PLM-0002','Laboratorio',/IBR-PLM-0002/]
 ];
 try{
+ // Home page regression: keep the project news card, never restore the external stone plaque.
+ await page.goto(base+'/',{waitUntil:'domcontentloaded'});
+ if(await page.locator('.ib-news-rock').count()!==0)throw Error('Portada escritorio: placa News duplicada');
+ const inPageNews=page.locator('.flyer-frame .ib-project-feature');
+ if(await inPageNews.count()!==1)throw Error('Portada escritorio: panel Nuevos Proyectos ausente o duplicado');
+ const newsTarget=await inPageNews.locator('a[aria-label="Abrir News"]').getAttribute('href');
+ if(newsTarget!=='proyectos/')throw Error('Portada: el enlace NEWS no lleva a Proyectos');
+ console.log('✓ Portada escritorio: un solo panel News interior, sin piedra exterior y con enlace correcto');
  for(const [path,label,expected] of checks){
   const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
   if(!response || response.status()!==200)throw Error(label+' HTTP '+(response?.status()??'sin respuesta'));
