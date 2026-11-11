@@ -184,6 +184,20 @@ try{
  if(await page.locator('#crossResults .ib-forms-result').count()!==0)throw Error('WEB-07: resultados falsos para forma no registrada');
  if(!((await page.locator('#crossResults').innerText()).includes('No consta la forma')))throw Error('WEB-07: falta abstención explícita');
  console.log('✓ WEB-07: cinco testimonios documentales, comparaciones formales separadas y abstención');
+ // WEB-08: class filter must exclude formal comparisons from editorial attestations.
+ await page.locator('#crossQuery').fill('ekiar');
+ await page.locator('#crossEvidence').selectOption('EDITORIAL_FORM_UNCOLLATED');
+ if(await page.locator('#crossResults .ib-forms-result').count()!==1)throw Error('WEB-08: ekiar lectura editorial debe apuntar solo a Caminreal');
+ if(!((await page.locator('#crossResults').innerText()).includes('Mosaico de Caminreal')))throw Error('WEB-08: falta testimonio editorial de Caminreal');
+ await page.locator('#crossEvidence').selectOption('FORMAL_COMPARISON_NOT_ATTESTED');
+ if(await page.locator('#crossResults .ib-forms-result').count()!==1)throw Error('WEB-08: comparación formal ekiar debe apuntar solo a Andelo');
+ if(!((await page.locator('#crossResults').innerText()).includes('Mosaico de Andelo')))throw Error('WEB-08: no señala comparación no literal de Andelo');
+ await page.locator('#crossQuery').fill('śalirg');
+ await page.locator('#crossEvidence').selectOption('EDITORIAL_VARIANT_UNCOLLATED');
+ if(await page.locator('#crossResults .ib-forms-result').count()!==1)throw Error('WEB-08: śalirg debe permanecer variante editorial de La Serreta');
+ if(!((await page.locator('#crossGate').innerText()).includes('cero cotejos independientes')))throw Error('WEB-08: no declara que faltan verificaciones de grafemas');
+ console.log('✓ WEB-08: tres clases excluyentes y ningún cotejo paleográfico inventado');
+
 
 
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
