@@ -1,0 +1,43 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cotejo Villares V · IberOS</title><meta name="description" content="Matriz documental provisional de Villares V por cara y línea, museo 13411 y edición Ferrer i Jané 2024. Sin validación paleográfica independiente."><link rel="stylesheet" href="../assets/iberos-plus.css">
+<style>
+.vv-container{max-width:1250px;margin:20px auto 50px;padding:0 15px;color:#193848}
+.vv-card{background:#fff8ea;border:1px solid #c5a576;border-radius:12px;padding:18px;margin:15px 0}
+.vv-card h2{font:700 1.45rem Georgia,serif;margin:4px 0 12px}
+.vv-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.vv-matrix{border-collapse:collapse;width:100%;min-width:870px;font:.88rem/1.4 system-ui,sans-serif}
+.vv-matrix th,.vv-matrix td{padding:11px;border:1px solid #c6b08d;text-align:left;vertical-align:top}
+.vv-matrix th{background:#284b57;color:#fff8e7}
+.vv-matrix tr:nth-child(even){background:#f5e8d0}
+.vv-matrix td:nth-child(1){font-weight:700;white-space:nowrap}
+.vv-matrix code{font:600 .88rem/1.5 ui-monospace,monospace;white-space:normal;overflow-wrap:anywhere;color:#113749}
+.vv-refs{display:flex;flex-wrap:wrap;gap:14px}
+.vv-refs a{font-weight:700;color:#12516d}
+.vv-warning{border-left:4px solid #a26b31;padding:12px 16px;background:#f6e8cd;line-height:1.6}
+.vv-table-caption{font:.86rem system-ui;margin:0 0 12px}
+.vv-count{font-weight:700}
+</style></head><body class="iberos-inner"><div id="head"></div>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">WEB-11 · Auditoría textual contrastiva</div><h1>Villares V · <em>Matriz de discrepancias</em></h1><p>Inventario museístico 13411 · F.17.01 / V.07.01. Comparación editorial por caras y líneas, sin atribuir verificación independiente a los signos.</p></div></section>
+<main class="vv-container">
+<section class="vv-card"><h2>Alcance científico</h2>
+<p>Se cotejan fragmentos breves de la transcripción del <strong>Museo de Prehistoria de Valencia</strong> con una lectura de 2024 atribuida a <strong>Joan Ferrer i Jané</strong>. La alineación A1–A9 y B1–B5 es provisional: se ha preparado con la transcripción museística, una reproducción secundaria de la lectura de 2024 y fragmentos del estudio original.</p>
+<div class="vv-warning"><strong>Regla de validación:</strong> las diferencias textuales y las restituciones que aparecen a continuación <strong>no son correcciones paleográficas acreditadas por IberOS</strong>. Solo un cotejo de los signos sobre fotografías o dibujos verificables permitirá resolverlas. Ninguna propuesta léxica o interpretación de roles se promociona automáticamente al Core.</div>
+<p id="vv-status" role="status" aria-live="polite">Cargando matriz…</p>
+<div class="vv-refs"><a href="https://mupreva.org/web_mupreva/catalogo/13411/fr" target="_blank" rel="noopener noreferrer">Registro museo 13411</a><a href="https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions" target="_blank" rel="noopener noreferrer">Ferrer i Jané (2024)</a><a href="../formas/?forma=śalir">Explorar śalir</a><a href="../ficha/?id=IBR-PLM-0005">Ficha de Villares V</a></div></section>
+<section class="vv-card"><h2>Comparación línea a línea</h2><p class="vv-table-caption">Los fragmentos solo sirven como localizadores editoriales: los cortes, corchetes, barras, diacríticos y separaciones no sustituyen el facsímil. Desplaza horizontalmente la tabla en móvil.</p>
+<div class="vv-scroll"><table class="vv-matrix"><thead><tr><th scope="col">Cara / línea</th><th scope="col">Museo (fragmento)</th><th scope="col">Lectura atribuida a 2024 (fragmento)</th><th scope="col">Diferencia a contrastar</th><th scope="col">Estado</th></tr></thead><tbody id="vv-rows"></tbody></table></div></section>
+<section class="vv-card"><h2>Prioridades de cotejo visual</h2>
+<p>Prioridad alta: <strong>A3, A7 y B2</strong>, donde se proponen lecturas del grupo <code>bobaida</code>; <strong>B1</strong>, que presenta una restitución inicial; y <strong>B4</strong>, con una lectura fragmentaria de <code>śalir</code>. La oposición gráfica <code>bo</code> / <code>ta</code> requiere comparar las figuras originales y comprobar si se trata de variantes de signo o de errores de calco.</p>
+<p>Para registrar una corrección científica será obligatorio conservar: identificador 13411, cara y línea, figura y página, grafema anterior y propuesto, posición en la imagen, referencia editorial, criterio paleográfico, revisión independiente y derechos de reutilización.</p>
+<div class="vv-refs"><a href="../data/villares-v-discrepancies-v1.json">Descargar matriz estructurada (JSON)</a><a href="../corpus/">Volver al Corpus</a></div></section>
+</main><script type="module">
+import{header}from"../assets/portal-data.js";document.getElementById("head").innerHTML=header("../");
+const body=document.getElementById("vv-rows"),status=document.getElementById("vv-status");
+function cell(tr,value,mono=false){const td=document.createElement("td");if(mono){const code=document.createElement("code");code.textContent=value;td.append(code)}else td.textContent=value;tr.append(td)}
+try{const res=await fetch("../data/villares-v-discrepancies-v1.json");if(!res.ok)throw Error("Error HTTP "+res.status);
+const d=await res.json();if(d.schema!=="IberOS-VillaresV-DiscrepancyMatrix/1.0"||d.museum_inventory!=="13411"||d.rows?.length!==14||d.independent_sign_checks!==0||d.semantic_promotion!==false)throw Error("Archivo no válido");
+const seen=new Set();
+for(const row of d.rows){if(!["A","B"].includes(row.face)||!Number.isInteger(row.line)||seen.has(row.id)||row.photographic_sign_check!==false)throw Error("Fila no válida");seen.add(row.id);const tr=document.createElement("tr");cell(tr,row.face+row.line);cell(tr,row.museum_excerpt,true);cell(tr,row.edition_2024_excerpt,true);cell(tr,row.category);cell(tr,row.assessment);body.append(tr)}
+status.textContent="14 líneas editoriales organizadas · 1 objeto físico · 0 cotejos independientes de signos · 0 traducciones nuevas.";
+}catch(e){status.textContent="No se pudo cargar la matriz; consulta el archivo de datos original.";console.error("Villares WEB-11",e)}
+</script></body></html>
