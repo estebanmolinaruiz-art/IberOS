@@ -1,8 +1,8 @@
-"""Experimental L30 editorial quantity notation extractor.
+"""Experimental L30/L32 editorial quantity notation extractor.
 
 Reads editorial transliterations, not verified physical signs. Never infers
 numeric values, metrological equivalences, archaeological function or translations.
-L26-L29 specimens are development data, not independent L30 evaluation.
+L26-L31 specimens are development data, not independent L32 evaluation.
 """
 from __future__ import annotations
 import re
@@ -11,6 +11,11 @@ from dataclasses import asdict, dataclass
 LEFT = r'(?<![\wḿŕś])'
 RIGHT = r'(?![\wḿŕś])'
 PATTERNS = [
+    # L32: word-attached terminal o+II is a CANDIDATE only, never a decoded quantity.
+    # Exactly this shape occurs in the development example abaoIIII (Orleyl).
+    ('embedded_unit_strokes_unresolved', re.compile(
+        r'(?<=[a-zḿŕś])(?P<unit>o)(?P<sep>)(?P<val>I{2,30})' + RIGHT,
+        re.UNICODE)),
     ('e_complex_unresolved', re.compile(
         LEFT + r'(?P<unit>e)(?P<sep>[: \t]*)(?P<val>Π[ \t]*I+|[IV]+)' + RIGHT,
         re.UNICODE)),
