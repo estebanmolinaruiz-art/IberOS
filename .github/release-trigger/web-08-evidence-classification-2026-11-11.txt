@@ -1,0 +1,1 @@
+WEB-08 public release. Separates editorial form mentions, editorial variants and un-attested formal comparisons; no independently verified glyph positions or semantic promotions. Chromium QA commit d89cd51 completed successfully. Zero-cost GitHub Pages release.
