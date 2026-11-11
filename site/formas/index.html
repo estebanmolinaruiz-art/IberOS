@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Formas y variantes documentales | IberOS</title>
+<meta name="description" content="Explorador experimental de lecturas y variantes editoriales ibéricas; evidencia y límites documentales explícitos.">
+<link rel="stylesheet" href="../assets/iberos-plus.css">
+<style>
+.ib-forms-shell{max-width:1150px;margin:24px auto;padding:0 16px 45px;color:#17384a}
+.ib-forms-shell h2{font:700 clamp(1.5rem,3vw,2.1rem) Georgia,serif}
+.ib-forms-panel{border:1px solid #bca073;background:#fff8e9;border-radius:12px;padding:clamp(16px,3vw,28px);margin:16px 0}
+.ib-forms-search{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.ib-forms-search input{flex:1;min-width:220px;padding:12px;border-radius:6px;border:1px solid #a88c60;font:1rem system-ui}
+.ib-forms-result{border:1px solid #c7ac82;border-radius:9px;background:#f2e6cd;padding:15px;margin:12px 0}
+.ib-forms-result h3{margin:2px 0 7px;font:700 1.28rem Georgia,serif}
+.ib-forms-meta{font:.85rem system-ui;color:#4d555c}
+.ib-forms-result code{overflow-wrap:anywhere;color:#14384a}
+.ib-forms-actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.ib-forms-actions a{color:#0d4e69;font-weight:700}
+.ib-forms-note{background:#f7edd7;border-left:4px solid #a57334;padding:12px 15px;line-height:1.6}
+</style></head>
+<body class="iberos-inner"><div id="head"></div>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">WEB-06 · Cotejo documental</div><h1>Formas y <em>variantes editoriales</em></h1><p>Busca formas registradas en testimonios concretos. Una coincidencia escrita no establece una traducción, una identidad paleográfica ni un testimonio independiente.</p></div></section>
+<main class="ib-forms-shell">
+<section class="ib-forms-panel" aria-labelledby="scope-title"><h2 id="scope-title">Archivo experimental de variantes</h2>
+<p>Primera incorporación: <strong>La Serreta</strong>, un solo objeto físico (IBR-PLM-0009) con siete cotejos editoriales pendientes de verificación individual de signos mediante fotografía. El total de variantes <strong>no</strong> equivale a objetos ni evidencias independientes.</p>
+<label for="formQuery"><strong>Buscar lectura moderna o variante histórica</strong></label>
+<div class="ib-forms-search"><input id="formQuery" type="search" placeholder="Por ejemplo: śalirg, SALIRIG, orti" autocomplete="off"><button class="btn gold" id="formSearch" type="button">Buscar</button></div>
+<p class="ib-forms-meta">Comparación textual literal sin equivalencias fonéticas automáticas. Coincidencias parciales posibles; no se busca todavía en todo el corpus.</p>
+<p id="formSummary" role="status" aria-live="polite">Cargando índice documental…</p><div id="formResults"></div>
+</section>
+<section class="ib-forms-panel"><h2>Procedencia y límites</h2><p id="formProvenance">Consultando registro original de variantes…</p>
+<div class="ib-forms-note"><strong>Regla científica:</strong> una lectura editorial anotada no equivale a un signo cotejado independientemente. No se incorporan nuevas reglas semánticas al Core por estas búsquedas. Consulta siempre las publicaciones originales y las verificaciones pendientes.</div>
+<div class="ib-forms-actions"><a href="../ficha/?id=IBR-PLM-0009">Ficha de La Serreta</a><a href="../data/serreta-variants-v1.json">Datos originales (JSON)</a><a href="../corpus/">Corpus general</a></div></section>
+</main>
+<script type="module">
+import {header} from "../assets/portal-data.js";
+document.getElementById("head").innerHTML=header("../");
+const field=document.getElementById("formQuery"),results=document.getElementById("formResults"),summary=document.getElementById("formSummary"),provenance=document.getElementById("formProvenance");
+let dataset=null;
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n}
+function para(parent,label,value){const p=el("p");const b=el("strong",null,label+": ");p.append(b,document.createTextNode(value));parent.append(p)}
+function normalized(v){return String(v||"").trim().normalize("NFC").toLocaleLowerCase("es")}
+function render(){
+ if(!dataset)return;
+ const query=normalized(field.value);
+ const hits=dataset.variants.filter(v=>!query||[v.modern,...v.historical].some(x=>normalized(x).includes(query)));
+ results.replaceChildren();
+ summary.textContent=hits.length+" cotejo"+(hits.length===1?"":"s")+" editorial"+(hits.length===1?"":"es")+" encontrado"+(hits.length===1?"":"s")+" (1 objeto físico como máximo).";
+ if(!hits.length){results.append(el("p","ib-forms-note","No consta esta forma en el índice editorial limitado de La Serreta. No significa que esté ausente del resto del corpus."));return}
+ for(const v of hits){
+  const card=el("article","ib-forms-result");card.append(el("h3",null,v.modern));
+  para(card,"Pasaje",v.line);para(card,"Alternativas históricas",v.historical.join(" / "));
+  para(card,"Cotejo fotográfico independiente",v.photo_sign_verified?"Registrado":"Pendiente");
+  const a=el("a",null,"Examinar la ficha de la pieza →");a.href="../ficha/?id="+encodeURIComponent(dataset.object_id);card.append(a);results.append(card);
+ }
+}
+document.getElementById("formSearch").addEventListener("click",render);
+field.addEventListener("input",render);field.addEventListener("keydown",e=>{if(e.key==="Enter")render()});
+const q=new URLSearchParams(location.search).get("q");if(q)field.value=q;
+try{
+ const response=await fetch("../data/serreta-variants-v1.json");
+ if(!response.ok)throw Error("HTTP "+response.status);
+ const data=await response.json();
+ if(data.schema!=="IberOS-Serreta-Editorial-Variants/1.0"||data.object_id!=="IBR-PLM-0009"||!Array.isArray(data.variants))throw Error("Formato documental inesperado");
+ dataset=data;
+ provenance.textContent=data.editorial_anchor+" · "+data.source_document+". "+data.note+" Cotejos de signos sobre fotografía registrados: "+data.gates.seven_independent_glyph_photo_checks+".";
+ render();
+}catch(e){summary.textContent="No se ha podido cargar el índice. Abre el registro original desde el enlace inferior.";provenance.textContent="Información documental no disponible temporalmente.";console.error("WEB-06",e)}
+</script></body></html>
