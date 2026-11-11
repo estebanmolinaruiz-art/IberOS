@@ -205,12 +205,21 @@ try{
  await page.locator('#crossQuery').fill('śalir');
  const summaries=await page.locator('#crossResults .ib-forms-result').allInnerTexts();
  if(!summaries.some(t=>t.includes('p. 200')&&t.includes('Línea 2')))throw Error('WEB-09: Tivissa sin página y línea editorial');
- if(!summaries.some(t=>t.includes('Villares V')&&t.includes('pendientes de cotejo')))throw Error('WEB-09: Villares V debe declarar localizador individual pendiente');
+ if(!summaries.some(t=>t.includes('Villares V')&&t.includes('13411')&&t.includes('No cotejo visual independiente')))throw Error('WEB-10: Villares V requiere inventario y límite de cotejo fotográfico');
  await page.locator('#crossEvidence').selectOption('EDITORIAL_VARIANT_UNCOLLATED');
  await page.locator('#crossQuery').fill('śalirg');
  const serreta=await page.locator('#crossResults .ib-forms-result').first().innerText();
- if(!serreta.includes('Cara B, línea 1')||!serreta.includes('no cotejado directamente'))throw Error('WEB-09: La Serreta debe distinguir localizador de cotejo visual');
+ if(!serreta.includes('Cara B, línea 1')||!serreta.includes('1.016')||!serreta.includes('sin verificación visual independiente'))throw Error('WEB-10: La Serreta necesita inventario museístico y límite visual');
  console.log('✓ WEB-09: localizadores editoriales y puertas científicas separados de lectura fotográfica');
+ const catalogueLinks=await page.locator('#crossResults a').evaluateAll(xs=>xs.map(a=>a.href));
+ if(!catalogueLinks.some(u=>u.includes('catalogo_cas_04_CATALOGO_MATERIALES.pdf')))throw Error('WEB-10: falta fuente museística de La Serreta');
+ await page.locator('#crossQuery').fill('śalir');
+ await page.locator('#crossEvidence').selectOption('EDITORIAL_FORM_UNCOLLATED');
+ const villaresCard=page.locator('#crossResults .ib-forms-result').filter({hasText:'Villares V'});
+ if(await villaresCard.count()!==1||!((await villaresCard.innerText()).includes('A1/A3/A5 y B1/B5')))throw Error('WEB-10: falta localización de śalir según museo de Villares V');
+ if(!((await villaresCard.locator('a').evaluateAll(xs=>xs.map(a=>a.href))).some(u=>u.includes('13411'))))throw Error('WEB-10: vínculo a inventario 13411 ausente');
+ console.log('✓ WEB-10: fuentes de museo localizadas, objeto correcto, sin promover lectura fotográfica');
+
 
 
 
