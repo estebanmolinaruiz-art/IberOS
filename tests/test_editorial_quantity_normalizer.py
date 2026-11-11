@@ -1,4 +1,4 @@
-"""L30 regression/negative controls. Tests syntax, not external accuracy."""
+"""L30/L32 regression/negative controls. Tests syntax, not external accuracy."""
 import unittest
 from iberos.editorial_quantity_normalizer import extract, classify
 
@@ -17,6 +17,20 @@ class EditorialQuantityNormalizerTests(unittest.TestCase):
 
     def test_negative_controls(self):
         for s in ['kaike iberico', 'bekaI', 'kilo', 'eŕkaike', 'kaŕ', 'aorta', 'ki6ko', 'o3a']:
+            self.assertEqual(extract(s), [], s)
+
+    def test_orleyl_development_case(self):
+        hits = extract('abaoIIII')
+        self.assertEqual(len(hits), 1)
+        self.assertEqual(hits[0]['raw'], 'oIIII')
+        self.assertEqual(hits[0]['start'], 3)
+        self.assertEqual(hits[0]['classification'], 'embedded_unit_strokes_unresolved')
+        self.assertEqual(classify('abaoIIII'), 'ambiguous_numeraliform_abstain')
+
+    def test_embedded_candidate_conservative(self):
+        for s in ['kaboIIII', 'śaloII']:
+            self.assertEqual(classify(s), 'ambiguous_numeraliform_abstain')
+        for s in ['bekaI', 'ki6ko', 'aoI', 'aoIIIIz', 'salir']:
             self.assertEqual(extract(s), [], s)
 
     def test_original_spans_preserved(self):
