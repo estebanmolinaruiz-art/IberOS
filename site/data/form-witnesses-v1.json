@@ -156,14 +156,14 @@
         "citation": "Museo de Prehistoria de Valencia, inventario 13411, transcripción por caras; Ferrer i Jané (2024), figs. 1–2, pp. 312–313",
         "source_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
         "document_page": null,
-        "inscription_locator": "Catálogo de museo 13411: śalir en A1/A3/A5 y B1/B5; śalibos en A3/A6 y B2. La edición revisada de Ferrer i Jané (2024) debe contrastarse por separado.",
+        "inscription_locator": "Inventario 13411: śalir en A1, A3, A5, A8, B1, B5; B4 conserva un fragmento final dudoso. śalibos en A3, A6 y B2. Cotejo editorial por línea en villares-v-discrepancies-v1.json.",
         "editorial_reading_excerpt": "Transcripción museística por caras A y B; consultar la fuente para ver signos dañados y la disposición de líneas",
-        "visual_target": "Museo: inventario 13411; Ferrer i Jané (2024), fotografía de caras A/B p. 312 y dibujo p. 313. Figuras no revisadas signo a signo ni autorizadas para reproducción.",
+        "visual_target": "Matriz de contraste A1–A9 y B1–B5 disponible en el explorador documental; comparación de ediciones provisional. Ferrer 2024: figuras 1–2, pp. 312–313; sin cotejo independiente de grafemas.",
         "verification": "Localizadores del catálogo del museo comprobados como datos editoriales. No cotejo visual independiente; distinguir de la edición revisada de 2024.",
         "museum_inventory": "13411",
         "museum_catalogue_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
         "museum_transcription_locators": {
-          "śalir": "Cara A, líneas 1, 3 y 5; cara B, líneas 1 y 5, según transcripción publicada en catálogo museístico",
+          "śalir": "Cara A: A1, A3, A5 y A8; cara B: B1, B5 y fragmento final de B4 (lectura dañada), según la transcripción museística.",
           "śalibos": "Cara A, líneas 3 y 6; cara B, línea 2, según transcripción publicada en catálogo museístico"
         }
       }
