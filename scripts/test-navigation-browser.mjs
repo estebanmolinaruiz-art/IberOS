@@ -115,9 +115,20 @@ try{
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
  try{
   for(const [selector,expected] of [
-   ['.tile-hotspot[aria-label="Abrir Fichas"]','/fichas/'],
+   ['.tile-hotspot[aria-label="Abrir Corpus"]','/corpus/'],
    ['.tile-hotspot[aria-label="Abrir Atlas"]','/atlas/'],
-   ['.nav-hotspot[aria-label="Corpus"]','/corpus/']
+   ['.tile-hotspot[aria-label="Abrir Fichas"]','/fichas/'],
+   ['.tile-hotspot[aria-label="Abrir Laboratorio"]','/laboratorio/'],
+   ['.tile-hotspot[aria-label="Abrir Arqueología 3D"]','/modelos3d/'],
+   ['.tile-hotspot[aria-label="Abrir Recursos"]','/recursos/'],
+   ['.tile-hotspot[aria-label="Abrir Casos de estudio"]','/casos/'],
+   ['.tile-hotspot[aria-label="Abrir Comunidad"]','/comunidad/'],
+   ['.nav-hotspot[aria-label="Inicio"]','/'],
+   ['.nav-hotspot[aria-label="Corpus"]','/corpus/'],
+   ['.nav-hotspot[aria-label="Herramientas"]','/herramientas/'],
+   ['.nav-hotspot[aria-label="Comunidad"]','/comunidad/'],
+   ['.nav-hotspot[aria-label="Recursos"]','/recursos/'],
+   ['.nav-hotspot[aria-label="Acerca de"]','/acerca/']
   ]){
    await mobile.goto(base+'/',{waitUntil:'domcontentloaded'});
    const duplicate=mobile.locator('.ib-news-rock');
