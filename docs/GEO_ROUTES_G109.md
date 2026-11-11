@@ -34,3 +34,25 @@ EVIDENCE → INFERENCE → HYPOTHESIS; jamás promoción automática al Core cie
 No modificar las métricas epigráficas, datasets curados ni el despliegue web.
 Ejecución: `python -m unittest discover -s tests -p 'test_route_research.py'`.
 Dependencias nuevas: ninguna. Coste: gratuito.
+
+
+## G-110: Clasificación de función histórica (experimental)
+
+`from iberos.route_function import RouteObservation, assess_route_function`
+
+La detección de una ruta y la interpretación de su función son tareas separadas.
+La nueva función distingue indicios **comerciales, militares, rituales y
+administrativos**, y puede etiquetar una hipótesis como `mixed` cuando
+existen evidencias comerciales y militares independientes. Los puntos aislados
+y las proximidades geográficas son solo contexto; **dos grupos independientes
+de evidencias directamente asociadas** son el mínimo para elevar una función
+a candidata de revisión externa (nunca a demostrada).
+
+Cada observación conserva identificador de fuente, grupo de dependencia,
+intervalo cronológico y vínculo directo o contextual. Las fechas se representan
+con años astronómicos. Las categorías `mixed`, `commercial` y `military`
+son etiquetas de hipótesis, no probabilidades ni interpretaciones validadas.
+
+Controles: `python -m unittest discover -s tests -p 'test_route_function.py'`.
+El módulo no requiere paquetes adicionales, bases de datos comerciales ni pago.
+No se activa en la web ni modifica las métricas existentes.
