@@ -1,0 +1,1 @@
+WEB-06: publish bounded Serreta editorial variant lookup as one physical object, no independent paleographic verification and no semantic promotion. Browser QA #1648 commit b1a09dc succeeded. Corpus link included. Free GitHub Pages workflow.
