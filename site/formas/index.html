@@ -91,6 +91,7 @@ function renderCross(){
   const locator=record.source_locator;
   if(locator){
    para(card,"Localizador editorial",locator.citation);
+   if(locator.museum_inventory)para(card,"Inventario museístico",locator.museum_inventory);
    para(card,"Pasaje de la inscripción",locator.inscription_locator);
    para(card,"Alcance de la verificación",locator.verification);
    if(locator.visual_target){const details=el("details");details.append(el("summary",null,"Imágenes y verificaciones pendientes"));details.append(el("p",null,locator.visual_target));card.append(details);}
@@ -98,6 +99,7 @@ function renderCross(){
   const actions=el("div","ib-forms-actions"),ficha=el("a",null,"Ficha original →");ficha.href="../ficha/?id="+encodeURIComponent(record.object_id);actions.append(ficha);
   const editorialUrl=record.source_locator?.source_url||record.source_url;
   if(editorialUrl&&/^https:\/\//.test(editorialUrl)){const source=el("a",null,"Consultar edición y localizador →");source.href=editorialUrl;source.target="_blank";source.rel="noopener noreferrer";actions.append(source);}
+  if(record.source_locator?.museum_catalogue_url){const catalogue=el("a",null,"Ficha de museo / inventario →");catalogue.href=record.source_locator.museum_catalogue_url;catalogue.target="_blank";catalogue.rel="noopener noreferrer";actions.append(catalogue);}
   card.append(actions);crossResults.append(card);
  }
 }
