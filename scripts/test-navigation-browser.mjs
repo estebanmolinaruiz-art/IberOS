@@ -112,10 +112,10 @@ try{
    ['.nav-hotspot[aria-label="Corpus"]','/corpus/']
   ]){
    await mobile.goto(base+'/',{waitUntil:'domcontentloaded'});
-   const news=mobile.locator('.ib-news-rock');
-   if(await news.count()!==1)throw Error('News: falta la piedra de La Picola');
-   const rockBox=await news.boundingBox();
-   if(!rockBox||rockBox.width>125||rockBox.x+rockBox.width<375)throw Error('News: piedra móvil demasiado grande o desalineada');
+   const duplicate=mobile.locator('.ib-news-rock');
+   if(await duplicate.count()!==0)throw Error('News: persiste una placa duplicada fuera de la portada');
+   const news=mobile.locator('.flyer-frame .ib-project-feature');
+   if(await news.count()!==1)throw Error('News: debe existir un único panel Nuevos Proyectos dentro de la portada');
    const el=mobile.locator(selector);
    await el.scrollIntoViewIfNeeded();
    const box=await el.boundingBox();
