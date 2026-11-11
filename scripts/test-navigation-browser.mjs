@@ -197,6 +197,21 @@ try{
  if(await page.locator('#crossResults .ib-forms-result').count()!==1)throw Error('WEB-08: śalirg debe permanecer variante editorial de La Serreta');
  if(!((await page.locator('#crossGate').innerText()).includes('cero cotejos independientes')))throw Error('WEB-08: no declara que faltan verificaciones de grafemas');
  console.log('✓ WEB-08: tres clases excluyentes y ningún cotejo paleográfico inventado');
+ // WEB-09: page/passages are traceable, but cannot masquerade as photo verification.
+ await page.locator('#crossQuery').fill('ekiar');
+ await page.locator('#crossEvidence').selectOption('EDITORIAL_FORM_UNCOLLATED');
+ const caminreal=await page.locator('#crossResults .ib-forms-result').first().innerText();
+ if(!caminreal.includes('p. 96')||!caminreal.includes('segundo elemento')||!caminreal.includes('no se han examinado directamente grafemas'))throw Error('WEB-09: faltan página, posición y límites verificables en Caminreal');
+ await page.locator('#crossQuery').fill('śalir');
+ const summaries=await page.locator('#crossResults .ib-forms-result').allInnerTexts();
+ if(!summaries.some(t=>t.includes('p. 200')&&t.includes('Línea 2')))throw Error('WEB-09: Tivissa sin página y línea editorial');
+ if(!summaries.some(t=>t.includes('Villares V')&&t.includes('pendientes de cotejo')))throw Error('WEB-09: Villares V debe declarar localizador individual pendiente');
+ await page.locator('#crossEvidence').selectOption('EDITORIAL_VARIANT_UNCOLLATED');
+ await page.locator('#crossQuery').fill('śalirg');
+ const serreta=await page.locator('#crossResults .ib-forms-result').first().innerText();
+ if(!serreta.includes('Cara B, línea 1')||!serreta.includes('no cotejado directamente'))throw Error('WEB-09: La Serreta debe distinguir localizador de cotejo visual');
+ console.log('✓ WEB-09: localizadores editoriales y puertas científicas separados de lectura fotográfica');
+
 
 
 
