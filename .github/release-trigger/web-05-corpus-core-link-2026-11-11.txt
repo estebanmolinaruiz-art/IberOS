@@ -1,0 +1,1 @@
+WEB-05 release: corpus cards display readable documented inclusion states and link directly to Core using OBJECT_ID. Existing filters, sources, Atlas, Ficha and Laboratorio links preserved. QA of functional change on commits 298d3fa and 9f7278b passed. No change to scientific metrics. No paid services.
