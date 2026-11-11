@@ -125,6 +125,12 @@ try{
  const ficheResponse=await page.goto(base+'/ficha/?id=IBR-PLM-0002',{waitUntil:'domcontentloaded'});
  if(!ficheResponse || ficheResponse.status()!==200)throw Error('Ficha Tivissa no disponible');
  await page.locator('#interpretationMain').waitFor({state:'visible',timeout:15000});
+ const quick=page.locator('.ib-quick-read');
+ await quick.waitFor({state:'visible',timeout:15000});
+ const quickText=await quick.innerText();
+ if(!quickText.includes('Plomo de Tivissa')||!quickText.includes('Imagen original:')||!quickText.includes('Significado:')||!quickText.includes('no existe traducción literal validada'))throw Error('Ficha sin resumen inicial de pieza, imagen y alcance semántico');
+ if(await quick.locator('a[href="#sign-reading-slot"],a[href="#interpretationMain"],a[href="#documentary-slot"]').count()!==3)throw Error('Ficha: faltan accesos rápidos a lectura, hipótesis y fuentes');
+ console.log('✓ WEB-05: ficha con lectura rápida, imagen acreditada/pendiente y cautela semántica');
  const mainText=await page.locator('#interpretationMain').innerText();
  if(!mainText.trim())throw Error('Ficha sin contenido visible en el panel principal de interpretación');
  const caveat=await page.locator('.ib-reconstruction').innerText();
