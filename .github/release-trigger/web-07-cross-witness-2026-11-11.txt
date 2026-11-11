@@ -1,0 +1,1 @@
+WEB-07 release: source-bounded cross-object form index for ekiar/ekien and śalir/śalirg/śalibos. Five existing physical objects, zero new sign-photo checks, zero semantic promotions. Existing WEB-06 preserved. Playwright QA successful on commit 01aeeff. Publish with free GitHub Pages.
