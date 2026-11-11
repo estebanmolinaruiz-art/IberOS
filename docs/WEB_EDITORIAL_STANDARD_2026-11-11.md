@@ -31,6 +31,14 @@ Este procedimiento sustituye las ediciones repetidas de archivos en `main`. Se a
 
 **Importante:** este flujo reduce CI redundante pero no elimina GitHub Actions en las PR existentes de otros hilos. Evitar publicaciones simultáneas; y si una revisión requiere cambios posteriores, esos cambios forman parte del mismo paquete.
 
+## WEB-14 — Control obligatorio de disparadores CI
+
+- Los flujos generales `tests.yml`, `web-e2e-free.yml` y `qa-web.yml` se ejecutan mediante `pull_request` o `workflow_dispatch`, **no** mediante `push` redundante. Se conserva su cobertura: tests Python, Core, pruebas de Chromium, interfaz y navegación.
+- La comprobación `scripts/check-ci-trigger-policy.mjs` impide volver a introducir disparadores `push` en estos flujos y mantiene el lanzamiento explícito de Pages.
+- Los flujos especializados de Core o de otras ramas no se desactivan indiscriminadamente; requieren su propia evaluación para preservar controles de investigación.
+- Los `push` a ramas de preparación, sin PR abierta, no generan las baterías generales anteriores. Abrir la PR del paquete una vez que estén agrupados código, datos, documentación y pruebas.
+- **Límite:** esta configuración elimina ejecuciones duplicadas por eventos; no garantiza que GitHub asigne inmediatamente los trabajos si la cola de Actions está detenida, ni elimina los avisos históricos de fallos.
+
 ## Pruebas mínimas de aceptación
 
 - Menús principales y los ocho accesos del cartel deben ser navegables desde móvil.
