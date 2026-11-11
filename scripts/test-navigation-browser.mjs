@@ -49,7 +49,7 @@ try{
   const cards=page.locator(selector);
   const count=await cards.count();
   if(count!==expected)throw Error(label+': '+count+' tarjetas en lugar de '+expected+' (posible duplicación o desaparición)');
-  const signatures=await cards.evaluateAll(nodes=>nodes.map(n=>(n.querySelector('h2,h3')?.textContent||n.getAttribute('aria-label')||n.textContent||'').trim().replace(/\\s+/g,' ').slice(0,160)));
+  const signatures=await cards.evaluateAll(nodes=>nodes.map(n=>(n.querySelector('h2,h3')?.textContent||n.getAttribute('aria-label')||n.textContent||'').trim().replace(/\s+/g,' ').slice(0,160)));
   if(new Set(signatures).size!==signatures.length)throw Error(label+': tarjetas con títulos repetidos');
   console.log('✓ '+label+': '+count+' tarjetas únicas');
  }
@@ -64,7 +64,7 @@ try{
     const st=getComputedStyle(parent);
     if(st.display==='none'||st.visibility==='hidden')continue;
     const t=node.textContent.trim();
-    if(t==='[object Object]'||/^Traceback \\(most recent call last\\):/.test(t)||/^SyntaxError: Unexpected token/.test(t))return t.slice(0,120);
+    if(t==='[object Object]'||/^Traceback \(most recent call last\):/.test(t)||/^SyntaxError: Unexpected token/.test(t))return t.slice(0,120);
    }
    return '';
   });
