@@ -15,6 +15,22 @@
 9. **Datos reproducibles y honestidad del estado.** Distinguir resultados de entorno de pruebas, rama main y versión desplegada. No afirmar publicado algo hasta comprobar el marcador público `deployment-version.json`.
 10. **Coste cero.** No adquirir servicios, saldos, suscripciones, licencias o pruebas de pago. Preferir GitHub Pages, GitHub Actions, herramientas libres y recursos públicos legalmente reutilizables.
 
+## WEB-12 — Paquetes de cambio obligatorios (control de saturación)
+
+Este procedimiento sustituye las ediciones repetidas de archivos en `main`. Se aplica a cambios de web, datos y Core que requieran despliegue.
+
+1. **Preparación en una rama temática.** Crear una sola rama `feature/... `, `fix/...` o `chore/...` por objetivo. Agrupar en ella cambios de código, datos, documentación y pruebas; no modificar `main` archivo a archivo.
+2. **Cierre del paquete antes de abrir PR.** Revisar correspondencias de objetos, fuentes, cambios, dependencias, permisos y regresiones; evitar editar la PR varias veces si es posible.
+3. **Una revisión automática por paquete.** Abrir la pull request cuando el lote esté listo. GitHub Actions ejecuta las comprobaciones completas ante la apertura o actualización de la PR; los commits preparatorios en ramas aún sin PR no disparan esas pruebas.
+4. **Bloqueo por fallo.** Si falla alguna prueba, corregir el paquete en la misma rama y revalidar. No fusionar ni publicar mientras falle. Las notificaciones históricas de ejecuciones fallidas no implican que la versión final siga fallando.
+5. **Fusión consolidada.** Fusionar por `squash` únicamente después de que la ejecución correspondiente al HEAD de la PR esté verde, sin mover en paralelo ese HEAD.
+6. **Un único lanzamiento público.** Tras la fusión, activar Pages mediante un solo archivo en `.github/release-trigger/` o un lanzamiento manual autorizado. Confirmar el SHA público en `deployment-version.json` y comprobar las páginas afectadas.
+7. **Trazabilidad y volumen.** Cada paquete registra objetivo, cambios, prueba, errores corregidos, limitaciones científicas y versión pública. No existe una obligación de exactamente diez commits: el tamaño del lote depende de su coherencia funcional, no de un contador.
+8. **Trabajo paralelo.** No mezclar ramas de La Picola, Core y web en la misma PR salvo cuando haya dependencia real; sincronizar con `main` antes de fusionar para evitar sobrescribir cambios ajenos.
+9. **Sin costes nuevos.** Solo usar herramientas gratuitas ya aprobadas. Nunca activar licencias, planes de pago ni recursos cloud facturables.
+
+**Importante:** este flujo reduce CI redundante pero no elimina GitHub Actions en las PR existentes de otros hilos. Evitar publicaciones simultáneas; y si una revisión requiere cambios posteriores, esos cambios forman parte del mismo paquete.
+
 ## Pruebas mínimas de aceptación
 
 - Menús principales y los ocho accesos del cartel deben ser navegables desde móvil.
