@@ -16,7 +16,11 @@
       "forms": [
         {
           "text": "ekiar",
-          "role": "reported_form"
+          "role": "reported_form",
+          "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         }
       ],
       "context": "El expediente registra ekiar en una inscripción musiva junto a likine y usekeŕte; la posible relación con producción o autoría sigue siendo una interpretación contextual.",
@@ -33,11 +37,19 @@
       "forms": [
         {
           "text": "ekien",
-          "role": "reported_form"
+          "role": "reported_form",
+          "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         },
         {
           "text": "ekiar",
-          "role": "formal_comparison_only"
+          "role": "formal_comparison_only",
+          "evidence_class": "FORMAL_COMPARISON_NOT_ATTESTED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         }
       ],
       "context": "El expediente menciona ekien en comparación formal con ekiar de Caminreal. No se atribuye la presencia literal de ekiar a Andelo.",
@@ -54,7 +66,11 @@
       "forms": [
         {
           "text": "śalir",
-          "role": "reported_form"
+          "role": "reported_form",
+          "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         }
       ],
       "context": "La ficha documenta coaparición de śalir con secuencia nominal y expresión numeral. La semántica exacta y la dirección de la relación siguen abiertas.",
@@ -71,11 +87,19 @@
       "forms": [
         {
           "text": "śalir",
-          "role": "reported_form"
+          "role": "reported_form",
+          "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         },
         {
           "text": "śalibos",
-          "role": "reported_variant_context"
+          "role": "reported_variant_context",
+          "evidence_class": "EDITORIAL_VARIANT_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         }
       ],
       "context": "La ficha resume registros repetitivos con śalir/śalibos y cantidades; la comparación no establece equivalencia léxica ni monetaria.",
@@ -92,11 +116,19 @@
       "forms": [
         {
           "text": "śalir",
-          "role": "reported_form"
+          "role": "reported_form",
+          "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         },
         {
           "text": "śalirg",
-          "role": "reported_variant_context"
+          "role": "reported_variant_context",
+          "evidence_class": "EDITORIAL_VARIANT_UNCOLLATED",
+          "sign_position_verified": false,
+          "source_line_locator": null,
+          "independent_edition_check": false
         }
       ],
       "context": "El expediente registra śalir/śalirg en ambas caras; el índice de variantes vincula la lectura editorial moderna śalirg con SALIRG y SALIRIG en B1.",
@@ -107,5 +139,16 @@
       "dependency_group": "SERRETA_UN_OBJETO_MULTIPLES_TEXTOS",
       "independence_status": "Un solo objeto físico; distintas caras y fases no son objetos independientes"
     }
-  ]
+  ],
+  "evidence_classification": {
+    "definition": "La unidad de consulta es un objeto físico existente; una forma citada en resumen editorial no es una ocurrencia paleográfica cotejada.",
+    "classes": {
+      "EDITORIAL_FORM_UNCOLLATED": "Forma señalada en la lectura de un expediente, sin cotejo independiente de signos documentado para este índice.",
+      "EDITORIAL_VARIANT_UNCOLLATED": "Variante editorial/contextual sin identificación independiente del lugar y grafemas.",
+      "FORMAL_COMPARISON_NOT_ATTESTED": "Referencia analítica a otra forma; no es lectura literal en esta pieza."
+    },
+    "independent_sign_collations": 0,
+    "attested_token_positions_verified": 0,
+    "warning": "No usar estas cifras como frecuencias lingüísticas, ocurrencias verificadas, grupos independientes ni evidencias semánticas."
+  }
 }
