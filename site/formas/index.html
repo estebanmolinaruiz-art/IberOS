@@ -19,6 +19,18 @@
 <body class="iberos-inner"><div id="head"></div>
 <section class="hero"><div class="hero-inner"><div class="eyebrow">WEB-06 · Cotejo documental</div><h1>Formas y <em>variantes editoriales</em></h1><p>Busca formas registradas en testimonios concretos. Una coincidencia escrita no establece una traducción, una identidad paleográfica ni un testimonio independiente.</p></div></section>
 <main class="ib-forms-shell">
+<section class="ib-forms-panel" aria-labelledby="cross-title" id="indice-transversal">
+<h2 id="cross-title">WEB-07 · Comparación entre testimonios</h2>
+<p>Índice documental limitado a cinco piezas con menciones de <strong>ekiar / ekien</strong> y <strong>śalir / śalirg / śalibos</strong>. Se distingue entre una forma citada como lectura editorial y una relación formal propuesta. No incluye todo el corpus ni acredita traducciones o cotejos paleográficos independientes.</p>
+<label for="crossQuery"><strong>Consultar una forma registrada</strong></label>
+<div class="ib-forms-search"><input type="search" id="crossQuery" placeholder="ekiar, ekien, śalir, śalirg…" autocomplete="off"><button class="btn gold" id="crossSearch" type="button">Comparar</button></div>
+<p class="ib-forms-meta">La coincidencia busca exactamente en el campo de formas registradas, no en paráfrasis o hipótesis. Puede probarse una relación formal, pero nunca se contabiliza como presencia literal.</p>
+<p id="crossSummary" aria-live="polite" role="status">Preparando testimonios documentales…</p>
+<div id="crossResults"></div>
+<details><summary>Alcance de este índice y datos originales</summary>
+<p>Los cinco objetos ya forman parte del Corpus de IberOS. Las ediciones y las dependencias requieren contraste independiente. Las referencias se muestran por pieza; las mismas publicaciones citadas varias veces no cuentan como nuevas pruebas.</p>
+<a href="../data/form-witnesses-v1.json">Descargar registro documental WEB-07 (JSON) →</a>
+</details></section>
 <section class="ib-forms-panel" aria-labelledby="scope-title"><h2 id="scope-title">Archivo experimental de variantes</h2>
 <p>Primera incorporación: <strong>La Serreta</strong>, un solo objeto físico (IBR-PLM-0009) con siete cotejos editoriales pendientes de verificación individual de signos mediante fotografía. El total de variantes <strong>no</strong> equivale a objetos ni evidencias independientes.</p>
 <label for="formQuery"><strong>Buscar lectura moderna o variante histórica</strong></label>
@@ -54,6 +66,44 @@ function render(){
 }
 document.getElementById("formSearch").addEventListener("click",render);
 field.addEventListener("input",render);field.addEventListener("keydown",e=>{if(e.key==="Enter")render()});
+
+let crossIndex=null;
+const crossField=document.getElementById("crossQuery"),crossResults=document.getElementById("crossResults"),crossSummary=document.getElementById("crossSummary");
+const roleNames={reported_form:"Forma descrita en la lectura editorial",reported_variant_context:"Variante contextual según expediente",formal_comparison_only:"Solo comparación formal: no es lectura literal"};
+function renderCross(){
+ if(!crossIndex)return;
+ const query=normalized(crossField.value);
+ crossResults.replaceChildren();
+ const matches=crossIndex.records.map(record=>({...record,matchedForms:record.forms.filter(f=>!query||normalized(f.text)===query)})).filter(r=>r.matchedForms.length>0);
+ const literalCount=matches.filter(r=>r.matchedForms.some(f=>f.role!=="formal_comparison_only")).length;
+ crossSummary.textContent=matches.length+" objetos con anotaciones de la forma; "+literalCount+" con mención editorial o variante contextual; "+(matches.length-literalCount)+" solo en comparación formal. Ninguna cifra indica traducciones verificadas.";
+ if(!matches.length){crossResults.append(el("p","ib-forms-note","No consta la forma en estos cinco expedientes. No se infiere ausencia del resto del corpus."));return;}
+ for(const record of matches){
+  const card=el("article","ib-forms-result");
+  card.append(el("h3",null,record.title));
+  para(card,"Pieza física",record.object_id);
+  for(const item of record.matchedForms)para(card,"Relación con "+item.text,roleNames[item.role]||"Clasificación editorial pendiente");
+  para(card,"Contexto registrado",record.context);
+  para(card,"Control de lectura",record.evidence_status);
+  para(card,"Independencia",record.independence_status);
+  para(card,"Fuente bibliográfica",record.source);
+  const actions=el("div","ib-forms-actions"),ficha=el("a",null,"Ficha original →");ficha.href="../ficha/?id="+encodeURIComponent(record.object_id);actions.append(ficha);
+  if(record.source_url&&/^https:\/\//.test(record.source_url)){const source=el("a",null,"Consultar publicación →");source.href=record.source_url;source.target="_blank";source.rel="noopener noreferrer";actions.append(source);}
+  card.append(actions);crossResults.append(card);
+ }
+}
+document.getElementById("crossSearch").addEventListener("click",renderCross);
+crossField.addEventListener("input",renderCross);
+crossField.addEventListener("keydown",e=>{if(e.key==="Enter")renderCross()});
+const crossQ=new URLSearchParams(location.search).get("forma");if(crossQ)crossField.value=crossQ;
+try{
+ const response=await fetch("../data/form-witnesses-v1.json");
+ if(!response.ok)throw Error("HTTP "+response.status);
+ const data=await response.json();
+ if(data.schema!=="IberOS-WEB07-Form-Witnesses/1.0"||!Array.isArray(data.records)||data.records.length!==5||new Set(data.records.map(x=>x.object_id)).size!==5||data.scientific_gates?.semantic_promotions!==0)throw Error("Registro WEB-07 inválido");
+ crossIndex=data;renderCross();
+}catch(e){crossSummary.textContent="No se ha podido cargar la comparación. Consulta el registro de datos desde el enlace inferior.";console.error("WEB-07",e)}
+
 const q=new URLSearchParams(location.search).get("q");if(q)field.value=q;
 try{
  const response=await fetch("../data/serreta-variants-v1.json");
