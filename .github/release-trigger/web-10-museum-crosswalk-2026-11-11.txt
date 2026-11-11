@@ -1,0 +1,1 @@
+WEB-10: documented Villares V museum inventory 13411 and Serreta I inventory 1.016 with original photo/drawing source locators and published museum transcription, no graphic permission and no independently checked sign glyphs. QA #1672 passed. Free GitHub Pages deployment.
