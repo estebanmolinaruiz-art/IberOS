@@ -1,0 +1,4 @@
+PAQUETE ÚNICO WEB-11 + WEB-12 (2026-11-11).
+WEB-11: matriz documental provisional Villares V 14 líneas y controles de no promoción paleográfica; CI main #1681 success.
+WEB-12: norma obligatoria de ramas, QA en PR, squash y un lanzamiento; PR #136, tests generales y web superados.
+Sin cambios semánticos, sin fotografías sin licencia, sin servicios de pago. Publicar un solo paquete mediante GitHub Pages y comprobar el SHA público.
