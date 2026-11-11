@@ -155,7 +155,7 @@ try{
  const directCore=page.locator('a[href="../webengine/?q=IBR-PLM-0002"]');
  if(await directCore.count()<1)throw Error('WEB-05: Corpus no ofrece acceso directo al Core para Tivissa');
  const cardStatus=await page.locator('.result-card').first().innerText();
- if(/\\b(INCLUDE|CONDITIONAL|CONTROL_ONLY|EXCLUDED_CONTROL)\\b/.test(cardStatus))throw Error('WEB-05: código de inclusión visible en tarjeta de Corpus');
+ if(/\b(INCLUDE|CONDITIONAL|CONTROL_ONLY|EXCLUDED_CONTROL)\b/.test(cardStatus))throw Error('WEB-05: código de inclusión visible en tarjeta de Corpus');
  console.log('✓ WEB-05: Corpus enlaza a Core y usa estados legibles');
  console.log('✓ Corpus enlaza a la ficha desde resultados reales');
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
