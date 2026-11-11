@@ -216,7 +216,7 @@ try{
  await page.locator('#crossQuery').fill('śalir');
  await page.locator('#crossEvidence').selectOption('EDITORIAL_FORM_UNCOLLATED');
  const villaresCard=page.locator('#crossResults .ib-forms-result').filter({hasText:'Villares V'});
- if(await villaresCard.count()!==1||!((await villaresCard.innerText()).includes('A1/A3/A5 y B1/B5')))throw Error('WEB-10: falta localización de śalir según museo de Villares V');
+ if(await villaresCard.count()!==1||!((await villaresCard.innerText()).includes('A1, A3, A5, A8, B1, B5')))throw Error('WEB-10: falta localización de śalir según museo de Villares V');
  if(!((await villaresCard.locator('a').evaluateAll(xs=>xs.map(a=>a.href))).some(u=>u.includes('13411'))))throw Error('WEB-10: vínculo a inventario 13411 ausente');
  console.log('✓ WEB-10: fuentes de museo localizadas, objeto correcto, sin promover lectura fotográfica');
 
