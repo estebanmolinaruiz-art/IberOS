@@ -1,8 +1,9 @@
 name: Comprobaciones web gratuitas
 on:
-  push:
-    branches: [main]
+  # QA de lote: ejecutar una vez al abrir o actualizar la PR del paquete.
+  # No ejecutar una batería por cada archivo guardado directamente en main.
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
 permissions:
   contents: read
