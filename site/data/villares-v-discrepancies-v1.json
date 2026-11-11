@@ -270,5 +270,45 @@
       "permiso de uso para reproducir la imagen, si se publica"
     ],
     "unresolved_rows_expected": 14
+  },
+  "primary_publication_audit": {
+    "citation": "Joan Ferrer i Jané (2024), Una nova mirada al plom ibèric Villares V, ELEA 21, pp. 309–360",
+    "original_author_full_text_url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+    "museum_catalogue_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
+    "confirmed_documentary_points": [
+      {
+        "claim": "La edición de 2024 identifica la pieza del Museo de Prehistoria de Valencia como inventario 13411.",
+        "locator": "Ferrer i Jané 2024, p. 311",
+        "status": "PUBLICATION_TEXT_LOCATED"
+      },
+      {
+        "claim": "La publicación ofrece fotografías de las caras A y B.",
+        "locator": "Ferrer i Jané 2024, fig. 1, p. 312",
+        "status": "FIGURE_DESCRIPTION_LOCATED_NOT_INDEPENDENTLY_COLLATED"
+      },
+      {
+        "claim": "La publicación ofrece dibujos de las dos caras.",
+        "locator": "Ferrer i Jané 2024, fig. 2, p. 313",
+        "status": "FIGURE_DESCRIPTION_LOCATED_NOT_INDEPENDENTLY_COLLATED"
+      },
+      {
+        "claim": "El autor informa de autopsias de la pieza en 2004 y 2014; son revisiones del investigador publicante, no verificaciones efectuadas por IberOS.",
+        "locator": "Ferrer i Jané 2024, p. 313 y continuación",
+        "status": "EDITORIAL_AUTOPSY_REPORTED"
+      },
+      {
+        "claim": "La nueva lectura propone bobaida frente a bosida y a una de las formas antes leídas bobaidinba.",
+        "locator": "Ferrer i Jané 2024, resumen, p. 309",
+        "status": "AUTHOR_HYPOTHESIS_NOT_IBEROS_VALIDATION"
+      },
+      {
+        "claim": "El autor plantea diez registros contables; esta interpretación estructural no establece el significado literal ni los roles gramaticales como hechos cerrados.",
+        "locator": "Ferrer i Jané 2024, resumen, p. 309",
+        "status": "AUTHOR_INTERPRETATION"
+      }
+    ],
+    "restrictions": "Las coincidencias entre resumen, catálogo y transcripción secundaria refuerzan la localización documental, pero las 14 filas de contraste siguen pendientes de cotejo íntegro en el texto primario y en la figura. Ni lectura nueva verificada por IberOS ni traducción.",
+    "iberos_independent_glyph_checks": 0,
+    "primary_line_by_line_audit_complete": false
   }
 }
