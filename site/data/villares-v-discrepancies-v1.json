@@ -25,7 +25,13 @@
       "category": "segmentación y variantes de lectura",
       "assessment": "Sin cotejo signo a signo",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A2",
@@ -36,7 +42,13 @@
       "category": "normalización metrológica; reconstrucción contextual",
       "assessment": "Secuencia de barras y grafemas pendiente",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A3",
@@ -47,7 +59,13 @@
       "category": "reesegmentación y corrección bosita → bobaida",
       "assessment": "Corrección defendida en Ferrer 2024; imagen sin cotejar",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "ALTA"
     },
     {
       "id": "VIL5-A4",
@@ -58,7 +76,13 @@
       "category": "segmentación y ajuste editorial",
       "assessment": "No dar por confirmado cambio individual de signo",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A5",
@@ -69,7 +93,13 @@
       "category": "segmentación y lectura de grafemas",
       "assessment": "Requiere confrontar fotografías",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A6",
@@ -80,7 +110,13 @@
       "category": "revisión de forma y segmentación",
       "assessment": "Alineación provisional de secuencias",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A7",
@@ -91,7 +127,13 @@
       "category": "revisión de bobaidinba → bobaida y segmento anterior",
       "assessment": "Diferencia editorial, no verificación paleográfica independiente",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "ALTA"
     },
     {
       "id": "VIL5-A8",
@@ -102,7 +144,13 @@
       "category": "segmentación y cuantificación",
       "assessment": "Revisar cuenta de barras en fotografía original",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-A9",
@@ -113,7 +161,13 @@
       "category": "segmentación y variantes gráficas",
       "assessment": "Pendiente de colación visual",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-B1",
@@ -124,7 +178,13 @@
       "category": "restitución inicial y lectura",
       "assessment": "Reconstrucción editorial; comienzo perdido",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "ALTA"
     },
     {
       "id": "VIL5-B2",
@@ -135,7 +195,13 @@
       "category": "restitución inicial y nueva lectura bobaida",
       "assessment": "Ferrer 2024 discute esta línea explícitamente; foto pendiente",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "ALTA"
     },
     {
       "id": "VIL5-B3",
@@ -146,7 +212,13 @@
       "category": "restitución y segmentación",
       "assessment": "Alineación editorial sin autopsia",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     },
     {
       "id": "VIL5-B4",
@@ -157,7 +229,13 @@
       "category": "restitución y segmentación",
       "assessment": "Alineación editorial sin autopsia",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "ALTA"
     },
     {
       "id": "VIL5-B5",
@@ -168,7 +246,69 @@
       "category": "segmentación metrológica",
       "assessment": "Valor 20 indicado por Ferrer; barras por cotejar",
       "alignment": "PROVISIONAL_EDITORIAL",
-      "photographic_sign_check": false
+      "photographic_sign_check": false,
+      "review_state": "PENDING_PRIMARY_EDITION_COLLATION",
+      "primary_edition_line_verified": false,
+      "glyph_photo_verified": false,
+      "claimed_correction_validated": false,
+      "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
+      "review_priority": "NORMAL"
     }
-  ]
+  ],
+  "review_protocol": {
+    "version": "WEB-13/1.0",
+    "scope": "Alineaciones editoriales propuestas, no confirmación independiente de grafemas",
+    "primary_review_source_required": "Ferrer i Jané (2024), ELEA 21, pp. 309–360; figura y cara concretas",
+    "museum_source_required": "Inventario 13411, transcripción museística",
+    "secondary_transcription_warning": "La transcripción atribuida a 2024 utilizada en la matriz procede parcialmente de una reproducción secundaria: comprobar literalmente en el artículo original antes de promover cualquier diferencia.",
+    "required_for_promotion": [
+      "referencia precisa de edición primaria, página y figura",
+      "cara y línea confirmadas en edición original",
+      "imagen cotejable y procedencia acreditada",
+      "identificación del grafema anterior y propuesto con coordenadas verificadas",
+      "independencia del cotejo y registro de revisor",
+      "permiso de uso para reproducir la imagen, si se publica"
+    ],
+    "unresolved_rows_expected": 14
+  },
+  "primary_publication_audit": {
+    "citation": "Joan Ferrer i Jané (2024), Una nova mirada al plom ibèric Villares V, ELEA 21, pp. 309–360",
+    "original_author_full_text_url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+    "museum_catalogue_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
+    "confirmed_documentary_points": [
+      {
+        "claim": "La edición de 2024 identifica la pieza del Museo de Prehistoria de Valencia como inventario 13411.",
+        "locator": "Ferrer i Jané 2024, p. 311",
+        "status": "PUBLICATION_TEXT_LOCATED"
+      },
+      {
+        "claim": "La publicación ofrece fotografías de las caras A y B.",
+        "locator": "Ferrer i Jané 2024, fig. 1, p. 312",
+        "status": "FIGURE_DESCRIPTION_LOCATED_NOT_INDEPENDENTLY_COLLATED"
+      },
+      {
+        "claim": "La publicación ofrece dibujos de las dos caras.",
+        "locator": "Ferrer i Jané 2024, fig. 2, p. 313",
+        "status": "FIGURE_DESCRIPTION_LOCATED_NOT_INDEPENDENTLY_COLLATED"
+      },
+      {
+        "claim": "El autor informa de autopsias de la pieza en 2004 y 2014; son revisiones del investigador publicante, no verificaciones efectuadas por IberOS.",
+        "locator": "Ferrer i Jané 2024, p. 313 y continuación",
+        "status": "EDITORIAL_AUTOPSY_REPORTED"
+      },
+      {
+        "claim": "La nueva lectura propone bobaida frente a bosida y a una de las formas antes leídas bobaidinba.",
+        "locator": "Ferrer i Jané 2024, resumen, p. 309",
+        "status": "AUTHOR_HYPOTHESIS_NOT_IBEROS_VALIDATION"
+      },
+      {
+        "claim": "El autor plantea diez registros contables; esta interpretación estructural no establece el significado literal ni los roles gramaticales como hechos cerrados.",
+        "locator": "Ferrer i Jané 2024, resumen, p. 309",
+        "status": "AUTHOR_INTERPRETATION"
+      }
+    ],
+    "restrictions": "Las coincidencias entre resumen, catálogo y transcripción secundaria refuerzan la localización documental, pero las 14 filas de contraste siguen pendientes de cotejo íntegro en el texto primario y en la figura. Ni lectura nueva verificada por IberOS ni traducción.",
+    "iberos_independent_glyph_checks": 0,
+    "primary_line_by_line_audit_complete": false
+  }
 }

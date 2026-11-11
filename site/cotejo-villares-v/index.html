@@ -15,7 +15,7 @@
 .vv-refs a{font-weight:700;color:#12516d}
 .vv-warning{border-left:4px solid #a26b31;padding:12px 16px;background:#f6e8cd;line-height:1.6}
 .vv-table-caption{font:.86rem system-ui;margin:0 0 12px}
-.vv-count{font-weight:700}
+.vv-count{font-weight:700}.vv-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:14px 0}.vv-controls label{display:grid;gap:5px;font:600 .88rem system-ui}.vv-controls select{min-width:135px;border:1px solid #957c58;background:#fffdf5;padding:9px;border-radius:6px;color:#193848}.vv-priority{font-weight:700;color:#703c1c}.vv-review-state{font-size:.84rem;font-weight:650}
 </style></head><body class="iberos-inner"><div id="head"></div>
 <section class="hero"><div class="hero-inner"><div class="eyebrow">WEB-11 · Auditoría textual contrastiva</div><h1>Villares V · <em>Matriz de discrepancias</em></h1><p>Inventario museístico 13411 · F.17.01 / V.07.01. Comparación editorial por caras y líneas, sin atribuir verificación independiente a los signos.</p></div></section>
 <main class="vv-container">
@@ -25,19 +25,25 @@
 <p id="vv-status" role="status" aria-live="polite">Cargando matriz…</p>
 <div class="vv-refs"><a href="https://mupreva.org/web_mupreva/catalogo/13411/fr" target="_blank" rel="noopener noreferrer">Registro museo 13411</a><a href="https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions" target="_blank" rel="noopener noreferrer">Ferrer i Jané (2024)</a><a href="../formas/?forma=śalir">Explorar śalir</a><a href="../ficha/?id=IBR-PLM-0005">Ficha de Villares V</a></div></section>
 <section class="vv-card"><h2>Comparación línea a línea</h2><p class="vv-table-caption">Los fragmentos solo sirven como localizadores editoriales: los cortes, corchetes, barras, diacríticos y separaciones no sustituyen el facsímil. Desplaza horizontalmente la tabla en móvil.</p>
-<div class="vv-scroll"><table class="vv-matrix"><thead><tr><th scope="col">Cara / línea</th><th scope="col">Museo (fragmento)</th><th scope="col">Lectura atribuida a 2024 (fragmento)</th><th scope="col">Diferencia a contrastar</th><th scope="col">Estado</th></tr></thead><tbody id="vv-rows"></tbody></table></div></section>
+<div class="vv-controls"><label for="vv-face">Filtrar cara<select id="vv-face"><option value="all">Ambas caras</option><option value="A">Cara A</option><option value="B">Cara B</option></select></label><label for="vv-priority">Prioridad documental<select id="vv-priority"><option value="all">Todas</option><option value="ALTA">Alta</option><option value="NORMAL">Normal</option></select></label></div><p id="vv-filter-summary" aria-live="polite" role="status">Preparando filtros…</p><div class="vv-scroll"><table class="vv-matrix"><thead><tr><th scope="col">Cara / línea</th><th scope="col">Museo (fragmento)</th><th scope="col">Lectura atribuida a 2024 (fragmento)</th><th scope="col">Diferencia a contrastar</th><th scope="col">Estado</th></tr></thead><tbody id="vv-rows"></tbody></table></div></section>
 <section class="vv-card"><h2>Prioridades de cotejo visual</h2>
 <p>Prioridad alta: <strong>A3, A7 y B2</strong>, donde se proponen lecturas del grupo <code>bobaida</code>; <strong>B1</strong>, que presenta una restitución inicial; y <strong>B4</strong>, con una lectura fragmentaria de <code>śalir</code>. La oposición gráfica <code>bo</code> / <code>ta</code> requiere comparar las figuras originales y comprobar si se trata de variantes de signo o de errores de calco.</p>
-<p>Para registrar una corrección científica será obligatorio conservar: identificador 13411, cara y línea, figura y página, grafema anterior y propuesto, posición en la imagen, referencia editorial, criterio paleográfico, revisión independiente y derechos de reutilización.</p>
+<p><strong>Dependencia editorial:</strong> la columna atribuida a 2024 utiliza parcialmente una transcripción secundaria; es obligatorio cotejarla en el artículo original, página y figura, antes de declarar una diferencia confirmada.</p><p>Para registrar una corrección científica será obligatorio conservar: identificador 13411, cara y línea, figura y página, grafema anterior y propuesto, posición en la imagen, referencia editorial, criterio paleográfico, revisión independiente y derechos de reutilización.</p>
 <div class="vv-refs"><a href="../data/villares-v-discrepancies-v1.json">Descargar matriz estructurada (JSON)</a><a href="../corpus/">Volver al Corpus</a></div></section>
 </main><script type="module">
 import{header}from"../assets/portal-data.js";document.getElementById("head").innerHTML=header("../");
-const body=document.getElementById("vv-rows"),status=document.getElementById("vv-status");
+const body=document.getElementById("vv-rows"),status=document.getElementById("vv-status"),faceSelect=document.getElementById("vv-face"),prioritySelect=document.getElementById("vv-priority"),filterSummary=document.getElementById("vv-filter-summary");
 function cell(tr,value,mono=false){const td=document.createElement("td");if(mono){const code=document.createElement("code");code.textContent=value;td.append(code)}else td.textContent=value;tr.append(td)}
 try{const res=await fetch("../data/villares-v-discrepancies-v1.json");if(!res.ok)throw Error("Error HTTP "+res.status);
-const d=await res.json();if(d.schema!=="IberOS-VillaresV-DiscrepancyMatrix/1.0"||d.museum_inventory!=="13411"||d.rows?.length!==14||d.independent_sign_checks!==0||d.semantic_promotion!==false)throw Error("Archivo no válido");
-const seen=new Set();
-for(const row of d.rows){if(!["A","B"].includes(row.face)||!Number.isInteger(row.line)||seen.has(row.id)||row.photographic_sign_check!==false)throw Error("Fila no válida");seen.add(row.id);const tr=document.createElement("tr");cell(tr,row.face+row.line);cell(tr,row.museum_excerpt,true);cell(tr,row.edition_2024_excerpt,true);cell(tr,row.category);cell(tr,row.assessment);body.append(tr)}
+const d=await res.json();if(d.schema!=="IberOS-VillaresV-DiscrepancyMatrix/1.0"||d.museum_inventory!=="13411"||d.rows?.length!==14||d.independent_sign_checks!==0||d.semantic_promotion!==false||d.review_protocol?.unresolved_rows_expected!==14||d.rows.some(r=>r.review_state!=="PENDING_PRIMARY_EDITION_COLLATION"||r.glyph_photo_verified!==false||r.claimed_correction_validated!==false))throw Error("Archivo no válido");
+function render(){
+ body.replaceChildren();const seen=new Set();
+ const rows=d.rows.filter(row=>(faceSelect.value==="all"||row.face===faceSelect.value)&&(prioritySelect.value==="all"||row.review_priority===prioritySelect.value));
+ for(const row of rows){if(!["A","B"].includes(row.face)||!Number.isInteger(row.line)||seen.has(row.id)||row.photographic_sign_check!==false)throw Error("Fila no válida");seen.add(row.id);const tr=document.createElement("tr");cell(tr,row.face+row.line);cell(tr,row.museum_excerpt,true);cell(tr,row.edition_2024_excerpt,true);cell(tr,row.category);cell(tr,(row.review_priority==="ALTA"?"Prioridad alta. ":"")+"Pendiente de cotejo en edición primaria y fotografía. "+row.assessment);body.append(tr);}
+ filterSummary.textContent=rows.length+" de 14 líneas mostradas · 0 signos acreditados independientemente.";
+}
+faceSelect.addEventListener("change",render);prioritySelect.addEventListener("change",render);
+render();
 status.textContent="14 líneas editoriales organizadas · 1 objeto físico · 0 cotejos independientes de signos · 0 traducciones nuevas.";
 }catch(e){status.textContent="No se pudo cargar la matriz; consulta el archivo de datos original.";console.error("Villares WEB-11",e)}
 </script></body></html>

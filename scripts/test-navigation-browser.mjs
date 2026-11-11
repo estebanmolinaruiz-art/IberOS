@@ -234,6 +234,21 @@ try{
  if(!matrixText.includes('bobai-da')||!matrixText.includes('śalir')||!matrixStatus.includes('0 cotejos independientes'))throw Error('WEB-11: matrix hides corrections or incorrectly claims verification');
  if(!((await page.locator('main').innerText()).includes('no son correcciones paleográficas acreditadas')))throw Error('WEB-11: scientific caveat absent');
  console.log('✓ WEB-11: 14 editorial rows, zero independent sign checks and source links');
+ const priorityFilter=page.locator('#vv-priority'),faceFilter=page.locator('#vv-face');
+ await priorityFilter.selectOption('ALTA');
+ if(await page.locator('#vv-rows tr').count()!==5)throw Error('WEB-13: must show five documentary high-priority rows');
+ await faceFilter.selectOption('B');
+ if(await page.locator('#vv-rows tr').count()!==3)throw Error('WEB-13: face B high-priority filter should show B1 B2 B4');
+ const filteredText=await page.locator('#vv-rows').innerText();
+ if(!['B1','B2','B4'].every(x=>filteredText.includes(x))||filteredText.includes('A3'))throw Error('WEB-13: face and priority filters mix rows');
+ if(!(await page.locator('#vv-filter-summary').innerText()).includes('3 de 14'))throw Error('WEB-13: filtered count inconsistent');
+ await faceFilter.selectOption('all');
+ await priorityFilter.selectOption('all');
+ if(await page.locator('#vv-rows tr').count()!==14)throw Error('WEB-13: restoring all rows failed');
+ const reviewText=await page.locator('main').innerText();
+ if(!reviewText.includes('transcripción secundaria')||!reviewText.includes('Pendiente de cotejo en edición primaria'))throw Error('WEB-13: missing source-dependency disclosure');
+ console.log('✓ WEB-13: source-dependency and high-priority review filters; no confirmed signs');
+
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
  try{
