@@ -260,7 +260,10 @@
         "status": "PERMISSION_NOT_DOCUMENTED",
         "image_copy_allowed": false,
         "reason": "Los derechos específicos de las fotografías/dibujos no están verificados; mostrar enlaces a fuentes, no incrustar archivos"
-      }
+      },
+      "image_reuse_permission_verified": false,
+      "image_author_credit_verified": false,
+      "watermark_preserved_verified": false
     },
     {
       "object_id": "IBR-PLM-0009",
@@ -286,7 +289,10 @@
         "status": "PERMISSION_NOT_DOCUMENTED",
         "image_copy_allowed": false,
         "reason": "Fotografías acreditadas a J. Untermann; derechos de republicación no confirmados. No copiar ni recortar imágenes"
-      }
+      },
+      "image_reuse_permission_verified": false,
+      "image_author_credit_verified": false,
+      "watermark_preserved_verified": false
     }
   ]
 }
