@@ -152,14 +152,20 @@
       "dependency_group": "SIN_RESOLVER_VILLARES_V",
       "independence_status": "Pendiente de comprobar fuente editorial primaria y dependencias",
       "source_locator": {
-        "status": "BIBLIOGRAPHIC_REFERENCE_ONLY",
-        "citation": "Ferrer i Jané (2024), ELEA 21, pp. 309–360; fotografías y dibujos señalados en figs. 1–2, pp. 312–313",
-        "source_url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+        "status": "EDITORIAL_PASSAGE_LOCATED",
+        "citation": "Museo de Prehistoria de Valencia, inventario 13411, transcripción por caras; Ferrer i Jané (2024), figs. 1–2, pp. 312–313",
+        "source_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
         "document_page": null,
-        "inscription_locator": "Pasajes precisos de śalir/śalibos por cara y línea: pendientes de cotejo sobre la edición completa",
-        "editorial_reading_excerpt": null,
-        "visual_target": "Fig. 1, fotografía de las caras A/B; fig. 2, dibujos, pp. 312–313, sin cotejo visual WEB-09",
-        "verification": "Localizado artículo original por índice web, no acreditadas posiciones individuales"
+        "inscription_locator": "Catálogo de museo 13411: śalir en A1/A3/A5 y B1/B5; śalibos en A3/A6 y B2. La edición revisada de Ferrer i Jané (2024) debe contrastarse por separado.",
+        "editorial_reading_excerpt": "Transcripción museística por caras A y B; consultar la fuente para ver signos dañados y la disposición de líneas",
+        "visual_target": "Museo: inventario 13411; Ferrer i Jané (2024), fotografía de caras A/B p. 312 y dibujo p. 313. Figuras no revisadas signo a signo ni autorizadas para reproducción.",
+        "verification": "Localizadores del catálogo del museo comprobados como datos editoriales. No cotejo visual independiente; distinguir de la edición revisada de 2024.",
+        "museum_inventory": "13411",
+        "museum_catalogue_url": "https://mupreva.org/web_mupreva/catalogo/13411/fr",
+        "museum_transcription_locators": {
+          "śalir": "Cara A, líneas 1, 3 y 5; cara B, líneas 1 y 5, según transcripción publicada en catálogo museístico",
+          "śalibos": "Cara A, líneas 3 y 6; cara B, línea 2, según transcripción publicada en catálogo museístico"
+        }
       }
     },
     {
@@ -197,12 +203,14 @@
       "source_locator": {
         "status": "SECONDARY_VARIANT_LOCATION",
         "citation": "Registro editorial IberOS: Velaza (2011) según Ngomo Fernández (2021); antecedente Fletcher Valls y Silgo (1992)",
-        "source_url": null,
+        "source_url": "https://www.alcoi.org/es/areas/cultura/museo/publicaciones/recerques/recerques_0001.html",
         "document_page": null,
         "inscription_locator": "Cara B, línea 1: śalirg; variantes históricas SALIRG y SALIRIG",
         "editorial_reading_excerpt": "śalirg (lectura normalizada); SALIRG / SALIRIG (variantes registradas)",
-        "visual_target": "Ilustración original de las dos caras y verificación independiente de cada grafema pendientes",
-        "verification": "Pasaje B1 respaldado por índice interno serreta-variants-v1.json; no cotejado directamente en la edición original en WEB-09"
+        "visual_target": "Fletcher y Silgo (1992): fotografías de caras A y B acreditadas a J. Untermann. Catálogo de Alcoi: pieza inventario 1.016; sin cotejo de grafemas ni licencia de reproducción.",
+        "verification": "Inventario museístico 1.016 y edición de 1992 localizados. La atribución de la lectura śalirg a B1 sigue fundada en el registro editorial interno, sin verificación visual independiente.",
+        "museum_inventory": "1.016",
+        "museum_catalogue_url": "https://www.alcoi.org/export/sites/default/es/areas/cultura/museo/descargas/publi_catalogo/catalogo_cas_04_CATALOGO_MATERIALES.pdf"
       }
     }
   ],
