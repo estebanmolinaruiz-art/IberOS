@@ -20,7 +20,9 @@
           "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Inscripción única en la cartela musiva; posición de ekiar como segundo elemento de la lectura editorial"
         }
       ],
       "context": "El expediente registra ekiar en una inscripción musiva junto a likine y usekeŕte; la posible relación con producción o autoría sigue siendo una interpretación contextual.",
@@ -29,7 +31,17 @@
       "source_url": "https://doi.org/10.36707/palaeohispanica.v0i15.39",
       "source_record": "ficha-enrichment-3.json",
       "dependency_group": "COMPARACION_MOSAICOS_LIKINE",
-      "independence_status": "Independencia textual y dependencia de ediciones por auditar"
+      "independence_status": "Independencia textual y dependencia de ediciones por auditar",
+      "source_locator": {
+        "status": "EDITORIAL_PASSAGE_LOCATED",
+        "citation": "Simón Cornago (2015), p. 96, apartado 1; transcripción en una línea",
+        "source_url": "https://ifc.dpz.es/recursos/publicaciones/35/02/03simon.pdf",
+        "document_page": 96,
+        "inscription_locator": "Inscripción única en la cartela musiva; posición de ekiar como segundo elemento de la lectura editorial",
+        "editorial_reading_excerpt": "likinete · ekiar · usekeŕteku",
+        "visual_target": "La publicación incluye documentación gráfica del mosaico; cotejo gráfico independiente WEB-09 no realizado",
+        "verification": "Lectura textual del artículo publicada; no se han examinado directamente grafemas en fotografía"
+      }
     },
     {
       "object_id": "IBR-MUS-0002",
@@ -41,7 +53,9 @@
           "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Inscripción única en mosaico; ekien como tercer elemento de la lectura editorial"
         },
         {
           "text": "ekiar",
@@ -49,7 +63,9 @@
           "evidence_class": "FORMAL_COMPARISON_NOT_ATTESTED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Inscripción única en mosaico; ekien como tercer elemento de la lectura editorial"
         }
       ],
       "context": "El expediente menciona ekien en comparación formal con ekiar de Caminreal. No se atribuye la presencia literal de ekiar a Andelo.",
@@ -58,7 +74,17 @@
       "source_url": "https://doi.org/10.36707/palaeohispanica.v23i0.520",
       "source_record": "ficha-enrichment-3.json",
       "dependency_group": "COMPARACION_MOSAICOS_LIKINE",
-      "independence_status": "Comparación entre dos piezas; independencia de análisis no acreditada"
+      "independence_status": "Comparación entre dos piezas; independencia de análisis no acreditada",
+      "source_locator": {
+        "status": "EDITORIAL_PASSAGE_LOCATED",
+        "citation": "Orduña Aznar (2023), p. 65, sección 2, transcripción",
+        "source_url": "https://ifc.dpz.es/recursos/publicaciones/40/18/_ebook.pdf",
+        "document_page": 65,
+        "inscription_locator": "Inscripción única en mosaico; ekien como tercer elemento de la lectura editorial",
+        "editorial_reading_excerpt": "likine · abuló(a)une · ekien · bilbili(a)rs (separación editorial orientativa)",
+        "visual_target": "Cotejo de grafemas y puntuación en fotografía pendiente",
+        "verification": "Verificado en transcripción textual de artículo; la forma ekiar no se atribuye a Andelo"
+      }
     },
     {
       "object_id": "IBR-PLM-0002",
@@ -70,7 +96,9 @@
           "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Línea 2 del plomo; śalir a continuación de la secuencia śalaiaŕkis-teŕokan"
         }
       ],
       "context": "La ficha documenta coaparición de śalir con secuencia nominal y expresión numeral. La semántica exacta y la dirección de la relación siguen abiertas.",
@@ -79,7 +107,17 @@
       "source_url": "https://doi.org/10.5281/zenodo.22957236",
       "source_record": "ficha-enrichment-3.json",
       "dependency_group": "SIN_RESOLVER_TIVISSA",
-      "independence_status": "Pendiente de cotejo documental independiente"
+      "independence_status": "Pendiente de cotejo documental independiente",
+      "source_locator": {
+        "status": "EDITORIAL_PASSAGE_LOCATED",
+        "citation": "Asensio, Miró, Sanmartí y Velaza (2003), p. 200, línea 2 del texto; figs. 3–4",
+        "source_url": "https://ifc-ojs.es/index.php/palaeohispanica/en/article/download/339/312/1054",
+        "document_page": 200,
+        "inscription_locator": "Línea 2 del plomo; śalir a continuación de la secuencia śalaiaŕkis-teŕokan",
+        "editorial_reading_excerpt": "śalaiaŕkisteŕokan : śalir o |||",
+        "visual_target": "Figuras 3–4 indicadas por la edición, correspondencia fotográfica no cotejada de nuevo",
+        "verification": "Página y línea documentadas en edición de 2003; transliteración normalizada respecto a caracteres antiguos del PDF"
+      }
     },
     {
       "object_id": "IBR-PLM-0005",
@@ -91,7 +129,9 @@
           "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Pasajes precisos de śalir/śalibos por cara y línea: pendientes de cotejo sobre la edición completa"
         },
         {
           "text": "śalibos",
@@ -99,7 +139,9 @@
           "evidence_class": "EDITORIAL_VARIANT_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Pasajes precisos de śalir/śalibos por cara y línea: pendientes de cotejo sobre la edición completa"
         }
       ],
       "context": "La ficha resume registros repetitivos con śalir/śalibos y cantidades; la comparación no establece equivalencia léxica ni monetaria.",
@@ -108,7 +150,17 @@
       "source_url": null,
       "source_record": "ficha-enrichment-4.json",
       "dependency_group": "SIN_RESOLVER_VILLARES_V",
-      "independence_status": "Pendiente de comprobar fuente editorial primaria y dependencias"
+      "independence_status": "Pendiente de comprobar fuente editorial primaria y dependencias",
+      "source_locator": {
+        "status": "BIBLIOGRAPHIC_REFERENCE_ONLY",
+        "citation": "Ferrer i Jané (2024), ELEA 21, pp. 309–360; fotografías y dibujos señalados en figs. 1–2, pp. 312–313",
+        "source_url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+        "document_page": null,
+        "inscription_locator": "Pasajes precisos de śalir/śalibos por cara y línea: pendientes de cotejo sobre la edición completa",
+        "editorial_reading_excerpt": null,
+        "visual_target": "Fig. 1, fotografía de las caras A/B; fig. 2, dibujos, pp. 312–313, sin cotejo visual WEB-09",
+        "verification": "Localizado artículo original por índice web, no acreditadas posiciones individuales"
+      }
     },
     {
       "object_id": "IBR-PLM-0009",
@@ -120,7 +172,9 @@
           "evidence_class": "EDITORIAL_FORM_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Cara B, línea 1: śalirg; variantes históricas SALIRG y SALIRIG"
         },
         {
           "text": "śalirg",
@@ -128,7 +182,9 @@
           "evidence_class": "EDITORIAL_VARIANT_UNCOLLATED",
           "sign_position_verified": false,
           "source_line_locator": null,
-          "independent_edition_check": false
+          "independent_edition_check": false,
+          "source_position_verified": false,
+          "editorial_passage_reference": "Cara B, línea 1: śalirg; variantes históricas SALIRG y SALIRIG"
         }
       ],
       "context": "El expediente registra śalir/śalirg en ambas caras; el índice de variantes vincula la lectura editorial moderna śalirg con SALIRG y SALIRIG en B1.",
@@ -137,7 +193,17 @@
       "source_url": null,
       "source_record": "ficha-enrichment-4.json; serreta-variants-v1.json",
       "dependency_group": "SERRETA_UN_OBJETO_MULTIPLES_TEXTOS",
-      "independence_status": "Un solo objeto físico; distintas caras y fases no son objetos independientes"
+      "independence_status": "Un solo objeto físico; distintas caras y fases no son objetos independientes",
+      "source_locator": {
+        "status": "SECONDARY_VARIANT_LOCATION",
+        "citation": "Registro editorial IberOS: Velaza (2011) según Ngomo Fernández (2021); antecedente Fletcher Valls y Silgo (1992)",
+        "source_url": null,
+        "document_page": null,
+        "inscription_locator": "Cara B, línea 1: śalirg; variantes históricas SALIRG y SALIRIG",
+        "editorial_reading_excerpt": "śalirg (lectura normalizada); SALIRG / SALIRIG (variantes registradas)",
+        "visual_target": "Ilustración original de las dos caras y verificación independiente de cada grafema pendientes",
+        "verification": "Pasaje B1 respaldado por índice interno serreta-variants-v1.json; no cotejado directamente en la edición original en WEB-09"
+      }
     }
   ],
   "evidence_classification": {
@@ -150,5 +216,16 @@
     "independent_sign_collations": 0,
     "attested_token_positions_verified": 0,
     "warning": "No usar estas cifras como frecuencias lingüísticas, ocurrencias verificadas, grupos independientes ni evidencias semánticas."
+  },
+  "source_location_protocol": {
+    "version": "WEB-09/1.0",
+    "source_text_verification": "Indicación editorial verificada por lectura del texto accesible de la publicación. No implica autopsia, cotejo sobre fotografía ni reconocimiento de signos.",
+    "statuses": [
+      "EDITORIAL_PASSAGE_LOCATED",
+      "BIBLIOGRAPHIC_REFERENCE_ONLY",
+      "SECONDARY_VARIANT_LOCATION"
+    ],
+    "verified_photo_glyphs": 0,
+    "independently_collated_lexemes": 0
   }
 }
