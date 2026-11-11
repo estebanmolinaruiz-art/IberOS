@@ -170,6 +170,22 @@ try{
  if(!((await page.locator('#formResults').innerText()).includes('No consta esta forma')))throw Error('WEB-06: falta abstención ante forma no documentada');
  console.log('✓ WEB-06: variantes editoriales, fuente, límites y abstención en navegador');
 
+ // WEB-07: no extra objects, explicit distinction between form and formal comparison.
+ await page.goto(base+'/formas/?forma=ekiar',{waitUntil:'domcontentloaded'});
+ await page.locator('#crossResults .ib-forms-result').first().waitFor({state:'visible',timeout:15000});
+ const ekiarSummary=await page.locator('#crossSummary').innerText();
+ if(!ekiarSummary.includes('2 objetos')||!ekiarSummary.includes('1 solo en comparación formal'))throw Error('WEB-07: confunde ekiar de Caminreal con comparación formal de Andelo');
+ const crossText=await page.locator('#crossResults').innerText();
+ if(!crossText.includes('Mosaico de Caminreal')||!crossText.includes('Mosaico de Andelo')||!crossText.includes('no es lectura literal'))throw Error('WEB-07: contexto o cautelas de ekiar insuficientes');
+ await page.locator('#crossQuery').fill('śalir');
+ if(!((await page.locator('#crossSummary').innerText()).includes('3 objetos')))throw Error('WEB-07: no coteja Tivissa, Villares V y La Serreta');
+ if(await page.locator('#crossResults .ib-forms-result').count()!==3)throw Error('WEB-07: recuento físico incorrecto');
+ await page.locator('#crossQuery').fill('forma-inexistente-web07');
+ if(await page.locator('#crossResults .ib-forms-result').count()!==0)throw Error('WEB-07: resultados falsos para forma no registrada');
+ if(!((await page.locator('#crossResults').innerText()).includes('No consta la forma')))throw Error('WEB-07: falta abstención explícita');
+ console.log('✓ WEB-07: cinco testimonios documentales, comparaciones formales separadas y abstención');
+
+
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
  try{
