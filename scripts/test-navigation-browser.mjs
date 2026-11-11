@@ -29,7 +29,7 @@ try{
   if(!expected.test(html))throw Error(label+' carece de enlace o identificador esperado');
   console.log('✓ '+label+' disponible con contexto de Tivissa');
  }
- const publicModules=['/formas/','/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
+ const publicModules=['/cotejo-villares-v/','/formas/','/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
  for(const path of publicModules){
   const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
   if(!response||response.status()!==200)throw Error('Módulo '+path+' HTTP '+(response?.status()??'sin respuesta'));
@@ -224,6 +224,16 @@ try{
 
 
 
+ // WEB-11: one object, 14 museum-versus-2024 textual rows; no invented paleographic checks.
+ await page.goto(base+'/cotejo-villares-v/',{waitUntil:'domcontentloaded'});
+ await page.locator('#vv-rows tr').first().waitFor({state:'visible',timeout:15000});
+ if(await page.locator('#vv-rows tr').count()!==14)throw Error('WEB-11: matrix does not contain 14 rows');
+ const matrixText=await page.locator('#vv-rows').innerText();
+ const matrixStatus=await page.locator('#vv-status').innerText();
+ for(const code of ['A1','A3','A7','A8','A9','B1','B2','B4','B5'])if(!matrixText.includes(code))throw Error('WEB-11: missing line '+code);
+ if(!matrixText.includes('bobai-da')||!matrixText.includes('śalir')||!matrixStatus.includes('0 cotejos independientes'))throw Error('WEB-11: matrix hides corrections or incorrectly claims verification');
+ if(!((await page.locator('main').innerText()).includes('no son correcciones paleográficas acreditadas')))throw Error('WEB-11: scientific caveat absent');
+ console.log('✓ WEB-11: 14 editorial rows, zero independent sign checks and source links');
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
  try{
