@@ -37,6 +37,40 @@ try{
   if(visibleTechnical)throw Error('Módulo '+path+' muestra JSON técnico visible en lugar de resultado legible');
   console.log('✓ Módulo '+path+' abre correctamente y no muestra JSON crudo como resultado principal');
  }
+ // Regression audit for duplicated editorial cards and leaked technical content.
+ const pageStructures=[
+  ['/herramientas/','.portal-grid > .portal-card',4,'Herramientas'],
+  ['/contactar/','.contact-grid > .contact-card',4,'Contacto'],
+  ['/publicaciones/','.resource-shelf > .resource-card',2,'Publicaciones'],
+  ['/','.flyer-frame > .ib-project-feature',1,'News interior']
+ ];
+ for(const [path,selector,expected,label] of pageStructures){
+  await page.goto(base+path,{waitUntil:'domcontentloaded'});
+  const cards=page.locator(selector);
+  const count=await cards.count();
+  if(count!==expected)throw Error(label+': '+count+' tarjetas en lugar de '+expected+' (posible duplicación o desaparición)');
+  const signatures=await cards.evaluateAll(nodes=>nodes.map(n=>(n.querySelector('h2,h3')?.textContent||n.getAttribute('aria-label')||n.textContent||'').trim().replace(/\\s+/g,' ').slice(0,160)));
+  if(new Set(signatures).size!==signatures.length)throw Error(label+': tarjetas con títulos repetidos');
+  console.log('✓ '+label+': '+count+' tarjetas únicas');
+ }
+ for(const path of publicModules){
+  await page.goto(base+path,{waitUntil:'domcontentloaded'});
+  const leaked=await page.locator('body').evaluate(body=>{
+   const walker=document.createTreeWalker(body,NodeFilter.SHOW_TEXT);
+   let node;
+   while((node=walker.nextNode())){
+    const parent=node.parentElement;
+    if(!parent||parent.closest('script,style,template,noscript,pre,code,details:not([open]),[hidden],[aria-hidden="true"]'))continue;
+    const st=getComputedStyle(parent);
+    if(st.display==='none'||st.visibility==='hidden')continue;
+    const t=node.textContent.trim();
+    if(t==='[object Object]'||/^Traceback \\(most recent call last\\):/.test(t)||/^SyntaxError: Unexpected token/.test(t))return t.slice(0,120);
+   }
+   return '';
+  });
+  if(leaked)throw Error('Código/error visible en '+path+': '+leaked);
+ }
+ console.log('✓ 27 módulos sin errores de código bruto evidentes en texto visible');
  await page.goto(base+'/modelos3d/',{waitUntil:'domcontentloaded'});
  await page.locator('#external3d a[href^="https://"]').first().waitFor({state:'visible',timeout:15000});
  const sourceLinks=await page.locator('#external3d a[href^="https://"]').count();
