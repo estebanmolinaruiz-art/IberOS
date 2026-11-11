@@ -8,7 +8,7 @@ paisaje, periodo o proyecto**; La Picola–La Alcudia es solamente el caso pilot
 ## API
 ```python
 from iberos.route_research import EvidenceCell, RouteCase, analyze, compare
-case = RouteCase("picola-alcudia",-1,-1,-429,-349,10,"EPSG:25830")
+case = RouteCase("example",(0, 0),(0, 2),-429,-349,10,"EPSG:25830")
 ```
 Para uso real, reemplazar los puntos -1 por pares (fila,columna) y cargar una
 malla rectangular formada por `EvidenceCell`. Cada celda requiere fuente,
