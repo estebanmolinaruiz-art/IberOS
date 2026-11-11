@@ -166,7 +166,7 @@ try{
  if(!editorialText.includes('śalirg')||!editorialText.includes('SALIRIG')||!editorialText.includes('Pendiente'))throw Error('WEB-06: falla la consulta de variante histórica documentada');
  if(!editorialStatus.includes('1 cotejo')||!editorialStatus.includes('1 objeto físico'))throw Error('WEB-06: el conteo no distingue cotejos y objetos');
  await page.locator('#formQuery').fill('una-forma-no-documentada');
- if(await page.locator('.ib-forms-result').count()!==0)throw Error('WEB-06: búsqueda sin coincidencias genera falsas variantes');
+ if(await page.locator('#formResults .ib-forms-result').count()!==0)throw Error('WEB-06: búsqueda sin coincidencias genera falsas variantes');
  if(!((await page.locator('#formResults').innerText()).includes('No consta esta forma')))throw Error('WEB-06: falta abstención ante forma no documentada');
  console.log('✓ WEB-06: variantes editoriales, fuente, límites y abstención en navegador');
 
