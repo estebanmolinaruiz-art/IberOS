@@ -29,7 +29,7 @@ try{
   if(!expected.test(html))throw Error(label+' carece de enlace o identificador esperado');
   console.log('✓ '+label+' disponible con contexto de Tivissa');
  }
- const publicModules=['/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
+ const publicModules=['/formas/','/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
  for(const path of publicModules){
   const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
   if(!response||response.status()!==200)throw Error('Módulo '+path+' HTTP '+(response?.status()??'sin respuesta'));
@@ -158,6 +158,18 @@ try{
  if(/\b(INCLUDE|CONDITIONAL|CONTROL_ONLY|EXCLUDED_CONTROL)\b/.test(cardStatus))throw Error('WEB-05: código de inclusión visible en tarjeta de Corpus');
  console.log('✓ WEB-05: Corpus enlaza a Core y usa estados legibles');
  console.log('✓ Corpus enlaza a la ficha desde resultados reales');
+ // WEB-06: index only editorial variants of a single physical witness.
+ await page.goto(base+'/formas/?q=SALIRIG',{waitUntil:'domcontentloaded'});
+ await page.locator('.ib-forms-result').first().waitFor({state:'visible',timeout:15000});
+ const editorialText=await page.locator('#formResults').innerText();
+ const editorialStatus=await page.locator('#formSummary').innerText();
+ if(!editorialText.includes('śalirg')||!editorialText.includes('SALIRIG')||!editorialText.includes('Pendiente'))throw Error('WEB-06: falla la consulta de variante histórica documentada');
+ if(!editorialStatus.includes('1 cotejo')||!editorialStatus.includes('1 objeto físico'))throw Error('WEB-06: el conteo no distingue cotejos y objetos');
+ await page.locator('#formQuery').fill('una-forma-no-documentada');
+ if(await page.locator('.ib-forms-result').count()!==0)throw Error('WEB-06: búsqueda sin coincidencias genera falsas variantes');
+ if(!((await page.locator('#formResults').innerText()).includes('No consta esta forma')))throw Error('WEB-06: falta abstención ante forma no documentada');
+ console.log('✓ WEB-06: variantes editoriales, fuente, límites y abstención en navegador');
+
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
  try{
