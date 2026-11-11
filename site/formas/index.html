@@ -24,7 +24,7 @@
 <p>Índice documental limitado a cinco piezas con menciones de <strong>ekiar / ekien</strong> y <strong>śalir / śalirg / śalibos</strong>. Se distingue entre una forma citada como lectura editorial y una relación formal propuesta. No incluye todo el corpus ni acredita traducciones o cotejos paleográficos independientes.</p>
 <label for="crossQuery"><strong>Consultar una forma registrada</strong></label>
 <div class="ib-forms-search"><input type="search" id="crossQuery" placeholder="ekiar, ekien, śalir, śalirg…" autocomplete="off"><button class="btn gold" id="crossSearch" type="button">Comparar</button></div>
-<p class="ib-forms-meta">La coincidencia busca exactamente en el campo de formas registradas, no en paráfrasis o hipótesis. Puede probarse una relación formal, pero nunca se contabiliza como presencia literal.</p>
+<p class="ib-forms-meta">La coincidencia busca exactamente en el campo de formas registradas, no en paráfrasis o hipótesis. Separamos menciones editoriales, variantes y comparaciones que no son lectura literal.</p><label for="crossEvidence"><strong>Tipo de evidencia</strong></label><select id="crossEvidence" aria-label="Filtrar tipo de evidencia"><option value="all">Todas las anotaciones</option><option value="EDITORIAL_FORM_UNCOLLATED">Formas en lecturas editoriales</option><option value="EDITORIAL_VARIANT_UNCOLLATED">Variantes editoriales</option><option value="FORMAL_COMPARISON_NOT_ATTESTED">Comparaciones formales, no atestiguadas</option></select><p class="ib-forms-meta" id="crossGate">Cotejos independientes de grafemas: pendiente de comprobación.</p>
 <p id="crossSummary" aria-live="polite" role="status">Preparando testimonios documentales…</p>
 <div id="crossResults"></div>
 <details><summary>Alcance de este índice y datos originales</summary>
@@ -68,21 +68,22 @@ document.getElementById("formSearch").addEventListener("click",render);
 field.addEventListener("input",render);field.addEventListener("keydown",e=>{if(e.key==="Enter")render()});
 
 let crossIndex=null;
-const crossField=document.getElementById("crossQuery"),crossResults=document.getElementById("crossResults"),crossSummary=document.getElementById("crossSummary");
+const crossField=document.getElementById("crossQuery"),crossResults=document.getElementById("crossResults"),crossSummary=document.getElementById("crossSummary"),crossEvidence=document.getElementById("crossEvidence"),crossGate=document.getElementById("crossGate");
 const roleNames={reported_form:"Forma descrita en la lectura editorial",reported_variant_context:"Variante contextual según expediente",formal_comparison_only:"Solo comparación formal: no es lectura literal"};
 function renderCross(){
  if(!crossIndex)return;
  const query=normalized(crossField.value);
  crossResults.replaceChildren();
- const matches=crossIndex.records.map(record=>({...record,matchedForms:record.forms.filter(f=>!query||normalized(f.text)===query)})).filter(r=>r.matchedForms.length>0);
- const literalCount=matches.filter(r=>r.matchedForms.some(f=>f.role!=="formal_comparison_only")).length;
- crossSummary.textContent=matches.length+" objetos con anotaciones de la forma; "+literalCount+" con mención editorial o variante contextual; "+(matches.length-literalCount)+" solo en comparación formal. Ninguna cifra indica traducciones verificadas.";
+ const selectedClass=crossEvidence.value;
+ const matches=crossIndex.records.map(record=>({...record,matchedForms:record.forms.filter(f=>(!query||normalized(f.text)===query)&&(selectedClass==="all"||f.evidence_class===selectedClass))})).filter(r=>r.matchedForms.length>0);
+ const literalCount=matches.filter(r=>r.matchedForms.some(f=>f.evidence_class!=="FORMAL_COMPARISON_NOT_ATTESTED")).length;
+ crossSummary.textContent=matches.length+" objetos con anotaciones de la forma; "+literalCount+" con mención editorial o variante contextual; "+(matches.length-literalCount)+" solo en comparación formal. Ninguna cifra indica traducciones verificadas ni ocurrencias cotejadas.";
  if(!matches.length){crossResults.append(el("p","ib-forms-note","No consta la forma en estos cinco expedientes. No se infiere ausencia del resto del corpus."));return;}
  for(const record of matches){
   const card=el("article","ib-forms-result");
   card.append(el("h3",null,record.title));
   para(card,"Pieza física",record.object_id);
-  for(const item of record.matchedForms)para(card,"Relación con "+item.text,roleNames[item.role]||"Clasificación editorial pendiente");
+  for(const item of record.matchedForms){para(card,"Relación con "+item.text,roleNames[item.role]||"Clasificación editorial pendiente");para(card,"Control de signos y localización",item.sign_position_verified?"Comprobado":"Sin cotejo independiente de grafemas o posición en este índice");}
   para(card,"Contexto registrado",record.context);
   para(card,"Control de lectura",record.evidence_status);
   para(card,"Independencia",record.independence_status);
@@ -92,6 +93,7 @@ function renderCross(){
   card.append(actions);crossResults.append(card);
  }
 }
+crossEvidence.addEventListener("change",renderCross);
 document.getElementById("crossSearch").addEventListener("click",renderCross);
 crossField.addEventListener("input",renderCross);
 crossField.addEventListener("keydown",e=>{if(e.key==="Enter")renderCross()});
@@ -100,7 +102,8 @@ try{
  const response=await fetch("../data/form-witnesses-v1.json");
  if(!response.ok)throw Error("HTTP "+response.status);
  const data=await response.json();
- if(data.schema!=="IberOS-WEB07-Form-Witnesses/1.0"||!Array.isArray(data.records)||data.records.length!==5||new Set(data.records.map(x=>x.object_id)).size!==5||data.scientific_gates?.semantic_promotions!==0)throw Error("Registro WEB-07 inválido");
+ if(data.schema!=="IberOS-WEB07-Form-Witnesses/1.0"||!Array.isArray(data.records)||data.records.length!==5||new Set(data.records.map(x=>x.object_id)).size!==5||data.scientific_gates?.semantic_promotions!==0||data.evidence_classification?.independent_sign_collations!==0||data.records.some(r=>r.forms.some(f=>!data.evidence_classification.classes[f.evidence_class])))throw Error("Registro WEB-08 inválido");
+ crossGate.textContent="WEB-08: cero cotejos independientes de grafemas acreditados en este índice; cero posiciones de ocurrencia verificadas. Se muestran menciones y relaciones documentales, no frecuencias epigráficas.";
  crossIndex=data;renderCross();
 }catch(e){crossSummary.textContent="No se ha podido cargar la comparación. Consulta el registro de datos desde el enlace inferior.";console.error("WEB-07",e)}
 
