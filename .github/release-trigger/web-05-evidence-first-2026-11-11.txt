@@ -1,0 +1,4 @@
+Publicación WEB-05 de mejoras editoriales verificadas el 11-11-2026.
+La batería QA #1635 (commit 4c7282c) ha concluido con éxito.
+Incluye norma editorial, lectura rápida en fichas, orientación en Herramientas, etiquetas claras de Corpus y enlace público a la norma.
+No modifica hipótesis ni resultados científicos.
