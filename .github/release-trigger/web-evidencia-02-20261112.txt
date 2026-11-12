@@ -1,0 +1,4 @@
+WEB-EVIDENCIA-02: passaport scientific evidence per piece.
+PR #176: tests, benchmark, web QA and free Chromium E2E passed.
+Core and scientific locks unchanged. Cost additional: 0 EUR.
+Publish one consolidated package and verify manifest, ficha and backup.
