@@ -143,3 +143,14 @@ def test_gaps_block_with_explicit_reason_codes():
 def test_reject_duplicate_candidate_identifier():
     with pytest.raises(ValueError, match="candidate_id"):
         audit(wrap(record(), record()))
+
+
+def test_reuse_of_known_editorial_alias_cannot_be_mislabeled_new():
+    known = record(1)
+    known["prior_exposure"] = "KNOWN_TRAIN"
+    new = record(2)
+    new["aliases"] = [known["aliases"][0].lower()]
+    result = audit(wrap(known, new))["results"][1]
+    assert "REUSED_EDITORIAL_ALIAS" in result["issues"]
+    assert result["state"] == "DUPLICATE_DEPENDENCY_BLOCK"
+    assert result["blind_packet_preview"] is None
