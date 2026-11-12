@@ -1,0 +1,4 @@
+Validated URL: https://iberos-ia.com/
+Independent backup: https://estebanmolinaruiz-art.github.io/IberOS-respaldo/
+Purpose: initiate a new Pages workflow run instead of retrying a run with duplicate github-pages artifacts.
+No paid hosting or DNS changes.
