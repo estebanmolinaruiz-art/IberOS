@@ -30,6 +30,11 @@
 <p>Prioridad alta: <strong>A3, A7 y B2</strong>, donde se proponen lecturas del grupo <code>bobaida</code>; <strong>B1</strong>, que presenta una restitución inicial; y <strong>B4</strong>, con una lectura fragmentaria de <code>śalir</code>. La oposición gráfica <code>bo</code> / <code>ta</code> requiere comparar las figuras originales y comprobar si se trata de variantes de signo o de errores de calco.</p>
 <p><strong>Dependencia editorial:</strong> la columna atribuida a 2024 utiliza parcialmente una transcripción secundaria; es obligatorio cotejarla en el artículo original, página y figura, antes de declarar una diferencia confirmada.</p><p>Para registrar una corrección científica será obligatorio conservar: identificador 13411, cara y línea, figura y página, grafema anterior y propuesto, posición en la imagen, referencia editorial, criterio paleográfico, revisión independiente y derechos de reutilización.</p>
 <div class="vv-refs"><a href="../data/villares-v-discrepancies-v1.json">Descargar matriz estructurada (JSON)</a><a href="../corpus/">Volver al Corpus</a></div></section>
+<section class="vv-card"><h2>Control independiente de signos · IberOS Core</h2>
+<p id="vv-core-status" role="status" aria-live="polite">Consultando auditoría científica del Core…</p>
+<p>El Core compara lecturas editoriales y prepara revisiones visuales, pero <strong>no certifica signos, funciones gramaticales ni traducciones automáticamente</strong>. Las lecturas independientes deberán citar la misma imagen, indicar cara, línea y posición, y superar una revisión humana posterior.</p>
+<div class="vv-refs"><a href="../data/core_visual_sign_readiness_v1.json">Auditoría reproducible de evidencias (JSON)</a><a href="../formas/?forma=śalirg">Contrastar con La Serreta</a></div>
+</section>
 </main><script type="module">
 import{header}from"../assets/portal-data.js";document.getElementById("head").innerHTML=header("../");
 const body=document.getElementById("vv-rows"),status=document.getElementById("vv-status"),faceSelect=document.getElementById("vv-face"),prioritySelect=document.getElementById("vv-priority"),filterSummary=document.getElementById("vv-filter-summary");
@@ -46,4 +51,15 @@ faceSelect.addEventListener("change",render);prioritySelect.addEventListener("ch
 render();
 status.textContent="14 líneas editoriales organizadas · 1 objeto físico · 0 cotejos independientes de signos · 0 traducciones nuevas.";
 }catch(e){status.textContent="No se pudo cargar la matriz; consulta el archivo de datos original.";console.error("Villares WEB-11",e)}
+const coreStatus=document.getElementById("vv-core-status");
+try{
+ const response=await fetch("../data/core_visual_sign_readiness_v1.json",{cache:"no-store"});
+ if(!response.ok)throw Error("Core audit HTTP "+response.status);
+ const audit=await response.json();
+ if(audit.schema!=="IberOS-Core-Visual-Collation/1.0"||audit.automatic_core_promotion!==false||audit.scientific_verdict!=="NOT_EVALUATED"||audit.independently_verified_glyphs!==0||audit.review_units<26)throw Error("Core audit scientific gate");
+ coreStatus.textContent=audit.review_units+" unidades documentales de cotejo en "+audit.physical_objects+" objetos físicos · "+audit.editorial_pairs_compared+" pares editoriales comparables · 0 signos verificados independientemente.";
+}catch(error){
+ coreStatus.textContent="Auditoría científica no disponible o no superada: no se puede afirmar ninguna validación independiente.";
+ console.error("CORE VISUAL REVIEW",error);
+}
 </script></body></html>
