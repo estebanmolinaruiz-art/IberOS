@@ -1,3 +1,4 @@
+from .route_picola_stratigraphy import Feature as PicolaStratigraphicFeature, evaluate as evaluate_picola_stratigraphy, picola_1998_case
 from .route_picola_exit_window import PicolaDefenceGeometry, estimate_exit_window
 from .route_picola_local import PicolaLocalReference, assess_picola_local_axes
 from .route_picola_exit import ObstacleBand, crossing_sensitivity, assess_picola_gate_exit
@@ -86,6 +87,9 @@ from .core import (
 )
 
 __all__ = [
+    "PicolaStratigraphicFeature",
+    "evaluate_picola_stratigraphy",
+    "picola_1998_case",
     "PicolaDefenceGeometry",
     "estimate_exit_window",
     "PicolaLocalReference",
