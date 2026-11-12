@@ -1,3 +1,4 @@
+from .geosites_alternatives import CorridorSegment, evaluate_segment, compare_corridors, picola_ilici_alternative_preflight
 from .geosites_corridors import SiteNode, RouteLink, audit_corridor, picola_ilici_research_case
 from .route_picola_stratigraphy import Feature as PicolaStratigraphicFeature, evaluate as evaluate_picola_stratigraphy, picola_1998_case
 from .route_picola_exit_window import PicolaDefenceGeometry, estimate_exit_window
@@ -88,6 +89,10 @@ from .core import (
 )
 
 __all__ = [
+    "CorridorSegment",
+    "evaluate_segment",
+    "compare_corridors",
+    "picola_ilici_alternative_preflight",
     "SiteNode",
     "RouteLink",
     "audit_corridor",
