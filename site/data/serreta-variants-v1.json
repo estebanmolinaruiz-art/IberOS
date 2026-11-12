@@ -99,7 +99,8 @@
         "independent_image_readings": 0,
         "independent_sign_coordinate": null,
         "photo_sign_verified": false,
-        "automatic_core_promotion": false
+        "automatic_core_promotion": false,
+        "glyph_photo_verified": false
       }
     },
     {
