@@ -1,0 +1,39 @@
+{
+  "schema": "SCI-PRED-01/1",
+  "cases": [
+    {
+      "case_id": "SCI-PRED-01-CAMINREAL",
+      "object_id": "IBR-MUS-0001",
+      "physical_id": "CAMINREAL-MOSAIC-E7.1",
+      "reading_source_url": "https://doi.org/10.36707/palaeohispanica.v0i15.39",
+      "editorial_transcription": "likine-te · ekiar · usekeŕte-ku",
+      "reading_level": "D1",
+      "evaluation_role": "RETROSPECTIVE_ONLY",
+      "independent_semantic_gold": false,
+      "translation_validated": false,
+      "hypotheses": [
+        {
+          "hypothesis_id": "H-MAKER",
+          "possible_translation": "«Likine hizo/realizó [la obra]» (paráfrasis experimental; no traducción literal validada).",
+          "falsifiable_prediction": "En nuevos testimonios con -te y función independientemente acreditada, la forma seleccionará con mayor frecuencia al productor material que al comitente.",
+          "disconfirming_observation": "Un conjunto ciego y suficiente de testimonios de roles contrastados atribuye -te predominantemente a comitentes, beneficiarios u otras funciones, frente a productores.",
+          "documentary_basis": "Mosaico de Caminreal y discusión publicada; lectura y roles retrospectivos no equivalen a confirmación externa."
+        },
+        {
+          "hypothesis_id": "H-COMMISSIONER",
+          "possible_translation": "«Likine encargó [la obra]» (paráfrasis experimental; no traducción literal validada).",
+          "falsifiable_prediction": "En nuevos testimonios con -te y función independientemente acreditada, la forma seleccionará con mayor frecuencia al comitente de la obra que al ejecutor material.",
+          "disconfirming_observation": "Un conjunto ciego y suficiente de testimonios de roles contrastados atribuye -te predominantemente al productor material u otra función, no al comitente.",
+          "documentary_basis": "Misma inscripción y bibliografía; requiere datos externos que separen encargo de ejecución."
+        },
+        {
+          "hypothesis_id": "H-NULL",
+          "possible_translation": "«Likine [mencionado en una fórmula de función aún indeterminada]» (hipótesis nula; sin verbo traducido).",
+          "falsifiable_prediction": "En una colección nueva estratificada por soporte, las apariciones de -te no discriminarán consistentemente productor frente a comitente con mejora preestablecida sobre una predicción por contexto.",
+          "disconfirming_observation": "Un resultado prospectivo con etiquetas externas y separación por objeto supera con claridad el baseline contextual y replica un papel específico de -te.",
+          "documentary_basis": "Control adversarial sin asignación de papel; evita imponer un verbo a la fórmula."
+        }
+      ]
+    }
+  ]
+}
