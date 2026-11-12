@@ -182,6 +182,50 @@ def assess_blind_collation(submission: dict) -> dict:
     }
 
 
+
+def editorial_decisions(root: Path) -> list[dict]:
+    """Expose well-sourced editorial choices without elevating them to glyph facts."""
+    ser = _read(root, "SERRETA")
+    vil = _read(root, "VILLARES")
+    targets = [
+        ("SER-B1-SALIRG", ser["object_id"], "B1",
+         next(x for x in ser["variants"] if x.get("line") == "B1"
+              and x.get("historical") == ["SALIRG", "SALIRIG"]),
+         "editorial_resolution"),
+        ("VIL5-A3", vil["object_id"], "A3",
+         next(x for x in vil["rows"] if x.get("id") == "VIL5-A3"),
+         "editorial_resolution"),
+    ]
+    result = []
+    for rid, oid, position, source_row, resolution_field in targets:
+        decision = source_row.get(resolution_field)
+        if not isinstance(decision, dict) or not decision.get("preferred"):
+            raise ValueError("An editorial choice needs a cited preferred reading")
+        if (decision.get("independent_image_readings") != 0
+                or decision.get("glyph_photo_verified") is not False):
+            raise ValueError("Editorial consensus is not independent photographic evidence")
+        citations = decision.get("sources") or (
+            [{"citation": decision.get("proposed_by"), "url": decision.get("source_url")}]
+        )
+        if not all(isinstance(item, dict) and
+                   isinstance(item.get("url"), str) and item["url"].startswith("https://")
+                   for item in citations):
+            raise ValueError("Editorial decision requires external verifiable source links")
+        result.append({
+            "review_id": rid,
+            "object_id": oid,
+            "face_line": position,
+            "preferred_editorial": decision["preferred"],
+            "competing_editorial": source_row.get("historical", [source_row.get("museum_excerpt")]),
+            "cited_sources": citations,
+            "status": "EDITORIAL_DECISION_ONLY",
+            "independent_image_readings": 0,
+            "glyph_photo_verified": False,
+            "automatic_core_promotion": False,
+        })
+    return result
+
+
 def audit_repository(root: Path) -> dict:
     cases = build_queue(root)
     source_counts = dict(sorted(Counter(x["source_family"] for x in cases).items()))
@@ -191,6 +235,7 @@ def audit_repository(root: Path) -> dict:
         a = case["candidate_editorial_strings"]
         if len(a) == 2:
             editorial_deltas[case["review_id"]] = editorial_delta(a[0], a[1])
+    decisions = editorial_decisions(root)
     evidence = validate_evidence([
         {"evidence_id": "VISUAL-" + x["review_id"], "object_id": x["object_id"],
          "source_reference": x["source_reference"], "layer": "GRAPHIC",
@@ -208,6 +253,8 @@ def audit_repository(root: Path) -> dict:
         "ready_for_human_adjudication": 0,
         "scientific_verdict": "NOT_EVALUATED",
         "automatic_core_promotion": False,
+        "editorial_decisions_supported": len(decisions),
+        "editorial_decisions": decisions,
         "evidence_contract": {"count": evidence["count"], "layers": ["GRAPHIC"],
                               "state": "UNVERIFIED"},
         "priorities": [{"review_id": x["review_id"], "object_id": x["object_id"],
