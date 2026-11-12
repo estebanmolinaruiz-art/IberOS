@@ -7,6 +7,12 @@ on:
       - 'scripts/run_prediction_translation_works.py'
       - 'data/review/prediction_translation_pilot_v1.json'
       - 'tests/test_prediction_translation_work.py'
+      - 'src/iberos/prospective_role_lock.py'
+      - 'src/iberos/prospective_role_evaluation.py'
+      - 'scripts/evaluate_prospective_roles.py'
+      - 'research/protocols/SCI_PRED_02_FUTURE_ROLE_RULE_20261112.json'
+      - 'tests/test_prospective_role_lock.py'
+      - 'tests/test_prospective_role_evaluation.py'
       - '.github/workflows/science-prediction-translation.yml'
 permissions:
   contents: read
@@ -23,12 +29,24 @@ jobs:
         run: python -m pip install -e . pytest
       - name: Test new prediction/translation dossier and existing controls
         run: |
-          python -m pytest -q tests/test_prediction_translation_work.py tests/test_prediction_compare.py tests/test_interpretation_candidates.py tests/test_corex_p01.py tests/test_holdout_01.py
+          python -m pytest -q tests/test_prediction_translation_work.py tests/test_prediction_compare.py tests/test_interpretation_candidates.py tests/test_corex_p01.py tests/test_holdout_01.py tests/test_prospective_role_lock.py tests/test_prospective_role_evaluation.py
       - name: Generate machine-readable scientific docket
         run: |
           mkdir -p /tmp/iberos-prediction-translation
           python scripts/run_prediction_translation_works.py --output /tmp/iberos-prediction-translation/audit.json
           git rev-parse HEAD > /tmp/iberos-prediction-translation/commit.txt
+      - name: Produce role-scoring audit with zero independently supplied GOLD
+        run: |
+          python scripts/evaluate_prospective_roles.py --output /tmp/iberos-prediction-translation/roles_audit.json
+          python - <<'PY'
+          import json
+          p='/tmp/iberos-prediction-translation/roles_audit.json'
+          r=json.load(open(p, encoding='utf-8'))
+          assert r['total_attempted_physical_objects'] == 0
+          assert r['experimental_state'] == 'INSUFFICIENT_N'
+          assert r['scientific_pass'] is False
+          assert r['translation_validated'] is False
+          PY
       - name: Verify strict semantic rejection is intentional
         run: |
           python - <<'PY'
