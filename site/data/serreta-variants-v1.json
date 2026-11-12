@@ -78,7 +78,30 @@
         }
       ],
       "year_comparison_source": "Fletcher y Silgo (1992), p. 11: Gómez Moreno 1922/1962",
-      "historical_comparison_text_checked": true
+      "historical_comparison_text_checked": true,
+      "editorial_resolution": {
+        "preferred": "śalirg",
+        "status": "EDITORIAL_PREFERENCE_SUPPORTED_NOT_GLYPH_VERIFIED",
+        "reason": "Se adopta como lectura editorial de trabajo el segmento śalirg (no śalirig): Gómez Moreno 1922 publica SALIRG, el cambio a SALIRIG consta en 1962, y Silgo 2015 vuelve a transcribir SALIRG en B1. No se han adjudicado trazos de la fotografía con coordenadas.",
+        "sources": [
+          {
+            "citation": "Fletcher Valls y Silgo Gauche 1992, Recerques 1, p.11: columna Gómez Moreno 1922 SALIRG / 1962 SALIRIG",
+            "url": "https://box.inh.cat/histocat.cat/resource/FletcherSerreta.pdf",
+            "kind": "PRIMARY_HISTORY_OF_READINGS"
+          },
+          {
+            "citation": "Silgo Gauche 2015, Recerques 24, pp.37–42: transcripción B1 IUNZTIR : SALIRG",
+            "url": "https://euskerarenjatorria.eus/wp-content/uploads/2015/07/Serreta.MLH-G.1.1c.pdf",
+            "kind": "MODERN_EDITORIAL_READING"
+          }
+        ],
+        "difference": "La variante SALIRIG introduce una I entre R y G respecto de SALIRG, en transliteración editorial.",
+        "independent_image_readings": 0,
+        "independent_sign_coordinate": null,
+        "photo_sign_verified": false,
+        "automatic_core_promotion": false,
+        "glyph_photo_verified": false
+      }
     },
     {
       "line": "B2",
@@ -130,5 +153,29 @@
     "exact_sign_coordinates_verified": 0,
     "reproduction_rights": "NOT_VERIFIED",
     "notice": "La reproducción fotográfica existe en la edición; no se ha acreditado que sea legible y revisada signo a signo. No republicar fotografías sin licencia."
-  }
+  },
+  "visual_surrogates": [
+    {
+      "kind": "PHOTOGRAPH_OF_OBJECT",
+      "face": "NOT_CONFIRMED_FROM_IMAGE_METADATA",
+      "creator": "Joanbanjo",
+      "date": "2011-09-07",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Plom_I_de_la_Serreta,_escritpura_ib%C3%A8rica._Museu_Arqueol%C3%B2gic_Municipal_d%27Alcoi.JPG",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "usable_for_independent_B1_glyph_check": false,
+      "reason": "Fotografía de museo, posición y cara del trazo SALIRG/SALIRIG no cotejadas en resolución suficiente."
+    },
+    {
+      "kind": "SECONDARY_DRAWING_NOT_AUTOPSY",
+      "face": "B",
+      "creator": "Tautintanes",
+      "date": "2007-06-10",
+      "file_page": "https://commons.wikimedia.org/wiki/File:Plom_I_de_La_Serreta_(Cara_B).jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "usable_for_independent_B1_glyph_check": false,
+      "reason": "Dibujo moderno o representación secundaria, no lectura ciega sobre fotografía de la pieza."
+    }
+  ]
 }
