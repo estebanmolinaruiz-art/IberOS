@@ -12,7 +12,7 @@ def test_real_repository_queue_reports_no_prospective_gold():
     queue = json.loads((ROOT / "data/review/sci_pred04_candidate_queue_v1.json").read_text(encoding="utf-8"))
     protocol = json.loads(PROTOCOL_PATH.read_text(encoding="utf-8"))
     report = compile_status(queue, protocol)
-    assert report["intake"]["total_leads"] == 5
+    assert report["intake"]["total_leads"] == 7
     assert report["intake"]["ready_for_external_admission_audit"] == 0
     assert report["scientific_results"]["unblinded_real_objects"] == 0
     assert report["scientific_results"]["confirmed_translations"] == 0
