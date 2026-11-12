@@ -1,7 +1,11 @@
 """Tests for zero-cost custom-domain build transformation."""
 import tempfile
 import unittest
+import sys
 from pathlib import Path
+
+# pytest may run with tests/ (not the repo root) on sys.path.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.prepare_custom_domain import prepare_site, OLD_BASE, NEW_BASE
 
 class CustomDomainTests(unittest.TestCase):
