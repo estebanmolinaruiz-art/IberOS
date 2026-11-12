@@ -28,6 +28,8 @@ jobs:
         run: node scripts/check-site.mjs
       - name: Validar transparencia científica pública, trazabilidad y límites
         run: node --test tests/test-scientific-evidence-web.mjs
+      - name: Validar pasaportes científicos de las 38 fichas
+        run: node --test tests/test-scientific-evidence-passport.mjs
       - name: Pruebas funcionales reales de Core
         run: node scripts/test-core.mjs
       - name: Preparar Chromium para pruebas reales de interfaz
