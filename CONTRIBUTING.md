@@ -4,6 +4,12 @@ IberOS es un proyecto independiente de investigación sobre inscripciones ibéri
 
 IberOS is an independent research project on Iberian inscriptions. Reproducible bug reports, accessibility improvements, documentation, and engineering contributions are welcome. **It does not claim to have deciphered the Iberian language.**
 
+## Presupuesto obligatorio / Mandatory budget
+
+**Coste adicional de IberOS: 0 € en todas las tareas.** No se aceptan propuestas que requieran pagos, suscripciones, recargas, APIs facturables, ampliaciones de hosting o pruebas que exijan tarjeta. Las PR deben indicar «Coste adicional previsto: 0 €», y los colaboradores deben verificar los límites gratuitos antes de ejecutar una herramienta. Véase [la política del proyecto](docs/POLITICA_COSTE_CERO.md).
+
+**No additional spending:** paid APIs, subscriptions, wallet top-ups, paid hosting, and chargeable workflows are out of scope. Use free alternatives or document a blocker.
+
 ## Cómo colaborar / How to contribute
 
 1. Antes de trabajar, revisa los [issues existentes](https://github.com/estebanmolinaruiz-art/IberOS/issues).

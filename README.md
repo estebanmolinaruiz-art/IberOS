@@ -4,6 +4,12 @@
 
 IberOS es un proyecto independiente de investigación orientado al análisis interno reproducible de inscripciones ibéricas. No se presenta como un desciframiento de la lengua ibérica.
 
+## Norma obligatoria de gasto cero
+
+**IberOS funciona con coste adicional máximo de 0 €**: no se autoriza contratar alojamiento, certificados, APIs, navegadores de pago, créditos ni servicios por consumo. Si una herramienta no es gratuita para la operación concreta, se sustituye por una alternativa gratuita o se documenta el bloqueo. Esta regla es transversal a investigación, Core, La Picola, web y automatizaciones. Véase la [política permanente de coste cero](docs/POLITICA_COSTE_CERO.md).
+
+La renovación futura del dominio propio ya registrado no es gratuita por definición y no se autoriza automáticamente.
+
 ## Referencias persistentes
 
 - Informe técnico Zenodo, versión v1: **10.5281/zenodo.22939179**

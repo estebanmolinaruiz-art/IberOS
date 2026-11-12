@@ -2,6 +2,13 @@
 
 Actualizado: 2026-10-29
 
+## Premisa económica obligatoria
+
+- [x] Política transversal [COSTE CERO](docs/POLITICA_COSTE_CERO.md) incorporada al proyecto.
+- [ ] Antes de desplegar, comprobar que GitHub Pages y Actions funcionan dentro de cuota gratuita, sin pagos ni servicios de terceros facturables.
+- [ ] No habilitar alojamiento, certificados, créditos, monitorización o upgrades de pago.
+- [ ] Verificar que el dominio ya registrado no tiene renovación automática de pago: una futura renovación requerirá decisión expresa.
+
 ## GitHub
 - [x] Repositorio público `estebanmolinaruiz-art/IberOS`
 - [x] Rama principal `main`
