@@ -27,13 +27,13 @@ Archivo congelado `research/protocols/SCI_TOP_02_REVERSE_LEGEND_PRECOMMIT_202611
 - Reverso (ficha): **`arsaos`** (NO `arse` literal).
 - MIB tipo 1985, objeto MIB 100908; mide 31,1 mm y pesa 20,47 g.
 - Sin doble cotejo fotográfico independiente; no traducir `-aos`.
-- Muestra que la afirmación universal «misma iconografía = reverso exactamente ARSE» puede ser **falsa**, además de la variación del anverso ya descubierta en SCI-TOP-01.
+- **DISCREPANCIA D1, NO CONTRAEJEMPLO PALEOGRÁFICO CONFIRMADO:** Estarán Tolosa (2022), https://zaguan.unizar.es/record/120076/files/texto_completo.pdf, identifica la misma familia con antropónimos ikorbeleś/balka{ka}ltuŕ como reverso `arse` (catálogo R&L 272–283). Además `arsaos` se conoce como leyenda de otra ceca. Puede haber error de catalogación; la fotografía de HCR49052 no se pudo visualizar por caché de imagen. **No afirmar que existe una variante genuina `arsaos` en Saguntum hasta cotejo D2/D3 independiente**. Expediente específico #171.
 
 ## Tabla de resultados epistemológicos
 
 - La predicción bloqueada SCI-TOP-02 sobre primer objeto del British Museum: **UNRESOLVED (0 evaluados)**.
 - Reproducción documental positiva **en otros dos inventarios de museos distintos**: SÍ, 2 coincidencias de catálogo, **RETROSPECTIVE/Known type**, no holdout.
-- Control que contradice la versión fuerte de invariancia del rótulo `arse` a través de todos los tipos: **HCR49052 = arsaos**.
+- Discrepancia editorial que **podría** contradecir la invariancia del rótulo: **HCR49052 catalogado `arsaos` frente a ediciones de la misma familia `arse`; pendiente de fotografía y dos lectores**.
 - Lecturas desde fotografías originales por dos especialistas independientes: **PENDIENTE**.
 - Gold semántico retenido por terceros: **0**.
 - Traducciones nuevas validadas: **0**.
