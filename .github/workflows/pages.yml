@@ -33,7 +33,7 @@ jobs:
           python scripts/export_web_core.py
           python scripts/export_mobile_core.py
           python scripts/audit_visual_signs.py --output site/data/core_visual_sign_readiness_v1.json
-          python -c "import json; x=json.load(open('site/data/core_visual_sign_readiness_v1.json')); assert x['review_units']>=26 and x['independently_verified_glyphs']==0 and x['automatic_core_promotion'] is False"
+          python -c "import json; x=json.load(open('site/data/core_visual_sign_readiness_v1.json')); assert x['review_units']>=26 and x['editorial_decisions_supported']==2 and x['independently_verified_glyphs']==0 and x['automatic_core_promotion'] is False"
           python -c "import json; x=json.load(open('site/data/mobile_core_bundle_v1.json')); assert x['object_count']==38"
           python -c "import json; x=json.load(open('site/data/core_object_audit_v1.json')); assert x['object_count']==38"
       - uses: actions/setup-node@v4
