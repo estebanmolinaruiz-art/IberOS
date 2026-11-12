@@ -1,0 +1,6 @@
+WEB-EVIDENCIA-01 publication approval
+PR #175 merged after tests, benchmark, web QA and free Chromium E2E passed.
+New scientific evidence page: /evidencia/
+Scientific CORE data unchanged; C594/C474/C539/C541 not modified.
+Cost additional EUR: 0.
+Verify deployment SHA, HTTPS, sitemap and main navigation after deploy.
