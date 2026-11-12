@@ -70,3 +70,9 @@ Fuentes: https://s.ua.es/es/QD~d ; https://www.boe.es/diario_boe/txt.php?id=BOE-
 5. Mantener cronologías T1/T2/T3/T4/T5 separadas, y fotografías externas como enlaces hasta permiso individual.
 
 **No modificar Core, corpus, benchmark, C594, C474, C539, C541, ni atribuir nuevos puntos a la maqueta 3D.**
+
+## 8. Incidencia de integración CI del PR #140 (12-11-2026)
+- Las ejecuciones originales `tests` (43098305574), `Web E2E` (43098305616) y `Comprobaciones web gratuitas` (43098305630) permanecieron en estado `queued` sin jobs asignados; no existían registros de fallo del código ni de las pruebas.
+- GitHub Status confirma una incidencia de Actions, Pages y Webhooks el 11-11-2026, con recuperación anunciada a las 21:21 UTC. Correlación temporal, **no diagnóstico causal confirmado para este PR**.
+- El PR #140 se cerró y reabrió sin modificar sus archivos, para intentar restaurar eventos. Las ejecuciones antiguas continuaron en cola tras esta operación.
+- Este cambio documental sirve para provocar nuevos eventos de `push` y `pull_request`; **no altera datos arqueológicos, tests, workflows, modelo 3D ni autoridad científica**. Cualquier validación nueva deberá leerse por su commit específico, sin declarar válidas las ejecuciones antiguas.
