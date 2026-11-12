@@ -23,6 +23,8 @@ jobs:
         run: |
           python -m pip install -e .
           python scripts/export_web_core.py
+          python scripts/audit_visual_signs.py --output /tmp/iberos-visual-sign-readiness.json
+          python -c "import json; x=json.load(open('/tmp/iberos-visual-sign-readiness.json')); assert x['review_units']>=26 and x['independently_verified_glyphs']==0 and x['automatic_core_promotion'] is False"
           node scripts/test-integration.mjs
       - name: Pruebas funcionales reales de Core
         run: node scripts/test-core.mjs
