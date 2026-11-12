@@ -1,3 +1,4 @@
+from .route_picola_local import PicolaLocalReference, assess_picola_local_axes
 from .route_picola_exit import ObstacleBand, crossing_sensitivity, assess_picola_gate_exit
 from .route_prediction import ensemble_routes, audit_picola_ensemble
 from .route_research import EvidenceCell, RouteCase
@@ -84,6 +85,8 @@ from .core import (
 )
 
 __all__ = [
+    "PicolaLocalReference",
+    "assess_picola_local_axes",
     "ObstacleBand",
     "crossing_sensitivity",
     "assess_picola_gate_exit",
