@@ -1,0 +1,6 @@
+IberOS domain cutover release
+Target: https://iberos-ia.com/
+Backup: https://estebanmolinaruiz-art.github.io/IberOS-respaldo/
+Read-only scientific content; no CORE scientific promotions.
+PR merged: #148 at 216adda75ed55aedffab66c84c0d6e44d0011369
+Validate DNS/HTTPS, www CNAME, sitemap, internal links and Core outputs before declaring success.
