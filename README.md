@@ -63,6 +63,10 @@ También controla la identidad documental y física:
 - IberOS-Write.
 - Workflows de tests y publicación.
 
+## Estado unificado del proyecto — 12 de noviembre de 2026
+
+La [sincronización transversal de hilos, Core, La Picola, web y difusión](docs/IBEROS_PROJECT_SYNC_2026-11-12.md) es la referencia de continuidad. **El Core científico continúa en «IberOS demostración científica» con SCI-PRED-01/02** (PR [#152](https://github.com/estebanmolinaruiz-art/IberOS/pull/152)); el objetivo son predicciones lingüísticas previas al gold y cotejadas externamente, no traducciones retrospectivas presentadas como validadas. La web se gestiona por separado en https://iberos-ia.com/.
+
 ## Arquitectura y documentación
 
 La arquitectura completa del sistema, los módulos, los datos, los workflows, la publicación y la reproducibilidad se describen en [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
