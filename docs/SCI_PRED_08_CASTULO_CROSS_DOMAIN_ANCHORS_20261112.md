@@ -31,6 +31,15 @@ Se han identificado dos familias de evidencia complementarias del mismo centro h
 | Una predicción de IberOS acertó un significado nuevo y previamente desconocido | **NO**, interpretaciones publicadas hace décadas |
 | Los ejemplares monetales son cuatro observaciones semánticas independientes | **NO**, controlar familias de emisión/cuño |
 
+## Corrección filológica por bibliografía independiente
+
+La atribución de `CASTLOSAIC` a la **lengua ibérica** es **discutida**, aunque su relación con Cástulo resulte plausible: Simón Cornago, *Palaeohispanica* 17 (2017), p. 119, menciona posible sufijo ibérico `-sa-i-c` frente a una lectura **turdetana** propuesta por Correa por la estructura consonántica de la base. Moncunill y Velaza, «Iberian», *Palaeohispanica* 20 (2020), p. 1087, clasifican el epígrafe de Cástulo J.03.01 entre los testimonios de adscripción indígena/ibérica **incierta**. Fuentes:
+
+- https://ifc.dpz.es/recursos/publicaciones/36/49/_ebook.pdf
+- https://ifc.dpz.es/recursos/publicaciones/38/77/17moncunillvelaza.pdf
+
+**Decisión:** `LANGUAGE_UNCERTAIN: IBERIAN_OR_OTHER_INDIGENOUS`; `CASTULO_TOPONYM_RELATION=PLAUSIBLE_RESEARCH_HYPOTHESIS`; `ETYMOLOGY_AND_SUFFIX=NOT_VALIDATED`. No se utilizará como un positivo seguro de lengua ibérica ni en entrenamiento supervisado semántico. Solo **control de ambigüedad lingüística**, y el nombre latino de patrono/liberto como hecho documental distinto.
+
 ## Hipótesis que se puede testar en el futuro (sin alterar SCI-PRED-02)
 
 **SCI-TOP-01 — función documental del rótulo**, no equivalencia léxica ya demostrada: en un conjunto de emisiones **nuevas para el entrenamiento**, IberOS deberá clasificar cada leyenda gráfica o transliterada como `CECA_TOPONIMO`, `PERSONA_MAGISTRADO`, `MARCA_VALOR` o `ABSTENCION`, con criterios de elegibilidad y baseline acordados **antes de que un tercero entregue las fichas de contraste**. Prohibido usar la edición/catalogación de ese lote como features.
