@@ -83,6 +83,8 @@ def seal(case: dict, protocol: dict) -> dict:
     signal = "ONE_DOCUMENTED_TE" if target else "ABSTAIN_AMBIGUOUS_OR_ABSENT_TE"
     statement = {
         "protocol_sha256": _sha(protocol), "blind_id": case["blind_id"],
+        "physical_id": case["physical_id"],
+        "participant_ids": sorted(ids),
         "input_sha256": _sha(case),
         "marked_person_id": target, "signal": signal,
         "h_maker_prediction": {"person_id": target, "role": "PRODUCER"} if target else None,
