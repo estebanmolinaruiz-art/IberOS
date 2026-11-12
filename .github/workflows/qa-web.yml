@@ -17,13 +17,15 @@ jobs:
           node-version: '22'
       - name: Evitar ejecuciones duplicadas de CI por push y PR
         run: node scripts/check-ci-trigger-policy.mjs
-      - name: Comprobar integridad de web, datos y scripts
-        run: node scripts/check-site.mjs
       - name: Build scientific Core audit and test cross-module integration
         run: |
           python -m pip install -e .
           python scripts/export_web_core.py
+          python scripts/audit_visual_signs.py --output site/data/core_visual_sign_readiness_v1.json
+          python -c "import json; x=json.load(open('site/data/core_visual_sign_readiness_v1.json')); assert x['review_units']>=26 and x['independently_verified_glyphs']==0 and x['automatic_core_promotion'] is False"
           node scripts/test-integration.mjs
+      - name: Comprobar integridad de web, datos generados y scripts
+        run: node scripts/check-site.mjs
       - name: Pruebas funcionales reales de Core
         run: node scripts/test-core.mjs
       - name: Preparar Chromium para pruebas reales de interfaz

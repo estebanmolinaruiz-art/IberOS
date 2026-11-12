@@ -27,4 +27,16 @@ class TestSixPillars(unittest.TestCase):
             self.assertEqual(result["corpus"]["duplicate_ids"],["ONE"])
             self.assertEqual(result["validation"]["completed_milestones"],1)
             self.assertFalse(result["semantic_promotion_allowed"])
+    def test_real_repo_visual_collation_blocks_unverified_signs(self):
+        root=Path(__file__).resolve().parents[1]
+        result=module.audit(root)
+        visual=result["visual_collation"]
+        self.assertEqual(visual["review_units"],26)
+        self.assertEqual(visual["physical_objects"],5)
+        self.assertEqual(visual["editorial_pairs_compared"],21)
+        self.assertEqual(visual["independently_verified_glyphs"],0)
+        self.assertFalse(visual["automatic_core_promotion"])
+        self.assertIn("Independent visual sign readings not adjudicated",result["scientific_blockers"])
+        self.assertFalse(result["semantic_promotion_allowed"])
+
 if __name__=="__main__": unittest.main()

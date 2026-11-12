@@ -248,6 +248,11 @@ try{
  const reviewText=await page.locator('main').innerText();
  if(!reviewText.includes('transcripción secundaria')||!reviewText.includes('Pendiente de cotejo en edición primaria'))throw Error('WEB-13: missing source-dependency disclosure');
  console.log('✓ WEB-13: source-dependency and high-priority review filters; no confirmed signs');
+ await page.locator('#vv-core-status').filter({hasText:'26 unidades documentales de cotejo'}).waitFor({state:'visible',timeout:15000});
+ const coreSummary=await page.locator('#vv-core-status').innerText();
+ if(!coreSummary.includes('5 objetos físicos')||!coreSummary.includes('21 pares editoriales')||!coreSummary.includes('0 signos verificados'))throw Error('CORE-VIS-01: el informe integrado debe distinguir unidades, objetos y signos');
+ console.log('✓ CORE-VIS-01: puerta científica y 26 unidades documentales visibles sin traducciones automáticas');
+
 
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});

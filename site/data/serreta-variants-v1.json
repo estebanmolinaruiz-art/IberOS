@@ -45,7 +45,19 @@
         "IUNSTIRI"
       ],
       "modern": "iunstir",
-      "photo_sign_verified": false
+      "photo_sign_verified": false,
+      "historical_reading_years": [
+        {
+          "year": 1922,
+          "reading": "IUNSTIR"
+        },
+        {
+          "year": 1962,
+          "reading": "IUNSTIRI"
+        }
+      ],
+      "year_comparison_source": "Fletcher y Silgo (1992), p. 11: Gómez Moreno 1922/1962",
+      "historical_comparison_text_checked": true
     },
     {
       "line": "B1",
@@ -54,7 +66,19 @@
         "SALIRIG"
       ],
       "modern": "śalirg",
-      "photo_sign_verified": false
+      "photo_sign_verified": false,
+      "historical_reading_years": [
+        {
+          "year": 1922,
+          "reading": "SALIRG"
+        },
+        {
+          "year": 1962,
+          "reading": "SALIRIG"
+        }
+      ],
+      "year_comparison_source": "Fletcher y Silgo (1992), p. 11: Gómez Moreno 1922/1962",
+      "historical_comparison_text_checked": true
     },
     {
       "line": "B2",
@@ -63,7 +87,19 @@
         "BIRIGNAR"
       ],
       "modern": "birinaŕ",
-      "photo_sign_verified": false
+      "photo_sign_verified": false,
+      "historical_reading_years": [
+        {
+          "year": 1922,
+          "reading": "BIRINAR"
+        },
+        {
+          "year": 1962,
+          "reading": "BIRIGNAR"
+        }
+      ],
+      "year_comparison_source": "Fletcher y Silgo (1992), p. 11: Gómez Moreno 1922/1962",
+      "historical_comparison_text_checked": true
     },
     {
       "line": "B5",
@@ -82,5 +118,17 @@
     "seven_independent_glyph_photo_checks": 0,
     "eligible_for_scientific_promotion": false
   },
-  "note": "La lectura editorial moderna selecciona una opción en cada variante histórica, pero IberOS no certifica esos grafemas por lectura independiente de la fotografía."
+  "note": "La lectura editorial moderna selecciona una opción en cada variante histórica, pero IberOS no certifica esos grafemas por lectura independiente de la fotografía.",
+  "primary_visual_source": {
+    "citation": "Fletcher Valls y Silgo Gauche (1992), Recerques del Museu d'Alcoi 1, pp. 9–36",
+    "official_catalogue_url": "https://www.alcoi.org/es/areas/cultura/museo/publicaciones/recerques/recerques_0001.html",
+    "full_paper_reference_url": "https://box.inh.cat/histocat.cat/resource/FletcherSerreta.pdf",
+    "photographed_sides": "Fletcher y Silgo 1992, p. 10, fotografías de caras A y B acreditadas a J. Untermann",
+    "historical_editorial_variant_reference": "Fletcher y Silgo 1992, p. 11, comparación de Gómez Moreno 1922 y 1962",
+    "primary_publication_text_location_checked": true,
+    "original_photo_usable_for_glyph_collation": false,
+    "exact_sign_coordinates_verified": 0,
+    "reproduction_rights": "NOT_VERIFIED",
+    "notice": "La reproducción fotográfica existe en la edición; no se ha acreditado que sea legible y revisada signo a signo. No republicar fotografías sin licencia."
+  }
 }
