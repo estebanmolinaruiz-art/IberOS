@@ -29,3 +29,27 @@ GitHub Pages redirige el dominio predeterminado `github.io` al dominio personali
 
 ## Estado
 Preparación abierta. Sin activación de DNS, sin nuevo alojamiento facturado y sin cambio en la web pública.
+
+## Zona DNS comprobada visualmente (12 de noviembre de 2026)
+
+DonDominio, pestaña `Parking & Zona DNS`: dominio activo, registros autoritativos en `ns1.dondominio.com` y `ns2.dondominio.com`.
+
+| Host | Tipo | Estado actual | Cambio previsto tras activar Pages |
+| --- | --- | --- | --- |
+| `iberos-ia.com` | ANAME | `parkingsrv0.dondominio.com` | **Editar** destino a `estebanmolinaruiz-art.github.io` (sin `https://` ni `/IberOS`) |
+| `www.iberos-ia.com` | CNAME | `parkingsrv0.dondominio.com` | **Editar** destino a `estebanmolinaruiz-art.github.io` |
+| `*.iberos-ia.com` | CNAME | `parkingsrv0.dondominio.com` | Retirar después de verificar que no cubre servicios necesarios; GitHub recomienda evitar comodines por riesgo de takeover |
+| `iberos-ia.com` | TXT | registro SPF | **No modificar** |
+| `imap`, `mail`, `pop`, `pop3`, `smtp`, `webmail`, `ftp`, `bbdd` | CNAME | registros auxiliares DonDominio | **No modificar** para esta migración |
+
+GitHub admite un solo ANAME de raíz en lugar de cuatro registros A. No mezclar ANAME con registros A de la misma raíz. El DNS de correo y otros servicios deben conservarse aunque no se vean registros MX en la captura.
+
+**Orden de seguridad:** respaldo público independiente → configuración `Settings > Pages > Custom domain` en GitHub → modificación de ANAME y CNAME en DonDominio → verificación SSL + navegación y datos → actualizar SEO y fuentes externas.
+
+**Advertencia sobre GitHub Actions:** `site/CNAME` no configura el dominio, ya que la publicación se realiza con `actions/deploy-pages`. Se requiere el ajuste explícito en el repositorio (o API).
+
+## Cambios preparados (solo rama/PR, no producción)
+- `scripts/prepare_custom_domain.py` transforma URLs absolutas del sitio durante la generación del artefacto.
+- `tests/test_prepare_custom_domain.py` preserva enlaces externos y archivos binarios.
+- `.github/workflows/pages.yml` ejecuta transformación y comprobación, y apunta la prueba del despliegue al nuevo dominio.
+- La PR continúa en borrador, sin fusionar ni publicar ni tocar DNS.
