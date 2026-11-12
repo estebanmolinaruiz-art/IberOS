@@ -53,6 +53,21 @@ class VisualAdjudicationTests(unittest.TestCase):
         self.assertEqual(r["ready_for_human_adjudication"], 0)
         self.assertTrue(any(x["review_id"] == "VIL5-A3" for x in r["priorities"]))
 
+    def test_two_editorial_decisions_are_not_visual_autopsies(self):
+        result = audit_repository(ROOT)
+        self.assertEqual(result["editorial_decisions_supported"], 2)
+        decisions = {x["review_id"]: x for x in result["editorial_decisions"]}
+        self.assertEqual(set(decisions), {"SER-B1-SALIRG", "VIL5-A3"})
+        self.assertEqual(decisions["SER-B1-SALIRG"]["preferred_editorial"], "śalirg")
+        self.assertEqual(decisions["VIL5-A3"]["preferred_editorial"], "bobai-da")
+        self.assertTrue(all(x["status"] == "EDITORIAL_DECISION_ONLY" for x in decisions.values()))
+        self.assertTrue(all(x["independent_image_readings"] == 0
+                            and x["glyph_photo_verified"] is False
+                            and x["automatic_core_promotion"] is False
+                            for x in decisions.values()))
+        self.assertEqual(result["independently_verified_glyphs"], 0)
+        self.assertEqual(result["physical_objects"], 5)
+
     def test_editorial_difference_not_a_photographic_sign(self):
         out = editorial_delta("SALIRG", "SALIRIG")
         self.assertFalse(out["source_text_identical"])
