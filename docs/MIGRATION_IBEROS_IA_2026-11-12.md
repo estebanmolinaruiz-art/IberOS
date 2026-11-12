@@ -53,3 +53,14 @@ GitHub admite un solo ANAME de raíz en lugar de cuatro registros A. No mezclar 
 - `tests/test_prepare_custom_domain.py` preserva enlaces externos y archivos binarios.
 - `.github/workflows/pages.yml` ejecuta transformación y comprobación, y apunta la prueba del despliegue al nuevo dominio.
 - La PR continúa en borrador, sin fusionar ni publicar ni tocar DNS.
+
+## Respaldo público verificado (2026-11-12)
+
+- Repositorio independiente: `estebanmolinaruiz-art/IberOS-respaldo`.
+- Flujo **Publicar copia congelada de IberOS**, ejecución `#2`: `43236921883`, conclusión `success`.
+- Código fuente capturado en `a2015d575f03871819b1d5522a666efe01b27419`.
+- Copia de archivos servida desde `site-snapshot/` del repositorio de respaldo.
+- URL publicada comprobada: https://estebanmolinaruiz-art.github.io/IberOS-respaldo/
+- Verificaciones HTTP independientes: portada, `/corpus/`, `/fichas/` y `/respaldo-version.json`; robots `noindex,nofollow` en páginas HTML comprobadas.
+- El propio job de despliegue verificó PDF La Picola y datos JSON exportados. Las funcionalidades JavaScript requieren además prueba de navegador de extremo a extremo.
+- El cambio de dominio aún NO se ha aplicado a GitHub Pages del repositorio original ni al DNS de DonDominio.
