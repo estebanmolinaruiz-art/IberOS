@@ -82,7 +82,7 @@ def audit(document: dict) -> dict:
     records = document["candidates"]
     if not isinstance(records, list) or len(records) > 1000:
         raise ValueError("Expected at most 1000 candidate lead records")
-    seen_id, seen_physical, seen_lineage = set(), set(), set()
+    seen_id, seen_physical, seen_lineage, seen_aliases = set(), set(), set(), set()
     results = []
     for index, candidate in enumerate(records, 1):
         if not isinstance(candidate, dict) or set(candidate) - FIELDS:
@@ -115,6 +115,12 @@ def audit(document: dict) -> dict:
                 or any(not _present(v) for v in aliases)
                 or len(set(aliases)) != len(aliases)):
             issues.append("DOCUMENTARY_ALIASES_NOT_RECONCILED")
+        else:
+            for alias in aliases:
+                normalized_alias = alias.strip().casefold()
+                if normalized_alias in seen_aliases:
+                    issues.append("REUSED_EDITORIAL_ALIAS")
+                seen_aliases.add(normalized_alias)
         if candidate.get("script") != "IBERIAN":
             issues.append("SCRIPT_NOT_ADMITTED")
         if candidate.get("context_type") not in ALLOWED_CONTEXTS:
@@ -163,7 +169,7 @@ def audit(document: dict) -> dict:
         issues = list(dict.fromkeys(issues))
         if "RETROSPECTIVE_OR_EXPOSURE_UNRESOLVED" in issues:
             state = "EXCLUDED_FROM_PROSPECTIVE_HOLD"
-        elif any(i.startswith("REPEATED_") for i in issues):
+        elif any(i.startswith("REPEATED_") or i == "REUSED_EDITORIAL_ALIAS" for i in issues):
             state = "DUPLICATE_DEPENDENCY_BLOCK"
         elif issues:
             state = "BLOCKED_EVIDENCE"
