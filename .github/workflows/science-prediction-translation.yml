@@ -63,7 +63,7 @@ jobs:
           folder=Path('/tmp/iberos-prediction-translation')
           intake=json.loads((folder/'intake.json').read_text(encoding='utf-8'))
           works=json.loads((folder/'works.json').read_text(encoding='utf-8'))
-          assert intake['total_leads'] == 5
+          assert intake['total_leads'] == 7
           assert intake['ready_for_external_admission_audit'] == 0
           assert intake['translation_validated'] is False
           assert works['scientific_results']['unblinded_real_objects'] == 0
