@@ -41,6 +41,11 @@ jobs:
           node-version: '22'
       - name: Audit scientific Core to web integrations
         run: node scripts/test-integration.mjs
+      - name: Prepare the complete static website for iberos-ia.com
+        run: |
+          python -m unittest discover -s tests -p 'test_prepare_custom_domain.py'
+          python scripts/prepare_custom_domain.py --site site
+          python scripts/prepare_custom_domain.py --site site --check
       - name: Embed deployed commit marker in published artifact
         env:
           EXPECTED_SHA: ${{ github.sha }}
@@ -57,7 +62,7 @@ jobs:
       - name: Verify deployed public website matches this commit
         env:
           EXPECTED_SHA: ${{ github.sha }}
-          PUBLIC_BASE: https://estebanmolinaruiz-art.github.io/IberOS
+          PUBLIC_BASE: https://iberos-ia.com
         run: |
           python - <<'PY'
           import json, os, time, urllib.request
