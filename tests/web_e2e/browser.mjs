@@ -114,6 +114,27 @@ try {
       assert.match(file.suggestedFilename(),/\.svg$/i);
     } finally {await page.close();}
   });
+  test('Scientific passport renders source and abstention in real ficha browser', async () => {
+    for(const [id,required] of [
+      ['IBR-PLM-0002','Plomo de Tivissa'],
+      ['IBR-MUS-0001','Mosaico de La Caridad']
+    ]){
+      const page=await visit('ficha/?id='+id);
+      try{
+        await page.locator('#evidence-passport').waitFor({state:'visible',timeout:15000});
+        const panel=await page.locator('#evidence-passport').innerText();
+        assert.match(panel,/Pasaporte de evidencia/);
+        assert.ok(panel.includes(id),'wrong physical object in passport');
+        assert.match(panel,/Traducci[oó]n sem[aá]ntica/i);
+        assert.match(panel,/no validada prospectivamente/);
+        assert.match(panel,/Fuentes, localizadores y estado editorial/);
+        assert.ok(!panel.includes('No se ha podido cargar el pasaporte'),'should not silently fail');
+      }catch(err){
+        await page.screenshot({path:'/tmp/iberos-e2e-passport-'+id+'.png',fullPage:true});
+        throw err;
+      }finally{await page.close();}
+    }
+  });
   test('Core query controls are usable', async () => {
     const page=await visit('webengine/');
     try {
