@@ -339,7 +339,9 @@
       "license": "CC BY-SA 3.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
       "verified_A3_glyph_crop": false,
-      "reason": "Fotografía de museo de la pieza, sin identificación independiente de los trazos de A3 ni corte normalizado."
+      "reason": "Wikimedia Commons identifica una inscripción sobre plomo hallada en Los Villares, pero no señala el inventario 13411 ni demuestra correspondencia con Villares V. Solo es referencia visual comparativa de procedencia, NO fotografía acreditada de la pieza A3.",
+      "object_match_verified": false,
+      "object_match_status": "LOS_VILLARES_FINDSPOT_ONLY_NOT_INVENTORY_13411"
     }
   ]
 }

@@ -68,6 +68,14 @@ class VisualAdjudicationTests(unittest.TestCase):
         self.assertEqual(result["independently_verified_glyphs"], 0)
         self.assertEqual(result["physical_objects"], 5)
 
+    def test_villares_related_photo_is_not_exact_object_match(self):
+        import json
+        data=json.loads((ROOT/"site/data/villares-v-discrepancies-v1.json").read_text(encoding="utf-8"))
+        surrogate=data["visual_surrogates"][0]
+        self.assertFalse(surrogate["object_match_verified"])
+        self.assertFalse(surrogate["verified_A3_glyph_crop"])
+        self.assertIn("NOT_INVENTORY_13411",surrogate["object_match_status"])
+
     def test_editorial_difference_not_a_photographic_sign(self):
         out = editorial_delta("SALIRG", "SALIRIG")
         self.assertFalse(out["source_text_identical"])
