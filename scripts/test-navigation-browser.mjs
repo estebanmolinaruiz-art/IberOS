@@ -264,6 +264,7 @@ try{
  if(!serretaResolved.includes('śalirg')||!serretaResolved.includes('NO.')||!villaresResolved.includes('bobai-da')||!villaresResolved.includes('NO.'))throw Error('CORE-VIS-02: editorial preference cannot imply glyph verification');
  const licensed=await page.locator('.ev-photo figcaption').allInnerTexts();
  if(licensed.length!==3||licensed.some(x=>!x.includes('CC BY-SA 3.0')))throw Error('CORE-VIS-02: media credits or license missing');
+ if(!licensed[2].includes('correspondencia con Villares V no acreditada')||!licensed[2].includes('inventario 13411'))throw Error('CORE-VIS-02: unidentified Los Villares photo may not be attributed to Villares V');
  if(!((await page.locator('main').innerText()).includes('No desciframiento')||(await page.locator('main').innerText()).includes('no desciframiento')))throw Error('CORE-VIS-02: scientific limitation absent');
  console.log('✓ CORE-VIS-02: two editorial cases, source images credited, no photo glyphs or semantic approval');
 
