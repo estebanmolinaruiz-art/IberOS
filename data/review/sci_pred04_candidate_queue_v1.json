@@ -66,6 +66,32 @@
       "script": "IBERIAN",
       "context_type": "FUNERARY",
       "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "REVIEW-XABIA-CIRNE-2022",
+      "physical_id": "XABIA-CIRNE-LEAD-2019-UNKNOWN-ACCESSION",
+      "documentary_lineage_id": "XABIA-CIRNE-EDITION-2022",
+      "aliases": [
+        "Fundació CIRNE plomo de Xàbia",
+        "Ferrer et al. 2022 e07"
+      ],
+      "reading_source_url": "https://doi.org/10.3989/aespa.095.022.07",
+      "script": "IBERIAN",
+      "context_type": "UNKNOWN",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "REVIEW-MASIES-LEAD-LONG-2023",
+      "physical_id": "MASIES-SANT-MIQUEL-LONG-LEAD-ACCESSION-PENDING",
+      "documentary_lineage_id": "MASIES-LEAD-LONG-FERRER-ETAL-2023",
+      "aliases": [
+        "Masies de Sant Miquel lead long text",
+        "Ferrer et al. 2023 Palaeohispanica 538"
+      ],
+      "reading_source_url": "https://doi.org/10.36707/palaeohispanica.v23i0.538",
+      "script": "IBERIAN",
+      "context_type": "UNKNOWN",
+      "prior_exposure": "KNOWN_TRAIN"
     }
   ]
 }
