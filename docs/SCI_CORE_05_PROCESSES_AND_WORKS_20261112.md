@@ -57,7 +57,7 @@ Todos los informes se escriben en `/tmp`, nunca sobrescriben fuentes. La ejecuci
 
 ### Primer lote documental de verificación
 
-La cola `sci_pred04_candidate_queue_v1.json` contiene únicamente **cinco expedientes RETROSPECTIVE** (Caminreal, Andelo, Sagunto, familia K.5.4 y estela de Badalona). Se conservan para detectar reutilizaciones y duplicaciones, **no** se presentan como nuevas piezas ni como un GOLD lingüístico. Una fórmula conocida de `-te` no demuestra quién hizo la obra; una comparación latina puede sugerir funciones pero no aporta automáticamente una traducción.
+La cola `sci_pred04_candidate_queue_v1.json` contiene únicamente **siete expedientes RETROSPECTIVE** (Caminreal, Andelo, Sagunto, familia K.5.4, estela de Badalona, plomo de Xàbia/CIRNE y plomo de Masies de Sant Miquel). Se conservan para detectar reutilizaciones y duplicaciones, **no** se presentan como nuevas piezas ni como un GOLD lingüístico. Una fórmula conocida de `-te` no demuestra quién hizo la obra; una comparación latina puede sugerir funciones pero no aporta automáticamente una traducción.
 
 ### Works verificables en GitHub
 
