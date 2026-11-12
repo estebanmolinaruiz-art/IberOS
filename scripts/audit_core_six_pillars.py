@@ -46,7 +46,34 @@ def audit(root: Path) -> dict:
     glyph_verified=False
     if orleyl_path.exists():
         glyph_verified=json.loads(orleyl_path.read_text(encoding="utf-8")).get("exact_glyph_coordinates_verified") is True
+    # Independent visual evidence is a separate scientific gate, not coverage.
+    visual_sources=[
+        "data/review/palaeographic_alignment_priority_v1.json",
+        "site/data/serreta-variants-v1.json",
+        "site/data/villares-v-discrepancies-v1.json",
+    ]
+    if all((root/path).is_file() for path in visual_sources):
+        from iberos.visual_adjudication import audit_repository
+        visual=audit_repository(root)
+        visual_summary={
+            "review_units":visual["review_units"],
+            "physical_objects":visual["physical_objects"],
+            "by_source":visual["by_source"],
+            "editorial_pairs_compared":visual["editorial_pairs_compared"],
+            "independently_verified_glyphs":visual["independently_verified_glyphs"],
+            "scientific_verdict":visual["scientific_verdict"],
+            "automatic_core_promotion":False,
+        }
+    else:
+        visual_summary={
+            "review_units":0,"physical_objects":0,
+            "missing_sources":[path for path in visual_sources if not (root/path).is_file()],
+            "independently_verified_glyphs":0,
+            "scientific_verdict":"NOT_EVALUATED","automatic_core_promotion":False,
+        }
     blockers=[]
+    if visual_summary["independently_verified_glyphs"]==0:
+        blockers.append("Independent visual sign readings not adjudicated")
     if not glyph_verified: blockers.append("Orleyl glyph coordinates not independently verified")
     if validation["scientific_status"] not in ("VALIDATED","REPLICATED"):
         blockers.append("Independent scientific validation not demonstrated")
@@ -54,7 +81,7 @@ def audit(root: Path) -> dict:
         blockers.append("Corpus object identifier integrity problems")
     return {"schema":"IberOS-Core-Six-Pillar-Audit/1.0","pillars":pillars,
             "corpus":corpus,"validation":validation,
-            "orleyl_glyphs_verified":glyph_verified,"scientific_blockers":blockers,
+            "orleyl_glyphs_verified":glyph_verified,"visual_collation":visual_summary,"scientific_blockers":blockers,
             "semantic_promotion_allowed":False,
             "interpretation":"File presence is technical coverage, not scientific verification."}
 
