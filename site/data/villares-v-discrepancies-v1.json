@@ -65,7 +65,26 @@
       "glyph_photo_verified": false,
       "claimed_correction_validated": false,
       "review_source_note": "Alineación editorial preliminar; falta cotejo íntegro con edición primaria y figura del signo.",
-      "review_priority": "ALTA"
+      "review_priority": "ALTA",
+      "editorial_resolution": {
+        "preferred": "bobai-da",
+        "unsegmented": "bobaida",
+        "status": "AUTHOR_REVISED_EDITORIAL_READING_NOT_IBEROS_GLYPH_VERIFICATION",
+        "historic": "bosita (Fletcher 1978/1985)",
+        "proposed_by": "Joan Ferrer i Jané (2024)",
+        "source_page": 317,
+        "source_next_page": 318,
+        "source_figure": "fig. 8",
+        "evidence_description": "El autor explica que el signo antiguamente leído s en bosita se identifica como ba, por lo que propone bobaida; observa además que los dos signos bo pertenecen a la variante bo4, no bo1, y considera posible un separador entre śalir y bobaida.",
+        "source_url": "https://www.researchgate.net/publication/387054058_Una_nova_mirada_al_plom_iberic_Villares_V_Kelin_Caudete_de_las_Fuentes_Un_text_comptable_amb_deu_transaccions",
+        "other_primary_reading": "Fletcher Valls, Inscripciones de Los Villares, pasaje SALIRBOSITA y comentario de BOSITA",
+        "other_primary_source_url": "https://mupreva.org/dedalo/media/pdf/publicaciones/standar/mupreva194_mupreva153_568.pdf",
+        "corroboration_type": "PUBLISHED_EXPERT_AUTOPSY_NOT_IBEROS_BLIND_COLLATION",
+        "independent_image_readings": 0,
+        "verified_image_crop": null,
+        "glyph_photo_verified": false,
+        "semantics_promoted": false
+      }
     },
     {
       "id": "VIL5-A4",
@@ -310,5 +329,17 @@
     "restrictions": "Las coincidencias entre resumen, catálogo y transcripción secundaria refuerzan la localización documental, pero las 14 filas de contraste siguen pendientes de cotejo íntegro en el texto primario y en la figura. Ni lectura nueva verificada por IberOS ni traducción.",
     "iberos_independent_glyph_checks": 0,
     "primary_line_by_line_audit_complete": false
-  }
+  },
+  "visual_surrogates": [
+    {
+      "kind": "PHOTOGRAPH_OF_OBJECT",
+      "creator": "Dorieo",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Inscripci%C3%B3n_ib%C3%A9rica_en_plancha_de_plomo_-_Los_Villares,_Caudete_de_las_Fuentes.JPG",
+      "date": "2008-11-21",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "verified_A3_glyph_crop": false,
+      "reason": "Fotografía de museo de la pieza, sin identificación independiente de los trazos de A3 ni corte normalizado."
+    }
+  ]
 }
