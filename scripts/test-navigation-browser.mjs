@@ -29,7 +29,7 @@ try{
   if(!expected.test(html))throw Error(label+' carece de enlace o identificador esperado');
   console.log('✓ '+label+' disponible con contexto de Tivissa');
  }
- const publicModules=['/cotejo-villares-v/','/formas/','/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
+ const publicModules=['/cotejo-signos/','/cotejo-villares-v/','/formas/','/','/que-es-iberos/','/corpus/','/atlas/','/fichas/','/ficha/?id=IBR-PLM-0002','/laboratorio/','/webengine/','/write/','/talk/','/modelos3d/','/recursos/','/bibliografia/','/proyectos/','/casos/','/yacimientos/','/reproducibilidad/','/herramientas/','/comunidad/','/acerca/','/contactar/','/demostracion/','/diagnostico/','/estado/','/ecosistema/','/mapa-web/','/presentacion/'];
  for(const path of publicModules){
   const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:20000});
   if(!response||response.status()!==200)throw Error('Módulo '+path+' HTTP '+(response?.status()??'sin respuesta'));
@@ -253,6 +253,19 @@ try{
  if(!coreSummary.includes('5 objetos físicos')||!coreSummary.includes('21 pares editoriales')||!coreSummary.includes('0 signos verificados'))throw Error('CORE-VIS-01: el informe integrado debe distinguir unidades, objetos y signos');
  console.log('✓ CORE-VIS-01: puerta científica y 26 unidades documentales visibles sin traducciones automáticas');
 
+
+ // CORE-VIS-02: public source-backed editorial choices retain zero graphic validation.
+ await page.goto(base+'/cotejo-signos/',{waitUntil:'domcontentloaded'});
+ await page.locator('#ev-audit').filter({hasText:'2 decisiones editoriales documentadas'}).waitFor({state:'visible',timeout:15000});
+ const evidenceAudit=await page.locator('#ev-audit').innerText();
+ if(!evidenceAudit.includes('26 unidades documentales')||!evidenceAudit.includes('5 objetos físicos')||!evidenceAudit.includes('0 signos validados independientemente'))throw Error('CORE-VIS-02: false scientific unit or glyph count');
+ const serretaResolved=await page.locator('#ev-serreta-status').innerText();
+ const villaresResolved=await page.locator('#ev-villares-status').innerText();
+ if(!serretaResolved.includes('śalirg')||!serretaResolved.includes('NO.')||!villaresResolved.includes('bobai-da')||!villaresResolved.includes('NO.'))throw Error('CORE-VIS-02: editorial preference cannot imply glyph verification');
+ const licensed=await page.locator('.ev-photo figcaption').allInnerTexts();
+ if(licensed.length!==3||licensed.some(x=>!x.includes('CC BY-SA 3.0')))throw Error('CORE-VIS-02: media credits or license missing');
+ if(!((await page.locator('main').innerText()).includes('No desciframiento')||(await page.locator('main').innerText()).includes('no desciframiento')))throw Error('CORE-VIS-02: scientific limitation absent');
+ console.log('✓ CORE-VIS-02: two editorial cases, source images credited, no photo glyphs or semantic approval');
 
  // Regression: original flyer titles must be tappable on an iPhone-sized viewport.
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:3,isMobile:true,hasTouch:true});
