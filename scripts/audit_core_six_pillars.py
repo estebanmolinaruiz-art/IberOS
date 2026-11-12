@@ -53,6 +53,11 @@ def audit(root: Path) -> dict:
         "site/data/villares-v-discrepancies-v1.json",
     ]
     if all((root/path).is_file() for path in visual_sources):
+        # The six-pillars unit-test workflow runs directly from source, without pip -e.
+        import sys
+        source_dir=str(root/"src")
+        if source_dir not in sys.path:
+            sys.path.insert(0,source_dir)
         from iberos.visual_adjudication import audit_repository
         visual=audit_repository(root)
         visual_summary={
