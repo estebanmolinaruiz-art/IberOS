@@ -58,7 +58,7 @@ def test_empty_queue_reports_zero_not_fake_success():
 def test_existing_real_candidates_are_all_retrospective():
     data = json.loads((ROOT / "data/review/sci_pred04_candidate_queue_v1.json").read_text(encoding="utf-8"))
     out = audit(data)
-    assert out["total_leads"] == 5
+    assert out["total_leads"] == 7
     assert out["ready_for_external_admission_audit"] == 0
     assert all(x["state"] == "EXCLUDED_FROM_PROSPECTIVE_HOLD" for x in out["results"])
     assert all(x["blind_packet_preview"] is None for x in out["results"])
