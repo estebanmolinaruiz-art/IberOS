@@ -1,3 +1,4 @@
+from .geosites_corridors import SiteNode, RouteLink, audit_corridor, picola_ilici_research_case
 from .route_picola_stratigraphy import Feature as PicolaStratigraphicFeature, evaluate as evaluate_picola_stratigraphy, picola_1998_case
 from .route_picola_exit_window import PicolaDefenceGeometry, estimate_exit_window
 from .route_picola_local import PicolaLocalReference, assess_picola_local_axes
@@ -87,6 +88,10 @@ from .core import (
 )
 
 __all__ = [
+    "SiteNode",
+    "RouteLink",
+    "audit_corridor",
+    "picola_ilici_research_case",
     "PicolaStratigraphicFeature",
     "evaluate_picola_stratigraphy",
     "picola_1998_case",
