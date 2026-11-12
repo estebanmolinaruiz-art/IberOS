@@ -1,3 +1,4 @@
+from .geosites_paleocores import Borehole as GeoSitesBorehole, decode_local_grid, distance_bounds, audit_picola_paleocores
 from .geosites_alternatives import CorridorSegment, evaluate_segment, compare_corridors, picola_ilici_alternative_preflight
 from .geosites_corridors import SiteNode, RouteLink, audit_corridor, picola_ilici_research_case
 from .route_picola_stratigraphy import Feature as PicolaStratigraphicFeature, evaluate as evaluate_picola_stratigraphy, picola_1998_case
@@ -89,6 +90,10 @@ from .core import (
 )
 
 __all__ = [
+    "GeoSitesBorehole",
+    "decode_local_grid",
+    "distance_bounds",
+    "audit_picola_paleocores",
     "CorridorSegment",
     "evaluate_segment",
     "compare_corridors",
