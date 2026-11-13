@@ -1,0 +1,1 @@
+SEO Dataset.isPartOf fix: PR #179 merged; CI tests + web QA + Chromium E2E + benchmark success. Publish one validated deployment. Additional cost 0 EUR. No Core modifications.
