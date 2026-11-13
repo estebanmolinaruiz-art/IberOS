@@ -1,3 +1,18 @@
+from .geosites_paleocores import Borehole as GeoSitesBorehole, decode_local_grid, distance_bounds, audit_picola_paleocores
+from .geosites_alternatives import CorridorSegment, evaluate_segment, compare_corridors, picola_ilici_alternative_preflight
+from .geosites_corridors import SiteNode, RouteLink, audit_corridor, picola_ilici_research_case
+from .route_picola_stratigraphy import Feature as PicolaStratigraphicFeature, evaluate as evaluate_picola_stratigraphy, picola_1998_case
+from .route_picola_exit_window import PicolaDefenceGeometry, estimate_exit_window
+from .route_picola_local import PicolaLocalReference, assess_picola_local_axes
+from .route_picola_exit import ObstacleBand, crossing_sensitivity, assess_picola_gate_exit
+from .route_prediction import ensemble_routes, audit_picola_ensemble
+from .route_research import EvidenceCell, RouteCase
+from .route_case_audit import GeoAnchor, inspect_case
+from .route_gate_geometry import SurveyPoint, gate_axis_test
+from .route_function import RouteObservation, assess_route_function
+from .route_texts import TextWitness, evaluate_texts
+from .route_continuity import ContinuityWitness, Period, audit_continuity
+from .route_prioritization import DocumentaryLead, text_candidates, prioritize
 from .library_readings_bridge import analyze_library_readings
 from .semantic_hypothesis_engine import suggest_semantic_domains
 from .interpretation_candidates import compare_interpretations
@@ -75,6 +90,46 @@ from .core import (
 )
 
 __all__ = [
+    "GeoSitesBorehole",
+    "decode_local_grid",
+    "distance_bounds",
+    "audit_picola_paleocores",
+    "CorridorSegment",
+    "evaluate_segment",
+    "compare_corridors",
+    "picola_ilici_alternative_preflight",
+    "SiteNode",
+    "RouteLink",
+    "audit_corridor",
+    "picola_ilici_research_case",
+    "PicolaStratigraphicFeature",
+    "evaluate_picola_stratigraphy",
+    "picola_1998_case",
+    "PicolaDefenceGeometry",
+    "estimate_exit_window",
+    "PicolaLocalReference",
+    "assess_picola_local_axes",
+    "ObstacleBand",
+    "crossing_sensitivity",
+    "assess_picola_gate_exit",
+    "ensemble_routes",
+    "audit_picola_ensemble",
+    "EvidenceCell",
+    "RouteCase",
+    "GeoAnchor",
+    "inspect_case",
+    "SurveyPoint",
+    "gate_axis_test",
+    "RouteObservation",
+    "assess_route_function",
+    "TextWitness",
+    "evaluate_texts",
+    "ContinuityWitness",
+    "Period",
+    "audit_continuity",
+    "DocumentaryLead",
+    "text_candidates",
+    "prioritize",
     "analyze_library_readings",
     "suggest_semantic_domains",
     "compare_interpretations",
