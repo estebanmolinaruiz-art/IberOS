@@ -1,0 +1,56 @@
+{
+  "protocol": "SCI-PRED-02/1.0",
+  "created_for": "Future independently blinded Iberian maker-versus-commissioner role prediction",
+  "dating_note": "The GitHub commit and external audit are the evidence for creation date; the file does not self-certify chronological priority.",
+  "state": "RULE_STATED_NOT_PROSPECTIVELY_TESTED",
+  "background_training_sources": [
+    "https://doi.org/10.36707/palaeohispanica.v0i15.39",
+    "https://doi.org/10.36707/palaeohispanica.v23i0.520",
+    "https://doi.org/10.36707/palaeohispanica.v0i12.66"
+  ],
+  "hypothesis": "Within a genuinely new, externally role-annotated Iberian building or making formula that contains two independently identified personal-name spans and exactly one explicitly separated -te suffix, the -te-marked person is the material producer rather than commissioner.",
+  "prediction_rule": "For every eligible new physically independent case, predict PRODUCER for the sole person whose documented name-form ends in the segmented morpheme '-te'; the alternative hypothesis predicts COMMISSIONER for that person; the null model abstains.",
+  "rival_hypotheses": [
+    {
+      "id": "H-MAKER",
+      "prediction_for_te_person": "PRODUCER"
+    },
+    {
+      "id": "H-COMMISSIONER",
+      "prediction_for_te_person": "COMMISSIONER"
+    },
+    {
+      "id": "H-NULL",
+      "prediction_for_te_person": "ABSTAIN"
+    }
+  ],
+  "strict_input": "The model receives inscription, names, documented sign segmentation, physical identity and generic object class only. No Latin gloss, publisher's translation, interpretation of roles or external role gold is available before model output is immutably committed.",
+  "eligible_for_scoring": [
+    "First consecutive eligible newly admitted independent physical objects after this commit; cannot skip a failure",
+    "Iberian rather than Celtiberian text, readable documented name spans and documented segmentation of -te (otherwise abstain)",
+    "At least two independently distinguished named people on one artefact",
+    "Externally documented maker and commissioner identities independently of the Iberian marker -te; reviewer reveals them only after the specific prediction has been sealed",
+    "Sealed case identity and all bibliographic lineages independent of earlier TRAIN and editorial duplications",
+    "Sign readings adjudicated by two independent blind reviewers; ambiguous signs count as abstentions"
+  ],
+  "exclusions": [
+    "Caminreal E.7.1/K.5.3, Andelo K.28.1, Sagunto F.11.8, La Serreta, K.5.4 mortars, La Cabañeta and any related editorial restatement: all known exploratory cases",
+    "Botorrita and other Celtiberian text unless independently admitted as a separately predeclared out-of-domain control",
+    "Texts whose claimed roles derive solely from the Iberian suffix or any earlier IberOS hypothesis",
+    "Unknown or dependent physical identity, imputed gold, reused stamps/punch lineages as distinct independent trials",
+    "If source is already public and evaluator knew labels at rule-fixing time, it is retrospective even if later sealed"
+  ],
+  "stopping_rule": "Freeze the first 20 externally qualified independent physical objects and report every eligible attempt and abstention; if fewer than 20, label INSUFFICIENT_N and report observed counts without concluding success.",
+  "scoring": {
+    "primary": "Exact per-person PRODUCER versus COMMISSIONER role matching independent blinded gold for H-MAKER",
+    "alternative": "Report competing H-COMMISSIONER and ABSTAIN outcomes on the exact same cases",
+    "coverage": "Number predicted / all eligible objects, including abstentions",
+    "baselines": "Predefined majority class from training only; if unavailable, a fixed 50-50 chance control. Do not fit baseline on held-out gold.",
+    "success_rule": "At least 20 independent scored objects, at least 16 correct H-MAKER role predictions and H-MAKER exceeding the locked TRAIN-only majority baseline by at least 0.15 absolute accuracy; independent blinded reviewer also certifies adjudication, physical identity and no leakage.",
+    "statistical_note": "The count threshold is a predeclared decision rule, not proof of broad decipherment; report exact binomial uncertainty and sensitivity. If baseline cannot be independently fixed before unblinding, mark hypothesis test INDETERMINATE."
+  },
+  "evidence_level": "PREDICTION_RULE_ONLY; no new external context-gold",
+  "validated_translations": 0,
+  "core_metrics_changed": false,
+  "project_cost_eur": 0
+}
