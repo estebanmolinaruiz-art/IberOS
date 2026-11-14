@@ -1,0 +1,31 @@
+name: IberOS Read experimental checks
+on:
+  push:
+    branches: [research/iberos-read-mvp-20261114]
+  pull_request:
+    paths:
+      - 'research/iberos_read/**'
+      - '.github/workflows/iberos-read-experimental.yml'
+jobs:
+  read-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Free local image packages
+        run: python -m pip install numpy opencv-python-headless
+      - name: Synthetic smoke tests (not archaeological validation)
+        run: python -m unittest discover -s research/iberos_read -p 'test_*.py' -v
+      - name: Inventory all repository image assets and source readiness
+        run: |
+          python research/iberos_read/inventory.py --output /tmp/iberos-read-inventory.json
+          python - <<'PY'
+          import json
+          j=json.load(open('/tmp/iberos-read-inventory.json'))
+          print({k:j[k] for k in ('total_graphic_assets','epigraphic_registry_objects','registry_direct_image_urls','registry_reviewed_glyphs','reviewed_matcher_samples')})
+          assert j['scientifically_validated'] is False
+          PY
