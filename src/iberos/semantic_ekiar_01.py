@@ -52,7 +52,7 @@ DOCUMENTED_CASES = (
 def normalize(value: str) -> str:
     if not isinstance(value, str):
         return ""
-    txt = value.casefold().replace("ŕ", "r").replace("ś", "s")
+    txt = value.casefold().replace("ŕ", "r").replace("ś", "s").replace("ḿ", "m")
     # Bracketed restitution retained as a separate uncertainty flag.
     return txt.replace("[", "").replace("]", "").replace(" ", "").replace("·", "").replace(".", "")
 
