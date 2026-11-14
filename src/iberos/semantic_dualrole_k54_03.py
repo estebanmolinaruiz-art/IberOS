@@ -21,6 +21,16 @@ OBJECTS = (
      "published": True, "new_to_corpus_independence_certified": False},
 )
 
+EXTERNAL_ONOMASTIC_PARALLEL = {
+    "reference": "IRC V 11, Isona; Latin graffito on terra sigillata",
+    "latin_text": "Fulvius Abiner(icus)",
+    "attests_abiner_as_personal_name_in_latin_context": True,
+    "is_same_physical_object_as_k54": False,
+    "same_language_as_k54": False,
+    "proves_iberian_abiner_means_personal_name": False,
+    "scholarly_discussion": "Moncunill & Velaza, Abiner, Abinericus (2011)",
+}
+
 LATIN_ROLE_GOLD = (
     {"latin_entity": "Flaccus (Fl.)", "externally_attested_role": "servus_of_Lucius_Atilius"},
     {"latin_entity": "Lucius Atilius (Atili L.)", "externally_attested_role": "master_in_genitive"},
@@ -71,6 +81,9 @@ def audit() -> dict:
         "latin_role_count": len(LATIN_ROLE_GOLD),
         "iberian_text_normalized": IBERIAN,
         "rival_mapping_hypotheses": list(RIVALS),
+        "independent_onomastic_parallel": dict(EXTERNAL_ONOMASTIC_PARALLEL),
+        "external_context_suggests_abiner_personal_name": True,
+        "lexical_disambiguation_complete": False,
         "hard_gold_iberian_roles": 0,
         "iberian_roles_external_confirmed": False,
         "abiner_means_servus_confirmed": False,
