@@ -34,3 +34,13 @@ def test_integration_non_mutating():
     x=audit()
     assert not x["full3406_accessed"]
     assert not x["official_metrics_modified"]
+
+def test_external_isonensis_name_context_is_a_rival_control():
+    x=audit()
+    evidence=x["independent_onomastic_parallel"]
+    assert evidence["latin_text"]=="Fulvius Abiner(icus)"
+    assert evidence["attests_abiner_as_personal_name_in_latin_context"]
+    assert evidence["is_same_physical_object_as_k54"] is False
+    assert evidence["proves_iberian_abiner_means_personal_name"] is False
+    assert x["external_context_suggests_abiner_personal_name"] is True
+    assert not x["lexical_disambiguation_complete"]
