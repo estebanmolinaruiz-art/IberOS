@@ -52,3 +52,29 @@ pytest -q tests/test_semantic_dualrole_k54_03.py
 \`\`\`
 
 Conserva FULL3406, sus splits y métricas. Sin coste.
+
+
+## Control externo especialmente discriminante: Isona (IRC V 11)
+
+En un **objeto distinto** de Isona (Aeso) se publicó el grafito en
+letras latinas \`Fulvius / Abiner(icus)\`. Aquí \`Abiner\` desempeña
+función de **nombre personal** (posiblemente cognomen de liberto).
+Moncunill y Velaza (*Abiner, Abinericus…*, SEBarc IX, 2011,
+pp. 59-62) consideran por ello mucho más verosímil que \`abiner\`
+de K.5.4 sea también un antropónimo. Esta evidencia **favorece
+H2 frente a H1**, siempre bajo la premisa no demostrada de que el
+segmento ibérico y el antropónimo latino representan la misma
+unidad léxica. No demuestra que nunca haya existido una palabra
+homónima equivalente a \`servus\`, ni que el ibérico sea traducción
+literal del sello latino.
+
+Fuente en repositorio académico de UB:
+https://diposit.ub.edu/server/api/core/bitstreams/86761942-5b83-4cd1-93d9-546ba0dde2d4/content
+
+**Observación falsable:** en nuevas inscripciones con \`abiner\`,
+si aparece autónomamente como parte de un nombre en otros soportes,
+la hipótesis antroponímica gana consistencia; si la distribución es
+exclusivamente relacional y equivalente a \`servus\` en bilingües
+independientes, ganaría la lectura léxica de servidumbre.
+El grafito de Isona es conocido y nunca debe marcarse como
+resultado ciego nuevo de IberOS.
