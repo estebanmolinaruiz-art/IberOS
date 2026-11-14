@@ -55,7 +55,7 @@ def audit_impressions(document: dict) -> dict:
     # The thesis calls 13 of the 15 Iberian; that category is an aggregate,
     # not independent confirmation of the script of every 2009 impression.
     expected = {
-        ("IBERIAN", "STORAGE_JAR_RIM"): 7,
+        ("IBERIAN", "STORAGE_JAR_RIM"): 6,
         ("IBERIAN", "LOOM_WEIGHT"): 4,
         ("IBERIAN", "COMMON_WARE"): 1,
         ("LATIN", "STORAGE_JAR_RIM"): 1,
