@@ -1,0 +1,32 @@
+name: Descargar referencias graficas IberOS Write
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/fetch_write_svgs.py'
+      - '.github/workflows/iberos-fetch-write-svgs.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch-svg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Obtener, verificar SVG y empaquetar
+        run: python research/core_association/fetch_write_svgs.py --root . --dest signary-source
+      - name: Guardar ZIP incluso si algun recurso falla
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-write-svg-references
+          path: |
+            signary-source/*.svg
+            signary-source/manifest.json
+            signary-source/iberos-write-svg-references.zip
+          if-no-files-found: warn
+          retention-days: 30
