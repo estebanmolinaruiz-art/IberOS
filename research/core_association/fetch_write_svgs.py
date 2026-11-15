@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -37,8 +39,8 @@ def fetch_one(name):
     url=metadata["url"]
     if not url.startswith("https://upload.wikimedia.org/"):
         raise ValueError("Unexpected source server")
-    if not url.lower().endswith(".svg"):
-        raise ValueError("Not an SVG file")
+    # Wikimedia serves some valid SVG URLs with percent-encoded path names or query parameters.
+    # Validate the actual XML root instead of relying on a URL suffix.
     body,final_url=request(url)
     if len(body)<100 or b"<!DOCTYPE" in body.upper():
         raise ValueError("Unexpected file content")
@@ -65,6 +67,7 @@ def main():
     errors=[]
     for value,name in glyphs.items():
         try:
+            time.sleep(1.6)  # Wikimedia courteous rate limiting
             body,url,rights=fetch_one(name)
             path=dest/name
             path.write_bytes(body)
@@ -75,6 +78,9 @@ def main():
         except Exception as e:
             errors.append({"value":value,"filename":name,"error":str(e)})
             print("FAIL",value,name,str(e),flush=True)
+            if isinstance(e, urllib.error.HTTPError) and e.code==429:
+                print("Stopping: Wikimedia requests throttled; preserve partial evidence.",flush=True)
+                break
     manifest={"protocol":"IBEROS-WRITE-SVG-SOURCE-01","expected":len(glyphs),
               "downloaded":len(records),"errors":errors,"items":records,
               "warning":"These SVGs are schematic graphics, not archaeological photographs. License must be checked individually."}
