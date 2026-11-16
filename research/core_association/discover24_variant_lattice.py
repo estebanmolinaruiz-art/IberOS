@@ -80,7 +80,7 @@ report={
 }
 (OUT/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf8")
 with (OUT/"variant_lattice.csv").open("w",encoding="utf8",newline="") as f:
- w=csv.DictWriter(f,fieldnames=list(records[0]));w.writeheader();w.writerows(records)
+ w=csv.DictWriter(f,fieldnames=list(records[0])+["codepoint_edit_distance"]);w.writeheader();w.writerows(records)
 with (OUT/"numeral_invariants.csv").open("w",encoding="utf8",newline="") as f:
  w=csv.DictWriter(f,fieldnames=list(numeric[0]));w.writeheader();w.writerows(numeric)
 print(json.dumps({"units":len(records),"stable":report["invariant_position_units"],"changed":len(variants),
