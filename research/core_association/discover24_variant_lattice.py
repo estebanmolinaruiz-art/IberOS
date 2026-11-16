@@ -43,18 +43,16 @@ for v in variants:v["codepoint_edit_distance"]=edits(v["dual"],v["nondual"])
 numeric=[]
 for side in ["A","B"]:
     for i,line in enumerate(d["dual"][side],1):
-        tok=tokens(line)
-        for j,u in enumerate(tok):
-            if re.fullmatch(r"I+",u):
-                previous=tok[j-1] if j else None
-                alternative=tokens(d["nondual"][side][i-1])
-                assert alternative[j]==u
-                # Units preceding Roman numerals considered editorial characters, not validated labels.
-                numeric.append({"side":side,"line":i,"count_strokes_as_edited":len(u),
-                                "preceding_dual":previous,
-                                "preceding_nondual":alternative[j-1] if j else None,
-                                "stable_preceding_label":previous==alternative[j-1] if j else False,
-                                "visual_number_verified":False})
+        other=d["nondual"][side][i-1]
+        # Numeric indicators occur after spaces within a dot-delimited editor unit.
+        numerals=re.findall(r"(?<![A-Za-z])I+(?![A-Za-z])",line)
+        other_numerals=re.findall(r"(?<![A-Za-z])I+(?![A-Za-z])",other)
+        assert numerals==other_numerals, "numeric variant detected; inspect"
+        for j,num in enumerate(numerals):
+            numeric.append({"side":side,"line":i,"count_strokes_as_edited":len(num),
+                            "dual_line":line,"nondual_line":other,
+                            "numeral_sequence_stable":True,
+                            "visual_number_verified":False})
 # Label invariance: even if reading shifts, shared conventional class pattern may remain.
 mapping=[]
 for v in variants:
@@ -68,7 +66,7 @@ report={
   "total_position_units":len(records),"invariant_position_units":sum(x["reading_stable"] for x in records),
   "changed_position_units":len(variants),
   "changed_units":mapping,"roman_numeric_mentions":numeric,
-  "all_numeric_counts_stable_between_editions":all(x["stable_preceding_label"] for x in numeric),
+  "all_numeric_counts_stable_between_editions":all(x["numeral_sequence_stable"] for x in numeric),
   "hypotheses":[
     {"id":"H24-A","claim":"Roman stroke counts remain identical across editorial readings","test":"look for numeric glyphs in independent photos and verify stroke counts","status":"EDITORIAL_INVARIANT_NOT_VISUAL"},
     {"id":"H24-B","claim":"Dual/nondual alternatives may be local allographs of a coherent graphical class","test":"blind glyph review predicts matched g/k and d/t alternations","status":"UNVERIFIED"},
