@@ -1,0 +1,23 @@
+name: IberOS DISCOVER-22 corpus coverage
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/discover22_corpus.py'
+      - '.github/workflows/iberos-discover22.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  corpus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Analyze all machine-readable editorial material without core changes
+        run: python research/core_association/discover22_corpus.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iberos-discover22-coverage
+          path: research/core_association/discover22_results/
+          retention-days: 30
