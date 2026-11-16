@@ -90,5 +90,31 @@ with (OUT/"editorial_units.csv").open("w",encoding="utf8",newline="") as f:
 with (OUT/"cross_object_candidates.csv").open("w",encoding="utf8",newline="") as f:
  w=csv.DictWriter(f,fieldnames=["unit","n_objects","objects"]);w.writeheader()
  for r in independent:w.writerow({"unit":r["unit"],"n_objects":r["n_objects"],"objects":";".join(r["objects"])})
+# Candidate editorial transformations across distinct physical objects.
+# Identify minimum Levenshtein operations; these are not independently read glyph changes.
+def lev_ops(a,b):
+    n,m=len(a),len(b)
+    dp=[[0]*(m+1) for _ in range(n+1)]
+    for i in range(n+1):dp[i][0]=i
+    for j in range(m+1):dp[0][j]=j
+    for i in range(1,n+1):
+        for j in range(1,m+1):
+            dp[i][j]=min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+(a[i-1]!=b[j-1]))
+    return dp[n][m]
+transforms=[]
+for a in sorted(byunit):
+    if len(a)<5:continue
+    for b in sorted(byunit):
+        if a>=b or len(b)<5:continue
+        ids_a=byunit[a];ids_b=byunit[b]
+        if not any(x!=y for x in ids_a for y in ids_b):continue
+        d=lev_ops(a,b)
+        if d==1 and max(len(a),len(b))>=6:
+            transforms.append({"a":a,"b":b,"edit_distance":d,
+                               "objects_a":sorted(ids_a),"objects_b":sorted(ids_b),
+                               "warning":"editorial orthography; not confirmed independent sign change"})
+dump("transform_candidates.json",transforms)
+print("Cross-object one-edit editorial candidates:",transforms[:30])
+
 print(json.dumps(coverage,ensure_ascii=False))
 print("Top cross-object editorial units:",independent[:15])
