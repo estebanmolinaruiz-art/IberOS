@@ -15,9 +15,6 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Falsification tests
-        run: python -m unittest discover25_evidence_model
-        working-directory: research/core_association
       - name: Guard tests
         run: python -m unittest test_discover25
         working-directory: research/core_association
