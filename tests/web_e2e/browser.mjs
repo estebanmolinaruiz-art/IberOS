@@ -135,6 +135,43 @@ try {
       }finally{await page.close();}
     }
   });
+  test('Corpus desktop sidebar scrolls independently to its final filter', async () => {
+    const page=await browser.newPage({viewport:{width:1366,height:650}});
+    try {
+      await page.goto('http://127.0.0.1:8765/corpus/',{waitUntil:'domcontentloaded'});
+      await page.waitForFunction(()=>document.querySelector('#incOpts')?.children.length>0,null,{timeout:12000});
+      const before=await page.locator('#corpusFilters').evaluate(e=>({
+        height:e.clientHeight,scrollHeight:e.scrollHeight,overflow:getComputedStyle(e).overflowY,
+        position:getComputedStyle(e).position,top:e.getBoundingClientRect().top
+      }));
+      assert.equal(before.overflow,'auto','Sidebar needs its own vertical scrollbar');
+      assert.equal(before.position,'sticky');
+      assert.ok(before.scrollHeight>before.height,'All filters should exceed this test viewport');
+      const scroll=await page.evaluate(()=>{
+        const e=document.querySelector('#corpusFilters'),doc=window.scrollY;
+        e.scrollTop=e.scrollHeight;
+        return {top:e.scrollTop,documentScroll:window.scrollY-doc,finalVisible:e.scrollTop+e.clientHeight>=e.scrollHeight-2};
+      });
+      assert.ok(scroll.top>0&&scroll.finalVisible,'The bottom disclaimer and last filter must be reachable');
+      assert.equal(scroll.documentScroll,0,'Right hand results must not move when filters scroll');
+      assert.ok(await page.locator('#chronoFilter').count()>0);
+    } finally {await page.close();}
+  });
+  test('Corpus mobile filters expand in natural page flow', async () => {
+    const page=await browser.newPage({viewport:{width:390,height:740},isMobile:true,hasTouch:true});
+    try {
+      await page.goto('http://127.0.0.1:8765/corpus/',{waitUntil:'domcontentloaded'});
+      await page.locator('#mobileFilterToggle').click();
+      assert.equal(await page.locator('#mobileFilterToggle').getAttribute('aria-expanded'),'true');
+      const settings=await page.locator('#corpusFilters').evaluate(e=>({
+        overflow:getComputedStyle(e).overflowY,maxHeight:getComputedStyle(e).maxHeight
+      }));
+      assert.equal(settings.overflow,'visible');
+      assert.equal(settings.maxHeight,'none');
+      await page.locator('#chronoFilter').scrollIntoViewIfNeeded();
+      assert.ok(await page.locator('#chronoFilter').isVisible());
+    } finally {await page.close();}
+  });
   test('Core query controls are usable', async () => {
     const page=await visit('webengine/');
     try {
