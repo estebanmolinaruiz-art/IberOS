@@ -1,0 +1,28 @@
+name: IberOS DISCOVER-26 multisite uncertainty and ablations
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/discover26_multisite.py'
+      - 'research/core_association/test_discover26.py'
+      - '.github/workflows/iberos-discover26.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  investigate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run new multisite guards
+        run: python -m unittest test_discover26 -v
+        working-directory: research/core_association
+      - name: Run full multisite inference and ablations
+        run: python research/core_association/discover26_multisite.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-discover26-multisite
+          path: research/core_association/discover26_results/
+          retention-days: 30
