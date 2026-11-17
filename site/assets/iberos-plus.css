@@ -953,3 +953,34 @@ body.iberos-ficha .photo-credit a{color:#224d62!important;text-decoration:underl
 .ib-media-block figcaption{margin-top:12px;color:#2b4355;font:15px/1.65 system-ui,sans-serif}
 .ib-caption-title{display:block;font:700 1.05rem/1.4 Georgia,serif;color:#143247;margin-bottom:6px}.ib-caption-meta{display:block;font:700 .77rem/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em;color:#7c5c31;margin-bottom:8px}.ib-caption-note{display:block;margin-top:10px;padding:10px 12px;border-left:4px solid #b58a4c;background:#f5ead6;color:#394e5d;font-size:.95rem}
 .ib-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:24px 0}.ib-media-card{background:#fffaf1;border:1px solid #ccb488;border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(7,27,43,.08)}.ib-media-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e8dcc7}.ib-media-card-body{padding:14px}.ib-media-card h2,.ib-media-card h3{margin:.2em 0 .45em;color:#143247;font:700 1.15rem/1.3 Georgia,serif}.ib-media-card p{margin:.35em 0;color:#2b4355;line-height:1.55}.ib-media-card .ib-note{font-size:.9rem;color:#5b6570}.ib-media-card a{display:inline-block;margin-top:10px;font-weight:700;color:#17374c}
+
+/* CORPUS-UX-17: the desktop filter column must scroll separately from result cards.
+   Keep the mobile collapsible panel in the document flow for natural touch scrolling. */
+@media (min-width: 901px) {
+  body.iberos-corpus .corpus-shell > .filters {
+    position: sticky;
+    top: 78px;
+    max-height: calc(100vh - 94px);
+    max-height: calc(100dvh - 94px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #9b7645 #f4ead7;
+  }
+  body.iberos-corpus .corpus-shell > .filters::-webkit-scrollbar { width: 10px; }
+  body.iberos-corpus .corpus-shell > .filters::-webkit-scrollbar-thumb {
+    background: #9b7645;
+    border: 2px solid #f4ead7;
+    border-radius: 10px;
+  }
+  body.iberos-corpus .corpus-shell > .filters::-webkit-scrollbar-track { background: #f4ead7; }
+}
+@media (max-width: 900px) {
+  body.iberos-corpus .corpus-shell > .filters {
+    position: static !important;
+    max-height: none;
+    overflow: visible;
+    overscroll-behavior-y: auto;
+  }
+}
