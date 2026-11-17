@@ -1,0 +1,4 @@
+CORPUS-UX-17
+PR #194 merged; all tests, benchmark, web QA and browser E2E success.
+Independent desktop filter scrolling; mobile natural flow.
+No scientific Core changes. Extra cost 0 EUR.
