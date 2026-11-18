@@ -1,0 +1,30 @@
+name: IberOS association bridge checks
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+  pull_request:
+    paths:
+      - 'research/core_association/**'
+      - '.github/workflows/iberos-association-bridge.yml'
+permissions:
+  contents: read
+jobs:
+  bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test existing documentary associations without Core changes
+        run: python -m unittest discover -s research/core_association -p 'test_*.py' -v
+      - name: Rebuild provenance bridge
+        run: |
+          python research/core_association/bridge.py --output /tmp/iberos-assoc-02.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/iberos-assoc-02.json'))
+          print({k:d[k] for k in ('write_graphic_values','catalogue_candidate_rows','simple_source_labels','direct_documentary_joins','orleyl_editorial_tokens','semantic_validation')})
+          assert d['visual_recognition_accuracy'] is None
+          assert d['core_modified'] is False
+          PY

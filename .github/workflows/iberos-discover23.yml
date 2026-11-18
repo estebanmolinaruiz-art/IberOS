@@ -1,0 +1,23 @@
+name: IberOS DISCOVER-23 independent-family gate
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/discover23_families.py'
+      - '.github/workflows/iberos-discover23.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python research/core_association/discover23_families.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-discover23-independent-families
+          path: research/core_association/discover23_results/
+          retention-days: 30
