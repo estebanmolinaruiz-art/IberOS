@@ -1,0 +1,97 @@
+{
+  "schema": "SCI-PRED-04/1",
+  "candidates": [
+    {
+      "candidate_id": "TRAIN-CAMINREAL-E7.1",
+      "physical_id": "CAMINREAL-MOSAIC-E7.1",
+      "documentary_lineage_id": "CAMINREAL-MOSAIC-EDITION-FAMILY",
+      "aliases": [
+        "MLH E.7.1",
+        "K.5.3"
+      ],
+      "reading_source_url": "https://doi.org/10.36707/palaeohispanica.v0i15.39",
+      "script": "IBERIAN",
+      "context_type": "BUILDING",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "TRAIN-ANDELO-K28.1",
+      "physical_id": "ANDELO-MOSAIC-K28.1",
+      "documentary_lineage_id": "ANDELO-MOSAIC-EDITION-FAMILY",
+      "aliases": [
+        "K.28.1",
+        "NA.03.01"
+      ],
+      "reading_source_url": "https://doi.org/10.36707/palaeohispanica.v23i0.520",
+      "script": "IBERIAN",
+      "context_type": "BUILDING",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "TRAIN-SAGUNTO-F11.8",
+      "physical_id": "SAGUNTO-ARCHITRAVE-F11.8",
+      "documentary_lineage_id": "SAGUNTO-F11.8-EDITION-FAMILY",
+      "aliases": [
+        "F.11.8",
+        "ELRH C56"
+      ],
+      "reading_source_url": "https://doi.org/10.3989/emerita.2008.v76.i2.299",
+      "script": "IBERIAN",
+      "context_type": "BUILDING",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "TRAIN-K5.4-MORTAR-FAMILY",
+      "physical_id": "K5.4-STAMP-FAMILY-UNRESOLVED-INDIVIDUAL",
+      "documentary_lineage_id": "K5.4-SHARED-STAMP-LINEAGE",
+      "aliases": [
+        "MLH K.5.4",
+        "Caminreal mortars",
+        "Fuentes de Ebro mortars"
+      ],
+      "reading_source_url": "https://ifc.dpz.es/recursos/publicaciones/32/45/04estaran.pdf",
+      "script": "IBERIAN",
+      "context_type": "MANUFACTURE",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "TRAIN-BADALONA-B41.03",
+      "physical_id": "BADALONA-STELE-B41.03",
+      "documentary_lineage_id": "BADALONA-B41-EDITORIAL-FAMILY",
+      "aliases": [
+        "B.41.03",
+        "Baetulo stele"
+      ],
+      "reading_source_url": "https://ifc.dpz.es/recursos/publicaciones/20/39/_ebook.pdf",
+      "script": "IBERIAN",
+      "context_type": "FUNERARY",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "REVIEW-XABIA-CIRNE-2022",
+      "physical_id": "XABIA-CIRNE-LEAD-2019-UNKNOWN-ACCESSION",
+      "documentary_lineage_id": "XABIA-CIRNE-EDITION-2022",
+      "aliases": [
+        "Fundació CIRNE plomo de Xàbia",
+        "Ferrer et al. 2022 e07"
+      ],
+      "reading_source_url": "https://doi.org/10.3989/aespa.095.022.07",
+      "script": "IBERIAN",
+      "context_type": "UNKNOWN",
+      "prior_exposure": "KNOWN_TRAIN"
+    },
+    {
+      "candidate_id": "REVIEW-MASIES-LEAD-LONG-2023",
+      "physical_id": "MASIES-SANT-MIQUEL-LONG-LEAD-ACCESSION-PENDING",
+      "documentary_lineage_id": "MASIES-LEAD-LONG-FERRER-ETAL-2023",
+      "aliases": [
+        "Masies de Sant Miquel lead long text",
+        "Ferrer et al. 2023 Palaeohispanica 538"
+      ],
+      "reading_source_url": "https://doi.org/10.36707/palaeohispanica.v23i0.538",
+      "script": "IBERIAN",
+      "context_type": "UNKNOWN",
+      "prior_exposure": "KNOWN_TRAIN"
+    }
+  ]
+}

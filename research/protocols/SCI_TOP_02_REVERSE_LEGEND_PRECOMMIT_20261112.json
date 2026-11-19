@@ -1,0 +1,23 @@
+{
+  "schema": "SCI-TOP-02/PREREGISTERED-REPLICATION/1.0",
+  "project": "IberOS scientific Core — reverse legend continuity; repair of failed SCI-TOP-01",
+  "training_exposure": [
+    "MARQ NIM 727 (bilingual ARSE/SAGVNT)",
+    "Museu de Prehistòria de València 31.362 (Iberian names obverse, ARSE reverse)",
+    "MARQ NIM 6300 (Iberian names obverse, ARSE reverse)",
+    "Ashmolean HCR49051 (seen in preceding search, excluded from test)",
+    "Mupreva catalogue 22353 (seen in preceding search, excluded)"
+  ],
+  "locked_claim": "For first qualifying physical coin in British Museum collection satisfying legend-blind typology, reverse has Iberian issuer label arse, irrespective of obverse being Latin or Iberian.",
+  "eligibility_without_leakage": "Mint assigned Arse/Saguntum; bronze coin dated 130–72 BCE; obverse helmeted female head; reverse prow of ship with Victory overhead and caduceus; attributable physical collection inventory; NOT MARQ NIM727, MARQ NIM6300, Mupreva 31.362 / 22353 nor Ashmolean HCR49051. Do not filter by inscription.",
+  "selection": "First British Museum Collections object record satisfying the visual/design criteria in ascending exact museum registration number among the first eligible returned records; record all rejected search hits. Never substitute an easier record after seeing legend.",
+  "predicted_reverse": "arse in Iberian script (city/mint label; not a new lexical decipherment)",
+  "predicted_obverse": "ABSTAIN: SCI-TOP-01 failed because neither Latin nor Iberian obverse can be inferred from broad type alone",
+  "opposite": "No reverse ARSE or other issuer legend; record as error, illegible as abstention",
+  "limitations": "Public catalogue data; precommit before checking this selected object does not make historical gold independent or blind. Coin series typological autocorrelation. A match would be one retrospective catalogued-type replication, not semantic translation.",
+  "success": "Record matched/mismatched/abstained on catalogued original images and external source. One matched case does not establish model precision.",
+  "preregistration_audit": "GitHub commit time of this file prior to visiting selected British Museum catalogue record; compare timestamps; no label inspection before lock; previously retrieved results excluded.",
+  "cost_eur": 0,
+  "modifies_core": false,
+  "semantic_translation_validated": false
+}

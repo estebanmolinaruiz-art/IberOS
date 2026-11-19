@@ -1,0 +1,24 @@
+{
+  "schema": "SCI-TOP-01/PREDICTION-LOCK/1.0",
+  "authored_on": "2026-11-12",
+  "experiment": "Prospective-in-execution prediction vs public historical coin catalogue; NOT prospective semantic gold",
+  "origin_train_case": "MARQ NIM 727, https://www.marqalicante.com/es/producto/unidad-y-media-as-anos-130-72-a-c-2/",
+  "search_to_begin_after_commit": "Find the first other museum-inventoried physical coin described as Arse-Saguntum, 130-72 BCE, bronze one-and-a-half unit, obverse helmeted Roma head and reverse prow + Victory + caduceus; exclude MARQ NIM 727 and any mere listing of its photograph.",
+  "no_cherry_pick": "Record the first qualifying object and its catalogue legend, even if false; record every inspected failed candidate and why it did not qualify.",
+  "rule": "If the new physical coin matches the full object type, predict a Latin SAGVNT-family label on the obverse and Iberian ARSE on the reverse, with reverse ARSE serving as issuer/ethnic-toponym in the known Arse-Saguntum series.",
+  "alternatives": [
+    "H1 bilingual Latin SAGVNT-family on obverse AND Iberian ARSE on reverse",
+    "H2 only Latin city label, no ARSE",
+    "H3 only Iberian ARSE, no Latin city label",
+    "H4 neither or unreadable"
+  ],
+  "success_for_one_coin": "Both reading families confirmed from catalogued photographs of the first eligible different physical specimen. This is a technical retrospective cross-item replication, NOT a new decipherment.",
+  "failure": "Any eligible coin without both; disagreement about specimen classification or unreadable photographs requires abstention, no automatic success.",
+  "inherited_exposure": "The coin series function and reading variants were already publicly documented, so cannot establish linguistic novelty or independent blind contextual gold even if successful.",
+  "scoring": "Report count of qualifying physical coins, family/dependency grouping, success/failure/abstention. Do not compute a statistically meaningful accuracy from one specimen.",
+  "dates_and_lock": "GitHub immutable commit SHA/time externally verifiable; authoring date not itself timestamp proof.",
+  "semantic_gold_independent": false,
+  "scientific_translation_validated": false,
+  "core_official_modified": false,
+  "cost_eur": 0
+}
