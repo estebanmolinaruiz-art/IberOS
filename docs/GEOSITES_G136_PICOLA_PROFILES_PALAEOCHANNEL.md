@@ -24,3 +24,6 @@ Fumanal y Ferrer (1998), «El yacimiento arqueológico de La Picola. Estudio geo
 Obtener figura 5 legible y original 1998; georreferenciar posición de Palmeral 1, Palmeral 3, S6 y los dos perfiles restantes sin asignar nombres antes del cotejo; comprobar si el eje desde puerta NE corta los contactos sedimentarios y el barranco, con intervalos de incertidumbre y cronología independiente.
 
 No alterar Core, no desplegar en la web, no comprar documentos.
+
+## Fe de erratas G-137 (2026-11-21)
+**Corrección de identificación:** el artículo Ferrer (2005) cita Palmeral 1, Palmeral 3 y S6 y remite el estudio detallado a Fumanal–Ferrer **2000**, NO acredita su correspondencia uno-a-uno con los cinco perfiles de la publicación **1998**. La anterior presentación de tres nombres como miembros del conjunto de cinco debe tratarse como **hipótesis no verificada**. Las observaciones del Barranc de Paco el Manyo y del contacto playa/piedemonte sí aparecen explícitas en Ferrer 2005, pp.126–127, sin georreferenciación métrica. Más detalles: `docs/GEOSITES_G137_VERIFY_G136.md`.
