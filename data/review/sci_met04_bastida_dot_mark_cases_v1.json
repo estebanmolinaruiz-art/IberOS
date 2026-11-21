@@ -1,0 +1,43 @@
+{
+  "schema": "IberOS-SCI-MET-04-Marked-Bastida-Objects/1.0",
+  "date": "2026-11-21",
+  "source_edition_primary": "https://una-editions.fr/la-peninsule-iberique-creuset-dune-pratique-ponderale/",
+  "source_edition_comparison": "https://www.academia.edu/172876427/EL_SISTEMA_PONDERAL_IB%C3%89RICO_ARQUEOLOG%C3%8DA_FRENTE_A_EPIGRAF%C3%8DA",
+  "source_edition_rival": "https://www.academia.edu/145380955/Una_nova_proposta_h%C3%ADbrida_decimal_duodecimal_pel_sistema_metrol%C3%B2gic_de_pes_ib%C3%A8ric_a_o_ki",
+  "source_note": "Thibaud Poigt 2022 accessible as UNA Editions HTML; Ferrer i Jané 2026 and Montes Novella 2026 discuss same physical items and competing metrological systems. NOT three independent readings of original weights.",
+  "object_id_rule": "Bas identifiers tied to each physical archaeological ponderal; two in same archaeological room remain dependent for prospective scoring.",
+  "calibration_objects": [
+    {
+      "id": "Bas-129-A",
+      "mass_g": 40.34,
+      "reported_dot_count": 2,
+      "department": "129",
+      "material": "bronze",
+      "visual_image_adjudicated": false
+    },
+    {
+      "id": "Bas-273-C",
+      "mass_g": 103.5,
+      "reported_dot_count": 5,
+      "department": "273",
+      "material": "bronze",
+      "visual_image_adjudicated": false
+    }
+  ],
+  "preidentified_contradiction": {
+    "id": "Bas-273-B",
+    "mass_g": 63.41,
+    "reported_dot_count": 2,
+    "alternative_unseen_dot_count": 3,
+    "department": "273",
+    "material": "bronze",
+    "visual_image_adjudicated": false,
+    "alternative_reason": "Montes Novella 2026 expressly raises possibility of a poorly visible third point. This does not establish that third point exists."
+  },
+  "other_mark_classes": "Crescents/triangles are separate; Aras of Olmos 41.05g has two triangles but archaeological association uncertain; NOT a dot-count control.",
+  "evaluation_role": "RETROSPECTIVE_SENSITIVITY_ONLY",
+  "semantic_gold_external": false,
+  "independent_blind_readings": 0,
+  "core_modified": false,
+  "financial_cost_eur": 0
+}
