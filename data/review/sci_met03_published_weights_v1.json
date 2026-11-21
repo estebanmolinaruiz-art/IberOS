@@ -1,0 +1,30 @@
+{
+  "schema": "IberOS-SCI-MET-03-Sourced-Masses/1.0",
+  "source_notes": [
+    {"id": "VJ2018", "url": "https://revistaseug.ugr.es/index.php/florentia/article/download/8829/7412/25457", "pages": "383-386", "reliability": "Published mass measurements, original surfaces not independently inspected by IberOS"},
+    {"id": "MONTES2026", "url": "https://www.academia.edu/172876427/EL_SISTEMA_PONDERAL_IB%C3%89RICO_ARQUEOLOG%C3%8DA_FRENTE_A_EPIGRAF%C3%8DA", "pages": "around 198-200", "reliability": "Textual catalogue accessible; original figure of marks not independently inspected by IberOS"},
+    {"id": "FERRER2026", "url": "https://www.academia.edu/145380955/Una_nova_proposta_h%C3%ADbrida_decimal_duodecimal_pel_sistema_metrol%C3%B2gic_de_pes_ib%C3%A8ric_a_o_ki", "pages": "comparative table", "reliability": "Secondary comparative masses"}
+  ],
+  "groups": [
+    {"group_id": "VILLANUEVA_JARA_DEPOSIT", "source_id": "VJ2018", "same_find_group": true, "stratigraphically_controlled": false,
+      "mass_g": [21.0, 41.5, 62.7, 106.5, 214.3],
+      "published_ratios_21g": [1, 2, 3, 5, 10],
+      "mark_values_adjudicated": false},
+    {"group_id": "ARAS_ECOMUSEO_DONATED", "source_id": "MONTES2026", "same_find_group": "reported collection, exact archaeological association not demonstrated", "stratigraphically_controlled": false,
+      "objects": [
+        {"id": "ARAS_BRONZE_41_05", "mass_g": 41.05, "reported_incisions": 2, "reported_shape": "TRIANGULAR", "same_symbol_as_iberian_o": "UNDEMONSTRATED"},
+        {"id": "ARAS_LEAD_42_52", "mass_g": 42.52, "reported_incisions": null, "reported_shape": null, "same_symbol_as_iberian_o": "UNDEMONSTRATED"},
+        {"id": "ARAS_BRONZE_6_68", "mass_g": 6.68, "reported_incisions": null, "reported_shape": null, "same_symbol_as_iberian_o": "UNDEMONSTRATED"}
+      ]},
+    {"group_id": "COMPARATIVE_DOT_MARKS_2026", "source_id": "MONTES2026", "same_find_group": "NOT_VERIFIED", "stratigraphically_controlled": null,
+      "objects": [
+        {"id":"COMPARE_40_34","mass_g":40.34,"reported_incisions":2,"reported_shape":"DOTS","mark_values_adjudicated":false},
+        {"id":"COMPARE_103_5","mass_g":103.5,"reported_incisions":5,"reported_shape":"DOTS","mark_values_adjudicated":false},
+        {"id":"COMPARE_41_73","mass_g":41.73,"reported_incisions":1,"reported_shape":"TRIANGLE_OR_CRESCENT","mark_values_adjudicated":false},
+        {"id":"COMPARE_8_5","mass_g":8.5,"reported_incisions":5,"reported_shape":"TRIANGLE_OR_CRESCENT","mark_values_adjudicated":false}
+      ]}
+  ],
+  "semantic_gold_provided": false,
+  "translation_validated": false,
+  "financial_cost_eur": 0
+}
