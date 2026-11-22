@@ -1,0 +1,25 @@
+name: IberOS SEGMENT-35 Moleta line-band localization
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/segment35_moleta_lines.py'
+      - '.github/workflows/iberos-segment35.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  localize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet pymupdf pillow numpy opencv-python-headless
+      - name: Generate Moleta candidate line bands from source images
+        run: python research/core_association/segment35_moleta_lines.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-segment35-moleta-unverified-row-bands
+          path: research/core_association/segment35_results/
+          retention-days: 1
