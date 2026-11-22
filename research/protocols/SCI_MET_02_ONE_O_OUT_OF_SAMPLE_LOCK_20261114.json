@@ -1,0 +1,23 @@
+{
+  "schema": "SCI-MET-02/PRECOMMIT/1.0",
+  "date_declared": "2026-11-14",
+  "train_only": [
+    "Tos Pelat 418.6 g and ten observed dots (SCI-MET-01)",
+    "Puig de la Misericordia 41.29 g with iberian o sign (SCI-MET-01)",
+    "Puig Castellar 423.78 g and l'Alcudia 424 g: mass parallels, no observed mark count established"
+  ],
+  "selection_protocol": "Search openly accessible scholarly primary catalogues for an IBERIAN inscribed archaeological weight/ponderal, distinct from all four training pieces, with exactly ONE independently identified o sign and a separately recorded physical mass. Use first qualifying physical item encountered in chronological search log, even if it contradicts the unit hypothesis. If marked items with no mass are found, keep them as INCOMPLETE, not scoreable. If the item has multiple o signs or unreadable signs, exclude and log. Do not choose after seeing mass. Search result snippets may expose masses, so this is prospective-in-process observational prediction, NOT genuinely blinded external gold.",
+  "hypothesis": "One marked iberian o represents one weight unit on a ponderal",
+  "predicted_mass_g": 41.29,
+  "predicted_interval_g": [
+    37.161,
+    45.419
+  ],
+  "precision": "±10% around TRAIN unit 41.29 g, chosen before out-of-sample search. The interval is a heuristic tolerance, not a measurement error estimate or historical calibration of metrological dispersion.",
+  "competing_null": "Alternative sign serves as owner's mark, workshop designation or another non-quantitative role, so no numerical prediction; where many marks exist, aggregate cannot be assumed proportional.",
+  "scoring": "PASS if first qualified unseen physical item has published mass in inclusive interval; FAIL if outside; ABSTAIN if no verified unique sign, no mass, unclear identity or same training object. Report number of scanned leads and source URLs. With publicly indexed labels and a single item no statistically credible semantic accuracy; no translation validation.",
+  "pre_commit_priority": "GitHub commit storing this JSON must predate any search for new one-o marked weight; human evaluator has not received independently sequestered gold.",
+  "cost_eur": 0,
+  "core_modified": false,
+  "scientific_confirmation": false
+}
