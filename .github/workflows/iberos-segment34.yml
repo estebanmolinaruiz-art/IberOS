@@ -1,0 +1,24 @@
+name: IberOS SEGMENT-34 extract Moleta figure zones
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/segment34_moleta_roi.py'
+      - '.github/workflows/iberos-segment34.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet pymupdf pillow numpy
+      - run: python research/core_association/segment34_moleta_roi.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-segment34-moleta-private-figure-zones
+          path: research/core_association/segment34_results/
+          retention-days: 1
