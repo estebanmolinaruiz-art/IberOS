@@ -1,0 +1,62 @@
+{
+  "schema": "IberOS-SEGMENT-38-external-physical-constraints/1.0",
+  "source": {
+    "title": "Una inscripción ibérica sobre plomo procedente del poblado de la Moleta del Remei (Alcanar, Montsià, Tarragona)",
+    "authors": [
+      "Joan Ferrer i Jané",
+      "David Garcia i Rubert",
+      "Isabel Moreno Martínez",
+      "Javier Velaza Frías"
+    ],
+    "year": 2008,
+    "pages": "203-216",
+    "url": "https://ifc.dpz.es/recursos/publicaciones/28/40/_ebook.pdf",
+    "source_pdf_sha256": "2965fd62b2a040aa99bb5428bbe8018fba56ebfb201b35034e93a2c38b292e22",
+    "source_page": "PalHisp 8 p.207-208 (PDF zero-based 201-202)",
+    "figure_photo": "Fig. 4, p.215",
+    "figure_drawing": "Fig. 5, p.216"
+  },
+  "object_id": "IBR-PLM-0011",
+  "archaeological_context": "Ámbito A52; two physical areas differentiated on a damaged, partly melted lead fragment",
+  "source_claims": {
+    "visible_sign_remains": 21,
+    "text_lines": 3,
+    "zone_1_lines": 2,
+    "zone_2_lines": 1,
+    "script": "ibérico nororiental",
+    "direction": "izquierda a derecha",
+    "text_1_glyph_heights_mm": [
+      5,
+      8
+    ],
+    "text_2_glyph_heights_mm": [
+      4,
+      5
+    ],
+    "context_function": "INDETERMINATE"
+  },
+  "editorial_observations": {
+    "zone1_line1": "Three signs visible at right edge, first partial; s possible, ka variant",
+    "zone1_line2": "Nine signs; last five comparatively clearer; iltun candidate",
+    "zone2_line1": "At least nine remains; multiple highly ambiguous signs"
+  },
+  "algorithmic_observations": {
+    "segment35_unverified_ink_bands": 7,
+    "segment36_consensus_internal_blank_corridors": 0,
+    "segment37_methods": [
+      "SIFT",
+      "ORB"
+    ],
+    "segment37_orientation_attempts": 8,
+    "segment37_max_homography_inliers": 4,
+    "segment37_accepted_registrations": 0
+  },
+  "gates": {
+    "verified_glyph_to_crop_mapping": 0,
+    "verified_line_to_crop_mapping": 0,
+    "automatic_mapping_of_7_bands_to_3_lines_forbidden": true,
+    "source_sign_count_must_not_be_treated_as_21_independent_graphic_labels": true,
+    "photo_drawing_registration_confirmed": false
+  },
+  "interpretation": "Source verifies three lines in two physical areas, not coordinates of each sign. Seven detected ink bands are artifact-derived and do not equal seven text rows."
+}
