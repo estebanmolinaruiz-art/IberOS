@@ -24,6 +24,9 @@ on:
       - 'src/iberos/marked_weight_sensitivity.py'
       - 'data/review/sci_met04_bastida_dot_mark_cases_v1.json'
       - 'tests/test_marked_weight_sensitivity.py'
+      - 'src/iberos/bastida_exact_morpheme_test.py'
+      - 'data/review/sci_sem04_bastida_19_entries_ferrer2026.json'
+      - 'tests/test_bastida_exact_morpheme_test.py'
       - 'docs/SCI_CORE_05_PROCESSES_AND_WORKS_20261112.md'
       - '.github/workflows/science-prediction-translation.yml'
 permissions:
@@ -41,7 +44,7 @@ jobs:
         run: python -m pip install -e . pytest
       - name: Test new prediction/translation dossier and existing controls
         run: |
-          python -m pytest -q tests/test_prediction_translation_work.py tests/test_prediction_compare.py tests/test_interpretation_candidates.py tests/test_corex_p01.py tests/test_holdout_01.py tests/test_prospective_role_lock.py tests/test_prospective_role_evaluation.py tests/test_scientific_candidate_intake.py tests/test_scientific_core_works_status.py tests/test_ponderal_model_comparison.py tests/test_marked_weight_sensitivity.py
+          python -m pytest -q tests/test_prediction_translation_work.py tests/test_prediction_compare.py tests/test_interpretation_candidates.py tests/test_corex_p01.py tests/test_holdout_01.py tests/test_prospective_role_lock.py tests/test_prospective_role_evaluation.py tests/test_scientific_candidate_intake.py tests/test_scientific_core_works_status.py tests/test_ponderal_model_comparison.py tests/test_marked_weight_sensitivity.py tests/test_bastida_exact_morpheme_test.py
       - name: Generate machine-readable scientific docket
         run: |
           mkdir -p /tmp/iberos-prediction-translation
@@ -99,6 +102,17 @@ jobs:
           assert three['assumed_mark_count']==3 and three['absolute_relative_error_pct']<3
           assert r['confirmed_translations']==0
           assert not r['number_of_marks_verified_from_original_image']
+          PY
+      - name: Test SCI-SEM-04 all 19 Bastida entries under exact grouped null
+        run: |
+          python -m iberos.bastida_exact_morpheme_test --output /tmp/iberos-prediction-translation/sci_sem04.json
+          python - <<'PY'
+          import json
+          p='/tmp/iberos-prediction-translation/sci_sem04.json'
+          x=json.load(open(p,encoding='utf-8'))
+          assert x['exact_assignments']==750
+          assert x['one_sided_assignments_ge_observed']==4
+          assert not x['actual_translation_demonstrated']
           PY
       - name: Verify strict semantic rejection is intentional
         run: |
