@@ -1,0 +1,23 @@
+name: IberOS DISCOVER-24 variant sensitivity
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/discover24_variant_lattice.py'
+      - '.github/workflows/iberos-discover24.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lattice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python research/core_association/discover24_variant_lattice.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-discover24-variant-lattice
+          path: research/core_association/discover24_results/
+          retention-days: 30

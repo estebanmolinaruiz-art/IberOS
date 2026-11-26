@@ -1,0 +1,30 @@
+name: IberOS SEGMENT-33 external-source gate
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/segment33_external_gate.py'
+      - 'research/core_association/test_segment33.py'
+      - '.github/workflows/iberos-segment33.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  external-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install free PDF page reader
+        run: python -m pip install --quiet pymupdf
+      - name: Attempt external primary-source acquisition and verify publication figures
+        run: python research/core_association/segment33_external_gate.py
+      - name: Check no unsupported external improvement claim
+        run: python -m unittest test_segment33 -v
+        working-directory: research/core_association
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-segment33-external-audit
+          path: research/core_association/segment33_results/
+          retention-days: 14

@@ -1,0 +1,18 @@
+name: IberOS SEGMENT-38 source constraints guard
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/segment38_moleta_constraints.json'
+      - 'research/core_association/test_segment38_constraints.py'
+      - '.github/workflows/iberos-segment38.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  constraints:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python research/core_association/test_segment38_constraints.py

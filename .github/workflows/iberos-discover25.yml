@@ -1,0 +1,28 @@
+name: IberOS DISCOVER-25 evidence uncertainty model
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/discover25_evidence_model.py'
+      - 'research/core_association/test_discover25.py'
+      - '.github/workflows/iberos-discover25.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Guard tests
+        run: python -m unittest test_discover25
+        working-directory: research/core_association
+      - name: Build evidence lattice and uncertainty manifest
+        run: python research/core_association/discover25_evidence_model.py
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iberos-discover25-uncertainty
+          path: research/core_association/discover25_results/
+          retention-days: 30
