@@ -1,0 +1,18 @@
+name: IberOS GOLDSET-39 reference integrity
+on:
+  push:
+    branches: [research/core-association-bridge-20261114]
+    paths:
+      - 'research/core_association/goldset39_moleta_records.json'
+      - 'research/core_association/test_goldset39.py'
+      - '.github/workflows/iberos-goldset39.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python research/core_association/test_goldset39.py
