@@ -1,0 +1,25 @@
+{
+  "case_id": "PICOLA-ALCUDIA-G113",
+  "periods": [
+    {"name":"iberian_picola_occupation","astronomical_years":[-429,-349]},
+    {"name":"roman_comparison","astronomical_years":[1,200]},
+    {"name":"early_modern_comparison","astronomical_years":[1501,1700]}
+  ],
+  "corridor_id":"picola_alcudia",
+  "qualified_witnesses_directly_locating_historical_road": [],
+  "unpromoted_leads":[
+    {"id":"MOLAR","description":"Camino del Molar toward southeast of La Alcudia","issue":"No proven alignment with excavated Iberian gate; no 430-350 BCE date"},
+    {"id":"CARMAHADET","description":"Later historical road toward Santa Pola salines","issue":"Date and connection to Picola Iberian gate unproven"},
+    {"id":"PORTUS","description":"Roman Portus Ilicitanus reference","issue":"Roman toponym, not a 430-350 BCE itinerary"},
+    {"id":"PICOLA_GATE","description":"Iberian northeast gate and interior R2 street","issue":"External causeway/road and continuity not archaeologically demonstrated"},
+    {"id":"ILICI_GATE","description":"Southeast Iberian gate of La Alcudia","issue":"External Camino del Molar link not measured"}
+  ],
+  "expected_conclusion":"no_qualified_evidence_for_a_complete_iberian_road",
+  "do_not_backdate_later_routes":true,
+  "references":[
+    "https://doi.org/10.7203/SAGVNTVM.47.5225",
+    "https://www.persee.fr/doc/palla_0031-0387_1997_num_46_1_1428",
+    "https://web.ua.es/es/actualidad-universitaria/2025/diciembre2025/8-14/la-identificacion-de-la-puerta-sureste-de-ilici-por-investigadores-de-la-ua-transforma-el-conocimiento-sobre-la-ciudad-iberica-de-la-alcudia.html"
+  ],
+  "note":"A lead is not a verified route witness; the empty list is an explicit conservative scientific decision."
+}
