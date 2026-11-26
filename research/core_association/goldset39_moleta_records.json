@@ -1,0 +1,384 @@
+{
+  "version": "39.0",
+  "source_url": "https://ifc.dpz.es/recursos/publicaciones/28/40/_ebook.pdf",
+  "source_sha256": "2965fd62b2a040aa99bb5428bbe8018fba56ebfb201b35034e93a2c38b292e22",
+  "source_pages": [
+    207,
+    208
+  ],
+  "figure_pages": {
+    "photograph": 215,
+    "drawing": 216
+  },
+  "counts": {
+    "source_total_remains": 21,
+    "zone1_line1": 3,
+    "zone1_line2": 9,
+    "zone2_line1_at_least": 9,
+    "operational_records": 21,
+    "independent_graphic_labels": 0
+  },
+  "provenance": "Source-derived editorial shape descriptions, not blind independent visual ground truth.",
+  "critical_notes": [
+    "Zone 2 contains gaps and potentially different sign grouping; nine items are operational slots, not proven nine full characters.",
+    "No glyph pixel coordinates independently checked; dataset is provisional documentary reference.",
+    "Do not randomly split one physical object into independent train/test glyphs."
+  ],
+  "records": [
+    {
+      "id": "MOL-39-Z1-L1-01",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L1",
+      "order": 1,
+      "source_graphic_description": "fragment_of_stem",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L1-02",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L1",
+      "order": 2,
+      "source_graphic_description": "angled_two_strokes",
+      "source_editorial_hypotheses": [
+        "s",
+        "s3"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L1-03",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L1",
+      "order": 3,
+      "source_graphic_description": "ka_like",
+      "source_editorial_hypotheses": [
+        "ka7",
+        "ka2"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-01",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 1,
+      "source_graphic_description": "vertical_stem_fragment",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-02",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 2,
+      "source_graphic_description": "stem_plus_ambiguous_diagonal",
+      "source_editorial_hypotheses": [
+        "a2"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-03",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 3,
+      "source_graphic_description": "left_leaning_sign",
+      "source_editorial_hypotheses": [
+        "ta1",
+        "ko1"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-04",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 4,
+      "source_graphic_description": "deformed_uncertain",
+      "source_editorial_hypotheses": [
+        "be3",
+        "bo2",
+        "bo4"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-05",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 5,
+      "source_graphic_description": "partial_lower_left",
+      "source_editorial_hypotheses": [
+        "ko1"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-06",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 6,
+      "source_graphic_description": "lower_vertical_missing",
+      "source_editorial_hypotheses": [
+        "i1"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-07",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 7,
+      "source_graphic_description": "left_leaning",
+      "source_editorial_hypotheses": [
+        "l2"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-08",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 8,
+      "source_graphic_description": "compressed_by_depression",
+      "source_editorial_hypotheses": [
+        "tu1",
+        "ku2"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z1-L2-09",
+      "object_id": "IBR-PLM-0011",
+      "zone": 1,
+      "line": "Z1-L2",
+      "order": 9,
+      "source_graphic_description": "clear_n",
+      "source_editorial_hypotheses": [
+        "n1"
+      ],
+      "source_class": "editorial_clear",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-01",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 1,
+      "source_graphic_description": "vertical_fragment_1",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-02",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 2,
+      "source_graphic_description": "vertical_fragment_2",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-03",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 3,
+      "source_graphic_description": "vertical_fragment_3",
+      "source_editorial_hypotheses": [
+        "ś"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-04",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 4,
+      "source_graphic_description": "elevated_angle",
+      "source_editorial_hypotheses": [
+        "n",
+        "i"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-05",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 5,
+      "source_graphic_description": "upper_half",
+      "source_editorial_hypotheses": [
+        "ta1",
+        "ko1",
+        "a1"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-06",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 6,
+      "source_graphic_description": "vertical_fragment",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-07",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 7,
+      "source_graphic_description": "contour",
+      "source_editorial_hypotheses": [
+        "m4",
+        "a3"
+      ],
+      "source_class": "ambiguous",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-08",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 8,
+      "source_graphic_description": "isolated_vertical",
+      "source_editorial_hypotheses": [
+        "ba1"
+      ],
+      "source_class": "conditional",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    },
+    {
+      "id": "MOL-39-Z2-L1-09",
+      "object_id": "IBR-PLM-0011",
+      "zone": 2,
+      "line": "Z2-L1",
+      "order": 9,
+      "source_graphic_description": "possible_break_mark",
+      "source_editorial_hypotheses": [],
+      "source_class": "unidentified",
+      "independent_image_bbox": null,
+      "independent_graphic_label": null,
+      "independent_reviewer": null,
+      "graphic_validation": "PENDING",
+      "holdout_family": "MOLETA"
+    }
+  ]
+}
