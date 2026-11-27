@@ -1,0 +1,167 @@
+{
+  "schema": "IberOS-MASMORENO-CTX/1.0",
+  "status": "RETROSPECTIVE_CONTEXT_NOT_PROSPECTIVE_GOLD",
+  "site": "Mas de Moreno, Foz-Calanda, Teruel, España",
+  "cost_eur": 0,
+  "sources": [
+    {
+      "id": "GOR2009",
+      "url": "https://doi.org/10.36707/palaeohispanica.v0i9.240",
+      "description": "Gorgues 2009, Palaeohispanica 9, 481-500, fig. 3",
+      "evidence_type": "EDITORIAL_PUBLISHED"
+    },
+    {
+      "id": "GOR2021",
+      "url": "https://doi.org/10.36707/palaeohispanica.v21i0.426",
+      "description": "Gorgues, Ruiz Darasse, Sacilotto 2021, Palaeohispanica 21, 495-511, p. 496",
+      "evidence_type": "ARCHAEOLOGICAL_PUBLICATION"
+    },
+    {
+      "id": "SAC2021",
+      "url": "https://dante.univ-tlse2.fr/access/files/original/13893/Sacilotto_Charlotte.pdf",
+      "description": "Sacilotto, tesis 2021, apartado 4.2, datos de excavación hasta 2015",
+      "evidence_type": "ARCHAEOLOGICAL_SYNTHESIS"
+    }
+  ],
+  "stamp_families": [
+    {
+      "id": "KAKU",
+      "script": "IBERIAN",
+      "editorial_forms": [
+        "kaku"
+      ],
+      "source_ids": [
+        "GOR2009"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    },
+    {
+      "id": "AIUNIN",
+      "script": "IBERIAN",
+      "editorial_forms": [
+        "aiunin"
+      ],
+      "source_ids": [
+        "GOR2009"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    },
+    {
+      "id": "ORTINKO",
+      "script": "IBERIAN",
+      "editorial_forms": [
+        "oŕtinko"
+      ],
+      "source_ids": [
+        "GOR2021"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    },
+    {
+      "id": "ILURATIN",
+      "script": "IBERIAN",
+      "editorial_forms": [
+        "ilturatin",
+        "iluratin"
+      ],
+      "source_ids": [
+        "GOR2009",
+        "GOR2021"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    },
+    {
+      "id": "BALKEI",
+      "script": "IBERIAN",
+      "editorial_forms": [
+        "balkei"
+      ],
+      "source_ids": [
+        "GOR2009",
+        "GOR2021"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    },
+    {
+      "id": "ACINI",
+      "script": "LATIN",
+      "editorial_forms": [
+        "ACINI"
+      ],
+      "source_ids": [
+        "GOR2009",
+        "GOR2021"
+      ],
+      "photo_adjudicated": false,
+      "physical_object_id": null
+    }
+  ],
+  "associations": [
+    {
+      "id": "US13358-COOCCURRENCE",
+      "type": "SAME_STRATIGRAPHIC_UNIT",
+      "unit": "US 13 358",
+      "family_ids": [
+        "ILURATIN",
+        "ACINI"
+      ],
+      "object_relation": "TWO_DISTINCT_STAMPS_NOT_SAME_VESSEL",
+      "source_ids": [
+        "GOR2021"
+      ],
+      "independent_archaeological_context": true,
+      "roles_of_named_people_known": false
+    },
+    {
+      "id": "KILN-12-LATE",
+      "type": "KILN_FILL_CONTEXT",
+      "unit": "four 1'2 / horno 1'2",
+      "family_ids": [
+        "ILURATIN",
+        "BALKEI",
+        "ACINI"
+      ],
+      "object_relation": "FAMILIES_DOCUMENTED_IN_KILN_FILL_NOT_SAME_OBJECT",
+      "source_ids": [
+        "GOR2021"
+      ],
+      "independent_archaeological_context": true,
+      "roles_of_named_people_known": false
+    }
+  ],
+  "published_counts": [
+    {
+      "id": "SACILOTTO-UNTIL2015",
+      "iberean_stamps": 13,
+      "latin_stamps": 2,
+      "total_stamps": 15,
+      "as_of": "2015",
+      "source_ids": [
+        "SAC2021"
+      ],
+      "note": "Not unique people, unique matrices or prospective trials; later finds excluded from this count"
+    }
+  ],
+  "negative_controls": [
+    {
+      "id": "NO_SEMANTIC_EQUIVALENCE",
+      "claim": "Same US of iberian and latin stamps proves they translate one another",
+      "expected": false
+    },
+    {
+      "id": "NO_INDIVIDUAL_MAKER_ROLE",
+      "claim": "A stamp in kiln waste proves the named person physically made the vessel",
+      "expected": false
+    },
+    {
+      "id": "NO_INDEPENDENT_TRIALS",
+      "claim": "Multiple imprints of a punch are separate linguistic trials",
+      "expected": false
+    }
+  ]
+}
